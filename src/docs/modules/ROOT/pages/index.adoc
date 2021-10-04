@@ -1,0 +1,33 @@
+= Semantic Data Structuring Working Group - Documentation 
+:page-layout: tiles
+
+Welcome to the Documentation of the Deliverables of the Semantic Data Structuring Working Group in the Open Manufacturing Platform. For more details on the deliverables see below: 
+
+'''
+
+[.tile]
+[.icon-spec]
+--
+[.title]
+BAMM Aspect Meta Model (BAMM)
+
+[.text]
+Aspect models defined using the BAMM describe domain semantics.
+Find out how they are defined.
+
+[.link]
+xref:bamm-specification:ROOT:index.adoc[Specification]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+BAMM Command Line Interface
+
+[.text]
+Command line interface to work with Aspect Models: Validate and transform models into documentation and code.
+
+[.link]
+xref:sds-developer-guide:tooling-guide:bamm-cli.adoc[BAMM CLI]
+--
