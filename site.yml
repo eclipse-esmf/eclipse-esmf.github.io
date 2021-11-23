@@ -46,6 +46,6 @@ asciidoc:
     bamm-e: urn:bamm:io.openmanufacturing:entity:1.0.0#@
     unit:  urn:bamm:io.openmanufacturing:unit:1.0.0#@
     aspect-meta-model-version: '1.0.0'
-    sds-sdk-version: '1.0.0'
+    sds-sdk-version: '1.0.1'
     example-ns: com.mycompany@
 
