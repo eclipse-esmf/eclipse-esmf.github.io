@@ -17,7 +17,7 @@ content:
        tags: '*'
        start_path: documentation/developer-guide
      - url: https://github.com/OpenManufacturingPlatform/sds-aspect-model-editor
-       branches: HEAD
+       branches: ~
        tags: '*'
        start_path: documentation/ame-guide
 ui:
