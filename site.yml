@@ -20,6 +20,10 @@ content:
        branches: ~
        tags: '*'
        start_path: documentation/ame-guide
+     - url: https://github.com/OpenManufacturingPlatform/sds-sdk-py-aspect-model-loader
+       branches: HEAD
+       tags: '*'
+       start_path: documentation/python-sdk-guide
 ui:
   bundle:
     url: https://github.com/OpenManufacturingPlatform/sds-antora-ui/releases/download/v1.1.0/sds-antora-ui-bundle-1.1.0.zip
