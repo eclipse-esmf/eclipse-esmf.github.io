@@ -3,9 +3,9 @@
 
 Welcome to the Documentation of the Deliverables of the Semantic Data Structuring Working Group in the Open Manufacturing Platform (OMP). 
 
-*The work continues in the https://projects.eclipse.org/projects/dt.esmf/developer[Eclipse Semantic Modeling Framework (ESMF)].*
+*The work continues in the https://projects.eclipse.org/projects/dt.esmf[Eclipse Semantic Modeling Framework (ESMF)].*
 
-The Open Manufacturing Platform is getting dissolved by the end of 2022. 
+The Open Manufacturing Platform is being dissolved by the end of 2022. 
 For more details on the deliverables see below: 
 
 '''
