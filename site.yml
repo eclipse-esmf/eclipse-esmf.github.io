@@ -1,6 +1,6 @@
 site:
   title: "OMP - SDS WG continues in Eclipse Semantic Modeling Framework (ESMF)"
-  url: https://projects.eclipse.org/projects/dt.esmf/developer
+  url: https://projects.eclipse.org/projects/dt.esmf
   start_page: sds-documentation::index.adoc
 content:
   sources:
