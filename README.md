@@ -1,3 +1,5 @@
+> THIS REPOSITORY HAS BEEN ARCHIVED. Open Manufacturing Platform has been formally closed.
+
 # sds-documentation
 
 This repository belongs to the Semantic Data Structuring Working Group (SDS WG) in the Open
