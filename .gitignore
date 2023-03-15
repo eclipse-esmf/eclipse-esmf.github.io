@@ -4,4 +4,8 @@ build
 node_modules
 site-local.yml
 package-lock.json
+package.json
+.idea
+node/
+
 
