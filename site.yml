@@ -1,31 +1,31 @@
 site:
-  title: "OMP - SDS WG continues in Eclipse Semantic Modeling Framework (ESMF)"
-  url: https://projects.eclipse.org/projects/dt.esmf
-  start_page: sds-documentation::index.adoc
+  title: "Eclipse Semantic Modeling Framework (ESMF)"
+  url: https://eclipse-esmf.github.io
+  start_page: esmf-documentation::index.adoc
 content:
   sources:
      - url: .
        branches: HEAD
        tags: '*'
-       start_path: src/docs
-     - url: https://github.com/OpenManufacturingPlatform/sds-bamm-aspect-meta-model
+       start_path: documentation
+     - url: https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model
        branches: HEAD
        tags: '*'
-       start_path: src/docs
-     - url: https://github.com/OpenManufacturingPlatform/sds-sdk
+       start_path: documentation
+     - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
        tags: '*'
        start_path: documentation/developer-guide
-     - url: https://github.com/OpenManufacturingPlatform/sds-aspect-model-editor
+     - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: ~
        tags: '*'
        start_path: documentation/ame-guide
-     - url: https://github.com/OpenManufacturingPlatform/sds-sdk-py-aspect-model-loader
+     - url: https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader
        branches: HEAD
        start_path: documentation/python-sdk-guide
 ui:
   bundle:
-    url: https://github.com/OpenManufacturingPlatform/sds-antora-ui/releases/download/v1.1.0/sds-antora-ui-bundle-1.1.0.zip
+    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.2.0/esmf-antora-ui-bundle-1.2.0.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
@@ -43,16 +43,16 @@ asciidoc:
     stem: 'asciimath'
     ok: 'icon:check-circle[role="green",size="2x"]'
     nok: 'icon:times-circle[role="red",size="2x"]'
-    meta-model-version: 2.0.0@
-    meta-model-full-name: BAMM Aspect Meta Model
-    meta-model-abbr: BAMM
-    omp: Open Manufacturing Platform
-    omp-abbr: OMP
-    bamm: urn:bamm:io.openmanufacturing:meta-model:2.0.0#@
-    bamm-c: urn:bamm:io.openmanufacturing:characteristic:2.0.0#@
-    bamm-e: urn:bamm:io.openmanufacturing:entity:2.0.0#@
-    unit: urn:bamm:io.openmanufacturing:unit:2.0.0#@
+    # The latest specified SAMM version
+    meta-model-version: 2.0.0
+    meta-model-full-name: Semantic Aspect Meta Model
+    meta-model-abbr: SAMM
+    samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#@
+    samm-c: urn:samm:org.eclipse.esmf.samm:characteristic:2.0.0#@
+    samm-e: urn:samm:org.eclipse.esmf.samm:entity:2.0.0#@
+    unit: urn:samm:org.eclipse.esmf.samm:unit:2.0.0#@
+    # The version of the latest SAMM maven artifact
     aspect-meta-model-version: '2.0.0'
-    sds-sdk-version: '2.1.0'
+    esmf-sdk-version: '2.2.0'
     example-ns: com.mycompany@
 
