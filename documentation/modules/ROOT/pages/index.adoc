@@ -1,12 +1,12 @@
-= Semantic Data Structuring Working Group - Documentation 
+= Eclipse Semantic Modeling Framework
 :page-layout: tiles
 
-Welcome to the Documentation of the Deliverables of the Semantic Data Structuring Working Group in the Open Manufacturing Platform (OMP). 
 
-*The work continues in the https://projects.eclipse.org/projects/dt.esmf[Eclipse Semantic Modeling Framework (ESMF)].*
+Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
 
-The Open Manufacturing Platform is being dissolved by the end of 2022. 
-For more details on the deliverables see below: 
+For a general introduction of the ESMF, please see the
+https://projects.eclipse.org/projects/dt.esmf[ESMF project page]. For more details on the artifacts
+see below:
 
 '''
 
@@ -14,27 +14,28 @@ For more details on the deliverables see below:
 [.icon-spec]
 --
 [.title]
-BAMM Aspect Meta Model (BAMM)
+Semantic Aspect Meta Model (SAMM)
 
 [.text]
-Aspect models defined using the BAMM describe domain semantics.
+Aspect models defined using the SAMM describe domain semantics.
 Find out how they are defined.
 
 [.link]
-xref:bamm-specification:ROOT:index.adoc[Specification]
+xref:samm-specification:ROOT:index.adoc[Specification]
 --
 
 [.tile]
 [.icon-cli]
 --
 [.title]
-BAMM Command Line Interface
+SAMM Command Line Interface (SAMM-CLI)
 
 [.text]
-Command line interface to work with Aspect Models: Validate and transform models into documentation and code.
+Command line interface to work with Aspect Models: Validate and transform models into documentation
+and code.
 
 [.link]
-xref:sds-developer-guide:tooling-guide:bamm-cli.adoc[BAMM CLI]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 --
 
 [.tile]
@@ -44,7 +45,8 @@ xref:sds-developer-guide:tooling-guide:bamm-cli.adoc[BAMM CLI]
 Aspect Model Editor
 
 [.text]
-The Aspect Model Editor is a visual editor for Aspect Models, which automatically validates the models against the BAMM Aspect Meta Model version.
+The Aspect Model Editor is a visual editor for Aspect Models, which automatically validates the
+models against the BAMM Aspect Meta Model version.
 
 [.link]
 xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
@@ -54,22 +56,24 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 [.icon-cli]
 --
 [.title]
-Java SDS SDK
+Java ESMF SDK
 
 [.text]
-The SDS SDK helps you to build solutions, model your Aspect data, implement your own customized Aspect or want to integrate existing assets and systems within the Java programming language.
+The EMSF SDK helps you to build solutions, model your Aspect data, implement your own customized
+Aspect or want to integrate existing assets and systems within the Java programming language.
 [.link]
-xref:sds-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
+xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 --
 
 [.tile]
 [.icon-cli]
 --
 [.title]
-Python SDS SDK
+Python ESMF SDK
 
 [.text]
-The Python SDK offers functionality which helps software developers to work with Aspect Models in their Python applications.
+The Python SDK offers functionality which helps software developers to work with Aspect Models in
+their Python applications.
 [.link]
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
