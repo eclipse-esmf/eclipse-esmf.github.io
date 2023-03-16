@@ -59,7 +59,7 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 Java ESMF SDK
 
 [.text]
-The EMSF SDK helps you to build solutions, model your Aspect data, implement your own customized
+The ESMF SDK helps you to build solutions, model your Aspect data, implement your own customized
 Aspect or want to integrate existing assets and systems within the Java programming language.
 [.link]
 xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]

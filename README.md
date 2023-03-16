@@ -1,6 +1,6 @@
 # ESMF documentation site
 
-This repository contains the setup for the documentation of the Eclipse Semantic Modeling Framework
+This repository contains the setup for the documentation of the [Eclipse Semantic Modeling Framework](https://projects.eclipse.org/projects/dt.esmf)
 (ESMF) that is available at [https://eclipse-esmf.github.io/](https://eclipse-esmf.github.io/).
 
 The documentation is built using [https://antora.org/](Antora). Refer to site.yml to see which
