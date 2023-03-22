@@ -6,23 +6,22 @@ content:
   sources:
      - url: .
        branches: HEAD
-       tags: '*'
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model
        branches: HEAD
-       tags: '*'
+       tags: ["v2.0.0"]
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
-       tags: '*'
+       tags: ["v2.2.0"]
        start_path: documentation/developer-guide
-     - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
-       branches: ~
-       tags: '*'
-       start_path: documentation/ame-guide
-     - url: https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader
-       branches: HEAD
-       start_path: documentation/python-sdk-guide
+     # - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
+     #   branches: ~
+     #   tags: '*'
+     #   start_path: documentation/ame-guide
+     # - url: https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader
+     #   branches: HEAD
+     #   start_path: documentation/python-sdk-guide
 ui:
   bundle:
     url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.2.0/esmf-antora-ui-bundle-1.2.0.zip

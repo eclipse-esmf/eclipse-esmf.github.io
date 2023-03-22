@@ -49,7 +49,7 @@ The Aspect Model Editor is a visual editor for Aspect Models, which automaticall
 models against the BAMM Aspect Meta Model version.
 
 [.link]
-xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
+https://openmanufacturingplatform.github.io/sds-documentation/ame-guide/4.2.1/introduction.html[Aspect Model Editor]
 --
 
 [.tile]
@@ -75,5 +75,5 @@ Python ESMF SDK
 The Python SDK offers functionality which helps software developers to work with Aspect Models in
 their Python applications.
 [.link]
-xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
+https://openmanufacturingplatform.github.io/sds-documentation/python-sdk-guide/index.html[Python SDK]
 --
