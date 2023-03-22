@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@antora/cli": "2.3",
-    "antora-site-generator-lunr": "^0.6.1"
-  }
-}
