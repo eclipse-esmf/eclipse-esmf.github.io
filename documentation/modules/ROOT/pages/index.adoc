@@ -78,12 +78,24 @@ their Python applications.
 https://openmanufacturingplatform.github.io/sds-documentation/python-sdk-guide/index.html[Python SDK]
 --
 
+[.tile]
+[.icon-cli]
+--
+[.title]
+JS SDK Aspect Model Loader
+
 [.text]
 The JS SDK Aspect Model Loader offers functionality which helps software developers to work with Aspect Models 
 in their Typescript applications.
 [.link]
 xref:js-sdk-aml-guide:index.adoc[JS SDK Aspect Model Loader]
 --
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+JS SDK schematics
 
 [.text]
 The JS SDK schematics offers functionality which helps software developers to create Angular components 
