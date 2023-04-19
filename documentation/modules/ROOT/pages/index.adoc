@@ -49,7 +49,7 @@ The Aspect Model Editor is a visual editor for Aspect Models, which automaticall
 models against the BAMM Aspect Meta Model version.
 
 [.link]
-https://openmanufacturingplatform.github.io/sds-documentation/ame-guide/4.2.1/introduction.html[Aspect Model Editor]
+xref:ame-guide:introduction.adoc[Aspect Model Editor]
 --
 
 [.tile]
@@ -76,4 +76,30 @@ The Python SDK offers functionality which helps software developers to work with
 their Python applications.
 [.link]
 https://openmanufacturingplatform.github.io/sds-documentation/python-sdk-guide/index.html[Python SDK]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+JS SDK Aspect Model Loader
+
+[.text]
+The JS SDK Aspect Model Loader offers functionality which helps software developers to work with Aspect Models 
+in their Typescript applications.
+[.link]
+xref:js-sdk-aml-guide:index.adoc[JS SDK Aspect Model Loader]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+JS SDK schematics
+
+[.text]
+The JS SDK schematics offers functionality which helps software developers to create Angular components 
+and generate code based on RDF aspect module object.
+[.link]
+xref:js-sdk-guide:index.adoc[JS SDK schematics]
 --
