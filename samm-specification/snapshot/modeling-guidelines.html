@@ -87,6 +87,9 @@
     <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/release-notes.html">Release Notes</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -118,6 +121,9 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/4.4.0/introduction.html">4.4.0</a>
         </li>
         <li class="version">
           <a href="../../ame-guide/4.3.0/introduction.html">4.3.0</a>
@@ -218,7 +224,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>As mentioned in the <a href="index.html" class="page">Introduction</a>, Aspect models are described in RDF Turtle
+<p>As mentioned in the <a href="index.html" class="page">Introduction</a>, Aspect Models are described in RDF Turtle
 <a href="appendix/bibliography.html#turtle" class="page">[turtle]</a>. The aspect specification will
 therefore assume basic familiarity with Turtle.</p>
 </li>
@@ -343,7 +349,7 @@ model element, in the following examples we will mostly leave them out to improv
 <div class="sect2">
 <h3 id="using-namespaces"><a class="anchor" href="#using-namespaces"></a>Using Namespaces</h3>
 <div class="paragraph">
-<p>An Aspect model file should start with the SAMM prefix definitions. The empty namespace
+<p>An Aspect Model file should start with the SAMM prefix definitions. The empty namespace
 ":" should be used as local namespace, i.e. the versioned namespace in which the Aspect and its
 elements are defined. Other customer or domain specific namespaces can be defined additionally.
 However, the samm-* namespaces are reserved for the meta model. Third party locations can be
@@ -407,7 +413,7 @@ addition to the general attributes, every Aspect Model element has the following
 <p>Aspects follow the naming conventions for Java classes, i.e. UpperCamelCase.</p>
 </li>
 <li>
-<p>Each Aspect model must be defined in its own file. The file name must be the same as the Aspect&#8217;s
+<p>Each Aspect Model must be defined in its own file. The file name must be the same as the Aspect&#8217;s
 name.</p>
 </li>
 <li>
@@ -713,7 +719,7 @@ syntax can be used:</p>
 <div class="paragraph">
 <p>Declaring an Enumeration with a complex value is usally done in order to add a description to the
 actual value, e.g., the <code>state</code> in the example below, which provides information regarding the
-meaning of the value. This description only exists in the aspect model and is not part of the
+meaning of the value. This description only exists in the Aspect Model and is not part of the
 payload provided by an Aspect at runtime. In order to define that a Property of an Entity is not
 part of the runtime data, the <code>samm:notInPayload</code> attribute is used.</p>
 </div>
@@ -953,7 +959,7 @@ Characteristic, and after that a complete concrete example is given.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following code shows the Aspect model for the first example from the table. Note that when
+<p>The following code shows the Aspect Model for the first example from the table. Note that when
 writing the <code>deconstructionRule</code>, backslashes (<code>\</code>) need to be escaped in order to produce valid
 RDF/Turtle syntax, i.e. write <code>\\</code> instead of <code>\</code>.</p>
 </div>
@@ -1389,7 +1395,7 @@ Abstract Properties (and only those).</p>
 <h3 id="adding-external-references"><a class="anchor" href="#adding-external-references"></a>Adding external references</h3>
 <div class="paragraph">
 <p>The <code>samm:see</code> attribute can be used to add references to related elements in an external taxonomy,
-ontology or standards document to Aspect model elements. Values for <code>samm:see</code> must be URIs. The
+ontology or standards document to Aspect Model elements. Values for <code>samm:see</code> must be URIs. The
 meaning of the reference is informative and implies no semantics such as equality or subsumption in
 either direction.</p>
 </div>

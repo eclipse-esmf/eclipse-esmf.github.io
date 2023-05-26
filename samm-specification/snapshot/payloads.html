@@ -87,6 +87,9 @@
     <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/release-notes.html">Release Notes</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -118,6 +121,9 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/4.4.0/introduction.html">4.4.0</a>
         </li>
         <li class="version">
           <a href="../../ame-guide/4.3.0/introduction.html">4.3.0</a>
@@ -211,7 +217,7 @@
 <article class="doc">
 <h1 class="page">Mapping to JSON</h1>
 <div class="sect1">
-<h2 id="rules-for-the-construction-of-json-payloads-matching-an-aspect-model"><a class="anchor" href="#rules-for-the-construction-of-json-payloads-matching-an-aspect-model"></a>Rules for the construction of JSON payloads matching an Aspect model</h2>
+<h2 id="rules-for-the-construction-of-json-payloads-matching-an-aspect-model"><a class="anchor" href="#rules-for-the-construction-of-json-payloads-matching-an-aspect-model"></a>Rules for the construction of JSON payloads matching an Aspect Model</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -235,13 +241,13 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>In order to create JSON payloads that correspond to an Aspect model, the following rules are
+<p>In order to create JSON payloads that correspond to an Aspect Model, the following rules are
 applied. The other way round they can also be used to describe a validation algorithm.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>An Aspect model is always serialized as an unnamed JSON object.</p>
+<p>An Aspect Model is always serialized as an unnamed JSON object.</p>
 </li>
 <li>
 <p>For each Property:</p>
@@ -287,14 +293,14 @@ array (with <code>${propertyName}</code> being the name of the JSON array proper
 </div>
 </li>
 <li>
-<p>Characteristics defined in the Aspect model other than the ones mentioned above are not subject to
+<p>Characteristics defined in the Aspect Model other than the ones mentioned above are not subject to
 serialization.</p>
 </li>
 <li>
-<p>Operations defined in the Aspect model are not subject to serialization.</p>
+<p>Operations defined in the Aspect Model are not subject to serialization.</p>
 </li>
 <li>
-<p>Events defined in the Aspect model are not subject to serialization.</p>
+<p>Events defined in the Aspect Model are not subject to serialization.</p>
 </li>
 </ul>
 </div>
@@ -304,7 +310,7 @@ serialization.</p>
 <h2 id="data-type-mappings"><a class="anchor" href="#data-type-mappings"></a>Data type mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <a href="datatypes.html#data-types" class="page">rich type tree</a> is used in an Aspect model. As JSON offers only a
+<p>A <a href="datatypes.html#data-types" class="page">rich type tree</a> is used in an Aspect Model. As JSON offers only a
 very limited set of data types for primitive type values there are less options on how to represent
 the data. The mappings are described in the following table.</p>
 </div>
@@ -317,7 +323,7 @@ the data. The mappings are described in the following table.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aspect model data type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aspect Model data type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Corresponding JSON data type</p></td>
 </tr>
 <tr>
@@ -506,7 +512,7 @@ Due to the <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-8.5">li
 represention of numbers</a> in JSON, the maximum integer number that can be used without losing
 precision is 2⁵³-1 (defined as
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER">Number.MAX_SAFE_INTEGER</a>).
-This means that even if the Aspect model data type would allow higher or lower values, if they can
+This means that even if the Aspect Model data type would allow higher or lower values, if they can
 not be represented in JSON, they can not be used. Affected data types are the unbounded numeric
 types <code>xsd:decimal</code>, <code>xsd:integer</code>, <code>xsd:positiveInteger</code>, <code>xsd:nonNegativeInteger</code>,
 <code>xsd:negativeInteger</code>, <code>xsd:nonPositiveInteger</code> and the bounded type <code>xsd:unsignedLong</code>. The other

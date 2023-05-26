@@ -87,6 +87,9 @@
     <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/release-notes.html">Release Notes</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -118,6 +121,9 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/4.4.0/introduction.html">4.4.0</a>
         </li>
         <li class="version">
           <a href="../../ame-guide/4.3.0/introduction.html">4.3.0</a>
@@ -232,16 +238,16 @@ conventional approach could not satisfyingly answer the question of where this k
 would otherwise live&#8201;&#8212;&#8201;in the sensor&#8217;s data sheet that is only a human-readable document? In the
 Aspect&#8217;s API documentation that is also only human-readable? Should the information about the
 sensor&#8217;s physical range be hard-coded in the Aspect and included in each service reply, even though
-it never changes? By expressing it in the Aspect model, the Aspect&#8217;s semantics can be made available
+it never changes? By expressing it in the Aspect Model, the Aspect&#8217;s semantics can be made available
 to consumers of the data in a way that opens up new possibilities.</p>
 </div>
 <div class="paragraph">
-<p>Therefore, an Aspect model contains both information about runtime data structure (e.g., that there
+<p>Therefore, an Aspect Model contains both information about runtime data structure (e.g., that there
 is a property in the data called "temperature", and that it has a numeric value) and information
 that is not part of the runtime data (e.g., the unit or range). It does not, however, contain actual
 runtime data (e.g., a numeric value representing the current temperature), as this will be delivered
-by an Aspect conforming to this Aspect model. The combination of raw runtime data and its
-corresponding Aspect model yields <em>information</em>.</p>
+by an Aspect conforming to this Aspect Model. The combination of raw runtime data and its
+corresponding Aspect Model yields <em>information</em>.</p>
 </div>
 <div class="paragraph">
 <p>To specify an Aspect Model, the <em>Semantic Aspect Meta Model</em> (SAMM) is used. This document
@@ -252,7 +258,7 @@ specifies the Semantic Aspect Meta Model.</p>
 <a href="appendix/bibliography.html#rdf11" class="page">[rdf11]</a>) and the Terse RDF Triple Language
 syntax (TTL, <a href="appendix/bibliography.html#turtle" class="page">[turtle]</a>), together with
 validation rules in the Shapes Constraint Language (SHACL,
-<a href="appendix/bibliography.html#shacl" class="page">[shacl]</a>). Aspect models are likewise
+<a href="appendix/bibliography.html#shacl" class="page">[shacl]</a>). Aspect Models are likewise
 specified in RDF/Turtle, following SAMM semantics.</p>
 </div>
 </div>

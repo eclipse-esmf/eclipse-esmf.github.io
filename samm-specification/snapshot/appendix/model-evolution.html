@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Model Evolution :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/appendix/model-evolution.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="snapshot">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../units.html">Units</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../payloads.html">Payloads</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes.html">Release Notes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/site-notice.html">Site Notice</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">snapshot</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.4.0/introduction.html">4.4.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.3.0/introduction.html">4.3.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.2.1/introduction.html">4.2.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.1.0/index.html">2.1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Semantic Aspect Meta Model</a></li>
+    <li>Appendix</li>
+    <li><a href="model-evolution.html">Model Evolution</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
+  <div class="version-menu">
+    <a class="version is-current" href="model-evolution.html">snapshot</a>
+    <a class="version is-missing" href="../../2.0.0/index.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/edit/main/documentation/modules/appendix/pages/model-evolution.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Model Evolution</h1>
+<div class="sect1">
+<h2 id="why-is-model-evolution-needed"><a class="anchor" href="#why-is-model-evolution-needed"></a>Why is Model Evolution needed?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seldomly, an Aspect Model can be created completely in one step from ideation to conceptualization.</p>
+</div>
+<div class="paragraph">
+<p>Authoring an Aspect Model is comparable to the creation of a software artifact. At first, a domain
+model draft or concept map is created to capture the understanding of the respective domain experts
+(cf. <a href="https://en.wikipedia.org/wiki/Domain-driven_design">domain-driven design</a>), which is then
+formalized into an actual Aspect Model. After multiple iterations, each of which improves the
+modeled concepts and the overall quality of the model, a first "complete" version is created. This
+first version might contain the minimal subset of relevant Properties complete with correct
+Characteristics and proper descriptions.</p>
+</div>
+<div class="paragraph">
+<p>This "Version 1.0" of the model can then be used to implement the first version of the corresponding
+Aspect. Imagine that the service is running and delivers data that corresponds to the "Version 1.0"
+of the Aspect Model. Clients are developed as well, possibly by different parties, and happily
+consume the Aspect data. However, sooner or later there will be a need for change in the Aspect
+Model. For example, it could be missing relevant Properties, existing Properties could use wrong
+Characteristics, descriptions or names, or could be missing localizations. This can happen for many
+reasons:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The modelled device or asset changes,</p>
+</li>
+<li>
+<p>Clients find that they need certain pieces of data that were originally deemed unimportant and
+thus excluded from the Aspect Model, or that should have a different structure,</p>
+</li>
+<li>
+<p>In the original model, something was modelled in the wrong way,</p>
+</li>
+<li>
+<p>As part of the natural evolution of the model when the initial minimal subset of Properties is
+expanded to a comprehensive description of the domain,</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It is to be expected that an Aspect Model is continually improved upon (to a certain point, when it
+is considered "finished"). The model maintainers can change the Aspect Model as they see fit and
+release a new version. But what happens with the running Aspects and clients? Do all of them have to
+be changed immediately every time?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="decoupling-of-models-and-payload"><a class="anchor" href="#decoupling-of-models-and-payload"></a>Decoupling of Models and Payload</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first measure towards a graceful evolution of Aspect Models in a living system (i.e., the models
+don&#8217;t live in a vacuum but are actually used by Aspects and Clients) is the decoupling of models and
+payload. In the section that describes the <a href="../payloads.html#mapping-to-json" class="page">mapping of Aspect
+models to corresponding JSON payloads</a>, you can see that the JSON payloads have no indication of the
+Aspect Model that describes them. In particular, they do not contain a reference to the URN of the
+corresponding Aspect Model. This is similar to how the structure of a JSON document can be validated
+against a JSON Schema.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Therefore there are changes that can be made in the Aspect Model so that the structure of the
+corresponding JSON payload does not change. We will call this type of changes <em>safe changes</em>. When a
+new version of an Aspect Model is released that contains only safe changes and a corresponding
+Aspect delivers only data that is valid in regards to the new version of the Aspect Model, the data
+is also still valid in regards to the previous version of the Aspect Model. The Aspect can therefore
+still be used by clients built using the previous version <em>without having to be changed</em>.</p>
+</div>
+<div class="paragraph">
+<p>At the place used to look up the Aspect, the previous version of the Aspect Model and the updated
+version can and should both be associated simultaneously with the same Aspect endpoint. This allows
+clients that only understand the previous version of the Aspect Model to still consume data from the
+Aspect (although they do not benefit from the updates introduced in the new model version), while
+clients that are updated to use the new Aspect Model can benefit from the update.</p>
+</div>
+<div class="paragraph">
+<p>At some point, older versions of the model can be removed from the Aspect. However, the exact
+conditions of when this can be done depend heavily on the concrete use case and are therefore out of
+scope of this document.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="safe-changes"><a class="anchor" href="#safe-changes"></a>Safe Changes for Graceful Model Evolution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every change to the Aspect Model that is backwards compatible in the sense that it permits all
+previously permitted JSON payloads <em>and</em> keeps semantics (see below) is a <em>safe change</em>.</p>
+</div>
+<div class="paragraph">
+<p>The following table gives an overview of the safe and unchanges that mainly concern
+the structure of the data.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Safe Changes</th>
+<th class="tableblock halign-left valign-top">Unsafe Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Adding, removing or changing attributes that are never part of payloads, e.g., <code>samm:preferredName</code>, <code>samm:description</code>
+and <code>samm:see</code></p>
+</li>
+<li>
+<p>Adding a new Property</p>
+</li>
+<li>
+<p>Making a mandatory Property optional</p>
+</li>
+<li>
+<p>Changing a data type <em>a</em> to type <em>b</em> when <em>a</em> <a href="../datatypes.html#data-types" class="page">can be cast to</a> <em>b</em></p>
+</li>
+<li>
+<p>Removing values from an Enumeration</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Renaming an existing Property</p>
+</li>
+<li>
+<p>Making an optional Property mandatory</p>
+</li>
+<li>
+<p>Changing a data type <em>a</em> to type <em>b</em> when <em>a</em> <a href="../datatypes.html#data-types" class="page">can not be cast to</a> <em>b</em></p>
+</li>
+<li>
+<p>Adding values to an Enumeration</p>
+</li>
+<li>
+<p>Changing values in an Enumeration</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Deciding whether a change to a Characteristic is safe depends on the change itself. Basically, a
+change that adds restrictions on the value range is safe, while removing restrictions is unsafe, <em>if
+and only if</em> the effective value range was equivalent in the first place. For example, adding a
+<a href="../characteristics.html#regular-expression-constraint" class="page">Regular Expression Constraint</a> that
+restricts values on a <a href="../characteristics.html#text-characteristic" class="page">Text Characteristic</a> is
+safe, because an Aspect that delivers data which is valid for both the previous version of the
+Aspect Model (without the Constraint) and for the new version (with the Constraint) will only ever
+deliver data that clients using the previous version of the Aspect Model can understand. Adding the
+constraint in the model just makes the previous implicit assumption explicit and visible. If the
+Constraint on the other hand signifies an actual change, i.e., values that were previously valid are
+no longer valid in the new version, this is an unsafe change.</p>
+</div>
+<div class="paragraph">
+<p>If the value range is effectively the same and has the same meaning, for example by replacing a
+Regular Expression Expression on a Text Characteristic with an Enumeration that has the same values
+as those that would be parsed by the Regular Expression, or vice versa, this is a safe change as
+well. Changes such as this can be made when an Aspect Model is refactored to be better readable or
+understandable. Another example is changing a Characteristic with a
+<a href="../datatypes.html#data-types" class="page">string-like value space</a> into a
+<a href="../characteristics.html#structured-value-characteristic" class="page">Structured Value</a>: The payload does not
+change, but the meaning is specified in greater detail by describing all logical parts of the value.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If the value range is effectively the same but the meaning is different, this is not
+considered a safe change, because the domain semantics captured by the Aspect Model are not the
+same. For example, if the unit of a
+<a href="../characteristics.html#measurement-characteristic" class="page">Measurement</a> Characteristic is changed from
+<code>unit:metre</code> to <code>unit:inch</code> but both versions use <code>xsd:int</code> as a data type, values have obviously
+different meanings. This means that a specific Aspect endpoint using this Aspect Model must not be
+associated with both versions of the Aspect Model simultaneously. Of course, the Aspect can
+implement both versions and make them available on different endpoints.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When only safe changes are made to the Aspect Model, the model author can choose between
+increasing the MINOR part of the version (e.g. from 1.0.0 to 1.1.0) or the PATCH part of the version
+(e.g. from 1.0.0 to 1.0.1). Otherwise, the model author can choose between increasing the MINOR part
+or the MAJOR part of the version (e.g. from 1.0.0 to 2.0.0). The latter change should be used to
+indicate structural and semantic incompatibility between versions.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example"><a class="anchor" href="#example"></a>Example: Evolution of an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s consider a simple Aspect Model <code>MachineOnlineStatus</code> that describes a Property <code>onlineStatus</code>
+which represents the information about whether a machine is online, offline, starting up or
+undefined (if the current status can not be retrieved).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MachineOnlineStatus a samm:Aspect ;
+   samm:properties ( :machineOnlineStatus ) ;
+   samm:operations ( ) .
+
+:machineOnlineStatus a samm:Property ;
+   samm:description "The current machine online status. Can be either ON, OFF, BOOTING or UNDEFINED."@en ;
+   samm:characteristic [ <i class="conum" data-value="1"></i><b>(1)</b>
+      a samm:Characteristic ;
+      samm:dataType xsd:string
+   ] .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><br>
+In version 1.0.0 of the model, the modeler decides to first represent the Property itself using an
+<code>OnlineStatus</code> Characteristic ①. They use the <code>string</code> datatype to be able to represent the four
+valid states given in the target machine&#8217;s data sheet.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.1#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.0.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MachineOnlineStatus a samm:Aspect ;
+   samm:properties ( :machineOnlineStatus ) ;
+   samm:operations ( ) .
+
+:machineOnlineStatus a samm:Property ;
+   samm:description "The current machine online status."@en ;
+   samm:characteristic [
+      a samm-c:Enumeration ; <i class="conum" data-value="2"></i><b>(2)</b>
+      samm:dataType xsd:string ;
+      samm-c:values ( "ON" "OFF" "BOOTING" "UNDEFINED" )
+   ] .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><br>
+The modeler decides to reify the possible status values by using an Enumeration as the
+characteristic ②. Because the Property still has the <code>string</code> datatype, payloads for the previous
+and the current model version do not differ. Taking into account that the description in the
+previous model version states the valid values and they do not differ to the Enumeration&#8217;s values,
+this makes the change a safe change. Therefore, the Aspect Model&#8217;s version is increased to 1.0.1.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.2#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.0.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MachineOnlineStatus a samm:Aspect ;
+   samm:properties ( :machineOnlineStatus ) ;
+   samm:operations ( ) .
+
+:machineOnlineStatus a samm:Property ;
+   samm:description "The current machine online status."@en ;
+   samm:characteristic [
+      a samm-c:Enumeration ;
+      samm:dataType xsd:string ;
+      samm-c:values ( "ON" "OFF" "BOOTING" ) <i class="conum" data-value="3"></i><b>(3)</b>
+   ] .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><br>
+By carefully reading the machine&#8217;s data sheet, the modeler determined that the UNKNOWN online status
+can only ever occur before some machine-internal controller is initialized, which only occurs during
+booting the device. Thus, they remove the UNKNOWN status from the enumeration ③, because BOOTING
+can always be used in its place. This results in the following points:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The status that is confusing to users and downstream developers is removed. The model more clearly
+states its purpose.</p>
+</li>
+<li>
+<p>By removing the machine-specific idiosyncrasy, the model is more generally applicable and can be
+used with other devices as well.</p>
+</li>
+<li>
+<p>The implementation of the Aspect can no longer just pass-through the value read from the device
+but has to clean up the value. In this case this is trivial, but in more complex scenarios this
+might require according complex logic. However, it is always preferable to perform data clean up
+in the Aspect and therefore present an interface via the Aspect Model that is as "clean" as
+possible.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Removal of the UNKNOWN status is a safe change: Clients that can deal with the previous status set,
+can also deal with the sub-set that does not include UNKNOWN. For this reason, the version is
+increased to 1.0.2.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.1.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.0.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix previousVersion: &lt;urn:samm:com.mycompany.myapplication:1.0.2#&gt; .
+
+:MachineOnlineStatus a samm:Aspect ;
+   samm:properties ( :onlineStatus ) ;
+   samm:operations ( ) .
+
+:onlineStatus a samm:Property ; <i class="conum" data-value="4"></i><b>(4)</b>
+   samm:description "The current machine online status."@en ;
+   samm:see previousVersion:machineOnlineStatus ; <i class="conum" data-value="5"></i><b>(5)</b>
+   samm:characteristic [
+      a samm-c:Enumeration ;
+      samm:dataType xsd:string ;
+      samm-c:values ( "ON" "OFF" "BOOTING" )
+   ] .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><br>
+The modeler decides that the Property name <code>machineOnlineStatus</code> is too long and redundant and
+renames it to <code>onlineStatus</code> ④. This is an unsafe change, because the JSON payload that corresponds
+to the Aspect Model is now changed structurally. The Aspect Model version is increased to 1.1.0: The
+Aspect Model still represents the same data which means that an increase of the major version is not
+warranted, but payloads are not any longer directly compatible, so the minor version is increased.
+To indicate the relation between <code>machineOnlineStatus</code> in the previous model version and
+<code>onlineStatus</code> in the current model version, an explicit link is added using <code>samm:see</code> ⑤. This is
+optional and purely informational and will show up in the Aspect Model&#8217;s generated documentation,
+but it is not a piece of information that consumers of the Aspect Model programmatically rely on.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.3#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.0.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MachineOnlineStatus a samm:Aspect ;
+   samm:properties ( [ samm:property :onlineStatus;
+                       samm:payloadName "machineOnlineStatus" ] ) ; <i class="conum" data-value="6"></i><b>(6)</b>
+   samm:operations ( ) .
+
+:onlineStatus a samm:Property ;
+   samm:description "The current machine online status."@en ;
+   samm:characteristic [
+      a samm-c:Enumeration ;
+      samm:dataType xsd:string ;
+      samm-c:values ( "ON" "OFF" "BOOTING" )
+   ] .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Renaming the Property in the last step is a change made to demonstrate dealing with unsafe changes.
+Alternatively, the modeler could rename the Property but still keep this change a safe change by
+specifying a <a href="../modeling-guidelines.html#payload-names" class="page">samm:payloadName</a> ⑥ that corresponds
+to the effective payload name of the Property in the previous version of the Aspect Model (i.e.,
+1.0.2). In this scenario, since the change is a safe changes, the version is increased to 1.0.3
+instead of 1.1.0.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+In the example scenario, when associating Aspect endpoints with a Digital Twin, three
+Aspect entries for the <code>MachineOnlineStatus</code> Aspect could be associated with a Digital Twin (one for
+each of the versions 1.0.0, 1.0.1 and 1.0.2) with the <em>same</em> Aspect endpoint that only actually
+implements model version 1.0.2, because payloads are compatible. For model version 1.1.0, a separate
+endpoint needs to be provided by the Aspect implementation.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. However, a JSON Schema only describes a document&#8217;s structure, not its meaning or content.
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/samm-specification/snapshot/appendix/model-evolution.html"></script>
+<script async src="../../../_/../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

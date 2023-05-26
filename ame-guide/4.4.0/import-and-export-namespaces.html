@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Import and export namespaces :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/import-and-export-namespaces.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ame-guide" data-version="4.4.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="introduction.html">Aspect Model Editor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system-requirements.html">System requirements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="installation.html">Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="get-started.html">Get started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ui-overview.html">UI overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="settings.html">Settings</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="start-new-models.html">Start new models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="load-and-save-models.html">Load and save models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="edit-models.html">Edit models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="edit-elements.html">Edit elements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="shared-models.html">Shared Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migration-of-models.html">Migration of models</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="validation-and-notifications.html">Validation and notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="model-versions.html">Aspect Model versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="namespaces-references.html">Namespaces and external references</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="import-and-export-namespaces.html">Import and export namespaces</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="use-external-references.html">Use external references</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="generate-json.html">Generate JSON</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="support.html">Support</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="known-issues.html">Known issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="known-limitations.html">Known limitations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes.html">Release notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Aspect Model Editor</span>
+    <span class="version">4.4.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../introduction.html">master</a>
+        </li>
+        <li class="version is-current">
+          <a href="introduction.html">4.4.0</a>
+        </li>
+        <li class="version">
+          <a href="../4.3.0/introduction.html">4.3.0</a>
+        </li>
+        <li class="version">
+          <a href="../4.2.1/introduction.html">4.2.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.1.0/index.html">2.1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="introduction.html">Aspect Model Editor</a></li>
+    <li><a href="import-and-export-namespaces.html">Import and export namespaces</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">4.4.0</button>
+  <div class="version-menu">
+    <a class="version" href="../import-and-export-namespaces.html">master</a>
+    <a class="version is-current" href="import-and-export-namespaces.html">4.4.0</a>
+    <a class="version" href="../4.3.0/import-and-export-namespaces.html">4.3.0</a>
+    <a class="version" href="../4.2.1/import-and-export-namespaces.html">4.2.1</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/blob/v4.4.0/documentation/ame-guide/modules/ROOT/pages/import-and-export-namespaces.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Import and export namespaces</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>For general information on external references, see <a href="namespaces-references.html#namespaces-external-references" class="page">Namespaces and external references</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="import-namespaces"><a class="anchor" href="#import-namespaces"></a>Import namespaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To import a package with namespaces, proceed as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>New/Load</strong> in the <a href="ui-overview.html#toolbar" class="page">toolbar</a>.</p>
+</li>
+<li>
+<p>Click <strong>Import Package</strong>.</p>
+<div class="paragraph">
+<p>→ An Explorer window opens.</p>
+</div>
+</li>
+<li>
+<p>Navigate to the package ZIP file which contains a single namespace.</p>
+</li>
+<li>
+<p>Click <strong>Open</strong> to confirm your selection.</p>
+<div class="paragraph">
+<p>→ After confirmation, the files inside the ZIP file will be validated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/import-validating.png" alt="import validating" width="80%">
+</div>
+</div>
+</li>
+<li>
+<p>Click on files in the summary dialog to view the status of it.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/validation-result.png" alt="validation result" width="80%">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Copy to clipboard</strong> to copy the summary in a JSON-format file for further improvements.</p>
+</li>
+<li>
+<p>Click on one of the options to choose what happens with already existing namespaces.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Keep</strong> to keep the existing namespace.</p>
+</li>
+<li>
+<p>Click <strong>Replace</strong> to replace the namespace in the Workspace.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/replace-import.png" alt="replace import" width="80%">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Import</strong> to move your files into the Workspace.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>→ Now your namespaces are added to the recent model.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="export-namespace"><a class="anchor" href="#export-namespace"></a>Export namespaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To export a namespace, proceed as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Save</strong> in the <a href="ui-overview.html#toolbar" class="page">toolbar</a>.</p>
+<div class="paragraph">
+<p>→ A drop-down menu appears.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Export Namespace</strong>.</p>
+</li>
+<li>
+<p>Select the available namespace.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/select-namespace-export.png" alt="select namespace export" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Validate</strong>.</p>
+<div class="paragraph">
+<p>→ After validation is done, a summary dialog similar to the one for <a href="#import-namespaces">namespace import</a> will be displayed. If the validation has files with errors, the namespace cannot be exported.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/export-window.png" alt="export window" width="100%">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Export</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>→ The chosen namespace will be exported.</p>
+</div>
+<style>
+  .imageblock {flex-direction: row !important;}
+</style>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/ame-guide/4.4.0/import-and-export-namespaces.html"></script>
+<script async src="../../_/../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -87,6 +87,9 @@
     <a class="nav-link" href="best-practices.html">Best Practices</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="release-notes.html">Release Notes</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -118,6 +121,9 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.4.0/introduction.html">4.4.0</a>
         </li>
         <li class="version">
           <a href="../../../ame-guide/4.3.0/introduction.html">4.3.0</a>
@@ -223,7 +229,7 @@ should be considered when naming elements such as Aspects, Properties or Entitie
 <p>Avoid abbreviations that are not sufficiently common. Seemingly obvious abbreviations can be
 misunderstood in different contexts. For example, "temp" could mean "temperature" or "temporary".
 On the other hand, abbreviating "minimum" and "maximum" with "min" and "max", respectively, is
-fine. The Aspect model should be reasonably expressive. Do not add alleged premature optimizations
+fine. The Aspect Model should be reasonably expressive. Do not add alleged premature optimizations
 that belong in the Aspect implementation: if you think a Property is name expressive but too long
 for the runtime payload, consider adding <a href="../modeling-guidelines.html#payload-names" class="page">a payload
 name</a> to the Property&#8217;s usage instead of renaming the Property.</p>
@@ -234,7 +240,7 @@ name</a> to the Property&#8217;s usage instead of renaming the Property.</p>
 by a suffix when necessary.</p>
 </li>
 <li>
-<p>Do not use redundant prefixes, e.g. when authoring an Aspect model for the domain <em>Foo</em>, do not
+<p>Do not use redundant prefixes, e.g. when authoring an Aspect Model for the domain <em>Foo</em>, do not
 name your Properties <em>fooCount</em>, <em>fooId</em> etc. Remember that the full identifier of a Property is
 the versioned namespace concatenated with the element name, e.g.
 <code>urn:samm:com.mycompany.myapplication:1.0.0#count</code>, so the context is already part of
@@ -243,7 +249,7 @@ the versioned namespace concatenated with the element name, e.g.
 <li>
 <p>The attributes <code>preferredName</code> and <code>description</code> are meant to provide a
 human-readable name and
-description, respectively, for example for the generation of documentation from the Aspect model.
+description, respectively, for example for the generation of documentation from the Aspect Model.
 If you copy and paste the element&#8217;s name to the <code>preferredName</code>, make sure to adjust it:</p>
 <div class="ulist">
 <ul>
@@ -286,7 +292,7 @@ be in singular.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>While JSON only distinguishes between <em>number</em> (floating point) and <em>integer</em>, the
-<a href="../datatypes.html#data-types" class="page">type hierarchy</a> for Aspect models provides many more options. There
+<a href="../datatypes.html#data-types" class="page">type hierarchy</a> for Aspect Models provides many more options. There
 is a distinction between the numeric core types (<code>xsd:integer</code> and the fixed-point type
 <code>xsd:decimal</code>) and the limited range numbers that correspond to the numeric types as defined in most
 programming languages (<code>xsd:float</code> and <code>xsd:double</code> as well as the integer types <code>xsd:int</code>,
@@ -299,7 +305,7 @@ programming languages (<code>xsd:float</code> and <code>xsd:double</code> as wel
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-As an Aspect model ideally captures as much of the domain semantics as possible, it
+As an Aspect Model ideally captures as much of the domain semantics as possible, it
 should not limit itself according to implementation-specific restrictions. In particular, limited
 range numbers should only be used when the semantics of the numeric range are relevant beyond the
 implementation of the Aspect. For example, a Property <code>temperature</code> of a sensor could use a limited
