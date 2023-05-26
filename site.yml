@@ -17,7 +17,7 @@ content:
        start_path: documentation/developer-guide
      - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: HEAD
-       tags: ["v4.3.0","v4.2.1"]
+       tags: ["v4.4.0","v4.3.0","v4.2.1"]
        start_path: documentation/ame-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-schematics
        branches: HEAD
@@ -25,7 +25,7 @@ content:
        start_path: documentation/js-sdk-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader
        branches: HEAD
-       tags: ["v2.1.0"]
+       tags: ["v2.2.0","v2.1.0"]
        start_path: documentation/js-sdk-aml-guide
      # - url: https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader
      #   branches: HEAD
