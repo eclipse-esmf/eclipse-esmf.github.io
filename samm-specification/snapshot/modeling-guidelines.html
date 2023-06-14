@@ -174,6 +174,17 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="index.html">Semantic Aspect Meta Model</a>
       <ul class="versions">
@@ -440,8 +451,9 @@ that unused namespaces can be left out:</p>
    samm:description "This Aspect is an example."@en ;
    samm:description "Dieser Aspekt ist ein Beispiel."@de ;
    samm:properties ( :myProperty :anotherProperty ) ;
-   # In this example, there are no operations.
-   samm:operations ( ) .</code></pre>
+   # In this example, there are no operations or events.
+   samm:operations ( ) ;
+   samm:events ( ) .</code></pre>
 </div>
 </div>
 </div>
@@ -1392,6 +1404,49 @@ Abstract Properties (and only those).</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="declaring-events"><a class="anchor" href="#declaring-events"></a>Declaring Events</h3>
+<div class="paragraph">
+<p>Events have the following attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:parameters</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The parameters that describe the Event, given as a list of Properties.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:temperatureUpdated a samm:Event ;
+   samm:parameters ( :drillHeadTemperature ) .
+
+:ToolTemperature a samm-c:Measurement ;
+   samm:dataType xsd:float ;
+   samm-c:unit unit:degreeCelsius .
+
+:drillHeadTemperature a samm:Property ;
+   samm:characteristic :ToolTemperature .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="adding-external-references"><a class="anchor" href="#adding-external-references"></a>Adding external references</h3>
 <div class="paragraph">
 <p>The <code>samm:see</code> attribute can be used to add references to related elements in an external taxonomy,
@@ -1500,7 +1555,7 @@ example), the Property is directly referenced. Writing <code>samm:optional false
 </td>
 <td class="content">
 The setting of the <code>samm:optional</code> attribute for a specific property is inherited from parent Entity
-by the Entities extending it using the Entity extension mechanism (<code>samm::extends</code>).
+by the Entities extending it using the Entity extension mechanism (<code>samm:extends</code>).
 </td>
 </tr>
 </table>
@@ -1567,7 +1622,7 @@ true</code> and have a payload name declared using <code>samm:payloadName</code>
 </td>
 <td class="content">
 It is also useful to know that the payload name definition is inherited from parent Entity
-by its children when using the Entity extension mechanism (<code>samm::extends</code>).
+by its children when using the Entity extension mechanism (<code>samm:extends</code>).
 </td>
 </tr>
 </table>

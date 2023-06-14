@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SDS SDK Python Aspect Model loader :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/python-sdk-guide/index.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="python-sdk-guide" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-explore is-active" data-panel="explore">
+  <div class="context">
+    <span class="title">Python SDK Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../ame-guide/4.4.0/introduction.html">4.4.0</a>
+        </li>
+        <li class="version">
+          <a href="../ame-guide/4.3.0/introduction.html">4.3.0</a>
+        </li>
+        <li class="version">
+          <a href="../ame-guide/4.2.1/introduction.html">4.2.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../esmf-developer-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../js-sdk-guide/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../js-sdk-aml-guide/2.1.0/index.html">2.1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version is-current" href="index.html">master</a>
+    <a class="version" href="main/index.html">main</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader/blob/v2.0.0/documentation/python-sdk-guide/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SDS SDK Python Aspect Model loader</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Python SDK offers functionality which helps software developers to work with Aspect Models in their Python applications.</p>
+</div>
+<div class="paragraph">
+<p>This guide gives an overview of the components in the Python SDK and shows how to use them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="anchor" href="#getting-started"></a>Getting Started</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Python Version 3.10 or higher.
+Check your version with</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">python --version</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In order to include the packages a Python dependency manager is required; we recommend
+<a href="https://python-poetry.org/">Python Poetry</a>.
+The remainder of the guide assumes usage of Poetry.
+Please refer to the <a href="https://python-poetry.org/docs/#installation">Poetry installation guide</a>.
+You can check your installed Poetry version with</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry --version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aspect-model-loader-for-python"><a class="anchor" href="#aspect-model-loader-for-python"></a>Aspect Model Loader for Python</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h3>
+<div class="paragraph">
+<p>Aspect Models are stored as RDF Graphs in <code>.ttl</code> (RDF Turtle) files.
+The Aspect Model Loader for Python reads one or more Turtle file and parses the Aspect Model.
+The result is a Python object representing the root Aspect of the Aspect Model.
+The Aspect has references to all of its children (e.g., Properties and Operations).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation"><a class="anchor" href="#installation"></a>Installation</h3>
+<div class="paragraph">
+<p>If you want to work with Aspect Models in your Python solution you should install the Aspect Model Loader for Python and include it into your project.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-from-package-repository"><a class="anchor" href="#installation-from-package-repository"></a>Installation from package Repository</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="pypi"><a class="anchor" href="#pypi"></a>PyPI</h3>
+<div class="paragraph">
+<p>Currently not available</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="github-releases"><a class="anchor" href="#github-releases"></a>GitHub Releases</h3>
+<div class="paragraph">
+<p>To use GitHub release as dependency using Poetry, you need to add it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[tool.poetry.dependencies]
+sds-aspect-meta-model-python = { git = "https://github.com/OpenManufacturingPlatform/sds-sdk-py-aspect-model-loader.git", tag = "1.0.0" }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>for more information on depend on a library located in a git:
+<a href="https://python-poetry.org/docs/dependency-specification/#git-dependencies">git dependencies</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-with-local-package"><a class="anchor" href="#installation-with-local-package"></a>Installation with local package</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Python package is an archive with the file ending <code>.tar.gz</code>.
+If you are working with Poetry, you can easily import that package by adding the local reference to your <code>pyproject.toml</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[tool.poetry.dependencies]
+sds-aspect-meta-model-python = { path = "path/to/sds-aspect-meta-model-python-x.y.z.tar.gz" }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To make Poetry recognize your changes, run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry update</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loading-an-aspect-model"><a class="anchor" href="#loading-an-aspect-model"></a>Loading an Aspect Model</h3>
+<div class="paragraph">
+<p>Import the Aspect Model loader in your Python module</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from sds-aspect-meta-model-python import AspectLoader</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then create an instance of the AspectLoader and run the method <code>load_aspect_model()</code> from the <code>AspectLoader</code> with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from sds-aspect-meta-model-python import AspectLoader
+
+al = AspectLoader()
+aspect = al.load_aspect_model("path/to/turtle.ttl")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where the input argument can either be a <code>Path</code> object or a string representing a path.
+Both, relative paths and absolute paths are allowed.</p>
+</div>
+<div class="paragraph">
+<p>The return value of <code>load_aspect_model()</code> is an instance of the class <code>DefaultAspect</code> which is declared in the project.</p>
+</div>
+<div class="sect3">
+<h4 id="loading-an-aspect-model-from-multiple-files"><a class="anchor" href="#loading-an-aspect-model-from-multiple-files"></a>Loading an Aspect Model from multiple files</h4>
+<div class="paragraph">
+<p>If the Aspect Model is seperated into multiple <code>.ttl</code> files you can load the Aspect Model by calling the method <code>load_aspect_model_from_multiple_files</code> with a list of file paths.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from sds-aspect-meta-model-python import AspectLoader
+
+al = AspectLoader()
+aspect = al.load_aspect_model_from_multiple_files(
+    ["file1.ttl", "file2.ttl", "file3.ttl"]
+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It may happen that the multiple files contain multiple aspect definitions and not only one.
+In this case it is possible to pass the URN of the Aspect as a hint, so the Loader knows which Aspect to load.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">aspect_urn = "urn:bamm:io.openmanufacturing:test:1.0.0#myAspect"
+aspect = al.load_aspect_model_from_multiple_files(
+    ["file1.ttl", "file2.ttl", "file3.ttl"],
+    aspect_urn
+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The urn can either be a string or an instance of rdflib.URIRef.
+If no urn is passed and the <code>.ttl</code> files contain multiple Aspects, the Aspect Loader will load the first one that is found.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="traversing-the-aspect-model"><a class="anchor" href="#traversing-the-aspect-model"></a>Traversing the Aspect Model</h3>
+<div class="paragraph">
+<p>The attributes of an Aspect can be accessed with like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">name = aspect.name
+urn = aspect.urn
+preferred_names = aspect.preferred_names
+descriptions = aspect.descriptions
+meta_model_version = aspect.meta_model_version
+see = aspect.see
+
+properties = aspect.properties
+operations = aspect.operations
+events = aspect.events</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the attributes on Aspect Model objects are read-only.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bamm-aspect-meta-model-in-python"><a class="anchor" href="#bamm-aspect-meta-model-in-python"></a>BAMM Aspect Meta Model in Python</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="introduction-2"><a class="anchor" href="#introduction-2"></a>Introduction</h3>
+<div class="paragraph">
+<p>The BAMM Aspect Meta Model is defined by multiple Turtle files in the public
+<a href="https://github.com/OpenManufacturingPlatform/sds-bamm-aspect-meta-model">OMP GitHub Repository</a>.
+The project is developed in Java and the releases are published as JAR files.</p>
+</div>
+<div class="paragraph">
+<p>Python applications that work with Aspect Models and RDF may need the BAMM as a Python package.
+Therefore, the project <code>BAMM Aspect Meta Model</code> for Python was created.
+It is set up to extract the RDF Turtle files from the released BAMM artifact or its Github repository and pack them into a Python project.</p>
+</div>
+<div class="paragraph">
+<p>If you are not sure whether you need the BAMM Aspect Meta Model as a dependency you probably don&#8217;t need it because it does not contain any Python functionality.
+It is only intended for working with Aspect Models on RDF level.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-2"><a class="anchor" href="#installation-2"></a>Installation</h3>
+<div class="paragraph">
+<p>The package is released on PyPI under the name <code>sds-bamm-aspect-meta-model</code>.
+The package can be imported to a Python project by adding the package as a dependency.</p>
+</div>
+<div class="paragraph">
+<p>If you are using Poetry as a dependency manager you can execute the following commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry add bamm-aspect-meta-model
+poetry install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>pyproject.toml</code> file of your project should then include the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[tool.poetry.dependencies]
+bamm-aspect-meta-model = "^x.y.z"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the future it is planned to publish all packages of the Python SDK on public repositories.
+The authentication will then not be required anymore.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script src="../_/js/vendor/lunr.min.js"></script>
+<script src="../_/js/vendor/search.js" id="search-script" data-base-path=".." data-page-path="/python-sdk-guide/index.html"></script>
+<script async src="../_/../search-index.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

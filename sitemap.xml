@@ -16,6 +16,9 @@
 <loc>https://eclipse-esmf.github.io/sitemap-js-sdk-guide.xml</loc>
 </sitemap>
 <sitemap>
+<loc>https://eclipse-esmf.github.io/sitemap-python-sdk-guide.xml</loc>
+</sitemap>
+<sitemap>
 <loc>https://eclipse-esmf.github.io/sitemap-samm-specification.xml</loc>
 </sitemap>
 </sitemapindex>
