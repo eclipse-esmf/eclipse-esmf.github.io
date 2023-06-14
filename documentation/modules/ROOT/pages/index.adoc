@@ -75,7 +75,7 @@ Python ESMF SDK
 The Python SDK offers functionality which helps software developers to work with Aspect Models in
 their Python applications.
 [.link]
-https://openmanufacturingplatform.github.io/sds-documentation/python-sdk-guide/index.html[Python SDK]
+xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
 
 [.tile]
