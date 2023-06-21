@@ -100,7 +100,7 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../2.2.0/index.html">2.2.0</a>
+          <a href="../2.2.2/index.html">2.2.2</a>
         </li>
       </ul>
     </li>
@@ -167,7 +167,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="java-aspect-tooling.html">master</a>
-    <a class="version" href="../2.2.0/tooling-guide/java-aspect-tooling.html">2.2.0</a>
+    <a class="version" href="../2.2.2/tooling-guide/java-aspect-tooling.html">2.2.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Edit this Page</a></div>
@@ -1205,10 +1205,14 @@ respective data types are generated.</p>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.io.IOException;
+
+import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
+import org.junit.jupiter.api.Test;</code></pre>
 </div>
 </div>
 </details>
@@ -2170,8 +2174,8 @@ Specification Part 1 V3.0RC01</a>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#collection-characteristic" class="page"><strong>samm-c:Collection</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementCollection, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. However, properties referencing Collections are mapped to SubmodelElementCollections. Specific properties of collections are mapped. samm:Set is unique, samm:SortedSet is unique and sorted, samm:List is sorted.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementList, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. However, properties referencing Collections are mapped to SubmodelElementLists. Specific properties of collections are mapped. samm:Set is unique, samm:SortedSet is unique and sorted, samm:List is sorted.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#quantifiable-characteristic" class="page"><strong>samm-c:Quantifiable</strong></a></p></td>

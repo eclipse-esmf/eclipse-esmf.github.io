@@ -77,7 +77,7 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../esmf-developer-guide/2.2.0/index.html">2.2.0</a>
+          <a href="../../esmf-developer-guide/2.2.2/index.html">2.2.2</a>
         </li>
       </ul>
     </li>
@@ -265,11 +265,18 @@ esmf-aspect-meta-model-python = { path = "path/to/esmf-aspect-meta-model-python-
 <div class="sect2">
 <h3 id="loading-an-aspect-model"><a class="anchor" href="#loading-an-aspect-model"></a>Loading an Aspect Model</h3>
 <div class="paragraph">
+<p><strong>Note</strong>: The examples below will be using the
+<a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/blob/main/core/apps/ame/src/assets/aspect-models/org.eclipse.examples.movement/1.0.0/Movement.ttl">Movement.ttl</a>
+Aspect model.</p>
+</div>
+<div class="sect3">
+<h4 id="loading-an-aspect-model-from-one-ttl-file"><a class="anchor" href="#loading-an-aspect-model-from-one-ttl-file"></a>Loading an Aspect Model from one *.ttl file</h4>
+<div class="paragraph">
 <p>Import the Aspect Model loader in your Python module</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python import AspectLoader</code></pre>
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python.loader.aspect_loader import AspectLoader</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -277,32 +284,38 @@ esmf-aspect-meta-model-python = { path = "path/to/esmf-aspect-meta-model-python-
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python  import AspectLoader
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python.loader.aspect_loader import AspectLoader
 
-al = AspectLoader()
-aspect = al.load_aspect_model("path/to/turtle.ttl")</code></pre>
+loader = AspectLoader()
+aspect = loader.load_aspect_model(PATH_TO_TURTLE_FILE)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>where the input argument can either be a <code>Path</code> object or a string representing a path.
-Both, relative paths and absolute paths are allowed.</p>
+<p>where the input argument <code>PATH_TO_TURTLE_FILE</code> can either be a <code>Path</code> object or a string representing a path to the ttl file.</p>
+</div>
+<div class="paragraph">
+<p>Both, relative paths and absolute paths are allowed.</p>
 </div>
 <div class="paragraph">
 <p>The return value of <code>load_aspect_model()</code> is an instance of the class <code>DefaultAspect</code> which is declared in the project.</p>
 </div>
+</div>
 <div class="sect3">
 <h4 id="loading-an-aspect-model-from-multiple-files"><a class="anchor" href="#loading-an-aspect-model-from-multiple-files"></a>Loading an Aspect Model from multiple files</h4>
 <div class="paragraph">
-<p>If the Aspect Model is seperated into multiple <code>.ttl</code> files you can load the Aspect Model by calling the method <code>load_aspect_model_from_multiple_files</code> with a list of file paths.</p>
+<p>If the Aspect Model is separated into multiple <code>.ttl</code> files you can load the Aspect Model by calling the method <code>load_aspect_model_from_multiple_files</code>
+with a list of file paths.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python import AspectLoader
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python.loader.aspect_loader import AspectLoader
 
-al = AspectLoader()
-aspect = al.load_aspect_model_from_multiple_files(
-    ["file1.ttl", "file2.ttl", "file3.ttl"]
-)</code></pre>
+loader = AspectLoader()
+aspect = loader.load_aspect_model_from_multiple_files([
+    "file1.ttl",
+    "file2.ttl",
+    "file3.ttl",
+])</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -311,10 +324,13 @@ In this case it is possible to pass the URN of the Aspect as a hint, so the Load
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">aspect_urn = "urn:samm:org.eclipse.esmf.samm:test:1.0.0#myAspect"
-aspect = al.load_aspect_model_from_multiple_files(
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from esmf_aspect_meta_model_python.loader.aspect_loader import AspectLoader
+
+loader = AspectLoader()
+aspect_urn = "urn:samm:org.eclipse.esmf.samm:test:1.0.0#myAspect"
+aspect = loader.load_aspect_model_from_multiple_files(
     ["file1.ttl", "file2.ttl", "file3.ttl"],
-    aspect_urn
+    aspect_urn,
 )</code></pre>
 </div>
 </div>
@@ -343,8 +359,173 @@ operations = aspect.operations
 events = aspect.events</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="implementation-of-the-openapi-specification"><a class="anchor" href="#implementation-of-the-openapi-specification"></a>Implementation of the OpenAPI specification</h3>
+<div class="paragraph">
+<p>The Aspect Models Editor provides easy ways to generate an example for an interface via Export JSON functions.
+Based on its structure, you can prepare either a server to send data, or a client to receive via the API.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "isMoving": true,
+  "position": {
+    "altitude": 153,
+    "latitude": 9.1781,
+    "longitude": 48.80835
+  },
+  "speed": 0,
+  "speedLimitWarning": "green"
+}</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="a-simple-example-of-the-server"><a class="anchor" href="#a-simple-example-of-the-server"></a>A simple example of the server</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import random
+
+
+def generate_random_float():
+    """Generate a random float value."""
+    return round(random.random(), random.randint(0, 5))
+
+def send_movement_value():
+    """A simple snippet to generate Movement data."""
+    traffic_lights = ["green", "yellow", "red"]
+    movement = {
+        "isMoving": "true" if random.randint(0, 1) else "false",
+        "position": {
+            "altitude": generate_random_float(),
+            "latitude": generate_random_float(),
+            "longitude": generate_random_float()
+        },
+        "speed": generate_random_float(),
+        "speedLimitWarning": traffic_lights[random.randint(0, len(traffic_lights) - 1)]
+    }
+
+    return movement</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="consumer-example"><a class="anchor" href="#consumer-example"></a>Consumer Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import json
+import requests
+
+def get_movement(url, method="get"):
+    """Get a movement."""
+    response = requests.request(method, url)
+
+    if response.status_code != 200:
+        raise Exception(response.text)
+    else:
+        movement = json.loads(response.text)
+
+        return movement</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-of-the-class-for-movement-aspect-model"><a class="anchor" href="#example-of-the-class-for-movement-aspect-model"></a>Example of the class for Movement Aspect Model</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import json
+import requests
+
+from esmf_aspect_meta_model_python.loader.aspect_loader import AspectLoader
+
+loader = AspectLoader()
+
+class MovementAspect:
+    def __init__(self, path_to_turtle_file):
+        self._ttl_file_path = path_to_turtle_file
+        self._aspect = loader.load_aspect_model(self._ttl_file_path)
+        self._movement = None
+
+        self.name = None
+        self.urn = None
+        self.preferred_names = None
+        self.descriptions = None
+        self.meta_model_version = None
+        self.see = None
+        self.properties = None
+        self.operations = None
+        self.events = None
+
+
+        self._init_aspect()
+
+    def _init_aspect(self):
+        self.name = self._aspect.name
+        self.urn = self._aspect.urn
+        self.preferred_names = self._aspect.preferred_names
+        self.descriptions = self._aspect.descriptions
+        self.meta_model_version = self._aspect.meta_model_version
+        self.see = self._aspect.see
+
+        self.properties = self._aspect.properties
+        self.operations = self._aspect.operations
+        self.events = self._aspect.events
+
+        self._movement = self._get_current_value()
+
+    @staticmethod
+    def _get_current_value():
+        response = requests.request("get", "url_to_movement_API")
+
+        if response.status_code != 200:
+            raise Exception(response.text)
+        else:
+            movement = json.loads(response.text)
+
+            return movement
+
+    def refresh_data(self):
+        self._movement = self._get_current_value()
+
+    @property
+    def is_moving(self):
+        return self._movement["isMoving"]
+
+    @property
+    def position(self):
+        return self._movement["position"]
+
+    @property
+    def speed(self):
+        return self._movement["speed"]
+
+    @property
+    def speed_limit_warning(self):
+        return self._movement["speedLimitWarning"]
+
+
+# Class usage
+movement = MovementAspect("path_to_turtle_file")
+# Get a movement values
+print(movement.is_moving)
+print(movement.position)
+print(movement.speed)
+print(movement.speed_limit_warning)
+# Show static aspect data
+print(movement.name)
+print(movement.urn)
+print(movement.preferred_names)
+print(movement.descriptions)
+print(movement.meta_model_version)
+print(movement.see)
+print(movement.properties)
+print(movement.operations)
+print(movement.events)</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Note that the attributes on Aspect Model objects are read-only.</p>
+</div>
 </div>
 </div>
 </div>
