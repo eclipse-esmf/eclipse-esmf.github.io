@@ -9,7 +9,7 @@ content:
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model
        branches: HEAD
-       tags: ["v2.0.0"]
+       tags: ["v2.1.0", "v2.0.0"]
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
@@ -55,12 +55,12 @@ asciidoc:
     meta-model-version: 2.0.0
     meta-model-full-name: Semantic Aspect Meta Model
     meta-model-abbr: SAMM
-    samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#@
-    samm-c: urn:samm:org.eclipse.esmf.samm:characteristic:2.0.0#@
-    samm-e: urn:samm:org.eclipse.esmf.samm:entity:2.0.0#@
-    unit: urn:samm:org.eclipse.esmf.samm:unit:2.0.0#@
+    samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#@
+    samm-c: urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#@
+    samm-e: urn:samm:org.eclipse.esmf.samm:entity:2.1.0#@
+    unit: urn:samm:org.eclipse.esmf.samm:unit:2.1.0#@
     # The version of the latest SAMM maven artifact
-    aspect-meta-model-version: '2.0.0'
-    esmf-sdk-version: '2.2.1'
+    aspect-meta-model-version: '2.1.0'
+    esmf-sdk-version: '2.2.3'
     example-ns: com.mycompany@
 
