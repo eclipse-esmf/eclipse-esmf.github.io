@@ -151,6 +151,9 @@
           <a href="../../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../../esmf-developer-guide/2.2.3/index.html">2.2.3</a>
+        </li>
+        <li class="version">
           <a href="../../../esmf-developer-guide/2.2.2/index.html">2.2.2</a>
         </li>
       </ul>
@@ -241,7 +244,7 @@
 <td class="content">
 Version 1.0.0 of the meta model was released in the scope of the Open Manufacturing Platform (OMP)
 and was called <em>BAMM Aspect Meta Model (BAMM)</em>. Version 2.0.0 was also released as <em>BAMM</em>, then
-re-released as Eclise Semantic Modeling Framework (ESMF) Semantic Aspect Meta Model (SAMM) 2.0.0.
+re-released as Eclipse Semantic Modeling Framework (ESMF) Semantic Aspect Meta Model (SAMM) 2.0.0.
 </td>
 </tr>
 </table>
@@ -249,7 +252,111 @@ re-released as Eclise Semantic Modeling Framework (ESMF) Semantic Aspect Meta Mo
 </div>
 </div>
 <div class="sect1">
-<h2 id="samm-2.0.0"><a class="anchor" href="#samm-2.0.0"></a>1. Release 2.0.0</h2>
+<h2 id="samm-2.1.0"><a class="anchor" href="#samm-2.1.0"></a>Release 2.1.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SAMM 2.1.0 is the first feature release on the Eclipse Semantic Modeling Framework with improvements
+on validation and documentation as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="samm-2.1.0-validation"><a class="anchor" href="#samm-2.1.0-validation"></a>Validation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The validation rule "all Properties defined in an Entity as well as in the Entity or
+  AbstractEntity it is extending must have a unique name" has been removed. This means that it is
+  now valid that multiple Entities inheriting from a common parent may share names.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/161">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Validation of
+<a href="../characteristics.html#time-series-characteristic" class="page">samm-c:TimeSeries</a> was
+improved: The referenced type is checked by the validation now.
+<a href="https://github.com/eclipse-esmf/esmf-sdk/issues/194">Issue on Github</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.1.0-documentation"><a class="anchor" href="#samm-2.1.0-documentation"></a>Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The SAMM project now uses <a href="https://adr.github.io/madr/">MADR</a> as a template for
+<a href="https://github.com/joelparkerhenderson/architecture-decision-record">Architecture Decision Records
+(ADR)</a>. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/pull/241">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Architecture decision records were added to properly document important past design decisions.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/pull/243">Issue on Github</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0001-formalism-for-aspect-models.md">Formalism for the definition of Aspect Models: RDF with Turtle syntax</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0002-aspect-model-file-extension.md">Aspect
+Model File Extension: Use .ttl</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0003-meta-model-specification.md">Formal and informal Meta Model Specification: Specify via SHACL</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0004-urn-as-identifiers.md">Usage
+of URNs as identifiers for model elements</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0005-rdf-vocabulary.md">Aspect Meta Model RDF Vocabulary</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0006-unit-catalog.md">Unit Catalog: Use UNECE Recommendation 20</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Section on <a href="../modeling-guidelines.html#declaring-events" class="page">Declaring
+Events</a> was added; wrong edges in the <a href="../meta-model-elements.html" class="page">Meta
+Model Elements overview diagram</a> were fixed.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/104">Issue on Github</a>.</p>
+</li>
+<li>
+<p><a href="../modeling-guidelines.html#naming-rules" class="page">Naming convention</a> for Events
+was clarified: Events should use UpperCamelCase, like Aspects, Entities, Constraints and
+Characteristics. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/147">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Section on <a href="model-evolution.html" class="page">Model Evolution</a> was added in
+appendix. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/82">Issue on
+Github</a>.</p>
+</li>
+<li>
+<p>Reference to outdated terminology "leaf Characteristic" was fixed.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/pull/215">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Japanese sample text in <a href="../datatypes.html" class="page">Data Types</a> was fixed.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/172">Issue on Github</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.1.0-others"><a class="anchor" href="#samm-2.1.0-others"></a>Others</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The SAMM project was set up to be based on shared
+<a href="https://github.com/eclipse-esmf/esmf-parent">esmf-parent</a> Maven parent project.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/219">Issue on Github</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="samm-2.0.0"><a class="anchor" href="#samm-2.0.0"></a>Release 2.0.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the first release in the ESMF. Its structure and content is similar to that of the
@@ -274,7 +381,7 @@ Manufacturing Platform (OMP) Semantic Data Structuring (SDS) working group BAMM 
 </div>
 </div>
 <div class="sect1">
-<h2 id="bamm-2.0.0"><a class="anchor" href="#bamm-2.0.0"></a>2. Release 2.0.0 (Legacy: BAMM)</h2>
+<h2 id="bamm-2.0.0"><a class="anchor" href="#bamm-2.0.0"></a>Release 2.0.0 (Legacy: BAMM)</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -332,7 +439,7 @@ optional, i.e., they do not have to be added any more even when they are empty l
 </div>
 </div>
 <div class="sect1">
-<h2 id="bamm-1.0.0"><a class="anchor" href="#bamm-1.0.0"></a>3. Release 1.0.0</h2>
+<h2 id="bamm-1.0.0"><a class="anchor" href="#bamm-1.0.0"></a>Release 1.0.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the initial release for the Open Manufacturing Platform.</p>
