@@ -5,7 +5,7 @@
 Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
 
 For a general introduction of the ESMF, please see the
-https://projects.eclipse.org/projects/dt.esmf[ESMF project page]. For more details on the artifacts
+https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https://github.com/eclipse-esmf[github.com/eclipse-esmf] to find all code repositories.
 see below:
 
 '''
