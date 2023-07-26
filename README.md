@@ -15,3 +15,10 @@ To build the documentation locally, you will need to have Java installed. To bui
 ```
 
 After that, the documentation is available at `build/site/index.html`.
+
+## ESMF logo and color codes
+
+The ESMF logo, color codes, and a detailed description on the logo variants are provided at 
+[https://github.com/eclipse-esmf/esmf-antora-ui/tree/main/docs/logo-and-color-palette](https://github.com/eclipse-esmf/esmf-antora-ui/tree/main/docs/logo-and-color-palette).
+
+![ESMF](https://github.com/eclipse-esmf/esmf-antora-ui/blob/main/docs/logo-and-color-palette/images/esmf_logo_color_typography.png)
