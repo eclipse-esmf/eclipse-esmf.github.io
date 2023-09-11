@@ -35,7 +35,8 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 [.icon-cli]
 --
 [.title]
-SAMM Command Line Interface (SAMM-CLI)
+SAMM Command Line Interface +
+(SAMM CLI)
 
 [.text]
 A CLI to validate your Aspect Models against SAMM and transform them to documentation and code.
@@ -48,7 +49,7 @@ xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 [.icon-cli]
 --
 [.title]
-Java ESMF SDK
+Java SDK
 
 [.text]
 Helps to build software solutions based on Aspect Models. Implement your own customized aspect services using Java.
@@ -61,7 +62,7 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 [.icon-cli]
 --
 [.title]
-Python ESMF SDK
+Python SDK
 
 [.text]
 Enables software developers to work with Aspect Models in their Python applications.
@@ -74,10 +75,10 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 [.icon-cli]
 --
 [.title]
-JavaScript ESMF SDK
+JavaScript SDK
 
 [.text]
-Contains two parts – both are aimed at creating a UI for your solution, based on Aspect Models.
+Contains several parts – all aimed at creating a graphical user interface (GUI) for your solution, based on Aspect Models.
 
 [.link]
 xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
