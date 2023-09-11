@@ -4,9 +4,6 @@
 
 Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
 
-For a general introduction of the ESMF, please see the
-https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https://github.com/eclipse-esmf[github.com/eclipse-esmf] to find all releases and code on Github.
-
 '''
 
 [.tile]
@@ -16,11 +13,25 @@ https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https:
 Semantic Aspect Meta Model (SAMM)
 
 [.text]
-Aspect models defined using the SAMM describe domain semantics.
+Aspect Models defined using the SAMM describe domain semantics.
 Find out how they are defined.
 
 [.link]
 xref:samm-specification:ROOT:index.adoc[Specification]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+Aspect Model Editor
+
+[.text]
+The Aspect Model Editor is a visual editor for Aspect Models, which automatically validates the
+models against the SAMM Aspect Meta Model version.
+
+[.link]
+xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 --
 
 [.tile]
@@ -35,20 +46,6 @@ and code.
 
 [.link]
 xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
---
-
-[.tile]
-[.icon-cli]
---
-[.title]
-Aspect Model Editor
-
-[.text]
-The Aspect Model Editor is a visual editor for Aspect Models, which automatically validates the
-models against the BAMM Aspect Meta Model version.
-
-[.link]
-xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 --
 
 [.tile]
@@ -84,7 +81,7 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 JS SDK Aspect Model Loader
 
 [.text]
-The JS SDK Aspect Model Loader offers functionality which helps software developers to work with Aspect Models 
+The JS SDK Aspect Model Loader offers functionality which helps software developers to work with Aspect Models
 in their Typescript applications.
 [.link]
 xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader]
@@ -97,8 +94,11 @@ xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader]
 JS SDK schematics
 
 [.text]
-The JS SDK schematics offers functionality which helps software developers to create Angular components 
+The JS SDK schematics offers functionality which helps software developers to create Angular components
 and generate code based on RDF aspect module object.
 [.link]
 xref:js-sdk-guide:ROOT:index.adoc[JS SDK schematics]
 --
+
+For a general introduction of the ESMF, please see the
+https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https://github.com/eclipse-esmf[github.com/eclipse-esmf] to find all releases and code on Github.
