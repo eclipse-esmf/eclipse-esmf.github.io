@@ -85,5 +85,4 @@ xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
 xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
 --
 
-For a general introduction of the ESMF, please see the
-https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https://github.com/eclipse-esmf[github.com/eclipse-esmf] to find all releases and code on Github.
+For a general introduction of the Eclipse Semantic Modeling Framework, please refer to the https://projects.eclipse.org/projects/dt.esmf[ESMF project page at Eclipse]. Also, find all ESMF software releases and code on GitHub at https://github.com/eclipse-esmf[github.com/eclipse-esmf].
