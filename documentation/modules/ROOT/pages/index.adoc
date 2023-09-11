@@ -1,7 +1,6 @@
 = Eclipse Semantic Modeling Framework
 :page-layout: tiles
 
-
 Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
 
 '''
@@ -13,8 +12,7 @@ Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling F
 Semantic Aspect Meta Model (SAMM)
 
 [.text]
-Aspect Models defined using the SAMM describe domain semantics.
-Find out how they are defined.
+The specification defining how to design Aspect Models. Use Aspect Models to describe domain semantics for your assets.
 
 [.link]
 xref:samm-specification:ROOT:index.adoc[Specification]
@@ -27,8 +25,7 @@ xref:samm-specification:ROOT:index.adoc[Specification]
 Aspect Model Editor
 
 [.text]
-The Aspect Model Editor is a visual editor for Aspect Models, which automatically validates the
-models against the SAMM Aspect Meta Model version.
+A visual editor for your Aspect Models. Validates your models automatically against the SAMM specification.
 
 [.link]
 xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
@@ -41,8 +38,7 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 SAMM Command Line Interface (SAMM-CLI)
 
 [.text]
-Command line interface to work with Aspect Models: Validate and transform models into documentation
-and code.
+A CLI to validate your Aspect Models against SAMM and transform them to documentation and code.
 
 [.link]
 xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
@@ -55,8 +51,8 @@ xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 Java ESMF SDK
 
 [.text]
-The ESMF SDK helps you to build solutions, model your Aspect data, implement your own customized
-Aspect or want to integrate existing assets and systems within the Java programming language.
+Helps to build software solutions based on Aspect Models. Implement your own customized aspect services using Java.
+
 [.link]
 xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 --
@@ -68,8 +64,8 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 Python ESMF SDK
 
 [.text]
-The Python SDK offers functionality which helps software developers to work with Aspect Models in
-their Python applications.
+Enables software developers to work with Aspect Models in their Python applications.
+
 [.link]
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
@@ -78,26 +74,14 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 [.icon-cli]
 --
 [.title]
-JS SDK Aspect Model Loader
+JavaScript ESMF SDK
 
 [.text]
-The JS SDK Aspect Model Loader offers functionality which helps software developers to work with Aspect Models
-in their Typescript applications.
-[.link]
-xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader]
---
+Contains two parts – both are aimed at creating a UI for your solution, based on Aspect Models.
 
-[.tile]
-[.icon-cli]
---
-[.title]
-JS SDK schematics
-
-[.text]
-The JS SDK schematics offers functionality which helps software developers to create Angular components
-and generate code based on RDF aspect module object.
 [.link]
-xref:js-sdk-guide:ROOT:index.adoc[JS SDK schematics]
+xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
+xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
 --
 
 For a general introduction of the ESMF, please see the
