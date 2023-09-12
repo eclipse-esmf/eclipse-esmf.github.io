@@ -8,6 +8,14 @@
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
   </head>
   <body class="article">
 <header class="header">
@@ -15,6 +23,26 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="https://eclipse-esmf.github.io">
         <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
           <span class="docu-title">
             Eclipse Semantic Modeling Framework (ESMF)
           </span>
@@ -105,6 +133,12 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version">
+          <a href="../../2.3.2/index.html">2.3.2</a>
+        </li>
+        <li class="version">
+          <a href="../../2.3.1/index.html">2.3.1</a>
+        </li>
         <li class="version is-current">
           <a href="../index.html">2.2.3</a>
         </li>
@@ -182,6 +216,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">2.2.3</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/java-aspect-tooling.html">master</a>
+    <a class="version" href="../../2.3.2/tooling-guide/java-aspect-tooling.html">2.3.2</a>
+    <a class="version" href="../../2.3.1/tooling-guide/java-aspect-tooling.html">2.3.1</a>
     <a class="version is-current" href="java-aspect-tooling.html">2.2.3</a>
     <a class="version" href="../../2.2.2/tooling-guide/java-aspect-tooling.html">2.2.2</a>
   </div>
@@ -215,7 +251,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -228,7 +264,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -240,7 +276,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -398,7 +434,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-urn&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -411,7 +447,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -423,7 +459,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -664,7 +700,7 @@ final Try&lt;VersionedModel&gt; tryModel = new AspectModelResolver().resolveAspe
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-resolver&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -677,7 +713,7 @@ final Try&lt;VersionedModel&gt; tryModel = new AspectModelResolver().resolveAspe
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-resolver:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-resolver:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -689,7 +725,7 @@ final Try&lt;VersionedModel&gt; tryModel = new AspectModelResolver().resolveAspe
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-resolver:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-resolver:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -751,7 +787,7 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -764,7 +800,7 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -776,7 +812,7 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -856,7 +892,7 @@ final String result = stringWriter.toString();</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-serializer&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -869,7 +905,7 @@ final String result = stringWriter.toString();</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -881,7 +917,7 @@ final String result = stringWriter.toString();</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -984,7 +1020,7 @@ Violations in a type-safe way.</td>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-validator&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -997,7 +1033,7 @@ Violations in a type-safe way.</td>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1009,7 +1045,7 @@ Violations in a type-safe way.</td>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -1041,7 +1077,7 @@ following dependency:</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-document-generators&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1054,7 +1090,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1066,7 +1102,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -1469,7 +1505,7 @@ the information itself (<em>meta</em>).</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-java-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1482,7 +1518,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1494,7 +1530,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -1749,7 +1785,7 @@ generator.generate( qualifiedName -&gt; {
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-static-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1762,7 +1798,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1774,7 +1810,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -1898,7 +1934,7 @@ final VersionedModel migratedModel = tryMigratedModel.getOrElseThrow( () -&gt;
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-meta-model-version-migrator&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1911,7 +1947,7 @@ final VersionedModel migratedModel = tryMigratedModel.getOrElseThrow( () -&gt;
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-version-migrator:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-version-migrator:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1923,7 +1959,7 @@ final VersionedModel migratedModel = tryMigratedModel.getOrElseThrow( () -&gt;
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-version-migrator:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-version-migrator:2.3.2")</code></pre>
 </div>
 </div>
 </div>
@@ -2301,7 +2337,7 @@ generator.generateAasXmlFile( aspect, this::outputStreamForName );</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-aas-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2314,7 +2350,7 @@ generator.generateAasXmlFile( aspect, this::outputStreamForName );</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.2.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.3.2'</code></pre>
 </div>
 </div>
 </div>
@@ -2326,7 +2362,7 @@ generator.generateAasXmlFile( aspect, this::outputStreamForName );</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.2.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.3.2")</code></pre>
 </div>
 </div>
 </div>

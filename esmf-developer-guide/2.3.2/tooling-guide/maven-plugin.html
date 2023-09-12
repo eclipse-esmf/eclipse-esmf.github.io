@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Maven Plugin :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/maven-plugin.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">ESMF SDK Developer Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aspect-tooling.html">Java APIs for Aspect Models</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">ESMF SDK Developer Guide</span>
+    <span class="version">2.3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.5.0/introduction.html">4.5.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.4.1/introduction.html">4.4.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.4.0/introduction.html">4.4.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.3.0/introduction.html">4.3.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/4.2.1/introduction.html">4.2.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.3.2</a>
+        </li>
+        <li class="version">
+          <a href="../../2.3.1/index.html">2.3.1</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.3/index.html">2.2.3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.2/index.html">2.2.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.1.0/index.html">2.1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">ESMF SDK Developer Guide</a></li>
+    <li><a href="maven-plugin.html">Maven Plugin</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.3.2</button>
+  <div class="version-menu">
+    <a class="version" href="../../tooling-guide/maven-plugin.html">master</a>
+    <a class="version is-current" href="maven-plugin.html">2.3.2</a>
+    <a class="version" href="../../2.3.1/tooling-guide/maven-plugin.html">2.3.1</a>
+    <a class="version" href="../../2.2.3/tooling-guide/maven-plugin.html">2.2.3</a>
+    <a class="version" href="../../2.2.2/tooling-guide/maven-plugin.html">2.2.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.3.2/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Maven Plugin</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>esmf-aspect-model-maven-plugin</code> wraps the functionality provided by the ESMF SDK. Each piece of
+supported functionality is implemented as a goal. As such, developers can easily work with Aspect
+Models in the build of their maven projects to, for example, generate code from an Aspect Model.</p>
+</div>
+<div class="paragraph">
+<p>To include the plugin, use the following dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
+<code>FileSystemStrategy</code> to resolve Aspect Models. See
+<a href="java-aspect-tooling.html#understanding-model-resolution" class="page">Understanding Model Resolution</a> for
+more information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="validating-an-aspect-model"><a class="anchor" href="#validating-an-aspect-model"></a>Validating an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>validate</code> goal validates whether a given Aspect Model adheres to the SAMM. The default life cycle phase for the goal is <code>validate</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;validate-aspect-model&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;validate&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Print detailed validation messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-java-code-for-an-aspect-model"><a class="anchor" href="#generate-java-code-for-an-aspect-model"></a>Generate Java Code for an Aspect Model</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="generate-domain-classes"><a class="anchor" href="#generate-domain-classes"></a>Generate Domain Classes</h3>
+<div class="paragraph">
+<p>The <code>generateJavaClasses</code> goal generates Java domain classes (POJOs) for a given Aspect Model. The
+default life cycle phase for the goal is <code>generate-sources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-java-classes&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateJavaClasses&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated Java files will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>packageName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The package name for the generated Java files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of the given Aspect Model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>templateFile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path and name of the velocity template file containing the macro library. See <a href="java-aspect-tooling.html#providing-custom-macros-for-code-generation" class="page">Providing Custom Macros for Code Generation</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>executeLibraryMacros</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute the macros provided in the velocity macro library.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>disableJacksonAnnotations</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leads to generated Java code that does not contain <a href="https://github.com/FasterXML/jackson">Jackson</a> annotations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="generate-static-meta-classes"><a class="anchor" href="#generate-static-meta-classes"></a>Generate Static Meta Classes</h3>
+<div class="paragraph">
+<p>The <code>generateStaticJavaClasses</code> goal generates static meta classes for a given Aspect Model. The
+default life cycle phase for the goal is <code>generate-sources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-static-java-classes&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateStaticJavaClasses&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated Java files will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>packageName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The package name for the generated Java files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of the given Aspect Model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>templateFile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path and name of the velocity template file containing the macro library. See <a href="java-aspect-tooling.html#providing-custom-macros-for-code-generation" class="page">Providing Custom Macros for Code Generation</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>executeLibraryMacros</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute the macros provided in the velocity macro library.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-a-json-schema-for-an-aspect-model"><a class="anchor" href="#generate-a-json-schema-for-an-aspect-model"></a>Generate a JSON Schema for an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>generateJsonSchema</code> goal generates a JSON Schema for a given Aspect Model. The default life
+cycle phase for the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-json-schema&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateJsonSchema&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated JSON Schema will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>language</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The language from the model for which a JSON Schema should be generated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-an-openapi-specification-from-an-aspect-model"><a class="anchor" href="#generate-an-openapi-specification-from-an-aspect-model"></a>Generate an OpenAPI Specification from an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>generateOpenApiSpec</code> goal generates an OpenAPI Specification for a given Aspect Model. The
+default life cycle phase for the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-openapi-spec&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateOpenApiSpec&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;aspectApiBaseUrl&gt;http://example.com&lt;/aspectApiBaseUrl&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputFormat&gt;yaml&lt;/outputFormat&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated OpenAPI Specification will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectApiBaseUrl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The base URL for the Aspect API OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectParameterFile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to a file including the schema description for the resource. For JSON the description has to be in json, for YAML it has to be in YAML.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>useSemanticApiVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the complete semantic version of the Aspect Model as the version of the Aspect API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectResourcePath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The resource-path` for the Aspect API endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeQueryApi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the path for the Query Aspect API Endpoint in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>excludePaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude paging information for the Aspect API Endpoint in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectCursorBasedPaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the used paging strategy as cursor-based paging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectOffsetBasedPaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the used paging strategy as offset-based paging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectTimeBasedPaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the used paging strategy as time-based paging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputFormat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format of the resulting OpenAPI Specification. May be either JSON or YAML.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>language</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The language from the model for which an OpenAPI specification should be generated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-documentation-for-an-aspect-model"><a class="anchor" href="#generate-documentation-for-an-aspect-model"></a>Generate Documentation for an Aspect Model</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="generating-html-documentation"><a class="anchor" href="#generating-html-documentation"></a>Generating HTML Documentation</h3>
+<div class="paragraph">
+<p>The <code>generateDocumentation</code> goal generates HTML reference documentation for a given Aspect Model.
+The default life cycle phase for the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-html-doc&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateDocumentation&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated HTML document will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>htmlCustomCSSFilePath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Path to a CSS file with custom styles to be included in the generated HTML documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="generating-svg-or-png-diagrams"><a class="anchor" href="#generating-svg-or-png-diagrams"></a>Generating SVG or PNG Diagrams</h3>
+<div class="paragraph">
+<p>The <code>generateDiagram</code> goal generates an automatically layouted diagram for a given Aspect Model in
+SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default life cycle phase for the goal is
+<code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-aspect-model-diagram&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateDiagram&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;targetFormats&gt;
+              &lt;targetFormat&gt;png&lt;/targetFormat&gt;
+           &lt;/targetFormats&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated diagrams will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>targetFormats</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list formats in which the diagram(s) will be created. A diagram will be generated for each specified format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="generating-sample-json-payload"><a class="anchor" href="#generating-sample-json-payload"></a>Generating Sample JSON Payload</h3>
+<div class="paragraph">
+<p>The <code>generateJsonPayload</code> goal generates a valid sample JSON payload for a given Aspect Model as it
+could be returned by an Aspect that implements that Aspect Model. The default life cycle phase for
+the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-json-payload&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateJsonPayload&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated JSON payload will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aspect-model-migration"><a class="anchor" href="#aspect-model-migration"></a>Aspect Model Migration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>migrate</code> goal migrates the given Aspect Model to the latest version of the meta model. The
+default life cycle phase for the goal is <code>initialize</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;migrate-aspect-model&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;migrate&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the updated Aspect Model will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pretty-print"><a class="anchor" href="#pretty-print"></a>Pretty Print</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>prettyPrint</code> goal formats the given Aspect Model. The formatted file is written to the location
+specified in the <code>outputDirectory</code> property. The default life cycle phase for the goal is
+<code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;pretty-print-aspect-model&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;prettyPrint&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory containing the pretty printed Aspect Model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/esmf-developer-guide/2.3.2/tooling-guide/maven-plugin.html"></script>
+<script async src="../../../_/../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

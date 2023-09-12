@@ -8,6 +8,14 @@
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
   </head>
   <body class="article">
 <header class="header">
@@ -15,6 +23,26 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="https://eclipse-esmf.github.io">
         <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
           <span class="docu-title">
             Eclipse Semantic Modeling Framework (ESMF)
           </span>
@@ -105,6 +133,12 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version">
+          <a href="../../2.3.2/index.html">2.3.2</a>
+        </li>
+        <li class="version">
+          <a href="../../2.3.1/index.html">2.3.1</a>
+        </li>
         <li class="version is-current">
           <a href="../index.html">2.2.3</a>
         </li>
@@ -182,6 +216,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">2.2.3</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/samm-cli.html">master</a>
+    <a class="version" href="../../2.3.2/tooling-guide/samm-cli.html">2.3.2</a>
+    <a class="version" href="../../2.3.1/tooling-guide/samm-cli.html">2.3.1</a>
     <a class="version is-current" href="samm-cli.html">2.2.3</a>
     <a class="version" href="../../2.2.2/tooling-guide/samm-cli.html">2.2.2</a>
   </div>
@@ -206,7 +242,7 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Download latest version: <span class="icon"><i class="fa fa-download"></i></span> <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.2.3/samm-cli-2.2.3.jar">samm-cli-2.2.3.jar</a>
+Download latest version: <span class="icon"><i class="fa fa-download"></i></span> <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.3.2/samm-cli-2.3.2.jar">samm-cli-2.3.2.jar</a>
 </td>
 </tr>
 </table>
@@ -229,7 +265,7 @@ For technical reasons, Java 17 or newer is required to successfully run the tool
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.2.3.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.2.3.jar help</code>).
+<p>For the executable jar, call <code>java -jar samm-cli-2.3.2.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.3.2.jar help</code>).
 In the following sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -245,7 +281,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.2.3.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.3.2.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -579,7 +615,7 @@ and then the <code>--parameter-file</code> defines the parameter resourceId in y
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.2.3.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.3.2.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
