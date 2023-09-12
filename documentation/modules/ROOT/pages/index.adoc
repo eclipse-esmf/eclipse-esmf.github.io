@@ -65,7 +65,7 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 Python SDK
 
 [.text]
-Enables software developers to work with Aspect Models in their Python applications.
+Create aspect APIs in Python for software solutions and for analytics use cases.
 
 [.link]
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
