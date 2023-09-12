@@ -78,7 +78,7 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 JavaScript SDK
 
 [.text]
-Contains several parts – all aimed at creating a graphical user interface (GUI) for your solution, based on Aspect Models.
+Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data & model.
 
 [.link]
 xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
