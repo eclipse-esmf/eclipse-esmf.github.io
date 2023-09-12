@@ -39,7 +39,7 @@ SAMM Command Line Interface +
 (SAMM CLI)
 
 [.text]
-A CLI to validate your Aspect Models against SAMM and transform them to documentation and code.
+Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
 
 [.link]
 xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
