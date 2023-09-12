@@ -12,7 +12,7 @@ Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling F
 Semantic Aspect Meta Model (SAMM)
 
 [.text]
-The specification defining how to design Aspect Models. Use Aspect Models to describe domain semantics for your assets.
+Understand SAMM to describe domain semantics for your assets in Aspect Models. SAMM is expressive and fosters reusability.
 
 [.link]
 xref:samm-specification:ROOT:index.adoc[Specification]
