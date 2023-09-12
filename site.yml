@@ -13,7 +13,7 @@ content:
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
-       tags: ["v2.2.3","v2.2.2"]
+       tags: ["v2.3.2","v2.3.1","v2.2.3","v2.2.2"]
        start_path: documentation/developer-guide
      - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: HEAD
@@ -33,7 +33,7 @@ content:
        start_path: documentation/python-sdk-guide
 ui:
   bundle:
-    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.2.0/esmf-antora-ui-bundle-1.2.0.zip
+    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.3.0/esmf-antora-ui-bundle-1.3.0.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
@@ -52,7 +52,7 @@ asciidoc:
     ok: 'icon:check-circle[role="green",size="2x"]'
     nok: 'icon:times-circle[role="red",size="2x"]'
     # The latest specified SAMM version
-    meta-model-version: 2.0.0
+    meta-model-version: 2.1.0
     meta-model-full-name: Semantic Aspect Meta Model
     meta-model-abbr: SAMM
     samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#@
@@ -61,6 +61,6 @@ asciidoc:
     unit: urn:samm:org.eclipse.esmf.samm:unit:2.1.0#@
     # The version of the latest SAMM maven artifact
     aspect-meta-model-version: '2.1.0'
-    esmf-sdk-version: '2.2.3'
+    esmf-sdk-version: '2.3.2'
     example-ns: com.mycompany@
 
