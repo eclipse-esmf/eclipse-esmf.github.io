@@ -52,7 +52,7 @@ xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 Java SDK
 
 [.text]
-Helps to build software solutions based on Aspect Models. Implement your own customized aspect services using Java.
+Create aspect APIs for software solutions. The SDK supports by understanding Aspect Models and generating Java code & artifacts.
 
 [.link]
 xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
