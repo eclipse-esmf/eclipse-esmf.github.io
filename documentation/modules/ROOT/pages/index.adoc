@@ -1,11 +1,7 @@
 = Eclipse Semantic Modeling Framework
 :page-layout: tiles
 
-
 Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
-
-For a general introduction of the ESMF, please see the
-https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https://github.com/eclipse-esmf[github.com/eclipse-esmf] to find all releases and code on Github.
 
 '''
 
@@ -16,8 +12,7 @@ https://projects.eclipse.org/projects/dt.esmf[ESMF project page] or go to https:
 Semantic Aspect Meta Model (SAMM)
 
 [.text]
-Aspect models defined using the SAMM describe domain semantics.
-Find out how they are defined.
+Understand SAMM to describe domain semantics for your assets in Aspect Models. SAMM is expressive and fosters reusability.
 
 [.link]
 xref:samm-specification:ROOT:index.adoc[Specification]
@@ -27,25 +22,10 @@ xref:samm-specification:ROOT:index.adoc[Specification]
 [.icon-cli]
 --
 [.title]
-SAMM Command Line Interface (SAMM-CLI)
-
-[.text]
-Command line interface to work with Aspect Models: Validate and transform models into documentation
-and code.
-
-[.link]
-xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
---
-
-[.tile]
-[.icon-cli]
---
-[.title]
 Aspect Model Editor
 
 [.text]
-The Aspect Model Editor is a visual editor for Aspect Models, which automatically validates the
-models against the BAMM Aspect Meta Model version.
+Create your Aspect Models graphically and learn SAMM on the go. Generate downstream artifacts, such as OpenAPI specs.
 
 [.link]
 xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
@@ -55,11 +35,25 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 [.icon-cli]
 --
 [.title]
-Java ESMF SDK
+SAMM Command Line Interface +
+(SAMM CLI)
 
 [.text]
-The ESMF SDK helps you to build solutions, model your Aspect data, implement your own customized
-Aspect or want to integrate existing assets and systems within the Java programming language.
+Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
+
+[.link]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+Java SDK
+
+[.text]
+Load and validate Aspect Models programmatically and generate code to create aspect-based APIs.
+
 [.link]
 xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 --
@@ -68,11 +62,11 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 [.icon-cli]
 --
 [.title]
-Python ESMF SDK
+Python SDK
 
 [.text]
-The Python SDK offers functionality which helps software developers to work with Aspect Models in
-their Python applications.
+Load Aspect Models programmatically and generate code for software solutions or analytics use cases.
+
 [.link]
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
@@ -81,24 +75,19 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 [.icon-cli]
 --
 [.title]
-JS SDK Aspect Model Loader
+JavaScript SDK
 
 [.text]
-The JS SDK Aspect Model Loader offers functionality which helps software developers to work with Aspect Models 
-in their Typescript applications.
+Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data and model.
+
 [.link]
-xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader]
+xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
+xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
 --
 
-[.tile]
-[.icon-cli]
---
-[.title]
-JS SDK schematics
+Refer to the https://projects.eclipse.org/projects/dt.esmf[ESMF project page,window=_blank] at the Eclipse Foundation for a general introduction to the Eclipse Semantic Modeling Framework project. +
+For software releases and code, head over to GitHub: https://github.com/eclipse-esmf[github.com/eclipse-esmf,window=_blank]. And for any questions or exchange, https://chat.eclipse.org/#/room/#eclipse-semantic-modeling-framework:matrix.eclipse.org[join the ESMF chat,window=_blank].
 
-[.text]
-The JS SDK schematics offers functionality which helps software developers to create Angular components 
-and generate code based on RDF aspect module object.
-[.link]
-xref:js-sdk-guide:ROOT:index.adoc[JS SDK schematics]
---
+&nbsp; +
+&nbsp; +
+&nbsp;
