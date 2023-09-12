@@ -52,7 +52,7 @@ asciidoc:
     ok: 'icon:check-circle[role="green",size="2x"]'
     nok: 'icon:times-circle[role="red",size="2x"]'
     # The latest specified SAMM version
-    meta-model-version: 2.0.0
+    meta-model-version: 2.1.0
     meta-model-full-name: Semantic Aspect Meta Model
     meta-model-abbr: SAMM
     samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#@
