@@ -52,7 +52,7 @@ xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 Java SDK
 
 [.text]
-Create aspect APIs for software solutions. The SDK supports by understanding Aspect Models and generating Java code & artifacts.
+Load and validate Aspect Models programmatically and generate code to create aspect-based APIs.
 
 [.link]
 xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
@@ -65,7 +65,7 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 Python SDK
 
 [.text]
-Create aspect APIs in Python for software solutions and for analytics use cases.
+Load Aspect Models programmatically and generate code for software solutions or analytics use cases.
 
 [.link]
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
@@ -78,7 +78,7 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 JavaScript SDK
 
 [.text]
-Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data & model.
+Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data and model.
 
 [.link]
 xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
