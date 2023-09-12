@@ -25,7 +25,7 @@ xref:samm-specification:ROOT:index.adoc[Specification]
 Aspect Model Editor
 
 [.text]
-A visual editor for your Aspect Models. Validates your models automatically against the SAMM specification.
+Create your Aspect Models graphically and learn SAMM on the go. Generate downstream artifacts, such as OpenAPI specs.
 
 [.link]
 xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
