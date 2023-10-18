@@ -111,7 +111,7 @@
     <a class="nav-link" href="../modeling/modeling.html">Modeling</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/start-new-models.html">Start a new model</a>
+    <a class="nav-link" href="../modeling/start-new-models.html">Create a new model</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -139,7 +139,7 @@
     <a class="nav-link" href="../modeling/constraint.html">Constraint</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../modeling/trait.html">Traits</a>
+    <a class="nav-link" href="../modeling/trait.html">Trait</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../modeling/operation.html">Operation</a>
@@ -148,6 +148,9 @@
     <a class="nav-link" href="../modeling/event.html">Event</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/shared-models.html">Shared Models</a>
@@ -164,6 +167,9 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and external references</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/workspace.html">Workspace directory</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/import-namespaces.html">Import namespaces</a>
   </li>
@@ -223,19 +229,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../4.5.0/introduction.html">4.5.0</a>
+          <a href="../4.6.0/introduction.html">4.6.0</a>
         </li>
         <li class="version">
-          <a href="../4.4.1/introduction.html">4.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../4.4.0/introduction.html">4.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../4.3.0/introduction.html">4.3.0</a>
-        </li>
-        <li class="version">
-          <a href="../4.2.1/introduction.html">4.2.1</a>
+          <a href="../4.5.3/introduction.html">4.5.3</a>
         </li>
       </ul>
     </li>
@@ -274,10 +271,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-guide/2.5.1/index.html">2.5.1</a>
         </li>
       </ul>
     </li>
@@ -337,11 +331,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="ui-overview.html">master</a>
-    <a class="version" href="../4.5.0/getting-started/ui-overview.html">4.5.0</a>
-    <a class="version is-missing" href="../4.4.1/introduction.html">4.4.1</a>
-    <a class="version is-missing" href="../4.4.0/introduction.html">4.4.0</a>
-    <a class="version is-missing" href="../4.3.0/introduction.html">4.3.0</a>
-    <a class="version is-missing" href="../4.2.1/introduction.html">4.2.1</a>
+    <a class="version" href="../4.6.0/getting-started/ui-overview.html">4.6.0</a>
+    <a class="version" href="../4.5.3/getting-started/ui-overview.html">4.5.3</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/getting-started/ui-overview.adoc">Edit this Page</a></div>
@@ -371,28 +362,28 @@
 <p><a href="#toolbar">Toolbar</a></p>
 </li>
 <li>
-<p><a href="#settings">Settings</a></p>
-</li>
-<li>
-<p><a href="#notifications">Notifications</a></p>
-</li>
-<li>
-<p><a href="#workspace-sidebar">Workspace sidebar</a></p>
-</li>
-<li>
 <p><a href="#map">Map</a></p>
-</li>
-<li>
-<p><a href="#edit-dialog">Edit dialog</a></p>
-</li>
-<li>
-<p><a href="#add-icon">Add icon</a></p>
 </li>
 <li>
 <p><a href="#navigation">Navigation</a></p>
 </li>
 <li>
 <p><a href="#search">Search</a></p>
+</li>
+<li>
+<p><a href="#settings">Settings</a></p>
+</li>
+<li>
+<p><a href="#notifications">Notifications</a></p>
+</li>
+<li>
+<p><a href="#help">Help</a></p>
+</li>
+<li>
+<p><a href="#workspace-sidebar">Workspace sidebar</a></p>
+</li>
+<li>
+<p><a href="#edit-dialog">Edit dialog</a></p>
 </li>
 </ol>
 </div>
@@ -511,28 +502,6 @@ Shows the validation results for your Aspect Model. Further, you can find there 
 </div>
 </div>
 <div class="sect1">
-<h2 id="workspace-sidebar"><a class="anchor" href="#workspace-sidebar"></a>Workspace sidebar</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Workspace sidebar &ndash; see screenshot below &ndash; allows you to access namespaces (1) and to drag and drop elements to the graph area canvas (2).</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/ame-ui-overview-workspace-numbers.png" alt="ame ui overview workspace numbers" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>Expand the Workspace sidebar to view the description of each element.</p>
-</div>
-<div class="paragraph">
-<p>To add an element to your model drag and drop it on the graph area canvas, edit its details, and connect it with the rest of the graph.</p>
-</div>
-<div class="paragraph">
-<p>For more information, see <a href="edit-models.html" class="page">Edit models</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="map"><a class="anchor" href="#map"></a>Map</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -543,37 +512,6 @@ Shows the validation results for your Aspect Model. Further, you can find there 
 </div>
 <div class="paragraph">
 <p>For more information, see <a href="navigate-models.html" class="page">Navigate models</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="edit-dialog"><a class="anchor" href="#edit-dialog"></a>Edit dialog</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Edit the attributes of a selected element of your Aspect Model with the Edit dialog.</p>
-</div>
-<div class="paragraph">
-<p>To access the details of an element in the Edit dialog, either double-click the element or select the element and click the Edit icon <span class="image"><img src="../_images/toolbar-icons/edit.png" alt="Edit icon"></span> on the <a href="#toolbar">toolbar</a>.</p>
-</div>
-<div class="paragraph">
-<p>For more information, see <a href="../modeling/edit-elements.html" class="page">Edit elements</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="add-icon"><a class="anchor" href="#add-icon"></a>Add icon</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Add the next logical element with the Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span>.</p>
-</div>
-<div class="paragraph">
-<p>For example, the Add icon at the top of a Characteristic element creates a Trait connected to:
-* The parent Property
-* An existing Characteristic
-* A new Constraint</p>
-</div>
-<div class="paragraph">
-<p>For more information, see <a href="edit-models.html#adding-elements" class="page">Use the Add icon</a>.</p>
 </div>
 </div>
 </div>
@@ -599,17 +537,61 @@ Shows the validation results for your Aspect Model. Further, you can find there 
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/zoom-fit.png" alt="Zoom icons" width="100%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/zoom-fit.png" alt="zoom fit"></span></p>
 </div>
 <div class="paragraph">
 <p>For more information, see <a href="navigate-models.html" class="page">Navigate models</a>.</p>
 </div>
-<style>
-  .imageblock {flex-direction: row !important;}
-</style>
+</div>
+</div>
+<div class="sect1">
+<h2 id="help"><a class="anchor" href="#help"></a>Help</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The help icon <span class="image"><img src="../_images/toolbar-icons/info.png" alt="info"></span> opens a page which lists details about the application and provides
+a link to the documentation.</p>
+</div>
+<div class="paragraph">
+<p>Example:
+<span class="image"><img src="../_images/help-docs.png" alt="help docs"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workspace-sidebar"><a class="anchor" href="#workspace-sidebar"></a>Workspace sidebar</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Workspace sidebar &ndash; see screenshot below &ndash; allows you to access namespaces (1) and to drag and drop elements to the graph area canvas (2).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/ame-ui-overview-workspace-numbers.png" alt="ame ui overview workspace numbers" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p>Expand the Workspace sidebar to view the description of each element.</p>
+</div>
+<div class="paragraph">
+<p>To add an element to your model drag and drop it on the graph area canvas, edit its details, and connect it with the rest of the graph.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="edit-models.html" class="page">Edit models</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="edit-dialog"><a class="anchor" href="#edit-dialog"></a>Edit dialog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Edit the attributes of a selected element of your Aspect Model with the Edit dialog.</p>
+</div>
+<div class="paragraph">
+<p>To access the details of an element in the Edit dialog, either double-click the element or select the element and click the Edit icon <span class="image"><img src="../_images/toolbar-icons/edit.png" alt="Edit icon"></span> on the <a href="#toolbar">toolbar</a>.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="../modeling/edit-elements.html" class="page">Edit elements</a>.</p>
+</div>
 </div>
 </div>
 </article>

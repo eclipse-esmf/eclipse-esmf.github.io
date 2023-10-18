@@ -151,19 +151,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.5.0/introduction.html">4.5.0</a>
+          <a href="../../ame-guide/4.6.0/introduction.html">4.6.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.4.1/introduction.html">4.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.4.0/introduction.html">4.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.3.0/introduction.html">4.3.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.2.1/introduction.html">4.2.1</a>
+          <a href="../../ame-guide/4.5.3/introduction.html">4.5.3</a>
         </li>
       </ul>
     </li>
@@ -202,10 +193,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-guide/2.5.1/index.html">2.5.1</a>
         </li>
       </ul>
     </li>
@@ -281,9 +269,9 @@
 <h2 id="characteristics-classes"><a class="anchor" href="#characteristics-classes"></a>Characteristics Classes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Characteristics Classes describe abstract concepts that need to be made specific when they are used.
-So for example, the Enumeration Characteristic represents the concept "one of multiple predefined
-values". In order to use the Characteristic, an instance of it needs to be specified in the
+<p>Characteristics Classes describe abstract concepts that must be made specific when they are used.
+For example, the Enumeration Characteristic represents the concept "one of multiple predefined
+values". In order to use the Characteristic, an instance of it must be specified in the
 corresponding Aspect Model, that determines which values are valid for the respective Property.</p>
 </div>
 <div class="paragraph">
@@ -800,7 +788,7 @@ This Characteristic does not have one explicit <code>samm:dataType</code>, as it
 </div>
 </div>
 <div class="paragraph">
-<p>Describes a Property whose data type is an Entity. The Entity used as data type may be defined in
+<p>Describes a Property whose data type is an Entity. The Entity used as data type could be defined in
 the same Aspect Model or the shared Entity namespace of the Semantic Aspect Meta Model.</p>
 </div>
 <div class="paragraph">
@@ -820,7 +808,7 @@ the same Aspect Model or the shared Entity namespace of the Semantic Aspect Meta
 <p>Describes a Property which contains a scalar <a href="datatypes.html#data-types" class="page">string-like value space</a>
 value with a well-defined structure. The Structured Value Characteristic allows the description of
 the parts of the Property&#8217;s value by linking to a separate Property definition for each part. To
-define the parts, the value is deconstructed using a regular expression.</p>
+define the parts, the value must be deconstructed using a regular expression.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="modeling-guidelines.html#declaring-structured-value" class="page">declaring structured value</a> for usage in an Aspect Model.</p>
@@ -930,19 +918,20 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="boolean-characteristic"><a class="anchor" href="#boolean-characteristic"></a>Boolean</h3>
+<h3 id="language-characteristic"><a class="anchor" href="#language-characteristic"></a>Language</h3>
 <div class="openblock element-urn">
 <div class="content">
 <div class="paragraph">
-<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Boolean</p>
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Language</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Represents a boolean value (i.e., a "flag").</p>
+<p>Describes a Property containing a language according to ISO 639-1
+<a href="appendix/bibliography.html#iso639" class="page">[iso639]</a>, for example "de".</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:boolean</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:string</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -963,20 +952,19 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="language-characteristic"><a class="anchor" href="#language-characteristic"></a>Language</h3>
+<h3 id="boolean-characteristic"><a class="anchor" href="#boolean-characteristic"></a>Boolean</h3>
 <div class="openblock element-urn">
 <div class="content">
 <div class="paragraph">
-<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Language</p>
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Boolean</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Describes a Property containing a language according to ISO 639-1
-<a href="appendix/bibliography.html#iso639" class="page">[iso639]</a>, for example "de".</p>
+<p>Represents a boolean value (i.e., a "flag").</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:string</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:boolean</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -1235,7 +1223,7 @@ Constraint restricts the range of the value. The scalar data types that can be r
 <code>xsd:nonNegativeInteger</code>.</p>
 </li>
 <li>
-<p>Characteristics that have a <a href="datatypes.html#data-types" class="page">time and date data type</a>;. In this case
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="page">time and date data type</a>; in this case
 the Constraint restricts the scalar data types: <code>xsd:date</code>,<code>xsd:time</code>, <code>xsd:dateTime</code>,
 <code>xsd:dateTimeStamp</code>, <code>xsd:gYear</code>, <code>xsd:gMonth</code>, <code>xsd:gMonthDay</code>, <code>xsd:duration</code>,
 <code>xsd:yearMonthDuration</code>, <code>xsd:dayTimeDuration</code>.</p>
@@ -1271,7 +1259,7 @@ the Constraint restricts the scalar data types: <code>xsd:date</code>,<code>xsd:
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:value</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configures the encoding. This may be one of the following: <code>samm:US-ASCII</code>,
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configures the encoding. This must be one of the following: <code>samm:US-ASCII</code>,
   <code>samm:ISO-8859-1</code>, <code>samm:UTF-8</code>, <code>samm:UTF-16</code>, <code>samm:UTF-16BE</code> or <code>samm:UTF-16LE</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
@@ -1417,13 +1405,13 @@ type.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:scale</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The scaling factor for a fixed point number. Must be given as
+<td class="tableblock halign-left valign-top"><p class="tableblock">The scaling factor for a fixed point number. E.g., if a fixedpoint number is 123.04, the scaling factor is 2 (the number of digits after the decimal point). Must be given as
   <code>xsd:positiveInteger</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The number of integral digits for a fixed point number. Must be given as
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of integral digits for a fixed point number. E.g., if a fixedpoint number is 123.04, the integer factor is 3 (the number of digits before the decimal point). Must be given as
   <code>xsd:positiveInteger</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>

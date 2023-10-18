@@ -151,19 +151,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.5.0/introduction.html">4.5.0</a>
+          <a href="../../ame-guide/4.6.0/introduction.html">4.6.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.4.1/introduction.html">4.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.4.0/introduction.html">4.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.3.0/introduction.html">4.3.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.2.1/introduction.html">4.2.1</a>
+          <a href="../../ame-guide/4.5.3/introduction.html">4.5.3</a>
         </li>
       </ul>
     </li>
@@ -202,10 +193,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-guide/2.5.1/index.html">2.5.1</a>
         </li>
       </ul>
     </li>
@@ -425,6 +413,27 @@ referred via other namespaces (e.g., "xsd:"). See
 @prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.1.0#&gt; .
 @prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.1.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-namespaces"><a class="anchor" href="#declaring-namespaces"></a>Declaring Namespaces</h3>
+<div class="paragraph">
+<p>A Namespace defines the scope in which other model elements, including Aspects,
+are declared. Explicit declarations of Namespaces are not required, they
+exist implicitly by declaring model elements in them. However, the explicit
+declaration of a Namespace is useful if you want to assign human-readable names or
+descriptions to it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : urn:samm:com.mycompany.myapplication:1.0.0# .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
+
+# The colon denotes the namespace as defined in the first @prefix declaration above.
+: a samm:Namespace ;
+   samm:preferredName "..."@en ;
+   samm:description "..."@en .</code></pre>
 </div>
 </div>
 </div>
@@ -782,7 +791,7 @@ syntax can be used:</p>
 <p>Declaring an Enumeration with a complex value is usally done in order to add a description to the
 actual value, e.g., the <code>state</code> in the example below, which provides information regarding the
 meaning of the value. This description only exists in the Aspect Model and is not part of the
-payload provided by an Aspect at runtime. In order to define that a Property of an Entity is not
+payload provided by an Aspect at runtime. In order to define that a Property of an Entity is <em>not</em>
 part of the runtime data, the <code>samm:notInPayload</code> attribute is used.</p>
 </div>
 <div class="admonitionblock note">
@@ -969,7 +978,7 @@ each part</p>
 <div class="paragraph">
 <p>One of the main use cases is complex identifiers that encode context information such as provenance
 information, version numbers, locations codes and so on. It is unreasonable to split such a value up
-into separate Properties, because it complicates working with corresponding data: For example, such
+into separate Properties, because it complicates working with corresponding data. For example, such
 values could appear in payloads, databases or documents and would have to be converted back and
 forth, often times manually. On the other hand, properly describing the value and the parts it
 comprises can be difficult, especially in a machine-readable way.</p>
@@ -1157,9 +1166,9 @@ Constraint as a <code>samm-c:constraint</code> to the Trait:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Another more complex example is given below: The Property <code>someIdentifier</code> is defined that uses a
+<p>Another more complex example is given below. The Property <code>someIdentifier</code> is defined that uses a
 <a href="characteristics.html#code-characteristic" class="page">Code</a> instance using a dataType of <code>xsd:string</code>,
-combined with two Constraints: An <a href="characteristics.html#encoding-constraint" class="page">Encoding Constraint</a>
+combined with two Constraints: an <a href="characteristics.html#encoding-constraint" class="page">Encoding Constraint</a>
 that restricts the value space to US-ASCII and a <a href="characteristics.html#length-constraint" class="page">Length
 Constraint</a> that limits the string to 80 characters.</p>
 </div>
@@ -1338,7 +1347,7 @@ extended in a manner not dissimilar to how abstract classes are used in many pro
 <p>When an Abstract Entity needs to be defined with a certain Property, but the modeler using the
 Abstract Entity (i.e., extending it) should be able to decide the Property&#8217;s Characteristic, the
 Property can be declared a <code>samm:AbstractProperty</code>. An Abstract Property is similar to a Property,
-with two differences: Firstly, it has no <code>samm:Characteristic</code> attribute and secondly, it must only
+with two differences: firstly, it has no <code>samm:Characteristic</code> attribute and secondly, it must only
 be used in Abstract Entities. Consider the following example of two-dimensional vector which is
 declared as an Abstract Entity using two Abstract Properties for its <code>x</code> and <code>y</code> values, leaving for
 the user to decide which Characteristic and hence which data type should be used:</p>
@@ -1358,7 +1367,7 @@ the user to decide which Characteristic and hence which data type should be used
 </div>
 <div class="paragraph">
 <p>The usage of the Abstract Properties allows to specify the contract (a two-dimensional vector must
-have x and y Properties), but allows flexible reuse: Only when it is used, one must decide on the
+have x and y Properties), but allows flexible reuse. Only when it is used, one must decide on the
 Characteristic and with it its effective datatype such as <code>xsd:int</code>, <code>xsd:float</code> or <code>xsd:decimal</code>.</p>
 </div>
 <div class="paragraph">
@@ -1658,7 +1667,7 @@ The value for the <code>samm:payloadName</code> attribute must be of type <code>
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-A Property may not be marked as not being included in the payload using <code>samm:notInPayload
+A Property must not be marked as not being included in the payload using <code>samm:notInPayload
 true</code> and have a payload name declared using <code>samm:payloadName</code>.
 </td>
 </tr>

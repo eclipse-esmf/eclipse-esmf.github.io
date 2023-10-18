@@ -151,19 +151,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.5.0/introduction.html">4.5.0</a>
+          <a href="../../ame-guide/4.6.0/introduction.html">4.6.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.4.1/introduction.html">4.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.4.0/introduction.html">4.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.3.0/introduction.html">4.3.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.2.1/introduction.html">4.2.1</a>
+          <a href="../../ame-guide/4.5.3/introduction.html">4.5.3</a>
         </li>
       </ul>
     </li>
@@ -202,10 +193,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-guide/2.5.1/index.html">2.5.1</a>
         </li>
       </ul>
     </li>
@@ -364,6 +352,55 @@ serialization.</p>
 <p>Events defined in the Aspect Model are not subject to serialization.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example"><a class="anchor" href="#example"></a>Example</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="aspect-model"><a class="anchor" href="#aspect-model"></a>Aspect Model</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#&gt; .
+@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.1.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.1.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:Movement a samm:Aspect ;
+   samm:preferredName "movement"@en ;
+   samm:properties ( :isMoving :speed ) ;
+   samm:operations ( ) ;
+   samm:events ( ) .
+
+:isMoving a samm:Property ;
+   samm:preferredName "is moving"@en ;
+   samm:characteristic samm-c:Boolean .
+
+:speed a samm:Property ;
+   samm:preferredName "speed"@en ;
+   samm:characteristic :Speed ;
+   samm:exampleValue "0.5"^^xsd:float .
+
+:Speed a samm-c:Measurement ;
+   samm:preferredName "speed"@en ;
+   samm:dataType xsd:float ;
+   samm-c:unit unit:kilometrePerHour .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="payload"><a class="anchor" href="#payload"></a>Payload</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "isMoving": true,
+  "speed": 0.5
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

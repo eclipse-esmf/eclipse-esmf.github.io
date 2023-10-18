@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Start a new model :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <title>Create a new model :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/modeling/start-new-models.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -111,7 +111,7 @@
     <a class="nav-link" href="modeling.html">Modeling</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="start-new-models.html">Start a new model</a>
+    <a class="nav-link" href="start-new-models.html">Create a new model</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -139,7 +139,7 @@
     <a class="nav-link" href="constraint.html">Constraint</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="trait.html">Traits</a>
+    <a class="nav-link" href="trait.html">Trait</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="operation.html">Operation</a>
@@ -148,6 +148,9 @@
     <a class="nav-link" href="event.html">Event</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="shared-models.html">Shared Models</a>
@@ -164,6 +167,9 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and external references</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/workspace.html">Workspace directory</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/import-namespaces.html">Import namespaces</a>
   </li>
@@ -223,19 +229,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../4.5.0/introduction.html">4.5.0</a>
+          <a href="../4.6.0/introduction.html">4.6.0</a>
         </li>
         <li class="version">
-          <a href="../4.4.1/introduction.html">4.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../4.4.0/introduction.html">4.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../4.3.0/introduction.html">4.3.0</a>
-        </li>
-        <li class="version">
-          <a href="../4.2.1/introduction.html">4.2.1</a>
+          <a href="../4.5.3/introduction.html">4.5.3</a>
         </li>
       </ul>
     </li>
@@ -274,10 +271,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-guide/2.5.1/index.html">2.5.1</a>
         </li>
       </ul>
     </li>
@@ -330,18 +324,15 @@
   <ul>
     <li><a href="../introduction.html">Aspect Model Editor</a></li>
     <li><a href="modeling.html">Modeling</a></li>
-    <li><a href="start-new-models.html">Start a new model</a></li>
+    <li><a href="start-new-models.html">Create a new model</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="start-new-models.html">master</a>
-    <a class="version" href="../4.5.0/modeling/start-new-models.html">4.5.0</a>
-    <a class="version is-missing" href="../4.4.1/introduction.html">4.4.1</a>
-    <a class="version is-missing" href="../4.4.0/introduction.html">4.4.0</a>
-    <a class="version is-missing" href="../4.3.0/introduction.html">4.3.0</a>
-    <a class="version is-missing" href="../4.2.1/introduction.html">4.2.1</a>
+    <a class="version" href="../4.6.0/modeling/start-new-models.html">4.6.0</a>
+    <a class="version" href="../4.5.3/modeling/start-new-models.html">4.5.3</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/start-new-models.adoc">Edit this Page</a></div>
@@ -351,31 +342,20 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Start a new model</h1>
+<h1 class="page">Create a new model</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>To start modeling, proceed as follows:</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Already opened Aspect Models will be lost when loading a new one. Always make sure to save the previous Aspect Model first.
-</td>
-</tr>
-</table>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click the <strong>New/Load</strong> icon in the <a href="../getting-started/ui-overview.html#toolbar" class="page">Toolbar</a>.</p>
+<p>Click the <strong>+</strong> icon in the toolbar.</p>
 </li>
 <li>
-<p>Click <strong>Create/Upload Aspect Model</strong>.</p>
+<p>Click <strong>Create/Upload Aspect Model</strong>.<br>
+<span class="image"><img src="../_images/create-new-model.png" alt="create new model" width="80%"></span></p>
 </li>
 <li>
 <p>Click <strong>Models/Default Aspect Model</strong> to start from the default Aspect Model.</p>
@@ -387,10 +367,8 @@ Already opened Aspect Models will be lost when loading a new one. Always make su
 </li>
 <li>
 <p>You can also modify the shown TTL code manually within the text area.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/start-modeling-edit-ui.png" alt="start modeling edit ui" width="80%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/start-modeling-edit-ui.png" alt="start modeling edit ui" width="80%"></span></p>
 </div>
 </li>
 <li>
@@ -398,9 +376,40 @@ Already opened Aspect Models will be lost when loading a new one. Always make su
 </li>
 </ol>
 </div>
-<style>
-  .imageblock {flex-direction: row !important;}
-</style>
+</div>
+</div>
+<div class="sect1">
+<h2 id="save-the-model"><a class="anchor" href="#save-the-model"></a>Save the model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The model will be saved in your local workspace directory with the name of the Aspect element.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/save-to-workspace.png" alt="save to workspace" width="80%"></span></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you have already opened an Aspect Model in the Editor and have not saved it before creating or loading a new one, it will be lost.
+Always make sure to save the previous Aspect Model first.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the Workspace you can find all models stored so far.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/see-model-in-workspace.png" alt="see model in workspace" width="80%"></span></p>
+</div>
+<div class="paragraph">
+<p>As you can see in the screenshot, the models are separated by namespace.<br>
+To learn more about namespaces see <a href="../namespace/namespaces-references.html" class="page">Namespaces and external references</a>.</p>
+</div>
 </div>
 </div>
 </article>

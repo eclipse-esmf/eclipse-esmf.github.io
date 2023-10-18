@@ -111,7 +111,7 @@
     <a class="nav-link" href="modeling.html">Modeling</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="start-new-models.html">Start a new model</a>
+    <a class="nav-link" href="start-new-models.html">Create a new model</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -139,7 +139,7 @@
     <a class="nav-link" href="constraint.html">Constraint</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="trait.html">Traits</a>
+    <a class="nav-link" href="trait.html">Trait</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="operation.html">Operation</a>
@@ -148,6 +148,9 @@
     <a class="nav-link" href="event.html">Event</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="shared-models.html">Shared Models</a>
@@ -164,6 +167,9 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and external references</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/workspace.html">Workspace directory</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/import-namespaces.html">Import namespaces</a>
   </li>
@@ -223,19 +229,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../4.5.0/introduction.html">4.5.0</a>
+          <a href="../4.6.0/introduction.html">4.6.0</a>
         </li>
         <li class="version">
-          <a href="../4.4.1/introduction.html">4.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../4.4.0/introduction.html">4.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../4.3.0/introduction.html">4.3.0</a>
-        </li>
-        <li class="version">
-          <a href="../4.2.1/introduction.html">4.2.1</a>
+          <a href="../4.5.3/introduction.html">4.5.3</a>
         </li>
       </ul>
     </li>
@@ -274,10 +271,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.4.1/index.html">2.4.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-guide/2.5.1/index.html">2.5.1</a>
         </li>
       </ul>
     </li>
@@ -337,11 +331,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="shared-models.html">master</a>
-    <a class="version" href="../4.5.0/modeling/shared-models.html">4.5.0</a>
-    <a class="version is-missing" href="../4.4.1/introduction.html">4.4.1</a>
-    <a class="version is-missing" href="../4.4.0/introduction.html">4.4.0</a>
-    <a class="version is-missing" href="../4.3.0/introduction.html">4.3.0</a>
-    <a class="version is-missing" href="../4.2.1/introduction.html">4.2.1</a>
+    <a class="version" href="../4.6.0/modeling/shared-models.html">4.6.0</a>
+    <a class="version" href="../4.5.3/modeling/shared-models.html">4.5.3</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/shared-models.adoc">Edit this Page</a></div>
@@ -372,12 +363,10 @@ In case you want to extract a part of an Aspect Model graph into a "shared model
 </div>
 <div class="paragraph">
 <p>After deleting the Aspect element, you can choose a new file name to describe the resulting "shared model".
-This file can then be saved in the workspace like any other ttl file.<br></p>
+This file can then be saved in the workspace like any other ttl file.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/shared-model-file-name.png" alt="Save changes in Edit dialog" width="50%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/shared-model-file-name.png" alt="Save changes in Edit dialog" width="50%"></span></p>
 </div>
 <div class="paragraph">
 <p>As a result, you create a valid ttl file, which just does not contain the "Aspect" element.
@@ -385,7 +374,7 @@ From all other points of view the lifecycle of such a model is similar with the 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/shared-model-view.png" alt="shared model view" width="100%">
+<img src="../_images/shared-model-view.png" alt="shared model view">
 </div>
 </div>
 <div class="paragraph">
@@ -397,7 +386,7 @@ As soon as you define such a reference the "shared model" it treated like a depe
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/use-shared-models.png" alt="use shared models" width="100%">
+<img src="../_images/use-shared-models.png" alt="use shared models">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -412,9 +401,6 @@ In case you need to convert a "shared model" into an Aspect Model, simply add an
 </tr>
 </table>
 </div>
-<style>
-  .imageblock {flex-direction: row !important;}
-</style>
 </div>
 </div>
 </article>
