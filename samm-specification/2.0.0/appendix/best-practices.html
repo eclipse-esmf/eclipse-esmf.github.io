@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Best Practices :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/appendix/best-practices.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
@@ -266,7 +266,7 @@
 <h2 id="naming-elements"><a class="anchor" href="#naming-elements"></a>1. Naming Elements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In addition to the <a href="../modeling-guidelines.html#naming-rules" class="page">naming rules</a>, the following points
+<p>In addition to the <a href="../modeling-guidelines.html#naming-rules" class="xref page">naming rules</a>, the following points
 should be considered when naming elements such as Aspects, Properties or Entities:</p>
 </div>
 <div class="ulist">
@@ -277,7 +277,7 @@ misunderstood in different contexts. For example, "temp" could mean "temperature
 On the other hand, abbreviating "minimum" and "maximum" with "min" and "max", respectively, is
 fine. The Aspect model should be reasonably expressive. Do not add alleged premature optimizations
 that belong in the Aspect implementation: if you think a Property is name expressive but too long
-for the runtime payload, consider adding <a href="../modeling-guidelines.html#payload-names" class="page">a payload
+for the runtime payload, consider adding <a href="../modeling-guidelines.html#payload-names" class="xref page">a payload
 name</a> to the Property&#8217;s usage instead of renaming the Property.</p>
 </li>
 <li>
@@ -311,21 +311,21 @@ If you copy and paste the element&#8217;s name to the <code>preferredName</code>
 </li>
 <li>
 <p>If there is exactly one Property in an Aspect that has a
-<a href="../characteristics.html#collection-characteristic" class="page">Collection</a>,
-<a href="../characteristics.html#list-characteristic" class="page">List</a>,
-<a href="../characteristics.html#set-characteristic" class="page">Set</a>,
-<a href="../characteristics.html#sorted-set-characteristic" class="page">Sorted Set</a> or
-<a href="../characteristics.html#time-series-characteristic" class="page">Time Series</a> Characteristic (and no other
+<a href="../characteristics.html#collection-characteristic" class="xref page">Collection</a>,
+<a href="../characteristics.html#list-characteristic" class="xref page">List</a>,
+<a href="../characteristics.html#set-characteristic" class="xref page">Set</a>,
+<a href="../characteristics.html#sorted-set-characteristic" class="xref page">Sorted Set</a> or
+<a href="../characteristics.html#time-series-characteristic" class="xref page">Time Series</a> Characteristic (and no other
 Properties), the Property should be named <code>items</code>.</p>
 </li>
 <li>
 <p>If there is exactly one Property in an Aspect that has a
-<a href="../characteristics.html#collection-characteristic" class="page">Collection</a>,
-<a href="../characteristics.html#list-characteristic" class="page">List</a>,
-<a href="../characteristics.html#set-characteristic" class="page">Set</a> or
-<a href="../characteristics.html#sorted-set-characteristic" class="page">Sorted Set</a> Characteristic (and no other
+<a href="../characteristics.html#collection-characteristic" class="xref page">Collection</a>,
+<a href="../characteristics.html#list-characteristic" class="xref page">List</a>,
+<a href="../characteristics.html#set-characteristic" class="xref page">Set</a> or
+<a href="../characteristics.html#sorted-set-characteristic" class="xref page">Sorted Set</a> Characteristic (and no other
 Properties), the Aspect&#8217;s name should be in plural. Otherwise, if there is exactly one Property in
-the Aspect that has a <a href="../characteristics.html#time-series-characteristic" class="page">Time Series</a>
+the Aspect that has a <a href="../characteristics.html#time-series-characteristic" class="xref page">Time Series</a>
 Characteristic, the Aspect&#8217;s name should end with "History". Otherwise, the Aspect&#8217;s name should
 be in singular.</p>
 </li>
@@ -338,7 +338,7 @@ be in singular.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>While JSON only distinguishes between <em>number</em> (floating point) and <em>integer</em>, the
-<a href="../datatypes.html#data-types" class="page">type hierarchy</a> for Aspect models provides many more options. There
+<a href="../datatypes.html#data-types" class="xref page">type hierarchy</a> for Aspect models provides many more options. There
 is a distinction between the numeric core types (<code>xsd:integer</code> and the fixed-point type
 <code>xsd:decimal</code>) and the limited range numbers that correspond to the numeric types as defined in most
 programming languages (<code>xsd:float</code> and <code>xsd:double</code> as well as the integer types <code>xsd:int</code>,
@@ -369,7 +369,7 @@ range, while a Property such as <code>numberOfProducedItems</code> is not logica
 <div class="sectionbody">
 <div class="paragraph">
 <p>When trying to refer to a physical unit, please see the
-<a href="unitcatalog.html" class="page">Unit Catalog</a>. When searching for the unit,
+<a href="unitcatalog.html" class="xref page">Unit Catalog</a>. When searching for the unit,
 remember that the unit catalog uses British English.</p>
 </div>
 </div>
@@ -437,8 +437,8 @@ multiple Constraints can be combined.</p>
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-If and only if the value has a <a href="../datatypes.html#data-types" class="page">string-like value space</a> and
-does <em>not</em> use UTF-8 as an encoding, use an <a href="../characteristics.html#encoding-constraint" class="page">Encoding
+If and only if the value has a <a href="../datatypes.html#data-types" class="xref page">string-like value space</a> and
+does <em>not</em> use UTF-8 as an encoding, use an <a href="../characteristics.html#encoding-constraint" class="xref page">Encoding
 Constraint</a> for the Property. This will ensure that consumers of the Aspect will not end up with
 broken special characters.
 </td>
@@ -462,8 +462,8 @@ broken special characters.
 </footer>
 <script src="../../../_/js/site.js"></script>
 <script src="../../../_/js/vendor/lunr.min.js"></script>
-<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/samm-specification/2.0.0/appendix/best-practices.html"></script>
-<script async src="../../../_/../search-index.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
 </html>

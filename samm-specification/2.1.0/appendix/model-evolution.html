@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Model Evolution :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/appendix/model-evolution.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
@@ -324,7 +324,7 @@ be changed immediately every time?</p>
 <div class="paragraph">
 <p>The first measure towards a graceful evolution of Aspect Models in a living system (i.e., the models
 don&#8217;t live in a vacuum but are actually used by Aspects and Clients) is the decoupling of models and
-payload. In the section that describes the <a href="../payloads.html#mapping-to-json" class="page">mapping of Aspect
+payload. In the section that describes the <a href="../payloads.html#mapping-to-json" class="xref page">mapping of Aspect
 models to corresponding JSON payloads</a>, you can see that the JSON payloads have no indication of the
 Aspect Model that describes them. In particular, they do not contain a reference to the URN of the
 corresponding Aspect Model. This is similar to how the structure of a JSON document can be validated
@@ -389,7 +389,7 @@ and <code>samm:see</code></p>
 <p>Making a mandatory Property optional</p>
 </li>
 <li>
-<p>Changing a data type <em>a</em> to type <em>b</em> when <em>a</em> <a href="../datatypes.html#data-types" class="page">can be cast to</a> <em>b</em></p>
+<p>Changing a data type <em>a</em> to type <em>b</em> when <em>a</em> <a href="../datatypes.html#data-types" class="xref page">can be cast to</a> <em>b</em></p>
 </li>
 <li>
 <p>Removing values from an Enumeration</p>
@@ -405,7 +405,7 @@ and <code>samm:see</code></p>
 <p>Making an optional Property mandatory</p>
 </li>
 <li>
-<p>Changing a data type <em>a</em> to type <em>b</em> when <em>a</em> <a href="../datatypes.html#data-types" class="page">can not be cast to</a> <em>b</em></p>
+<p>Changing a data type <em>a</em> to type <em>b</em> when <em>a</em> <a href="../datatypes.html#data-types" class="xref page">can not be cast to</a> <em>b</em></p>
 </li>
 <li>
 <p>Adding values to an Enumeration</p>
@@ -422,8 +422,8 @@ and <code>samm:see</code></p>
 <p>Deciding whether a change to a Characteristic is safe depends on the change itself. Basically, a
 change that adds restrictions on the value range is safe, while removing restrictions is unsafe, <em>if
 and only if</em> the effective value range was equivalent in the first place. For example, adding a
-<a href="../characteristics.html#regular-expression-constraint" class="page">Regular Expression Constraint</a> that
-restricts values on a <a href="../characteristics.html#text-characteristic" class="page">Text Characteristic</a> is
+<a href="../characteristics.html#regular-expression-constraint" class="xref page">Regular Expression Constraint</a> that
+restricts values on a <a href="../characteristics.html#text-characteristic" class="xref page">Text Characteristic</a> is
 safe, because an Aspect that delivers data which is valid for both the previous version of the
 Aspect Model (without the Constraint) and for the new version (with the Constraint) will only ever
 deliver data that clients using the previous version of the Aspect Model can understand. Adding the
@@ -437,8 +437,8 @@ Regular Expression Expression on a Text Characteristic with an Enumeration that 
 as those that would be parsed by the Regular Expression, or vice versa, this is a safe change as
 well. Changes such as this can be made when an Aspect Model is refactored to be better readable or
 understandable. Another example is changing a Characteristic with a
-<a href="../datatypes.html#data-types" class="page">string-like value space</a> into a
-<a href="../characteristics.html#structured-value-characteristic" class="page">Structured Value</a>: The payload does not
+<a href="../datatypes.html#data-types" class="xref page">string-like value space</a> into a
+<a href="../characteristics.html#structured-value-characteristic" class="xref page">Structured Value</a>: The payload does not
 change, but the meaning is specified in greater detail by describing all logical parts of the value.</p>
 </div>
 <div class="admonitionblock important">
@@ -451,7 +451,7 @@ change, but the meaning is specified in greater detail by describing all logical
 If the value range is effectively the same but the meaning is different, this is not
 considered a safe change, because the domain semantics captured by the Aspect Model are not the
 same. For example, if the unit of a
-<a href="../characteristics.html#measurement-characteristic" class="page">Measurement</a> Characteristic is changed from
+<a href="../characteristics.html#measurement-characteristic" class="xref page">Measurement</a> Characteristic is changed from
 <code>unit:metre</code> to <code>unit:inch</code> but both versions use <code>xsd:int</code> as a data type, values have obviously
 different meanings. This means that a specific Aspect endpoint using this Aspect Model must not be
 associated with both versions of the Aspect Model simultaneously. Of course, the Aspect can
@@ -662,7 +662,7 @@ but it is not a piece of information that consumers of the Aspect Model programm
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Renaming the Property in the last step is a change made to demonstrate dealing with unsafe changes.
 Alternatively, the modeler could rename the Property but still keep this change a safe change by
-specifying a <a href="../modeling-guidelines.html#payload-names" class="page">samm:payloadName</a> ⑥ that corresponds
+specifying a <a href="../modeling-guidelines.html#payload-names" class="xref page">samm:payloadName</a> ⑥ that corresponds
 to the effective payload name of the Property in the previous version of the Aspect Model (i.e.,
 1.0.2). In this scenario, since the change is a safe changes, the version is increased to 1.0.3
 instead of 1.1.0.</p>
@@ -704,8 +704,8 @@ endpoint needs to be provided by the Aspect implementation.
 </footer>
 <script src="../../../_/js/site.js"></script>
 <script src="../../../_/js/vendor/lunr.min.js"></script>
-<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/samm-specification/2.1.0/appendix/model-evolution.html"></script>
-<script async src="../../../_/../search-index.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
 </html>

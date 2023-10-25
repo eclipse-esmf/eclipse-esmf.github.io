@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Mapping to JSON :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/payloads.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
@@ -285,7 +285,7 @@
 <p>A Property&#8217;s <em>effective data type</em> means the Property&#8217;s Characteristic&#8217;s <code>samm:dataType</code>.</p>
 </li>
 <li>
-<p>A data type is scalar, if it is one of the <a href="datatypes.html#data-types" class="page">allowed data types</a>, but not a <code>samm:Entity</code>.</p>
+<p>A data type is scalar, if it is one of the <a href="datatypes.html#data-types" class="xref page">allowed data types</a>, but not a <code>samm:Entity</code>.</p>
 </li>
 </ul>
 </div>
@@ -332,10 +332,10 @@ all Properties from <code>?thisEntity samm:extends* []</code>.</p>
 </li>
 <li>
 <p>If the Property&#8217;s Characteristic is a
-<a href="characteristics.html#collection-characteristic" class="page">Collection</a>,
-<a href="characteristics.html#collection-characteristic" class="page">List</a>,
-<a href="characteristics.html#collection-characteristic" class="page">Set</a> or
-<a href="characteristics.html#collection-characteristic" class="page">Sorted Set</a>, it is serialized as a named JSON
+<a href="characteristics.html#collection-characteristic" class="xref page">Collection</a>,
+<a href="characteristics.html#collection-characteristic" class="xref page">List</a>,
+<a href="characteristics.html#collection-characteristic" class="xref page">Set</a> or
+<a href="characteristics.html#collection-characteristic" class="xref page">Sorted Set</a>, it is serialized as a named JSON
 array (with <code>${propertyName}</code> being the name of the JSON array property).</p>
 </li>
 </ul>
@@ -359,7 +359,7 @@ serialization.</p>
 <h2 id="data-type-mappings"><a class="anchor" href="#data-type-mappings"></a>Data type mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <a href="datatypes.html#data-types" class="page">rich type tree</a> is used in an Aspect Model. As JSON offers only a
+<p>A <a href="datatypes.html#data-types" class="xref page">rich type tree</a> is used in an Aspect Model. As JSON offers only a
 very limited set of data types for primitive type values there are less options on how to represent
 the data. The mappings are described in the following table.</p>
 </div>
@@ -582,8 +582,8 @@ numeric types are not affected.
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/lunr.min.js"></script>
-<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/samm-specification/2.1.0/payloads.html"></script>
-<script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
   </body>
 </html>

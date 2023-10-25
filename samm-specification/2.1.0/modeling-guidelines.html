@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Aspects :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/modeling-guidelines.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
@@ -273,13 +273,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>As mentioned in the <a href="index.html" class="page">Introduction</a>, Aspect Models are described in RDF Turtle
-<a href="../snapshot/appendix/bibliography.html#turtle" class="page">[turtle]</a>. The aspect specification will
+<p>As mentioned in the <a href="index.html" class="xref page">Introduction</a>, Aspect Models are described in RDF Turtle
+<a href="../snapshot/appendix/bibliography.html#turtle" class="xref page">[turtle]</a>. The aspect specification will
 therefore assume basic familiarity with Turtle.</p>
 </li>
 <li>
 <p>For the definition of the different Model elements please refer to the
-<a href="meta-model-elements.html" class="page">Meta Model Elements</a>.</p>
+<a href="meta-model-elements.html" class="xref page">Meta Model Elements</a>.</p>
 </li>
 </ul>
 </div>
@@ -403,7 +403,7 @@ model element, in the following examples we will mostly leave them out to improv
 elements are defined. Other customer or domain specific namespaces can be defined additionally.
 However, the samm-* namespaces are reserved for the meta model. Third party locations can be
 referred via other namespaces (e.g., "xsd:"). See
-<a href="namespaces.html#namespaces-and-versions" class="page">Namespaces and Versions</a> for more details on the topic.</p>
+<a href="namespaces.html#namespaces-and-versions" class="xref page">Namespaces and Versions</a> for more details on the topic.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -517,7 +517,7 @@ that all model elements have</a>, Properties have the following attributes:</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:characteristic</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="characteristics.html#characteristics" class="page">Characteristic</a> describing
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="characteristics.html#characteristics" class="xref page">Characteristic</a> describing
   this Property.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
@@ -528,7 +528,7 @@ intended meaning of the property better. This can only be set for Properties wit
 (e.g., <code>xsd:string</code> or <code>xsd:float</code>, but not Entities). The data type of the <code>samm:exampleValue</code> must
 be convertible to the effective data type of the Property&#8217;s Characteristic. For example, if the
 Characteristic&#8217;s <code>samm:dataType</code> is <code>xsd:int</code>, <code>xsd:short</code> is also a valid type for the
-<code>samm:exampleValue</code>. Refer to section <a href="datatypes.html#implicit-conversions" class="page">Implicit Conversions</a>
+<code>samm:exampleValue</code>. Refer to section <a href="datatypes.html#implicit-conversions" class="xref page">Implicit Conversions</a>
 for more details.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
@@ -551,7 +551,7 @@ for more details.</p></td>
 <h3 id="declaring-characteristics"><a class="anchor" href="#declaring-characteristics"></a>Declaring Characteristics</h3>
 <div class="paragraph">
 <p>The attributes for Characteristics are described in detail in section
-<a href="characteristics.html#characteristics" class="page">Characteristics</a>.</p>
+<a href="characteristics.html#characteristics" class="xref page">Characteristics</a>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>dataType</code> attribute may be omitted when creating a subclass of a Characteristic. The <code>dataType</code>
@@ -597,14 +597,14 @@ Characteristic.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>See section <a href="units.html#units" class="page">Units</a> for information about the valid values for the <code>samm-c:unit</code> attribute.</p>
+<p>See section <a href="units.html#units" class="xref page">Units</a> for information about the valid values for the <code>samm-c:unit</code> attribute.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="declaring-single-entity"><a class="anchor" href="#declaring-single-entity"></a>Declaring Single Entity</h4>
 <div class="paragraph">
 <p>The following example shows how a Property is defined that uses the
-<a href="characteristics.html#single-entity-characteristic" class="page">Single Entity</a> Characteristic to specify an Entity as its dataType.</p>
+<a href="characteristics.html#single-entity-characteristic" class="xref page">Single Entity</a> Characteristic to specify an Entity as its dataType.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -626,10 +626,10 @@ Characteristic.</p>
 <h4 id="declaring-collections"><a class="anchor" href="#declaring-collections"></a>Declaring Collections</h4>
 <div class="paragraph">
 <p>There are four basic predefined types of Collections:
-<a href="characteristics.html#collection-characteristic" class="page">Collection</a>,
-<a href="characteristics.html#list-characteristic" class="page">List</a>,
-<a href="characteristics.html#set-characteristic" class="page">Set</a> and
-<a href="characteristics.html#sortedset-characteristic" class="page">Sorted Set</a>. The Collection definitions are
+<a href="characteristics.html#collection-characteristic" class="xref page">Collection</a>,
+<a href="characteristics.html#list-characteristic" class="xref page">List</a>,
+<a href="characteristics.html#set-characteristic" class="xref page">Set</a> and
+<a href="characteristics.html#sortedset-characteristic" class="xref page">Sorted Set</a>. The Collection definitions are
 shared and are available globally. They determine whether a specific collection is ordered or not
 and whether a specific collection may contain duplicates or not. In some cases the data type is also
 set in the shared Collection Characteristic.</p>
@@ -720,7 +720,7 @@ defining the data type, since it allows to completely express the semantics of t
 <h4 id="declaring-enumerations"><a class="anchor" href="#declaring-enumerations"></a>Declaring Enumerations</h4>
 <div class="paragraph">
 <p>Describes a Property which may have a value from a predefined list of values. Also see
-<a href="characteristics.html#enumeration-characteristic" class="page">Enumeration</a>.</p>
+<a href="characteristics.html#enumeration-characteristic" class="xref page">Enumeration</a>.</p>
 </div>
 <div class="paragraph">
 <p>Example with literal <code>xsd:string</code> values:</p>
@@ -821,7 +821,7 @@ referenced. Writing <code>samm:notInPayload false</code> is <em>not</em> allowed
 <div class="sect3">
 <h4 id="declaring-state"><a class="anchor" href="#declaring-state"></a>Declaring State</h4>
 <div class="paragraph">
-<p>As described in <a href="characteristics.html#state-characteristic" class="page">State Characteristic</a>, State inherits
+<p>As described in <a href="characteristics.html#state-characteristic" class="xref page">State Characteristic</a>, State inherits
 from Enumeration and extends it with the default value attribute.</p>
 </div>
 <div class="paragraph">
@@ -839,7 +839,7 @@ from Enumeration and extends it with the default value attribute.</p>
 <div class="sect3">
 <h4 id="declaring-time-series"><a class="anchor" href="#declaring-time-series"></a>Declaring Time Series</h4>
 <div class="paragraph">
-<p>The <code><a href="characteristics.html#time-series-characteristic" class="page">TimeSeries</a></code> Characteristic is a special
+<p>The <code><a href="characteristics.html#time-series-characteristic" class="xref page">TimeSeries</a></code> Characteristic is a special
 kind of Collection. A Time Series is defined as a list of tuples of values with their respective
 specific point in time when they where recorded. This is, the Time Series is represented by a list
 of key/value pairs where the key is the time-stamp denoting when the value was recorded and the
@@ -848,9 +848,9 @@ Characteristic is used. This is a subclass of the <code>SortedSet</code> Charact
 <code>dataType</code> must be a subclass of the <code>TimeSeriesEntity</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code><a href="entities.html#time-series-entity" class="page">TimeSeriesEntity</a></code> is declared as an Abstract Entity. It
+<p>The <code><a href="entities.html#time-series-entity" class="xref page">TimeSeriesEntity</a></code> is declared as an Abstract Entity. It
 defines the <code>timestamp</code> Property with the <code>Timestamp</code> Characteristic, which describes values
-containing timestamps conforming to <code><a href="datatypes.html#data-types" class="page">xsd:dateTime</a></code>, a date and time
+containing timestamps conforming to <code><a href="datatypes.html#data-types" class="xref page">xsd:dateTime</a></code>, a date and time
 with or without time zone. It also defines <code>value</code> as an
 <a href="#abstract-entities-with-abstract-properties">Abstract Property</a>, i.e., a
 Property without a Characteristic.</p>
@@ -906,7 +906,7 @@ Aspects each containing a single Collection.
 <p>Describes a Property whose value can have one of two possible types (a disjoint union). This
 Characteristic is special since it does not directly define a data type. The data type is defined in
 the two Characteristics which define the left and right value of the disjoint union. Also see
-<a href="characteristics.html#either-characteristic" class="page">Either</a>.</p>
+<a href="characteristics.html#either-characteristic" class="xref page">Either</a>.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -934,13 +934,13 @@ the two Characteristics which define the left and right value of the disjoint un
 <div class="sect3">
 <h4 id="declaring-structured-value"><a class="anchor" href="#declaring-structured-value"></a>Declaring Structured Value</h4>
 <div class="paragraph">
-<p><a href="characteristics.html#structured-value-characteristic" class="page">Structured Values</a> are intended to be used
+<p><a href="characteristics.html#structured-value-characteristic" class="xref page">Structured Values</a> are intended to be used
 for Properties when all of the following conditions are met:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The value has a scalar, <a href="datatypes.html#data-types" class="page">string-like value space</a></p>
+<p>The value has a scalar, <a href="datatypes.html#data-types" class="xref page">string-like value space</a></p>
 </li>
 <li>
 <p>The value has a well-known structure consisting of different, separate parts</p>
@@ -1072,7 +1072,7 @@ i.e., that the deconstruction rule actually does what the model author intended.
 <p>As explained in the section <a href="#declaring-quantifiable-values-and-measurements">Declaring Quantifiables and Measurements</a>, some values only make sense when they also have a unit assigned to them.
 This unit definition is in many cases fixed at design time, does not change thereafter and therefore at runtime (in the JSON payload for example), only the actual value is transported.<br>
  There may be scenarios, however, where this permanent fixation on a specific unit might not be sufficient because the unit can only be determined dynamically
-at runtime, or is a kind of configuration parameter which must be set when the system is being deployed/starting up. In cases like this, a <a href="characteristics.html#unit-reference-characteristic" class="page">UnitReference</a> characteristic instance can be used to include a dynamic reference to the desired unit from the <a href="appendix/unitcatalog.html" class="page">Unit catalog</a> and this information is then always included in the payload. The runtime payload refers to the unit using its <code>samm:curie</code>, i.e., the unit&#8217;s URN&#8217;s element name prefixed with <code>unit:</code>.</p>
+at runtime, or is a kind of configuration parameter which must be set when the system is being deployed/starting up. In cases like this, a <a href="characteristics.html#unit-reference-characteristic" class="xref page">UnitReference</a> characteristic instance can be used to include a dynamic reference to the desired unit from the <a href="appendix/unitcatalog.html" class="xref page">Unit catalog</a> and this information is then always included in the payload. The runtime payload refers to the unit using its <code>samm:curie</code>, i.e., the unit&#8217;s URN&#8217;s element name prefixed with <code>unit:</code>.</p>
 </div>
 <div class="paragraph">
 <p>For example an Aspect with the following model:</p>
@@ -1122,8 +1122,8 @@ at runtime, or is a kind of configuration parameter which must be set when the s
 </div>
 </div>
 <div class="paragraph">
-<p>To add a <a href="characteristics.html#length-constraint" class="page">Length Constraint</a> to the list, replace the use
-of the Characteristic with a new <a href="characteristics.html#trait-characteristic" class="page">Trait</a> instance. Set
+<p>To add a <a href="characteristics.html#length-constraint" class="xref page">Length Constraint</a> to the list, replace the use
+of the Characteristic with a new <a href="characteristics.html#trait-characteristic" class="xref page">Trait</a> instance. Set
 the original Characteristic as the Trait&#8217;s <code>samm-c:baseCharacteristic</code> and add the required
 Constraint as a <code>samm-c:constraint</code> to the Trait:</p>
 </div>
@@ -1146,9 +1146,9 @@ Constraint as a <code>samm-c:constraint</code> to the Trait:</p>
 </div>
 <div class="paragraph">
 <p>Another more complex example is given below: The Property <code>someIdentifier</code> is defined that uses a
-<a href="characteristics.html#code-characteristic" class="page">Code</a> instance using a dataType of <code>xsd:string</code>,
-combined with two Constraints: An <a href="characteristics.html#encoding-constraint" class="page">Encoding Constraint</a>
-that restricts the value space to US-ASCII and a <a href="characteristics.html#length-constraint" class="page">Length
+<a href="characteristics.html#code-characteristic" class="xref page">Code</a> instance using a dataType of <code>xsd:string</code>,
+combined with two Constraints: An <a href="characteristics.html#encoding-constraint" class="xref page">Encoding Constraint</a>
+that restricts the value space to US-ASCII and a <a href="characteristics.html#length-constraint" class="xref page">Length
 Constraint</a> that limits the string to 80 characters.</p>
 </div>
 <div class="listingblock">
@@ -1178,7 +1178,7 @@ Constraint</a> that limits the string to 80 characters.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>An example showing the <a href="characteristics.html#regular-expression-constraint" class="page">Regular Expression Constraint</a> is given below:</p>
+<p>An example showing the <a href="characteristics.html#regular-expression-constraint" class="xref page">Regular Expression Constraint</a> is given below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1508,7 +1508,7 @@ have identifiers which are also valid URLs:</p>
 <p>If an external model element should be referenced that has a unique identifier which is not a URI,
 but a well-known resolver exists, you can either use the resolver&#8217;s URL or a synthetic URN. For
 example, for the Digital Object Identifier (DOI,
-<a href="../snapshot/appendix/bibliography.html#doi" class="page">[DOI]</a>) <code>10.1109/NetSys.2017.7903949</code>, you can
+<a href="../snapshot/appendix/bibliography.html#doi" class="xref page">[DOI]</a>) <code>10.1109/NetSys.2017.7903949</code>, you can
 use as the value for <code>samm:see</code> either the URL <code>https://doi.org/10.1109/NetSys.2017.7903949</code> or the
 URN <code>urn:doi:10.1109/NetSys.2017.7903949</code>.</p>
 </div>
@@ -1516,7 +1516,7 @@ URN <code>urn:doi:10.1109/NetSys.2017.7903949</code>.</p>
 <p>If an external model element should be referenced that has a unique identifier which is not a URI
 and there is no well-known resolver, use a synthetic URN structure. One example are Object
 Identifiers as specified by ITU and ISO/IEC (OID) and the mapping to URNs in RFC 3061
-<a href="../snapshot/appendix/bibliography.html#rfc3061" class="page">[rfc3061]</a>, so for example, for the OID
+<a href="../snapshot/appendix/bibliography.html#rfc3061" class="xref page">[rfc3061]</a>, so for example, for the OID
 <code>1.3.6.1.4.1.1919.1.1.2</code>, the corresponding <code>samm:see</code> value would be
 <code>urn:oid:1.3.6.1.4.1.1919.1.1.2</code>:</p>
 </div>
@@ -1830,8 +1830,8 @@ for linguistically diverse audiences.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/lunr.min.js"></script>
-<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/samm-specification/2.1.0/modeling-guidelines.html"></script>
-<script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
   </body>
 </html>

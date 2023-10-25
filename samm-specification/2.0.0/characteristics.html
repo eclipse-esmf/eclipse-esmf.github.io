@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Characteristics and Constraints :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/characteristics.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
@@ -294,7 +294,7 @@ Semantic Aspect Meta Model.</p>
 (i.e., without creating a subclass).</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="page">declaring characteristics</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -344,7 +344,7 @@ as the "base Characteristic".
 A Trait itself has no <code>samm:dataType</code>, because it inherits the type of its <code>samm-c:baseCharacteristic</code>.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-constraints" class="page">declaring constraints</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-constraints" class="xref page">declaring constraints</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -388,7 +388,7 @@ A Trait itself has no <code>samm:dataType</code>, because it inherits the type o
 processing step or the expected torque with which these bolts should be tightened.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="page">declaring characteristics</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -406,7 +406,7 @@ processing step or the expected torque with which these bolts should be tightene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:unit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the  <a href="units.html#units" class="page">Unit catalog</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the  <a href="units.html#units" class="xref page">Unit catalog</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
@@ -425,7 +425,7 @@ processing step or the expected torque with which these bolts should be tightene
 <p>A measurement is a numeric value with an associated unit and quantity kind.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="page">declaring characteristics</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -443,7 +443,7 @@ processing step or the expected torque with which these bolts should be tightene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:unit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the <a href="units.html#units" class="page">Unit catalog</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the <a href="units.html#units" class="xref page">Unit catalog</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
@@ -462,7 +462,7 @@ processing step or the expected torque with which these bolts should be tightene
 <p>An enumeration represents a list of possible values.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-enumerations" class="page">declaring enumerations</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-enumerations" class="xref page">declaring enumerations</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -500,7 +500,7 @@ processing step or the expected torque with which these bolts should be tightene
 <p>A state is subclass of Enumeration with a default value.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-state" class="page">declaring state</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-state" class="xref page">declaring state</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -552,37 +552,37 @@ processing step or the expected torque with which these bolts should be tightene
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:unit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the <a href="units.html#units" class="page">Unit catalog</a>. The
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the <a href="units.html#units" class="xref page">Unit catalog</a>. The
 referenced unit or its referenceUnit must have the quantityKind
-<code><a href="appendix/unitcatalog.html#quantitykind-time" class="page">unit:time</a></code>. Currently, the following units can
-therefore be used: <code><a href="appendix/unitcatalog.html#unit-centipoisePerBar" class="page">unit:centipoisePerBar</a></code>
-<code><a href="appendix/unitcatalog.html#unit-commonYear" class="page">unit:commonYear</a></code>
-<code><a href="appendix/unitcatalog.html#unit-day" class="page">unit:day</a></code>
-<code><a href="appendix/unitcatalog.html#unit-henryPerKiloohm" class="page">unit:henryPerKiloohm</a></code>
-<code><a href="appendix/unitcatalog.html#unit-henryPerOhm" class="page">unit:henryPerOhm</a></code>
-<code><a href="appendix/unitcatalog.html#unit-hour" class="page">unit:hour</a></code>
-<code><a href="appendix/unitcatalog.html#unit-kilosecond" class="page">unit:kilosecond</a></code>
-<code><a href="appendix/unitcatalog.html#unit-microhenryPerKiloohm" class="page">unit:microhenryPerKiloohm</a></code>
-<code><a href="appendix/unitcatalog.html#unit-microhenryPerOhm" class="page">unit:microhenryPerOhm</a></code>
-<code><a href="appendix/unitcatalog.html#unit-microsecond" class="page">unit:microsecond</a></code>
-<code><a href="appendix/unitcatalog.html#unit-millihenryPerKiloohm" class="page">unit:millihenryPerKiloohm</a></code>
-<code><a href="appendix/unitcatalog.html#unit-millihenryPerOhm" class="page">unit:millihenryPerOhm</a></code>
-<code><a href="appendix/unitcatalog.html#unit-millipascalSecondPerBar" class="page">unit:millipascalSecondPerBar</a></code>
-<code><a href="appendix/unitcatalog.html#unit-millisecond" class="page">unit:millisecond</a></code>
-<code><a href="appendix/unitcatalog.html#unit-minuteUnitOfTime" class="page">unit:minuteUnitOfTime</a></code>
-<code><a href="appendix/unitcatalog.html#unit-month" class="page">unit:month</a></code>
-<code><a href="appendix/unitcatalog.html#unit-nanosecond" class="page">unit:nanosecond</a></code>
-<code><a href="appendix/unitcatalog.html#unit-pascalSecondPerBar" class="page">unit:pascalSecondPerBar</a></code>
-<code><a href="appendix/unitcatalog.html#unit-picosecond" class="page">unit:picosecond</a></code>
-<code><a href="appendix/unitcatalog.html#unit-poisePerBar" class="page">unit:poisePerBar</a></code>
-<code><a href="appendix/unitcatalog.html#unit-poisePerPascal" class="page">unit:poisePerPascal</a></code>
-<code><a href="appendix/unitcatalog.html#unit-reciprocalMinute" class="page">unit:reciprocalMinute</a></code>
-<code><a href="appendix/unitcatalog.html#unit-secondUnitOfTime" class="page">unit:secondUnitOfTime</a></code>
-<code><a href="appendix/unitcatalog.html#unit-shake" class="page">unit:shake</a></code>
-<code><a href="appendix/unitcatalog.html#unit-siderealYear" class="page">unit:siderealYear</a></code>
-<code><a href="appendix/unitcatalog.html#unit-tropicalYear" class="page">unit:tropicalYear</a></code>
-<code><a href="appendix/unitcatalog.html#unit-week" class="page">unit:week</a></code>
-<code><a href="appendix/unitcatalog.html#unit-year" class="page">unit:year</a></code></p></td>
+<code><a href="appendix/unitcatalog.html#quantitykind-time" class="xref page">unit:time</a></code>. Currently, the following units can
+therefore be used: <code><a href="appendix/unitcatalog.html#unit-centipoisePerBar" class="xref page">unit:centipoisePerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-commonYear" class="xref page">unit:commonYear</a></code>
+<code><a href="appendix/unitcatalog.html#unit-day" class="xref page">unit:day</a></code>
+<code><a href="appendix/unitcatalog.html#unit-henryPerKiloohm" class="xref page">unit:henryPerKiloohm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-henryPerOhm" class="xref page">unit:henryPerOhm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-hour" class="xref page">unit:hour</a></code>
+<code><a href="appendix/unitcatalog.html#unit-kilosecond" class="xref page">unit:kilosecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-microhenryPerKiloohm" class="xref page">unit:microhenryPerKiloohm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-microhenryPerOhm" class="xref page">unit:microhenryPerOhm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-microsecond" class="xref page">unit:microsecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millihenryPerKiloohm" class="xref page">unit:millihenryPerKiloohm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millihenryPerOhm" class="xref page">unit:millihenryPerOhm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millipascalSecondPerBar" class="xref page">unit:millipascalSecondPerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millisecond" class="xref page">unit:millisecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-minuteUnitOfTime" class="xref page">unit:minuteUnitOfTime</a></code>
+<code><a href="appendix/unitcatalog.html#unit-month" class="xref page">unit:month</a></code>
+<code><a href="appendix/unitcatalog.html#unit-nanosecond" class="xref page">unit:nanosecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-pascalSecondPerBar" class="xref page">unit:pascalSecondPerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-picosecond" class="xref page">unit:picosecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-poisePerBar" class="xref page">unit:poisePerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-poisePerPascal" class="xref page">unit:poisePerPascal</a></code>
+<code><a href="appendix/unitcatalog.html#unit-reciprocalMinute" class="xref page">unit:reciprocalMinute</a></code>
+<code><a href="appendix/unitcatalog.html#unit-secondUnitOfTime" class="xref page">unit:secondUnitOfTime</a></code>
+<code><a href="appendix/unitcatalog.html#unit-shake" class="xref page">unit:shake</a></code>
+<code><a href="appendix/unitcatalog.html#unit-siderealYear" class="xref page">unit:siderealYear</a></code>
+<code><a href="appendix/unitcatalog.html#unit-tropicalYear" class="xref page">unit:tropicalYear</a></code>
+<code><a href="appendix/unitcatalog.html#unit-week" class="xref page">unit:week</a></code>
+<code><a href="appendix/unitcatalog.html#unit-year" class="xref page">unit:year</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
@@ -602,7 +602,7 @@ therefore be used: <code><a href="appendix/unitcatalog.html#unit-centipoisePerBa
 are not ordered (i.e., bag semantics).</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-collections" class="page">declaring collections</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-collections" class="xref page">declaring collections</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -686,7 +686,7 @@ are not ordered (i.e., bag semantics).</p>
 values where recorded.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-time-series" class="page">declaring time series</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-time-series" class="xref page">declaring time series</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -744,7 +744,7 @@ a <code>samm:dataType</code>, this must therefore be done when instantiating the
 This Characteristic does not have one explicit <code>samm:dataType</code>, as it can be the datatype of either the left or the right.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-either" class="page">declaring either</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-either" class="xref page">declaring either</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -789,7 +789,7 @@ This Characteristic does not have one explicit <code>samm:dataType</code>, as it
 the same Aspect Model or the shared Entity namespace of the Semantic Aspect Meta Model.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="page">declaring characteristics</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect model.</p>
 </div>
 </div>
 <div class="sect2">
@@ -802,13 +802,13 @@ the same Aspect Model or the shared Entity namespace of the Semantic Aspect Meta
 </div>
 </div>
 <div class="paragraph">
-<p>Describes a Property which contains a scalar <a href="datatypes.html#data-types" class="page">string-like value space</a>
+<p>Describes a Property which contains a scalar <a href="datatypes.html#data-types" class="xref page">string-like value space</a>
 value with a well-defined structure. The Structured Value Characteristic allows the description of
 the parts of the Property&#8217;s value by linking to a separate Property definition for each part. To
 define the parts, the value is deconstructed using a regular expression.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="modeling-guidelines.html#declaring-structured-value" class="page">declaring structured value</a> for usage in an Aspect model.</p>
+<p>See <a href="modeling-guidelines.html#declaring-structured-value" class="xref page">declaring structured value</a> for usage in an Aspect model.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -877,7 +877,7 @@ Characteristics Instances defined in the scope of the Semantic Aspect Meta Model
 <p>Describes a Property which contains the date and time with an optional timezone.</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:dateTime</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:dateTime</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -894,7 +894,7 @@ Characteristics Instances defined in the scope of the Semantic Aspect Meta Model
 strings, not for identifiers, measurement values, etc.</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:string</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -911,7 +911,7 @@ strings, not for identifiers, measurement values, etc.</p>
 for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">rdf:langString</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">rdf:langString</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -927,7 +927,7 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 <p>Represents a boolean value (i.e., a "flag").</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:boolean</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:boolean</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -941,10 +941,10 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 <div class="paragraph">
 <p>Describes a Property containing a locale according to IETF BCP 47
-<a href="../snapshot/appendix/bibliography.html#bcp47" class="page">[bcp47]</a>, for example "de-DE".</p>
+<a href="../snapshot/appendix/bibliography.html#bcp47" class="xref page">[bcp47]</a>, for example "de-DE".</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:string</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -958,10 +958,10 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 <div class="paragraph">
 <p>Describes a Property containing a language according to ISO 639-1
-<a href="../snapshot/appendix/bibliography.html#iso639" class="page">[iso639]</a>, for example "de".</p>
+<a href="../snapshot/appendix/bibliography.html#iso639" class="xref page">[iso639]</a>, for example "de".</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:string</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -977,7 +977,7 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 <p>Describes a Property that contains the path to a relative or absolute resource.</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:anyURI</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:anyURI</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -991,11 +991,11 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 <div class="paragraph">
 <p>Describes a Property that contains a MIME type as defined by RFC 2046
-<a href="../snapshot/appendix/bibliography.html#rfc2046" class="page">[rfc2046]</a>, for example "application/json",
+<a href="../snapshot/appendix/bibliography.html#rfc2046" class="xref page">[rfc2046]</a>, for example "application/json",
 "application/xls" or "image/png".</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">xsd:string</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
 </div>
 </div>
 <div class="sect2">
@@ -1009,11 +1009,11 @@ for human readable strings, not for identifiers, measurement values, etc.</p>
 </div>
 <div class="paragraph">
 <p>Describes a Property containing a reference to one of the units in the
-<a href="appendix/unitcatalog.html#unit-catalog" class="page">Unit catalog</a>.<br>
-See <a href="modeling-guidelines.html#using-unit-reference" class="page">Using Unit Reference</a> for usage in an Aspect model.</p>
+<a href="appendix/unitcatalog.html#unit-catalog" class="xref page">Unit catalog</a>.<br>
+See <a href="modeling-guidelines.html#using-unit-reference" class="xref page">Using Unit Reference</a> for usage in an Aspect model.</p>
 </div>
 <div class="paragraph">
-<p>dataType: <code><a href="datatypes.html#data-types" class="page">samm:curie</a></code></p>
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">samm:curie</a></code></p>
 </div>
 </div>
 </div>
@@ -1067,7 +1067,7 @@ See <a href="modeling-guidelines.html#using-unit-reference" class="page">Using U
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:languageCode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An ISO 639-1
-  <a href="../snapshot/appendix/bibliography.html#iso639" class="page">[iso639]</a> language code for the language of
+  <a href="../snapshot/appendix/bibliography.html#iso639" class="xref page">[iso639]</a> language code for the language of
   the value of the constrained Property, e.g., "de".</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
@@ -1102,7 +1102,7 @@ See <a href="modeling-guidelines.html#using-unit-reference" class="page">Using U
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:localeCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An IETF BCP 47 <a href="../snapshot/appendix/bibliography.html#bcp47" class="page">[bcp47]</a>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An IETF BCP 47 <a href="../snapshot/appendix/bibliography.html#bcp47" class="xref page">[bcp47]</a>
   language code for the locale of the value of the constrained Property, e.g., "de-DE".</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
@@ -1212,7 +1212,7 @@ values for <code>minValue</code> and <code>maxValue</code> are exclusive.
 <div class="ulist">
 <ul>
 <li>
-<p>Characteristics that have a <a href="datatypes.html#data-types" class="page">numeric data type</a>; in this case the
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="xref page">numeric data type</a>; in this case the
 Constraint restricts the range of the value. The scalar data types that can be restricted are:
 <code>xsd:double</code>, <code>xsd:float</code>, <code>xsd:decimal</code>, <code>xsd:integer</code>, <code>xsd:byte</code>, <code>xsd:short</code>, <code>xsd:int</code>,
 <code>xsd:long</code>, <code>xsd:unsignedByte</code>, <code>xsd:unsignedShort</code>, <code>xsd:unsignedInt</code>, <code>xsd:unsignedLong</code>,
@@ -1220,7 +1220,7 @@ Constraint restricts the range of the value. The scalar data types that can be r
 <code>xsd:nonNegativeInteger</code>.</p>
 </li>
 <li>
-<p>Characteristics that have a <a href="datatypes.html#data-types" class="page">time and date data type</a>;. In this case
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="xref page">time and date data type</a>;. In this case
 the Constraint restricts the scalar data types: <code>xsd:date</code>,<code>xsd:time</code>, <code>xsd:dateTime</code>,
 <code>xsd:dateTimeStamp</code>, <code>xsd:gYear</code>, <code>xsd:gMonth</code>, <code>xsd:gMonthDay</code>, <code>xsd:duration</code>,
 <code>xsd:yearMonthDuration</code>, <code>xsd:dayTimeDuration</code>.</p>
@@ -1269,7 +1269,7 @@ the Constraint restricts the scalar data types: <code>xsd:date</code>,<code>xsd:
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The default encoding for values with a <a href="datatypes.html#data-types" class="page">string-like value space</a>
+The default encoding for values with a <a href="datatypes.html#data-types" class="xref page">string-like value space</a>
 is UTF-8, therefore using an Encoding Constraint with a <code>samm:value</code> of <code>samm:UTF-8</code> is only
 necessary when a Property&#8217;s encoding is changed during an Aspect model version increase <em>from</em> some
 other encoding <em>to</em> UTF-8 to indicate that the other encoding is not any longer used.
@@ -1293,7 +1293,7 @@ other encoding <em>to</em> UTF-8 to indicate that the other encoding is not any 
 <div class="ulist">
 <ul>
 <li>
-<p>Characteristics that have a <a href="datatypes.html#data-types" class="page">string-like value space</a>; in this case
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="xref page">string-like value space</a>; in this case
 the Constraint restricts the length of the (string-) value. The scalar data types that can be
 restricted are: <code>xsd:string</code>, <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, <code>xsd:dateTimeStamp</code>,
 <code>xsd:gYear</code>, <code>xsd:gMonth</code>, <code>xsd:gMonthDay</code>, <code>xsd:duration</code>, <code>xsd:yearMonthDuration</code>,
@@ -1348,7 +1348,7 @@ number of elements in the collection.</p>
 </div>
 <div class="paragraph">
 <p>Restricts a string value to a regular expression as defined by XQuery 1.0 and XPath 2.0 Functions
-and Operators <a href="../snapshot/appendix/bibliography.html#xpath-functions" class="page">[xpath-functions]</a>.</p>
+and Operators <a href="../snapshot/appendix/bibliography.html#xpath-functions" class="xref page">[xpath-functions]</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1427,8 +1427,8 @@ type.</p>
 </footer>
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/lunr.min.js"></script>
-<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/samm-specification/2.0.0/characteristics.html"></script>
-<script async src="../../_/../search-index.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
   </body>
 </html>

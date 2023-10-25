@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>SAMM CLI :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/samm-cli.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
@@ -230,7 +230,7 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Download latest version: <span class="icon"><i class="fa fa-download"></i></span> <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.3.2/samm-cli-2.3.2.jar">samm-cli-2.3.2.jar</a>
+Download latest version: <span class="icon"><i class="fa fa-download"></i></span> <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.4.1/samm-cli-2.4.1.jar">samm-cli-2.4.1.jar</a>
 </td>
 </tr>
 </table>
@@ -253,7 +253,7 @@ For technical reasons, Java 17 or newer is required to successfully run the tool
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.3.2.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.3.2.jar help</code>).
+<p>For the executable jar, call <code>java -jar samm-cli-2.4.1.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.4.1.jar help</code>).
 In the following sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -269,7 +269,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.3.2.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.4.1.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -603,7 +603,7 @@ and then the <code>--parameter-file</code> defines the parameter resourceId in y
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.3.2.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.4.1.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1085,7 +1085,7 @@ For offset based paging:</p>
 <h2 id="models-directory-structure"><a class="anchor" href="#models-directory-structure"></a>Understanding the models directory structure</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An Aspect Model file can contain an Aspect definition as well as other model elements that are defined in the same versioned namespace, as described in the <a href="../../../samm-specification/snapshot/namespaces.html" class="page">Namespaces section of the
+<p>An Aspect Model file can contain an Aspect definition as well as other model elements that are defined in the same versioned namespace, as described in the <a href="../../../samm-specification/snapshot/namespaces.html" class="xref page">Namespaces section of the
 specification</a>.
 Additionally, it is possible to split one versioned namespace across multiple files, for example to define a Characteristic that is usable in multiple Aspects into its own file.
 In order for SAMM CLI to be able to resolve references to such externally defined model elements, the model files must be organized in a directory structure as follows:</p>
@@ -1100,7 +1100,7 @@ The resulting directory structure then looks like the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code><em>models root</em>
+<pre class="highlightjs highlight"><code class="language-none hljs"><em>models root</em>
 └── com.mycompany.myproduct
     ├── 1.0.0
     │   ├── MyAspect.ttl
@@ -1127,8 +1127,8 @@ Each of the files in the <code>1.0.0</code> directory should therefore have an e
 </footer>
 <script src="../../../_/js/site.js"></script>
 <script src="../../../_/js/vendor/lunr.min.js"></script>
-<script src="../../../_/js/vendor/search.js" id="search-script" data-base-path="../../.." data-page-path="/esmf-developer-guide/2.2.3/tooling-guide/samm-cli.html"></script>
-<script async src="../../../_/../search-index.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
 </html>
