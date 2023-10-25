@@ -13,7 +13,7 @@ content:
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
-       tags: ["v2.3.2","v2.3.1","v2.2.3","v2.2.2"]
+       tags: ["v2.4.1","v2.4.0","v2.3.2","v2.3.1","v2.2.3"]
        start_path: documentation/developer-guide
      - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: HEAD
