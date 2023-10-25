@@ -33,7 +33,7 @@ content:
        start_path: documentation/python-sdk-guide
 ui:
   bundle:
-    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.3.0/esmf-antora-ui-bundle-1.3.0.zip
+    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.4.0/esmf-antora-ui-bundle-1.4.0.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
@@ -42,6 +42,10 @@ ui:
   - path: .nojekyll
 runtime:
   cache_dir: ./.cache/antora
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'
+      index_latest_only: true
 asciidoc:
   attributes:
     doctype: book
