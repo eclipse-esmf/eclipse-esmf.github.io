@@ -119,10 +119,7 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/4.6.0/introduction.html">4.6.0</a>
-        </li>
-        <li class="version">
-          <a href="../../ame-guide/4.5.3/introduction.html">4.5.3</a>
+          <a href="../../ame-guide/5.0.0/introduction.html">5.0.0</a>
         </li>
       </ul>
     </li>
@@ -270,7 +267,90 @@ The interfaces will be generated under <code>src/app/shared/types/&lt;aspect-mod
 <div class="listingblock">
 <div class="title">Show stacktrace</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">Unresolved include directive in modules/tooling-guide/pages/types.adoc - include::example$Movement.ttl[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle"># Copyright (c) 2023 Robert Bosch Manufacturing Solutions GmbH
+#
+# See the AUTHORS file(s) distributed with this work for
+# additional information regarding authorship.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+#
+# SPDX-License-Identifier: MPL-2.0
+
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:1.0.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:1.0.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:1.0.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix : &lt;urn:samm:org.eclipse.examples.movement:2.1.0#&gt; .
+
+:Movement a samm:Aspect ;
+   samm:preferredName "Movement"@en ;
+   samm:description "Aspect for movement information"@en ;
+   samm:properties ( :moving :speedLimitWarning :position :startDate :endDate ) ;
+   samm:operations () .
+
+:moving a samm:Property ;
+   samm:preferredName "Moving"@en ;
+   samm:description "Flag indicating if the position is changing"@en ;
+   samm:characteristic samm-c:Boolean .
+
+:startDate a samm:Property ;
+    samm:preferredName  "Start Date"@en ;
+    samm:description    "Date, when the batch was started"@en ;
+    samm:characteristic samm-c:Timestamp .
+
+:endDate a samm:Property ;
+    samm:preferredName  "End Date"@en ;
+    samm:description    "Date, when the last part of the batch was produced"@en ;
+    samm:characteristic samm-c:Timestamp .
+
+:speedLimitWarning a samm:Property ;
+   samm:preferredName "Speed Limit Warning"@en ;
+   samm:description "Indicates if speed limit is adhered to."@en ;
+   samm:characteristic :WarningLevel .
+
+:position a samm:Property ;
+   samm:preferredName "Position"@en ;
+   samm:description "Indicates a position"@en ;
+   samm:characteristic :SpatialPositionCharacteristic .
+
+:SpatialPositionCharacteristic a samm-c:SingleEntity ;
+   samm:preferredName "Spatial Position Characteristic"@en ;
+   samm:description "Represents a single location in space."@en ;
+   samm:dataType :SpatialPosition .
+
+:WarningLevel a samm-c:Enumeration ;
+   samm:preferredName "Warning Level"@en ;
+   samm:description "Represents if speed of position change is within specification (green), within tolerance (yellow), or outside specification (red)."@en ;
+   samm:dataType xsd:string ;
+   samm-c:values ( "green" "yellow" "red" ) .
+
+:SpatialPosition a samm:Entity ;
+   samm:preferredName "Spatial Position"@en ;
+   samm:description "Position in space, described along three axis, with the third axis optional, if all positions are in a plane."@en ;
+   samm:properties ( :x :y :z ) .
+
+:x a samm:Property ;
+   samm:preferredName "x"@en ;
+   samm:description "x coordinate in space"@en ;
+   samm:characteristic :Coordinate .
+
+:y a samm:Property ;
+   samm:preferredName "y"@en ;
+   samm:description "y coordinate in space"@en ;
+   samm:characteristic :Coordinate .
+
+:z a samm:Property ;
+   samm:preferredName "z"@en ;
+   samm:description "z coordinate in space"@en ;
+   samm:characteristic :Coordinate .
+
+:Coordinate a samm-c:Measurement ;
+   samm:preferredName "Coordinate"@en ;
+   samm:description "Represents a coordinate along an axis in space."@en ;
+   samm:dataType xsd:float ;
+   samm-c:unit unit:metre .</code></pre>
 </div>
 </div>
 <div class="paragraph">
