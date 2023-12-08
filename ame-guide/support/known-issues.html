@@ -229,10 +229,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.1.0/introduction.html">5.1.0</a>
+          <a href="../5.1.1/introduction.html">5.1.1</a>
         </li>
         <li class="version">
-          <a href="../5.0.0/introduction.html">5.0.0</a>
+          <a href="../5.1.0/introduction.html">5.1.0</a>
         </li>
       </ul>
     </li>
@@ -274,7 +274,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.6.1/index.html">2.6.1</a>
+          <a href="../../js-sdk-guide/2.6.2/index.html">2.6.2</a>
         </li>
       </ul>
     </li>
@@ -334,8 +334,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="known-issues.html">master</a>
+    <a class="version" href="../5.1.1/support/known-issues.html">5.1.1</a>
     <a class="version" href="../5.1.0/support/known-issues.html">5.1.0</a>
-    <a class="version" href="../5.0.0/support/known-issues.html">5.0.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/support/known-issues.adoc">Edit this Page</a></div>
@@ -575,35 +575,6 @@ version is not supported by this version of the Aspect Model Editor.</p>
 <div class="sect1">
 <h2 id="other-known-issues"><a class="anchor" href="#other-known-issues"></a>Other known issues</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="launch-windows-application-twice"><a class="anchor" href="#launch-windows-application-twice"></a>Launch Windows application twice</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Error</p></th>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If the application is started twice, there may be problems with some Aspect Models already displayed in the other application.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></th>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Electron/Windows locks these files and recognizes that they are already used by another tool.</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Workaround</p></th>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Launch only one instance of the Aspect Model Editor.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="sect2">
 <h3 id="aspect-model-editor-installation-cannot-write-all-files"><a class="anchor" href="#aspect-model-editor-installation-cannot-write-all-files"></a>Aspect Model Editor installation cannot write all files</h3>
 <table class="tableblock frame-all grid-all stretch">
