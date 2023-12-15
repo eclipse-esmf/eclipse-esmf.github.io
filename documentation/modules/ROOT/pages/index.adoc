@@ -39,7 +39,7 @@ Start modeling
 [.innerTile]
 ======
 
-image::visual-4x5.png[xref=samm-specification:ROOT:index.adoc]
+image::visual-1x1.png[xref=samm-specification:ROOT:index.adoc]
 
 [.title]
 Semantic Aspect Meta Model (SAMM)
@@ -48,6 +48,8 @@ Semantic Aspect Meta Model (SAMM)
 [.text]
 The Semantic Aspect Meta Model allows easy construction of models that semantically describe domain data.
 
+[.link]
+xref:samm-specification:ROOT:index.adoc[Specification]
 --
 
 [.tile]
@@ -69,7 +71,8 @@ Aspect Model Editor
 [.text]
 Create your Aspect Models graphically and learn SAMM on the go. Create downstream artefacts e.g. OpenAPI spec.
 
-
+[.link]
+xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 --
 
 [.tile]
@@ -79,7 +82,7 @@ Create your Aspect Models graphically and learn SAMM on the go. Create downstrea
 [.innerTile]
 ======
 
-image::visual-5x4.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc]
+image::visual-1x1.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc]
 
 [.title]
 SAMM Command Line Interface +
@@ -89,7 +92,8 @@ SAMM Command Line Interface +
 [.text]
 Use common features command line based: Aspect Model validation & artefact generation.
 
-
+[.link]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 --
 
 ====
@@ -116,6 +120,8 @@ Java SDK
 [.text]
 Create Aspect APIs for software solutions. The SDK supports by understanding Aspect Models and generating Java code & artefacts.
 
+[.link]
+xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 --
 
 [.tile]
@@ -134,7 +140,8 @@ Python SDK
 [.text]
 Create Aspect APIs in Python for software solutions and analytics use cases.
 
-
+[.link]
+xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
 
 [.tile]
@@ -152,7 +159,9 @@ JavaScript SDK
 [.text]
 Create UIs better and faster. This SDK loads Aspect Models and creates UI code e.g. tables that unite Aspect data & model.
 
-
+[.link]
+xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
+xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
 --
 ====
 
@@ -167,7 +176,7 @@ Model aspects of digital twins +
 with SAMM to base APIs & UIs + 
 on semantic information.
 ++++
- <button type="button" class="get-started-button">Get started</button> 
+ <button type="button" class="get-started-button"><a href="https://eclipse-esmf.github.io/samm-specification/snapshot/index.html">Aspect Model Editor</a></button> 
 ++++
 ======
 
