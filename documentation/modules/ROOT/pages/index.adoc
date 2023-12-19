@@ -17,7 +17,7 @@ documentation of ESMF
 
 [.sectionWhite-right]
 ======
-image::visual-16x9.png[esmf-intro-book]
+image::ESMF-KeyVisual-book.png[esmf-intro-book]
 ======
 
 ====
@@ -39,7 +39,7 @@ Start modeling
 [.innerTile]
 ======
 
-image::visual-1x1.png[xref=samm-specification:ROOT:index.adoc]
+image::ESMF-SAMM-icon.png[xref=samm-specification:ROOT:index.adoc]
 
 [.title]
 Semantic Aspect Meta Model (SAMM)
@@ -59,7 +59,7 @@ xref:samm-specification:ROOT:index.adoc[Specification]
 [.innerTile]
 ======
 
-image::visual-1x1.png[xref=ame-guide:ROOT:introduction.adoc]
+image::ESMF-AspectModel-icon.png[xref=ame-guide:ROOT:introduction.adoc]
 
 [.title]
 Aspect Model Editor 
@@ -82,7 +82,7 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 [.innerTile]
 ======
 
-image::visual-1x1.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc]
+image::ESMF-SAMM-CLI.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc]
 
 [.title]
 SAMM Command Line Interface +
@@ -111,7 +111,7 @@ Start developing
 [.innerTile]
 ======
 
-image::visual-1x1.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc]
+image::ESMF-JAVA-icon.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc]
 
 [.title]
 Java SDK
@@ -130,8 +130,8 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 
 [.innerTile]
 ======
-[.link]
-xref:python-sdk-guide:ROOT:index.adoc[+++<i class="fa fa-cube" aria-hidden="true"></i>+++]
+
+image::ESMF-Py-icon.png[xref=python-sdk-guide:ROOT:index.adoc]
 
 [.title]
 Python SDK
@@ -150,8 +150,8 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 
 [.innerTile]
 ======
-[.link]
-xref:js-sdk-aml-guide:ROOT:index.adoc[+++<i class="fa fa-cube" aria-hidden="true"></i>+++] +
+
+image::ESMF-JS-icon.png[xref=js-sdk-aml-guide:ROOT:index.adoc]
 
 [.title]
 JavaScript SDK
@@ -182,7 +182,7 @@ on semantic information.
 
 [.sectionWhite-right]
 ======
-image::visual-16x9.png[esmf-intro-book]
+image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book]
 ======
 
 ====
