@@ -1,6 +1,12 @@
 = Eclipse Semantic Modeling Framework
 :page-layout: sections
 
+++++
+  <span class="sections-docu-title">
+    Eclipse Semantic Modeling Framework
+  </span>
+++++
+
 [.sectionWhite]
 ====
 
@@ -10,6 +16,7 @@
 [.sectionWhite-heading]
 Welcome to the +
 documentation of ESMF
+
 ++++
 <input id="search-input" class="search-input-landing" type="text" placeholder="Search docs"> 
 ++++
