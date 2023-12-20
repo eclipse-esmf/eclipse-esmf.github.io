@@ -31,8 +31,6 @@ image::ESMF-KeyVisual-book.png[esmf-intro-book]
 Refer to the https://projects.eclipse.org/projects/dt.esmf[ESMF project page,window=_blank] at the Eclipse Foundation for a general introduction to the Eclipse Semantic Modeling Framework project. +
 For software releases and code, head over to GitHub: https://github.com/eclipse-esmf[github.com/eclipse-esmf,window=_blank]. And for any questions or exchange, https://chat.eclipse.org/#/room/#eclipse-semantic-modeling-framework:matrix.eclipse.org[join the ESMF chat,window=_blank].
 
-'''
-
 [.sectionBlue]
 ====
 [.sectionTitle]
@@ -49,14 +47,12 @@ Start modeling
 image::ESMF-SAMM-icon.png[xref=samm-specification:ROOT:index.adoc]
 
 [.title]
-Semantic Aspect Meta Model (SAMM)
+Semantic Aspect Meta Model
 ======
 
 [.text]
 The Semantic Aspect Meta Model allows easy construction of models that semantically describe domain data.
 
-[.link]
-xref:samm-specification:ROOT:index.adoc[Specification]
 --
 
 [.tile]
@@ -70,16 +66,11 @@ image::ESMF-AspectModel-icon.png[xref=ame-guide:ROOT:introduction.adoc]
 
 [.title]
 Aspect Model Editor 
-++++
-<br>
-++++
 ======
 
 [.text]
 Create your Aspect Models graphically and learn SAMM on the go. Create downstream artefacts e.g. OpenAPI spec.
 
-[.link]
-xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 --
 
 [.tile]
@@ -93,14 +84,11 @@ image::ESMF-SAMM-CLI.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc]
 
 [.title]
 SAMM Command Line Interface +
-(SAMM CLI)
 ======
 
 [.text]
 Use common features command line based: Aspect Model validation & artefact generation.
 
-[.link]
-xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 --
 
 ====
@@ -127,8 +115,6 @@ Java SDK
 [.text]
 Create Aspect APIs for software solutions. The SDK supports by understanding Aspect Models and generating Java code & artefacts.
 
-[.link]
-xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 --
 
 [.tile]
@@ -147,8 +133,6 @@ Python SDK
 [.text]
 Create Aspect APIs in Python for software solutions and analytics use cases.
 
-[.link]
-xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
 
 [.tile]
@@ -166,9 +150,6 @@ JavaScript SDK
 [.text]
 Create UIs better and faster. This SDK loads Aspect Models and creates UI code e.g. tables that unite Aspect data & model.
 
-[.link]
-xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
-xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
 --
 ====
 
@@ -194,7 +175,4 @@ image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book]
 
 ====
 
-
-&nbsp; +
-&nbsp; +
-&nbsp;
+&nbsp; 
