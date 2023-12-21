@@ -1,0 +1,93 @@
+= Eclipse Semantic Modeling Framework
+:page-layout: tiles
+
+Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
+
+'''
+
+[.tile]
+[.icon-spec]
+--
+[.title]
+Semantic Aspect Meta Model (SAMM)
+
+[.text]
+Understand SAMM to describe domain semantics for your assets in Aspect Models. SAMM is expressive and fosters reusability.
+
+[.link]
+xref:samm-specification:ROOT:index.adoc[Specification]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+Aspect Model Editor
+
+[.text]
+Create your Aspect Models graphically and learn SAMM on the go. Generate downstream artifacts, such as OpenAPI specs.
+
+[.link]
+xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+SAMM Command Line Interface +
+(SAMM CLI)
+
+[.text]
+Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
+
+[.link]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+Java SDK
+
+[.text]
+Load and validate Aspect Models programmatically and generate code to create aspect-based APIs.
+
+[.link]
+xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+Python SDK
+
+[.text]
+Load Aspect Models programmatically and generate code for software solutions or analytics use cases.
+
+[.link]
+xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
+--
+
+[.tile]
+[.icon-cli]
+--
+[.title]
+JavaScript SDK
+
+[.text]
+Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data and model.
+
+[.link]
+xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
+xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
+--
+
+Refer to the https://projects.eclipse.org/projects/dt.esmf[ESMF project page,window=_blank] at the Eclipse Foundation for a general introduction to the Eclipse Semantic Modeling Framework project. +
+For software releases and code, head over to GitHub: https://github.com/eclipse-esmf[github.com/eclipse-esmf,window=_blank]. And for any questions or exchange, https://chat.eclipse.org/#/room/#eclipse-semantic-modeling-framework:matrix.eclipse.org[join the ESMF chat,window=_blank].
+
+&nbsp; +
+&nbsp; +
+&nbsp;
