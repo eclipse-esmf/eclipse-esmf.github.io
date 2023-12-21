@@ -33,7 +33,7 @@ content:
        start_path: documentation/python-sdk-guide
 ui:
   bundle:
-    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.4.0/esmf-antora-ui-bundle-1.4.0.zip
+    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.5.0/esmf-antora-ui-bundle-1.5.0.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
