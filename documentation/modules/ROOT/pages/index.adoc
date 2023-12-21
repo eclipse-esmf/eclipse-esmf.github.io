@@ -1,93 +1,178 @@
 = Eclipse Semantic Modeling Framework
-:page-layout: tiles
+:page-layout: sections
 
-Welcome to the documentation of the artifacts of the Eclipse Semantic Modeling Framework (ESMF).
+++++
+  <span class="sections-docu-title">
+    Eclipse Semantic Modeling Framework
+  </span>
+++++
 
-'''
+[.sectionWhite]
+====
+
+[.sectionWhite-left]
+======
+
+[.sectionWhite-heading]
+Welcome to the +
+documentation of ESMF
+
+++++
+<input id="search-input" class="search-input-landing" type="text" placeholder="Search docs"> 
+++++
+======
+
+[.sectionWhite-right]
+======
+image::ESMF-KeyVisual-book.png[esmf-intro-book]
+======
+
+====
+Refer to the https://projects.eclipse.org/projects/dt.esmf[ESMF project page,window=_blank] at the Eclipse Foundation for a general introduction to the Eclipse Semantic Modeling Framework project. +
+For software releases and code, head over to GitHub: https://github.com/eclipse-esmf[github.com/eclipse-esmf,window=_blank]. And for any questions or exchange, https://chat.eclipse.org/#/room/#eclipse-semantic-modeling-framework:matrix.eclipse.org[join the ESMF chat,window=_blank].
+
+[.sectionBlue]
+====
+[.sectionTitle]
+Start modeling
+
 
 [.tile]
 [.icon-spec]
 --
-[.title]
-Semantic Aspect Meta Model (SAMM)
+
+[.innerTile]
+======
+
+image::ESMF-SAMM-icon.png[xref=samm-specification:ROOT:index.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:samm-specification:ROOT:index.adoc[Semantic Aspect Meta Model, window=_blank,opts=nofollow]
+
+======
 
 [.text]
 Understand SAMM to describe domain semantics for your assets in Aspect Models. SAMM is expressive and fosters reusability.
 
-[.link]
-xref:samm-specification:ROOT:index.adoc[Specification]
 --
 
 [.tile]
 [.icon-cli]
 --
-[.title]
-Aspect Model Editor
+
+[.innerTile]
+======
+
+image::ESMF-AspectModel-icon.png[xref=ame-guide:ROOT:introduction.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor, window=_blank,opts=nofollow]
+======
 
 [.text]
 Create your Aspect Models graphically and learn SAMM on the go. Generate downstream artifacts, such as OpenAPI specs.
 
-[.link]
-xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor]
 --
 
 [.tile]
 [.icon-cli]
 --
-[.title]
-SAMM Command Line Interface +
-(SAMM CLI)
+
+[.innerTile]
+======
+
+image::ESMF-SAMM-CLI.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM Command Line Interface, window=_blank,opts=nofollow]
+======
 
 [.text]
 Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
 
-[.link]
-xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM CLI]
 --
+
+====
+
+[.sectionPurple]
+====
+[.sectionTitle]
+Start developing
+
 
 [.tile]
 [.icon-cli]
 --
-[.title]
-Java SDK
+
+[.innerTile]
+======
+
+image::ESMF-JAVA-icon.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK, window=_blank,opts=nofollow]
+======
 
 [.text]
 Load and validate Aspect Models programmatically and generate code to create aspect-based APIs.
 
-[.link]
-xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK]
 --
 
 [.tile]
 [.icon-cli]
 --
-[.title]
-Python SDK
 
+[.innerTile]
+======
+
+image::ESMF-Py-icon.png[xref=python-sdk-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:python-sdk-guide:ROOT:index.adoc[Python SDK, window=_blank,opts=nofollow]
+======
 [.text]
 Load Aspect Models programmatically and generate code for software solutions or analytics use cases.
 
-[.link]
-xref:python-sdk-guide:ROOT:index.adoc[Python SDK]
 --
 
 [.tile]
 [.icon-cli]
 --
-[.title]
-JavaScript SDK
 
+[.innerTile]
+======
+
+image::ESMF-JS-icon.png[xref=js-sdk-aml-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:js-sdk-aml-guide:ROOT:index.adoc[JavaScript SDK, window=_blank,opts=nofollow] 
+======
 [.text]
 Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data and model.
 
-[.link]
-xref:js-sdk-aml-guide:ROOT:index.adoc[JS SDK Aspect Model Loader] +
-xref:js-sdk-guide:ROOT:index.adoc[JS SDK Schematics]
 --
+====
 
-Refer to the https://projects.eclipse.org/projects/dt.esmf[ESMF project page,window=_blank] at the Eclipse Foundation for a general introduction to the Eclipse Semantic Modeling Framework project. +
-For software releases and code, head over to GitHub: https://github.com/eclipse-esmf[github.com/eclipse-esmf,window=_blank]. And for any questions or exchange, https://chat.eclipse.org/#/room/#eclipse-semantic-modeling-framework:matrix.eclipse.org[join the ESMF chat,window=_blank].
+[.sectionWhite]
+====
 
-&nbsp; +
-&nbsp; +
-&nbsp;
+[.sectionWhite-left]
+======
+
+[.sectionWhite-heading-blue]
+Model aspects of digital twins +
+with SAMM to base APIs & UIs + 
+on semantic information.
+++++
+ <button type="button" class="get-started-button"><a href="https://eclipse-esmf.github.io/ame-guide/introduction.html" target="_blank">Aspect Model Editor</a></button> 
+++++
+======
+
+[.sectionWhite-right]
+======
+image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book]
+======
+
+====
+
+&nbsp; 
