@@ -170,7 +170,7 @@ on semantic information.
 
 [.sectionWhite-right]
 ======
-image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book]
+image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book, window=_blank,opts=nofollow]
 ======
 
 ====
