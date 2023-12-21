@@ -164,7 +164,7 @@ Model aspects of digital twins +
 with SAMM to base APIs & UIs + 
 on semantic information.
 ++++
- <button type="button" class="get-started-button"><a href="https://eclipse-esmf.github.io/samm-specification/snapshot/index.html">Aspect Model Editor</a></button> 
+ <button type="button" class="get-started-button"><a href="https://eclipse-esmf.github.io/ame-guide/introduction.html" target="_blank">Aspect Model Editor</a></button> 
 ++++
 ======
 
