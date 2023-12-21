@@ -44,10 +44,11 @@ Start modeling
 [.innerTile]
 ======
 
-image::ESMF-SAMM-icon.png[xref=samm-specification:ROOT:index.adoc]
+image::ESMF-SAMM-icon.png[xref=samm-specification:ROOT:index.adoc, window=_blank,opts=nofollow]
 
-[.title]
-Semantic Aspect Meta Model
+[.title][.link]
+xref:samm-specification:ROOT:index.adoc[Semantic Aspect Meta Model, window=_blank,opts=nofollow]
+
 ======
 
 [.text]
@@ -62,10 +63,10 @@ The Semantic Aspect Meta Model allows easy construction of models that semantica
 [.innerTile]
 ======
 
-image::ESMF-AspectModel-icon.png[xref=ame-guide:ROOT:introduction.adoc]
+image::ESMF-AspectModel-icon.png[xref=ame-guide:ROOT:introduction.adoc, window=_blank,opts=nofollow]
 
-[.title]
-Aspect Model Editor 
+[.title][.link]
+xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor, window=_blank,opts=nofollow]
 ======
 
 [.text]
@@ -80,10 +81,10 @@ Create your Aspect Models graphically and learn SAMM on the go. Create downstrea
 [.innerTile]
 ======
 
-image::ESMF-SAMM-CLI.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc]
+image::ESMF-SAMM-CLI.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc, window=_blank,opts=nofollow]
 
-[.title]
-SAMM Command Line Interface +
+[.title][.link]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM Command Line Interface, window=_blank,opts=nofollow]
 ======
 
 [.text]
@@ -106,10 +107,10 @@ Start developing
 [.innerTile]
 ======
 
-image::ESMF-JAVA-icon.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc]
+image::ESMF-JAVA-icon.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc, window=_blank,opts=nofollow]
 
-[.title]
-Java SDK
+[.title][.link]
+xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK, window=_blank,opts=nofollow]
 ======
 
 [.text]
@@ -124,11 +125,10 @@ Create Aspect APIs for software solutions. The SDK supports by understanding Asp
 [.innerTile]
 ======
 
-image::ESMF-Py-icon.png[xref=python-sdk-guide:ROOT:index.adoc]
+image::ESMF-Py-icon.png[xref=python-sdk-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
 
-[.title]
-Python SDK
-
+[.title][.link]
+xref:python-sdk-guide:ROOT:index.adoc[Python SDK, window=_blank,opts=nofollow]
 ======
 [.text]
 Create Aspect APIs in Python for software solutions and analytics use cases.
@@ -142,10 +142,10 @@ Create Aspect APIs in Python for software solutions and analytics use cases.
 [.innerTile]
 ======
 
-image::ESMF-JS-icon.png[xref=js-sdk-aml-guide:ROOT:index.adoc]
+image::ESMF-JS-icon.png[xref=js-sdk-aml-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
 
-[.title]
-JavaScript SDK
+[.title][.link]
+xref:js-sdk-aml-guide:ROOT:index.adoc[JavaScript SDK, window=_blank,opts=nofollow] 
 ======
 [.text]
 Create UIs better and faster. This SDK loads Aspect Models and creates UI code e.g. tables that unite Aspect data & model.
