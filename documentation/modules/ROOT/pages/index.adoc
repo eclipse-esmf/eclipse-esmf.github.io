@@ -52,7 +52,7 @@ xref:samm-specification:ROOT:index.adoc[Semantic Aspect Meta Model, window=_blan
 ======
 
 [.text]
-The Semantic Aspect Meta Model allows easy construction of models that semantically describe domain data.
+Understand SAMM to describe domain semantics for your assets in Aspect Models. SAMM is expressive and fosters reusability.
 
 --
 
@@ -70,7 +70,7 @@ xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor, window=_blank,opts=no
 ======
 
 [.text]
-Create your Aspect Models graphically and learn SAMM on the go. Create downstream artefacts e.g. OpenAPI spec.
+Create your Aspect Models graphically and learn SAMM on the go. Generate downstream artifacts, such as OpenAPI specs.
 
 --
 
@@ -88,7 +88,7 @@ xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM Command Line Interfac
 ======
 
 [.text]
-Use common features command line based: Aspect Model validation & artefact generation.
+Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
 
 --
 
@@ -114,7 +114,7 @@ xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK, windo
 ======
 
 [.text]
-Create Aspect APIs for software solutions. The SDK supports by understanding Aspect Models and generating Java code & artefacts.
+Load and validate Aspect Models programmatically and generate code to create aspect-based APIs.
 
 --
 
@@ -131,7 +131,7 @@ image::ESMF-Py-icon.png[xref=python-sdk-guide:ROOT:index.adoc, window=_blank,opt
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK, window=_blank,opts=nofollow]
 ======
 [.text]
-Create Aspect APIs in Python for software solutions and analytics use cases.
+Load Aspect Models programmatically and generate code for software solutions or analytics use cases.
 
 --
 
@@ -148,7 +148,7 @@ image::ESMF-JS-icon.png[xref=js-sdk-aml-guide:ROOT:index.adoc, window=_blank,opt
 xref:js-sdk-aml-guide:ROOT:index.adoc[JavaScript SDK, window=_blank,opts=nofollow] 
 ======
 [.text]
-Create UIs better and faster. This SDK loads Aspect Models and creates UI code e.g. tables that unite Aspect data & model.
+Build UIs better and faster. This SDK loads Aspect Models and generates UI code, such as tables that unite aspect data and model.
 
 --
 ====
@@ -170,7 +170,7 @@ on semantic information.
 
 [.sectionWhite-right]
 ======
-image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book, window=_blank,opts=nofollow]
+image::ESMF-KeyVisual-Car-Robot.png[esmf-intro-book]
 ======
 
 ====
