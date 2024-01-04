@@ -29,7 +29,7 @@ content:
        start_path: documentation/js-sdk-aml-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader
        branches: HEAD
-       tags: ["v2.0.0"]
+       tags: ["v2.1.0"]
        start_path: documentation/python-sdk-guide
 ui:
   bundle:
