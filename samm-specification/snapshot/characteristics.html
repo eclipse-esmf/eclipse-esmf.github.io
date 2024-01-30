@@ -173,19 +173,19 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.5.0/index.html">2.5.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.4.2/index.html">2.4.2</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.4.1/index.html">2.4.1</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.4.0/index.html">2.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.3.2/index.html">2.3.2</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.3.1/index.html">2.3.1</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.2.3/index.html">2.2.3</a>
         </li>
       </ul>
     </li>
@@ -1342,6 +1342,21 @@ number of elements in the collection.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+When using the <code>samm-c:minValue</code> parameter in Length Constraint, it is crucial to consider the following:
+* Creating a Model with a <a href="#set-characteristic">Set</a>/<a href="#sorted-set-characteristic">Sorted Set</a> based on a finite Base Characteristic (<a href="#boolean-characteristic">Boolean</a> or <a href="#enumeration-characteristic">Enumeration</a>)
+and adding Length Constraint, the <code>samm-c:minValue</code> must not exceed the total number of elements in the Base Characteristic.
+Models with such conditions are not recognized as invalid, but no valid payloads can exist for them.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="regular-expression-constraint"><a class="anchor" href="#regular-expression-constraint"></a>Regular Expression Constraint</h3>

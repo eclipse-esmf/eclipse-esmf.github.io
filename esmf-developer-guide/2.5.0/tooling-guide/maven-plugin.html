@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.3.2">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.5.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -93,7 +93,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.3.2</span>
+    <span class="version">2.5.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -125,19 +125,19 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.5.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.4.2/index.html">2.4.2</a>
+        </li>
+        <li class="version">
           <a href="../../2.4.1/index.html">2.4.1</a>
         </li>
         <li class="version">
           <a href="../../2.4.0/index.html">2.4.0</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.3.2</a>
-        </li>
-        <li class="version">
-          <a href="../../2.3.1/index.html">2.3.1</a>
-        </li>
-        <li class="version">
-          <a href="../../2.2.3/index.html">2.2.3</a>
         </li>
       </ul>
     </li>
@@ -204,17 +204,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.3.2</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.5.0</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/maven-plugin.html">master</a>
+    <a class="version" href="../../2.5.1/tooling-guide/maven-plugin.html">2.5.1</a>
+    <a class="version is-current" href="maven-plugin.html">2.5.0</a>
+    <a class="version" href="../../2.4.2/tooling-guide/maven-plugin.html">2.4.2</a>
     <a class="version" href="../../2.4.1/tooling-guide/maven-plugin.html">2.4.1</a>
     <a class="version" href="../../2.4.0/tooling-guide/maven-plugin.html">2.4.0</a>
-    <a class="version is-current" href="maven-plugin.html">2.3.2</a>
-    <a class="version" href="../../2.3.1/tooling-guide/maven-plugin.html">2.3.1</a>
-    <a class="version" href="../../2.2.3/tooling-guide/maven-plugin.html">2.2.3</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.3.2/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.5.0/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -234,10 +234,10 @@ Models in the build of their maven projects to, for example, generate code from 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.4.1&lt;/version&gt;
+    &lt;version&gt;2.5.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -248,7 +248,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-the current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
+The current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
 <code>FileSystemStrategy</code> to resolve Aspect Models. See
 <a href="java-aspect-tooling.html#understanding-model-resolution" class="xref page">Understanding Model Resolution</a> for
 more information.
@@ -269,7 +269,7 @@ more information.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -282,9 +282,9 @@ more information.
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
@@ -314,10 +314,10 @@ more information.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Print detailed validation messages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -352,7 +352,7 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -365,11 +365,11 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -398,10 +398,10 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -427,9 +427,21 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>packageName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The package name for the generated Java files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The package name for the generated Java files. This may also
+  include the placeholders <code>{{namespace}}</code>, <code>{{majorVersion}}</code>,
+  <code>{{minorVersion}}</code> and <code>{{microVersion}}</code> which will be replaced by their
+  respective values from the Aspect Model URN.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of the given Aspect Model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stripNamespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A regular expression that determines which parts
+of the namespace should be removed, to remove for example common prefixes which
+are replaced using <code>packageName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -467,7 +479,7 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -480,11 +492,11 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -513,10 +525,10 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -542,9 +554,21 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>packageName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The package name for the generated Java files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The package name for the generated Java files. This may also
+  include the placeholders <code>{{namespace}}</code>, <code>{{majorVersion}}</code>,
+  <code>{{minorVersion}}</code> and <code>{{microVersion}}</code> which will be replaced by their
+  respective values from the Aspect Model URN.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of the given Aspect Model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stripNamespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A regular expression that determines which parts
+of the namespace should be removed, to remove for example common prefixes which
+are replaced using <code>packageName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -578,7 +602,7 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -591,11 +615,11 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -624,10 +648,10 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -674,7 +698,7 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -687,12 +711,12 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
            &lt;aspectApiBaseUrl&gt;http://example.com&lt;/aspectApiBaseUrl&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
            &lt;outputFormat&gt;yaml&lt;/outputFormat&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
@@ -722,10 +746,10 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -844,7 +868,7 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -857,11 +881,11 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -890,10 +914,10 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -931,7 +955,7 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
 <h3 id="generating-svg-or-png-diagrams"><a class="anchor" href="#generating-svg-or-png-diagrams"></a>Generating SVG or PNG Diagrams</h3>
 <div class="paragraph">
 <p>The <code>generateDiagram</code> goal generates an automatically layouted diagram for a given Aspect Model in
-SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default life cycle phase for the goal is
+SVG or PNG. The default life cycle phase for the goal is
 <code>generate-resources</code>.</p>
 </div>
 <div class="paragraph">
@@ -939,7 +963,7 @@ SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default li
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -952,11 +976,11 @@ SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default li
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
            &lt;targetFormats&gt;
               &lt;targetFormat&gt;png&lt;/targetFormat&gt;
            &lt;/targetFormats&gt;
@@ -988,10 +1012,10 @@ SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default li
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1037,7 +1061,7 @@ the goal is <code>generate-resources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -1050,11 +1074,11 @@ the goal is <code>generate-resources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -1083,10 +1107,10 @@ the goal is <code>generate-resources</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1127,7 +1151,7 @@ default life cycle phase for the goal is <code>initialize</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -1140,11 +1164,11 @@ default life cycle phase for the goal is <code>initialize</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -1173,10 +1197,10 @@ default life cycle phase for the goal is <code>initialize</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1217,7 +1241,7 @@ specified in the <code>outputDirectory</code> property. The default life cycle p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -1230,11 +1254,11 @@ specified in the <code>outputDirectory</code> property. The default life cycle p
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -1263,10 +1287,10 @@ specified in the <code>outputDirectory</code> property. The default life cycle p
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detailedValidationMessages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1292,6 +1316,190 @@ specified in the <code>outputDirectory</code> property. The default life cycle p
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conversion-to-and-from-aas"><a class="anchor" href="#conversion-to-and-from-aas"></a>Conversion to and from AAS</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="generate-an-aas-file-from-an-aspect-model"><a class="anchor" href="#generate-an-aas-file-from-an-aspect-model"></a>Generate an AAS file from an Aspect Model</h3>
+<div class="paragraph">
+<p>The <code>generateAas</code> goal generates a file containing an Asset Administration Shell (AAS) environment
+with a submodel template that corresponds to a given input Aspect Model. The output file can be
+written in either AASX, XML or JSON formats. The default life cycle phase for the goal is
+<code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-aas&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateAas&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;targetFormat&gt;aasx&lt;/targetFormat&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated AAS file will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>targetFormat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format to write, one of <code>aasx</code>, <code>xml</code> or <code>json</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="generate-an-aspect-model-from-an-aas-file"><a class="anchor" href="#generate-an-aspect-model-from-an-aas-file"></a>Generate an Aspect Model from an AAS file</h3>
+<div class="paragraph">
+<p>The <code>generateAspectFromAas</code> goal generates one Aspect Model for each of the AAS submodel templates
+defined in a given input AAS file. The input file can be given in either AASX, XML or JSON formats.
+The output files are written to a directory in the
+<a href="samm-cli.html#models-directory-structure" class="xref page">models directory</a> structure. The default
+life cycle phase for the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-aspect-model-from-aas&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateAspectFromAas&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;includes&gt;
+              &lt;include&gt;${aas-file-path}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-aspect-models}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of AAS files to convert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated Aspect Models will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </article>

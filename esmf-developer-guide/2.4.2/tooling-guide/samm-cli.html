@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.3.1">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.4.2">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -93,7 +93,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.3.1</span>
+    <span class="version">2.4.2</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -125,19 +125,19 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version">
+          <a href="../../2.5.0/index.html">2.5.0</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.4.2</a>
+        </li>
+        <li class="version">
           <a href="../../2.4.1/index.html">2.4.1</a>
         </li>
         <li class="version">
           <a href="../../2.4.0/index.html">2.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../2.3.2/index.html">2.3.2</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.3.1</a>
-        </li>
-        <li class="version">
-          <a href="../../2.2.3/index.html">2.2.3</a>
         </li>
       </ul>
     </li>
@@ -204,17 +204,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.3.1</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.4.2</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/samm-cli.html">master</a>
+    <a class="version" href="../../2.5.1/tooling-guide/samm-cli.html">2.5.1</a>
+    <a class="version" href="../../2.5.0/tooling-guide/samm-cli.html">2.5.0</a>
+    <a class="version is-current" href="samm-cli.html">2.4.2</a>
     <a class="version" href="../../2.4.1/tooling-guide/samm-cli.html">2.4.1</a>
     <a class="version" href="../../2.4.0/tooling-guide/samm-cli.html">2.4.0</a>
-    <a class="version" href="../../2.3.2/tooling-guide/samm-cli.html">2.3.2</a>
-    <a class="version is-current" href="samm-cli.html">2.3.1</a>
-    <a class="version" href="../../2.2.3/tooling-guide/samm-cli.html">2.2.3</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.3.1/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.4.2/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -234,7 +234,7 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Download latest version: <span class="icon"><i class="fa fa-download"></i></span> <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.4.1/samm-cli-2.4.1.jar">samm-cli-2.4.1.jar</a>
+Download latest version: <span class="icon"><i class="fa fa-download"></i></span> <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.5.1/samm-cli-2.5.1.jar">samm-cli-2.5.1.jar</a>
 </td>
 </tr>
 </table>
@@ -257,7 +257,7 @@ For technical reasons, Java 17 or newer is required to successfully run the tool
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.4.1.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.4.1.jar help</code>).
+<p>For the executable jar, call <code>java -jar samm-cli-2.5.1.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.5.1.jar help</code>).
 In the following sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -273,7 +273,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.4.1.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.5.1.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -356,11 +356,13 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to html -o c:\Model.html</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--css, -c</em> : CSS file with custom styles to be included in the generated HTML documentation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--css, -c</em> : CSS file with custom styles to be included in the generated HTML
+                                       documentation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to html -c c:\styles.css</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which the HTML should be generated (default: en)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which the HTML should be generated
+                                       (default: en)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to html -l de</code></p></td>
 </tr>
 <tr>
@@ -373,11 +375,14 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to png</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout); as PNG is a binary format, it is strongly recommended to output the result to a file by using the -o option or the console redirection operator '&gt;')</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout); as PNG is a binary format, it is
+                                       strongly recommended to output the result to a file by using the -o option or the
+                                       console redirection operator '&gt;')</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : the language from the model for which the diagram should be generated (default: en)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : the language from the model for which the diagram should be
+                                       generated (default: en)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -394,7 +399,8 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : the language from the model for which the diagram should be generated (default: en)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : the language from the model for which the diagram should be
+                                       generated (default: en)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -402,29 +408,13 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to svg --custom-resolver "java -jar resolver.jar"</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to dot</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://graphviz.org/doc/info/lang.html">DOT</a> diagram for Aspect Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to dot</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : the language from the model for which the diagram should be generated (default: en)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">aspect &lt;model&gt; to java</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate Java classes from an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output-directory, -d</em> : output directory to write files to (default: current directory)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output-directory, -d</em> : output directory to write files to (default:
+                                       current directory)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -432,15 +422,18 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java -pn org.company.product</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--no-jackson, -nj</em> : disable <a href="https://github.com/FasterXML/jackson">Jackson</a> annotation generation in generated Java classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--no-jackson, -nj</em> : disable <a href="https://github.com/FasterXML/jackson">Jackson</a> annotation
+                                       generation in generated Java classes</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--template-library-file, -tlf</em> : the path and name of the <a href="https://velocity.apache.org/">Velocity</a> template file containing the macro library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--template-library-file, -tlf</em> : the path and name of the
+                                       <a href="https://velocity.apache.org/">Velocity</a> template file containing the macro library</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--execute-library-macros, -elm</em> : Execute the macros provided in the <a href="https://velocity.apache.org/">Velocity</a> macro library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--execute-library-macros, -elm</em> : Execute the macros provided in the
+                                       <a href="https://velocity.apache.org/">Velocity</a> macro library</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -452,7 +445,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="13"><p class="tableblock">aspect &lt;model&gt; to openapi</p></td>
+<td class="tableblock halign-left valign-top" rowspan="15"><p class="tableblock">aspect &lt;model&gt; to openapi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j</code></p></td>
 </tr>
@@ -461,23 +454,28 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--api-base-url, -b</em> : the base url for the Aspect API used in the <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--api-base-url, -b</em> : the base url for the Aspect API used in the
+                                       <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j -b http://mysite.de</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--json, -j</em> : generate a JSON specification for an Aspect Model (default format is YAML)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--json, -j</em> : generate a JSON specification for an Aspect Model (default format
+                                       is YAML)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--comment, -c</em> : only in combination with --json; generates <code>$comment</code> OpenAPI 3.1 keyword for all <code>samm:see</code> attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--comment, -c</em> : only in combination with --json; generates <code>$comment</code>
+                                       OpenAPI 3.1 keyword for all <code>samm:see</code> attributes</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--parameter-file, -p</em> : the path to a file including the parameter for the Aspect API endpoints</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--parameter-file, -p</em> : the path to a file including the parameter for the Aspect
+                                       API endpoints</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section bellow</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--semantic-version, -sv</em> : use the full semantic version from the Aspect Model as the version for the Aspect API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--semantic-version, -sv</em> : use the full semantic version from the Aspect Model as the
+                                       version for the Aspect API</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -485,36 +483,41 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section bellow</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-query-api, -q</em> : include the path for the Query Aspect API Endpoint in the <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-query-api, -q</em> : include the path for the Query Aspect API Endpoint in the
+                                       <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-none, -pn</em> : exclude paging information for the Aspect API Endpoint in the <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-none, -pn</em> : exclude paging information for the Aspect API Endpoint in the
+                                       <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-cursor-based, -pc</em> : in case there is more than one paging possibility, it has to be cursor based paging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-cursor-based, -pc</em> : in case there is more than one paging possibility,
+                                       it must be cursor based paging</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-offset-based, -po</em> : in case there is more than one paging possibility, it has to be offset based paging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-offset-based, -po</em> : in case there is more than one paging possibility,
+                                       it must be offset based paging</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-time-based, -pt</em> : in case there is more than one paging possibility, it has to be time based paging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--paging-time-based, -pt</em> : in case there is more than one paging possibility,
+                                       it must be time based paging</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which an OpenAPI specification should be generated (default: en)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which an OpenAPI specification should
+                                       be generated (default: en)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -l de</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">aspect &lt;model&gt; to json</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">aspect &lt;model&gt; to json</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
@@ -525,9 +528,9 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">aspect &lt;model&gt; to schema</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to schema</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON schema for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to schema</code></p></td>
 </tr>
@@ -536,16 +539,16 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which a JSON schema should be generated (default: en)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which a JSON schema should be
+                                       generated (default: en)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to schema -l de</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to aas</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to aas</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate Asset Administration Shell (AAS) submodel template for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to aas</code></p></td>
 </tr>
@@ -555,6 +558,10 @@ The available options and their meaning can also be seen in the help text of the
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--format, -f</em> : output file format (xml, json, or aasx, default: xml)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -607,7 +614,7 @@ and then the <code>--parameter-file</code> defines the parameter resourceId in y
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.4.1.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.5.1.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -624,12 +631,12 @@ Please bear in mind that these blocks are snippets or fragments of a larger whol
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.0.0#&gt; .
-@prefix : &lt;urn:samm:com.mycompany.myproduct:2.0.0#&gt; . <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
 
 :Test a samm:Aspect; <i class="conum" data-value="3"></i><b>(3)</b>
     samm:preferredName "TestAspect"@en ; <i class="conum" data-value="2"></i><b>(2)</b>
-    samm:preferredName "TestAspekt"@de .</pre>
+    samm:preferredName "TestAspekt"@de .</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -724,7 +731,7 @@ For an example Aspect from the following fragment:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>:Test a samm:Aspect; <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Test a samm:Aspect; <i class="conum" data-value="1"></i><b>(1)</b>
     samm:properties (
         :prop1 <i class="conum" data-value="2"></i><b>(2)</b>
         [ samm:property :prop2; samm:payloadName "givenName"; ] <i class="conum" data-value="3"></i><b>(3)</b>
@@ -732,7 +739,7 @@ For an example Aspect from the following fragment:</p>
 
 :prop1 a samm:Property;
     samm:description "Description of Property1"@en; <i class="conum" data-value="5"></i><b>(5)</b>
-    samm:characteristic :Enum. <i class="conum" data-value="6"></i><b>(6)</b></pre>
+    samm:characteristic :Enum. <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -794,7 +801,7 @@ For an example Aspect from the following fragment:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>:AspectWithOperation a samm:Aspect ;
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:AspectWithOperation a samm:Aspect ;
    samm:properties ( ) ;
    samm:operations ( :testOperation ) .
 
@@ -806,7 +813,7 @@ For an example Aspect from the following fragment:</p>
    samm:characteristic samm-c:Text . <i class="conum" data-value="3"></i><b>(3)</b>
 
 :input a samm:Property ;
-   samm:characteristic samm-c:Text . <i class="conum" data-value="4"></i><b>(4)</b></pre>
+   samm:characteristic samm-c:Text . <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="paragraph">

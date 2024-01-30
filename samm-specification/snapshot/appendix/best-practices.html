@@ -173,19 +173,19 @@
           <a href="../../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../../esmf-developer-guide/2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.5.0/index.html">2.5.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.4.2/index.html">2.4.2</a>
+        </li>
+        <li class="version">
           <a href="../../../esmf-developer-guide/2.4.1/index.html">2.4.1</a>
         </li>
         <li class="version">
           <a href="../../../esmf-developer-guide/2.4.0/index.html">2.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../../esmf-developer-guide/2.3.2/index.html">2.3.2</a>
-        </li>
-        <li class="version">
-          <a href="../../../esmf-developer-guide/2.3.1/index.html">2.3.1</a>
-        </li>
-        <li class="version">
-          <a href="../../../esmf-developer-guide/2.2.3/index.html">2.2.3</a>
         </li>
       </ul>
     </li>
@@ -374,9 +374,26 @@ range, while a Property such as <code>numberOfProducedItems</code> is not logica
 <h2 id="choosing-a-unit"><a class="anchor" href="#choosing-a-unit"></a>Choosing a Unit</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When trying to refer to a physical unit, please see the
-<a href="unitcatalog.html" class="xref page">Unit Catalog</a>. When searching for the unit,
-remember that the unit catalog uses British English.</p>
+<p>When trying to refer to a physical unit, please see the <a href="unitcatalog.html" class="xref page">Unit
+Catalog</a>. When searching for the unit, remember that the unit catalog uses British English, e.g.,
+<em>metre</em> instead of <em>meter</em>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you&#8217;re modeling quantities for which both the metric system and the imperial system provide
+units, such as meter vs feet, it is always recommended to use the metric system (preferably SI units
+like meter or others like kilometer if more common in the domain) – unless there are specific
+reasons to create the model differently. In any case it is strongly discouraged to add multiple
+Properties in the same scope representing the same value only using different units due to the
+inherent complexity.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.2.3">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.4.2">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -93,7 +93,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.2.3</span>
+    <span class="version">2.4.2</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -125,19 +125,19 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version">
+          <a href="../../2.5.0/index.html">2.5.0</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.4.2</a>
+        </li>
+        <li class="version">
           <a href="../../2.4.1/index.html">2.4.1</a>
         </li>
         <li class="version">
           <a href="../../2.4.0/index.html">2.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../2.3.2/index.html">2.3.2</a>
-        </li>
-        <li class="version">
-          <a href="../../2.3.1/index.html">2.3.1</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.2.3</a>
         </li>
       </ul>
     </li>
@@ -204,17 +204,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.2.3</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.4.2</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/maven-plugin.html">master</a>
+    <a class="version" href="../../2.5.1/tooling-guide/maven-plugin.html">2.5.1</a>
+    <a class="version" href="../../2.5.0/tooling-guide/maven-plugin.html">2.5.0</a>
+    <a class="version is-current" href="maven-plugin.html">2.4.2</a>
     <a class="version" href="../../2.4.1/tooling-guide/maven-plugin.html">2.4.1</a>
     <a class="version" href="../../2.4.0/tooling-guide/maven-plugin.html">2.4.0</a>
-    <a class="version" href="../../2.3.2/tooling-guide/maven-plugin.html">2.3.2</a>
-    <a class="version" href="../../2.3.1/tooling-guide/maven-plugin.html">2.3.1</a>
-    <a class="version is-current" href="maven-plugin.html">2.2.3</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.2.3/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.4.2/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -234,10 +234,10 @@ Models in the build of their maven projects to, for example, generate code from 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.4.1&lt;/version&gt;
+    &lt;version&gt;2.5.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -248,7 +248,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-the current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
+The current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
 <code>FileSystemStrategy</code> to resolve Aspect Models. See
 <a href="java-aspect-tooling.html#understanding-model-resolution" class="xref page">Understanding Model Resolution</a> for
 more information.
@@ -269,7 +269,7 @@ more information.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -282,9 +282,9 @@ more information.
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
@@ -352,7 +352,7 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -365,11 +365,11 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -467,7 +467,7 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -480,11 +480,11 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -578,7 +578,7 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -591,11 +591,11 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -674,7 +674,7 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -687,12 +687,12 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
            &lt;aspectApiBaseUrl&gt;http://example.com&lt;/aspectApiBaseUrl&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
            &lt;outputFormat&gt;yaml&lt;/outputFormat&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
@@ -844,7 +844,7 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -857,11 +857,11 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -931,7 +931,7 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
 <h3 id="generating-svg-or-png-diagrams"><a class="anchor" href="#generating-svg-or-png-diagrams"></a>Generating SVG or PNG Diagrams</h3>
 <div class="paragraph">
 <p>The <code>generateDiagram</code> goal generates an automatically layouted diagram for a given Aspect Model in
-SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default life cycle phase for the goal is
+SVG or PNG. The default life cycle phase for the goal is
 <code>generate-resources</code>.</p>
 </div>
 <div class="paragraph">
@@ -939,7 +939,7 @@ SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default li
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -952,11 +952,11 @@ SVG, PNG or <a href="https://www.graphviz.org/">Graphviz/DOT</a>. The default li
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
            &lt;targetFormats&gt;
               &lt;targetFormat&gt;png&lt;/targetFormat&gt;
            &lt;/targetFormats&gt;
@@ -1037,7 +1037,7 @@ the goal is <code>generate-resources</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -1050,11 +1050,11 @@ the goal is <code>generate-resources</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -1127,7 +1127,7 @@ default life cycle phase for the goal is <code>initialize</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -1140,11 +1140,11 @@ default life cycle phase for the goal is <code>initialize</code>.</p>
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;
@@ -1217,7 +1217,7 @@ specified in the <code>outputDirectory</code> property. The default life cycle p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;build&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
   &lt;plugins&gt;
      &lt;plugin&gt;
         &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
@@ -1230,11 +1230,11 @@ specified in the <code>outputDirectory</code> property. The default life cycle p
            &lt;/execution&gt;
         &lt;/executions&gt;
         &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;{path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
            &lt;includes&gt;
-              &lt;include&gt;{urn-of-aspect-model-to-be-included}&lt;/include&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
-           &lt;outputDirectory&gt;{directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
         &lt;/configuration&gt;
      &lt;/plugin&gt;
   &lt;/plugins&gt;

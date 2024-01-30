@@ -173,19 +173,19 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.5.0/index.html">2.5.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.4.2/index.html">2.4.2</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.4.1/index.html">2.4.1</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.4.0/index.html">2.4.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.3.2/index.html">2.3.2</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.3.1/index.html">2.3.1</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.2.3/index.html">2.2.3</a>
         </li>
       </ul>
     </li>
@@ -563,6 +563,55 @@ unsuitable in Aspect Models and <em>should not</em> be used:</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="samm-curie"><a class="anchor" href="#samm-curie"></a>Value range for <code>samm:curie</code> values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Values with the type of <code>samm:curie</code> are interpreted in the context of the Aspect Model that
+describes the Aspect. The prefix part of their value therefore refers to the RDF prefixes as defined
+in the Aspect Model. Aspect Models do not use the <a href="https://www.w3.org/TR/turtle/#relative-iri">@base
+or BASE</a> directive in RDF/Turtle, so values with <code>samm:curie</code> type must always contain a colon <code>:</code>
+to delimit the (possibly) empty prefix part from the local name.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Allowed <code>samm:curie</code> values</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Example Curie value</th>
+<th class="tableblock halign-left valign-top">Allowed</th>
+<th class="tableblock halign-left valign-top">Interpreted as URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>unit:hectopascal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>urn:samm:org.eclipse.esmf.samm:unit:2.1.0#hectopascal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.w3.org/2001/XMLSchema#string</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>:myProperty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Depends on the Aspect Model&#8217;s <code>@prefix :</code> definition</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>myProperty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="implicit-conversions"><a class="anchor" href="#implicit-conversions"></a>Implicit Conversions</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -572,7 +621,7 @@ transitive, i.e. when <em>A</em> can be cast to <em>B</em> and <em>B</em> can be
 <em>C</em>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Allowed implicit conversions</caption>
+<caption class="title">Table 3. Allowed implicit conversions</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
