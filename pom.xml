@@ -28,6 +28,8 @@
 
       <nodejs-version>16.18.0</nodejs-version>
       <npm-version>9.6.0</npm-version>
+      <antora-version>3.0.0</antora-version>
+      <antora-lunr-extension-version>1.0.0-alpha.1</antora-lunr-extension-version>
       <node-directory>${project.basedir}/node</node-directory>
       <node-modules-directory>${project.basedir}/node_modules</node-modules-directory>
       <antora-cli>${node-modules-directory}/@antora/cli/bin/antora</antora-cli>
@@ -147,18 +149,28 @@
                            <goal>npm</goal>
                         </goals>
                         <configuration>
-                           <arguments>install @antora/cli</arguments>
+                           <arguments>install @antora/cli@${antora-version}</arguments>
                         </configuration>
                      </execution>
                      <execution>
-                        <id>install-antora-site-generator-lunr</id>
+                        <id>install-antora-site-generator</id>
                         <phase>generate-resources</phase>
                         <goals>
                            <goal>npm</goal>
                         </goals>
                         <configuration>
-                           <arguments>install antora-site-generator-lunr</arguments>
+                           <arguments>install @antora/site-generator@${antora-version}</arguments>
                         </configuration>
+                     </execution>
+                     <execution>
+                         <id>install-antora-lunr-extension</id>
+                         <phase>generate-resources</phase>
+                         <goals>
+                             <goal>npm</goal>
+                         </goals>
+                         <configuration>
+                             <arguments>install @antora/lunr-extension@${antora-lunr-extension-version}</arguments>
+                         </configuration>
                      </execution>
                      <execution>
                         <id>install-asciidoctor-plantuml</id>
@@ -193,7 +205,7 @@
                         </goals>
                         <configuration>
                            <executable>${antora-cli}</executable>
-                           <commandlineArgs>--generator antora-site-generator-lunr site.yml --stacktrace</commandlineArgs>
+                           <commandlineArgs>site.yml --stacktrace --fetch</commandlineArgs>
                            <useMavenLogger>true</useMavenLogger>
                         </configuration>
                      </execution>
@@ -220,7 +232,7 @@
                         </goals>
                         <configuration>
                            <executable>${antora-cli}</executable>
-                           <commandlineArgs>--generator antora-site-generator-lunr site-local.yml --stacktrace</commandlineArgs>
+                           <commandlineArgs>site-local.yml --stacktrace --fetch</commandlineArgs>
                            <useMavenLogger>true</useMavenLogger>
                         </configuration>
                      </execution>
