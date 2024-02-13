@@ -46,7 +46,7 @@ Start modeling
 [.innerTile]
 ======
 
-image::ESMF-SAMM-icon.png[xref=samm-specification:ROOT:index.adoc, window=_blank,opts=nofollow]
+image::ESMF-SAMM-icon-big.png[xref=samm-specification:ROOT:index.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
 xref:samm-specification:ROOT:index.adoc[Semantic Aspect Meta Model, window=_blank,opts=nofollow]
@@ -65,7 +65,7 @@ Understand SAMM to describe domain semantics for your assets in Aspect Models. S
 [.innerTile]
 ======
 
-image::ESMF-AspectModel-icon.png[xref=ame-guide:ROOT:introduction.adoc, window=_blank,opts=nofollow]
+image::ESMF-AspectModel-icon-big.png[xref=ame-guide:ROOT:introduction.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
 xref:ame-guide:ROOT:introduction.adoc[Aspect Model Editor, window=_blank,opts=nofollow]
@@ -83,7 +83,7 @@ Create your Aspect Models graphically and learn SAMM on the go. Generate downstr
 [.innerTile]
 ======
 
-image::ESMF-SAMM-CLI.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc, window=_blank,opts=nofollow]
+image::ESMF-SAMM-CLI-big.png[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
 xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM Command Line Interface, window=_blank,opts=nofollow]
@@ -109,7 +109,7 @@ Start developing
 [.innerTile]
 ======
 
-image::ESMF-JAVA-icon.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc, window=_blank,opts=nofollow]
+image::ESMF-JAVA-icon-big.png[xref=esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
 xref:esmf-developer-guide:tooling-guide:java-aspect-tooling.adoc[Java SDK, window=_blank,opts=nofollow]
@@ -127,7 +127,7 @@ Load and validate Aspect Models programmatically and generate code to create asp
 [.innerTile]
 ======
 
-image::ESMF-Py-icon.png[xref=python-sdk-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
+image::ESMF-Py-icon-big.png[xref=python-sdk-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
 xref:python-sdk-guide:ROOT:index.adoc[Python SDK, window=_blank,opts=nofollow]
@@ -144,7 +144,7 @@ Load Aspect Models programmatically and generate code for software solutions or 
 [.innerTile]
 ======
 
-image::ESMF-JS-icon.png[xref=js-sdk-aml-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
+image::ESMF-JS-icon-big.png[xref=js-sdk-aml-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
 xref:js-sdk-aml-guide:ROOT:index.adoc[JavaScript SDK, window=_blank,opts=nofollow] 
@@ -162,8 +162,8 @@ Build UIs better and faster. This SDK loads Aspect Models and generates UI code,
 ======
 
 [.sectionWhite-heading-blue]
-Model aspects of digital twins +
-with SAMM to base APIs & UIs + 
+Model aspects of digital twins
+with SAMM to base APIs & UIs
 on semantic information.
 ++++
  <button type="button" class="get-started-button"><a href="https://eclipse-esmf.github.io/ame-guide/introduction.html" target="_blank">Aspect Model Editor</a></button> 
