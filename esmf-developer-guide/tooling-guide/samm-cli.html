@@ -214,7 +214,7 @@
     <a class="version" href="../2.4.0/tooling-guide/samm-cli.html">2.4.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -621,7 +621,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">aas &lt;aas file&gt; to aspect</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">aas &lt;aas file&gt; to aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Translate Asset Administration Shell (AAS) Submodel Templates to Aspect Models</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect</code></p></td>
 </tr>
@@ -629,6 +629,17 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output-directory, -d</em> : output directory to write files to (default:
                                        current directory)</p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--submodel-template, -s</em> : selected submodel template for generating;
+                                       run <code>samm aas &lt;aas file&gt; list</code> to list them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect -s 1 -s 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas &lt;aas file&gt; list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a list of submodel templates contained within the provided
+                                       Asset Administration Shell (AAS) file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx list</code></p></td>
 </tr>
 </tbody>
 </table>

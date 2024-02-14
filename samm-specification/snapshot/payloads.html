@@ -260,7 +260,7 @@
     <a class="version" href="../2.0.0/payloads.html">2.0.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/edit/main/documentation/modules/ROOT/pages/payloads.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/edit/main/documentation/modules/ROOT/pages/payloads.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -602,14 +602,173 @@ the data. The mappings are described in the following table.</p>
 }</code></pre>
 </div>
 </div>
-<div class="admonitionblock caution">
-<table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="characteristics-payload-mappings"><a class="anchor" href="#characteristics-payload-mappings"></a>Specific payload mappings for Characteristics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes how data payloads look like for specific <a href="characteristics.html" class="xref page">Characteristics</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Due to the <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-8.5">limits in the
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponding JSON data type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:Either</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A JSON object with exactly either a <code>left</code> or <code>right</code> key. If the <code>left</code> key is present, its data type is the effective data type of the Characteristic referred to by <code>samm-c:left</code>; if the <code>right</code> key is present, its data type is the effective data type of the Characteristic referred to by <code>samm-c:right</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following example Aspect uses <code>samm-c:Either</code> to express that the Property <code>speedValue</code> can either return the integer value for speed,
+or an Error message (using an Entity), if the value could not be determined (cf. <a href="modeling-guidelines.html#declaring-either" class="xref page">Declaring Either</a>).</p>
+</div>
+<div class="paragraph">
+<p>So, assuming an Aspect Model has a Property <code>speedProperty</code> with its <code>samm:characteristic</code> set to <code>:Result</code> according to the following definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:speedProperty a samm:Property ;
+  samm:characteristic :Result .
+
+:Result a samm-c:Either ;
+  samm-c:left :ErrorMessage ;
+  samm-c:right :SpeedValue .
+
+:ErrorMessage a samm-c:SingleEntity ;
+  samm:dataType :ErrorEntity .
+
+:SpeedValue a samm-c:Quantifiable ;
+  samm:dataType xsd:integer .
+
+:ErrorEntity a samm:Entity ;
+   samm:properties ( :errorCode :errorDescription ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>the corresponding JSON payload either contains a <code>left</code> key with the error description:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "result": {
+    "left": {
+      "errorCode": "...",
+      "errorDescription": "..."
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or it can contain a <code>right</code> key with the success status:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "result": {
+    "right": {
+      "status": "..."
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the following example the Property <code>speedProperty</code> can either return the integer value for speed <code>SpeedValue</code>,
+or an <code>Error</code>, if the value could not be determined. <code>Error</code> can either return the <code>samm-c:Text</code> with simple error text or <code>ErrorMessage</code> (using an Entity) for details of error like <code>errorCode</code> and <code>errorDescription</code>.</p>
+</div>
+<div class="paragraph">
+<p>So, assuming the Property <code>speedProperty</code> with <code>samm-characteristics</code> set to <code>:Result</code> according to the following definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:speedProperty a samm:Property ;
+  samm:characteristic :Result .
+
+:Result a samm-c:Either ;
+  samm:description "The result is either an error or a SpeedValue"@en ;
+  samm-c:left :Error ;
+  samm-c:right :SpeedValue .
+
+:Error a samm-c:Either ;
+  samm:description """An error can be either a simple text,  or a complex object with separate errorCode and errorDescription"""@en ;
+  samm-c:left samm-c:Text ;
+  samm-c:right :ErrorMessage .
+
+:SpeedValue a samm-c:Quantifiable ;
+  samm:dataType xsd:integer .
+
+:ErrorMessage a samm:Characteristic ;
+  samm:dataType :ErrorEntity .
+
+:ErrorEntity a samm:Entity ;
+  samm:properties ( :errorCode :errorDescription ) .
+
+:errorCode a samm:Property ;
+  samm:characteristic samm-c:Text .
+
+:errorDescription a samm:Property ;
+  samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>it can contain <code>right</code> key with the speed value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "speedProperty": {
+    "right": 60
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or possible <code>left</code> key of <code>Error</code> contains Error message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "speedProperty" : {
+    "left" : {
+      "right" : {
+        "errorDescription" : "...",
+        "errorCode" : "..."
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or it can contain <code>right</code> key of <code>Error</code> with simple error text:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "speedProperty" : {
+    "left" : {
+      "left" : "Simple error description..."
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="limitations"><a class="anchor" href="#limitations"></a>Limitations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Due to the <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-8.5">limits in the
 represention of numbers</a> in JSON, the maximum integer number that can be used without losing
 precision is 2⁵³-1 (defined as
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER">Number.MAX_SAFE_INTEGER</a>).
@@ -617,10 +776,7 @@ This means that even if the Aspect Model data type would allow higher or lower v
 not be represented in JSON, they can not be used. Affected data types are the unbounded numeric
 types <code>xsd:decimal</code>, <code>xsd:integer</code>, <code>xsd:positiveInteger</code>, <code>xsd:nonNegativeInteger</code>,
 <code>xsd:negativeInteger</code>, <code>xsd:nonPositiveInteger</code> and the bounded type <code>xsd:unsignedLong</code>. The other
-numeric types are not affected.
-</td>
-</tr>
-</table>
+numeric types are not affected.</p>
 </div>
 </div>
 </div>

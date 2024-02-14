@@ -260,7 +260,7 @@
     <a class="version" href="../2.0.0/modeling-guidelines.html">2.0.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/edit/main/documentation/modules/ROOT/pages/modeling-guidelines.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/edit/main/documentation/modules/ROOT/pages/modeling-guidelines.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -930,28 +930,28 @@ Aspects each containing a single Collection.
 <p>Describes a Property whose value can have one of two possible types (a disjoint union). This
 Characteristic is special since it does not directly define a data type. The data type is defined in
 the two Characteristics which define the left and right value of the disjoint union. Also see
-<a href="characteristics.html#either-characteristic" class="xref page">Either</a>.</p>
+<a href="characteristics.html#either-characteristic" class="xref page">Either</a> and <a href="payloads.html#characteristics-payload-mappings" class="xref page">Payload mappings to JSON for Characteristics</a>.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Result a samm-c:Either ;
-   samm-c:left :ErrorCode ;
-   samm-c:right :SuccessCode .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:speedProperty a samm:Property ;
+  samm:characteristic :Result .
 
-:ErrorCode a samm-c:SingleEntity ;
-   samm:dataType :ErrorEntity .
+:Result a samm-c:Either ;
+  samm-c:left :ErrorMessage ;
+  samm-c:right :SpeedValue .
 
-:SuccessCode a samm-c:SingleEntity ;
-   samm:dataType :SuccessEntity .
+:ErrorMessage a samm-c:SingleEntity ;
+  samm:dataType :ErrorEntity .
+
+:SpeedValue a samm-c:Quantifiable ;
+  samm:dataType xsd:integer .
 
 :ErrorEntity a samm:Entity ;
-   samm:properties ( :errorCode :errorDescription ) .
-
-:SuccessEntity a samm:Entity ;
-   samm:properties ( :status ) .</code></pre>
+   samm:properties ( :errorCode :errorDescription ) .</code></pre>
 </div>
 </div>
 </div>
