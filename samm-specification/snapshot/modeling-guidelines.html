@@ -1320,10 +1320,8 @@ and this change would apply to the <code>Person</code> Entity (directly) and bot
 <div class="sect3">
 <h4 id="declaring-abstract-entities"><a class="anchor" href="#declaring-abstract-entities"></a>Declaring Abstract Entities</h4>
 <div class="paragraph">
-<p>In contrast to Entities, Abstract Entities cannot directly be used as data types. The main use case
-for Abstract Entities is to share Properties across multiple Entities. This can be achieved through
-inheritance: Abstract Entities can extend other Entities and Abstract Entities and can themselves be
-extended in a manner not dissimilar to how abstract classes are used in many programming languages.</p>
+<p>In contrast to Entities, Abstract Entities cannot directly be instantiated. A Characteristic class may have a type <code>samm:entity</code> or <code>samm:AbstractEntity</code>. But a Characteristic instance cannot have a type <code>samm:AbstractEntity</code>. If there is an instance created from a Characteristic that uses an Abstract Entity as its type, this Characteristic instance&#8217;s dataType must be a sub-Entity of the Abstract Entity.
+The main use case for Abstract Entities is to share Properties across multiple Entities. This can be achieved through inheritance: Abstract Entities can extend other Entities and Abstract Entities and can themselves be extended in a manner not dissimilar to how abstract classes are used in many programming languages.</p>
 </div>
 <div class="paragraph">
 <p>In the following example, both <code>SteeringWheel</code> and <code>Seat</code> <em>extend</em> the Abstract Entity

@@ -203,18 +203,10 @@ For example a newly added property and the related value could be shown in the U
 <h2 id="getting-started"><a class="anchor" href="#getting-started"></a>Getting Started</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="install-from-the-public-npm-currently-not-available"><a class="anchor" href="#install-from-the-public-npm-currently-not-available"></a>Install from the public npm (Currently not available):</h3>
+<h3 id="install-from-github-release-repository"><a class="anchor" href="#install-from-github-release-repository"></a>Install from GitHub release repository</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install @esmf/aspect-model-loader</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="install-from-github-release-repository"><a class="anchor" href="#install-from-github-release-repository"></a>Install from github release repository:</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/releases/download/&lt;TAG_VERSION&gt;/esmf-aspect-model-loader-x.x.x.tgz</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">npm install https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/releases/download/v2.3.0/esmf-aspect-model-loader-2.3.0.tgz</code></pre>
 </div>
 </div>
 </div>
@@ -231,7 +223,7 @@ For example a newly added property and the related value could be shown in the U
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">new AspectModelLoader().loadSelfContainedModel(ttl).subscribe((aspect: Aspect) =&gt; {
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">new AspectModelLoader().loadSelfContainedModel(ttl).subscribe((aspect: Aspect) =&gt; {
 ...
 });</code></pre>
 </div>
@@ -241,7 +233,7 @@ For example a newly added property and the related value could be shown in the U
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">new AspectModelLoader().load('&lt;aspect-model-urn&gt;', ttl-1, ttl-2, ttl-3).subscribe((aspect: Aspect) =&gt; {
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">new AspectModelLoader().load('&lt;aspect-model-urn&gt;', ttl-1, ttl-2, ttl-3).subscribe((aspect: Aspect) =&gt; {
 ...
 });</code></pre>
 </div>
@@ -262,7 +254,7 @@ For example a newly added property and the related value could be shown in the U
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let specificElement = loader.findByUrn(options.urnSelectedModelElement)</code></pre>
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">let specificElement = loader.findByUrn(options.urnSelectedModelElement)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -270,7 +262,7 @@ For example a newly added property and the related value could be shown in the U
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">let specificElement = loader.findByName(options.selectedModelName)</code></pre>
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">let specificElement = loader.findByName(options.selectedModelName)</code></pre>
 </div>
 </div>
 </div>

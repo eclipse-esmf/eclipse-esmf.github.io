@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Basic Usage :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/static-metaclasses/basic-usage.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">ESMF SDK Developer Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tooling-guide/samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tooling-guide/java-aspect-tooling.html">Java APIs for Aspect Models</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tooling-guide/maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tooling-guide/bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Using Java Static Meta Classes</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="basic-usage.html">Basic Usage</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="advanced-usage.html">Advanced Usage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">ESMF SDK Developer Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.1.1/introduction.html">5.1.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.1.0/introduction.html">5.1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../2.5.1/index.html">2.5.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.5.0/index.html">2.5.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.4.2/index.html">2.4.2</a>
+        </li>
+        <li class="version">
+          <a href="../2.4.1/index.html">2.4.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.4.0/index.html">2.4.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.6.2/index.html">2.6.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.0/index.html">2.1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">ESMF SDK Developer Guide</a></li>
+    <li><a href="index.html">Using Java Static Meta Classes</a></li>
+    <li><a href="basic-usage.html">Basic Usage</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version is-current" href="basic-usage.html">master</a>
+    <a class="version is-missing" href="../2.5.1/index.html">2.5.1</a>
+    <a class="version is-missing" href="../2.5.0/index.html">2.5.0</a>
+    <a class="version is-missing" href="../2.4.2/index.html">2.4.2</a>
+    <a class="version is-missing" href="../2.4.1/index.html">2.4.1</a>
+    <a class="version is-missing" href="../2.4.0/index.html">2.4.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/static-metaclasses/pages/basic-usage.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Basic Usage</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get started with using Static Meta Models within your application you need to generate the respective Java artifacts using either the <a href="../tooling-guide/java-aspect-tooling.html" class="xref page">Java Tooling</a> or <a href="../tooling-guide/maven-plugin.html" class="xref page">Maven plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>After the artifacts have been generated you&#8217;ll find for each Aspect and Entity a new source file called <code>Meta<em>ElementName</em>.java</code>
+which contains the Static Meta Model.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following chapters again assume the <code>Movement</code> Aspect with its accompanying static <code>MetaMovement</code> class.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="meta-class-overview"><a class="anchor" href="#meta-class-overview"></a>Meta Class Overview</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="general-information-within-the-meta-classes"><a class="anchor" href="#general-information-within-the-meta-classes"></a>General Information within the Meta Classes</h3>
+<div class="paragraph">
+<p>The Meta Classes contain some general Model information within static fields:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">(Sample) value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NAMESPACE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of this Model Element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>urn:samm:org.eclipse.esmf.examples.movement:1.0.0#</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MODEL_ELEMENT_URN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The full URN of this Model Element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>urn:samm:org.eclipse.esmf.examples.movement:1.0.0#Movement</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CHARACTERISTIC_NAMESPACE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Characteristic Namespace of the Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INSTANCE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The singleton instance of this Meta class. Used to access non-static information.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MetaMovement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="type-and-property-information-within-the-meta-classes"><a class="anchor" href="#type-and-property-information-within-the-meta-classes"></a>Type and Property Information within the Meta Classes</h3>
+<div class="paragraph">
+<p>The instances of the Meta Classes themselves can be used for application development as well as the contained
+information about Properties, depending on which Model information is required. Most applications will predominantly
+use the property information, however when implementations take multiple Aspects and/or Entities into account,
+also class-level information can be of great use.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field or Method</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">(Return) Type</th>
+<th class="tableblock halign-left valign-top">(Sample) value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getModelClass()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Java Class for this Model Element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class&lt;MetaMovement&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MetaMovement.class</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getAspectModelUrn()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URN of this Model Element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AspectModelUrn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AspectModelUrn.fromUrn(MODEL_ELEMENT_URN)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getMetaModelVersion()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The used Meta Model version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KnownVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KnownVersion.SAMM_2_1_0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getName()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of this Model Element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Movement</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getProperties()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All <code>StaticProperty</code>&#8203;s of this Model Element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;StaticProperty&lt;Movement, ?&gt;</code> or <code>List&lt;StaticProperty&lt;? super Movement, ?&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Arrays.asList(SOME_STRING, SOME_INT, SOME_FLOAT);</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getAllProperties()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All <code>StaticProperty</code>&#8203;s of this Model Element, including inherited properties. If no inheritance is used
+it returns the same value as <code>getProperties()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;StaticProperty&lt;Movement, ?&gt;</code> or <code>List&lt;StaticProperty&lt;? super Movement, ?&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Arrays.asList(SOME_STRING, SOME_INT, SOME_FLOAT);</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For each property of the respective Model Element the Meta Class contains one <code>StaticProperty</code> field. The
+name of the field is derived from the property name, converting it into from <code>camelCase</code> to <code>UPPER_UNDERSCORE</code>.
+A property named <code>firstName</code> would result in the field <code>FIRST_NAME</code>.<br>
+Each property then again provides information through its member methods:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Return Type</th>
+<th class="tableblock halign-left valign-top">(Sample) value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getPropertyType()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Java Class of this property including generics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class&lt;&#8230;&#8203;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String.class</code>, <code>List.class</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getContainingType()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Java Class of the element containing this property (e.g. an Aspect or an Entity)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class&lt;&#8230;&#8203;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class&lt;Movement&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getContainedType()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only present on properties with container types like <code>List</code>, <code>Set</code>, <code>Optional</code> etc.
+The Java Class of the element contained <em>within</em> the container.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class&lt;&#8230;&#8203;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class&lt;Movement&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isComplexType()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether this property has a complex type, e.g. an <code>Entity</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> for complex types, <code>false</code> else</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>getValue(Movement object)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The property value of the given element instance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The property type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>someStringValue</code> (using the getter, e.g. <code>object.getTestString()</code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="types-of-static-properties"><a class="anchor" href="#types-of-static-properties"></a>Types of Static Properties</h3>
+<div class="paragraph">
+<p>Different kinds of Static Properties exist to reflect all possible elements within an Aspect Model:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Generics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>StaticProperty&lt;C, T&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A simple scalar property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> is the containing type (an Aspect or Entity)<br>
+<code>T</code> is the property type (e.g. <code>String</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>StaticContainerProperty&lt;E, C, T&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A property with a container type like <code>Optional</code> or <code>Collection</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>E</code> is the containing type (an Aspect or Entity)<br>
+<code>C</code> is the type inside the container (e.g. <code>String</code>)<br>
+<code>T</code> is the property type (e.g. <code>Optional&lt;String&gt;</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>StaticUnitProperty&lt;C, T&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A simple scalar property but with an additional method to get its <code>Unit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> is the containing type (an Aspect or Entity)<br>
+<code>T</code> is the property type (e.g. <code>String</code>)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>All of the above Property types have a counterpart with a <em>Constraint</em>, namely <code>StaticConstraintProperty</code>,
+<code>StaticConstraintContainerProperty</code> and <code>StaticConstraintUnitProperty</code>.<br>
+Their API and generics are the same, but they have an additional method to get a list of their constraints.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="writing-code-using-static-meta-classes"><a class="anchor" href="#writing-code-using-static-meta-classes"></a>Writing Code using Static Meta Classes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="addressing-properties"><a class="anchor" href="#addressing-properties"></a>Addressing Properties</h3>
+<div class="paragraph">
+<p>Independent from what you&#8217;ll finally use a Property for it is important to understand how you can use them to navigate through your Model.
+Every Model Element that is a Property Container offers access to its properties - most prominently Aspects and Entities.<br>
+Their properties are directly addressed using the respective fields from their Meta Classes.</p>
+</div>
+<div class="paragraph">
+<p>However, you can also go beyond that. Properties can be chained so that it&#8217;s possible to address properties nested inside your Model.</p>
+</div>
+<div class="paragraph">
+<p>This is useful in situations where it is required to use nested properties as if they would belong to a higher Element. Such
+operations can be for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>flattening data structures</p>
+</li>
+<li>
+<p>filtering on criteria defined on nested properties</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Property Chains are defined using type safe builders:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">PropertyChain&lt;Movement, BigDecimal&gt; latitude =
+    PropertyChain.from( MetaMovement.POSITION )
+                 .to( MetaSpatialPosition.LATITUDE );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Property Chains can follow deeply nested structures and are not limited in that. Assuming another Aspect that contains
+the structure <code>Aspect</code> &#8594; <code>entity: Entity</code> &#8594; <code>subEntity: SubEntity</code> we can define a chain like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">PropertyChain&lt;Aspect, String&gt; nestedString =
+    PropertyChain.from( MetaAspect.ENTITY )
+                 .via( MetaEntity.SUB_ENTITY )
+                 .to( MetaSubEntity.STRING_PROPERTY );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Container properties can also appear anywhere, either at the start or in the middle or end of a chain. The respective
+container type then will be propagated from the moment on it appears. One thing to note is, that for collection valued
+properties the concrete collection type is <em>not</em> preserved but always replaced with a <code>List</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">ContainerPropertyChain&lt;Movement, Optional&lt;Float&gt;, Float&gt; altitude =
+    PropertyChain.from( MetaMovement.POSITION )
+                 .to( MetaSpatialPosition.ALTITUDE );
+
+
+ContainerPropertyChain&lt;Aspect, List&lt;String&gt;, String&gt; nestedEntityCollectionStrings =
+    PropertyChain.from( MetaAspect.ENTITY )
+                 .viaCollection( MetaEntity.SUB_ENTITY_LIST )
+                 .to( MetaSubEntity.STRING_PROPERTY );</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accessing-property-data"><a class="anchor" href="#accessing-property-data"></a>Accessing Property data</h3>
+<div class="paragraph">
+<p>Static Properties can act as accessors and thus be used to retrieve the data they represent from instances of their enclosing Model Elements.</p>
+</div>
+<div class="paragraph">
+<p>All Static Properties provide the method <code>R getValue(C object)</code> and additionally extend the interface <code>Function&lt;C, R&gt;</code> so
+that it is also possible to directly use them within stream operations like <code>.map()</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, simply extracting and printing all property values of an entity could be written like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Entity entity = getEntity();
+
+MetaEntity.INSTANCE.getProperties().stream()
+                                   .map( StaticProperty::getValue )
+                                   .forEach( System.out::println );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When accessing the values of Property Chains please note the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Chain resolution of non-<code>Optional</code> chains ends at <code>null</code> values and also will be returned as the result. Client code thus has
+to handle those situations accordingly.</p>
+</li>
+<li>
+<p>Nested structures with multiple collections in between might result in large final Lists of data. For example, if you
+have an Aspect with a list of 1000 or more measurements and each measurement again contains a list of a few hundred data samples,
+resolving the chain to the data samples might easily give you results into the millions.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
