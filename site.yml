@@ -66,5 +66,6 @@ asciidoc:
     # The version of the latest SAMM maven artifact
     aspect-meta-model-version: '2.1.0'
     esmf-sdk-version: '2.5.1'
+    esmf-sdk-js-aspect-model-loader-version: '2.3.0'
     example-ns: com.mycompany@
 
