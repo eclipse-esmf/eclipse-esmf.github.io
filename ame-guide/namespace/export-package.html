@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Import namespaces :: Eclipse Semantic Modeling Framework (ESMF)</title>
-    <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/namespace/import-namespaces.html">
+    <title>Export package :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/namespace/export-package.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -168,19 +168,19 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="namespaces-references.html">Namespaces and external references</a>
+    <a class="nav-link" href="namespaces-references.html">Namespaces and references</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="workspace.html">Workspace directory</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="import-package.html">Import package</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="import-namespaces.html">Import namespaces</a>
+    <a class="nav-link" href="export-package.html">Export package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="export-namespaces.html">Export namespaces</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="use-external-references.html">Use external references</a>
+    <a class="nav-link" href="use-references.html">Use references</a>
   </li>
 </ul>
   </li>
@@ -338,94 +338,70 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../introduction.html">Aspect Model Editor</a></li>
-    <li><a href="namespaces-references.html">Namespaces and external references</a></li>
-    <li><a href="import-namespaces.html">Import namespaces</a></li>
+    <li><a href="namespaces-references.html">Namespaces and references</a></li>
+    <li><a href="export-package.html">Export package</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
-    <a class="version is-current" href="import-namespaces.html">master</a>
-    <a class="version" href="../5.1.1/namespace/import-namespaces.html">5.1.1</a>
-    <a class="version" href="../5.1.0/namespace/import-namespaces.html">5.1.0</a>
+    <a class="version is-current" href="export-package.html">master</a>
+    <a class="version is-missing" href="../5.1.1/introduction.html">5.1.1</a>
+    <a class="version is-missing" href="../5.1.0/introduction.html">5.1.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/namespace/import-namespaces.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/namespace/export-package.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Import namespaces</h1>
+<h1 class="page">Export package</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>To import a package with namespaces, proceed as follows:</p>
+<div id="export-package" class="paragraph">
+<p>To export a namespace, proceed as follows:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click <strong>New/Load</strong> in the <a href="../getting-started/ui-overview.html#toolbar" class="xref page">toolbar</a>.</p>
+<p>Click <strong>File</strong> &#8594; <strong>Export Package</strong> in the <a href="../getting-started/ui-overview.html#menu-file" class="xref page">file menu</a>.</p>
 </li>
 <li>
-<p>Click <strong>Import Package</strong>.</p>
+<p>Select the available namespace.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/select-namespace-export.png" alt="select namespace export" width="65%">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Validate</strong>.</p>
 <div class="paragraph">
-<p>→ An Explorer window opens.</p>
+<p>→ After validation is done, a summary dialog similar to the one for <a href="import-package.html#import-package" class="xref page">import package</a> will be displayed. If the validation has files with errors, the namespace cannot be exported.</p>
 </div>
 </li>
 <li>
-<p>Navigate to the package ZIP file which contains a single namespace.</p>
+<p>Click <strong>Export</strong>.<br>
+→ The chosen namespace will be exported.</p>
 </li>
 <li>
-<p>Click <strong>Open</strong> to confirm your selection.</p>
-<div class="paragraph">
-<p>→ After confirmation, the files inside the ZIP file will be validated.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/import-validating.png" alt="import validating" width="80%">
-</div>
-</div>
-</li>
-<li>
-<p>Click on files in the summary dialog to view the status of it.<br>
-TIP: In case the zip contains multiple namespaces, the dialog will show them all respectively.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/validation-result.png" alt="validation result" width="80%">
-</div>
-</div>
-</li>
-<li>
-<p>Click <strong>Copy to clipboard</strong> to copy the summary in a JSON-format file for further improvements.</p>
-</li>
-<li>
-<p>Click on one of the options to choose what happens with already existing namespaces.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Click <strong>Keep</strong> to keep the existing namespace.</p>
-</li>
-<li>
-<p>Click <strong>Replace</strong> to replace the namespace in the Workspace.<br>
-NOTE: Be aware that this option will literally overwrite your namespace with this content.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/replace-import.png" alt="replace import" width="80%">
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Click <strong>Import</strong> to move your files into the Workspace.</p>
+<p>Save the zip file in local file directory.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Now your namespaces are added to the recent model.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To export multiple namespaces at once just check multiple boxes at step 2.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

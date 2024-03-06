@@ -168,19 +168,19 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and external references</a>
+    <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and references</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/workspace.html">Workspace directory</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namespace/import-namespaces.html">Import namespaces</a>
+    <a class="nav-link" href="../namespace/import-package.html">Import package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namespace/export-namespaces.html">Export namespaces</a>
+    <a class="nav-link" href="../namespace/export-package.html">Export package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namespace/use-external-references.html">Use external references</a>
+    <a class="nav-link" href="../namespace/use-references.html">Use references</a>
   </li>
 </ul>
   </li>
@@ -365,52 +365,24 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ame-ui-overview-numbers.png" alt="Numbered UI overview" width="100%">
+<img src="../_images/ame-ui-overview-numbers.png" alt="Numbered UI overview" width="80%">
 </div>
-</div>
-<div class="paragraph">
-<p>The numbers in the image above indicate the following UI elements of the Aspect Model Editor:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><a href="#toolbar">Toolbar</a></p>
-</li>
-<li>
-<p><a href="#map">Map</a></p>
-</li>
-<li>
-<p><a href="#navigation">Navigation</a></p>
-</li>
-<li>
-<p><a href="#search">Search</a></p>
-</li>
-<li>
-<p><a href="#settings">Settings</a></p>
-</li>
-<li>
-<p><a href="#notifications">Notifications</a></p>
-</li>
-<li>
-<p><a href="#help">Help</a></p>
-</li>
-<li>
-<p><a href="#workspace-sidebar">Workspace sidebar</a></p>
-</li>
-<li>
-<p><a href="#edit-dialog">Edit dialog</a></p>
-</li>
-</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="toolbar"><a class="anchor" href="#toolbar"></a>Toolbar</h2>
+<h2 id="menu"><a class="anchor" href="#menu"></a>Menu</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="menu-file"><a class="anchor" href="#menu-file"></a>File Menu</h3>
+<div class="paragraph">
+<p>&#160;
+<span class="image"><img src="../_images/menu-bar/menu-file.png" alt="menu file" width="30%"></span></p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 25%;">
 <col style="width: 60%;">
 </colgroup>
 <thead>
@@ -422,162 +394,336 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/new-model.png" alt="new model" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Load/Create</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Start with a new Aspect Model or import an existing model or namespace.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/add.png" alt="add" width="15%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New&#8230;&#8203;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, import, duplicate Aspect Models, or use a template.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/save.png" alt="save" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Save</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Download the model as a TTL file or save it in the local namespaces file structure.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/note_add.png" alt="note add" width="15%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New Window</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Work on a different Aspect Model in a new window.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/add-file.png" alt="add file" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add file to Namespace.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assign the file automatically to the corresponding namespace.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/open_in_new.png" alt="open in new" width="15%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import Model</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bring an existing Model into the current workspace.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/edit.png" alt="edit" width="15%" height="15%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/folder_zip.png" alt="folder zip" width="15%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import Package</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a packaged Model (ZIP) to the workspace.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/conntent.png" alt="conntent" width="15%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Copy to Clipboard</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy the current Model&#8217;s information for use elsewhere.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/save.png" alt="save" width="15%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save to Workspace</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Store the current Model in the workspace for future use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/download.png" alt="download" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export Model</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Download the current Model as a TTL file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/download_fill.png" alt="download fill" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export Package</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Download Model namespaces in a ZIP format.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-view"><a class="anchor" href="#menu-view"></a>View Menu</h3>
+<div class="paragraph">
+<p>&#160;
+<span class="image"><img src="../_images/menu-bar/menu-view.png" alt="menu view" width="30%"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/build.png" alt="build" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Toggle Toolbar</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch the Toolbar on or off to better tailor your workspace environment, allowing you to focus on the aspects of the model that matter most to you.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/map.png" alt="map" width="20%" height="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Toggle Minimap</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show or hide the Minimap to enhance or simplify navigation within your model, enabling you to quickly move to different sections of your work.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/filter_list.png" alt="filter list" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter Model by&#8230;&#8203;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apply filters to the model based on none, Properties, or other criteria, simplifying your view to concentrate on specific elements or relationships.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/zoom_in.png" alt="zoom in" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zoom in</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Increase the level of detail you see in the model, allowing for closer examination of intricate parts or to fine-tune specific areas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/zoom_out.png" alt="zoom out" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zoom out</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broaden your view of the model to gain a better understanding of the overall structure and how individual components fit together.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/fit_screen.png" alt="fit screen" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zoom to Fit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjust your perspective to encompass the entire model within your screen, ensuring you have a comprehensive overview of all elements at once.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/pageless.png" alt="pageless" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zoom to 100%</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset your viewpoint to the model&#8217;s actual size, offering a standard scale for assessing dimensions and spatial relationships accurately.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-edit"><a class="anchor" href="#menu-edit"></a>Edit Menu</h3>
+<div class="paragraph">
+<p>&#160;
+<span class="image"><img src="../_images/menu-bar/menu-edit.png" alt="menu edit" width="30%"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/jump.png" alt="jump" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Open Selected Element</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Launch the Edit dialog for the selected element, providing a direct path to modify its attributes or review its details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/delete.png" alt="delete" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Remove Selected Element</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete the currently selected element from your model, streamlining your workspace by removing unnecessary or redundant components.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/collapse.png" alt="collapse" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Collapse/Expand Model</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle the view of your model between collapsed and expanded states, aiding in focusing on specific sections or understanding the model&#8217;s overall structure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/schema.png" alt="schema" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format Model</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically adjust the layout and appearance of your model, enhancing readability and maintaining consistent styling throughout.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/commit.png" alt="commit" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connect Selected Elements</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a linkage between two selected elements, establishing a relationship or flow that reflects their interaction within the model.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-valiadate"><a class="anchor" href="#menu-valiadate"></a>Validate Menu</h3>
+<div class="paragraph">
+<p>&#160;
+<span class="image"><img src="../_images/menu-bar/menu-validate.png" alt="menu validate" width="30%"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/fact_check.png" alt="fact check" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate the current model.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-generate"><a class="anchor" href="#menu-generate"></a>Generate Menu</h3>
+<div class="paragraph">
+<p>&#160;
+<span class="image"><img src="../_images/menu-bar/menu-generate.png" alt="menu generate" width="20%" height="20%"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/html.png" alt="html" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTML Documentation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate HTML documentation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/api.png" alt="api" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenApi Specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate OpenAPI specification.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/data_array.png" alt="data array" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AASX/XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate AASX/XML.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/description.png" alt="description" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sample JSON Payload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate sample JSON payload.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/data_object.png" alt="data object" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON Schema</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate json schema.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-search"><a class="anchor" href="#menu-search"></a>Search Menu</h3>
+<div class="paragraph">
+<p>&#160;
+<span class="image"><img src="../_images/menu-bar/menu-search.png" alt="menu search" width="30%"></span></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/view_comfy_alt.png" alt="view comfy alt" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for elements.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/topic.png" alt="topic" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for files.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="toolbar"><a class="anchor" href="#toolbar"></a>Toolbar</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/jump.png" alt="jump" width="30%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open highlighted element</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the Edit dialog of the selected element (alternative: double-click an element inside the model).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/delete.png" alt="delete" width="15%" height="15%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/delete.png" alt="delete" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete selected element(s).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/expand.png" alt="expand" width="15%" height="15%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/collapse.png" alt="collapse" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Collapse all/Expand all</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expands/Collapses elements.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/format.png" alt="format" width="15%" height="15%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/schema.png" alt="schema" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Format</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Automatically format the Aspect Model.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/connect.png" alt="connect" width="15%" height="15%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/commit.png" alt="commit" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Connect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Connect two selected elements.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/validate.png" alt="validate" width="15%" height="15%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/validate.png" alt="validate" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validate the Aspect Model.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/print.png" alt="print"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate HTML, OpenAPI specification or AASX/XML.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For more information, see <a href="../generate/generate-other-files.html" class="xref page">Generate other artifacts out of your Aspect Model</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/json.png" alt="json" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON/JSON schema</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Download a JSON schema or a JSON sample generated based on your model. A dropdown menu will open to offer both of these options.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/minimap.png" alt="minimap" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show map/Hide map</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show or hide the map.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/navigation.png" alt="navigation" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show navigation/Hide navigation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Show or hide the navigation.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image unresolved"><img src="toolbar-icons/search.png" alt="search"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search <a id="search"></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the search field to search for an element by name.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/settings.png" alt="settings" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Settings <a id="settings"></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open settings.
-Allows for defining the general configuration of the Aspect Model Editor, language settings, and namespace settings.</p>
-<p class="tableblock">To access the Settings dialog, click the Settings icon <span class="image"><img src="../_images/toolbar-icons/settings.png" alt="Settings icon"></span>.</p>
-<p class="tableblock">For more information, see <a href="settings.html" class="xref page">Settings</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/notifications.png" alt="notifications" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notifications <a id="notifications"></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open notifications.
-Shows the validation results for your Aspect Model. Further, you can find there info messages (e.g., Aspect Model was loaded) and warning messages (e.g., if elements cannot be connected to each other).</p>
-<p class="tableblock">To access the Notifications dialog, click the Notifications icon <span class="image"><img src="../_images/toolbar-icons/notifications.png" alt="Notifications icon"></span>.</p>
-<p class="tableblock">For more information, see <a href="validation-and-notifications.html" class="xref page">Validation and notifications</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/info.png" alt="info" width="15%" height="15%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open documentation.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="map"><a class="anchor" href="#map"></a>Map</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>With the map, you can easily navigate your Aspect Model in the graph area canvas.</p>
-</div>
-<div class="paragraph">
-<p>To toggle its visibility, click the Show/Hide map icon <span class="image unresolved"><img src="toolbar-icons/minimap.png" alt="Map toggle icon"></span> in the toolbar.</p>
-</div>
-<div class="paragraph">
-<p>For more information, see <a href="navigate-models.html" class="xref page">Navigate models</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="navigation"><a class="anchor" href="#navigation"></a>Navigation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Optimize your current view of the model with the navigation:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Fit the complete model on the current view</p>
-</li>
-<li>
-<p>Reset zoom level to 100%</p>
-</li>
-<li>
-<p>Zoom in</p>
-</li>
-<li>
-<p>Zoom out</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../_images/zoom-fit.png" alt="zoom fit"></span></p>
-</div>
-<div class="paragraph">
-<p>For more information, see <a href="navigate-models.html" class="xref page">Navigate models</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="help"><a class="anchor" href="#help"></a>Help</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The help icon <span class="image"><img src="../_images/toolbar-icons/info.png" alt="info"></span> opens a page which lists details about the application and provides
-a link to the documentation.</p>
-</div>
-<div class="paragraph">
-<p>Example:
-<span class="image"><img src="../_images/help-docs.png" alt="help docs"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="workspace-sidebar"><a class="anchor" href="#workspace-sidebar"></a>Workspace sidebar</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Workspace sidebar &ndash; see screenshot below &ndash; allows you to access namespaces (1) and to drag and drop elements to the graph area canvas (2).</p>
+<p>The Workspace sidebar &ndash; see screenshot below &ndash; allows you to access namespaces (2) and to drag and drop elements to the graph area canvas (1).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -593,6 +739,68 @@ a link to the documentation.</p>
 <div class="paragraph">
 <p>For more information, see <a href="edit-models.html" class="xref page">Edit models</a>.</p>
 </div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="sect2">
+<h3 id="bottom-workspace-sidebar"><a class="anchor" href="#bottom-workspace-sidebar"></a>Bottom workspace sidebar</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/settings.png" alt="settings" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Settings <a id="settings"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open settings.
+Allows for defining the general configuration of the Aspect Model Editor, language settings, and namespace settings.</p>
+<p class="tableblock">To access the Settings dialog, click the Settings icon <span class="image"><img src="../_images/toolbar-icons/settings.png" alt="Settings icon" width="5%"></span>.</p>
+<p class="tableblock">For more information, see <a href="settings.html" class="xref page">Settings</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/notifications.png" alt="notifications" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notifications <a id="notifications"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open notifications.
+Shows the validation results for your Aspect Model. Further, you can find there info messages (e.g., Aspect Model was loaded) and warning messages (e.g., if elements cannot be connected to each other).</p>
+<p class="tableblock">To access the Notifications dialog, click the Notifications icon <span class="image"><img src="../_images/toolbar-icons/notifications.png" alt="Notifications icon" width="5%"></span>.</p>
+<p class="tableblock">For more information, see <a href="validation-and-notifications.html" class="xref page">Validation and notifications</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/info.png" alt="info" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open documentation.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="help"><a class="anchor" href="#help"></a>Help</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The help icon <span class="image"><img src="../_images/toolbar-icons/info.png" alt="Info" width="5%"></span> opens a page which lists details about the application and provides
+a link to the documentation.</p>
+</div>
+<div class="paragraph">
+<p>Example:
+<span class="image"><img src="../_images/help-docs.png" alt="help docs" width="50%"></span></p>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -602,10 +810,27 @@ a link to the documentation.</p>
 <p>Edit the attributes of a selected element of your Aspect Model with the Edit dialog.</p>
 </div>
 <div class="paragraph">
-<p>To access the details of an element in the Edit dialog, either double-click the element or select the element and click the Open element icon <span class="image"><img src="../_images/toolbar-icons/edit.png" alt="Edit icon"></span> on the <a href="#toolbar">toolbar</a>.</p>
+<p>To access the details of an element in the Edit dialog, either double-click the element or select the element and click the Open element icon <span class="image"><img src="../_images/toolbar-icons/edit.png" alt="Edit icon" width="5%"></span> on the <a href="#toolbar">toolbar</a>.</p>
 </div>
 <div class="paragraph">
 <p>For more information, see <a href="../modeling/edit-elements.html" class="xref page">Edit elements</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="map"><a class="anchor" href="#map"></a>Map</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the map, you can easily navigate your Aspect Model in the graph area canvas.</p>
+</div>
+<div class="paragraph">
+<p>To toggle its visibility, click the Show/Hide map icon in the toolbar.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/mini-map.png" alt="Map toggle icon" width="50%"></span></p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="navigate-models.html" class="xref page">Navigate models</a>.</p>
 </div>
 </div>
 </div>

@@ -168,19 +168,19 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and external references</a>
+    <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and references</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/workspace.html">Workspace directory</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namespace/import-namespaces.html">Import namespaces</a>
+    <a class="nav-link" href="../namespace/import-package.html">Import package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namespace/export-namespaces.html">Export namespaces</a>
+    <a class="nav-link" href="../namespace/export-package.html">Export package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namespace/use-external-references.html">Use external references</a>
+    <a class="nav-link" href="../namespace/use-references.html">Use references</a>
   </li>
 </ul>
   </li>
@@ -366,18 +366,23 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="configuration"><a class="anchor" href="#configuration"></a>General configuration</h2>
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>System Configuration</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="automated-workflow"><a class="anchor" href="#automated-workflow"></a>Automated Workflow</h3>
 <div class="paragraph">
-<p>In the Settings dialog, select the <strong>Configuration</strong> tab.</p>
+<p>In the Settings dialog, select the menu <strong>Automated Workflow</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/settings-configuration.png" alt="Configuration tab in Settings dialog" width="100%">
+<img src="../_images/settings-automated-workflow.png" alt="Automated Workflow menu in Settings dialog" width="50%">
 </div>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><strong>Auto-Formatting</strong>: automatically format the current model if you change something.</p>
+</li>
 <li>
 <p><strong>Auto-save</strong>: automatically saves the current model in a predefined period.
 The latest auto-saved version is restored after the restart of the application.</p>
@@ -386,9 +391,24 @@ The latest auto-saved version is restored after the restart of the application.<
 <p><strong>Auto-validation</strong>: automatically validates the current model in a predefined period.
 The validation information is displayed in the <a href="validation-and-notifications.html" class="xref page">Notifications dialog</a>.</p>
 </li>
-<li>
-<p><strong>Auto-Formatting</strong>: automatically format the current model if you change something.</p>
-</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editor"><a class="anchor" href="#editor"></a>Editor</h3>
+<div class="paragraph">
+<p>In the Settings dialog, select the menu <strong>Editor</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/settings-editor.png" alt="Editor menu in Settings dialog" width="50%">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Use "hierarchical" layout</strong>: aligns all elements below the root Aspect.</p>
 </li>
@@ -405,15 +425,18 @@ The validation information is displayed in the <a href="validation-and-notificat
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="language-settings"><a class="anchor" href="#language-settings"></a>Language settings</h2>
+<h2 id="model-configuration"><a class="anchor" href="#model-configuration"></a>Model Configuration</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_language_settings"><a class="anchor" href="#_language_settings"></a>Language settings</h3>
 <div class="paragraph">
-<p>In the Settings dialog, select the <strong>Languages</strong> tab.</p>
+<p>In the Settings dialog, select the menu <strong>Languages</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/settings-languages.png" alt="Languages tab in Settings dialog" width="100%">
+<img src="../_images/settings-languages.png" alt="Languages menu in Settings dialog" width="50%">
 </div>
 </div>
 <div class="paragraph">
@@ -427,7 +450,7 @@ The validation information is displayed in the <a href="validation-and-notificat
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/lang-example.png" alt="Languages tab in Settings dialog" width="100%">
+<img src="../_images/lang-example.png" alt="Languages tab in Settings dialog" width="50%">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -455,26 +478,45 @@ Make sure to save your model before deleting languages in your settings.
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="namespace-settings"><a class="anchor" href="#namespace-settings"></a>Namespace settings</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>In the Settings dialog, select the <strong>Namespaces</strong> tab.</p>
+<p>&#160;</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/settings-namespaces.png" alt="Namespaces tab in Settings dialog" width="100%">
 </div>
+<div class="sect2">
+<h3 id="namespace-settings"><a class="anchor" href="#namespace-settings"></a>Namespaces setting</h3>
+<div class="paragraph">
+<p>In the Settings dialog, select the menu <strong>Namespaces</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Edit the current namespace and check the supported version of the underlying SAMM Aspect Meta Model, the current Aspect&#8217;s namespace as well as the predefined namespaces.
 For more information, see <a href="https://eclipse-esmf.github.io/samm-specification/2.1.0/namespaces.html" target="_blank" rel="nofollow noopener">Namespaces (SAMM 2.1.0)</a>.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/settings-namespaces.png" alt="Languages menu in Settings dialog" width="50%">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="header-copyright-settings"><a class="anchor" href="#header-copyright-settings"></a>Header/Copyright setting</h3>
+<div class="paragraph">
+<p>In the Settings dialog, select the menu <strong>Header/Copyright</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Edit or add a header to be used with the Aspect Model.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/settings-copyright-header.png" alt="Copyright/Header menu in Settings dialog" width="50%">
+</div>
+</div>
 <style>
   .imageblock {flex-direction: row !important;}
 </style>
+</div>
 </div>
 </div>
 </article>

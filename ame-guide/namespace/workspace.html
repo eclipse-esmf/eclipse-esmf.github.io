@@ -168,19 +168,19 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="namespaces-references.html">Namespaces and external references</a>
+    <a class="nav-link" href="namespaces-references.html">Namespaces and references</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="workspace.html">Workspace directory</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="import-namespaces.html">Import namespaces</a>
+    <a class="nav-link" href="import-package.html">Import package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="export-namespaces.html">Export namespaces</a>
+    <a class="nav-link" href="export-package.html">Export package</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="use-external-references.html">Use external references</a>
+    <a class="nav-link" href="use-references.html">Use references</a>
   </li>
 </ul>
   </li>
@@ -338,7 +338,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../introduction.html">Aspect Model Editor</a></li>
-    <li><a href="namespaces-references.html">Namespaces and external references</a></li>
+    <li><a href="namespaces-references.html">Namespaces and references</a></li>
     <li><a href="workspace.html">Workspace directory</a></li>
   </ul>
 </nav>
@@ -386,11 +386,11 @@ Of course creating and deleting namespaces is also possible with this editor<str
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/namespace-file-structure.png" alt="namespace file structure" width="100%">
+<img src="../_images/namespace-file-structure.png" alt="namespace file structure" width="80%">
 </div>
 </div>
 <div class="paragraph">
-<p>Namespaces that do not follow this file structure might not work and might break the external references feature.</p>
+<p>Namespaces that do not follow this file structure might not work and might break the references feature.</p>
 </div>
 </div>
 </div>
@@ -406,19 +406,25 @@ Of course creating and deleting namespaces is also possible with this editor<str
 <div class="ulist">
 <ul>
 <li>
-<p>Delete</p>
+<p><strong>Open in new windows</strong> - opens the Aspect Model in a new window</p>
 </li>
 <li>
-<p>Load Aspect Model</p>
+<p><strong>Open in current</strong> - opens the Aspect Model in the current window</p>
 </li>
 <li>
-<p>Copy to clipboard</p>
+<p><strong>Find elements</strong> - opens the Find elements section</p>
+</li>
+<li>
+<p><strong>Copy file path</strong> - copies the file path to the clipboard</p>
+</li>
+<li>
+<p><strong>Delete</strong> - deletes the Aspect Model from the workspace</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/workspace-action.png" alt="workspace action">
+<img src="../_images/workspace-action.png" alt="workspace action" width="65%">
 </div>
 </div>
 <div class="paragraph">
@@ -436,7 +442,7 @@ Of course creating and deleting namespaces is also possible with this editor<str
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The namespace structure is created automatically if you start with the <strong>+</strong> icon.
+The namespace structure is created automatically if you start with the <strong>File</strong> &#8594; <strong>New&#8230;&#8203;</strong> menu item.
 </td>
 </tr>
 </table>
@@ -444,7 +450,7 @@ The namespace structure is created automatically if you start with the <strong>+
 <div class="ulist">
 <ul>
 <li>
-<p>If you select "Create/upload Aspect model", model and later click "Save to Workspace" the folder
+<p>If you select one of the <strong>File</strong> &#8594; <strong>New&#8230;&#8203;</strong> menu item and later click "Save to Workspace" the folder
 <strong>org.eclipse.digitaltwin</strong> will be created on your file system and the Workspace will show it respectively.</p>
 </li>
 <li>
@@ -494,13 +500,9 @@ as it will not be able to load this Aspect Model.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/workspace-warning.png" alt="workspace warning">
+<img src="../_images/workspace-warning.png" alt="workspace warning" width="70%">
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="aspect-model-is-marked-with-a-red-question-mark"><a class="anchor" href="#aspect-model-is-marked-with-a-red-question-mark"></a>Aspect Model is marked with a red question mark</h3>
-
 </div>
 </div>
 </div>
