@@ -167,7 +167,7 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../2.6.2/index.html">2.6.2</a>
+          <a href="../2.7.0/index.html">2.7.0</a>
         </li>
       </ul>
     </li>
@@ -233,7 +233,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="table-generation.html">master</a>
-    <a class="version" href="../2.6.2/tooling-guide/table-generation.html">2.6.2</a>
+    <a class="version" href="../2.7.0/tooling-guide/table-generation.html">2.7.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-schematics/edit/main/documentation/js-sdk-guide/modules/tooling-guide/pages/table-generation.adoc">Contribute to this page</a></div>
@@ -264,7 +264,7 @@ Before generating a table component refer to the <a href="internationalization.h
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng new app demo-schematics</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng new app demo-schematics --no-standalone</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -500,6 +500,82 @@ auto-generated. The first prompt allows you to load a config file or start from 
 <div class="content">
 <img src="_images/choose-language.png" alt="choose language" width="100%">
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="quick-filters-for-properties-of-type-date"><a class="anchor" href="#quick-filters-for-properties-of-type-date"></a><em>Quick Filters for Properties of Type Date</em></h3>
+<div class="paragraph">
+<p>When the option "Quick filters for properties of type date" is selected, an additional step appears that allows the selection of each property of type date. During this step, you can choose the specific type of filter to apply for these date properties.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/schema.choose-date-picker-type.png" alt="schema.choose date picker type" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p>There are three options available for selection:</p>
+</div>
+<div class="paragraph">
+<p><strong>Single Date Picker:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/single-date-picker.png" alt="single date picker" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p>This option allows the selection of a single date, acting as a "from" date. It&#8217;s suitable for scenarios where a specific starting point needs to be defined.</p>
+</div>
+<div class="paragraph">
+<p><strong>Range Date Picker start or end date:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/start-or-end-date-picker.png" alt="start or end date picker" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p>With this option, you can select either a single "from" or "to" date. It offers flexibility in filtering by enabling the specification of either the start or the end of a date range.</p>
+</div>
+<div class="paragraph">
+<p>For the Date Range Picker, where both the "from" and "to" dates are optional, users can directly select and delete these values within the input field. By either blurring the field or pressing "Enter," the specified dates are removed and thus selected for filtering. If only a "from" date is provided, it will be recognized and applied as a starting point for the filter. Conversely, if only a "to" date is entered, it will be treated and displayed as an "until" condition in the chip list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/only-from-date.png" alt="only from date" width="30%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/only-to-date.png" alt="only to date" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Date Range Picker start and end date:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/start-and-end-date-picker.png" alt="start and end date picker" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p>This option requires the selection of both "from" and "to" dates, defining a complete date range. It&#8217;s ideal for situations where a precise period needs to be specified for filtering.</p>
+</div>
+<div class="paragraph">
+<p>In the Date Range Picker, where both "from" and "to" dates are required, users must enter both dates. If these dates are removed, an error message will appear below the input field, detailing what went wrong.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/from-date-required.png" alt="from date required" width="30%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/to-date-required.png" alt="to date required" width="30%">
+</div>
+</div>
+<div class="paragraph">
+<p>Each of these options provides a different way to apply date-based filtering, enhancing the user&#8217;s ability to narrow down the data according to specific time frames.</p>
 </div>
 </div>
 <div class="sect2">

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Table component generation :: Eclipse Semantic Modeling Framework (ESMF)</title>
-    <link rel="canonical" href="https://eclipse-esmf.github.io/js-sdk-guide/tooling-guide/table-generation.html">
+    <title>Form component generation :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/js-sdk-guide/tooling-guide/form-generation.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="js-sdk-guide" data-version="2.6.2">
+<div class="nav-container" data-component="js-sdk-guide" data-version="2.7.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -87,7 +87,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="internationalization.html">Add i18n support to a project</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="table-generation.html">Generating a table component</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -96,7 +96,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="card-generation.html">Generating a card which you can add a custom content template</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="form-generation.html">Generate Dynamic Forms from Aspect Model</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -112,7 +112,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">JavaScript SDK</span>
-    <span class="version">2.6.2</span>
+    <span class="version">2.7.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -167,7 +167,7 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version is-current">
-          <a href="../index.html">2.6.2</a>
+          <a href="../index.html">2.7.0</a>
         </li>
       </ul>
     </li>
@@ -226,24 +226,24 @@
   <ul>
     <li><a href="../index.html">JavaScript SDK</a></li>
     <li><a href="index.html">Tooling Guide</a></li>
-    <li><a href="table-generation.html">Generating a table component</a></li>
+    <li><a href="form-generation.html">Generate Dynamic Forms from Aspect Model</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.6.2</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.7.0</button>
   <div class="version-menu">
-    <a class="version" href="../../tooling-guide/table-generation.html">master</a>
-    <a class="version is-current" href="table-generation.html">2.6.2</a>
+    <a class="version" href="../../tooling-guide/form-generation.html">master</a>
+    <a class="version is-current" href="form-generation.html">2.7.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-schematics/blob/v2.6.2/documentation/js-sdk-guide/modules/tooling-guide/pages/table-generation.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-schematics/blob/v2.7.0/documentation/js-sdk-guide/modules/tooling-guide/pages/form-generation.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Table component generation</h1>
+<h1 class="page">Form component generation</h1>
 <div class="sect1">
 <h2 id="detailed-schema-overview"><a class="anchor" href="#detailed-schema-overview"></a><em>Detailed schema overview</em></h2>
 <div class="sectionbody">
@@ -254,7 +254,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Before generating a table component refer to the <a href="internationalization.html" class="xref page">internationalization</a> file.
+Before generating a form component refer to the <a href="internationalization.html" class="xref page">internationalization</a> file.
 </td>
 </tr>
 </table>
@@ -264,7 +264,7 @@ Before generating a table component refer to the <a href="internationalization.h
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng new app demo-schematics</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng new app demo-schematics --no-standalone</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -277,7 +277,7 @@ Before generating a table component refer to the <a href="internationalization.h
 </div>
 <div class="paragraph">
 <p>For demonstration purposes, the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/blob/main/core/apps/ame/src/assets/aspect-models/org.eclipse.examples/1.0.0/Movement.ttl" target="_blank" rel="nofollow noopener">Movement.ttl</a> Aspect Model will be used.
-Below is a detailed representation of the command-line interface steps which generates a table component using the Movement.ttl Aspect Model file by running the command.</p>
+Below is a detailed representation of the command-line interface steps which generates a form component using the Movement.ttl Aspect Model file by running the command.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -296,12 +296,12 @@ Before running any schematics commands make sure you are in the Angular project 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng generate @esmf/semantic-ui-schematics:table</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng generate @esmf/semantic-ui-schematics:form</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng g @esmf/semantic-ui-schematics:table</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng g @esmf/semantic-ui-schematics:form</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -360,23 +360,23 @@ auto-generated. The first prompt allows you to load a config file or start from 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/schema.another-aspect-model-selection.png" alt="schema.another aspect model selection" width="100%">
+<img src="_images/schema.aspect-model-selection.png" alt="schema.aspect model selection" width="100%">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/schema.aspect-model-selection.png" alt="schema.aspect model selection" width="100%">
+<img src="_images/schema.another-aspect-model-selection.png" alt="schema.another aspect model selection" width="100%">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="entity-or-specific-aspect-selection"><a class="anchor" href="#entity-or-specific-aspect-selection"></a><em>Entity or specific aspect selection</em></h3>
 <div class="paragraph">
-<p>An Aspect or an Entity must be chosen in order for the table to be created. This can be done in this step by choosing from a list.</p>
+<p>An Aspect or an Entity must be chosen in order for the form to be created. This can be done in this step by choosing from a list.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/schema.aspect-or-entity-selection-table.png" alt="schema.aspect or entity selection table" width="100%">
+<img src="_images/schema.aspect-or-entity-selection-form.png" alt="schema.aspect or entity selection form" width="100%">
 </div>
 </div>
 </div>
@@ -392,192 +392,22 @@ auto-generated. The first prompt allows you to load a config file or start from 
 </div>
 </div>
 <div class="sect2">
-<h3 id="default-property-sorting"><a class="anchor" href="#default-property-sorting"></a><em>Default property sorting</em></h3>
-<div class="paragraph">
-<p>The table can sort the rows based on a property. In this step the default one can be chosen.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/schema.default-sorting-property.png" alt="schema.default sorting property" width="100%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="custom-actions"><a class="anchor" href="#custom-actions"></a><em>Custom actions</em></h3>
-<div class="paragraph">
-<p>The table supports custom actions to be configured. These actions will appear in the actions column of the table. In the following prompt you can choose different files or class names to customize the icons.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/custom-actions-prompt.png" alt="custom actions prompt" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>In the generated table the selection custom actions can be observed in the actions column as below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/table-example.png" alt="table example" width="100%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="multiple-selection"><a class="anchor" href="#multiple-selection"></a><em>Multiple selection</em></h3>
-<div class="paragraph">
-<p>One other thing supported is multiple selection. There is an option to choose to have this feature or not in the following prompt.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/multiple-actions-prompt.png" alt="multiple actions prompt" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>The generated table containing checkboxes will look like in the following example:</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<em>The checkboxes are displayed in the first column of the table. One or multiple rows can be selected.</em>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/table-with-checked-rows.png" alt="table with checked rows" width="100%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="command-bar"><a class="anchor" href="#command-bar"></a><em>Command bar</em></h3>
-<div class="paragraph">
-<p>The command bar is displayed above the table, and it holds the controls for searching and filtering the data inside the table. This is shown only if the 'yes' option is chosen in the provided input.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/command-bar-prompt.png" alt="command bar prompt" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>If you select to have a command bar, another prompt question will appear for selecting the additional functionality attached to it.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/command-bar-additional-functionalities.png" alt="command bar additional functionalities" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>In the example provided, only the search functionality will be available.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/search-bar.png" alt="search bar" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>The search input is present allowing you to filter the existing data in the table if the data is handled on the client side or request new data. This can be decided in the next steps. The filtered data will be displayed after pressing the <code>search</code> button next to the search field.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<em>The search input will filter the data <code><strong>ONLY</strong></code> by the existing <code><strong>STRING</strong></code> properties in the chosen Aspect Model.</em>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Once the search functionality has been enabled, the next step is to choose the default language for remote access. This language selection determines the language used in the statement when accessing the system remotely.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/choose-language.png" alt="choose language" width="100%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="data-handling"><a class="anchor" href="#data-handling"></a><em>Data handling</em></h3>
-<div class="paragraph">
-<p>After generating a component, you can pass the data from the parent to the child components and also the other way around. There is a prompt present which determines if the data should be handled on the client side or remote via an API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/remote-data-handling-prompt.png" alt="remote data handling prompt" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>This means that any time you request data, an API endpoint will be called and the result coming from that endpoint will populate the table with a fresh set of data.</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="component-path"><a class="anchor" href="#component-path"></a><em>Component path</em></h3>
 <div class="paragraph">
-<p>Once all the prompts are answered, a table will be generated based on the selected options. The default path of the newly generated component is <code><strong><em>src/app/shared/components/&lt;component-name&gt;</em></strong></code>.</p>
+<p>Once all the prompts are answered, a form will be generated based on the selected options. The default path of the newly generated component is <code><strong><em>src/app/shared/components/&lt;component-name&gt;</em></strong></code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">shared
 └─── components
         └─── &lt;component-name&gt;
-        │   │   &lt;component-name&gt;.component.html
-        │   │   &lt;component-name&gt;.component.scss
-        │   │   &lt;component-name&gt;.component.ts
-        │   │   &lt;component-name&gt;-command-bar.component.ts
-        │   │   &lt;component-name&gt;-command-bar.component.html
-        │   │   &lt;component-name&gt;-chip-list.component.ts
-        │   │   &lt;component-name&gt;-chip-list.component.scss
-        │   │   &lt;component-name&gt;-chip-list.component.html
-        │   │   &lt;component-name&gt;.module.ts
-        │   │   &lt;component-name&gt;.service.ts
-        │   │   &lt;component-name&gt;.datasource.ts
-        │   │   &lt;component-name&gt;-filter.service.ts</code></pre>
+        │    └───&lt;form-field&gt;
+        │   │   │   &lt;form-field-component-name&gt;-form.component.html
+        │   │   │   &lt;form-field-component-name&gt;-form.component.scss
+        │   │   │   &lt;form-field-component-name&gt;-form.component.ts
+        │   │   &lt;component-name&gt;-form.component.ts
+        │   │   &lt;component-name&gt;-form.module.ts</code></pre>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="persistent-custom-service"><a class="anchor" href="#persistent-custom-service"></a><em>Persistent custom service</em></h3>
-<div class="paragraph">
-<p>By default, as seen above, a <em>&lt;component-name&gt;.service.ts</em> file is auto-generated. This file is <code><strong>OVERRIDDEN</strong></code> each time a component is re-generated.</p>
-</div>
-<div class="paragraph">
-<p>Which is why we introduced another prompt question for a custom service generation which is <code><em>persistent</em></code> if the component is re-generated.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/custom-service.png" alt="custom service" width="100%">
-</div>
-</div>
-<div class="paragraph">
-<p>If this option is selected, another file will show up in the folder structure.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">shared
-└───components
-        └─── &lt;component-name&gt;
-        │   │   custom-&lt;component-name&gt;.service.ts
-        │   │   &lt;component-name&gt;.component.html
-        │   │   &lt;component-name&gt;.component.scss
-        │   │   &lt;component-name&gt;.component.ts
-        │   │   &lt;component-name&gt;-command-bar.component.ts
-        │   │   &lt;component-name&gt;-command-bar.component.html
-        │   │   &lt;component-name&gt;-chip-list.component.ts
-        │   │   &lt;component-name&gt;-chip-list.component.scss
-        │   │   &lt;component-name&gt;-chip-list.component.html
-        │   │   &lt;component-name&gt;.module.ts
-        │   │   &lt;component-name&gt;.service.ts
-        │   │   &lt;component-name&gt;-filter.service.ts</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This file will be overridden <code><em>ONLY</em></code> if you choose to do so by providing the <code>--overwrite</code> option when starting the generation process.</p>
 </div>
 </div>
 <div class="sect2">
@@ -599,41 +429,27 @@ auto-generated. The first prompt allows you to load a config file or start from 
 └───components
         └─── &lt;component-version-0&gt;
         │    └─── &lt;component-name&gt;
-        │    │   │   custom-&lt;component-name&gt;.service.ts
-        │    │   │   &lt;component-name&gt;.component.html
-        │    │   │   &lt;component-name&gt;.component.scss
-        │    │   │   &lt;component-name&gt;.component.ts
-        │    │   │   &lt;component-name&gt;-command-bar.component.ts
-        │    │   │   &lt;component-name&gt;-command-bar.component.html
-        │    │   │   &lt;component-name&gt;-chip-list.component.ts
-        │    │   │   &lt;component-name&gt;-chip-list.component.scss
-        │    │   │   &lt;component-name&gt;-chip-list.component.html
-        │    │   │   &lt;component-name&gt;.module.ts
-        │    │   │   &lt;component-name&gt;.service.ts
-        │    │   │   &lt;component-name&gt;-filter.service.ts
-        │    │   │   &lt;component-name&gt;-datasource.ts
+        │    │    └───&lt;form-field&gt;
+        │    │   │   │   &lt;form-field-component-name&gt;-form.component.html
+        │    │   │   │   &lt;form-field-component-name&gt;-form.component.scss
+        │    │   │   │   &lt;form-field-component-name&gt;-form.component.ts
+        │    │   │   &lt;component-name&gt;-form.component.ts
+        │    │   │   &lt;component-name&gt;-form.module.ts
         └─── &lt;component-version-1&gt;
         │    └─── &lt;component-name&gt;
-        │    │   │   custom-&lt;component-name&gt;.service.ts
-        │    │   │   &lt;component-name&gt;.component.html
-        │    │   │   &lt;component-name&gt;.component.scss
-        │    │   │   &lt;component-name&gt;.component.ts
-        │    │   │   &lt;component-name&gt;-command-bar.component.ts
-        │    │   │   &lt;component-name&gt;-command-bar.component.html
-        │    │   │   &lt;component-name&gt;-chip-list.component.ts
-        │    │   │   &lt;component-name&gt;-chip-list.component.scss
-        │    │   │   &lt;component-name&gt;-chip-list.component.html
-        │    │   │   &lt;component-name&gt;.module.ts
-        │    │   │   &lt;component-name&gt;.service.ts
-        │    │   │   &lt;component-name&gt;-filter.service.ts
-        │    │   │   &lt;component-name&gt;-datasource.ts</code></pre>
+        │    │    └───&lt;form-field&gt;
+        │    │   │   │   &lt;form-field-component-name&gt;-form.component.html
+        │    │   │   │   &lt;form-field-component-name&gt;-form.component.scss
+        │    │   │   │   &lt;form-field-component-name&gt;-form.component.ts
+        │    │   │   &lt;component-name&gt;-form.component.ts
+        │    │   │   &lt;component-name&gt;-form.module.ts</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="material-themeindigo-pink"><a class="anchor" href="#material-themeindigo-pink"></a><em>Material theme(Indigo pink)</em></h3>
 <div class="paragraph">
-<p>User can add to angular.json Indigo pink material theme. These action will appear in the actions column of the table. In the following prompt you can choose to add the Indigo pink material theme.</p>
+<p>User can add to angular.json Indigo pink material theme. These action will appear in the actions column of the form. In the following prompt you can choose to add the Indigo pink material theme.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -641,7 +457,7 @@ auto-generated. The first prompt allows you to load a config file or start from 
 </div>
 </div>
 <div class="paragraph">
-<p>In the generated angular.json table if user selected yes we can observe the change in styles array.</p>
+<p>In the generated angular.json form if user selected yes we can observe the change in styles array.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -650,9 +466,9 @@ auto-generated. The first prompt allows you to load a config file or start from 
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-view-encapsulation-strategy-for-the-generated-table-component"><a class="anchor" href="#set-view-encapsulation-strategy-for-the-generated-table-component"></a><em>Set view encapsulation strategy for the generated table component</em></h3>
+<h3 id="set-view-encapsulation-strategy-for-the-generated-form-component"><a class="anchor" href="#set-view-encapsulation-strategy-for-the-generated-form-component"></a><em>Set view encapsulation strategy for the generated form component</em></h3>
 <div class="paragraph">
-<p>User can set the View Encapsulation strategy by default the ViewEncapsulation will be set to None on the generated table component. In the following prompt you can choose to add another View Encapsulation value.</p>
+<p>User can set the View Encapsulation strategy by default the ViewEncapsulation will be set to None on the generated form component. In the following prompt you can choose to add another View Encapsulation value.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -661,13 +477,24 @@ auto-generated. The first prompt allows you to load a config file or start from 
 </div>
 </div>
 <div class="sect2">
-<h3 id="flags-for-generating-the-table"><a class="anchor" href="#flags-for-generating-the-table"></a><em>Flags for generating the table</em></h3>
+<h3 id="generate-read-only-form-components"><a class="anchor" href="#generate-read-only-form-components"></a><em>Generate read only form components</em></h3>
+<div class="paragraph">
+<p>Our tool allows users to effortlessly generate read-only forms. This feature is particularly useful for creating display components where data modification is not required.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/schema.read-only-forms.png" alt="schema.read only forms" width="100%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="flags-for-generating-the-form"><a class="anchor" href="#flags-for-generating-the-form"></a><em>Flags for generating the form</em></h3>
 <div class="paragraph">
 <p>By using</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng generate @esmf/semantic-ui-schematics:table --help</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng generate @esmf/semantic-ui-schematics:form --help</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -675,7 +502,7 @@ auto-generated. The first prompt allows you to load a config file or start from 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng g @esmf/semantic-ui-schematics:table --help</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng g @esmf/semantic-ui-schematics:form --help</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -696,20 +523,8 @@ auto-generated. The first prompt allows you to load a config file or start from 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--add-command-bar</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to add the command bar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--add-row-checkboxes</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multi selection checkboxes for selecting table rows</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--aspect-model-urn-to-load</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the Aspect Model for table generation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the Aspect Model for form generation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">''</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
@@ -720,28 +535,14 @@ auto-generated. The first prompt allows you to load a config file or start from 
 <td class="tableblock halign-left valign-top"><p class="tableblock">enum</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-remote-service</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate <em>custom-&lt;component-name&gt;.service.ts</em> file
-which is persistent and not overwritable in case the
-component is regenerated.</p>
-<p class="tableblock">This can be changed using the <code><em>--overwrite</em></code> flag
-Conditions: this flag appears only if the data is
-handled remotely. This is specified using the flag
-<code><em>--enable-remote-data-handling</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--enable-remote-data-handling</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flag used to choose how to handle the data, pagination, sorting or filtering.</p>
-<p class="tableblock">(client-side or remote)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--enable-version-support</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple versions support for different version of an</p>
-<p class="tableblock">Aspect Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple versions support for different version of an Aspect Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--read-only-form</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate read only form</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 </tr>
@@ -759,7 +560,7 @@ handled remotely. This is specified using the flag
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--selected-model-element-urn</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Choose a specific Entity or Aspect to show as table</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose a specific Entity or Aspect to show as form</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">''</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
@@ -772,46 +573,6 @@ handled remotely. This is specified using the flag
 </tbody>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="customize-the-date-format"><a class="anchor" href="#customize-the-date-format"></a>Customize the date format</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Various date formats can be configured e.g. for the date filter and the corresponding chip label.</p>
-</div>
-<div class="paragraph">
-<p>Set the desired default format for dates in the app.component.ts:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>constructor(@Inject(MAT_DATE_FORMATS) private dateFormats: MatDateFormats) {
-    this.dateFormats.display.dateInput = 'DD.MMM.YYYY';
-    this.dateFormats.display.monthYearLabel = 'MMM YYYY';
-    this.dateFormats.display.dateA11yLabel = 'LL';
-    this.dateFormats.display.monthYearA11yLabel = 'MMMM YYYY';
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Make sure moment.js and dateAdaptor are correctly installed</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="set-default-language"><a class="anchor" href="#set-default-language"></a>Set default language</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In app.component.ts, it is required to set the default language):</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>constructor(lang: TranslateService) {
-    lang.use(lang.defaultLang);
-}</pre>
-</div>
-</div>
-<hr>
 </div>
 </div>
 </article>

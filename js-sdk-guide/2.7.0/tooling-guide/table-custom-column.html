@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="js-sdk-guide" data-version="2.6.2">
+<div class="nav-container" data-component="js-sdk-guide" data-version="2.7.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -112,7 +112,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">JavaScript SDK</span>
-    <span class="version">2.6.2</span>
+    <span class="version">2.7.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -167,7 +167,7 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version is-current">
-          <a href="../index.html">2.6.2</a>
+          <a href="../index.html">2.7.0</a>
         </li>
       </ul>
     </li>
@@ -230,13 +230,13 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.6.2</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.7.0</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/table-custom-column.html">master</a>
-    <a class="version is-current" href="table-custom-column.html">2.6.2</a>
+    <a class="version is-current" href="table-custom-column.html">2.7.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-schematics/blob/v2.6.2/documentation/js-sdk-guide/modules/tooling-guide/pages/table-custom-column.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-schematics/blob/v2.7.0/documentation/js-sdk-guide/modules/tooling-guide/pages/table-custom-column.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -311,7 +311,7 @@ variable <strong>speedLimitWarning</strong> within the context of the calling pa
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!-- speedLimitWarning Column --&gt;
 &lt;ng-container matColumnDef="speedLimitWarning"&gt;
-  &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{ 'movement.v100.speedLimitWarning.preferredName' | translate }}&lt;/th&gt;
+  &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{ 'movement.v100.speedLimitWarning.preferredName' | transloco }}&lt;/th&gt;
 
   &lt;td mat-cell *matCellDef="let row"&gt;
     &lt;!-- {{ row.speedLimitWarning || '-' }} --&gt;
@@ -451,7 +451,7 @@ logic that defines the fill color of the bar, depending on the value of
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!-- batteryLevel Column --&gt;
 &lt;ng-container matColumnDef="batteryLevel"&gt;
-  &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{ 'movement.v100.batteryLevel.preferredName' | translate }}&lt;/th&gt;
+  &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{ 'movement.v100.batteryLevel.preferredName' | transloco }}&lt;/th&gt;
 
   &lt;td mat-cell *matCellDef="let row"&gt;
     &lt;app-svg-bar-indicator [indicatorValue]="row.batteryLevel"&gt;&lt;/app-svg-bar-indicator&gt;

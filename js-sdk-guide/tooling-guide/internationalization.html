@@ -167,7 +167,7 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../2.6.2/index.html">2.6.2</a>
+          <a href="../2.7.0/index.html">2.7.0</a>
         </li>
       </ul>
     </li>
@@ -233,7 +233,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="internationalization.html">master</a>
-    <a class="version" href="../2.6.2/tooling-guide/internationalization.html">2.6.2</a>
+    <a class="version" href="../2.7.0/tooling-guide/internationalization.html">2.7.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-schematics/edit/main/documentation/js-sdk-guide/modules/tooling-guide/pages/internationalization.adoc">Contribute to this page</a></div>
@@ -244,8 +244,9 @@
 </aside>
 <article class="doc">
 <h1 class="page">Adding internationalization to the project</h1>
-<div class="sect2">
-<h3 id="what-does-internationalization-mean"><a class="anchor" href="#what-does-internationalization-mean"></a>What does internationalization mean?</h3>
+<div class="sect1">
+<h2 id="what-does-internationalization-mean"><a class="anchor" href="#what-does-internationalization-mean"></a>What does internationalization mean?</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Internationalization is the process of supporting multiple languages in your applications.
 This can be accomplished in an Angular application through third-party libraries, such as <em>@ngneat/transloco</em>, or you
@@ -256,14 +257,16 @@ can use the built-in i18n functionality.</p>
 without any other requirements.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="adding-internationalization-to-an-angular-app-using-schematics"><a class="anchor" href="#adding-internationalization-to-an-angular-app-using-schematics"></a>Adding internationalization to an Angular app using schematics</h3>
+</div>
+<div class="sect1">
+<h2 id="adding-internationalization-to-an-angular-app-using-schematics"><a class="anchor" href="#adding-internationalization-to-an-angular-app-using-schematics"></a>Adding internationalization to an Angular app using schematics</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Create a new Angular application using the command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">ng new app demo-schematics</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">ng new app demo-schematics --no-standalone</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -288,6 +291,7 @@ Before running any schematics command make sure you are in the Angular project f
 </div>
 <div class="paragraph">
 <p>Afterwards the project can translate a UI using <a href="https://github.com/jsverse/transloco" target="_blank" rel="nofollow noopener">@ngneat/transloco</a>.</p>
+</div>
 </div>
 </div>
 </article>
