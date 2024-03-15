@@ -21,7 +21,7 @@ content:
        start_path: documentation/ame-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-schematics
        branches: HEAD
-       tags: ["v2.6.2"]
+       tags: ["v2.7.0"]
        start_path: documentation/js-sdk-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader
        branches: HEAD
