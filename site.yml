@@ -13,15 +13,15 @@ content:
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
-       tags: ["v2.5.1","v2.5.0","v2.4.2","v2.4.1","v2.4.0"]
+       tags: ["v2.6.0","v2.5.1","v2.5.0","v2.4.2","v2.4.1"]
        start_path: documentation/developer-guide
      - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: HEAD
-       tags: ["v5.1.1","v5.1.0"]
+       tags: ["v5.3.0","v5.2.0"]
        start_path: documentation/ame-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-schematics
        branches: HEAD
-       tags: ["v2.6.2"]
+       tags: ["v2.7.0"]
        start_path: documentation/js-sdk-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader
        branches: HEAD
@@ -29,11 +29,11 @@ content:
        start_path: documentation/js-sdk-aml-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-py-aspect-model-loader
        branches: HEAD
-       tags: ["v2.1.0"]
+       tags: ["v2.1.2","v2.1.1","v2.1.0"]
        start_path: documentation/python-sdk-guide
 ui:
   bundle:
-    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.5.0/esmf-antora-ui-bundle-1.5.0.zip
+    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.6.0/esmf-antora-ui-bundle-1.6.0.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
@@ -65,6 +65,7 @@ asciidoc:
     unit: urn:samm:org.eclipse.esmf.samm:unit:2.1.0#@
     # The version of the latest SAMM maven artifact
     aspect-meta-model-version: '2.1.0'
-    esmf-sdk-version: '2.5.1'
+    esmf-sdk-version: '2.6.0'
+    esmf-sdk-js-aspect-model-loader-version: '2.3.0'
     example-ns: com.mycompany@
 
