@@ -119,10 +119,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.3.0/introduction.html">5.3.0</a>
+          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.2.0/introduction.html">5.2.0</a>
+          <a href="../../ame-guide/5.3.0/introduction.html">5.3.0</a>
         </li>
       </ul>
     </li>
@@ -319,13 +319,10 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 <p><strong>Extract</strong>: extract it to a location of your choice.</p>
 </li>
 <li>
-<p><strong>Open Command Prompt</strong>: Launch the Command Prompt and navigate to the directory (samm-cli-windows) containing our application.</p>
+<p><strong>Open</strong> the provided <code>start-samm-cli.bat</code>: This will open a command prompt in this directory, where you can enter further <code>samm</code> commands.</p>
 </li>
 <li>
 <p><strong>Input</strong>: Make sure to read the below documentation and provide model files in the correct <a href="#models-directory-structure">directory structure</a>.</p>
-</li>
-<li>
-<p><strong>Run</strong>: In the command prompt, execute the command <code>samm</code> to start the application. See the below table for details.</p>
 </li>
 </ul>
 </div>
@@ -519,7 +516,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="15"><p class="tableblock">aspect &lt;model&gt; to openapi</p></td>
+<td class="tableblock halign-left valign-top" rowspan="16"><p class="tableblock">aspect &lt;model&gt; to openapi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j</code></p></td>
 </tr>
@@ -585,6 +582,10 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which an OpenAPI specification should
                                        be generated (default: en)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -l de</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--separate-files, -sf</em> : Create separate files for each schema</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>

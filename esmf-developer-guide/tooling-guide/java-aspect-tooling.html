@@ -119,10 +119,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.3.0/introduction.html">5.3.0</a>
+          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.2.0/introduction.html">5.2.0</a>
+          <a href="../../ame-guide/5.3.0/introduction.html">5.3.0</a>
         </li>
       </ul>
     </li>
@@ -1292,6 +1292,8 @@ import java.util.Locale;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.esmf.aspectmodel.generator.jsonschema.AspectModelJsonSchemaGenerator;
+import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
@@ -1305,8 +1307,10 @@ import java.io.IOException;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-final AspectModelJsonSchemaGenerator generator = new AspectModelJsonSchemaGenerator();
-final JsonNode jsonSchema = generator.apply( aspect, Locale.ENGLISH );
+final JsonSchemaGenerationConfig config = JsonSchemaGenerationConfigBuilder.builder()
+      .locale( Locale.ENGLISH )
+      .build();
+final JsonNode jsonSchema = AspectModelJsonSchemaGenerator.INSTANCE.apply( aspect, config ).getContent();
 
 // If needed, print or pretty print it into a string
 final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -1330,17 +1334,122 @@ and <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.ByteArrayOutputStream;
-import java.util.Optional;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
+
 import org.eclipse.esmf.aspectmodel.generator.openapi.AspectModelOpenApiGenerator;
+import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.generator.openapi.PagingOption;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.File;
-import java.io.IOException;</code></pre>
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+
+public class GenerateOpenApi {
+   @Test
+   public void generateYaml() throws JsonProcessingException {
+      final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
+
+      // Aspect as created by the AspectModelLoader
+      final Aspect aspect = // ...
+            // exclude the actual loading from the example to reduce noise
+            AspectModelResolver.loadAndResolveModel( modelFile ).flatMap( AspectModelLoader::getSingleAspect ).get();
+
+      //language=yaml
+      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+            // Server URL
+            .baseUrl( "http://www.example.com" )
+            // The resource path which shall be added
+            .resourcePath( "/testPath/{parameter}" )
+            // Determines whether semantic versioning should be used for the API
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // A String containing all the information for dynamic properties mentioned in the resource path.
+            // The string must be syntactically valid YAML.
+            .properties( readYaml( """
+                  parameter:
+                    name: parameter
+                    in: path
+                    description: "A parameter."
+                    required: true
+                    schema:
+                      type: string
+                  """ ) )
+            // Should the query API be added to the generated specification?
+            .includeQueryApi( true )
+            // The paging Option to be chosen. In case paging is possible:
+            // The default for a time related collection is time-based paging.
+            // Otherwise the default is offset-based paging.
+            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+            .build();
+
+      // Generate pretty-printed YAML
+      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
+      final String yaml = generator.apply( aspect, config ).getContentAsYaml();
+   }
+
+   @Test
+   public void generateJson() throws IOException {
+      final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
+      // Aspect as created by the AspectModelLoader
+      final Aspect aspect = // ...
+            // exclude the actual loading from the example to reduce noise
+            AspectModelResolver.loadAndResolveModel( modelFile ).flatMap( AspectModelLoader::getSingleAspect ).get();
+
+      final ObjectMapper objectMapper = new ObjectMapper();
+      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+            // Server URL
+            .baseUrl( "http://www.example.com" )
+            // The resource path which shall be added
+            .resourcePath( "/testPath/{parameter}" )
+            // Determines whether semantic versioning should be used for the API
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // A JsonNode containing all the information for variable properties mentioned
+            // in the resource path .
+            .properties( readYaml( """
+                     {
+                       "test-Id": {
+                         "name": "test-Id",
+                         "in": "path",
+                         "description": "The ID of the unit.",
+                         "required": true,
+                         "schema": {
+                           "type": "string"
+                         }
+                       }
+                     }
+                  """ ) )
+            // Should the query API be added to the generated specification?
+            .includeQueryApi( true )
+            // The paging Option to be chosen. In case paging is possible:
+            // The default for a time related collection is time-based paging.
+            // Otherwise the default is offset-based paging.
+            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+            .build();
+
+      // Generate the JSON
+      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
+      final JsonNode json = generator.apply( aspect, config ).getContent();
+
+      // If needed, print or pretty print it into a string
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+      objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+      final String result = out.toString();
+   }
+
+   private static ObjectNode readYaml( String content ) throws JsonProcessingException {
+      return (ObjectNode) new YAMLMapper().readTree( content );
+   }
+}</code></pre>
 </div>
 </div>
 </details>
@@ -1350,40 +1459,37 @@ import java.io.IOException;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-// Server URL
-final String baseUrl = "http://www.example.com";
-
-// The resource path which shall be added
-final Optional&lt;String&gt; resourcePath = Optional.of( "/testPath/{parameter}" );
-
-// A String containing all the information for dynamic properties mentioned in the resource path.
-// The string must be syntactically valid YAML.
-final Optional&lt;String&gt; yamlProperties = Optional.of( """
-      parameter:
-        name: parameter
-        in: path
-        description: "A parameter."
-        required: true
-        schema:
-          type: string
-      """ );
-
-// Should the query API be added to the generated specification?
-final boolean includeQueryApi = true;
-
-// The paging Option to be chosen. In case paging is possible:
-// The default for a time related collection is time-based paging.
-// Otherwise the default is offset-based paging.
-final Optional&lt;PagingOption&gt; pagingOption = Optional.of( PagingOption.OFFSET_BASED_PAGING );
-
-// Determines whether semantic versioning should be used for the API
-// i.e., true = v1.2.3, false = v1
-final boolean useSemanticVersion = false;
+//language=yaml
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A String containing all the information for dynamic properties mentioned in the resource path.
+      // The string must be syntactically valid YAML.
+      .properties( readYaml( """
+            parameter:
+              name: parameter
+              in: path
+              description: "A parameter."
+              required: true
+              schema:
+                type: string
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
 
 // Generate pretty-printed YAML
 final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-final String yaml = generator.applyForYaml( aspect, useSemanticVersion, baseUrl,
-      resourcePath, yamlProperties, includeQueryApi, pagingOption );</code></pre>
+final String yaml = generator.apply( aspect, config ).getContentAsYaml();</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1392,45 +1498,41 @@ final String yaml = generator.applyForYaml( aspect, useSemanticVersion, baseUrl,
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-// Server URL
-final String baseUrl = "http://www.example.com";
-
-// The resource path which shall be added
-final Optional&lt;String&gt; resourcePath = Optional.of( "/testPath/{parameter}" );
-
-// Determines whether semantic versioning should be used for the API
-// i.e., true = v1.2.3, false = v1
-final boolean useSemanticVersion = false;
-
-// A JsonNode containing all the information for variable properties mentioned
-// in the resource path .
 final ObjectMapper objectMapper = new ObjectMapper();
-final Optional&lt;JsonNode&gt; jsonProperties = Optional.of( objectMapper.readTree( """
-      {
-        "test-Id": {
-          "name": "test-Id",
-          "in": "path",
-          "description": "The ID of the unit.",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      }
-      """ ) );
-
-// Should the query API be added to the generated specification?
-final boolean includeQueryApi = true;
-
-// The paging Option to be chosen. In case paging is possible:
-// The default for a time related collection is time-based paging.
-// Otherwise the default is offset-based paging.
-final Optional&lt;PagingOption&gt; pagingOption = Optional.of( PagingOption.OFFSET_BASED_PAGING );
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A JsonNode containing all the information for variable properties mentioned
+      // in the resource path .
+      .properties( readYaml( """
+               {
+                 "test-Id": {
+                   "name": "test-Id",
+                   "in": "path",
+                   "description": "The ID of the unit.",
+                   "required": true,
+                   "schema": {
+                     "type": "string"
+                   }
+                 }
+               }
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
 
 // Generate the JSON
 final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-final JsonNode json = generator.applyForJson( aspect, useSemanticVersion, baseUrl,
-      resourcePath, jsonProperties, includeQueryApi, pagingOption );
+final JsonNode json = generator.apply( aspect, config ).getContent();
 
 // If needed, print or pretty print it into a string
 final ByteArrayOutputStream out = new ByteArrayOutputStream();
