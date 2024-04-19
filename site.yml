@@ -65,7 +65,7 @@ asciidoc:
     unit: urn:samm:org.eclipse.esmf.samm:unit:2.1.0#@
     # The version of the latest SAMM maven artifact
     aspect-meta-model-version: '2.1.0'
-    esmf-sdk-version: '2.6.1'
+    esmf-sdk-version: '2.7.0'
     esmf-sdk-js-aspect-model-loader-version: '2.3.0'
     example-ns: com.mycompany@
 
