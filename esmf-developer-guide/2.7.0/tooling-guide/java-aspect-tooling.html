@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.4.2">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.7.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -87,13 +87,29 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../static-metaclasses/index.html">Using Java Static Meta Classes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../static-metaclasses/basic-usage.html">Basic Usage</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../static-metaclasses/advanced-usage.html">Advanced Usage</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
 </ul>
   </nav>
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.4.2</span>
+    <span class="version">2.7.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -124,6 +140,9 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.7.0</a>
+        </li>
         <li class="version">
           <a href="../../2.6.1/index.html">2.6.1</a>
         </li>
@@ -135,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../../2.5.0/index.html">2.5.0</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.4.2</a>
         </li>
       </ul>
     </li>
@@ -210,17 +226,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.4.2</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.7.0</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/java-aspect-tooling.html">master</a>
+    <a class="version is-current" href="java-aspect-tooling.html">2.7.0</a>
     <a class="version" href="../../2.6.1/tooling-guide/java-aspect-tooling.html">2.6.1</a>
     <a class="version" href="../../2.6.0/tooling-guide/java-aspect-tooling.html">2.6.0</a>
     <a class="version" href="../../2.5.1/tooling-guide/java-aspect-tooling.html">2.5.1</a>
     <a class="version" href="../../2.5.0/tooling-guide/java-aspect-tooling.html">2.5.0</a>
-    <a class="version is-current" href="java-aspect-tooling.html">2.4.2</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.4.2/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.7.0/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -304,8 +320,7 @@ see the <a href="https://www.vavr.io/vavr-docs/">Vavr User Guide</a> for more in
 import java.util.List;
 
 import io.vavr.collection.Stream;
-import io.vavr.control.Try;
-import org.junit.jupiter.api.Test;</code></pre>
+import io.vavr.control.Try;</code></pre>
 </div>
 </div>
 </details>
@@ -403,9 +418,7 @@ building the native image; for more information see
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.junit.jupiter.api.Test;
-
-import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;</code></pre>
 </div>
 </div>
 </details>
@@ -605,8 +618,7 @@ import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
 import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
 import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
 import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;
-import io.vavr.control.Try;
-import org.junit.jupiter.api.Test;</code></pre>
+import io.vavr.control.Try;</code></pre>
 </div>
 </div>
 </details>
@@ -671,8 +683,7 @@ import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
 import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
 import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
 import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;
-import io.vavr.control.Try;
-import org.junit.jupiter.api.Test;</code></pre>
+import io.vavr.control.Try;</code></pre>
 </div>
 </div>
 </details>
@@ -755,8 +766,7 @@ import java.util.List;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.NamedElement;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import io.vavr.collection.Stream;
-import org.junit.jupiter.api.Test;</code></pre>
+import io.vavr.collection.Stream;</code></pre>
 </div>
 </div>
 </details>
@@ -838,18 +848,11 @@ formatted according to the guidelines described in the SAMM specification.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import org.apache.jena.rdf.model.Model;
+
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.aspectmodel.resolver.services.SammAspectMetaModelResourceResolver;
-import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
-import org.eclipse.esmf.aspectmodel.serializer.PrettyPrinter;
-import org.eclipse.esmf.aspectmodel.serializer.RdfModelCreatorVisitor;
-import org.eclipse.esmf.aspectmodel.vocabulary.Namespace;
+import org.eclipse.esmf.aspectmodel.serializer.AspectSerializer;
 import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
 </div>
 </div>
 </details>
@@ -858,26 +861,8 @@ import org.junit.jupiter.api.Test;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-// First step: Turn Java Aspect model into a Jena RDF model
-// We will use the Aspect's namespace as the model's default namespace.
-final Namespace aspectNamespace = () -&gt; aspect.getAspectModelUrn().get().getUrnPrefix();
-final RdfModelCreatorVisitor rdfCreator = new RdfModelCreatorVisitor(
-      aspect.getMetaModelVersion(), aspectNamespace );
-final Model model = rdfCreator.visitAspect( aspect, null ).getModel();
-
-// At this point, you can manipulate the RDF model, if required
-
-// Second step: Serialize RDF model into nicely formatted Turtle
-final StringWriter stringWriter = new StringWriter();
-final PrintWriter printWriter = new PrintWriter( stringWriter );
-final VersionedModel versionedModel = new SammAspectMetaModelResourceResolver()
-      .mergeMetaModelIntoRawModel( model, aspect.getMetaModelVersion() ).get();
-final PrettyPrinter prettyPrinter = new PrettyPrinter(
-      versionedModel, aspect.getAspectModelUrn().get(), printWriter );
-prettyPrinter.print();
-printWriter.close();
-
-final String result = stringWriter.toString();</code></pre>
+// A String that contains the pretty printed Aspect Model
+String aspectString = AspectSerializer.INSTANCE.apply( aspect );</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -956,6 +941,7 @@ context information specific to this type, for example, the <code>MinLengthViola
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.List;
+
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
 import org.eclipse.esmf.aspectmodel.shacl.violation.Violation;
@@ -963,8 +949,7 @@ import org.eclipse.esmf.aspectmodel.validation.services.AspectModelValidator;
 import org.eclipse.esmf.aspectmodel.validation.services.DetailedViolationFormatter;
 import org.eclipse.esmf.aspectmodel.validation.services.ViolationFormatter;
 import io.vavr.control.Try;
-import java.io.File;
-import org.junit.jupiter.api.Test;</code></pre>
+import java.io.File;</code></pre>
 </div>
 </div>
 </details>
@@ -1152,8 +1137,7 @@ import org.eclipse.esmf.metamodel.AspectContext;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
 
 import java.io.File;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;</code></pre>
+import java.io.IOException;</code></pre>
 </div>
 </div>
 </details>
@@ -1216,8 +1200,7 @@ import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.AspectContext;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;</code></pre>
+import java.io.IOException;</code></pre>
 </div>
 </div>
 </details>
@@ -1275,8 +1258,7 @@ import java.io.IOException;
 import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
 </div>
 </div>
 </details>
@@ -1310,12 +1292,13 @@ import java.util.Locale;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.esmf.aspectmodel.generator.jsonschema.AspectModelJsonSchemaGenerator;
+import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
 import java.io.File;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;</code></pre>
+import java.io.IOException;</code></pre>
 </div>
 </div>
 </details>
@@ -1324,8 +1307,10 @@ import org.junit.jupiter.api.Test;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-final AspectModelJsonSchemaGenerator generator = new AspectModelJsonSchemaGenerator();
-final JsonNode jsonSchema = generator.apply( aspect, Locale.ENGLISH );
+final JsonSchemaGenerationConfig config = JsonSchemaGenerationConfigBuilder.builder()
+      .locale( Locale.ENGLISH )
+      .build();
+final JsonNode jsonSchema = AspectModelJsonSchemaGenerator.INSTANCE.apply( aspect, config ).getContent();
 
 // If needed, print or pretty print it into a string
 final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -1349,18 +1334,122 @@ and <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.ByteArrayOutputStream;
-import java.util.Optional;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
+
 import org.eclipse.esmf.aspectmodel.generator.openapi.AspectModelOpenApiGenerator;
+import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.generator.openapi.PagingOption;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.File;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+
+public class GenerateOpenApi {
+   @Test
+   public void generateYaml() throws JsonProcessingException {
+      final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
+
+      // Aspect as created by the AspectModelLoader
+      final Aspect aspect = // ...
+            // exclude the actual loading from the example to reduce noise
+            AspectModelResolver.loadAndResolveModel( modelFile ).flatMap( AspectModelLoader::getSingleAspect ).get();
+
+      //language=yaml
+      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+            // Server URL
+            .baseUrl( "http://www.example.com" )
+            // The resource path which shall be added
+            .resourcePath( "/testPath/{parameter}" )
+            // Determines whether semantic versioning should be used for the API
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // A String containing all the information for dynamic properties mentioned in the resource path.
+            // The string must be syntactically valid YAML.
+            .properties( readYaml( """
+                  parameter:
+                    name: parameter
+                    in: path
+                    description: "A parameter."
+                    required: true
+                    schema:
+                      type: string
+                  """ ) )
+            // Should the query API be added to the generated specification?
+            .includeQueryApi( true )
+            // The paging Option to be chosen. In case paging is possible:
+            // The default for a time related collection is time-based paging.
+            // Otherwise the default is offset-based paging.
+            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+            .build();
+
+      // Generate pretty-printed YAML
+      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
+      final String yaml = generator.apply( aspect, config ).getContentAsYaml();
+   }
+
+   @Test
+   public void generateJson() throws IOException {
+      final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
+      // Aspect as created by the AspectModelLoader
+      final Aspect aspect = // ...
+            // exclude the actual loading from the example to reduce noise
+            AspectModelResolver.loadAndResolveModel( modelFile ).flatMap( AspectModelLoader::getSingleAspect ).get();
+
+      final ObjectMapper objectMapper = new ObjectMapper();
+      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+            // Server URL
+            .baseUrl( "http://www.example.com" )
+            // The resource path which shall be added
+            .resourcePath( "/testPath/{parameter}" )
+            // Determines whether semantic versioning should be used for the API
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // A JsonNode containing all the information for variable properties mentioned
+            // in the resource path .
+            .properties( readYaml( """
+                     {
+                       "test-Id": {
+                         "name": "test-Id",
+                         "in": "path",
+                         "description": "The ID of the unit.",
+                         "required": true,
+                         "schema": {
+                           "type": "string"
+                         }
+                       }
+                     }
+                  """ ) )
+            // Should the query API be added to the generated specification?
+            .includeQueryApi( true )
+            // The paging Option to be chosen. In case paging is possible:
+            // The default for a time related collection is time-based paging.
+            // Otherwise the default is offset-based paging.
+            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+            .build();
+
+      // Generate the JSON
+      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
+      final JsonNode json = generator.apply( aspect, config ).getContent();
+
+      // If needed, print or pretty print it into a string
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+      objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+      final String result = out.toString();
+   }
+
+   private static ObjectNode readYaml( String content ) throws JsonProcessingException {
+      return (ObjectNode) new YAMLMapper().readTree( content );
+   }
+}</code></pre>
 </div>
 </div>
 </details>
@@ -1370,40 +1459,37 @@ import org.junit.jupiter.api.Test;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-// Server URL
-final String baseUrl = "http://www.example.com";
-
-// The resource path which shall be added
-final Optional&lt;String&gt; resourcePath = Optional.of( "/testPath/{parameter}" );
-
-// A String containing all the information for dynamic properties mentioned in the resource path.
-// The string must be syntactically valid YAML.
-final Optional&lt;String&gt; yamlProperties = Optional.of( """
-      parameter:
-        name: parameter
-        in: path
-        description: "A parameter."
-        required: true
-        schema:
-          type: string
-      """ );
-
-// Should the query API be added to the generated specification?
-final boolean includeQueryApi = true;
-
-// The paging Option to be chosen. In case paging is possible:
-// The default for a time related collection is time-based paging.
-// Otherwise the default is offset-based paging.
-final Optional&lt;PagingOption&gt; pagingOption = Optional.of( PagingOption.OFFSET_BASED_PAGING );
-
-// Determines whether semantic versioning should be used for the API
-// i.e., true = v1.2.3, false = v1
-final boolean useSemanticVersion = false;
+//language=yaml
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A String containing all the information for dynamic properties mentioned in the resource path.
+      // The string must be syntactically valid YAML.
+      .properties( readYaml( """
+            parameter:
+              name: parameter
+              in: path
+              description: "A parameter."
+              required: true
+              schema:
+                type: string
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
 
 // Generate pretty-printed YAML
 final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-final String yaml = generator.applyForYaml( aspect, useSemanticVersion, baseUrl,
-      resourcePath, yamlProperties, includeQueryApi, pagingOption );</code></pre>
+final String yaml = generator.apply( aspect, config ).getContentAsYaml();</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1412,45 +1498,41 @@ final String yaml = generator.applyForYaml( aspect, useSemanticVersion, baseUrl,
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-// Server URL
-final String baseUrl = "http://www.example.com";
-
-// The resource path which shall be added
-final Optional&lt;String&gt; resourcePath = Optional.of( "/testPath/{parameter}" );
-
-// Determines whether semantic versioning should be used for the API
-// i.e., true = v1.2.3, false = v1
-final boolean useSemanticVersion = false;
-
-// A JsonNode containing all the information for variable properties mentioned
-// in the resource path .
 final ObjectMapper objectMapper = new ObjectMapper();
-final Optional&lt;JsonNode&gt; jsonProperties = Optional.of( objectMapper.readTree( """
-      {
-        "test-Id": {
-          "name": "test-Id",
-          "in": "path",
-          "description": "The ID of the unit.",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      }
-      """ ) );
-
-// Should the query API be added to the generated specification?
-final boolean includeQueryApi = true;
-
-// The paging Option to be chosen. In case paging is possible:
-// The default for a time related collection is time-based paging.
-// Otherwise the default is offset-based paging.
-final Optional&lt;PagingOption&gt; pagingOption = Optional.of( PagingOption.OFFSET_BASED_PAGING );
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A JsonNode containing all the information for variable properties mentioned
+      // in the resource path .
+      .properties( readYaml( """
+               {
+                 "test-Id": {
+                   "name": "test-Id",
+                   "in": "path",
+                   "description": "The ID of the unit.",
+                   "required": true,
+                   "schema": {
+                     "type": "string"
+                   }
+                 }
+               }
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
 
 // Generate the JSON
 final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-final JsonNode json = generator.applyForJson( aspect, useSemanticVersion, baseUrl,
-      resourcePath, jsonProperties, includeQueryApi, pagingOption );
+final JsonNode json = generator.apply( aspect, config ).getContent();
 
 // If needed, print or pretty print it into a string
 final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -1474,6 +1556,92 @@ specification. Preserving this order in OpenAPI is not possible at this point.
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generating-asyncapi-specification"><a class="anchor" href="#generating-asyncapi-specification"></a>Generating AsyncAPI Specification</h3>
+<div class="paragraph">
+<p>The AsyncAPI specification generator creates either a <a href="https://json-schema.org/">JSON Schema</a> or a <a href="https://yaml.org/">Yaml Spec</a>
+that specifies an Aspect regarding to the <a href="https://www.asyncapi.com/en">AsyncApi specification</a>.
+The currently used versions correspond to <a href="https://json-schema.org/specification-links.html#draft-4">Draft 4</a> of the JSON Schema specification,
+and <a href="https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md">3.0.0</a> of the AsyncAPI specification.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AspectModelAsyncApiGenerator;
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
+import org.eclipse.esmf.metamodel.Aspect;
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Generate AsyncAPI YAML</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
+final Aspect aspect = // ...
+
+final ObjectMapper yamlMapper = new YAMLMapper().enable( YAMLGenerator.Feature.MINIMIZE_QUOTES );
+
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
+
+// Generate pretty-printed YAML
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+final JsonNode json = generator.apply( aspect, config ).getContent();
+final String yaml = yamlMapper.writeValueAsString( json );
+
+final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+out.write( yaml.getBytes( StandardCharsets.UTF_8 ) );
+
+final String result = out.toString();</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Generate AsyncAPI JSON</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
+final Aspect aspect = // ...
+
+final ObjectMapper objectMapper = new ObjectMapper();
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
+
+// Generate the JSON
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+final JsonNode json = generator.apply( aspect, config ).getContent();
+
+// If needed, print or pretty print it into a string
+final ByteArrayOutputStream out = new ByteArrayOutputStream();
+objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+final String result = out.toString();</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1736,8 +1904,7 @@ import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
 import java.io.File;
-import org.apache.commons.io.output.NullOutputStream;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.apache.commons.io.output.NullOutputStream;</code></pre>
 </div>
 </div>
 </details>
@@ -1773,8 +1940,7 @@ import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
 import java.io.File;
-import org.apache.commons.io.output.NullOutputStream;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.apache.commons.io.output.NullOutputStream;</code></pre>
 </div>
 </div>
 </details>
@@ -1928,8 +2094,7 @@ import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
 import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
 import org.eclipse.esmf.aspectmodel.versionupdate.MigratorService;
 import io.vavr.control.Try;
-import java.nio.file.Paths;
-import org.junit.jupiter.api.Test;</code></pre>
+import java.nio.file.Paths;</code></pre>
 </div>
 </div>
 </details>
@@ -2107,8 +2272,7 @@ import java.util.Optional;
 import org.apache.jena.vocabulary.RDF;
 import org.eclipse.esmf.samm.KnownVersion;
 import org.eclipse.esmf.aspectmodel.resolver.services.MetaModelUrls;
-import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;</code></pre>
 </div>
 </div>
 </details>
@@ -2320,21 +2484,23 @@ However, there are still limitations:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calling-aas-generation-from-java"><a class="anchor" href="#calling-aas-generation-from-java"></a>Calling AAS generation from Java</h3>
+<h3 id="translate-aspect-model-to-aas"><a class="anchor" href="#translate-aspect-model-to-aas"></a>Translate Aspect Model to AAS</h3>
 <div class="paragraph">
-<p>The following code demonstrates how the API is used:</p>
+<p>The following code demonstrates how the API to translate an Aspect Model into one of the valid AAS
+formats (JSON, XML, AASX) is used:</p>
 </div>
 <details>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.aas.AspectModelAASGenerator;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.io.IOException;
+
+import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
+import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.File;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;</code></pre>
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
 </div>
 </div>
 </details>
@@ -2343,16 +2509,18 @@ import org.junit.jupiter.api.Test;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
 final Aspect aspect = // ...
 
-final AspectModelAASGenerator generator = new AspectModelAASGenerator();
+final AspectModelAasGenerator generator = new AspectModelAasGenerator();
 
 // Generate AAS .aasx for input Aspect
-generator.generateAASXFile( aspect, this::outputStreamForName );
+generator.generate( AasFileFormat.AASX, aspect, this::outputStreamForName );
 // Generate AAS .xml for input Aspect
-generator.generateAasXmlFile( aspect, this::outputStreamForName );</code></pre>
+generator.generate( AasFileFormat.XML, aspect, this::outputStreamForName );
+// Generate AAS .json for input Aspect
+generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To include the serializer artifact, use the following dependencies:</p>
+<p>To include the translator artifact, use the following dependencies:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2401,6 +2569,87 @@ generator.generateAasXmlFile( aspect, this::outputStreamForName );</code></pre>
 </dl>
 </div>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="translate-aas-to-aspect-model"><a class="anchor" href="#translate-aas-to-aspect-model"></a>Translate AAS to Aspect Model</h3>
+<div class="paragraph">
+<p>It is also possible to translate AAS Submodel Templates to Aspect Models using a best-effort. The
+following example shows how the API to translate an AAS environment containing one or more Submodel
+Templates to Aspect Models:</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+
+import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
+import org.eclipse.esmf.aspectmodel.aas.AasToAspectModelGenerator;
+import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
+import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
+import org.eclipse.esmf.metamodel.Aspect;
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Test;
+
+public class GenerateAspectFromAas extends AbstractGenerator {
+   private OutputStream outputStream( final Path directory, final String aspectName ) {
+      try {
+         return new FileOutputStream( directory.resolve( aspectName + ".aasx" ).toFile() );
+      } catch ( final FileNotFoundException exception ) {
+         throw new RuntimeException( exception );
+      }
+   }
+
+   @Test
+   public void generate() throws IOException {
+      final Path outputDirectory = Files.createTempDirectory( "junit" );
+      new AspectModelAasGenerator().generate( AasFileFormat.AASX,
+            AspectModelResolver.loadAndResolveModel( new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) )
+                  .flatMap( AspectModelLoader::getSingleAspect ).get(),
+            name -&gt; outputStream( outputDirectory, name ) );
+
+      final File file = // an AAS file that ends in .aasx, .xml or .json
+            outputDirectory.resolve( "Movement.aasx" ).toFile();
+
+      // Multiple "from" methods are available: fromFile (which checks the file extension),
+      // fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
+      final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
+      final List&lt;Aspect&gt; aspects = generator.generateAspects();
+      aspects.forEach( aspect -&gt; {
+         // do something with the generated aspect
+      } );
+
+      FileUtils.deleteDirectory( outputDirectory.toFile() );
+   }
+}</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final File file = // an AAS file that ends in .aasx, .xml or .json
+
+// Multiple "from" methods are available: fromFile (which checks the file extension),
+// fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
+final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
+final List&lt;Aspect&gt; aspects = generator.generateAspects();
+aspects.forEach( aspect -&gt; {
+   // do something with the generated aspect
+} );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To include the translator artifact, use the same same dependencies as shown above in section <a href="#translate-aas-to-aspect-model">Translate AAS to Aspect Model</a>.</p>
 </div>
 </div>
 </div>

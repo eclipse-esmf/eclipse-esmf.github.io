@@ -141,6 +141,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.7.0/index.html">2.7.0</a>
+        </li>
+        <li class="version">
           <a href="../2.6.1/index.html">2.6.1</a>
         </li>
         <li class="version">
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../2.5.0/index.html">2.5.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.4.2/index.html">2.4.2</a>
         </li>
       </ul>
     </li>
@@ -229,11 +229,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="java-aspect-tooling.html">master</a>
+    <a class="version" href="../2.7.0/tooling-guide/java-aspect-tooling.html">2.7.0</a>
     <a class="version" href="../2.6.1/tooling-guide/java-aspect-tooling.html">2.6.1</a>
     <a class="version" href="../2.6.0/tooling-guide/java-aspect-tooling.html">2.6.0</a>
     <a class="version" href="../2.5.1/tooling-guide/java-aspect-tooling.html">2.5.1</a>
     <a class="version" href="../2.5.0/tooling-guide/java-aspect-tooling.html">2.5.0</a>
-    <a class="version" href="../2.4.2/tooling-guide/java-aspect-tooling.html">2.4.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
@@ -1556,6 +1556,92 @@ specification. Preserving this order in OpenAPI is not possible at this point.
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generating-asyncapi-specification"><a class="anchor" href="#generating-asyncapi-specification"></a>Generating AsyncAPI Specification</h3>
+<div class="paragraph">
+<p>The AsyncAPI specification generator creates either a <a href="https://json-schema.org/">JSON Schema</a> or a <a href="https://yaml.org/">Yaml Spec</a>
+that specifies an Aspect regarding to the <a href="https://www.asyncapi.com/en">AsyncApi specification</a>.
+The currently used versions correspond to <a href="https://json-schema.org/specification-links.html#draft-4">Draft 4</a> of the JSON Schema specification,
+and <a href="https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md">3.0.0</a> of the AsyncAPI specification.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AspectModelAsyncApiGenerator;
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
+import org.eclipse.esmf.metamodel.Aspect;
+import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Generate AsyncAPI YAML</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
+final Aspect aspect = // ...
+
+final ObjectMapper yamlMapper = new YAMLMapper().enable( YAMLGenerator.Feature.MINIMIZE_QUOTES );
+
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
+
+// Generate pretty-printed YAML
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+final JsonNode json = generator.apply( aspect, config ).getContent();
+final String yaml = yamlMapper.writeValueAsString( json );
+
+final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+out.write( yaml.getBytes( StandardCharsets.UTF_8 ) );
+
+final String result = out.toString();</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Generate AsyncAPI JSON</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
+final Aspect aspect = // ...
+
+final ObjectMapper objectMapper = new ObjectMapper();
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
+
+// Generate the JSON
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+final JsonNode json = generator.apply( aspect, config ).getContent();
+
+// If needed, print or pretty print it into a string
+final ByteArrayOutputStream out = new ByteArrayOutputStream();
+objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+final String result = out.toString();</code></pre>
+</div>
 </div>
 </div>
 </div>

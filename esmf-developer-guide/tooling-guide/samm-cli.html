@@ -141,6 +141,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.7.0/index.html">2.7.0</a>
+        </li>
+        <li class="version">
           <a href="../2.6.1/index.html">2.6.1</a>
         </li>
         <li class="version">
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../2.5.0/index.html">2.5.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.4.2/index.html">2.4.2</a>
         </li>
       </ul>
     </li>
@@ -229,11 +229,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="samm-cli.html">master</a>
+    <a class="version" href="../2.7.0/tooling-guide/samm-cli.html">2.7.0</a>
     <a class="version" href="../2.6.1/tooling-guide/samm-cli.html">2.6.1</a>
     <a class="version" href="../2.6.0/tooling-guide/samm-cli.html">2.6.0</a>
     <a class="version" href="../2.5.1/tooling-guide/samm-cli.html">2.5.1</a>
     <a class="version" href="../2.5.0/tooling-guide/samm-cli.html">2.5.0</a>
-    <a class="version" href="../2.4.2/tooling-guide/samm-cli.html">2.4.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -319,7 +319,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 <p><strong>Extract</strong>: extract it to a location of your choice.</p>
 </li>
 <li>
-<p><strong>Open</strong> the provided <code>start-samm-cli.bat</code>: This will open a command prompt in this directory, where you can enter further <code>samm</code> commands.</p>
+<p><strong>Open</strong> <code>samm.exe</code>: This will open a command prompt in this directory, where you can enter further <code>samm</code> commands.</p>
 </li>
 <li>
 <p><strong>Input</strong>: Make sure to read the below documentation and provide model files in the correct <a href="#models-directory-structure">directory structure</a>.</p>
@@ -582,6 +582,42 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which an OpenAPI specification should
                                        be generated (default: en)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -l de</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--separate-files, -sf</em> : Create separate files for each schema</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">aspect &lt;model&gt; to asyncapi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0">AsyncAPI</a> specification for an Aspect Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to asyncapi</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--channel-address, -ca</em> : Sets the channel address (i.e., for MQTT, the topic&#8217;s name).
+                                       <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to asyncapi -ca 123-456/789-012/namespace/1.0.0/Aspect</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--application-id, -ai</em> : Sets the application id, e.g. an identifying URL.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--semantic-version, -sv</em> : use the full semantic version from the Aspect Model as the
+                                       version for the Aspect API</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model for which an AsyncAPI specification should
+                                       be generated (default: en)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to asyncapi -l de</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--separate-files, -sf</em> : Create separate files for each schema</p></td>
@@ -1195,6 +1231,411 @@ For offset based paging:</p>
   }
 }</code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-the-cli-to-create-a-json-asyncapi-specification"><a class="anchor" href="#using-the-cli-to-create-a-json-asyncapi-specification"></a>Using the CLI to create a JSON AsyncAPI Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As with <a href="#using-the-cli-to-create-a-json-openapi-specification">OpenAPI</a>, every AsyncAPI specification is based on one Aspect.
+Each Aspect is associated with one <a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#channelObject">channel address</a>.
+The channel address is set as string using with`--channel-address` or <code>-ca</code> option, e.g.: <code>-ca 123-456/789-012/test/1.0.0/Aspect</code>. The default channel address
+is derived from the Aspect&#8217;s URN and is constructed using the pattern <code>{namespace}/{version}/{aspectName}</code>.</p>
+</div>
+<div class="paragraph">
+<p>The full command for the native executable samm-cli would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">samm aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For the Java version of samm-cli, the corresponding full command is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.6.1.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mapping-between-the-aspect-models-and-the-asyncapi-specification"><a class="anchor" href="#mapping-between-the-aspect-models-and-the-asyncapi-specification"></a>Mapping between the Aspect Models and the AsyncAPI Specification</h3>
+<div class="paragraph">
+<p>In this section, a detailed description of the mapping between individual Aspect elements and the AsyncAPI specification is given.
+To make it easier to follow, the mapping is explained based on a concrete example, divided into logically coherent blocks.
+Please bear in mind that these blocks are snippets or fragments of a larger whole; viewed in isolation they do not necessarily form a valid or meaningful Aspect Model or AsyncAPI specification.</p>
+</div>
+<div class="sect3">
+<h4 id="naming-and-versioning-2"><a class="anchor" href="#naming-and-versioning-2"></a>Naming and versioning</h4>
+<div class="paragraph">
+<p>Please consider the following model fragment, with the attention focused on the numbered elements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; . <i class="conum" data-value="1"></i><b>(1)</b>
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
+
+:Movement a samm:Aspect ; <i class="conum" data-value="3"></i><b>(3)</b>
+   samm:name "Movement" ;
+   samm:preferredName "My Movement Aspect"@en ; <i class="conum" data-value="2"></i><b>(2)</b>
+   samm:description "Aspect for movement information"@en . <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>prefix used to build the full URN of <code>:Movement</code> Aspect</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the preferred name of the Aspect in the language of the user&#8217;s choice</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the name of the Aspect</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>the description of the Aspect</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For the generated AsyncAPI specification, the following mapping would apply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
+  "asyncapi" : "3.0.0",
+  "info" : {
+    "title" : "My Movement Aspect MQTT API", <i class="conum" data-value="2"></i><b>(2)</b>
+    "version" : "v2", <i class="conum" data-value="1"></i><b>(1)</b>
+    "description" : "Aspect for movement information" <i class="conum" data-value="3"></i><b>(3)</b>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>depending on parameters used when generating the specification, this is either the major version of the full Aspect URN (<strong>2</strong>.0.0), or it can be the full version (<code>v2.0.0</code>), if using <code>-sv</code> (semantic version) command line switch</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>as <code>samm:preferredName</code> is used as the value for the <code>title</code> element of the specification (MQTT API defined automatically)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>as <code>samm:description</code> is an optional element</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The name of the Aspect is used to generate parts of the AsyncAPI specification, such as the channel definitions for the API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
+ "channels" : {
+    "Movement" : { <i class="conum" data-value="3"></i><b>(3)</b>
+      "address" : "movement/0.0.1/Movement", <i class="conum" data-value="3"></i><b>(3)</b>
+      "description" : "This channel for updating Movement Aspect.", <i class="conum" data-value="3"></i><b>(3)</b>
+      "parameters" : {
+        "namespace" : "movement",
+        "version" : "0.0.1",
+        "aspect-name" : "Movement" <i class="conum" data-value="3"></i><b>(3)</b>
+      },
+      "messages" : {}
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mapping-of-aspects-operations-2"><a class="anchor" href="#mapping-of-aspects-operations-2"></a>Mapping of Aspect&#8217;s operations</h4>
+<div class="paragraph">
+<p>The AsyncAPI specification is generated based on SAMM Operations and Events.
+his section describes how specification parts are generated for Operations.
+If the Aspect also has a non-empty list of Operations defined, such as the one in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Movement a samm:Aspect ;
+   samm:preferredName "movement"@en ;
+   samm:description "Aspect for movement information"@en ;
+   samm:properties ( ) ;
+   samm:operations ( :getSpeed ) ;
+   samm:events ( ) .
+
+:getSpeed a samm:Operation ;
+   samm:preferredName "Get speed"@en ;
+   samm:description "Returns the current speed"@en ;
+   samm:input ( :getSpeedInput ) ; <i class="conum" data-value="1"></i><b>(1)</b>
+   samm:output :getSpeedOutput . <i class="conum" data-value="2"></i><b>(2)</b>
+
+:getSpeedOutput a samm:Property ;
+   samm:preferredName "getSpeed output"@en ;
+   samm:description "Return value of the getSpeed operation"@en ;
+   samm:characteristic :OutputCharacteristic .
+
+:OutputCharacteristic a samm:Characteristic ;
+   samm:preferredName "Output"@en ;
+   samm:description "Describes the output of the getSpeed operation"@en ;
+   samm:dataType :OutputEntity .
+
+:OutputEntity a samm:Entity ;
+   samm:preferredName "Output entity"@en ;
+   samm:description "The structured response of getSpeed"@en ;
+   samm:properties ( :outputEntityMessage ) .
+
+:outputEntityMessage a samm:Property ;
+   samm:characteristic samm-c:Text . <i class="conum" data-value="3"></i><b>(3)</b>
+
+:getSpeedInput a samm:Property ;
+   samm:preferredName "getSpeed input"@en ;
+   samm:description "The input to the getSpeed operation"@en ;
+   samm:characteristic samm-c:Text . <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>operations will be generated in some places of AsyncAPI specification:
+<a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject">operations</a> section,
+channel
+<a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject">messages</a> section and
+<a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#schemaObject">schemas</a> section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
+  "channels" : {
+    "Movement" : {
+      "address" : "movement/0.0.1/Movement",
+      "description" : "This channel for updating Movement Aspect.",
+      "parameters" : {
+        "namespace" : "movement",
+        "version" : "0.0.1",
+        "aspect-name" : "Movement"
+      },
+      "messages" : {
+        "getSpeedInput" : { <i class="conum" data-value="1"></i><b>(1)</b>
+          "$ref" : "#/components/messages/getSpeedInput" <i class="conum" data-value="1"></i><b>(1)</b>
+        },
+        "getSpeedOutput" : { <i class="conum" data-value="2"></i><b>(2)</b>
+          "$ref" : "#/components/messages/getSpeedOutput" <i class="conum" data-value="2"></i><b>(2)</b>
+        }
+      }
+    }
+  },
+  "operations" : {
+    "getSpeedInput" : {
+      "action" : "receive", <i class="conum" data-value="5"></i><b>(5)</b>
+      "channel" : {
+        "$ref" : "#/channels/Movement"
+      },
+      "messages" : [ {
+        "$ref" : "#/channels/Movement/messages/getSpeedInput" <i class="conum" data-value="1"></i><b>(1)</b>
+      } ]
+    },
+    "getSpeedOutput" : { <i class="conum" data-value="2"></i><b>(2)</b>
+      "action" : "send", <i class="conum" data-value="5"></i><b>(5)</b>
+      "channel" : {
+        "$ref" : "#/channels/Movement"
+      },
+      "messages" : [ {
+        "$ref" : "#/channels/Movement/messages/getSpeedOutput" <i class="conum" data-value="2"></i><b>(2)</b>
+      } ]
+    }
+  },
+  "components" : {
+    "messages" : {
+      "getSpeedInput" : { <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="4"></i><b>(4)</b>
+        "name" : "getSpeedInput", <i class="conum" data-value="1"></i><b>(1)</b>
+        "title" : "getSpeed input",
+        "summary" : "The input to the getSpeed operation",
+        "content-type" : "application/json",
+        "payload" : {
+          "$ref" : "#/components/schemas/getSpeedInput" <i class="conum" data-value="1"></i><b>(1)</b>
+        }
+      },
+      "getSpeedOutput" : { <i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="4"></i><b>(4)</b>
+        "name" : "getSpeedOutput", <i class="conum" data-value="2"></i><b>(2)</b>
+        "title" : "getSpeed output",
+        "summary" : "Return value of the getSpeed operation",
+        "content-type" : "application/json",
+        "payload" : {
+          "$ref" : "#/components/schemas/getSpeedOutput" <i class="conum" data-value="2"></i><b>(2)</b>
+        }
+      }
+    },
+    "schemas" : {
+      "getSpeedInput" : { <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="3"></i><b>(3)</b>
+        "type" : "string",
+        "description" : "The input to the getSpeed operation"
+      },
+      "getSpeedOutput" : { <i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
+        "type" : "string",
+        "description" : "Return value of the getSpeed operation"
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the names of the input</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the names of the output</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the characteristics are generated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>the meta information of input/output</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>'send' (for output) action: map to a publish operation in AsyncAPI, 'receive' (for input) action: map to a subscribe operation</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mapping-of-aspects-events"><a class="anchor" href="#mapping-of-aspects-events"></a>Mapping of Aspect&#8217;s events</h4>
+<div class="paragraph">
+<p>This section describes the mapping between SAMM Events and the AsyncAPI specification.
+If the Aspect also has a non-empty list of events defined, like the one in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Movement a samm:Aspect ;
+   samm:preferredName "movement"@en ;
+   samm:description "Aspect for movement information"@en ;
+   samm:properties ( ) ;
+   samm:operations ( ) ;
+   samm:events ( :SpeedUpdateEvent ) .
+
+:SpeedUpdateEvent a samm:Event ;
+   samm:preferredName "Speed Update"@en ;
+   samm:description "This is event for update speed property"@en ;
+   samm:parameters ( :updatedSpeed :updateAcceleration ) .
+
+:updatedSpeed a samm:Property ;
+   samm:preferredName "updated speed"@en ;
+   samm:description "the updated speed value"@en ;
+   samm:characteristic samm-c:Text .
+
+:updateAcceleration a samm:Property ;
+   samm:preferredName "update acceleration"@en ;
+   samm:description "the updated acceleration value"@en ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>events will be generated in some places of AsyncAPI specification:
+<a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject">operations</a> section,
+channel
+<a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject">messages</a> section and
+<a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0#schemaObject">schemas</a> section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
+"channels" : {
+    "Movement" : {
+      "address" : "movement/0.0.1/Movement",
+      "description" : "This channel for updating Movement Aspect.",
+      "parameters" : {
+        "namespace" : "movement",
+        "version" : "0.0.1",
+        "aspect-name" : "Movement"
+      },
+      "massages" : {
+        "SpeedUpdateEvent" : {
+          "$ref" : "#/components/messages/SpeedUpdateEvent" <i class="conum" data-value="1"></i><b>(1)</b>
+        },
+      }
+    }
+  },
+  "operations" : {
+    "SpeedUpdateEvent" : {
+      "action" : "receive", <i class="conum" data-value="5"></i><b>(5)</b>
+      "channel" : {
+        "$ref" : "#/channels/Movement"
+      },
+      "messages" : [ {
+        "$ref" : "#/channels/Movement/messages/SpeedUpdateEvent" <i class="conum" data-value="1"></i><b>(1)</b>
+      } ]
+    },
+  },
+  "components" : {
+    "messages" : {
+      "SpeedUpdateEvent" : { <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
+        "name" : "SpeedUpdateEvent", <i class="conum" data-value="1"></i><b>(1)</b>
+        "title" : "Speed Update",
+        "summary" : "This is event for update speed property",
+        "content-type" : "application/json",
+        "payload" : {
+          "$ref" : "#/components/schemas/SpeedUpdateEvent" <i class="conum" data-value="1"></i><b>(1)</b>
+        }
+      }
+    },
+    "schemas" : {
+      "SpeedUpdateEvent" : { <i class="conum" data-value="1"></i><b>(1)</b>
+        "type" : "object",
+        "properties" : {
+          "updatedSpeed" : { <i class="conum" data-value="3"></i><b>(3)</b> <i class="conum" data-value="4"></i><b>(4)</b>
+            "title" : "updated speed",
+            "type" : "string",
+            "description" : "the updated speed value"
+          },
+          "updateAcceleration" : { <i class="conum" data-value="3"></i><b>(3)</b> <i class="conum" data-value="4"></i><b>(4)</b>
+            "title" : "updated acceleration",
+            "type" : "string",
+            "description" : "the updated acceleration value"
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the names of the event</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the meta information of event</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>property of event</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>the characteristics are generated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>for events available only 'receive' action: map to a subscribe operation</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
