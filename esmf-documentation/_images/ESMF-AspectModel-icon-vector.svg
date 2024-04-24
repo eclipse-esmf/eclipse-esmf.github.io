@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.08 22.57">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke-width: .75px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="10.18" y="1.81" width="5.65" height="5.65" rx=".56" ry=".56"/>
+  <g>
+    <rect class="cls-1" x="3.44" y="14.91" width="5.65" height="5.65" rx=".56" ry=".56"/>
+    <g>
+      <path class="cls-1" d="m19.15,18.5l-.08-1.08,2.5-2.5h-4.05c-.32,0-.58.26-.58.58v4.5c0,.32.26.58.58.58h4.5c.32,0,.58-.26.58-.58v-3.79l-2.38,2.38-1.07-.07Z"/>
+      <path class="cls-1" d="m22.6,16.2l2.34-2.34c.15-.15.15-.4,0-.56l-.6-.6c-.15-.15-.4-.15-.56,0l-2.21,2.21"/>
+      <polyline class="cls-1" points="21.58 14.91 19.07 17.42 19.15 18.5 20.23 18.57 22.6 16.2"/>
+    </g>
+    <path class="cls-2" d="m24.34,14.46l.69-.69c.07-.07,0-.24-.16-.4l-.6-.6c-.15-.15-.33-.23-.4-.16l-.71.71"/>
+  </g>
+  <line class="cls-1" x1="13.01" y1="7.46" x2="13.01" y2="11.51"/>
+  <path class="cls-1" d="m6.14,14.91v-2.52c0-.48.35-.87.79-.87h12.16c.44,0,.79.39.79.88v2.51"/>
+</svg>
