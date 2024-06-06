@@ -119,10 +119,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.3.0/introduction.html">5.3.0</a>
+          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -175,7 +175,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -391,7 +391,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect help validate</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">aspect &lt;model&gt; validate</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="aspect-validate"></a> aspect &lt;model&gt; validate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validate Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl validate</code></p></td>
 </tr>
@@ -400,7 +400,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl validate --custom-resolver myresolver.sh</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">aspect &lt;model&gt; prettyprint</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="aspect-prettyprint"></a> aspect &lt;model&gt; prettyprint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Pretty-print Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl prettyprint</code></p></td>
 </tr>
@@ -409,7 +409,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl prettyprint -o c:\Results\PrettyPrinted.ttl</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">aspect &lt;model&gt; migrate</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="aspect-migrate"></a> aspect &lt;model&gt; migrate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Migrate Aspect Model to the latest SAMM version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl migrate AspectModel.ttl</code></p></td>
 </tr>
@@ -418,7 +418,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl migrate AspectModel.ttl -o c:\Results\MigratedModel.ttl</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">aspect &lt;model&gt; to html</p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-html"></a> aspect &lt;model&gt; to html</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate HTML documentation for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to html</code></p></td>
 </tr>
@@ -441,7 +441,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to html --custom-resolver myresolver.bat</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to png</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-png"></a> aspect &lt;model&gt; to png</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate PNG diagram for Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to png</code></p></td>
 </tr>
@@ -461,7 +461,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to png --custom-resolver resolver.jar</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to svg</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-svg"></a> aspect &lt;model&gt; to svg</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate SVG diagram for Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to svg</code></p></td>
 </tr>
@@ -479,7 +479,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to svg --custom-resolver "java -jar resolver.jar"</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">aspect &lt;model&gt; to java</p></td>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="asepct-to-java"></a> aspect &lt;model&gt; to java</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate Java classes from an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java</code></p></td>
 </tr>
@@ -516,8 +516,9 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="16"><p class="tableblock">aspect &lt;model&gt; to openapi</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification for an Aspect Model</p></td>
+<td class="tableblock halign-left valign-top" rowspan="20"><p class="tableblock"><a id="aspect-to-openapi"></a> aspect &lt;model&gt; to openapi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification
+                                     for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j</code></p></td>
 </tr>
 <tr>
@@ -527,7 +528,7 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--api-base-url, -b</em> : the base url for the Aspect API used in the
                                        <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j -b http://mysite.de</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j -b http://example.org</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--json, -j</em> : generate a JSON specification for an Aspect Model (default format
@@ -556,6 +557,22 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-query-api, -q</em> : include the path for the Query Aspect API Endpoint in the
                                        <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-crud, -cr</em> : include the POST/PUT/PATCH methods in the OpenAPI specification</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-post, -post</em> : include the POST method in the OpenAPI specification</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-put, -put</em> : include the PUT method in the OpenAPI specification</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-patch, -patch</em> : include the PATCH method in the OpenAPI specification</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -592,7 +609,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">aspect &lt;model&gt; to asyncapi</p></td>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="aspect-to-asyncapi"></a> aspect &lt;model&gt; to asyncapi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0">AsyncAPI</a> specification for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to asyncapi</code></p></td>
 </tr>
@@ -628,7 +645,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">aspect &lt;model&gt; to json</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
@@ -641,7 +658,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">aspect &lt;model&gt; to schema</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-schema"></a> aspect &lt;model&gt; to schema</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON schema for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to schema</code></p></td>
 </tr>
@@ -659,8 +676,51 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">aspect &lt;model&gt; to aas</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate an Asset Administration Shell (AAS) submodel template from an Aspect Model</p></td>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate SQL script that sets up a table for data for this Aspect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--language, -l</em> : The language from the model to use for generated comments</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--dialect, -d</em> : The SQL dialect to generate for (default: <code>databricks</code>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--mapping-strategy, -s</em> : The mapping strategy to use (default: <code>denormalized</code>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-table-comment, -tc</em> : Include table comment in the generated SQL script
+                                     (default: <code>true</code>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-column-comments, -cc</em> : Include column comments in the generated SQL
+                                     script (default: <code>true</code>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--table-command-prefix, -tcp</em> : The prefix to use for Databricks table creation
+                                     commands (default: <code>CREATE TABLE IF NOT EXISTS</code>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--decimal-precision, -dp</em> : The precision to use for Databricks decimal columns
+                                     (default: 10). See also notes in
+                                     the <a href="java-aspect-tooling.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-aas"></a> aspect &lt;model&gt; to aas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate an Asset Administration Shell (AAS) submodel template from an
+                                     Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to aas</code></p></td>
 </tr>
 <tr>
@@ -676,12 +736,14 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--aspect-data, -a</em> : path to a JSON file containing aspect data corresponding to the Aspect Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--aspect-data, -a</em> : path to a JSON file containing aspect data corresponding to the
+                                     Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">aas &lt;aas file&gt; to aspect</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Translate Asset Administration Shell (AAS) Submodel Templates to Aspect Models</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aas-to-aspect"></a> aas &lt;aas file&gt; to aspect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Translate Asset Administration Shell (AAS) Submodel Templates to
+                                     Aspect Models</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect</code></p></td>
 </tr>
 <tr>
@@ -695,7 +757,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect -s 1 -s 2</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas &lt;aas file&gt; list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="aas-list"></a> aas &lt;aas file&gt; list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a list of submodel templates contained within the provided
                                        Asset Administration Shell (AAS) file.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx list</code></p></td>
@@ -836,7 +898,7 @@ Please bear in mind that these blocks are snippets or fragments of a larger whol
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
  "servers" : [ {
-    "url" : "http://mysite/api/v2", <i class="conum" data-value="1"></i><b>(1)</b>
+    "url" : "http://example.com/api/v2", <i class="conum" data-value="1"></i><b>(1)</b>
     "variables" : {
       "api-version" : {
         "default" : "v2" <i class="conum" data-value="1"></i><b>(1)</b>
@@ -1361,7 +1423,7 @@ Please bear in mind that these blocks are snippets or fragments of a larger whol
 <h4 id="mapping-of-aspects-operations-2"><a class="anchor" href="#mapping-of-aspects-operations-2"></a>Mapping of Aspect&#8217;s operations</h4>
 <div class="paragraph">
 <p>The AsyncAPI specification is generated based on SAMM Operations and Events.
-his section describes how specification parts are generated for Operations.
+This section describes how specification parts are generated for Operations.
 If the Aspect also has a non-empty list of Operations defined, such as the one in the following example:</p>
 </div>
 <div class="listingblock">

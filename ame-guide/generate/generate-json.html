@@ -156,7 +156,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared Models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -188,9 +188,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="generate-json.html">Generate JSON</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="generate-html.html">Generate HTML</a>
   </li>
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="generate-json.html">master</a>
+    <a class="version" href="../5.5.0/generate/generate-json.html">5.5.0</a>
     <a class="version" href="../5.4.0/generate/generate-json.html">5.4.0</a>
-    <a class="version" href="../5.3.0/generate/generate-json.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/generate/generate-json.adoc">Contribute to this page</a></div>
@@ -364,22 +364,27 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>To generate JSON from the Aspect Model, proceed as follows:</p>
+<p>To generate a JSON file from an Aspect Model, proceed as follows:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Click the <strong>Generate</strong> on <a href="../getting-started/ui-overview.html#menu-generate" class="xref page">menu</a>.</p>
+<p>Click the <a href="../getting-started/ui-overview.html#menu-generate" class="xref page">Generate menu</a>.</p>
 <div class="paragraph">
-<p>The menu offers two options for Json generation:</p>
+<p>The menu offers two options for JSON generation:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Generate sample JSON payload</p>
+<p>Sample JSON Payload</p>
 </li>
 <li>
-<p>Generate JSON schema</p>
+<p>JSON Schema</p>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/generate-json.png" alt="Generate JSON" width="80%">
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -402,10 +407,10 @@ If the invalid element is not highlighted with a red border, click the Validate 
 </div>
 </div>
 <div class="sect1">
-<h2 id="generate-json-payload"><a class="anchor" href="#generate-json-payload"></a>Generate sample JSON payload</h2>
+<h2 id="generate-json-payload"><a class="anchor" href="#generate-json-payload"></a>Generate sample JSON Payload</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After selecting <strong>Generate</strong> &#8594; <strong>Sample JSON payload</strong>, an example payload will be generated for the current model, and it will be displayed in the following dialog:</p>
+<p>After selecting <strong>Generate</strong> &#8594; <strong>Sample JSON Payload</strong>, an example payload will be generated for the current model, and it will be displayed in the following preview dialog:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -415,9 +420,6 @@ If the invalid element is not highlighted with a red border, click the Validate 
 <div class="ulist">
 <ul>
 <li>
-<p>A preview is displayed.</p>
-</li>
-<li>
 <p>You can now:</p>
 <div class="ulist">
 <ul>
@@ -425,7 +427,7 @@ If the invalid element is not highlighted with a red border, click the Validate 
 <p>Edit the source in the preview.</p>
 </li>
 <li>
-<p>Use the Copy to Clipboard function and continue editing with another tool.</p>
+<p>Use the <strong>Copy to Clipboard</strong> function and continue editing with another tool.</p>
 </li>
 <li>
 <p>Download the file locally.</p>
@@ -438,10 +440,10 @@ If the invalid element is not highlighted with a red border, click the Validate 
 </div>
 </div>
 <div class="sect1">
-<h2 id="generate-json-schema"><a class="anchor" href="#generate-json-schema"></a>Generate JSON schema</h2>
+<h2 id="generate-json-schema"><a class="anchor" href="#generate-json-schema"></a>Generate JSON Schema</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After selecting <strong>Generate</strong> &#8594; <strong>JSON Schema</strong>, a JSON schema will be generated for current model, and it will be displayed in the following dialog:</p>
+<p>After selecting <strong>Generate</strong> &#8594; <strong>JSON Schema</strong>, a JSON schema will be generated for the current model, and it will be displayed in the following preview dialog:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -451,9 +453,6 @@ If the invalid element is not highlighted with a red border, click the Validate 
 <div class="ulist">
 <ul>
 <li>
-<p>A preview is displayed.</p>
-</li>
-<li>
 <p>You can now:</p>
 <div class="ulist">
 <ul>
@@ -461,7 +460,7 @@ If the invalid element is not highlighted with a red border, click the Validate 
 <p>Edit the source in the preview.</p>
 </li>
 <li>
-<p>Use the Copy to Clipboard function and continue editing with another tool.</p>
+<p>Use the <strong>Copy to Clipboard</strong> function and continue editing with another tool.</p>
 </li>
 <li>
 <p>Download the file locally.</p>

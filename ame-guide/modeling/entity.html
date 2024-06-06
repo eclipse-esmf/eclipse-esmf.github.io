@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -350,8 +350,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="entity.html">master</a>
+    <a class="version" href="../5.5.0/modeling/entity.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/entity.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/entity.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/entity.adoc">Contribute to this page</a></div>
@@ -372,18 +372,14 @@
 <ol class="arabic">
 <li>
 <p>Click the Add button at the data type attribute field.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/entity-instance-add-icon.png" alt="entity instance add icon" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/entity-instance-add-icon.png" alt="entity instance add icon" width="35%"></span></p>
 </div>
 </li>
 <li>
 <p>In the displayed dialog, enter the Entity instance name and the values of its properties.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/entity-instance-add-dialog.png" alt="entity instance add dialog" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/entity-instance-add-dialog.png" alt="entity instance add dialog" width="40%"></span></p>
 </div>
 </li>
 <li>
@@ -394,19 +390,15 @@
 <div class="paragraph">
 <p>→ Now the Enumeration Characteristics Edit dialog displays a table with the information you just entered.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/entity-instance-new-value.png" alt="entity instance new value" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/entity-instance-new-value.png" alt="entity instance new value" width="40%"></span></p>
 </div>
 <div class="paragraph">
 <p>Now you can also create Entity instances using the Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span> at the Enumeration Characteristic element in the Aspect Model.
-Note that first an Entity had to be created before an instance can be added.</p>
+Note that first an Entity has to be created before an instance can be added.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/adding-entity-value-instance-plus-icon.png" alt="adding entity value instance plus icon" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/adding-entity-value-instance-plus-icon.png" alt="adding entity value instance plus icon" width="40%"></span></p>
 </div>
 </div>
 </div>
@@ -438,10 +430,8 @@ It is important to construct your model first and then create the instances.
 <ol class="arabic">
 <li>
 <p>Double-click on an existing Entity instance element to show its attributes in the <a href="edit-elements.html#edit-elements-general" class="xref page">Edit dialog</a>.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/entity-instance-single-complex-values.png" alt="entity instance single complex values" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/entity-instance-single-complex-values.png" alt="entity instance single complex values" width="40%"></span></p>
 </div>
 </li>
 <li>
@@ -450,18 +440,14 @@ It is important to construct your model first and then create the instances.
 <p>Note that complex values have an icon that identifies them, i.e., a new Entity instance should be created here.
 Once created, the attribute field is read-only and you can only remove a nested Entity instance with the Delete icon if another Entity instance is to be created or used for it.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/create-new-nested-entity-instance.png" alt="create new nested entity instance" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/create-new-nested-entity-instance.png" alt="create new nested entity instance" width="40%"></span></p>
 </div>
 </li>
 <li>
 <p>Click <strong>Save</strong>.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/save-nested-entity-instance.png" alt="save nested entity instance" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/save-nested-entity-instance.png" alt="save nested entity instance" width="40%"></span></p>
 </div>
 </li>
 </ol>
@@ -469,10 +455,8 @@ Once created, the attribute field is read-only and you can only remove a nested 
 <div class="paragraph">
 <p>→ Now the new nested Entity instance is related as a property value to the overarching Entity instance.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/new-created-nested-entity-instance.png" alt="new created nested entity instance" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/new-created-nested-entity-instance.png" alt="new created nested entity instance" width="40%"></span></p>
 </div>
 </div>
 </div>

@@ -156,7 +156,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared Models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="workspace.html">master</a>
+    <a class="version" href="../5.5.0/namespace/workspace.html">5.5.0</a>
     <a class="version" href="../5.4.0/namespace/workspace.html">5.4.0</a>
-    <a class="version" href="../5.3.0/namespace/workspace.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/namespace/workspace.adoc">Contribute to this page</a></div>
@@ -380,20 +380,27 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>There you can add the folder structure for all your Aspect Models.
-On your local file directory you can manually create such folders for the different namespaces and the version.
-Of course creating and deleting namespaces is also possible with this editor<strong>.</strong></p>
+<p>On your local file directory, you can manually add, edit, and delete the folder structure for all your Aspect Models.</p>
 </div>
 <div class="paragraph">
-<p>Structure is visible in the <a href="../getting-started/ui-overview.html#workspace-sidebar" class="xref page">Workspace sidebar</a>.</p>
+<p>Of course, this is also possible with the Aspect Model Editor. The same folder structure is displayed in the <a href="../getting-started/ui-overview.html#workspace-sidebar" class="xref page">Workspace sidebar</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/namespace-file-structure.png" alt="namespace file structure" width="80%">
+<a class="image" href="../_images/namespace-file-structure.png"><img src="../_images/namespace-file-structure.png" alt="namespace file structure" width="85%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>Namespaces that do not follow this file structure might not work and might break the references feature.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Namespaces that do not follow this file structure might not work and might break the <a href="use-references.html" class="xref page">references</a> feature.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -404,31 +411,29 @@ Of course creating and deleting namespaces is also possible with this editor<str
 <p>The currently loaded Aspect Model is highlighted gray.</p>
 </div>
 <div class="paragraph">
-<p>The &#8230;&#8203; icon next to a model opens the options to</p>
+<p>The three-dot menu next to a model offers the options:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Open in new windows</strong> - opens the Aspect Model in a new window</p>
+<p><strong>Open in new window</strong>: to open the Aspect Model in a new window</p>
 </li>
 <li>
-<p><strong>Open in current</strong> - opens the Aspect Model in the current window</p>
+<p><strong>Open in current</strong>: to open the Aspect Model in the current window</p>
 </li>
 <li>
-<p><strong>Find elements</strong> - opens the Find elements section</p>
+<p><strong>Find elements</strong>: to opens the Find elements section</p>
 </li>
 <li>
-<p><strong>Copy file path</strong> - copies the file path to the clipboard</p>
+<p><strong>Copy file path</strong>: to copy the file path to the clipboard</p>
 </li>
 <li>
-<p><strong>Delete</strong> - deletes the Aspect Model from the workspace</p>
+<p><strong>Delete</strong>: to delete the Aspect Model from the workspace</p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/workspace-action.png" alt="workspace action" width="65%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/workspace-action.png" alt="workspace action" width="40%"></span></p>
 </div>
 <div class="paragraph">
 <p>If you just select another Aspect Model, it will not be loaded but its elements will be listed in the left sidebar.</p>
@@ -438,27 +443,17 @@ Of course creating and deleting namespaces is also possible with this editor<str
 <div class="sect1">
 <h2 id="create-a-namespace"><a class="anchor" href="#create-a-namespace"></a>Create a namespace</h2>
 <div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The namespace structure is created automatically if you start with the <strong>File</strong> &#8594; <strong>New&#8230;&#8203;</strong> menu item.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>You can create a namespace manually on your local machine, or automatically by using the Aspect Model Editor.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you select one of the <strong>File</strong> &#8594; <strong>New&#8230;&#8203;</strong> menu item and later click "Save to Workspace" the folder
-<strong>org.eclipse.digitaltwin</strong> will be created on your file system and the Workspace will show it respectively.</p>
+<p>The easiest way to do this is to click on the File menu, select one of the <strong>New&#8230;&#8203;</strong> menu items, and later click <strong>Save to Workspace</strong>. A namespace folder will automatically be created on your file system, and the Workspace will display it respectively.</p>
 </li>
 <li>
-<p>If you import a zip with models into your workspace, and it contains valid models with namespaces which
-did not exist in your workplace yet, these will be created additionally.</p>
+<p>If you import a zip file with models into your workspace, and it contains valid models with namespaces which
+did not exist in your workspace yet, these will be created additionally.</p>
 </li>
 </ul>
 </div>
@@ -503,7 +498,7 @@ as it will not be able to load this Aspect Model.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/workspace-warning.png" alt="workspace warning" width="70%">
+<a class="image" href="../_images/workspace-warning.png"><img src="../_images/workspace-warning.png" alt="Workspace warning" width="85%"></a>
 </div>
 </div>
 </div>

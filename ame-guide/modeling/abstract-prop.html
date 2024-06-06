@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -350,8 +350,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="abstract-prop.html">master</a>
+    <a class="version" href="../5.5.0/modeling/abstract-prop.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/abstract-prop.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/abstract-prop.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/abstract-prop.adoc">Contribute to this page</a></div>
@@ -365,15 +365,15 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are two different ways to create an abstract property:</p>
+<p>There are two different ways to create an Abstract Property:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Use drag-and-drop from the Workspace sidebar</p>
+<p>Use drag-and-drop from the Workspace sidebar.</p>
 </li>
 <li>
-<p>Click the add icon on an Abstract Entity</p>
+<p>Click the Add icon on an Abstract Entity.</p>
 </li>
 </ul>
 </div>
@@ -383,22 +383,20 @@
 <h2 id="use-drag-and-drop-from-the-workspace-sidebar"><a class="anchor" href="#use-drag-and-drop-from-the-workspace-sidebar"></a>Use drag-and-drop from the Workspace sidebar</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To add abstract property, proceed as follows:</p>
+<p>To add an Abstract Property, proceed as follows:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the Workspace sidebar</p>
+<p>Open the Workspace sidebar.</p>
 </li>
 <li>
-<p>Drag the abstract property element and drop it to the graph area canvas</p>
+<p>Drag the Abstract Property element and drop it to the graph area canvas.</p>
 </li>
 </ol>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/drag-and-drop-abstract-property.png" alt="Drag and drop Abstract Property" width="60%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/drag-and-drop-abstract-property.png" alt="Drag and drop Abstract Property" width="40%"></span></p>
 </div>
 </div>
 </div>
@@ -406,12 +404,11 @@
 <h2 id="click-the-add-icon-on-an-abstract-entity"><a class="anchor" href="#click-the-add-icon-on-an-abstract-entity"></a>Click the Add icon on an Abstract Entity</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To add and connect an abstract property with an abstract entity, click the Add icon at the bottom edge of the existing abstract entity:</p>
+<p>To add and connect an Abstract Property with an Abstract Entity, click the Add icon at the bottom edge of the existing
+Abstract Entity:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/use-add-icon-abstract-entity.png" alt="Use add icon Abstract Entity" width="60%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/use-add-icon-abstract-entity.png" alt="Use add icon Abstract Entity" width="30%"></span></p>
 </div>
 </div>
 </div>
@@ -419,10 +416,10 @@
 <h2 id="abstract-property-example"><a class="anchor" href="#abstract-property-example"></a>Abstract Properties Example</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When an Entity connects to an Abstract Entity with Abstract Properties, for each non-optional Abstract Property, a Property is created.
+<p>When an Entity connects to an Abstract Entity with Abstract Properties, a Property is created for each non-optional Abstract Property.
 Each Property created extends one Abstract Property and is connected to the Entity.
 The Property that inherits an Abstract Property gets the same name as the Abstract Property and inherits all field information from Abstract Property.
-Data from derived Property cannot be edited and is greyed out in the edit dialog.</p>
+Data from the derived Property cannot be edited and is grayed out in the Edit dialog.</p>
 </div>
 <div class="imageblock">
 <div class="content">

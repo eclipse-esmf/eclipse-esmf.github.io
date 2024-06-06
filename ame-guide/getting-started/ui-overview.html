@@ -156,7 +156,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared Models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="ui-overview.html">master</a>
+    <a class="version" href="../5.5.0/getting-started/ui-overview.html">5.5.0</a>
     <a class="version" href="../5.4.0/getting-started/ui-overview.html">5.4.0</a>
-    <a class="version" href="../5.3.0/getting-started/ui-overview.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/getting-started/ui-overview.adoc">Contribute to this page</a></div>
@@ -371,16 +371,33 @@
 <img src="../_images/ame-ui-overview-numbers.png" alt="Numbered UI overview" width="80%">
 </div>
 </div>
+<div class="paragraph">
+<p><a href="#menu">1. Menu</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#toolbar">2. Toolbar</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#workspace-sidebar">3. Workspace sidebar</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#graph-area">4. Graph area canvas</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#edit-dialog">5. Edit dialog</a></p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="menu"><a class="anchor" href="#menu"></a>Menu</h2>
+<h2 id="menu"><a class="anchor" href="#menu"></a>1. Menu</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="menu-file"><a class="anchor" href="#menu-file"></a>File Menu</h3>
 <div class="paragraph">
-<p>&#160;
-<span class="image"><img src="../_images/menu-bar/menu-file.png" alt="menu file" width="30%"></span></p>
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/menu-bar/menu-file.png" alt="menu file" width="30%"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -427,12 +444,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Store the current Model in the workspace for future use.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/download.png" alt="download" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/download.png" alt="download" width="15%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export Model</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Download the current Model as a TTL file.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/download_fill.png" alt="download fill" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/download_fill.png" alt="download fill" width="15%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export Package</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Download Model namespaces in a ZIP format.</p></td>
 </tr>
@@ -445,8 +462,10 @@
 <div class="sect2">
 <h3 id="menu-view"><a class="anchor" href="#menu-view"></a>View Menu</h3>
 <div class="paragraph">
-<p>&#160;
-<span class="image"><img src="../_images/menu-bar/menu-view.png" alt="menu view" width="30%"></span></p>
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/menu-bar/menu-view.png" alt="menu view" width="30%"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -506,8 +525,10 @@
 <div class="sect2">
 <h3 id="menu-edit"><a class="anchor" href="#menu-edit"></a>Edit Menu</h3>
 <div class="paragraph">
-<p>&#160;
-<span class="image"><img src="../_images/menu-bar/menu-edit.png" alt="menu edit" width="30%"></span></p>
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/menu-bar/menu-edit.png" alt="menu edit" width="30%"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -557,8 +578,10 @@
 <div class="sect2">
 <h3 id="menu-valiadate"><a class="anchor" href="#menu-valiadate"></a>Validate Menu</h3>
 <div class="paragraph">
-<p>&#160;
-<span class="image"><img src="../_images/menu-bar/menu-validate.png" alt="menu validate" width="30%"></span></p>
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/menu-bar/menu-validate.png" alt="menu validate" width="30%"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -588,8 +611,10 @@
 <div class="sect2">
 <h3 id="menu-generate"><a class="anchor" href="#menu-generate"></a>Generate Menu</h3>
 <div class="paragraph">
-<p>&#160;
-<span class="image"><img src="../_images/menu-bar/menu-generate.png" alt="menu generate" width="20%" height="20%"></span></p>
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/menu-bar/menu-generate.png" alt="menu generate" width="30%"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -639,8 +664,10 @@
 <div class="sect2">
 <h3 id="menu-search"><a class="anchor" href="#menu-search"></a>Search Menu</h3>
 <div class="paragraph">
-<p>&#160;
-<span class="image"><img src="../_images/menu-bar/menu-search.png" alt="menu search" width="30%"></span></p>
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/menu-bar/menu-search.png" alt="menu search" width="30%"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -672,7 +699,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="toolbar"><a class="anchor" href="#toolbar"></a>Toolbar</h2>
+<h2 id="toolbar"><a class="anchor" href="#toolbar"></a>2. Toolbar</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -689,14 +716,19 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/jump.png" alt="jump" width="30%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open highlighted element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/jump.png" alt="jump" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit highligted cell</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the Edit dialog of the selected element (alternative: double-click an element inside the model).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/delete.png" alt="delete" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete selected element(s).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/commit.png" alt="commit" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connect two selected elements.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/collapse.png" alt="collapse" width="20%" height="20%"></span></p></td>
@@ -709,28 +741,33 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Automatically format the Aspect Model.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/commit.png" alt="commit" width="20%" height="20%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connect</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connect two selected elements.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/validate.png" alt="validate" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validate the Aspect Model.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/zoom_in.png" alt="zoom in" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zoom in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zoom in the Aspect Model.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/zoom_out.png" alt="zoom out" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zoom out</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zoom out the Aspect Model.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="workspace-sidebar"><a class="anchor" href="#workspace-sidebar"></a>Workspace sidebar</h2>
+<h2 id="workspace-sidebar"><a class="anchor" href="#workspace-sidebar"></a>3. Workspace sidebar</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Workspace sidebar &ndash; see screenshot below &ndash; allows you to access namespaces (2) and to drag and drop elements to the graph area canvas (1).</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ame-ui-overview-workspace-numbers.png" alt="ame ui overview workspace numbers" width="100%">
+<img src="../_images/ame-ui-overview-workspace-numbers.png" alt="ame ui overview workspace numbers" width="60%">
 </div>
 </div>
 <div class="paragraph">
@@ -780,60 +817,60 @@ Shows the validation results for your Aspect Model. Further, you can find there 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/info.png" alt="info" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open help dialog. It displays details about the application and provides a link to the documentation.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>&#160;</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="help"><a class="anchor" href="#help"></a>Help</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The help icon <span class="image"><img src="../_images/toolbar-icons/info.png" alt="Info" width="5%"></span> opens a page which lists details about the application and provides
-a link to the documentation.</p>
-</div>
-<div class="paragraph">
-<p>Example:
-<span class="image"><img src="../_images/help-docs.png" alt="help docs" width="50%"></span></p>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="edit-dialog"><a class="anchor" href="#edit-dialog"></a>Edit dialog</h2>
+<h2 id="graph-area"><a class="anchor" href="#graph-area"></a>4. Graph area canvas</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Edit the attributes of a selected element of your Aspect Model with the Edit dialog.</p>
+<p>This is the space where your Aspect Model is visualized. You can easily navigate it in the graph area canvas using the Minimap.</p>
 </div>
 <div class="paragraph">
-<p>To access the details of an element in the Edit dialog, either double-click the element or select the element and click the Open element icon <span class="image"><img src="../_images/toolbar-icons/edit.png" alt="Edit icon" width="5%"></span> on the <a href="#toolbar">toolbar</a>.</p>
+<p>To show or hide it, click the Toggle Minimap icon <span class="image"><img src="../_images/toolbar-icons/map.png" alt="Map toggle icon"></span> in the upper right corner of the graph area canvas.</p>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="../modeling/edit-elements.html" class="xref page">Edit elements</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="map"><a class="anchor" href="#map"></a>Map</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>With the map, you can easily navigate your Aspect Model in the graph area canvas.</p>
-</div>
-<div class="paragraph">
-<p>To toggle its visibility, click the Show/Hide map icon in the toolbar.</p>
+<p>Alternatively, you can also use the <strong>Toggle Minimap</strong> option in the <a href="#menu-view">View Menu</a>.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="../_images/mini-map.png" alt="Map toggle icon" width="50%"></span></p>
 </div>
 <div class="paragraph">
 <p>For more information, see <a href="navigate-models.html" class="xref page">Navigate models</a>.</p>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="edit-dialog"><a class="anchor" href="#edit-dialog"></a>5. Edit dialog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Edit the attributes of a selected element of your Aspect Model with the Edit dialog.</p>
+</div>
+<div class="paragraph">
+<p>How to access the details of an element in the Edit dialog:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Double-click the element.</p>
+</li>
+<li>
+<p>Select the element and right-click to open the context menu. Then select <strong>Open in detail view</strong> <span class="image"><img src="../_images/toolbar-icons/jump.png" alt="Edit icon"></span>.</p>
+</li>
+<li>
+<p>Select the element and click the <strong>Edit highlighted cell</strong> button <span class="image"><img src="../_images/toolbar-icons/jump.png" alt="Edit icon"></span> on the <a href="#toolbar">toolbar</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="../modeling/edit-elements.html" class="xref page">Edit elements</a>.</p>
 </div>
 </div>
 </div>

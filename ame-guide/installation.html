@@ -156,7 +156,7 @@
     <a class="nav-link" href="modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="modeling/shared-models.html">Shared Models</a>
+    <a class="nav-link" href="modeling/shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="modeling/migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="5.4.0/introduction.html">5.4.0</a>
+          <a href="5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="5.3.0/introduction.html">5.3.0</a>
+          <a href="5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -348,8 +348,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="installation.html">master</a>
+    <a class="version" href="5.5.0/installation.html">5.5.0</a>
     <a class="version" href="5.4.0/installation.html">5.4.0</a>
-    <a class="version" href="5.3.0/installation.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/installation.adoc">Contribute to this page</a></div>
@@ -375,8 +375,13 @@
 <p>If you have previously installed the Aspect Model Editor, see <a href="#upgrade">Upgrade</a>.</p>
 </li>
 <li>
-<p>Download the installation file for your system at <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor</a>.<br>
-We offer assets for following OS:</p>
+<p>Download the installation file for your system from the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor release page</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We offer assets for the following OS:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -387,9 +392,6 @@ We offer assets for following OS:</p>
 </li>
 <li>
 <p>Windows</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -429,7 +431,9 @@ We offer assets for following OS:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Long paths and paths containing whitespaces may lead to incorrect installation or incorrect behavior of the application. Choose a short destination path without whitespaces &ndash; preferably those suggested by the installer by default. For further information see <a href="support/known-issues.html" class="xref page">Known issues</a>.
+Long paths and paths containing whitespaces may lead to incorrect installation or incorrect behavior of the application.
+Choose a short destination path without whitespaces &ndash; preferably those suggested by the installer by default.
+For further information, see <a href="support/known-issues.html" class="xref page">Known issues</a>.
 </td>
 </tr>
 </table>
@@ -440,7 +444,8 @@ Long paths and paths containing whitespaces may lead to incorrect installation o
 </div>
 </div>
 <div class="paragraph">
-<p>→ The installation is executed. The progress bar indicates the status of the process.</p>
+<p>→ The installation is executed.
+The progress bar indicates the status of the process.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -459,7 +464,8 @@ Long paths and paths containing whitespaces may lead to incorrect installation o
 </ol>
 </div>
 <div class="paragraph">
-<p>→ After the installation you will find the Aspect Model Editor in the folder you chose previously. In addition to that, you will find a link on your desktop.</p>
+<p>→ After the installation you will find the Aspect Model Editor in the folder you chose previously.
+In addition to that, you will find a link on your desktop.</p>
 </div>
 <div class="sect2">
 <h3 id="startup"><a class="anchor" href="#startup"></a>Start the Aspect Model Editor</h3>
@@ -504,7 +510,8 @@ Long paths and paths containing whitespaces may lead to incorrect installation o
 </ol>
 </div>
 <div class="paragraph">
-<p>→ If the validation of the built-in example is executed, your installation was successful. In that case, the background validation service is working properly, and you can start working with the Aspect Model Editor.</p>
+<p>→ If the validation of the built-in example is executed, your installation was successful.
+In that case, the background validation service is working properly, and you can start working with the Aspect Model Editor.</p>
 </div>
 <div class="paragraph">
 <p>For more information on validation, see <a href="getting-started/validation-and-notifications.html#notifications" class="xref page">Validation and notifications</a>.</p>
@@ -530,7 +537,7 @@ Long paths and paths containing whitespaces may lead to incorrect installation o
 <p>Double-click the <code>Uninstall.exe</code> executable.</p>
 </li>
 <li>
-<p>In the Uninstaller dialog, click <strong>Next</strong> to continue.</p>
+<p>In the Uninstall dialog, click <strong>Next</strong> to continue.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/uninstall-01.png" alt="uninstall 01" width="50% !important">
@@ -546,7 +553,7 @@ Long paths and paths containing whitespaces may lead to incorrect installation o
 </div>
 </li>
 <li>
-<p>Click <strong>Finish</strong> to close the Uninstaller.</p>
+<p>Click <strong>Finish</strong> to close the uninstaller.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/uninstall-03.png" alt="uninstall 03" width="50% !important">
@@ -581,10 +588,12 @@ Alternatively, on Windows, you can also uninstall as follows: Open Windows menu 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>First uninstall the existing installation. See <a href="#uninstaller">Uninstall the Aspect Model Editor</a>.</p>
+<p>First uninstall the existing installation.
+See <a href="#uninstaller">Uninstall the Aspect Model Editor</a>.</p>
 </li>
 <li>
-<p>Run a new installation with your required version of the Aspect Model Editor. See <a href="#installation">Install the Aspect Model Editor</a>.</p>
+<p>Run a new installation with your required version of the Aspect Model Editor.
+See <a href="#installation">Install the Aspect Model Editor</a>.</p>
 </li>
 </ol>
 </div>
@@ -595,7 +604,8 @@ Alternatively, on Windows, you can also uninstall as follows: Open Windows menu 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You can have only one installation of the Aspect Model Editor on your local machine. In case you have already an older version, uninstall it first and then install the latest version.
+You can have only one installation of the Aspect Model Editor on your local machine.
+In case you have already an older version, uninstall it first and then install the latest version.
 </td>
 </tr>
 </table>
@@ -605,13 +615,35 @@ You can have only one installation of the Aspect Model Editor on your local mach
 <div class="sect1">
 <h2 id="install-the-aspect-model-editor-on-mac"><a class="anchor" href="#install-the-aspect-model-editor-on-mac"></a>Install the Aspect Model Editor on Mac</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="step-1-download-the-app-file"><a class="anchor" href="#step-1-download-the-app-file"></a>Step 1: Download the .app File ==</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the released assets section and download the <code>.app</code> file.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="step-2-move-the-app-file-to-the-applications-folder"><a class="anchor" href="#step-2-move-the-app-file-to-the-applications-folder"></a>Step 2: Move the .app File to the Applications Folder ==</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Find the downloaded <code>.app</code> file on your computer.</p>
+</li>
+<li>
+<p>Drag and drop it into your Applications folder.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Download the .dmg asset and install it locally.<br>
-In case you are prompted, agree that the sources come from a trustful source.</p>
+<p>In case you are prompted, agree that the sources come from a trustful source.</p>
 </div>
 <div class="paragraph">
 <p>By default, the Workspace is created at
 <em>/Users/&lt;YOUR-USER-NAME&gt;/aspect-model-editor</em> .</p>
+</div>
 </div>
 </div>
 </div>

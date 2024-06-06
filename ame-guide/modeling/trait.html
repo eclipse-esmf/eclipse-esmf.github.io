@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -350,8 +350,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="trait.html">master</a>
+    <a class="version" href="../5.5.0/modeling/trait.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/trait.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/trait.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/trait.adoc">Contribute to this page</a></div>
@@ -378,19 +378,19 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Clicking the top Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span> of a Characteristic will add a new Trait, taking the Characteristic&#8217;s position and connecting the Trait to the initial Characteristic as well as a newly created Constraint.
+<p>Clicking the top Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span> of a Characteristic will add a new Trait, taking the Characteristic&#8217;s position and connecting the Trait to the initial Characteristic as well as a newly created Constraint.
 In this scenario, the newly created Trait takes the name of the parent attribute as a prefix to its own name.</p>
 </div>
 <div class="paragraph">
-<p>A Trait has an Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span> on the bottom of the element, which is always visible:</p>
+<p>A Trait has an Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span> on the bottom of the element, which is always visible:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>When clicking the "Add" icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span>, a Characteristic is created and connected to the Trait.</p>
+<p>When clicking the Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span>, a Characteristic is created and connected to the Trait.</p>
 </li>
 <li>
-<p>If there is already a Characteristic connected to the Trait, each Trait Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span> click will create a new Constraint and connect it to the Trait.</p>
+<p>If there is already a Characteristic connected to the Trait, each Trait Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span> click will create a new Constraint and connect it to the Trait.</p>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/trait.png" alt="trait" width="65%">
@@ -413,10 +413,10 @@ In this scenario, the newly created Trait takes the name of the parent attribute
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create two Properties by clicking twice on the Aspect&#8217;s Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span>.</p>
+<p>Create two Properties by clicking twice on the Aspect&#8217;s Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span>.</p>
 </li>
 <li>
-<p>For each Property create a Characteristic by clicking the top "Add" icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span> of each Property.</p>
+<p>For each Property create a Characteristic by clicking the "Add" icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span> of each Property.</p>
 </li>
 <li>
 <p>Click the top Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span> of each Characteristic to create a Trait and a Constraint for each Property.</p>
@@ -425,14 +425,17 @@ In this scenario, the newly created Trait takes the name of the parent attribute
 <p>Remove the second Characteristic.</p>
 </li>
 <li>
-<p>Connect the second Trait with the first Characteristic:</p>
+<p>To connect the second Trait with the first Characteristic:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click the Trait,</p>
+<p>Click the Trait.</p>
 </li>
 <li>
-<p>Then CTRL+click the Abstract Entity and click the Connect icon <span class="image"><img src="../_images/toolbar-icons/connect.png" alt="Connect icon" width="2%"></span> on the <a href="../getting-started/ui-overview.html#toolbar" class="xref page">toolbar</a>.</p>
+<p>Press the Ctrl key and click the Abstract Entity.</p>
+</li>
+<li>
+<p>Click the Connect icon <span class="image"><img src="../_images/toolbar-icons/connect.png" alt="Connect icon" width="3%"></span> on the <a href="../getting-started/ui-overview.html#toolbar" class="xref page">toolbar</a>.</p>
 </li>
 </ol>
 </div>

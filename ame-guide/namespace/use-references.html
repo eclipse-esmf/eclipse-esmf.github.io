@@ -156,7 +156,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared Models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="use-references.html">master</a>
+    <a class="version" href="../5.5.0/namespace/use-references.html">5.5.0</a>
     <a class="version" href="../5.4.0/namespace/use-references.html">5.4.0</a>
-    <a class="version" href="../5.3.0/namespace/use-references.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/namespace/use-references.adoc">Contribute to this page</a></div>
@@ -364,7 +364,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>For general information on references, see <a href="namespaces-references.html#namespaces-references" class="xref page">Namespaces and references</a>.</p>
+<p>You can reuse elements from one Aspect Model within another Aspect Model. To do so, first add a reference Aspect Model that provides the elements you want to reuse.</p>
 </div>
 </div>
 </div>
@@ -392,6 +392,12 @@
 <img src="../_images/external-reference-drag-and-drop.png" alt="external reference drag and drop" width="65%">
 </div>
 </div>
+<div class="paragraph">
+<p>→ A reference has now been added to your model.</p>
+</div>
+</li>
+</ol>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -399,41 +405,32 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>References can only be dragged once into the current Aspect Model. These elements are marked with a special icon signifying that they are from a different location. You can only edit an reference by editing the file it is defined in. By double clicking an reference the file where that element exists will be opened in a different window</p>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>References can only be dragged once into the current Aspect Model.
+These elements are marked with a special icon signifying that they are from a different location.</p>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/external-reference.png" alt="external reference" width="80%">
 </div>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When you drag and drop an reference, it will not include all the lower connections (dependencies) of the element.</p>
-</div>
-<div class="paragraph">
-<p>Referenced elements displayed in Aspect Model Editor should never have outgoing references.
-Reason: models can have many referenced elements from many files. these referenced elements can have multiple references, and to check every pair of referenced elements for whether they refer to each other or not is not feasible.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 </li>
-</ol>
+<li>
+<p>You can only edit a reference in the Aspect Model from which it originated. Simply double-click the reference to open a new window that displays the referenced element inside the Aspect Model it is originally from.</p>
+</li>
+<li>
+<p>When you drag and drop a reference, it will not include all the lower connections (dependencies) of the element.</p>
+</li>
+<li>
+<p>Referenced elements displayed in the Aspect Model Editor should never have outgoing references.<br>
+Reason: models can have many referenced elements from multiple files, and these referenced elements can have multiple references. Checking every pair of referenced elements to determine whether they refer to each other or not is not feasible.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>→ An reference has now been added to your model.</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -465,11 +462,11 @@ Reason: models can have many referenced elements from many files. these referenc
 </li>
 <li>
 <p>Drag the specific element and drop it on the graph area canvas.</p>
+<div class="paragraph">
+<p>→ A reference has now been added to your model.</p>
+</div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>→ An reference has now been added to your model.</p>
 </div>
 <style>
   .imageblock {flex-direction: row !important;}

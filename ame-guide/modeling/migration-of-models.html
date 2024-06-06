@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="migration-of-models.html">master</a>
+    <a class="version" href="../5.5.0/modeling/migration-of-models.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/migration-of-models.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/migration-of-models.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/migration-of-models.adoc">Contribute to this page</a></div>
@@ -364,7 +364,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are three different ways to migrate an Aspect Model:</p>
+<p>Aspect Models created based on older versions of the Semantic Aspect Meta Model (SAMM) can be easily migrated to the latest SAMM version.</p>
+</div>
+<div class="paragraph">
+<p>There are two ways to migrate an Aspect Model:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -372,7 +375,7 @@
 <p>Automatic migration when starting the application.</p>
 </li>
 <li>
-<p>Loading a (syntactically valid) Aspect Model based on an older meta model version</p>
+<p>Loading a (syntactically valid) Aspect Model based on an older meta model version.</p>
 </li>
 </ul>
 </div>
@@ -409,6 +412,9 @@ The tool automatically recognises the older version and migrates it to the lates
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="../_images/model-to-migrate.png" alt="Model To Migrate" width="50%"></span></p>
+</div>
+<div class="paragraph">
+<p>When the migration is completed, the following confirmation messages will be displayed:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="../_images/migrate-notification.png" alt="Migrate Notification" width="30%"></span></p>

@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="connect-elements.html">master</a>
+    <a class="version" href="../5.5.0/modeling/connect-elements.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/connect-elements.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/connect-elements.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/connect-elements.adoc">Contribute to this page</a></div>
@@ -368,12 +368,27 @@
 can be distributed over the complete editor main canvas.</p>
 </div>
 <div class="paragraph">
-<p>To connect two elements manually, proceed as follows:</p>
+<p>There are two ways, in which you can connect elements:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Manually</p>
+</li>
+<li>
+<p>Using the context menu</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="connect-manually"><a class="anchor" href="#connect-manually"></a>Connect manually</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click both elements while holding the CTRL key on your keyboard.</p>
+<p>Click both elements while holding the Ctrl key on your keyboard.</p>
 </li>
 <li>
 <p>Click the <strong>Connect</strong> icon in the <a href="../getting-started/ui-overview.html#toolbar" class="xref page">toolbar</a>.</p>
@@ -397,35 +412,20 @@ can be distributed over the complete editor main canvas.</p>
 <p>If both directions are permitted, the arrow will be set for the element selected first to the element selected second.</p>
 </li>
 <li>
-<p>Tf a connection is not permitted, a respective warning will appear and the elements will not be connected.</p>
+<p>If a connection is not permitted, a respective warning will appear and the elements will not be connected.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Alternatively, you can use the context menu (right mouse click) to access the action items.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>The larger the diagram, the harder it might get elements that are fare away.</p>
-</div>
-<div class="paragraph">
-<p>In case you cannot connect two elements just the way you are most familiar with, try one of these procedures.</p>
+<p>The larger the diagram, the harder it might get to connect elements that are far away in the model. In that case, you can also use the alternative described below.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="connect-via-context-menu"><a class="anchor" href="#connect-via-context-menu"></a>Connect via context menu</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Click the source element.</p>
 </li>
@@ -433,35 +433,20 @@ Alternatively, you can use the context menu (right mouse click) to access the ac
 <p>Right-click to access the context menu.</p>
 </li>
 <li>
-<p>Select <strong>connect with &#8230;&#8203;</strong>.</p>
-</li>
-<li>
-<p>The new pop-up displays all the elements of the model.<br>
-In case there are too element many type the name in the search field.</p>
+<p>Select <strong>Connect with &#8230;&#8203;</strong>.<br>
+The new pop-up displays all the elements of the model. You can use the search field to find the correct one.</p>
 </li>
 <li>
 <p>Select the target element.</p>
 </li>
 <li>
-<p>Click <strong>Connect</strong> to confirm.</p>
+<p>Click <strong>Connect</strong> to confirm.<br>
+Upon success the arrow is visible.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
-<p>Upon success the arrow is visible.
-In case you try to connect elements which cannot be connected, a validation notification will inform you respectively.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="connect-via-focus"><a class="anchor" href="#connect-via-focus"></a>Connect via focus</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Single click the first element - this sets focus on element</p>
-</li>
-</ul>
+<p>In case you try to connect elements which cannot be connected, a validation notification will inform you respectively.</p>
 </div>
 </div>
 </div>

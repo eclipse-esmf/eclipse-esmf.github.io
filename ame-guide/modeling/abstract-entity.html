@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -350,8 +350,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="abstract-entity.html">master</a>
+    <a class="version" href="../5.5.0/modeling/abstract-entity.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/abstract-entity.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/abstract-entity.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/abstract-entity.adoc">Contribute to this page</a></div>
@@ -367,7 +367,7 @@
 <div class="paragraph">
 <p>SAMM supports defining abstract elements (entities and properties) and the concept of inheritance in order to make semantic information reusable.
 The editor allows to create abstract entities and properties and to declare relationships to inheritance via "extends".
-See <a href="https://eclipse-esmf.github.io/samm-specification/2.1.0/modeling-guidelines.html#declaring-entities">Abstract Entities</a>
+See <a href="https://eclipse-esmf.github.io/samm-specification/2.1.0/modeling-guidelines.html#declaring-entities">Declaring Entities</a>
 for more information about abstract entities and properties.</p>
 </div>
 <div class="paragraph">
@@ -376,10 +376,10 @@ for more information about abstract entities and properties.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Use drag-and-drop from the Workspace sidebar</p>
+<p>Use drag-and-drop from the Workspace sidebar.</p>
 </li>
 <li>
-<p>Adjust an Entity in the extends field</p>
+<p>Adjust an Entity in the extends field.</p>
 </li>
 </ul>
 </div>
@@ -394,17 +394,15 @@ for more information about abstract entities and properties.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the Workspace sidebar</p>
+<p>Open the Workspace sidebar.</p>
 </li>
 <li>
-<p>Drag the Abstract Entity element and drop it to the graph area canvas</p>
+<p>Drag the Abstract Entity element and drop it to the graph area canvas.</p>
 </li>
 </ol>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/drag-and-drop-abstract-entity.png" alt="Drag and drop Abstract Entity" width="60%">
-</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href="../_images/drag-and-drop-abstract-entity.png"><img src="../_images/drag-and-drop-abstract-entity.png" alt="Drag and drop Abstract Entity" width="40%"></a></span></p>
 </div>
 </div>
 </div>
@@ -426,7 +424,7 @@ for more information about abstract entities and properties.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/extends-field-abstract-entity.png" alt="Extends fiels Abstract Entity" width="50%">
+<img src="../_images/extends-field-abstract-entity.png" alt="Extends fiels Abstract Entity" width="40%">
 </div>
 </div>
 </div>
@@ -440,16 +438,16 @@ for more information about abstract entities and properties.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create one Property by clicking twice on the Aspect&#8217;s Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span>.</p>
+<p>Create one Property by clicking twice on the Aspect&#8217;s Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span>.</p>
 </li>
 <li>
-<p>Create one Characteristic by clicking the Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span>.</p>
+<p>Create one Characteristic by clicking the Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span>.</p>
 </li>
 <li>
-<p>Create one Entity by clicking the bottom Add icon <span class="image"><img src="../_images/add.png" alt="Add icon" width="2%"></span>.</p>
+<p>Create one Entity by clicking the bottom Add icon <span class="image"><img src="../_images/add.png" alt="Add icon"></span>.</p>
 </li>
 <li>
-<p>Drag and Drop an Abstract Entity from the sidebar.</p>
+<p>Drag and drop an Abstract Entity from the sidebar.</p>
 </li>
 <li>
 <p>Connect the Abstract Entity with the Entity:</p>
@@ -459,7 +457,7 @@ for more information about abstract entities and properties.</p>
 <p>Click the Entity,</p>
 </li>
 <li>
-<p>Then CTRL+click the Abstract Entity,</p>
+<p>Then Ctrl+click the Abstract Entity,</p>
 </li>
 <li>
 <p>Then click the Connect icon <span class="image"><img src="../_images/toolbar-icons/connect.png" alt="Connect icon" width="3%"></span> on the <a href="../getting-started/ui-overview.html#toolbar" class="xref page">toolbar</a>.</p>
@@ -475,10 +473,8 @@ for more information about abstract entities and properties.</p>
 <div class="paragraph">
 <p>→ As a result you have connected the Abstract Entity with the Entity.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/connect-abstract-entiy-with-entity.png" alt="Connect Abstract Entity with Entity" width="50%">
-</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/connect-abstract-entiy-with-entity.png" alt="Connect Abstract Entity with Entity" width="30%"></span></p>
 </div>
 </div>
 </div>

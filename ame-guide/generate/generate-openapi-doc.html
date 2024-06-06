@@ -156,7 +156,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared Models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -349,8 +349,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="generate-openapi-doc.html">master</a>
+    <a class="version" href="../5.5.0/generate/generate-openapi-doc.html">5.5.0</a>
     <a class="version" href="../5.4.0/generate/generate-openapi-doc.html">5.4.0</a>
-    <a class="version" href="../5.3.0/generate/generate-openapi-doc.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/generate/generate-openapi-doc.adoc">Contribute to this page</a></div>
@@ -369,29 +369,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Click the <strong>Generate</strong> on <a href="../getting-started/ui-overview.html#menu-generate" class="xref page">menu</a>.<br>
-A menu offers one option to generate the OpenAPI specification. +:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>OpenAPI specification</strong>&#8201;&#8212;&#8201;continue with this one</p>
-<div class="imageblock text-left">
-<div class="content">
-<img src="../_images/generation/open-api-menu.png" alt="Generate document" width="100%">
-</div>
-</div>
-</li>
-</ul>
+<p>Click the <a href="../getting-started/ui-overview.html#menu-generate" class="xref page">Generate menu</a> and select <strong>OpenAPI Specification</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/generation/open-api-spec.png" alt="Generate document" width="20%"></span></p>
 </div>
 </li>
 <li>
 <p>In case your model supports multiple languages, select the specific language for the documentation.</p>
 </li>
 <li>
-<p>Select <strong>JSON</strong> or <strong>YAML</strong> as the desired file format.</p>
+<p>Select <strong>JSON</strong> or <strong>YAML</strong> in the <strong>Output file format</strong> drop-down.</p>
 </li>
 <li>
-<p>Set the <strong>Base URL</strong> were the Aspect API will be served from.</p>
+<p>Set the base URL where the Aspect API will be served from.</p>
 </li>
 <li>
 <p>Select the preferred option for paging:</p>
@@ -410,16 +400,16 @@ A menu offers one option to generate the OpenAPI specification. +:</p>
 </div>
 </li>
 <li>
-<p>Check the <strong>Include Query API</strong> checkbox, if you need a path section for the Query API Endpoint of the Aspect API to be included in the specification.</p>
+<p>Select the <strong>Include Query API</strong> checkbox, if you need a path section for the Query API Endpoint of the Aspect API to be included in the specification.</p>
 </li>
 <li>
-<p>Check the <strong>Use Semantic Version</strong> checkbox, if you need the complete semantic version of the Aspect Model to be used as the version of the API. Otherwise, only the major part of the Aspect Version is used as the version of the API.</p>
+<p>Select the <strong>Use Semantic Version</strong> checkbox, if you need the complete semantic version of the Aspect Model to be used as the version of the API. Otherwise, only the major part of the Aspect Version is used as the version of the API.</p>
 </li>
 <li>
-<p>Check the <strong>Active Resource Path</strong> checkbox, if you need the active resource path to be included in the specification.</p>
+<p>Select the <strong>Active Resource Path</strong> checkbox, if you need the active resource path to be included in the specification.</p>
 </li>
 <li>
-<p>Click <strong>Generate</strong> and store the Open API specification file locally.</p>
+<p>Click <strong>Generate</strong> and store the OpenAPI specification file locally.</p>
 </li>
 </ul>
 </div>
@@ -429,25 +419,25 @@ A menu offers one option to generate the OpenAPI specification. +:</p>
 <h2 id="resource-path"><a class="anchor" href="#resource-path"></a>Configuring Resource Path in the OpenAPI Generation Dialog</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When the Resource Path is activated, additional fields are introduced in the OpenAPI Generation Dialog to allow for its configuration.
+<p>When the resource path is activated, additional fields are introduced in the OpenAPI Generation Dialog to allow for its configuration.
 The inclusion of certain properties in the output depends on the selected output file format:</p>
 </div>
-<div class="paragraph">
-<p><strong>YAML</strong>: A property file in YAML format is required when YAML is chosen as the output file format.
-<strong>JSON</strong>: A property file in JSON format is needed if JSON is selected.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>YAML</strong>: a property file in YAML format is required when YAML is chosen as the output file format.</p>
+</li>
+<li>
+<p><strong>JSON</strong>: a property file in JSON format is needed if JSON is selected.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>It is crucial to ensure that the properties in the file match those specified in the resource path.
 Failure to do so will result in an error prompting a review of the mismatches.</p>
 </div>
 <div class="paragraph">
-<p>For additional details on configuring the Resource Path and generating OpenAPI specifications using the SAMM CLI, please consult our comprehensive guide:
-<a href="https://eclipse-esmf.github.io/esmf-developer-guide/2.6.1/tooling-guide/samm-cli.html#using-the-cli-to-create-a-json-openapi-specification)">Generating OpenAPI Specifications with SAMM CLI</a>.</p>
-</div>
-<div class="imageblock text-left">
-<div class="content">
-<img src="../_images/generation/open-api-dialog.png" alt="Generate document" width="100%">
-</div>
+<p><span class="image"><a class="image" href="../_images/generation/open-api-dialog.png"><img src="../_images/generation/open-api-dialog.png" alt="Generate OpenAPI document" width="50%"></a></span></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -461,6 +451,10 @@ If the invalid element is not highlighted with a red border, click the Validate 
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>For additional details on configuring the Resource Path and generating OpenAPI specifications using the SAMM CLI, please consult our comprehensive guide:
+<a href="https://eclipse-esmf.github.io/esmf-developer-guide/2.6.1/tooling-guide/samm-cli.html#using-the-cli-to-create-a-json-openapi-specification)">Generating OpenAPI Specifications with SAMM CLI</a>.</p>
 </div>
 </div>
 </div>

@@ -156,7 +156,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared Models</a>
+    <a class="nav-link" href="shared-models.html">Shared models</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -189,9 +189,6 @@
     <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -202,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
   </li>
 </ul>
   </li>
@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../5.4.0/introduction.html">5.4.0</a>
+          <a href="../5.5.0/introduction.html">5.5.0</a>
         </li>
         <li class="version">
-          <a href="../5.3.0/introduction.html">5.3.0</a>
+          <a href="../5.4.0/introduction.html">5.4.0</a>
         </li>
       </ul>
     </li>
@@ -294,7 +294,7 @@
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.0/index.html">2.3.0</a>
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
         </li>
       </ul>
     </li>
@@ -350,8 +350,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="event.html">master</a>
+    <a class="version" href="../5.5.0/modeling/event.html">5.5.0</a>
     <a class="version" href="../5.4.0/modeling/event.html">5.4.0</a>
-    <a class="version" href="../5.3.0/modeling/event.html">5.3.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/event.adoc">Contribute to this page</a></div>
@@ -379,10 +379,10 @@ Assets can for instance emit events to notify other assets in case of special oc
 <div class="ulist">
 <ul>
 <li>
-<p>Open the Workspace sidebar</p>
+<p>Open the Workspace sidebar.</p>
 </li>
 <li>
-<p>Drag the Event element and drop it to the graph area canvas</p>
+<p>Drag the Event element and drop it to the graph area canvas.</p>
 </li>
 </ul>
 </div>
@@ -397,20 +397,17 @@ Assets can for instance emit events to notify other assets in case of special oc
 <div class="ulist">
 <ul>
 <li>
-<p>Click the Event</p>
-</li>
-<li>
-<p>Right-click the Event to open the context menu</p>
+<p>Right-click the Event to open the context menu.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Click the Connect with &#8230;&#8203;</p>
+<p>Click the <strong>Connect with &#8230;&#8203;</strong> option.</p>
 </li>
 <li>
-<p>Select the Aspect element</p>
+<p>Select the Aspect element.</p>
 </li>
 <li>
-<p>Confirm with Connect</p>
+<p>Confirm with <strong>Connect</strong>.</p>
 </li>
 </ul>
 </div>
@@ -431,22 +428,29 @@ Assets can for instance emit events to notify other assets in case of special oc
 <div class="ulist">
 <ul>
 <li>
-<p>Double-click the Event to access the details</p>
+<p>Double-click the Event to access the details.</p>
 </li>
 <li>
-<p>Adjust all fields to your needs</p>
+<p>Adjust all fields to your needs.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/event.png" alt="event" width="60%">
+<a class="image" href="../_images/event.png"><img src="../_images/event.png" alt="event" width="70%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>Note that the details of such events — for example, which data (MQTT package) gets sent at which occurrence or time via an MQTT topic — are to be decided when implementing the event.<br>
-The SAMM specification does not prescribe any defaults or rules.<br>
-Thus, events can be adapted to your own implementation needs.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The details of such events — e.g., which data (MQTT package) will be sent at which occurrence or time via an MQTT topic — are to be decided when implementing the event. The SAMM specification does not prescribe any defaults or rules. Thus, events can be adapted to your own implementation needs.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
