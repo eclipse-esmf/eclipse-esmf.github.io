@@ -119,10 +119,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
         </li>
       </ul>
     </li>
@@ -907,6 +907,13 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>templateFilePath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the file with a template for the resulting specification, including values undefined by the aspect&#8217;s OpenAPI specification. The template can be in JSON or YAML format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1148,6 +1155,13 @@ life cycle phase for the goal is <code>generate-resources</code>.</p>
   the <a href="java-aspect-tooling.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>customColumns</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains <code>&lt;column&gt;</code> elements, each of which defines a custom column to add. Column defintions follow the pattern <code>column_name DATATYPE [NOT NULL] [COMMENT 'custom']</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;column&gt;</code>&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>

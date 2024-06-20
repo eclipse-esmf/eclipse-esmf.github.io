@@ -119,10 +119,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
         </li>
       </ul>
     </li>
@@ -1660,13 +1660,17 @@ in the Aspect Model (or any of its transitively referenced Entities).</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 import org.eclipse.esmf.aspectmodel.generator.sql.AspectModelSqlGenerator;
 import org.eclipse.esmf.aspectmodel.generator.sql.SqlGenerationConfig;
 import org.eclipse.esmf.aspectmodel.generator.sql.SqlGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksColumnDefinitionBuilder;
 import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfig;
 import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksType;
 import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
 import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
@@ -1684,6 +1688,13 @@ final DatabricksSqlGenerationConfig databricksSqlGenerationConfig =
             .includeTableComment( true )       // optional
             .includeColumnComments( true )     // optional
             .decimalPrecision( 10 )            // optional
+            .customColumns( List.of(           // optional
+                  DatabricksColumnDefinitionBuilder.builder()
+                        .name( "custom_column" )
+                        .type( new DatabricksType.DatabricksArray( DatabricksType.STRING ) )
+                        .nullable( false )
+                        .comment( Optional.of( "Custom column" ) )
+                        .build() ) )
             .build();
 final SqlGenerationConfig sqlGenerationConfig =
       SqlGenerationConfigBuilder.builder()

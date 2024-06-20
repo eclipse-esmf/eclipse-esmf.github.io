@@ -119,10 +119,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.4.0/introduction.html">5.4.0</a>
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
         </li>
       </ul>
     </li>
@@ -601,15 +601,20 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -l de</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--template-file, -t</em> : the path to a file including a template for
+                                       the resulting specification, can be in JSON or YAML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section bellow</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--separate-files, -sf</em> : Create separate files for each schema</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="aspect-to-asyncapi"></a> aspect &lt;model&gt; to asyncapi</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="aspect-to-asyncapi"></a> aspect &lt;model&gt; to asyncapi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0">AsyncAPI</a> specification for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to asyncapi</code></p></td>
 </tr>
@@ -643,9 +648,9 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
@@ -656,9 +661,9 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-schema"></a> aspect &lt;model&gt; to schema</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-schema"></a> aspect &lt;model&gt; to schema</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON schema for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to schema</code></p></td>
 </tr>
@@ -674,9 +679,9 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="10"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate SQL script that sets up a table for data for this Aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql</code></p></td>
 </tr>
@@ -718,7 +723,11 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-column, -col</em> : Additional custom column definition, e.g. for databricks following the pattern <code>column_name DATATYPE [NOT NULL] [COMMENT 'custom']</code>. This parameter can be repeated for multiple columns.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql --custom-column "column_name STRING NOT NULL COMMENT 'custom'"</code></p></td>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-aas"></a> aspect &lt;model&gt; to aas</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate an Asset Administration Shell (AAS) submodel template from an
                                      Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to aas</code></p></td>
@@ -739,9 +748,9 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--aspect-data, -a</em> : path to a JSON file containing aspect data corresponding to the
                                      Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aas-to-aspect"></a> aas &lt;aas file&gt; to aspect</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aas-to-aspect"></a> aas &lt;aas file&gt; to aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Translate Asset Administration Shell (AAS) Submodel Templates to
                                      Aspect Models</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect</code></p></td>
@@ -755,12 +764,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--submodel-template, -s</em> : selected submodel template for generating;
                                        run <code>samm aas &lt;aas file&gt; list</code> to list them.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect -s 1 -s 2</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="aas-list"></a> aas &lt;aas file&gt; list</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a list of submodel templates contained within the provided
-                                       Asset Administration Shell (AAS) file.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx list</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -808,6 +812,78 @@ the <code>--parameter-file</code> defines the parameter resourceId in YAML:</p>
 </div>
 </div>
 <div class="paragraph">
+<p>Definitions of the parameters must correspond to the specification of the OpenAPI <em>Parameter Object</em>.</p>
+</div>
+<div class="paragraph">
+<p>A template can be used for more specific customization - parameter <code>--template-file</code>.
+The template is a document in the OpenAPI format, with one crucial difference - the presence of a templated Paths Object <code>paths.__DEFAULT_QUERIES_TEMPLATE__</code>.
+All values not defined by the generator will be taken from the template.
+For generator-defined Aspect Model resources, the values can be taken from the corresponding <em>Operation Object</em> template <code>paths.__DEFAULT_QUERIES_TEMPLATE__</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, the template file could look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">info:
+  termsOfService: 'https://example.com/terms-of-service'
+
+servers:
+  - url: https://{environment}.example.com/api/v1
+    variables:
+      environment:
+        default: api
+        enum:
+          - api
+          - sandbox-api
+
+components:
+    responses:
+      InternalServerError:
+        description: An error occurred while processing the request.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+
+paths:
+  /status:
+    get:
+      tags:
+        - Maintenance
+      operationId: getHealthStatus
+      description: Check the health status of the service.
+      responses:
+        "200":
+          description: The service is up and running.
+        "503":
+            description: The service is down.
+
+  __DEFAULT_QUERIES_TEMPLATE__:
+    get:
+      parameters:
+        - name: request-id
+          in: header
+          description: The unique identifier for the request. If it isn't provided, it will be auto-generated.
+          required: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "500":
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      parameters:
+        - name: request-id
+          in: header
+          description: The unique identifier for the request. If it isn't provided, it will be auto-generated.
+          required: false
+          schema:
+            type: string
+            format: uuid</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>The full command for the native executable samm-cli would be:</p>
 </div>
 <div class="listingblock">
@@ -821,6 +897,39 @@ the <code>--parameter-file</code> defines the parameter resourceId in YAML:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.7.0.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration-of-security-schemas"><a class="anchor" href="#configuration-of-security-schemas"></a>Configuration of security schemas</h3>
+<div class="paragraph">
+<p>For example, to configure OAuth2 authentication the template could look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">security:
+  - OAuth2:
+      - read:aspects
+
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://{environment}.example.com/oauth2/authorize
+          tokenUrl: https://{environment}.example.com/oauth2/token
+          scopes:
+            read:aspects: Read access to aspects
+            write:aspects: Write access to aspects
+
+paths:
+  __DEFAULT_QUERIES_TEMPLATE__:
+    post:
+      security:
+        - OAuth2:
+            - read:aspects
+            - write:aspects</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">

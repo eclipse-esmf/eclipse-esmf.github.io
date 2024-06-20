@@ -144,10 +144,10 @@
           <a href="../../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+          <a href="../../../ame-guide/5.6.0/introduction.html">5.6.0</a>
         </li>
         <li class="version">
-          <a href="../../../ame-guide/5.4.0/introduction.html">5.4.0</a>
+          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
         </li>
       </ul>
     </li>
@@ -471,6 +471,26 @@ broken special characters.
 <div class="content">
 <img src="_images/constraints-decision-tree.svg" alt="constraints decision tree" width="100%">
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reuse-elements"><a class="anchor" href="#reuse-elements"></a>Reuse Elements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is generally advisable to reuse definitions of existing model elements that describe the desired semantics. This not only ensures efficiency
+and maintainability, but more importantly, it explicitly expresses that the model builds upon a set of agreed-upon abstractions.
+Reuse of exising model element definitions makes it clear that your model talks about <em>the same thing</em>. On the other hand,
+introducing another definition of an allegedly already existing concept is equivalent to stating that the deliberately newly created definition
+does indeed mean something different. This is particularly useful when model elements are created for terminology that can have many different
+meanings in various contexts, such as the term "process".</p>
+</div>
+<div class="paragraph">
+<p><code><a href="../entities.html#entities" class="xref page">Entities</a></code>, <code><a href="../characteristics.html#characteristics" class="xref page">Characteristics</a></code>,
+<code><a href="../modeling-guidelines.html#declaring-events" class="xref page">Events</a></code>, <code><a href="../modeling-guidelines.html#declaring-constraints" class="xref page">Constraints</a></code>
+and <code><a href="../modeling-guidelines.html#declaring-properties" class="xref page">Properties</a></code> are fundamental components of an Aspect.
+Reusing these elements across different Aspects ensures consistency, reduces redundancy, and simplifies the management and
+integration of shared attributes and interactions.</p>
 </div>
 </div>
 </div>
