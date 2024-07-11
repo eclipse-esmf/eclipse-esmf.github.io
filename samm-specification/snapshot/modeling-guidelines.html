@@ -166,19 +166,19 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.9.0/index.html">2.9.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.7.0/index.html">2.7.0</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.6.1/index.html">2.6.1</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.6.0/index.html">2.6.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.5.1/index.html">2.5.1</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.5.0/index.html">2.5.0</a>
         </li>
       </ul>
     </li>
@@ -1087,6 +1087,21 @@ i.e., that the deconstruction rule actually does what the model author intended.
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-reference"><a class="anchor" href="#declaring-reference"></a>Declaring Reference</h4>
+<div class="paragraph">
+<p>The <a href="characteristics.html#reference-characteristic" class="xref page">Reference</a> Characteristic is intended to be used
+for scenarios where a reference to a concept external to the Aspect Model is required, but the value of the
+reference (i.e., the identifier of the linked concept) is not known at modeling time yet. Other than that,
+it is conceptually similar to a <a href="#adding-external-references">samm:see reference</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:TestProperty a samm:Property ;
+    samm:characteristic samm-c:Reference .</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
