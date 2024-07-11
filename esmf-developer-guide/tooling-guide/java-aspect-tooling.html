@@ -505,7 +505,7 @@ this is better done using the RDF API.</p>
 <div class="paragraph">
 <p>To load an AspectModel, you use the <code>org.eclipse.esmf.aspectmodel.loader.AspectModelLoader</code> class. An instance
 of <code>AspectModelLoader</code> provides <code>load()</code> methods to load an Aspect Model from an InputStream, one or multiple
-Files, or a number of `AspectModelUrn`s (where you can delegate finding out <em>where</em> a model element is defined
+Files, or a number of <code>AspectModelUrn</code> (where you can delegate finding out <em>where</em> a model element is defined
 to the AspectModelLoader - details on that are explained in the next section).</p>
 </div>
 <div class="paragraph">
@@ -514,13 +514,13 @@ and previous versions: Models based on older meta model versions are automatical
 corresponding to the latest meta model version.</p>
 </div>
 <div class="paragraph">
-<p>The resulting <code>AspectModel</code> object contains information about the loaded model elements, their namespaces and
-the files they were defined in. Details about the structure of these objects can be found in the [Decision
-Record
-0007](<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md" class="bare">https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md</a>).
-The <code>AspectModel</code> provides the methods <code>elements()</code>, <code>files()</code> and <code>namespaces()</code> as well as the convenience
-methods <code>aspects()</code> (which returns all Aspect elements in the model) and <code>aspect()</code>, which returns the single
-Aspect element if one exists.</p>
+<p>The resulting <code>AspectModel</code> object contains information about the loaded model elements, their
+namespaces and the files they were defined in. Details about the structure of these objects can be
+found in the
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md">Decision
+Record 0007</a>. The <code>AspectModel</code> provides the methods <code>elements()</code>, <code>files()</code> and <code>namespaces()</code> as
+well as the convenience methods <code>aspects()</code> (which returns all Aspect elements in the model) and
+<code>aspect()</code>, which returns the single Aspect element if one exists.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
