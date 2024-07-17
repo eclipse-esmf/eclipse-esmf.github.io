@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.6.1">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.6.1</span>
+    <span class="version">2.9.1</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -140,6 +140,9 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.9.1</a>
+        </li>
         <li class="version">
           <a href="../../2.9.0/index.html">2.9.0</a>
         </li>
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../../2.7.0/index.html">2.7.0</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.6.1</a>
         </li>
       </ul>
     </li>
@@ -226,17 +226,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.6.1</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.9.1</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/maven-plugin.html">master</a>
+    <a class="version is-current" href="maven-plugin.html">2.9.1</a>
     <a class="version" href="../../2.9.0/tooling-guide/maven-plugin.html">2.9.0</a>
     <a class="version" href="../../2.8.1/tooling-guide/maven-plugin.html">2.8.1</a>
     <a class="version" href="../../2.8.0/tooling-guide/maven-plugin.html">2.8.0</a>
     <a class="version" href="../../2.7.0/tooling-guide/maven-plugin.html">2.7.0</a>
-    <a class="version is-current" href="maven-plugin.html">2.6.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.6.1/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.1/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -259,7 +259,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.9.0&lt;/version&gt;
+    &lt;version&gt;2.9.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -831,6 +831,34 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeFullCrud</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the POST/PUT/PATCH methods in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includePost</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the POST method in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includePut</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the PUT method in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includePatch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the PATCH method in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>excludePaging</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exclude paging information for the Aspect API Endpoint in the OpenAPI specification.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
@@ -866,10 +894,274 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>separateFiles</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create separate files for each schema.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>language</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The language from the model for which an OpenAPI specification should be generated.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>templateFilePath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the file with a template for the resulting specification, including values undefined by the aspect&#8217;s OpenAPI specification. The template can be in JSON or YAML format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-an-asyncapi-specification-from-an-aspect-model"><a class="anchor" href="#generate-an-asyncapi-specification-from-an-aspect-model"></a>Generate an AsyncAPI Specification from an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>generateAsyncApiSpec</code> goal generates an AsyncAPI Specification for a given Aspect Model. The
+default life cycle phase for the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-asyncapi-spec&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateAsyncApiSpec&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputFormat&gt;json&lt;/outputFormat&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated AsyncAPI Specification will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>applicationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the application id, e.g. an identifying URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>channelAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the channel address (i.e., for MQTT, the topic&#8217;s name)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>useSemanticApiVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the complete semantic version of the Aspect Model as the version of the Aspect API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputFormat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format of the resulting AsyncAPI Specification. May be either JSON or YAML.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>separateFiles</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create separate files for each schema.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>language</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The language from the model for which an AsyncAPI specification should be generated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-an-sql-script-from-an-aspect-model"><a class="anchor" href="#generate-an-sql-script-from-an-aspect-model"></a>Generate an SQL script from an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>generateSql</code> goal generates an SQL table creation script for a given Aspect Model. The default
+life cycle phase for the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-sql&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateSql&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated SQL script will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dialect</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SQL dialect to generate for.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>databricks</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>strategy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The mapping strategy to use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>denormalized</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>language</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The language from the model to use for generated comments.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeTableComment</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include table comment in the generated SQL script.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeColumnComments</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include column comments in the generated SQL script.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tableCommandPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The prefix to use for Databricks table creation commands.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CREATE TABLE IF NOT EXISTS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>decimalPrecision</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The precision to use for Databricks decimal columns, between 1 and 38. See also notes in
+  the <a href="java-aspect-tooling.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>customColumns</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains <code>&lt;column&gt;</code> elements, each of which defines a custom column to add. Column defintions follow the pattern <code>column_name DATATYPE [NOT NULL] [COMMENT 'custom']</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;column&gt;</code>&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
@@ -1162,101 +1454,14 @@ the goal is <code>generate-resources</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="aspect-model-migration"><a class="anchor" href="#aspect-model-migration"></a>Aspect Model Migration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <code>migrate</code> goal migrates the given Aspect Model to the latest version of the meta model. The
-default life cycle phase for the goal is <code>initialize</code>.</p>
-</div>
-<div class="paragraph">
-<p>Usage:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
-  &lt;plugins&gt;
-     &lt;plugin&gt;
-        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-        &lt;executions&gt;
-           &lt;execution&gt;
-              &lt;id&gt;migrate-aspect-model&lt;/id&gt;
-              &lt;goals&gt;
-                 &lt;goal&gt;migrate&lt;/goal&gt;
-              &lt;/goals&gt;
-           &lt;/execution&gt;
-        &lt;/executions&gt;
-        &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
-           &lt;includes&gt;
-              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
-           &lt;/includes&gt;
-           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
-        &lt;/configuration&gt;
-     &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/build&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Configuration Properties:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 50%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Default Value</th>
-<th class="tableblock halign-left valign-top">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the updated Aspect Model will be written to.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
 <h2 id="pretty-print"><a class="anchor" href="#pretty-print"></a>Pretty Print</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>prettyPrint</code> goal formats the given Aspect Model. The formatted file is written to the location
 specified in the <code>outputDirectory</code> property. The default life cycle phase for the goal is
-<code>generate-resources</code>.</p>
+<code>generate-resources</code>. Note that the <code>prettyPrint</code> goal can also be used as a substitute of the
+now-removed <code>migrate</code> goal, since it implies loading and automatically migrating a model to the
+latest meta model version before it is pretty-printed.</p>
 </div>
 <div class="paragraph">
 <p>Usage:</p>
