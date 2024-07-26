@@ -141,6 +141,12 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.9.3/index.html">2.9.3</a>
+        </li>
+        <li class="version">
+          <a href="../2.9.2/index.html">2.9.2</a>
+        </li>
+        <li class="version">
           <a href="../2.9.1/index.html">2.9.1</a>
         </li>
         <li class="version">
@@ -149,12 +155,6 @@
         <li class="version">
           <a href="../2.8.1/index.html">2.8.1</a>
         </li>
-        <li class="version">
-          <a href="../2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.7.0/index.html">2.7.0</a>
-        </li>
       </ul>
     </li>
     <li class="component">
@@ -162,6 +162,12 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
         </li>
         <li class="version">
           <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
@@ -186,13 +192,19 @@
           <a href="../../python-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+        <li class="version">
           <a href="../../python-sdk-guide/2.1.2/index.html">2.1.2</a>
         </li>
         <li class="version">
           <a href="../../python-sdk-guide/2.1.1/index.html">2.1.1</a>
-        </li>
-        <li class="version">
-          <a href="../../python-sdk-guide/2.1.0/index.html">2.1.0</a>
         </li>
       </ul>
     </li>
@@ -229,11 +241,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="maven-plugin.html">master</a>
+    <a class="version" href="../2.9.3/tooling-guide/maven-plugin.html">2.9.3</a>
+    <a class="version" href="../2.9.2/tooling-guide/maven-plugin.html">2.9.2</a>
     <a class="version" href="../2.9.1/tooling-guide/maven-plugin.html">2.9.1</a>
     <a class="version" href="../2.9.0/tooling-guide/maven-plugin.html">2.9.0</a>
     <a class="version" href="../2.8.1/tooling-guide/maven-plugin.html">2.8.1</a>
-    <a class="version" href="../2.8.0/tooling-guide/maven-plugin.html">2.8.0</a>
-    <a class="version" href="../2.7.0/tooling-guide/maven-plugin.html">2.7.0</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
@@ -259,7 +271,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.9.1&lt;/version&gt;
+    &lt;version&gt;2.9.3&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -483,6 +495,13 @@ are replaced using <code>packageName</code></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>disableJacksonAnnotations</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Leads to generated Java code that does not contain <a href="https://github.com/FasterXML/jackson">Jackson</a> annotations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skip</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skip execution of plugin and generation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
@@ -818,7 +837,7 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectResourcePath</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The resource-path` for the Aspect API endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>resource-path</code> for the Aspect API endpoints.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
