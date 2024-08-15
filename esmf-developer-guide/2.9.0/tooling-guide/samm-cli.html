@@ -141,7 +141,10 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../2.9.3/index.html">2.9.3</a>
+          <a href="../../2.9.5/index.html">2.9.5</a>
+        </li>
+        <li class="version">
+          <a href="../../2.9.4/index.html">2.9.4</a>
         </li>
         <li class="version">
           <a href="../../2.9.2/index.html">2.9.2</a>
@@ -151,9 +154,6 @@
         </li>
         <li class="version is-current">
           <a href="../index.html">2.9.0</a>
-        </li>
-        <li class="version">
-          <a href="../../2.8.1/index.html">2.8.1</a>
         </li>
       </ul>
     </li>
@@ -241,11 +241,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">2.9.0</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/samm-cli.html">master</a>
-    <a class="version" href="../../2.9.3/tooling-guide/samm-cli.html">2.9.3</a>
+    <a class="version" href="../../2.9.5/tooling-guide/samm-cli.html">2.9.5</a>
+    <a class="version" href="../../2.9.4/tooling-guide/samm-cli.html">2.9.4</a>
     <a class="version" href="../../2.9.2/tooling-guide/samm-cli.html">2.9.2</a>
     <a class="version" href="../../2.9.1/tooling-guide/samm-cli.html">2.9.1</a>
     <a class="version is-current" href="samm-cli.html">2.9.0</a>
-    <a class="version" href="../../2.8.1/tooling-guide/samm-cli.html">2.8.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.0/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -275,13 +275,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Download executable for Windows (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.3/samm-cli-2.9.3-windows-x86_64.zip">samm-cli-2.9.3-windows-x86_64.zip</a></p>
+<p>Download executable for Windows (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.5/samm-cli-2.9.5-windows-x86_64.zip">samm-cli-2.9.5-windows-x86_64.zip</a></p>
 </li>
 <li>
-<p>Download exectuable for Linux (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.3/samm-cli-2.9.3-linux-x86_64.tar.gz">samm-cli-2.9.3-linux-x86_64.tar.gz</a></p>
+<p>Download exectuable for Linux (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.5/samm-cli-2.9.5-linux-x86_64.tar.gz">samm-cli-2.9.5-linux-x86_64.tar.gz</a></p>
 </li>
 <li>
-<p>Download executable jar for other platforms and architectures (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.3/samm-cli-2.9.3.jar">samm-cli-2.9.3.jar</a>. Running this version requires Java 17.</p>
+<p>Download executable jar for other platforms and architectures (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.5/samm-cli-2.9.5.jar">samm-cli-2.9.5.jar</a>. Running this version requires Java 17.</p>
 </li>
 </ul>
 </div>
@@ -295,7 +295,7 @@
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.9.3.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.9.3.jar help</code>).
+<p>For the executable jar, call <code>java -jar samm-cli-2.9.5.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.9.5.jar help</code>).
 In the following sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -311,7 +311,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.3.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.5.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -904,7 +904,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.3.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.5.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1437,7 +1437,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.3.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.5.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">

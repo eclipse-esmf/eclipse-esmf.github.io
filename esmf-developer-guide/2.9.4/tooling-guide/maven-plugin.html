@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.8.1">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.4">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.8.1</span>
+    <span class="version">2.9.4</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -141,7 +141,10 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../2.9.3/index.html">2.9.3</a>
+          <a href="../../2.9.5/index.html">2.9.5</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.9.4</a>
         </li>
         <li class="version">
           <a href="../../2.9.2/index.html">2.9.2</a>
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../../2.9.0/index.html">2.9.0</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.8.1</a>
         </li>
       </ul>
     </li>
@@ -238,17 +238,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.8.1</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.9.4</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/maven-plugin.html">master</a>
-    <a class="version" href="../../2.9.3/tooling-guide/maven-plugin.html">2.9.3</a>
+    <a class="version" href="../../2.9.5/tooling-guide/maven-plugin.html">2.9.5</a>
+    <a class="version is-current" href="maven-plugin.html">2.9.4</a>
     <a class="version" href="../../2.9.2/tooling-guide/maven-plugin.html">2.9.2</a>
     <a class="version" href="../../2.9.1/tooling-guide/maven-plugin.html">2.9.1</a>
     <a class="version" href="../../2.9.0/tooling-guide/maven-plugin.html">2.9.0</a>
-    <a class="version is-current" href="maven-plugin.html">2.8.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.8.1/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.4/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -271,7 +271,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -495,6 +495,13 @@ are replaced using <code>packageName</code></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>disableJacksonAnnotations</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Leads to generated Java code that does not contain <a href="https://github.com/FasterXML/jackson">Jackson</a> annotations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skip</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skip execution of plugin and generation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
@@ -830,7 +837,7 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectResourcePath</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The resource-path` for the Aspect API endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>resource-path</code> for the Aspect API endpoints.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
@@ -1466,101 +1473,14 @@ the goal is <code>generate-resources</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="aspect-model-migration"><a class="anchor" href="#aspect-model-migration"></a>Aspect Model Migration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <code>migrate</code> goal migrates the given Aspect Model to the latest version of the meta model. The
-default life cycle phase for the goal is <code>initialize</code>.</p>
-</div>
-<div class="paragraph">
-<p>Usage:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
-  &lt;plugins&gt;
-     &lt;plugin&gt;
-        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-        &lt;executions&gt;
-           &lt;execution&gt;
-              &lt;id&gt;migrate-aspect-model&lt;/id&gt;
-              &lt;goals&gt;
-                 &lt;goal&gt;migrate&lt;/goal&gt;
-              &lt;/goals&gt;
-           &lt;/execution&gt;
-        &lt;/executions&gt;
-        &lt;configuration&gt;
-           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
-           &lt;includes&gt;
-              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
-           &lt;/includes&gt;
-           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
-        &lt;/configuration&gt;
-     &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/build&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Configuration Properties:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 50%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Default Value</th>
-<th class="tableblock halign-left valign-top">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the updated Aspect Model will be written to.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
 <h2 id="pretty-print"><a class="anchor" href="#pretty-print"></a>Pretty Print</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>prettyPrint</code> goal formats the given Aspect Model. The formatted file is written to the location
 specified in the <code>outputDirectory</code> property. The default life cycle phase for the goal is
-<code>generate-resources</code>.</p>
+<code>generate-resources</code>. Note that the <code>prettyPrint</code> goal can also be used as a substitute of the
+now-removed <code>migrate</code> goal, since it implies loading and automatically migrating a model to the
+latest meta model version before it is pretty-printed.</p>
 </div>
 <div class="paragraph">
 <p>Usage:</p>

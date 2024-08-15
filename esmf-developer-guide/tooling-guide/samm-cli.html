@@ -141,7 +141,10 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../2.9.3/index.html">2.9.3</a>
+          <a href="../2.9.5/index.html">2.9.5</a>
+        </li>
+        <li class="version">
+          <a href="../2.9.4/index.html">2.9.4</a>
         </li>
         <li class="version">
           <a href="../2.9.2/index.html">2.9.2</a>
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../2.9.0/index.html">2.9.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.8.1/index.html">2.8.1</a>
         </li>
       </ul>
     </li>
@@ -241,11 +241,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="samm-cli.html">master</a>
-    <a class="version" href="../2.9.3/tooling-guide/samm-cli.html">2.9.3</a>
+    <a class="version" href="../2.9.5/tooling-guide/samm-cli.html">2.9.5</a>
+    <a class="version" href="../2.9.4/tooling-guide/samm-cli.html">2.9.4</a>
     <a class="version" href="../2.9.2/tooling-guide/samm-cli.html">2.9.2</a>
     <a class="version" href="../2.9.1/tooling-guide/samm-cli.html">2.9.1</a>
     <a class="version" href="../2.9.0/tooling-guide/samm-cli.html">2.9.0</a>
-    <a class="version" href="../2.8.1/tooling-guide/samm-cli.html">2.8.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -275,13 +275,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Download executable for Windows (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.3/samm-cli-2.9.3-windows-x86_64.zip">samm-cli-2.9.3-windows-x86_64.zip</a></p>
+<p>Download executable for Windows (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.5/samm-cli-2.9.5-windows-x86_64.zip">samm-cli-2.9.5-windows-x86_64.zip</a></p>
 </li>
 <li>
-<p>Download exectuable for Linux (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.3/samm-cli-2.9.3-linux-x86_64.tar.gz">samm-cli-2.9.3-linux-x86_64.tar.gz</a></p>
+<p>Download exectuable for Linux (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.5/samm-cli-2.9.5-linux-x86_64.tar.gz">samm-cli-2.9.5-linux-x86_64.tar.gz</a></p>
 </li>
 <li>
-<p>Download executable jar for other platforms and architectures (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.3/samm-cli-2.9.3.jar">samm-cli-2.9.3.jar</a>. Running this version requires Java 17.</p>
+<p>Download executable jar for other platforms and architectures (latest): <a href="https://github.com/eclipse-esmf/esmf-sdk/releases/download/v2.9.5/samm-cli-2.9.5.jar">samm-cli-2.9.5.jar</a>. Running this version requires Java 17.</p>
 </li>
 </ul>
 </div>
@@ -295,7 +295,7 @@
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.9.3.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.9.3.jar help</code>).
+<p>For the executable jar, call <code>java -jar samm-cli-2.9.5.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.9.5.jar help</code>).
 In the following sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -311,7 +311,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.3.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.5.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -368,11 +368,13 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 Missing or wrong command parameters result in error code 2 being returned.</p>
 </div>
 <div class="paragraph">
-<p>To get help for a certain subcommand, add 'help' before the subcommand name or add <code>--help</code> to the end, e.g., <code>samm help aspect</code>
-or <code>samm aspect --help</code>.
+<p>To get an overview of all commands and subcommands, use <code>samm help</code>.
+To get help for a certain subcommand, use <code>help</code> before the subcommand name, e.g., <code>samm help aspect</code>, <code>samm help aspect validate</code> or <code>samm help aas to aspect</code>.
 Each subcommand can have its own set of options which allow the user to further fine-tune the execution of the command.
 The available options and their meaning can also be seen in the help text of the individual subcommands.</p>
 </div>
+<div class="sect2">
+<h3 id="list-of-commands"><a class="anchor" href="#list-of-commands"></a>List of commands</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -393,14 +395,17 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm help</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help &lt;subcommand&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get help for a specific subcommand</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="help"></a> help &lt;commands&#8230;&#8203;&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get help for a list of subcommands</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm help aspect</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aspect help &lt;aspect subcommand&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get help for <code>aspect</code> subcommands</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect help validate</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm help aspect to svg</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm help aspect validate</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="aspect-validate"></a> aspect &lt;model&gt; validate</p></td>
@@ -412,13 +417,17 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl validate --custom-resolver myresolver.sh</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="aspect-prettyprint"></a> aspect &lt;model&gt; prettyprint</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-prettyprint"></a> aspect &lt;model&gt; prettyprint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Pretty-print Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl prettyprint</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : the output will be saved to the given file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl prettyprint -o c:\Results\PrettyPrinted.ttl</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--overwrite, -w</em> : Overwrite the input file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl prettyprint -w</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-html"></a> aspect &lt;model&gt; to html</p></td>
@@ -753,6 +762,36 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-edit-move"></a> aspect &lt;model&gt; edit move &lt;element&gt; [&lt;namespace&gt;]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move a model element definition from its
+                                     current place to another existing or new file in the same or another namespace.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl edit move
+                                                                                                                                MyAspect otherFile.ttl</code> or <code>samm aspect
+                                                                                                                                AspectModel.ttl edit move MyAspect
+                                                                                                                                someFileInOtherNamespace.ttl
+                                                                                                                                urn:samm:org.eclipse.example.myns:1.0.0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--dry-run</em> : Don&#8217;t write changes to the file system, but print a report of changes
+                                     that would be performed.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--details</em> : When used with <code>--dry-run</code>, include details about model content
+                                     changes in the report .</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--copy-file-header</em> : When a model element is moved to a new file, copy the file
+                                     header from the source file to the new file</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--force</em> : When a new file is to be created but it already exists in the file system,
+                                     the operation will be cancelled, unless <code>--force</code> is used.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aas-to-aspect"></a> aas &lt;aas file&gt; to aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Translate Asset Administration Shell (AAS) Submodel Templates to
                                      Aspect Models</p></td>
@@ -776,6 +815,7 @@ The available options and their meaning can also be seen in the help text of the
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
 <h3 id="custom-model-resolver"><a class="anchor" href="#custom-model-resolver"></a>Custom model resolver</h3>
 <div class="paragraph">
@@ -904,7 +944,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.3.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.5.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -987,7 +1027,7 @@ Please bear in mind that these blocks are snippets or fragments of a larger whol
   "openapi" : "3.0.3",
   "info" : {
     "title" : "TestAspect", <i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
-    "version" : "v2" <i class="conum" data-value="1"></i><b>(1)</b>
+    "version" : "v1" <i class="conum" data-value="1"></i><b>(1)</b>
   }
 }</code></pre>
 </div>
@@ -1015,10 +1055,10 @@ Please bear in mind that these blocks are snippets or fragments of a larger whol
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
  "servers" : [ {
-    "url" : "http://example.com/api/v2", <i class="conum" data-value="1"></i><b>(1)</b>
+    "url" : "http://example.com/api/v1", <i class="conum" data-value="1"></i><b>(1)</b>
     "variables" : {
       "api-version" : {
-        "default" : "v2" <i class="conum" data-value="1"></i><b>(1)</b>
+        "default" : "v1" <i class="conum" data-value="1"></i><b>(1)</b>
       }
     }
   } ]
@@ -1437,7 +1477,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.3.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.5.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1492,7 +1532,7 @@ Please bear in mind that these blocks are snippets or fragments of a larger whol
   "asyncapi" : "3.0.0",
   "info" : {
     "title" : "My Movement Aspect MQTT API", <i class="conum" data-value="2"></i><b>(2)</b>
-    "version" : "v2", <i class="conum" data-value="1"></i><b>(1)</b>
+    "version" : "v1", <i class="conum" data-value="1"></i><b>(1)</b>
     "description" : "Aspect for movement information" <i class="conum" data-value="3"></i><b>(3)</b>
   }
 }</code></pre>

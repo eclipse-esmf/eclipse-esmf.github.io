@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.8.1">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.5">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.8.1</span>
+    <span class="version">2.9.5</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -140,8 +140,11 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.9.5</a>
+        </li>
         <li class="version">
-          <a href="../../2.9.3/index.html">2.9.3</a>
+          <a href="../../2.9.4/index.html">2.9.4</a>
         </li>
         <li class="version">
           <a href="../../2.9.2/index.html">2.9.2</a>
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../../2.9.0/index.html">2.9.0</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.8.1</a>
         </li>
       </ul>
     </li>
@@ -238,17 +238,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.8.1</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.9.5</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/java-aspect-tooling.html">master</a>
-    <a class="version" href="../../2.9.3/tooling-guide/java-aspect-tooling.html">2.9.3</a>
+    <a class="version is-current" href="java-aspect-tooling.html">2.9.5</a>
+    <a class="version" href="../../2.9.4/tooling-guide/java-aspect-tooling.html">2.9.4</a>
     <a class="version" href="../../2.9.2/tooling-guide/java-aspect-tooling.html">2.9.2</a>
     <a class="version" href="../../2.9.1/tooling-guide/java-aspect-tooling.html">2.9.1</a>
     <a class="version" href="../../2.9.0/tooling-guide/java-aspect-tooling.html">2.9.0</a>
-    <a class="version is-current" href="java-aspect-tooling.html">2.8.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.8.1/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.5/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -277,7 +277,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -290,7 +290,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -302,7 +302,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -310,55 +310,6 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 </dd>
 </dl>
 </div>
-</div>
-</div>
-<div class="paragraph">
-<p>The error handling in many APIs is done using the
-<code><a href="https://javadoc.io/doc/io.vavr/vavr/0.10.3/io/vavr/control/Try.html">Try</a></code> type provided by the Java
-library <em>Vavr</em>. This is similar to a <code>java.lang.Optional</code> in that a successful result can be
-processed using <code>.map()</code> or <code>.flatMap()</code>, but if an error occurs, the object can also provide the
-original exception using the <code>getCause()</code> method. Compared with throwing exceptions, using a
-<code>Try&lt;T&gt;</code> as a return type instead has the advantage of enabling composable error handling. Please
-see the <a href="https://www.vavr.io/vavr-docs/">Vavr User Guide</a> for more information.</p>
-</div>
-<div class="paragraph">
-<p>You generally have multiple options for handling <code>Try&lt;T&gt;</code> results, similar to dealing with <code>Optional</code>:</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.ArrayList;
-import java.util.List;
-
-import io.vavr.collection.Stream;
-import io.vavr.control.Try;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final Try&lt;List&lt;String&gt;&gt; tryList = someMethodReturningTryOfListOfString();
-
-// Option 1: forEach to execute code on the value
-tryList.forEach( valueList -&gt; {
-   final List&lt;String&gt; result1 = new ArrayList&lt;&gt;();
-   for ( final String element : valueList ) {
-      result1.add( element.toUpperCase() );
-   }
-} );
-
-// Option 2: map/flatMap values
-final List&lt;String&gt; result2 = tryList.toStream().flatMap( Stream::ofAll )
-      .map( String::toUpperCase ).toJavaList();
-
-// Option 3: "extract" value and throw on failure
-final List&lt;String&gt; valueList = tryList.getOrElseThrow( () -&gt;
-      new RuntimeException( tryList.getCause() ) );
-final List&lt;String&gt; result3 = new ArrayList&lt;&gt;();
-for ( final String element : valueList ) {
-   result3.add( element.toUpperCase() );
-}</code></pre>
 </div>
 </div>
 </div>
@@ -437,7 +388,7 @@ building the native image; for more information see
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModelUrn urn = AspectModelUrn.fromUrn( "urn:samm:com.example:1.0.0#Example" );
-final String namespace = urn.getNamespace(); // com.example
+final String namespace = urn.getNamespaceMainPart(); // com.example
 final String name = urn.getName();           // Example
 final String version = urn.getVersion();     // 1.0.0
 final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</code></pre>
@@ -459,7 +410,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-urn&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -472,7 +423,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -484,7 +435,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -500,13 +451,13 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <h2 id="loading-and-saving"><a class="anchor" href="#loading-and-saving"></a>Loading and Saving Aspect Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Aspect models are, like their Meta Model, described using the Resource Description Format (RDF,
-<a href="../../../samm-specification/snapshot/appendix/bibliography.html#rdf11" class="xref page">[rdf11]</a>) and the Terse RDF Triple Language syntax (TTL,
-<a href="../../../samm-specification/snapshot/appendix/bibliography.html#turtle" class="xref page">[turtle]</a>). There are two ways of working with Aspect models:
-Either the model is loaded as an RDF model where the abstraction level directly corresponds to the RDF/Turtle
-serialization, or the RDF is parsed into a native Java Aspect model representation where the abstraction level
-corresponds to the SAMM concepts. Both approaches have different use cases and advantages and both are supported by the
-Aspect model Java tooling:</p>
+<p>Aspect models are, like the Semantic Aspect Meta Model, described using the Resource Description Format (RDF,
+<a href="../../../samm-specification/snapshot/appendix/bibliography.html#rdf11" class="xref page">[rdf11]</a>) and the Terse RDF Triple Language syntax
+(TTL, <a href="../../../samm-specification/snapshot/appendix/bibliography.html#turtle" class="xref page">[turtle]</a>). When an Aspect Model is loaded,
+there are two ways of working with it: Either on the abstraction level of the underlying RDF/Turtle
+serialization, or on the native Java Aspect Model level, where the model is represented as a Java object
+graph. Both approaches have different use cases and advantages and both are supported by the Aspect Model Java
+tooling:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -530,10 +481,10 @@ Aspect model Java tooling:</p>
 <p>Flexibly navigate and filter the model on the RDF statements level</p>
 </li>
 <li>
-<p>Work with models that are valid RDF, but incomplete Aspect models, e.g. in Aspect model editors</p>
+<p>Work with models that are valid RDF, but incomplete Aspect Models, e.g. in Aspect model editors</p>
 </li>
 <li>
-<p>Use SPARQL <a href="../../../samm-specification/snapshot/appendix/bibliography.html#sparql" class="xref page">[sparql]</a> to execute complex queries on Aspect models</p>
+<p>Use SPARQL <a href="../../../samm-specification/snapshot/appendix/bibliography.html#sparql" class="xref page">[sparql]</a> to execute complex queries on Aspect Models</p>
 </li>
 </ul>
 </div></div></td>
@@ -543,13 +494,13 @@ Aspect model Java tooling:</p>
 <p>High level, focus on convenience and type-safety</p>
 </li>
 <li>
-<p>Use Aspect-model specific interfaces for type-safe code</p>
+<p>Use Aspect Model-specific interfaces for type-safe code</p>
 </li>
 <li>
-<p>Use Java-native data types (e.g. <code>java.math.BigInteger</code> for <code>xsd:integer</code>)</p>
+<p>Use Java native data types (e.g. <code>java.math.BigInteger</code> for <code>xsd:integer</code>)</p>
 </li>
 <li>
-<p>Easily traverse the model on the abstraction level of Aspect model elements</p>
+<p>Easily traverse the model on the abstraction level of Aspect Model elements</p>
 </li>
 </ul>
 </div></div></td>
@@ -557,202 +508,65 @@ Aspect model Java tooling:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>As a rule of thumb, if your use case mostly consists of <em>consuming</em> Aspect models, you should prefer the Java Aspect
-model, if you <em>create</em> or <em>edit</em> Aspect models, this is better done using the RDF API.</p>
-</div>
-<div class="sect2">
-<h3 id="understanding-model-resolution"><a class="anchor" href="#understanding-model-resolution"></a>Understanding Model Resolution</h3>
-<div class="paragraph">
-<p>Loading an Aspect model in either the RDF-based or the Java Aspect model-based APIs does not only comprise parsing the
-Turtle file, but also the resolution of elements on the RDF level:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An Aspect model refers to meta model elements (everything that starts with <code>samm:</code>), and can refer to namespaces of
-shared elements (<code>samm-c</code>, <code>samm-e</code> and <code>unit</code>)</p>
-</li>
-<li>
-<p>It can also refer to elements from other Aspect models or model elements defined in separate Turtle files</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You use the <em>model resolver</em> to load an Aspect model, which takes care of the first point: The used meta model elements
-and elements from shared namespaces are automatically resolved and added to the loaded RDF model. For the second point,
-you need to provide the model resolver with the information on where to find other Aspect models: In memory, in a local
-file system, in a remote model repository etc. This is done using a <em>resolution strategy</em>, which is a function from some
-type <code>T</code> to a <code>Try</code> of a RDF model. Several commonly used resolution strategies are readily available:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>FileSystemStrategy</code> resolves a <code>java.nio.file.Path</code> for a file relative
-to the <a href="samm-cli.html#models-directory-structure" class="xref page">models directory</a></p>
-</li>
-<li>
-<p>The <code>ClassPathStrategy</code> resolves a model from resources in the Java class path</p>
-</li>
-<li>
-<p>The <code>EitherStrategy</code> can be used to chain two different strategies of different types</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>To implement custom resolution strategies (e.g., to resolve models against a different blob storage API), you can base
-your implementation on the <code>AbstractResolutionStrategy</code>. Using the model resolver requires at least one resolution
-strategy that can resolve <code>AspectModelUrn</code>&#8203;s (because references in an Aspect model to external model elements use
-their respective URNs) and can use another resolution strategy, for example for file paths. The following sections show
-examples for the different variants.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="loading-an-aspect-model-rdf-level"><a class="anchor" href="#loading-an-aspect-model-rdf-level"></a>Loading an Aspect Model to work on the RDF Level</h3>
-<div class="paragraph">
-<p>The following example shows how to use the <code>AspectModelResolver</code> to load an Aspect Model</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.vocabulary.RDF;
-import org.eclipse.esmf.samm.KnownVersion;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
-import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
-import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;
-import io.vavr.control.Try;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ); <i class="conum" data-value="1"></i><b>(1)</b>
-final Try&lt;VersionedModel&gt; tryModel = AspectModelResolver.loadAndResolveModel( modelFile ); <i class="conum" data-value="2"></i><b>(2)</b>
-
-// Let's do something with the loaded model on RDF level
-tryModel.forEach( versionedModel -&gt; { <i class="conum" data-value="3"></i><b>(3)</b>
-   final SAMM samm = new SAMM( KnownVersion.fromVersionString( versionedModel.getMetaModelVersion().toString() ).get() );
-   final Model rdfModel = versionedModel.getModel();
-   final List&lt;Statement&gt; result = rdfModel.listStatements( null, RDF.type, samm.Aspect() ).toList();<i class="conum" data-value="4"></i><b>(4)</b>
-} );</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The file must be located in a directory according to the
-<a href="samm-cli.html#models-directory-structure" class="xref page">models directory</a> structure.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>You can check if loading succeeded using <code>versionedModel.isSuccess()</code> and
-<code>versionedModel.isFailure()</code>. If loading fails, <code>versionedModel.getCause()</code> provides more
-information.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>The code inside <code>forEach</code> is only executed if the model could be loaded successfully.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>List all statements in the RDF model that declare a <code>samm:Aspect</code>.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>If you want to choose which model resolution strategy is used, you use the <code>resolveAspectModel()</code>
-method of the <code>AspectModelResolver</code>. In this case, you need to provide the resolution strategy and
-the initial input (<code>InputStream</code>, <code>Model</code> or a <code>String</code> containing RDF/Turtle), or one or more URNs
-of model elements to resolve - have a look at the methods provided by <code>AspectModelResolver</code>.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.vocabulary.RDF;
-import org.eclipse.esmf.samm.KnownVersion;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
-import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
-import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;
-import io.vavr.control.Try;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// The directory containing the models folder structure,
-// see <span class="underline"><a href="samm-cli.html#models-directory-structure" class="xref page">models directory structure</a></span>
-final Path modelsRoot = Paths.get( "aspect-models" );
-final ResolutionStrategy fileSystemStrategy = new FileSystemStrategy( modelsRoot );
-final Try&lt;VersionedModel&gt; tryModel = new AspectModelResolver().resolveAspectModel( fileSystemStrategy,
-      AspectModelUrn.fromUrn( "urn:samm:org.eclipse.esmf.examples.movement:1.0.0#Movement" ) );</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To include the model resolver artifact, use the following dependencies:</p>
-</div>
-<div class="paragraph">
-<p>Unresolved include directive in modules/tooling-guide/pages/java-aspect-tooling.adoc - include::esmf-developer-guide:ROOT:partial$esmf-aspect-model-resolver-artifact.adoc[]</p>
-</div>
+<p>As a rule of thumb, if your use case mostly consists of <em>consuming</em> Aspect models, you should prefer the Java
+Aspect model, if you <em>create</em> or <em>edit</em> Aspect models, or build code interfacing with other RDF vocabularies,
+this is better done using the RDF API.</p>
 </div>
 <div class="sect2">
 <h3 id="loading-an-aspect-model-java-model-level"><a class="anchor" href="#loading-an-aspect-model-java-model-level"></a>Loading an Aspect Model to work on the Java Aspect Model Level</h3>
 <div class="paragraph">
-<p>If you have retrieved a <code>Try&lt;VersionedModel&gt;</code> as shown above, you can use the <code>AspectModelLoader</code> to
-turn the RDF graph representation of the Aspect Model into a type-safe Java object. You can use the
-<code>getElements()</code> method to get all model elements from the Aspect Model, or, if you expect the model
-to contain exactly one Aspect (for example in unit tests), you can use the <code>getSingleAspect()</code> method.</p>
+<p>To load an AspectModel, you use the <code>org.eclipse.esmf.aspectmodel.loader.AspectModelLoader</code> class. An instance
+of <code>AspectModelLoader</code> provides <code>load()</code> methods to load an Aspect Model from an InputStream, one or multiple
+Files, or a number of <code>AspectModelUrn</code> (where you can delegate finding out <em>where</em> a model element is defined
+to the AspectModelLoader - details on that are explained in the next section).</p>
+</div>
+<div class="paragraph">
+<p>The <code>AspectModelLoader</code> loads Aspect Models based on the most recent version of the Semantic Aspect Meta Model
+and previous versions: Models based on older meta model versions are automatically translated to models
+corresponding to the latest meta model version.</p>
+</div>
+<div class="paragraph">
+<p>The resulting <code>AspectModel</code> object contains information about the loaded model elements, their
+namespaces and the files they were defined in. Details about the structure of these objects can be
+found in the
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md">Decision
+Record 0007</a>. The <code>AspectModel</code> provides the methods <code>elements()</code>, <code>files()</code> and <code>namespaces()</code> as
+well as the convenience methods <code>aspects()</code> (which returns all Aspect elements in the model) and
+<code>aspect()</code>, which returns the single Aspect element if one exists.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.util.List;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.NamedElement;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import io.vavr.collection.Stream;</code></pre>
+
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
-final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( modelFile )
-      .flatMap( AspectModelLoader::getElements )
-      .toStream()
-      .flatMap( Stream::ofAll )
-      .filter( element -&gt; element.is( NamedElement.class ) )
-      .map( element -&gt; element.as( NamedElement.class ) )
-      .map( modelElement -&gt; String.format( "Model element: %s has URN %s%n",
-            modelElement.getName(), modelElement.getAspectModelUrn() ) )
-      .toJavaList();</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      final AspectModel aspectModel = new AspectModelLoader().load(
+            // a File, InputStream or AspectModelUrn
+            new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" )
+      );
+
+      // Do something with the elements
+      for ( final ModelElement element : aspectModel.elements() ) {
+         System.out.printf( "Model element: %s has URN %s%n", element.getName(), element.urn() );
+      }
+
+      // Directly work with the Aspect, if the AspectModel happens to contain
+      // exactly one Aspect. If there are 0 or &gt;1 Aspects, this will throw an exception.
+      System.out.println( "Aspect URN: " + aspectModel.aspect().urn() );
+   }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To include the Java Aspect model artifact, use the following dependencies:</p>
+<p>To include the Java Aspect Model artifact, use the following dependency:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -767,7 +581,7 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -780,7 +594,7 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -792,7 +606,7 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -804,11 +618,128 @@ final List&lt;String&gt; result = AspectModelResolver.loadAndResolveModel( model
 </div>
 </div>
 <div class="sect2">
+<h3 id="understanding-model-resolution"><a class="anchor" href="#understanding-model-resolution"></a>Understanding Model Resolution</h3>
+<div class="paragraph">
+<p>The example in the last section showed how a self-contained Aspect Model file can be loaded (i.e., a
+file that does not refer to model element definitions in other files or namespaces). Whenever models
+are loaded that could contain such references, or you want to load a model element by URN, the
+AspectModelLoader relies on so-called <em>resolution strategies</em>. A resolution strategy is a function
+that takes a model element identifier (a model element URN) as an input and returns the content of
+the file that contains the corresponding model element definition. Note that this is not necessarily
+a file in the local filesystem, but it could also be a remote file or even exist only virtually as a
+collection of statements in an RDF triple store. Several <code>ResolutionStrategy</code>&#8203;s are provided
+that can be instantiated and passed to the <code>AspectModelLoader</code> constructor to enable it to find
+model element definitions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>FileSystemStrategy</code> resolves elements from files in the file system which are either structured in the
+<a href="samm-cli.html#models-directory-structure" class="xref page">models directory structure</a> or exist as flat
+list of files in one directory (by using <code>FileSystemStrategy</code> with a <code>FlatModelsRoot</code>).</p>
+</li>
+<li>
+<p>The <code>ClassPathStrategy</code> resolves model elements from resources in the Java class path.</p>
+</li>
+<li>
+<p>The <code>FromLoadedFileStrategy</code> resolves model elements from an <code>AspectModelFile</code> that already resides in
+memory.</p>
+</li>
+<li>
+<p>The <code>EitherStrategy</code> can be used to chain two or more different <code>ResolutionStrategy</code>&#8203;s.</p>
+</li>
+<li>
+<p>The <code>ExternalResolverStrategy</code> delegates resolution to an external command such as a script; it is used in
+the implementation of the <code>--custom-resolver</code> option of the <a href="samm-cli.html" class="xref page">samm-cli</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, custom resolution strategies can be provided by implementing the <code>ResolutionStrategy</code> interface.</p>
+</div>
+<div class="paragraph">
+<p>The following example demonstrates how to pass a custom instance of a <code>ResolutionStrategy</code> and resolve a model
+element by URN:</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
+import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
+import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
+import org.eclipse.esmf.metamodel.AspectModel;
+import org.eclipse.esmf.metamodel.vocabulary.SammNs;
+
+import org.apache.jena.vocabulary.RDF;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// The directory containing the models folder structure,
+// see <span class="underline"><a href="samm-cli.html#models-directory-structure" class="xref page">models directory structure</a></span>
+final Path modelsRoot = Paths.get( "aspect-models" );
+final ResolutionStrategy fileSystemStrategy = new FileSystemStrategy( modelsRoot );
+final AspectModelUrn urn = AspectModelUrn.fromUrn( "urn:samm:org.eclipse.esmf.examples.movement:1.0.0#Movement" );
+final AspectModel result = new AspectModelLoader( fileSystemStrategy ).load( urn );</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loading-an-aspect-model-rdf-level"><a class="anchor" href="#loading-an-aspect-model-rdf-level"></a>Loading an Aspect Model to work on the RDF Level</h3>
+<div class="paragraph">
+<p>The following example shows how to use the <code>AspectModelResolver</code> to load an Aspect Model.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
+import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
+import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
+import org.eclipse.esmf.metamodel.AspectModel;
+import org.eclipse.esmf.metamodel.vocabulary.SammNs;
+
+import org.apache.jena.vocabulary.RDF;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
+      // a File, InputStream or AspectModelUrn
+);
+
+// Do something with the Aspect Model on the RDF level.
+// Example: List the URNs of all samm:Entitys
+aspectModel.mergedModel().listStatements( null, RDF.type, SammNs.SAMM.Entity() )
+      .forEachRemaining( statement -&gt; System.out.println( statement.getSubject().getURI() ) );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After loading an <code>AspectModel</code> using the <code>AspectModelLoader</code>, you can access the <code>mergedModel()</code> on the
+<code>AspectModel</code>, which represents the merged RDF graph of all source files that were loaded in the model and
+therefore contains all transitively referenced model element definitions. Alternatively, you can also access
+the <code>sourceModel()</code> of each Aspect Model file given by <code>files()</code>, which will return only the RDF graph of this
+file.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="serializing-an-aspect-model"><a class="anchor" href="#serializing-an-aspect-model"></a>Serializing a Java Aspect Model into a RDF/Turtle Aspect Model</h3>
 <div class="paragraph">
-<p>There are two serialization components available: One to turn a Java Aspect model into a Jena RDF model (the reverse
-operation of what the <code>AspectModelLoader</code> does) and one to serialize the resulting Jena RDF model in Turtle syntax,
-formatted according to the guidelines described in the SAMM specification.</p>
+<p>The serialize an Aspect into its corresponding RDF/Turtle representation, you can use the <code>AspectSerializer</code>,
+as demonstrated in the example below:</p>
 </div>
 <details>
 <summary>Show used imports</summary>
@@ -816,20 +747,20 @@ formatted according to the guidelines described in the SAMM specification.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
 
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.aspectmodel.serializer.AspectSerializer;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
 // A String that contains the pretty printed Aspect Model
-String aspectString = AspectSerializer.INSTANCE.apply( aspect );</code></pre>
+final String aspectString =
+    AspectSerializer.INSTANCE.aspectToString( aspectModel.aspect() );</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -848,7 +779,7 @@ String aspectString = AspectSerializer.INSTANCE.apply( aspect );</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-serializer&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -861,7 +792,7 @@ String aspectString = AspectSerializer.INSTANCE.apply( aspect );</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -873,7 +804,7 @@ String aspectString = AspectSerializer.INSTANCE.apply( aspect );</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -907,25 +838,24 @@ context information specific to this type, for example, the <code>MinLengthViola
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.List;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.util.List;
 
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.aspectmodel.shacl.violation.Violation;
 import org.eclipse.esmf.aspectmodel.validation.services.AspectModelValidator;
 import org.eclipse.esmf.aspectmodel.validation.services.DetailedViolationFormatter;
 import org.eclipse.esmf.aspectmodel.validation.services.ViolationFormatter;
-import io.vavr.control.Try;
-import java.io.File;</code></pre>
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Try&lt;VersionedModel&gt; as returned by the AspectModelResolver
-final Try&lt;VersionedModel&gt; tryModel = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-final List&lt;Violation&gt; violations = new AspectModelValidator().validateModel( tryModel );
+final List&lt;Violation&gt; violations = new AspectModelValidator().validateModel( aspectModel );
 if ( violations.isEmpty() ) {
    // Aspect Model is valid!
    return;
@@ -956,11 +886,18 @@ CLIs.</td>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Every application dealing with validation results that needs to transform the results into some
-different structure should instead implement the <code>Violation.Visitor</code> Interface with a suitable target
+different structure can implement the <code>Violation.Visitor</code> Interface with a suitable target
 type <code>(String</code> used as an example here) and use the visitor to handle the different types of
 Violations in a type-safe way.</td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The <code>AspectModelValidator</code> also provides the <code>loadModel(Supplier&lt;AspectModel&gt;)</code> method that can be used in
+conjunction with <code>() &#8594; new AspectModeLoader().load(&#8230;&#8203;)</code> to have exceptions that might be created during the
+Aspect Model loading process, for example due to model resolution failures or syntax errors in the input
+files, be turned into a <code>List&lt;Violation&gt;</code> that can be passed to the aforementioned violation formatters. This
+allows for custom structured handling of problems that occur during model loading.</p>
 </div>
 <div class="paragraph">
 <p>To include the model validator, use the following dependencies:</p>
@@ -978,7 +915,7 @@ Violations in a type-safe way.</td>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-validator&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -991,7 +928,7 @@ Violations in a type-safe way.</td>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -1003,7 +940,7 @@ Violations in a type-safe way.</td>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -1035,7 +972,7 @@ following dependency:</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-document-generators&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1048,7 +985,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -1060,7 +997,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -1088,8 +1025,8 @@ defined for calling the generators:</p>
 <div class="sect2">
 <h3 id="generating-diagrams"><a class="anchor" href="#generating-diagrams"></a>Generating SVG or PNG Diagrams</h3>
 <div class="paragraph">
-<p>Using the <code>AspectModelDiagramGenerator</code>, automatically layouted diagrams can be created for Aspect models in the formats
-PNG, SVG and <a href="https://www.graphviz.org/">Graphviz/DOT</a>.</p>
+<p>Using the <code>AspectModelDiagramGenerator</code>, automatically layouted diagrams can be created for Aspect models in
+the formats PNG and SVG.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
@@ -1098,22 +1035,20 @@ PNG, SVG and <a href="https://www.graphviz.org/">Graphviz/DOT</a>.</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.OutputStream;
 import java.util.Locale;
 import java.util.Set;
+
 import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator;
 import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator.Format;
-import org.eclipse.esmf.metamodel.AspectContext;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-
-import java.io.File;
-import java.io.IOException;</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectContext as returned by the AspectModelLoader
-final AspectContext model = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-final AspectModelDiagramGenerator generator = new AspectModelDiagramGenerator( model ); <i class="conum" data-value="1"></i><b>(1)</b>
+final AspectModelDiagramGenerator generator = new AspectModelDiagramGenerator( aspectModel.aspect() ); <i class="conum" data-value="1"></i><b>(1)</b>
 
 // Variant 1: Generate a diagram in SVG format using @en descriptions and preferredNames from the model
 final OutputStream output = outputStreamForName( "diagram.svg" );
@@ -1155,37 +1090,43 @@ each model element.</p>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.nio.file.Paths;
-import java.util.Collection;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.io.IOException;
 import java.util.Map;
+
 import org.eclipse.esmf.aspectmodel.generator.docu.AspectModelDocumentationGenerator;
 import org.eclipse.esmf.aspectmodel.generator.docu.AspectModelDocumentationGenerator.HtmlGenerationOption;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
-import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.AspectContext;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.IOException;</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+// end:imports[]
+
+import org.junit.jupiter.api.Test;
+
+public class GenerateHtml extends AbstractGenerator {
+   @Test
+   public void generate() throws IOException {
+      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+      final AspectModelDocumentationGenerator generator = <i class="conum" data-value="1"></i><b>(1)</b>
+            new AspectModelDocumentationGenerator( aspectModel.aspect() );
+
+      final Map&lt;HtmlGenerationOption, String&gt; options = Map.of(); <i class="conum" data-value="2"></i><b>(2)</b>
+      generator.generate( this::outputStreamForName, options );
+   }
+}</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModelUrn targetAspect
-      = AspectModelUrn.fromUrn( "urn:samm:org.eclipse.esmf.examples.movement:1.0.0#Movement" );
-// VersionedModel as returned by the AspectModelResolver
-final VersionedModel model = // ...
-final Aspect aspect = AspectModelLoader.getAspects( model ).toJavaStream() <i class="conum" data-value="1"></i><b>(1)</b>
-      .flatMap( Collection::stream )
-      .filter( theAspect -&gt; theAspect.getAspectModelUrn().map( urn -&gt; urn.equals( targetAspect ) ).orElse( false ) )
-      .findFirst().orElseThrow();
-final AspectModelDocumentationGenerator generator = <i class="conum" data-value="2"></i><b>(2)</b>
-      new AspectModelDocumentationGenerator( new AspectContext( model, aspect ) );
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+final AspectModelDocumentationGenerator generator = <i class="conum" data-value="1"></i><b>(1)</b>
+      new AspectModelDocumentationGenerator( aspectModel.aspect() );
 
-final Map&lt;HtmlGenerationOption, String&gt; options = Map.of(); <i class="conum" data-value="3"></i><b>(3)</b>
+final Map&lt;HtmlGenerationOption, String&gt; options = Map.of(); <i class="conum" data-value="2"></i><b>(2)</b>
 generator.generate( this::outputStreamForName, options );</code></pre>
 </div>
 </div>
@@ -1193,15 +1134,11 @@ generator.generate( this::outputStreamForName, options );</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Load and select the Aspect from the loaded model for which generation should be generated.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>The HTML generator is initialized with the context consisting of the loaded RDF model and the
 selected Aspect.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>HTML generation can be controlled via a map of options; using an empty map implies default values.</td>
 </tr>
 </table>
@@ -1220,22 +1157,18 @@ respective data types are generated.</p>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.io.IOException;
-
-import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-final AspectModelJsonPayloadGenerator generator = new AspectModelJsonPayloadGenerator( aspect );
+final AspectModelJsonPayloadGenerator generator = new AspectModelJsonPayloadGenerator( aspectModel.aspect() );
 
 // Variant 1: Direct generation into a String
 final String jsonString = generator.generateJson();
@@ -1262,23 +1195,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.esmf.aspectmodel.generator.jsonschema.AspectModelJsonSchemaGenerator;
 import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfig;
 import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.File;
-import java.io.IOException;</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
 final JsonSchemaGenerationConfig config = JsonSchemaGenerationConfigBuilder.builder()
       .locale( Locale.ENGLISH )
       .build();
-final JsonNode jsonSchema = AspectModelJsonSchemaGenerator.INSTANCE.apply( aspect, config ).getContent();
+final JsonNode jsonSchema = AspectModelJsonSchemaGenerator.INSTANCE.apply( aspectModel.aspect(), config ).getContent();
 
 // If needed, print or pretty print it into a string
 final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -1302,35 +1232,30 @@ and <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
 
 import org.eclipse.esmf.aspectmodel.generator.openapi.AspectModelOpenApiGenerator;
 import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfig;
 import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.generator.openapi.PagingOption;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import org.junit.jupiter.api.Test;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Generate OpenAPI YAML</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
 
-public class GenerateOpenApi {
-   @Test
-   public void generateYaml() throws JsonProcessingException {
-      final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
-
-      // Aspect as created by the AspectModelLoader
-      final Aspect aspect = // ...
-            // exclude the actual loading from the example to reduce noise
-            AspectModelResolver.loadAndResolveModel( modelFile ).flatMap( AspectModelLoader::getSingleAspect ).get();
-
-      //language=yaml
       final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
             // Server URL
             .baseUrl( "http://www.example.com" )
@@ -1360,16 +1285,15 @@ public class GenerateOpenApi {
 
       // Generate pretty-printed YAML
       final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-      final String yaml = generator.apply( aspect, config ).getContentAsYaml();
+      final String yaml = generator.apply( aspectModel.aspect(), config ).getContentAsYaml();
    }
 
    @Test
    public void generateJson() throws IOException {
-      final File modelFile = new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" );
-      // Aspect as created by the AspectModelLoader
-      final Aspect aspect = // ...
-            // exclude the actual loading from the example to reduce noise
-            AspectModelResolver.loadAndResolveModel( modelFile ).flatMap( AspectModelLoader::getSingleAspect ).get();
+      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
 
       final ObjectMapper objectMapper = new ObjectMapper();
       final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
@@ -1405,7 +1329,7 @@ public class GenerateOpenApi {
 
       // Generate the JSON
       final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-      final JsonNode json = generator.apply( aspect, config ).getContent();
+      final JsonNode json = generator.apply( aspectModel.aspect(), config ).getContent();
 
       // If needed, print or pretty print it into a string
       final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -1420,93 +1344,61 @@ public class GenerateOpenApi {
 }</code></pre>
 </div>
 </div>
-</details>
-<div class="listingblock">
-<div class="title">Generate OpenAPI YAML</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
-
-//language=yaml
-final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-      // Server URL
-      .baseUrl( "http://www.example.com" )
-      // The resource path which shall be added
-      .resourcePath( "/testPath/{parameter}" )
-      // Determines whether semantic versioning should be used for the API
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // A String containing all the information for dynamic properties mentioned in the resource path.
-      // The string must be syntactically valid YAML.
-      .properties( readYaml( """
-            parameter:
-              name: parameter
-              in: path
-              description: "A parameter."
-              required: true
-              schema:
-                type: string
-            """ ) )
-      // Should the query API be added to the generated specification?
-      .includeQueryApi( true )
-      // The paging Option to be chosen. In case paging is possible:
-      // The default for a time related collection is time-based paging.
-      // Otherwise the default is offset-based paging.
-      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-      .build();
-
-// Generate pretty-printed YAML
-final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-final String yaml = generator.apply( aspect, config ).getContentAsYaml();</code></pre>
-</div>
-</div>
 <div class="listingblock">
 <div class="title">Generate OpenAPI JSON</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
 
-final ObjectMapper objectMapper = new ObjectMapper();
-final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-      // Server URL
-      .baseUrl( "http://www.example.com" )
-      // The resource path which shall be added
-      .resourcePath( "/testPath/{parameter}" )
-      // Determines whether semantic versioning should be used for the API
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // A JsonNode containing all the information for variable properties mentioned
-      // in the resource path .
-      .properties( readYaml( """
-               {
-                 "test-Id": {
-                   "name": "test-Id",
-                   "in": "path",
-                   "description": "The ID of the unit.",
-                   "required": true,
-                   "schema": {
-                     "type": "string"
-                   }
-                 }
-               }
-            """ ) )
-      // Should the query API be added to the generated specification?
-      .includeQueryApi( true )
-      // The paging Option to be chosen. In case paging is possible:
-      // The default for a time related collection is time-based paging.
-      // Otherwise the default is offset-based paging.
-      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-      .build();
+      final ObjectMapper objectMapper = new ObjectMapper();
+      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+            // Server URL
+            .baseUrl( "http://www.example.com" )
+            // The resource path which shall be added
+            .resourcePath( "/testPath/{parameter}" )
+            // Determines whether semantic versioning should be used for the API
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // A JsonNode containing all the information for variable properties mentioned
+            // in the resource path .
+            .properties( readYaml( """
+                     {
+                       "test-Id": {
+                         "name": "test-Id",
+                         "in": "path",
+                         "description": "The ID of the unit.",
+                         "required": true,
+                         "schema": {
+                           "type": "string"
+                         }
+                       }
+                     }
+                  """ ) )
+            // Should the query API be added to the generated specification?
+            .includeQueryApi( true )
+            // The paging Option to be chosen. In case paging is possible:
+            // The default for a time related collection is time-based paging.
+            // Otherwise the default is offset-based paging.
+            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+            .build();
 
-// Generate the JSON
-final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
-final JsonNode json = generator.apply( aspect, config ).getContent();
+      // Generate the JSON
+      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator();
+      final JsonNode json = generator.apply( aspectModel.aspect(), config ).getContent();
 
-// If needed, print or pretty print it into a string
-final ByteArrayOutputStream out = new ByteArrayOutputStream();
+      // If needed, print or pretty print it into a string
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
-final String result = out.toString();</code></pre>
+      objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+      final String result = out.toString();
+   }
+
+   private static ObjectNode readYaml( String content ) throws JsonProcessingException {
+      return (ObjectNode) new YAMLMapper().readTree( content );
+   }
+}</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1539,18 +1431,14 @@ and <a href="https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md">3.0.
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import org.eclipse.esmf.aspectmodel.generator.asyncapi.AspectModelAsyncApiGenerator;
 import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfig;
 import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
@@ -1561,54 +1449,87 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;</code></pre>
 <div class="listingblock">
 <div class="title">Generate AsyncAPI YAML</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
 
-final ObjectMapper yamlMapper = new YAMLMapper().enable( YAMLGenerator.Feature.MINIMIZE_QUOTES );
+      final ObjectMapper yamlMapper = new YAMLMapper().enable( YAMLGenerator.Feature.MINIMIZE_QUOTES );
 
-final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // Set Application id
-      .applicationId( "test:serve" )
-      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-      .build();
+      final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // Set Application id
+            .applicationId( "test:serve" )
+            .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+            .build();
 
-// Generate pretty-printed YAML
-final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
-final JsonNode json = generator.apply( aspect, config ).getContent();
-final String yaml = yamlMapper.writeValueAsString( json );
+      // Generate pretty-printed YAML
+      final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+      final JsonNode json = generator.apply( aspectModel.aspect(), config ).getContent();
+      final String yaml = yamlMapper.writeValueAsString( json );
 
-final ByteArrayOutputStream out = new ByteArrayOutputStream();
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
+      out.write( yaml.getBytes( StandardCharsets.UTF_8 ) );
 
-out.write( yaml.getBytes( StandardCharsets.UTF_8 ) );
+      final String result = out.toString();
+   }
 
-final String result = out.toString();</code></pre>
+   @Test
+   public void generateJson() throws IOException {
+      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+
+      final ObjectMapper objectMapper = new ObjectMapper();
+      final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // Set Application id
+            .applicationId( "test:serve" )
+            .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+            .build();
+
+      // Generate the JSON
+      final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+      final JsonNode json = generator.apply( aspectModel.aspect(), config ).getContent();
+
+      // If needed, print or pretty print it into a string
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
+      objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+      final String result = out.toString();
+   }
+}</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Generate AsyncAPI JSON</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
+      final AspectModel aspectModel = // ...
+            new AspectModelLoader().load(
+                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
 
-final ObjectMapper objectMapper = new ObjectMapper();
-final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // Set Application id
-      .applicationId( "test:serve" )
-      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-      .build();
+      final ObjectMapper objectMapper = new ObjectMapper();
+      final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+            // i.e., true = v1.2.3, false = v1
+            .useSemanticVersion( false )
+            // Set Application id
+            .applicationId( "test:serve" )
+            .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+            .build();
 
-// Generate the JSON
-final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
-final JsonNode json = generator.apply( aspect, config ).getContent();
+      // Generate the JSON
+      final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator();
+      final JsonNode json = generator.apply( aspectModel.aspect(), config ).getContent();
 
-// If needed, print or pretty print it into a string
-final ByteArrayOutputStream out = new ByteArrayOutputStream();
-objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
-final String result = out.toString();</code></pre>
+      // If needed, print or pretty print it into a string
+      final ByteArrayOutputStream out = new ByteArrayOutputStream();
+      objectMapper.writerWithDefaultPrettyPrinter().writeValue( out, json );
+      final String result = out.toString();
+   }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1638,16 +1559,15 @@ import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksColumnDef
 import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfig;
 import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksType;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
 final DatabricksSqlGenerationConfig databricksSqlGenerationConfig =
       DatabricksSqlGenerationConfigBuilder.builder()
@@ -1669,7 +1589,7 @@ final SqlGenerationConfig sqlGenerationConfig =
             .mappingStrategy( SqlGenerationConfig.MappingStrategy.DENORMALIZED )
             .dialectSpecificConfig( databricksSqlGenerationConfig )
             .build();
-final String result = AspectModelSqlGenerator.INSTANCE.apply( aspect, sqlGenerationConfig ).getContent();</code></pre>
+final String result = AspectModelSqlGenerator.INSTANCE.apply( aspectModel.aspect(), sqlGenerationConfig ).getContent();</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -1914,7 +1834,7 @@ the information itself (<em>meta</em>).</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-java-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1927,7 +1847,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -1939,7 +1859,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -2123,9 +2043,9 @@ to handle the package structure of the class.</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfig;
 import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.java.pojo.AspectModelJavaGenerator;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+
 import java.io.File;
 import org.apache.commons.io.output.NullOutputStream;</code></pre>
 </div>
@@ -2133,14 +2053,14 @@ import org.apache.commons.io.output.NullOutputStream;</code></pre>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
 final JavaCodeGenerationConfig config = JavaCodeGenerationConfigBuilder.builder()
       .enableJacksonAnnotations( true )
       .packageName( "com.example.mycompany" ) // if left out, package is taken from Aspect's namespace
       .build();
-final AspectModelJavaGenerator generator = new AspectModelJavaGenerator( aspect, config );
+final AspectModelJavaGenerator generator = new AspectModelJavaGenerator( aspectModel.aspect(), config );
 generator.generate( qualifiedName -&gt; {
    // Create an output stream for the given qualified Java class name
 } );</code></pre>
@@ -2159,24 +2079,21 @@ generator.generate( qualifiedName -&gt; {
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfig;
 import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.java.metamodel.StaticMetaModelJavaGenerator;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-import java.io.File;
-import org.apache.commons.io.output.NullOutputStream;</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
 final JavaCodeGenerationConfig config = JavaCodeGenerationConfigBuilder.builder()
       .enableJacksonAnnotations( true )
       .packageName( "com.example.mycompany" ) // if left out, package is taken from Aspect's namespace
       .build();
-final StaticMetaModelJavaGenerator generator = new StaticMetaModelJavaGenerator( aspect, config );
+final StaticMetaModelJavaGenerator generator = new StaticMetaModelJavaGenerator( aspectModel.aspect(), config );
 generator.generate( qualifiedName -&gt; {
    // Create an output stream for the given qualified Java class name
 } );</code></pre>
@@ -2198,7 +2115,7 @@ generator.generate( qualifiedName -&gt; {
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-static-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2211,7 +2128,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -2223,7 +2140,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -2293,50 +2210,91 @@ When using custom macros, macros for all sections above must be provided.
 </div>
 </div>
 <div class="sect1">
-<h2 id="migrate-meta-model-version"><a class="anchor" href="#migrate-meta-model-version"></a>Programmatically migrate the Meta Model Version</h2>
+<h2 id="modifying-and-creating-aspect-models"><a class="anchor" href="#modifying-and-creating-aspect-models"></a>Modifying and creating Aspect Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The meta model version migrator provides functionality to automatically migrate an Aspect model that
-uses an older version of the Aspect Meta Model to an Aspect model that uses a newer (usually the
-latest) version of the meta model. Calling this functionality is <em>only</em> required if you intent to
-work with the raw RDF model (i.e., the <code>VersionedModel</code>). If you use the <code>AspectModelLoader</code> to load
-a model into <code>ModelElement</code>&#8203;s or <code>Aspect</code>&#8203;s, calling the <code>MigratorService</code> is not
-necessary, as it will be done automatically if necessary.</p>
-</div>
-<div class="paragraph">
-<p>The following sample shows usage of the migration:</p>
+<p>You can use the <code>AspectChangeManager</code> to modify an Aspect Model. Each modifying operation performed
+on an Aspect Model is called a <em>change</em>. Instances of classes that implement the <code>Change</code> interface
+can be passed to the <code>AspectChangeManager</code> <code>applyChange()</code> method. Available <code>Change</code>&#8203;s
+include renaming Aspect Model files or Model elements, adding and removing Aspect Model files and
+moving Aspect Model elements to other or new files in the same or another namespace.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
-import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
-import org.eclipse.esmf.aspectmodel.resolver.services.VersionedModel;
-import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
-import org.eclipse.esmf.aspectmodel.versionupdate.MigratorService;
-import io.vavr.control.Try;
-import java.nio.file.Paths;</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+import org.eclipse.esmf.aspectmodel.edit.AspectChangeManager;
+import org.eclipse.esmf.aspectmodel.edit.AspectChangeManagerConfig;
+import org.eclipse.esmf.aspectmodel.edit.AspectChangeManagerConfigBuilder;
+import org.eclipse.esmf.aspectmodel.edit.Change;
+import org.eclipse.esmf.aspectmodel.edit.ChangeGroup;
+import org.eclipse.esmf.aspectmodel.edit.ChangeReport;
+import org.eclipse.esmf.aspectmodel.edit.ChangeReportFormatter;
+import org.eclipse.esmf.aspectmodel.edit.change.MoveElementToNewFile;
+import org.eclipse.esmf.aspectmodel.edit.change.RenameElement;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Try&lt;VersionedModel&gt; as returned by the AspectModelResolver
-final Try&lt;VersionedModel&gt; tryModel = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
+      // a File, InputStream or AspectModelUrn
+);
 
-final Try&lt;VersionedModel&gt; tryMigratedModel = tryModel.flatMap( versionedModel -&gt;
-      new MigratorService().updateMetaModelVersion( versionedModel ) );
-final VersionedModel migratedModel = tryMigratedModel.getOrElseThrow( () -&gt;
-      new RuntimeException( tryMigratedModel.getCause() ) );</code></pre>
+// All changes to an Aspect Model are done using an AspectChangeManager.
+// Optionally, you can pass a config object as first constructor argument:
+final AspectChangeManagerConfig config = AspectChangeManagerConfigBuilder.builder()
+      .detailedChangeReport( true )
+      .defaultFileHeader( List.of( "Generated on "
+            + new SimpleDateFormat( "dd-MM-yyyy" ).format( new Date() ) ) )
+      .build();
+final AspectChangeManager changeManager = new AspectChangeManager( config, aspectModel );
+
+// You can create a single change, or you can combine multiple changes into a group.
+// For all possible refactoring operations, see classes implementing the Change interface.
+final Change refactorModel = new ChangeGroup( List.of(
+      // Rename an element. This works with with samm:Aspect and all other model elements.
+      new RenameElement( aspectModel.aspect(), "MyAspect" ),
+      // Move an element to a new Aspect Model file in the same namespace.
+      new MoveElementToNewFile(
+            // The element to move.
+            aspectModel.aspect().getProperties().get( 0 ),
+            // If you intend writing the model to the file system, set the location
+            // for the newly created file here.
+            Optional.empty() )
+) );
+
+// Apply the changes and get a report that summerizes the changes.
+final ChangeReport changeReport = changeManager.applyChange( refactorModel );
+
+// If you want to display the change report, you can serialize it to a string:
+ChangeReportFormatter.INSTANCE.apply( changeReport, config );
+
+// Alternatively, you can also get views on collections containing modified/
+// added/removed files for the last applied change.
+changeManager.createdFiles().forEach( file -&gt; System.out.println( "Created: " + file ) );
+changeManager.modifiedFiles().forEach( file -&gt; System.out.println( "Modified: " + file ) );
+changeManager.removedFiles().forEach( file -&gt; System.out.println( "Removed: " + file ) );
+
+// At this point, you could use the AspectChangeManager's undo() method to revert
+// the last change (refactorModel in this case); afterwards you can also redo().
+// This functionality is mainly interesting when refactoring the Aspect Model
+// interactively.
+
+// If you want to write the model changes to the file system, use the AspectSerializer.
+// Each AspectModelFile will be written to its respective source location.
+// Alternatively, the AspectSerializer also provides a method to write an AspectModelFile
+// into a String.
+AspectSerializer.INSTANCE.write( aspectModel );</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>To use the meta model version migrator, you need the following dependency:</p>
-</div>
-<div class="paragraph">
-<p>Unresolved include directive in modules/tooling-guide/pages/java-aspect-tooling.adoc - include::esmf-developer-guide:ROOT:partial$esmf-aspect-meta-model-version-migrator-artifact.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2344,9 +2302,9 @@ final VersionedModel migratedModel = tryMigratedModel.getOrElseThrow( () -&gt;
 <h2 id="accessing-samm-programmatically"><a class="anchor" href="#accessing-samm-programmatically"></a>Accessing the SAMM programmatically</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to access the source RDF files that describe the SAMM vocabulary, shared Characteristics and Entities as well
-as Units, you can add a dependency to the <code>esmf-aspect-meta-model</code> artifact. Note that this artifact does not contain any
-Java classes.</p>
+<p>In order to access the source RDF files that describe the SAMM vocabulary, shared Characteristics and Entities
+as well as Units, you can add a dependency to the <code>esmf-aspect-meta-model</code> artifact. Note that this artifact
+does not provide Java classes that represent the meta model.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2432,8 +2390,8 @@ structure that is present in the artifact:</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you use the artifact <code>aspect-model-resolver</code> instead (see section <a href="#loading-and-saving">Loading and Saving Aspect Models</a> for infos on the
-dependency) you can directly refer to the RDF files using a resource URL:
+You can use the <code>MetaModelFile</code> enumeration provided by the <code>esmf-aspect-meta-model-java</code> module to
+access object representations of the meta model files, for example:
 </td>
 </tr>
 </table>
@@ -2442,35 +2400,25 @@ dependency) you can directly refer to the RDF files using a resource URL:
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static org.eclipse.esmf.aspectmodel.resolver.services.TurtleLoader.loadTurtle;
-import static org.eclipse.esmf.aspectmodel.resolver.services.TurtleLoader.openUrl;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Optional;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.jena.rdf.model.Model;
 import org.apache.jena.vocabulary.RDF;
-import org.eclipse.esmf.samm.KnownVersion;
-import org.eclipse.esmf.aspectmodel.resolver.services.MetaModelUrls;
-import org.eclipse.esmf.aspectmodel.vocabulary.SAMM;</code></pre>
+
+import org.eclipse.esmf.aspectmodel.resolver.modelfile.MetaModelFile;
+import org.eclipse.esmf.metamodel.vocabulary.SammNs;
+import org.eclipse.esmf.samm.KnownVersion;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final KnownVersion metaModelVersion = KnownVersion.getLatest();
-final Optional&lt;URL&gt; characteristicDefinitionsUrl =
-      MetaModelUrls.url( "characteristic", metaModelVersion, "characteristic-instances.ttl" );
+final Model characteristicDefinitions = MetaModelFile.CHARACTERISTIC_DEFINITIONS.sourceModel();
 
-characteristicDefinitionsUrl.ifPresent( url -&gt; {
-   final InputStream inputStream = openUrl( url );
-   loadTurtle( inputStream ).forEach( model -&gt; {
-      // Do something with the org.apache.jena.org.rdf.model.Model
-      final SAMM samm = new SAMM( metaModelVersion );
-      final int numberOfCharacteristicInstances =
-            model.listStatements( null, RDF.type, samm.Characteristic() ).toList().size();
-      final String result = String.format( "Meta Model Version " + metaModelVersion.toVersionString()
-            + " defines " + numberOfCharacteristicInstances + " Characteristic instances" );
-   } );
-} );</code></pre>
+// Do something with the org.apache.jena.org.rdf.model.Model
+final int numberOfCharacteristicInstances =
+      characteristicDefinitions.listStatements( null, RDF.type, SammNs.SAMM.Characteristic() ).toList().size();
+final String result = String.format( "Meta Model Version " + metaModelVersion.toVersionString()
+      + " defines " + numberOfCharacteristicInstances + " Characteristic instances" );</code></pre>
 </div>
 </div>
 </div>
@@ -2671,21 +2619,18 @@ formats (JSON, XML, AASX) is used:</p>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.io.IOException;
-
-import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
 import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;</code></pre>
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Aspect as created by the AspectModelLoader
-final Aspect aspect = // ...
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
 final AspectModelAasGenerator generator = new AspectModelAasGenerator();
 
@@ -2713,7 +2658,7 @@ generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</co
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-aas-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.9.3&lt;/version&gt;
+    &lt;version&gt;2.9.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2726,7 +2671,7 @@ generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</co
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.5'</code></pre>
 </div>
 </div>
 </div>
@@ -2738,7 +2683,7 @@ generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</co
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.5")</code></pre>
 </div>
 </div>
 </div>
@@ -2761,55 +2706,14 @@ Templates to Aspect Models:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
 import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
 import org.eclipse.esmf.aspectmodel.aas.AasToAspectModelGenerator;
 import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
-import org.eclipse.esmf.aspectmodel.resolver.AspectModelResolver;
 import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.loader.AspectModelLoader;
-
-import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.Test;
-
-public class GenerateAspectFromAas extends AbstractGenerator {
-   private OutputStream outputStream( final Path directory, final String aspectName ) {
-      try {
-         return new FileOutputStream( directory.resolve( aspectName + ".aasx" ).toFile() );
-      } catch ( final FileNotFoundException exception ) {
-         throw new RuntimeException( exception );
-      }
-   }
-
-   @Test
-   public void generate() throws IOException {
-      final Path outputDirectory = Files.createTempDirectory( "junit" );
-      new AspectModelAasGenerator().generate( AasFileFormat.AASX,
-            AspectModelResolver.loadAndResolveModel( new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) )
-                  .flatMap( AspectModelLoader::getSingleAspect ).get(),
-            name -&gt; outputStream( outputDirectory, name ) );
-
-      final File file = // an AAS file that ends in .aasx, .xml or .json
-            outputDirectory.resolve( "Movement.aasx" ).toFile();
-
-      // Multiple "from" methods are available: fromFile (which checks the file extension),
-      // fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
-      final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
-      final List&lt;Aspect&gt; aspects = generator.generateAspects();
-      aspects.forEach( aspect -&gt; {
-         // do something with the generated aspect
-      } );
-
-      FileUtils.deleteDirectory( outputDirectory.toFile() );
-   }
-}</code></pre>
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
 </div>
 </details>
