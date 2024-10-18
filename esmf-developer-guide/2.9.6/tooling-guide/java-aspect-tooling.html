@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.0">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.6">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.9.0</span>
+    <span class="version">2.9.6</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -140,6 +140,9 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.9.6</a>
+        </li>
         <li class="version">
           <a href="../../2.9.5/index.html">2.9.5</a>
         </li>
@@ -151,9 +154,6 @@
         </li>
         <li class="version">
           <a href="../../2.9.1/index.html">2.9.1</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.9.0</a>
         </li>
       </ul>
     </li>
@@ -238,17 +238,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.9.0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.9.6</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/java-aspect-tooling.html">master</a>
+    <a class="version is-current" href="java-aspect-tooling.html">2.9.6</a>
     <a class="version" href="../../2.9.5/tooling-guide/java-aspect-tooling.html">2.9.5</a>
     <a class="version" href="../../2.9.4/tooling-guide/java-aspect-tooling.html">2.9.4</a>
     <a class="version" href="../../2.9.2/tooling-guide/java-aspect-tooling.html">2.9.2</a>
     <a class="version" href="../../2.9.1/tooling-guide/java-aspect-tooling.html">2.9.1</a>
-    <a class="version is-current" href="java-aspect-tooling.html">2.9.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.0/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.6/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -277,7 +277,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -290,7 +290,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -302,7 +302,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -388,7 +388,7 @@ building the native image; for more information see
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModelUrn urn = AspectModelUrn.fromUrn( "urn:samm:com.example:1.0.0#Example" );
-final String namespace = urn.getNamespace(); // com.example
+final String namespace = urn.getNamespaceMainPart(); // com.example
 final String name = urn.getName();           // Example
 final String version = urn.getVersion();     // 1.0.0
 final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</code></pre>
@@ -410,7 +410,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-urn&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -423,7 +423,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -435,7 +435,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -517,7 +517,7 @@ this is better done using the RDF API.</p>
 <div class="paragraph">
 <p>To load an AspectModel, you use the <code>org.eclipse.esmf.aspectmodel.loader.AspectModelLoader</code> class. An instance
 of <code>AspectModelLoader</code> provides <code>load()</code> methods to load an Aspect Model from an InputStream, one or multiple
-Files, or a number of `AspectModelUrn`s (where you can delegate finding out <em>where</em> a model element is defined
+Files, or a number of <code>AspectModelUrn</code> (where you can delegate finding out <em>where</em> a model element is defined
 to the AspectModelLoader - details on that are explained in the next section).</p>
 </div>
 <div class="paragraph">
@@ -526,13 +526,13 @@ and previous versions: Models based on older meta model versions are automatical
 corresponding to the latest meta model version.</p>
 </div>
 <div class="paragraph">
-<p>The resulting <code>AspectModel</code> object contains information about the loaded model elements, their namespaces and
-the files they were defined in. Details about the structure of these objects can be found in the [Decision
-Record
-0007](<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md" class="bare">https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md</a>).
-The <code>AspectModel</code> provides the methods <code>elements()</code>, <code>files()</code> and <code>namespaces()</code> as well as the convenience
-methods <code>aspects()</code> (which returns all Aspect elements in the model) and <code>aspect()</code>, which returns the single
-Aspect element if one exists.</p>
+<p>The resulting <code>AspectModel</code> object contains information about the loaded model elements, their
+namespaces and the files they were defined in. Details about the structure of these objects can be
+found in the
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md">Decision
+Record 0007</a>. The <code>AspectModel</code> provides the methods <code>elements()</code>, <code>files()</code> and <code>namespaces()</code> as
+well as the convenience methods <code>aspects()</code> (which returns all Aspect elements in the model) and
+<code>aspect()</code>, which returns the single Aspect element if one exists.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
@@ -581,7 +581,7 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -594,7 +594,7 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -606,7 +606,7 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -620,15 +620,16 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <div class="sect2">
 <h3 id="understanding-model-resolution"><a class="anchor" href="#understanding-model-resolution"></a>Understanding Model Resolution</h3>
 <div class="paragraph">
-<p>The example in the last section showed how a self-contained Aspect Model file can be loaded (i.e., a file that
-does not refer to model element definitions in other files or namespaces). Whenever models are loaded that
-could contain such references, or you want to load a model element by URN, the AspectModelLoader relies on
-so-called <em>resolution strategies</em>. A resolution strategy is a function that takes a model element identifier
-(a model element URN) as an input and returns the content of the file that contains the corresponding model
-element definition. Note that this is not necessarily a file in the local filesystem, but it could also be a
-remote file or even exist only virtually as a collection of statements in an RDF triple store. Several
-<code>ResolutionStrategy`s are provided that can be instantiated and passed to the `AspectModelLoader</code> constructor
-to enable it to find model element definitions:</p>
+<p>The example in the last section showed how a self-contained Aspect Model file can be loaded (i.e., a
+file that does not refer to model element definitions in other files or namespaces). Whenever models
+are loaded that could contain such references, or you want to load a model element by URN, the
+AspectModelLoader relies on so-called <em>resolution strategies</em>. A resolution strategy is a function
+that takes a model element identifier (a model element URN) as an input and returns the content of
+the file that contains the corresponding model element definition. Note that this is not necessarily
+a file in the local filesystem, but it could also be a remote file or even exist only virtually as a
+collection of statements in an RDF triple store. Several <code>ResolutionStrategy</code>&#8203;s are provided
+that can be instantiated and passed to the <code>AspectModelLoader</code> constructor to enable it to find
+model element definitions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -645,7 +646,7 @@ list of files in one directory (by using <code>FileSystemStrategy</code> with a 
 memory.</p>
 </li>
 <li>
-<p>The <code>EitherStrategy</code> can be used to chain two or more different `ResolutionStrategy`s.</p>
+<p>The <code>EitherStrategy</code> can be used to chain two or more different <code>ResolutionStrategy</code>&#8203;s.</p>
 </li>
 <li>
 <p>The <code>ExternalResolverStrategy</code> delegates resolution to an external command such as a script; it is used in
@@ -693,7 +694,7 @@ final AspectModel result = new AspectModelLoader( fileSystemStrategy ).load( urn
 <div class="sect2">
 <h3 id="loading-an-aspect-model-rdf-level"><a class="anchor" href="#loading-an-aspect-model-rdf-level"></a>Loading an Aspect Model to work on the RDF Level</h3>
 <div class="paragraph">
-<p>The following example shows how to use the <code>AspectModelResolver</code> to load an Aspect Model.</p>
+<p>The following example shows how to use the <code>AspectModelLoad</code> to load an Aspect Model.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
@@ -716,7 +717,14 @@ import org.apache.jena.vocabulary.RDF;</code></pre>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"></code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
+      // a File, InputStream or AspectModelUrn
+);
+
+// Do something with the Aspect Model on the RDF level.
+// Example: List the URNs of all samm:Entitys
+aspectModel.mergedModel().listStatements( null, RDF.type, SammNs.SAMM.Entity() )
+      .forEachRemaining( statement -&gt; System.out.println( statement.getSubject().getURI() ) );</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -739,6 +747,7 @@ as demonstrated in the example below:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
 
+import org.eclipse.esmf.aspectmodel.AspectModelFile;
 import org.eclipse.esmf.aspectmodel.serializer.AspectSerializer;
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
@@ -747,18 +756,22 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-      // A String that contains the pretty printed Aspect Model
-      final String aspectString =
-          AspectSerializer.INSTANCE.apply( aspectModel.aspect() );
-      assertThat( aspectString ).contains( ":Movement a samm:Aspect" );
-      assertThat( aspectString ).contains( ":isMoving a samm:Property" );
-   }
-}</code></pre>
+// A String that contains the pretty printed Aspect Model
+final String aspectString =
+      AspectSerializer.INSTANCE.aspectToString( aspectModel.aspect() );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can also serialize a complete <code>AspectModelFile</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">AspectModelFile aspectModelFile = // ...
+final String fileString =
+      AspectSerializer.INSTANCE.aspectModelFileToString( aspectModelFile );</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -777,7 +790,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-serializer&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -790,7 +803,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -802,7 +815,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -913,7 +926,7 @@ allows for custom structured handling of problems that occur during model loadin
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-validator&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -926,7 +939,7 @@ allows for custom structured handling of problems that occur during model loadin
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -938,7 +951,7 @@ allows for custom structured handling of problems that occur during model loadin
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -970,7 +983,7 @@ following dependency:</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-document-generators&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -983,7 +996,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -995,7 +1008,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -1832,7 +1845,7 @@ the information itself (<em>meta</em>).</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-java-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1845,7 +1858,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -1857,7 +1870,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -2113,7 +2126,7 @@ generator.generate( qualifiedName -&gt; {
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-static-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2126,7 +2139,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -2138,7 +2151,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.9.6")</code></pre>
 </div>
 </div>
 </div>
@@ -2203,6 +2216,95 @@ When using custom macros, macros for all sections above must be provided.
 #end</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modifying-and-creating-aspect-models"><a class="anchor" href="#modifying-and-creating-aspect-models"></a>Modifying and creating Aspect Models</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the <code>AspectChangeManager</code> to modify an Aspect Model. Each modifying operation performed
+on an Aspect Model is called a <em>change</em>. Instances of classes that implement the <code>Change</code> interface
+can be passed to the <code>AspectChangeManager</code> <code>applyChange()</code> method. Available <code>Change</code>&#8203;s
+include renaming Aspect Model files or Model elements, adding and removing Aspect Model files and
+moving Aspect Model elements to other or new files in the same or another namespace.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import org.eclipse.esmf.aspectmodel.edit.AspectChangeManager;
+import org.eclipse.esmf.aspectmodel.edit.AspectChangeManagerConfig;
+import org.eclipse.esmf.aspectmodel.edit.AspectChangeManagerConfigBuilder;
+import org.eclipse.esmf.aspectmodel.edit.Change;
+import org.eclipse.esmf.aspectmodel.edit.ChangeGroup;
+import org.eclipse.esmf.aspectmodel.edit.ChangeReport;
+import org.eclipse.esmf.aspectmodel.edit.ChangeReportFormatter;
+import org.eclipse.esmf.aspectmodel.edit.change.MoveElementToNewFile;
+import org.eclipse.esmf.aspectmodel.edit.change.RenameElement;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
+      // a File, InputStream or AspectModelUrn
+);
+
+// All changes to an Aspect Model are done using an AspectChangeManager.
+// Optionally, you can pass a config object as first constructor argument:
+final AspectChangeManagerConfig config = AspectChangeManagerConfigBuilder.builder()
+      .detailedChangeReport( true )
+      .defaultFileHeader( List.of( "Generated on "
+            + new SimpleDateFormat( "dd-MM-yyyy" ).format( new Date() ) ) )
+      .build();
+final AspectChangeManager changeManager = new AspectChangeManager( config, aspectModel );
+
+// You can create a single change, or you can combine multiple changes into a group.
+// For all possible refactoring operations, see classes implementing the Change interface.
+final Change refactorModel = new ChangeGroup( List.of(
+      // Rename an element. This works with with samm:Aspect and all other model elements.
+      new RenameElement( aspectModel.aspect(), "MyAspect" ),
+      // Move an element to a new Aspect Model file in the same namespace.
+      new MoveElementToNewFile(
+            // The element to move.
+            aspectModel.aspect().getProperties().get( 0 ),
+            // If you intend to write the model to the file system, set the location
+            // for the newly created file to some sensible location  here.
+            URI.create( "file:///temp/out.ttl" ) )
+) );
+
+// Apply the changes and get a report that summerizes the changes.
+final ChangeReport changeReport = changeManager.applyChange( refactorModel );
+
+// If you want to display the change report, you can serialize it to a string:
+ChangeReportFormatter.INSTANCE.apply( changeReport, config );
+
+// Alternatively, you can also get views on collections containing modified/
+// added/removed files for the last applied change.
+changeManager.createdFiles().forEach( file -&gt; System.out.println( "Created: " + file ) );
+changeManager.modifiedFiles().forEach( file -&gt; System.out.println( "Modified: " + file ) );
+changeManager.removedFiles().forEach( file -&gt; System.out.println( "Removed: " + file ) );
+
+// At this point, you could use the AspectChangeManager's undo() method to revert
+// the last change (refactorModel in this case); afterwards you can also redo().
+// This functionality is mainly interesting when refactoring the Aspect Model
+// interactively.
+
+// If you want to write the model changes to the file system, use the AspectSerializer.
+// Each AspectModelFile will be written to its respective source location.
+// Alternatively, the AspectSerializer also provides a method to write an AspectModelFile
+// into a String.
+AspectSerializer.INSTANCE.write( aspectModel );</code></pre>
 </div>
 </div>
 </div>
@@ -2567,7 +2669,7 @@ generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</co
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-aas-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.9.5&lt;/version&gt;
+    &lt;version&gt;2.9.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2580,7 +2682,7 @@ generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</co
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.5'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.6'</code></pre>
 </div>
 </div>
 </div>
@@ -2592,7 +2694,7 @@ generator.generate( AasFileFormat.JSON, aspect, this::outputStreamForName );</co
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.5")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.9.6")</code></pre>
 </div>
 </div>
 </div>
