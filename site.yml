@@ -13,9 +13,8 @@ content:
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
-       tags: ["v2.9.6","v2.9.5","v2.9.4","v2.9.2","v2.9.1"]
-       start_path: documentation/developer-guide
-     - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
+       tags: ["v2.9.7","v2.9.6","v2.9.5","v2.9.4","v2.9.2"]
+       start_path: documentation/developer-guide - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: HEAD
        tags: ["v5.6.0","v5.5.0"]
        start_path: documentation/ame-guide
@@ -65,7 +64,7 @@ asciidoc:
     unit: urn:samm:org.eclipse.esmf.samm:unit:2.1.0#@
     # The version of the latest SAMM maven artifact
     aspect-meta-model-version: '2.1.0'
-    esmf-sdk-version: '2.9.6'
+    esmf-sdk-version: '2.9.7'
     esmf-sdk-js-aspect-model-loader-version: '2.3.3'
     example-ns: com.mycompany@
 
