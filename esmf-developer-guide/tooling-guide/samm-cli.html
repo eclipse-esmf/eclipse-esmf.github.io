@@ -119,6 +119,9 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
           <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
         </li>
         <li class="version">
@@ -141,6 +144,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.9.7/index.html">2.9.7</a>
+        </li>
+        <li class="version">
           <a href="../2.9.6/index.html">2.9.6</a>
         </li>
         <li class="version">
@@ -151,9 +157,6 @@
         </li>
         <li class="version">
           <a href="../2.9.2/index.html">2.9.2</a>
-        </li>
-        <li class="version">
-          <a href="../2.9.1/index.html">2.9.1</a>
         </li>
       </ul>
     </li>
@@ -241,11 +244,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="samm-cli.html">master</a>
+    <a class="version" href="../2.9.7/tooling-guide/samm-cli.html">2.9.7</a>
     <a class="version" href="../2.9.6/tooling-guide/samm-cli.html">2.9.6</a>
     <a class="version" href="../2.9.5/tooling-guide/samm-cli.html">2.9.5</a>
     <a class="version" href="../2.9.4/tooling-guide/samm-cli.html">2.9.4</a>
     <a class="version" href="../2.9.2/tooling-guide/samm-cli.html">2.9.2</a>
-    <a class="version" href="../2.9.1/tooling-guide/samm-cli.html">2.9.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -270,8 +273,9 @@ latest release [on GitHub](<a href="https://github.com/eclipse-esmf/esmf-sdk/rel
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.9.6.jar</code> followed by one of the following subcommands (e.g., <code>java -jar samm-cli-2.9.6.jar help</code>).
-In the following sections, <code>samm</code> will be used as the command name.</p>
+<p>For the executable jar, call <code>java -jar samm-cli-2.9.7.jar</code> followed by one of the
+following subcommands (e.g., <code>java -jar samm-cli-2.9.7.jar help</code>). In the following
+sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -286,7 +290,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.6.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.7.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -300,7 +304,9 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Download</strong>: Download via above link or visit the repository of the Java SDK which contains the SAMM CLI at the Github <a href="https://github.com/eclipse-esmf/esmf-sdk/releases">releases page</a> and download executable file for Windows.</p>
+<p><strong>Download</strong>: Download via above link or visit the repository of the Java SDK which contains the
+SAMM CLI at the Github <a href="https://github.com/eclipse-esmf/esmf-sdk/releases">releases page</a> and
+download executable file for Windows.</p>
 </li>
 <li>
 <p><strong>Extract</strong>: extract it to a location of your choice.</p>
@@ -319,7 +325,9 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Download</strong>: Download via above link or visit the repository of the Java SDK which contains the SAMM CLI at the Github <a href="https://github.com/eclipse-esmf/esmf-sdk/releases">releases page</a> and download executable file for Linux.</p>
+<p><strong>Download</strong>: Download via above link or visit the repository of the Java SDK which contains the
+SAMM CLI at the Github <a href="https://github.com/eclipse-esmf/esmf-sdk/releases">releases page</a> and
+download executable file for Linux.</p>
 </li>
 <li>
 <p><strong>Extract</strong>: Unpack the archive to your preferred directory.</p>
@@ -328,7 +336,8 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 <p><strong>Open Terminal</strong>: Open the Terminal and navigate to the directory with the application.</p>
 </li>
 <li>
-<p><strong>Input</strong>: Make sure to read the below documentation and provide model files in the correct <a href="#models-directory-structure">directory structure</a>.</p>
+<p><strong>Input</strong>: Make sure to read the below documentation and provide model files in the correct
+<a href="#models-directory-structure">directory structure</a>.</p>
 </li>
 <li>
 <p><strong>Execute</strong>: Run the application using the command <code>./samm</code>.</p>
@@ -339,17 +348,56 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </ol>
 </div>
 <div class="paragraph">
-<p>Successful execution of a command is signaled by returning 0. In case of a logical or other internal error the error code 1 is being returned.
-Missing or wrong command parameters result in error code 2 being returned.</p>
+<p>Successful execution of a command is signaled by returning 0. In case of a logical or other internal
+error the error code 1 is being returned. Missing or wrong command parameters result in error code 2
+being returned.</p>
 </div>
 <div class="paragraph">
-<p>To get an overview of all commands and subcommands, use <code>samm help</code>.
-To get help for a certain subcommand, use <code>help</code> before the subcommand name, e.g., <code>samm help aspect</code>, <code>samm help aspect validate</code> or <code>samm help aas to aspect</code>.
-Each subcommand can have its own set of options which allow the user to further fine-tune the execution of the command.
-The available options and their meaning can also be seen in the help text of the individual subcommands.</p>
+<p>To get an overview of all commands and subcommands, use <code>samm help</code>. To get help for a certain
+subcommand, use <code>help</code> before the subcommand name, e.g., <code>samm help aspect</code>, <code>samm help aspect
+validate</code> or <code>samm help aas to aspect</code>. Each subcommand can have its own set of options which allow
+the user to further fine-tune the execution of the command. The available options and their meaning
+can also be seen in the help text of the individual subcommands.</p>
 </div>
 <div class="sect2">
 <h3 id="list-of-commands"><a class="anchor" href="#list-of-commands"></a>List of commands</h3>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In place of <code>&lt;model&gt;</code> in the command descriptions below, you can provide either one of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a relative file name, such as <code>AspectModel.ttl</code> or <code>./somewhere/AspectModel.ttl</code> (on Linux and
+MacOS) or <code>.\somewhere\AspectModel.ttl</code> (on Windows),</p>
+</li>
+<li>
+<p>an absolut file name, such as
+<code>/home/me/aspect-models/org.eclipse.esmf.example/1.0.0/AspectModel.ttl</code> (on Linux and MacOS) or
+<code>C:\Users\me\aspect-models\org.eclipse.esmf.example\1.0.0\AspectModel.ttl</code> (on Windows),</p>
+</li>
+<li>
+<p>a URL pointing to a .ttl file in a publically accessible GitHub repository, such as
+<code>https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/6.0.0/BatteryPass.ttl</code>
+or <code>https://github.com/eclipse-esmf/esmf-aspect-model-editor/blob/main/core/apps/ame/src/assets/aspect-models/org.eclipse.examples/1.0.0/Movement.ttl</code>,</p>
+</li>
+<li>
+<p>an Aspect Model URN, such as <code>urn:samm:org.eclipse.esmf.example:1.0.0#Aspect</code>, however note that
+this also requires setting a models source, see <a href="#configuration-of-model-resolution">configuration
+of model resolution</a> for more information.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -466,7 +514,7 @@ The available options and their meaning can also be seen in the help text of the
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to svg --custom-resolver "java -jar resolver.jar"</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="asepct-to-java"></a> aspect &lt;model&gt; to java</p></td>
+<td class="tableblock halign-left valign-top" rowspan="10"><p class="tableblock"><a id="aspect-to-java"></a> aspect &lt;model&gt; to java</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate Java classes from an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java</code></p></td>
 </tr>
@@ -501,6 +549,14 @@ The available options and their meaning can also be seen in the help text of the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--name-prefix, -namePrefix</em> : name prefix for generated Aspect, Entity Java classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java -namePrefix "Prefix"</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--name-postfix, -namePostfix</em> : name postfix for generated Aspect, Entity Java classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java -namePostfix "Postfix"</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="21"><p class="tableblock"><a id="aspect-to-openapi"></a> aspect &lt;model&gt; to openapi</p></td>
@@ -871,11 +927,26 @@ language/script language, including complex logic if necessary.</p>
 </li>
 <li>
 <p>Using the <code>--github</code> switch, you can configure a location in a remote GitHub repository as models
-root. Using the switch requires the additional switch <code>--github-name</code> to set the remote
-repository (e.g., <code>eclipse-esmf/esmf-sdk</code>). Optionally, you can also provide <code>--github-directory</code>
-to set the remote directory and <code>--github-branch</code> to set the branch name.</p>
+root, e.g., <code>eclipse-esmf/esmf-sdk</code>. Optionally, you can also provide <code>--github-directory</code>
+to set the remote directory and <code>--github-branch</code> or <code>--github-tag</code> to set the branch name or tag,
+respectively.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When using an Aspect Model URN as input to a command (such as
+<code>urn:samm:org.eclipse.esmf.example:1.0.0#Aspect</code>), you must also provide at least one of the
+switches mentioned above (<code>--models-root</code>, <code>--custom-resolver</code> or <code>--github</code>), otherwise samm-cli
+will not know where to find the corresonding file(s).
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -994,7 +1065,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.6.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.7.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1527,7 +1598,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.6.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.7.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">
