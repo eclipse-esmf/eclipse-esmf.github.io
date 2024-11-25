@@ -144,6 +144,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
           <a href="../2.9.7/index.html">2.9.7</a>
         </li>
         <li class="version">
@@ -154,9 +157,6 @@
         </li>
         <li class="version">
           <a href="../2.9.4/index.html">2.9.4</a>
-        </li>
-        <li class="version">
-          <a href="../2.9.2/index.html">2.9.2</a>
         </li>
       </ul>
     </li>
@@ -244,11 +244,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="samm-cli.html">master</a>
+    <a class="version" href="../2.9.8/tooling-guide/samm-cli.html">2.9.8</a>
     <a class="version" href="../2.9.7/tooling-guide/samm-cli.html">2.9.7</a>
     <a class="version" href="../2.9.6/tooling-guide/samm-cli.html">2.9.6</a>
     <a class="version" href="../2.9.5/tooling-guide/samm-cli.html">2.9.5</a>
     <a class="version" href="../2.9.4/tooling-guide/samm-cli.html">2.9.4</a>
-    <a class="version" href="../2.9.2/tooling-guide/samm-cli.html">2.9.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -273,8 +273,8 @@ latest release [on GitHub](<a href="https://github.com/eclipse-esmf/esmf-sdk/rel
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.9.7.jar</code> followed by one of the
-following subcommands (e.g., <code>java -jar samm-cli-2.9.7.jar help</code>). In the following
+<p>For the executable jar, call <code>java -jar samm-cli-2.9.8.jar</code> followed by one of the
+following subcommands (e.g., <code>java -jar samm-cli-2.9.8.jar help</code>). In the following
 sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -290,7 +290,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.7.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.9.8.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -514,7 +514,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to svg --custom-resolver "java -jar resolver.jar"</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="10"><p class="tableblock"><a id="aspect-to-java"></a> aspect &lt;model&gt; to java</p></td>
+<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock"><a id="aspect-to-java"></a> aspect &lt;model&gt; to java</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate Java classes from an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java</code></p></td>
 </tr>
@@ -530,6 +530,11 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--no-jackson, -nj</em> : disable <a href="https://github.com/FasterXML/jackson">Jackson</a> annotation
                                        generation in generated Java classes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--json-type-info</em>, <em>-jti</em> : If Jackson annotations are enabled, determines the value
+                                       of JsonTypeInfo.Id. Default: DEDUCTION</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -693,7 +698,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
@@ -703,6 +708,10 @@ of model resolution</a> for more information.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--add-type-attribute</em>, <em>-ta</em> : Add <code>@type</code> attribute for inherited Entities</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -927,9 +936,11 @@ language/script language, including complex logic if necessary.</p>
 </li>
 <li>
 <p>Using the <code>--github</code> switch, you can configure a location in a remote GitHub repository as models
-root, e.g., <code>eclipse-esmf/esmf-sdk</code>. Optionally, you can also provide <code>--github-directory</code>
-to set the remote directory and <code>--github-branch</code> or <code>--github-tag</code> to set the branch name or tag,
-respectively.</p>
+root, e.g., <code>eclipse-esmf/esmf-sdk</code>. Optionally, you can also provide <code>--github-directory</code> to set
+the remote directory and <code>--github-branch</code> or <code>--github-tag</code> to set the branch name or tag,
+respectively. If the repository is private, you can also pass <code>--github-token</code> and set a
+<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">fine-grained
+access token</a>; the token needs at least "Contents" repository read permissions.</p>
 </li>
 </ul>
 </div>
@@ -1065,7 +1076,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.7.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.8.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1598,7 +1609,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.7.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.9.8.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">

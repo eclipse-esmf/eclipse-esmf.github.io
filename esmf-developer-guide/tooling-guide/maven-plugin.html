@@ -144,6 +144,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
           <a href="../2.9.7/index.html">2.9.7</a>
         </li>
         <li class="version">
@@ -154,9 +157,6 @@
         </li>
         <li class="version">
           <a href="../2.9.4/index.html">2.9.4</a>
-        </li>
-        <li class="version">
-          <a href="../2.9.2/index.html">2.9.2</a>
         </li>
       </ul>
     </li>
@@ -244,11 +244,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="maven-plugin.html">master</a>
+    <a class="version" href="../2.9.8/tooling-guide/maven-plugin.html">2.9.8</a>
     <a class="version" href="../2.9.7/tooling-guide/maven-plugin.html">2.9.7</a>
     <a class="version" href="../2.9.6/tooling-guide/maven-plugin.html">2.9.6</a>
     <a class="version" href="../2.9.5/tooling-guide/maven-plugin.html">2.9.5</a>
     <a class="version" href="../2.9.4/tooling-guide/maven-plugin.html">2.9.4</a>
-    <a class="version" href="../2.9.2/tooling-guide/maven-plugin.html">2.9.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
@@ -274,7 +274,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.9.7&lt;/version&gt;
+    &lt;version&gt;2.9.8&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -285,10 +285,45 @@ Models in the build of their maven projects to, for example, generate code from 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
-<code>FileSystemStrategy</code> to resolve Aspect Models. See
+<div class="paragraph">
+<p>The current implementation of the <code>esmf-aspect-model-maven-plugin</code> uses the
+<code>FileSystemStrategy</code> or the <code>GitHubStrategy</code>, or combination of both, to resolve Aspect Models. See
 <a href="java-aspect-tooling.html#understanding-model-resolution" class="xref page">Understanding Model Resolution</a> for
-more information.
+more information. Generally, the configuration for every Maven goal described here must be
+configured using either the <code>modelsRootDirectory</code> or the <code>githubServerId</code> attribute, or both.</p>
+</div>
+<div class="paragraph">
+<p>The <code>modelsRootDirectory</code> points to a (relative or absolute) local file system directory path.</p>
+</div>
+<div class="paragraph">
+<p>The <code>githubServerId</code> points to the <code>&lt;id&gt;</code> of a <code>&lt;server&gt;</code> configuration in the Maven settings. For
+example, if the configuration for the esmf-aspect-model-maven-plugin contains
+<code>&lt;githubServerId&gt;my-gh-repo&lt;/githubServerId&gt;</code>, your <a href="https://maven.apache.org/settings.html">Maven
+Settings</a> should contain a corresonding <code>&lt;server&gt;</code> entry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;settings&gt;
+  &lt;!-- ... --&gt;
+  &lt;servers&gt;
+    &lt;!-- ... --&gt;
+    &lt;server&gt;
+      &lt;id&gt;my-gh-repo&lt;/id&gt;
+      &lt;configuration&gt;
+        &lt;!-- Which repository on GitHub does this server refer to --&gt;
+        &lt;repository&gt;ownername/repositoryname&lt;/repository&gt;
+        &lt;!-- Which directory inside the repository is the models root --&gt;
+        &lt;directory&gt;src/main/resources/aspects&lt;/directory&gt;
+        &lt;!-- branch (or tag) --&gt;
+        &lt;branch&gt;main&lt;/branch&gt;
+        &lt;!-- Only required for private repositories: GitHub access token --&gt;
+        &lt;token&gt;...&lt;/token&gt;
+      &lt;/configuration&gt;
+    &lt;/server&gt;
+  &lt;/servers&gt;
+&lt;/settings&gt;</code></pre>
+</div>
+</div>
 </td>
 </tr>
 </table>
@@ -320,6 +355,7 @@ more information.
         &lt;/executions&gt;
         &lt;configuration&gt;
            &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;githubServerId&gt;my-github-repo&lt;/githubServerId&gt;
            &lt;includes&gt;
               &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
            &lt;/includes&gt;
@@ -362,6 +398,13 @@ more information.
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -449,6 +492,13 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -500,6 +550,13 @@ are replaced using <code>packageName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Leads to generated Java code that does not contain <a href="https://github.com/FasterXML/jackson">Jackson</a> annotations.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>jsonTypeInfo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If Jackson annotations are enabled, determines the value of <code>JsonTypeInfo.Id</code>, e.g., <code>NAME</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DEDUCTION</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -594,6 +651,13 @@ default life cycle phase for the goal is <code>generate-sources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -720,6 +784,13 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -745,7 +816,7 @@ cycle phase for the goal is <code>generate-resources</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="generate-an-openapi-specification-from-an-aspect-model"><a class="anchor" href="#generate-an-openapi-specification-from-an-aspect-model"></a>Generate an OpenAPI Specification from an Aspect Model</h2>
+<h2 id="generate-openapi-specification"><a class="anchor" href="#generate-openapi-specification"></a>Generate an OpenAPI Specification from an Aspect Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>generateOpenApiSpec</code> goal generates an OpenAPI Specification for a given Aspect Model. The
@@ -815,6 +886,13 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1020,6 +1098,13 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated AsyncAPI Specification will be written to.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -1067,6 +1152,286 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generate-api-implementation-skeleton"><a class="anchor" href="#generate-api-implementation-skeleton"></a>Generate an API implementation skeleton from an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>generateAspectImplementationStub</code> goal generates an implementation skeleton for a given Aspect
+Model. It combines functionality from the <a href="#generate-domain-classes">Java domain
+classes generation</a>, the <a href="#generate-static-meta-classes">Java static meta
+classes generation</a> and the <a href="#generate-openapi-specification">OpenAPI
+specification generation</a>. Additionally, this goal executes the
+<a href="https://github.com/OpenAPITools/openapi-generator">OpenAPI generator</a> for the generated API
+description, taking into account custom configuration.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-openapi-spec&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateAspectImplementationStub&lt;/goal&gt;
+              &lt;/goals&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+           &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+           &lt;includes&gt;
+              &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
+           &lt;/includes&gt;
+           &lt;aspectApiBaseUrl&gt;http://example.com&lt;/aspectApiBaseUrl&gt;
+           &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
+           &lt;outputFormat&gt;yaml&lt;/outputFormat&gt;
+        &lt;/configuration&gt;
+     &lt;/plugin&gt;
+
+     &lt;plugin&gt;
+        &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+           &lt;execution&gt;
+              &lt;id&gt;generate-aspect-implementation&lt;/id&gt;
+              &lt;goals&gt;
+                 &lt;goal&gt;generateAspectImplementationStub&lt;/goal&gt;
+              &lt;/goals&gt;
+              &lt;configuration&gt;
+                 &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+                 &lt;includes&gt;
+                    &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
+                 &lt;/includes&gt;
+                 &lt;!-- this is recommended to be set to 'src-gen' --&gt;
+                 &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
+                 &lt;detailedValidationMessages&gt;true&lt;/detailedValidationMessages&gt;
+                 &lt;packageName&gt;com.example&lt;/packageName&gt;
+                 &lt;aspectApiBaseUrl&gt;http://example.com&lt;/aspectApiBaseUrl&gt;
+                 &lt;aspectResourcePath&gt;/my-api&lt;/aspectResourcePath&gt;
+                 &lt;!-- optional: override the default openapi-generator version --&gt;
+                 &lt;openApiGeneratorVersion&gt;${openapi-generator-maven-plugin.version}&lt;/openApiGeneratorVersion&gt;
+                 &lt;!-- the following configuration is only an example, using the 'spring' template --&gt;
+                 &lt;openApiGeneratorName&gt;spring&lt;/openApiGeneratorName&gt;
+                 &lt;openApiGeneratorConfigOptions&gt;
+                    &lt;!-- this should match the `packageName` attribute --&gt;
+                    &lt;modelPackage&gt;com.example&lt;/modelPackage&gt;
+                    &lt;apiPackage&gt;com.example.api&lt;/apiPackage&gt;
+                    &lt;configPackage&gt;com.example.config&lt;/configPackage&gt;
+                    &lt;sourceFolder&gt;main/java&lt;/sourceFolder&gt;
+                    &lt;resourceFolder&gt;main/resources&lt;/resourceFolder&gt;
+                    &lt;library&gt;spring-cloud&lt;/library&gt;
+                    &lt;useSpringBoot3&gt;true&lt;/useSpringBoot3&gt;
+                    &lt;dateLibrary&gt;java8&lt;/dateLibrary&gt;
+                    &lt;useOptional&gt;true&lt;/useOptional&gt;
+                    &lt;useSwaggerUI&gt;false&lt;/useSwaggerUI&gt;
+                    &lt;useTags&gt;true&lt;/useTags&gt;
+                    &lt;documentationProvider&gt;none&lt;/documentationProvider&gt;
+                    &lt;title&gt;MyAspect&lt;/title&gt;
+                 &lt;/openApiGeneratorConfigOptions&gt;
+              &lt;/configuration&gt;
+           &lt;/execution&gt;
+        &lt;/executions&gt;
+     &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated OpenAPI Specification will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectApiBaseUrl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The base URL for the Aspect API OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectParameterFile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to a file including the schema description for the resource. For JSON the description has to be in json, for YAML it has to be in YAML.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>useSemanticApiVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the complete semantic version of the Aspect Model as the version of the Aspect API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectResourcePath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>resource-path</code> for the Aspect API endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeQueryApi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the path for the Query Aspect API Endpoint in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeFullCrud</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the POST/PUT/PATCH methods in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includePost</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the POST method in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includePut</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the PUT method in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includePatch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the PATCH method in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>excludePaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude paging information for the Aspect API Endpoint in the OpenAPI specification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectCursorBasedPaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the used paging strategy as cursor-based paging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectOffsetBasedPaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the used paging strategy as offset-based paging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectTimeBasedPaging</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the used paging strategy as time-based paging.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>language</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The language from the model for which an OpenAPI specification should be generated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>templateFilePath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the file with a template for the resulting specification, including values undefined by the aspect&#8217;s OpenAPI specification. The template can be in JSON or YAML format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openApiGeneratorVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version to use for the openapi-generator-maven-plugin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.9.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openApiGeneratorName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The openapi-generator template to use</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openApiGeneratorConfigOptions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The additional parameters to pass to the openapi-generator, similar to the <code>configOptions</code> attribute for openapi-generator-maven-plugin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemaMappings</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add additional mappings from OpenAPI schema name (i.e., Aspect Model element local name) to fully qualified Java class, in the format <code>Name=com.example.Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 </tr>
 </tbody>
 </table>
@@ -1134,6 +1499,13 @@ life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1278,6 +1650,13 @@ The default life cycle phase for the goal is <code>generate-resources</code>.</p
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -1376,6 +1755,13 @@ SVG or PNG. The default life cycle phase for the goal is
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -1471,6 +1857,13 @@ the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -1482,6 +1875,13 @@ the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated JSON payload will be written to.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addTypeAttribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a <code>@type</code> attribute for inherited Entities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
@@ -1554,6 +1954,13 @@ the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1650,6 +2057,13 @@ latest meta model version before it is pretty-printed.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -1741,6 +2155,13 @@ written in either AASX, XML or JSON formats. The default life cycle phase for th
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
