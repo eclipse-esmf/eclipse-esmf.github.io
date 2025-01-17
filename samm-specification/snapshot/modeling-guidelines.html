@@ -169,6 +169,9 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.9.8/index.html">2.9.8</a>
         </li>
         <li class="version">
@@ -179,9 +182,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.9.5/index.html">2.9.5</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.9.4/index.html">2.9.4</a>
         </li>
       </ul>
     </li>
@@ -910,10 +910,9 @@ Abstract Entities</a> section for information on how to extend an Abstract Entit
 
 :MachineStateTimeSeriesEntity a samm:Entity ;
    samm:extends samm-e:TimeSeriesEntity ;
-   samm:properties ( :machineState ) .
-
-:machineState a samm:Property ;
-   samm:characteristic :MachineState .
+   samm:properties (
+     [ samm:extends samm-e:value ; samm:characteristic :MachineState ]
+   ) .
 
 :MachineState a samm-c:State ;
    samm:dataType xsd:string ;
