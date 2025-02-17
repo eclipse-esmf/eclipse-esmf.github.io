@@ -118,13 +118,17 @@
     <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="appendix/release-notes.html">Release Notes</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/unitcatalog.html">Unit Catalog</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes/release-notes.html">Release Notes</a>
   </li>
 </ul>
   </li>
@@ -169,6 +173,9 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
         </li>
         <li class="version">
@@ -179,9 +186,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.9.5/index.html">2.9.5</a>
         </li>
       </ul>
     </li>
@@ -935,6 +939,49 @@ Aspects each containing a single Collection.
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-quantities"><a class="anchor" href="#declaring-quantities"></a>Declaring Quantities</h4>
+<div class="paragraph">
+<p>The <code><a href="characteristics.html#unit-reference-characteristic" class="xref page">UnitReference</a></code> Characteristic is used
+to associate numeric values with their respective physical units in a structured and explicit way.
+The <code>Quantity</code> Entity is designed to represent such a pairing, ensuring that values are always
+interpreted correctly with their corresponding units.</p>
+</div>
+<div class="paragraph">
+<p>A <code>Quantity</code> is defined as an entity that contains a numeric <code>value</code> and a corresponding <code>unit</code>,
+both of which are essential for properly interpreting the data.
+The <code><a href="entities.html#quantity-entity" class="xref page">QuantityEntity</a></code> is declared as an Abstract Entity,
+providing a standard way to associate measurements with units.</p>
+</div>
+<div class="paragraph">
+<p>To describe these semantics, the <code>Quantity</code> Entity defines the <code>value</code> Property as
+an <code><a href="#abstract-entities-with-abstract-properties">Abstract Property</a></code>,
+meaning it does not have an inherent Characteristic and must be specialized based on the context.
+The <code>unit</code> Property is assigned the <code><a href="characteristics.html#unit-reference-characteristic" class="xref page">Unit Reference</a></code>
+Characteristic, which ensures that it references a recognized unit of measurement.</p>
+</div>
+<div class="paragraph">
+<p>To define a Quantity for a specific domain, the user should instantiate an Entity that extends
+the Abstract <code>Quantity</code> Entity and provide a specialized Characteristic for the <code>value</code> Property,
+specifying its data type and semantics according to the domain&#8217;s needs. For details on how to extend
+an Abstract Entity, please refer
+to the <code><a href="#declaring-abstract-entities">Declaring Abstract Entities</a></code> section.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Parameter a samm:Entity ;
+  samm:extends samm-e:Quantity ;
+  samm:properties (
+    [ samm:extends samm-e:value ; samm:characteristic :ParameterValueCharacteristic ]
+  ) .
+:ParameterValueCharacteristic a samm:Characteristic ;
+  samm:dataType xsd:integer .</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">

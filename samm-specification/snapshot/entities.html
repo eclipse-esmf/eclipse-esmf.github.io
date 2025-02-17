@@ -118,13 +118,17 @@
     <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="appendix/release-notes.html">Release Notes</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/unitcatalog.html">Unit Catalog</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes/release-notes.html">Release Notes</a>
   </li>
 </ul>
   </li>
@@ -169,6 +173,9 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
         </li>
         <li class="version">
@@ -179,9 +186,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.9.5/index.html">2.9.5</a>
         </li>
       </ul>
     </li>
@@ -423,6 +427,55 @@ a point in time.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:mimeType</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type of the resource</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="characteristics.html#mime-typecharacteristic" class="xref page">MIME Type</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quantity-entity"><a class="anchor" href="#quantity-entity"></a>Quantity Entity</h2>
+<div class="sectionbody">
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:entity:2.1.0#Quantity</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The Quantity Entity is used to represent a numeric value along with its corresponding physical unit.
+It ensures that values are always explicitly associated with their units, providing clarity and consistency
+in data representation.</p>
+</div>
+<div class="paragraph">
+<p>This entity is particularly useful when working with dynamic units that are determined at runtime.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-quantities" class="xref page">declaring quantities</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The numeric value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an <a href="modeling-guidelines.html#abstract-entities-with-abstract-properties" class="xref page">Abstract Property</a> without a Characteristic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:unit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The corresponding physical unit of the value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="characteristics.html#unit-reference-characteristic" class="xref page">Unit Reference</a></p></td>
 </tr>
 </tbody>
 </table>
