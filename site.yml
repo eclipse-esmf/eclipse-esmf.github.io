@@ -9,7 +9,7 @@ content:
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model
        branches: HEAD
-       tags: ["v2.1.0", "v2.0.0"]
+       tags: ["v2.2.0", "v2.1.0", "v2.0.0"]
        start_path: documentation
      - url: https://github.com/eclipse-esmf/esmf-sdk
        branches: HEAD
@@ -56,15 +56,15 @@ asciidoc:
     ok: 'icon:check-circle[role="green",size="2x"]'
     nok: 'icon:times-circle[role="red",size="2x"]'
     # The latest specified SAMM version
-    meta-model-version: 2.1.0
+    meta-model-version: 2.2.0
     meta-model-full-name: Semantic Aspect Meta Model
     meta-model-abbr: SAMM
-    samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#@
-    samm-c: urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#@
-    samm-e: urn:samm:org.eclipse.esmf.samm:entity:2.1.0#@
-    unit: urn:samm:org.eclipse.esmf.samm:unit:2.1.0#@
+    samm: urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#@
+    samm-c: urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#@
+    samm-e: urn:samm:org.eclipse.esmf.samm:entity:2.2.0#@
+    unit: urn:samm:org.eclipse.esmf.samm:unit:2.2.0#@
     # The version of the latest SAMM maven artifact
-    aspect-meta-model-version: '2.1.0'
+    aspect-meta-model-version: '2.2.0'
     esmf-sdk-version: '2.9.10'
     esmf-sdk-js-aspect-model-loader-version: '2.3.3'
     example-ns: com.mycompany@
