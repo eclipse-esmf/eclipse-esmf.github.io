@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Best Practices :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/appendix/best-practices.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="2.2.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../units.html">Units</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../payloads.html">Payloads</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">2.2.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.7/index.html">2.9.7</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.2/index.html">2.1.2</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.1/index.html">2.1.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Semantic Aspect Meta Model</a></li>
+    <li>Appendix</li>
+    <li><a href="best-practices.html">Best Practices</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.2.0</button>
+  <div class="version-menu">
+    <a class="version" href="../../snapshot/appendix/best-practices.html">snapshot</a>
+    <a class="version is-current" href="best-practices.html">2.2.0</a>
+    <a class="version" href="../../2.1.0/appendix/best-practices.html">2.1.0</a>
+    <a class="version" href="../../2.0.0/appendix/best-practices.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/v2.2.0/documentation/modules/appendix/pages/best-practices.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Best Practices</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following best practices, while not mandatory, are highly recommended for optimal performance and to mitigate potential issues, especially when working with Aspect Models at scale.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-name-attribute"><a class="anchor" href="#the-name-attribute"></a>The <code>name</code> attribute</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>name</code> attribute is mandatory for all model elements.</p>
+</div>
+<div class="paragraph">
+<p>Use camel-case capitalization, as detailed in the <a href="../modeling-guidelines.html#naming-rules" class="xref page">naming rules</a>.</p>
+</div>
+<div class="paragraph">
+<p>For optimal results, consider the following best practices:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#camel-case-for-acronyms">Camel case for acronyms</a></p>
+</li>
+<li>
+<p><a href="#unmistakable-abbreviations">Unmistakable abbreviations</a></p>
+</li>
+<li>
+<p><a href="#no-redundant-prefix">No redundant prefix</a></p>
+</li>
+<li>
+<p><a href="#no-redundant-suffix">No redundant suffix</a></p>
+</li>
+<li>
+<p><a href="#meaningful-names">Meaningful names (reduce technical debt)</a></p>
+</li>
+<li>
+<p><a href="#add-payload-names-for-properties">Payload names for Properties</a></p>
+</li>
+<li>
+<p><a href="#if-certain-characteristics-are-present">If certain Characteristics are present in a "Collection Aspect"</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to that, there are also best practices for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#the-preferredname-attribute">The <code>preferredName</code> attribute</a></p>
+</li>
+<li>
+<p><a href="#the-description-attribute">The <code>description</code> attribute</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="camel-case-for-acronyms"><a class="anchor" href="#camel-case-for-acronyms"></a>Camel case for acronyms</h3>
+<div class="paragraph">
+<p>For every part of a <code>name</code>, also for acronyms, strictly apply camel-case capitalization as detailed in the  <a href="../modeling-guidelines.html#naming-rules" class="xref page">naming rules</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mainECU</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mainEcu</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>plantID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>plantId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>documentURL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>documentUrl</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Create <code>name</code> attributes where each capital letter can be trusted to trigger the start of a new name part.</p>
+</div>
+<div class="paragraph">
+<p>That way, for example, automated case conversion will produce meaningful names (e.g., when generating code based on an Aspect Model):</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SAMM <code>name</code></th>
+<th class="tableblock halign-left valign-top">Resulting name in generated code (automated case conversion)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> <code>documentURL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOCUMENT_U_R_L</code> <span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> <code>documentUrl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOCUMENT_URL</code> <span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="unmistakable-abbreviations"><a class="anchor" href="#unmistakable-abbreviations"></a>Unmistakable abbreviations</h3>
+<div class="paragraph">
+<p>Avoid abbreviations that are not sufficiently common.
+Seemingly obvious abbreviations in one context can be misunderstood in different contexts.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>temp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abbreviation unclear; not recommended. (Could mean "temperature" or "temporary".)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abbreviating “minimum” or “maximum” by <code>min</code> or <code>max</code> is common enough and, therefore, acceptable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>minTemperature</code><br>
+<code>maxSpeed</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Using unmistakable abbreviations also applies to <a href="#abbreviations-in-descriptions">Description texts</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-redundant-prefix"><a class="anchor" href="#no-redundant-prefix"></a>No redundant prefix</h3>
+<div class="paragraph">
+<p>Do not duplicate information.</p>
+</div>
+<div class="paragraph">
+<p>Avoid prefixes that repeat a domain (the namespace) an Aspect Model belongs to.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fooCount</code><br>
+<code>fooId</code><br>
+<code>fooXyz</code><br>
+etc.<br>
+&nbsp;<br>
+Complete identifier of such a Property:<br>
+<code>urn:samm:foo.myapplication:1.0.0#fooCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>count</code><br>
+<code>id</code><br>
+<code>xyz</code><br>
+etc.<br>
+&nbsp;<br>
+Complete identifier of such a Property:<br>
+<code>urn:samm:foo.myapplication:1.0.0#count</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The complete identifier of a Property is the versioned namespace combined with the element&#8217;s <code>name</code>, for example, <code>urn:samm:foo.myapplication:1.0.0#count</code>.
+So, the <code>foo</code> context (namespace) is already part of <code>count</code>&#8203;'s identifier.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-redundant-suffix"><a class="anchor" href="#no-redundant-suffix"></a>No redundant suffix</h3>
+<div class="paragraph">
+<p>Do not duplicate information.</p>
+</div>
+<div class="paragraph">
+<p>Avoid suffixes that repeat the SAMM model element type, such as Aspect, Property, etc.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MovementAspect</code><br>
+&nbsp;<br>
+Result in TTL file:<br>
+<code>:MovementAspect a samm:Aspect ;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Movement</code><br>
+&nbsp;<br>
+Result in TTL file:<br>
+<code>:Movement a samm:Aspect ;</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To distinguish between, for example, an Entity and a related Characteristic, it is acceptable to add corresponding suffixes.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meaningful-names"><a class="anchor" href="#meaningful-names"></a>Meaningful names (reduce technical debt)</h3>
+<div class="paragraph">
+<p>Choose meaningful names for your model elements to foster reuseability and avoid technical debt.</p>
+</div>
+<div class="paragraph">
+<p>That means:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not simply mirror Property names from data sources like API responses (e.g., JSON).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Might be convenient in the short term</p>
+</li>
+<li>
+<p>But makes it difficult to understand and reuse the model in the future</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Invest the time upfront to choose descriptive names that reflect the purpose and meaning of each element.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Meaningful names improve code readability and maintainability, whereas arbitrary names make understanding and modifying the model harder in the long run.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Regarding meaningfulness, see also the details given for the <code>description</code> attribute at <a href="#no-repeated-preferredname">Meaningful: do not just repeat the <code>preferredName</code></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-payload-names-for-properties"><a class="anchor" href="#add-payload-names-for-properties"></a>Payload names for Properties</h3>
+<div class="paragraph">
+<p>An expressive Property <code>name</code> can be long.</p>
+</div>
+<div class="paragraph">
+<p>If you consider a Property&#8217;s name too long for the runtime payload, <a href="../modeling-guidelines.html#payload-names" class="xref page">add a payload name</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Do not rename Properties just for the sake of a short runtime payload.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="if-certain-characteristics-are-present"><a class="anchor" href="#if-certain-characteristics-are-present"></a>If certain Characteristics are present in a "Collection Aspect"</h3>
+<div class="paragraph">
+<p>An Aspect with exactly one Property on root level which holds a Collection Characteristic can be perceived as a "Collection Aspect".
+Data sets provided by such an Aspect may be very large.
+This also applies to other Characteristics, i.e., the List, Set, Sorted Set, and Time Series Characteristics.</p>
+</div>
+<div class="paragraph">
+<p>For a "Collection Aspect", consider the following naming advice for the Property itself and for the corresponding Aspect.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Characteristic held by Property</th>
+<th class="tableblock halign-left valign-top">How to name the Property</th>
+<th class="tableblock halign-left valign-top">How to name the Aspect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../characteristics.html#collection-characteristic" class="xref page">Collection</a> Characteristic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name the Property <code>items</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Put the Aspect&#8217;s name in <strong>plural</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../characteristics.html#list-characteristic" class="xref page">List</a> Characteristic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name the Property <code>items</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Put the Aspect&#8217;s name in <strong>plural</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../characteristics.html#set-characteristic" class="xref page">Set</a> Characteristic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name the Property <code>items</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Put the Aspect&#8217;s name in <strong>plural</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../characteristics.html#sorted-set-characteristic" class="xref page">Sorted Set</a> Characteristic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name the Property <code>items</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Put the Aspect&#8217;s name in <strong>plural</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../characteristics.html#time-series-characteristic" class="xref page">Time Series</a> Characteristic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name the Property <code>items</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Put the Aspect&#8217;s name in <strong>singular</strong> and add a <code>History</code> suffix to it.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-preferredname-attribute"><a class="anchor" href="#the-preferredname-attribute"></a>The <code>preferredName</code> attribute</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>preferredName</code> attribute is available for all model elements.</p>
+</div>
+<div class="paragraph">
+<p>For more information, refer to <a href="../modeling-guidelines.html#attributes-that-all-model-elements-have" class="xref page">Attributes that all model elements have</a>.</p>
+</div>
+<div class="paragraph">
+<p>For optimal results, consider the following best practices:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#precise-and-understandable">Precise and understandable</a></p>
+</li>
+<li>
+<p><a href="#separate-words">Separate words</a></p>
+</li>
+<li>
+<p><a href="#no-article">No article</a></p>
+</li>
+<li>
+<p><a href="#capitalization-as-in-dictionary">Capitalization: as in dictionary</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to that, there are also best practices for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#the-name-attribute">The <code>name</code> attribute</a></p>
+</li>
+<li>
+<p><a href="#the-description-attribute">The <code>description</code> attribute</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="precise-and-understandable"><a class="anchor" href="#precise-and-understandable"></a>Precise and understandable</h3>
+<div class="paragraph">
+<p>The <code>preferredName</code> attribute is meant to provide a human-readable name.</p>
+</div>
+<div class="paragraph">
+<p>Choose a Preferred Name that is precise and easy to understand.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>People might encounter the Preferred Name, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As a user of an Aspect Model&#8212;&#8203;in documentation generated from the Aspect Model</p>
+</li>
+<li>
+<p>As a user of a software solution&#8212;&#8203;in a user interface of an application that was built based on the Aspect Model</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="separate-words"><a class="anchor" href="#separate-words"></a>Separate words</h3>
+<div class="paragraph">
+<p>Should you copy and paste an element&#8217;s <code>name</code> to use it as the <code>preferredName</code>, adapt it accordingly.</p>
+</div>
+<div class="paragraph">
+<p>For example, if the <code>name</code> consists of more than one word, written in camel case, separate it into the respective words.</p>
+</div>
+<div class="listingblock">
+<div class="title">Examples of Preferred Names derived from the <code>name</code> attributes of the model elements</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:plantId a samm:Property ;
+   samm:preferredName "plant ID"@en ;
+
+:machineTmperature a samm:Property ;
+   samm:preferredName "machine temperature"@en ;
+
+:euTaxonomyDisclosureStatement a samm:Property ;
+   samm:preferredName "EU taxonomy disclosure statement"@en ;
+
+:ttlFileName a samm:Property ;
+   samm:preferredName "TTL file name"@en ;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-article"><a class="anchor" href="#no-article"></a>No article</h3>
+<div class="paragraph">
+<p>While an article and a noun can be combined, they do not automatically <em>belong</em> together.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, avoid articles in Preferred Names.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the machine temperature<br>
+a machine temperature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">machine temperature</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="capitalization-as-in-dictionary"><a class="anchor" href="#capitalization-as-in-dictionary"></a>Capitalization: as in dictionary</h3>
+<div class="paragraph">
+<p>Apply dictionary-style wording.</p>
+</div>
+<div class="paragraph">
+<p>That means:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not apply any artificial capitalization.</p>
+</li>
+<li>
+<p>Put the words as they would be listed in a dictionary.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In English, capital letters are reserved for <strong>proper nouns</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A term such as "engine control unit":</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Is not a proper noun.</strong> Therefore, following the dictionary, it is written in lowercase: <em>engine control unit</em>.</p>
+</li>
+<li>
+<p><strong>May have an acronym,</strong> such as "ECU" for <em>engine control unit</em>.<br>
+If required in a Preferred Name, an acronym ("ECU") remains in capital letters: <em>engine control unit (ECU)</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Engine Control Unit (ECU)</code><br>
+<code>Engine control unit (ECU)</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>engine control unit (ECU)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>plant Id</code><br>
+<code>Plant ID</code><br>
+<code>Plant Id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>plant ID</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ttl file name</code><br>
+<code>TTL File Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TTL file name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EU Taxonomy Disclosure Statement</code><br>
+<code>EU Taxonomy disclosure statement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EU taxonomy disclosure statement</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Machine Temperature</code><br>
+<code>Machine temperature</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>machine temperature</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Allow Duplicates</code><br>
+<code>Allow duplicates</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>allow duplicates</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Examples with proper nouns:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Planned September Batch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>planned September batch</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Monday Delivery Report</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Monday delivery report</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For languages other than English, the same practice applies: put the words for the Preferred Name as they would be listed in a dictionary.</p>
+</div>
+<div class="paragraph">
+<p>For example, in German:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Maschinen-Temperatur</code><br>
+<code>die Maschinentemperatur</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Maschinentemperatur</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Erlaube Duplikate</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>erlaube Duplikate</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Rationale:</strong> By using words the same way they would be listed in a dictionary, the <code>preferredName</code> attribute is flexible to be used in further applications, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To complete an orthographically correct sentence, e.g., in a pop-up message within a user interface.<br>
+(The Preferred Name can be <strong>used as-is</strong>.)</p>
+</li>
+<li>
+<p>To stand alone, e.g., to appear as a tooltip in a user interface.<br>
+(The Preferred Name can be <strong>parsed towards</strong> the desired capitalization style&#8212;&#8203;sentence case or title case.)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Once a Preferred Name is artificially capitalized&#8212;&#8203;whether in sentence case or title case&#8212;&#8203;it can&#8217;t be reverted (parsed back) to its dictionary form.
+This is because the applied capitalization obscures proper nouns.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-description-attribute"><a class="anchor" href="#the-description-attribute"></a>The <code>description</code> attribute</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>description</code> attribute is available for all model elements.</p>
+</div>
+<div class="paragraph">
+<p>For more information, refer to <a href="../modeling-guidelines.html#attributes-that-all-model-elements-have" class="xref page">Attributes that all model elements have</a>.</p>
+</div>
+<div class="paragraph">
+<p>For optimal results, consider the following best practices:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#capitalization-start-uppercase">Capitalization: start uppercase</a></p>
+</li>
+<li>
+<p><a href="#punctuation-end-with-period">Punctuation: end with a period</a></p>
+</li>
+<li>
+<p><a href="#comprehensible-concise">Writing style: comprehensible, concise</a></p>
+</li>
+<li>
+<p><a href="#no-repeated-preferredname">Meaningful: do not just repeat the <code>preferredName</code></a></p>
+</li>
+<li>
+<p><a href="#abbreviations-in-descriptions">Unmistakable abbreviations</a></p>
+</li>
+<li>
+<p><a href="#no-brand-names">No brand names</a></p>
+</li>
+<li>
+<p><a href="#no-entity-property">No "Entity", "Property", etc.</a></p>
+</li>
+<li>
+<p><a href="#no-this-preferred-name">No "This &lt;preferredName&gt; &#8230;&#8203;"</a></p>
+</li>
+<li>
+<p><a href="#no-the">No "The &#8230;&#8203;"</a></p>
+</li>
+<li>
+<p><a href="#triple-quotes">Triple quotes in TTL file</a></p>
+</li>
+<li>
+<p><a href="#keep-indentation">Indentation in TTL file</a></p>
+</li>
+<li>
+<p><a href="#new-line">New sentence, new line</a></p>
+</li>
+<li>
+<p><a href="#markdown-where-needed">Markdown where needed</a></p>
+</li>
+<li>
+<p><a href="#lists-markdown">Use lists (Markdown)</a></p>
+</li>
+<li>
+<p><a href="#notes-markdown">Add notes (Markdown)</a></p>
+</li>
+<li>
+<p><a href="#examples-markdown">Provide examples (Markdown)</a></p>
+</li>
+<li>
+<p><a href="#sources-markdown">Acknowledge sources (Markdown)</a></p>
+</li>
+<li>
+<p><a href="#markdown-blockquote-summary">Markdown blockquote summary</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to that, there are also best practices for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#the-name-attribute">The <code>name</code> attribute</a></p>
+</li>
+<li>
+<p><a href="#the-preferredname-attribute">The <code>preferredName</code> attribute</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="capitalization-start-uppercase"><a class="anchor" href="#capitalization-start-uppercase"></a>Capitalization: start uppercase</h3>
+<div class="paragraph">
+<p>A <code>description</code> consists of at least a few words forming a phrase or a sentence fragment.</p>
+</div>
+<div class="paragraph">
+<p>Start with an uppercase letter.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flag indicating whether the asset is currently moving</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag indicating whether the asset is currently moving.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">represents a single position in space with optional z coordinate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Represents a single position in space with optional z coordinate.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signifies the Vertical Distance in Reference to a Historic Mean Sea Level as a Vertical Datum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signifies the vertical distance in reference to a historic mean sea level as a vertical datum.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="punctuation-end-with-period"><a class="anchor" href="#punctuation-end-with-period"></a>Punctuation: end with a period</h3>
+<div class="paragraph">
+<p>End your <code>description</code> with a period (full stop).</p>
+</div>
+<div class="paragraph">
+<p>Even though it is just a sentence fragment.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Example model element</th>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property <code>houseNumber</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of a building in a street<mark>&nbsp;</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of a building in a street.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="comprehensible-concise"><a class="anchor" href="#comprehensible-concise"></a>Writing style: comprehensible, concise</h3>
+<div class="paragraph">
+<p>Apply a neutral writing style that is <strong>easy to understand</strong>.
+This fosters the usability and reuseability of an Aspect Model.</p>
+</div>
+<div class="paragraph">
+<p>Also, be <strong>concise</strong>.
+To get an idea, think of definitions in an IEC/ISO glossary.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-repeated-preferredname"><a class="anchor" href="#no-repeated-preferredname"></a>Meaningful: do not just repeat the <code>preferredName</code></h3>
+<div class="paragraph">
+<p>Write a meaningful Description.
+It can consist of only a sentence fragment, or it may be longer—but do not just repeat the Preferred Name for the Description.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Example model element</th>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property <code>productFamily</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product family.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set of products sharing similar features.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Regarding meaningfulness, see also the details given for the <code>name</code> attribute at <a href="#meaningful-names">Meaningful names (reduce technical debt)</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abbreviations-in-descriptions"><a class="anchor" href="#abbreviations-in-descriptions"></a>Unmistakable abbreviations</h3>
+<div class="paragraph">
+<p>Use abbreviations sparingly.</p>
+</div>
+<div class="paragraph">
+<p>Only use very common standard abbreviations; ensure they are not misleading.
+See also the details provided for the <code>name</code> attribute: <a href="#unmistakable-abbreviations">Unmistakable abbreviations</a>.</p>
+</div>
+<div class="paragraph">
+<p>It is acceptable to use editorial abbreviations such as <code>e.g.</code> ("for example") or <code>i.e.</code> ("that is") or <code>etc.</code> ("and so forth").</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-brand-names"><a class="anchor" href="#no-brand-names"></a>No brand names</h3>
+<div class="paragraph">
+<p>Where possible, avoid brand, product, or company names in Descriptions.
+This fosters reuseability of shared Aspect Models.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-entity-property"><a class="anchor" href="#no-entity-property"></a>No "Entity", "Property", etc.</h3>
+<div class="paragraph">
+<p>SAMM model element terms like Entity, Property, Aspect, etc. do not belong in the Description.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Descriptions must be understandable without knowledge of SAMM.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Rationale:</strong> An Aspect Model may be converted to a different output format or modeling language in which SAMM model elements are unknown.
+Users unfamiliar with SAMM might find the SAMM terminology confusing.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example model element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity <code>Identification</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="underline">Entity</span> with identification information of the product with part type information, local identifiers, other codes, and the data carrier.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identification information about the product with part-type information, local identifiers, other codes, and the data carrier.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you need to mention <span class="underline">other</span> Properties etc. in the Description, refer to them by their <code>preferredName</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="no-this-preferred-name"><a class="anchor" href="#no-this-preferred-name"></a>No "This &lt;preferredName&gt; &#8230;&#8203;"</h3>
+<div class="paragraph">
+<p>Do not start the Description with "This &lt;preferredName&gt; &#8230;&#8203;" as this duplicates information.</p>
+</div>
+<div class="paragraph">
+<p>It could even interfere with further usages of the Description, for example, when displayed together with the Preferred Name in a user interface.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Start the Description as if it was a sentence fragment that would complete a sentence like "This model element is a/the &#8230;&#8203;" or just "This model element &#8230;&#8203;".
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Example model element</th>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Property <code>materialDemandId</code><br>
+&#160;<br>
+Preferred Name: <code>Material Demand ID</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="underline">The Material Demand ID</span> uniquely identifies the material demand within the business relationship between a customer and its supplier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uniquely identifies the material demand within the business relationship between a customer and its supplier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="no-the"><a class="anchor" href="#no-the"></a>No "The &#8230;&#8203;"</h3>
+<div class="paragraph">
+<p>Avoid starting the Description with an article (where possible).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Example model element</th>
+<th class="tableblock halign-left valign-top"><span class="icon red"><i class="fa fa-times-circle fa-1x"></i></span> DON&#8217;T</th>
+<th class="tableblock halign-left valign-top"><span class="icon green"><i class="fa fa-check-circle fa-1x"></i></span> DO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property <code>altitude</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="underline">The</span> elevation above sea level zero.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elevation above sea level zero.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="triple-quotes"><a class="anchor" href="#triple-quotes"></a>Triple quotes in TTL file</h3>
+<div class="paragraph">
+<p>Use the TTL triple quotes operator to mark the Description as a section with line breaks.</p>
+</div>
+<div class="paragraph">
+<p>This avoids having long Descriptions sitting on just one line.
+Description sections with line breaks are easier to grasp for human readers when skimming through TTL files.</p>
+</div>
+<div class="paragraph">
+<p>See also: <a href="#new-line">New sentence, new line</a>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Use triple quotes</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:TrafficLight a samm-c:Enumeration ;
+   samm:preferredName "warning level"@en ;
+   <mark>samm:description """</mark>
+      Represents speed of position change.
+      Within specification, it turns green.
+      Within tolerance, it turns yellow.
+      Outside specification, it turns red.
+      <mark>"""@en ;</mark>
+   samm:dataType xsd:string ;
+   samm-c:values ( "green" "yellow" "red" ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="keep-indentation"><a class="anchor" href="#keep-indentation"></a>Indentation in TTL file</h3>
+<div class="paragraph">
+<p>Indent the Description content given within the triple quotes.
+See also <a href="#triple-quotes">Triple quotes in TTL file</a>.</p>
+</div>
+<div class="paragraph">
+<p>Use the three-blank indentation of SAMM Turtle (TTL) files.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Stick to SAMM&#8217;s three-blank indentation</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:TrafficLight a samm-c:Enumeration ;
+<mark>   </mark>samm:preferredName "warning level"@en ;
+   samm:description """
+   <mark>   </mark>Represents speed of position change.
+   <mark>   </mark>Within specification, it turns green.
+   <mark>   </mark>Within tolerance, it turns yellow.
+   <mark>   </mark>Outside specification, it turns red.
+      """@en ;
+   samm:dataType xsd:string ;
+   samm-c:values ( "green" "yellow" "red" ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="new-line"><a class="anchor" href="#new-line"></a>New sentence, new line</h3>
+<div class="paragraph">
+<p>Stick to the general best practice of starting every sentence on a new line.</p>
+</div>
+<div class="paragraph">
+<p>With <strong>one sentence per line</strong>, any changes to a sentence will be treated on sentence level (instead of paragraph level) when working with TTL files and Git.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="markdown-where-needed"><a class="anchor" href="#markdown-where-needed"></a>Markdown where needed</h3>
+<div class="paragraph">
+<p>Optionally, use Markdown (CommonMark) to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#lists-markdown">List items</a> in:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ordered lists</p>
+</li>
+<li>
+<p>Unordered lists</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Highlight paragraphs such as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#notes-markdown">Notes</a></p>
+</li>
+<li>
+<p><a href="#examples-markdown">Examples</a></p>
+</li>
+<li>
+<p><a href="#sources-markdown">Sources</a></p>
+</li>
+<li>
+<p>For a quick overview, see <a href="#markdown-blockquote-summary">Markdown blockquote summary</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Try your Markdown syntax with
+<a href="https://spec.commonmark.org/dingus/?text=For%20the%20Description%20attribute%20in%20SAMM%20Aspect%20Models%2C%20optionally%20use%20Markdown.%0A%0AList%20items%20in%3A%0A*%20Ordered%20lists%0A*%20Unordered%20lists%0A%0AHighlight%20paragraphs%20such%20as%3A%0A*%20Notes%0A*%20Examples%0A%0ATry%20it!%0A" target="_blank" rel="noopener">the CommonMark dingus.</a></p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for providing several examples and acknowledging the cited source</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:preferredName "digital representation"@en ;
+samm:description """
+   Information and services representing an entity from a given viewpoint.
+   &gt; EXAMPLE 1: Examples of information are properties (e.g., maximum temperature), actual parameters (e.g., actual velocity), events (e.g., notification of status change), schematics (electrical), and visualization information (2D and 3D drawings).
+
+   &gt; EXAMPLE 2: Examples of services are asset services (for example, providing the history of the configuration data or providing the actual velocity) and asset-related services (for example, providing a simulation).
+
+   &gt; EXAMPLE 3: Examples of viewpoints are mechanical, electrical, or commercial characteristics.
+
+   &gt; SOURCE: IEC 63278-1:2023, editorial changes
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Information%20and%20services%20representing%20an%20entity%20from%20a%20given%20viewpoint.%0A%20%20%20%3E%20EXAMPLE%201%3A%20examples%20of%20information%20are%20properties%20(e.g.%20maximum%20temperature)%2C%20actual%20parameters%20(e.g.%20actual%20velocity)%2C%20events%20(e.g.%20notification%20of%20status%20change)%2C%20schematics%20(electrical)%2C%20and%20visualization%20information%20(2D%20and%203D%20drawings).%0A%0A%20%20%20%3E%20EXAMPLE%202%3A%20examples%20of%20services%20are%20asset%20services%20(for%20example%20providing%20the%20history%20of%20the%20configuration%20data%20or%20providing%20the%20actual%20velocity)%20and%20asset%20related%20services%20(for%20example%20providing%20a%20simulation).%0A%0A%20%20%20%3E%20EXAMPLE%203%3A%20examples%20of%20viewpoints%20are%20mechanical%2C%20electrical%2C%20or%20commercial%20characteristics.%0A%0A%20%20%20%3E%20SOURCE%3A%20IEC%2063278-1%3A2023%2C%20editorial%20changes%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lists-markdown"><a class="anchor" href="#lists-markdown"></a>Use lists (Markdown)</h3>
+<div class="paragraph">
+<p>To use lists within the <code>description</code> attribute, use the Markdown list syntax.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown syntax for an ordered list</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   1. Create an ordered list
+   2. By using numbers
+   3. And dot delimiters
+   4. Conformant to the CommonMark specification
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%201.%20Create%20an%20ordered%20list%0A%20%20%202.%20By%20using%20numbers%0A%20%20%203.%20And%20dot%20delimiters%0A%20%20%204.%20Conformant%20to%20the%20CommonMark%20specification%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown syntax for an unordered list</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   * Create an unordered list
+   * (Also known as bullet list)
+   * By using asterisks
+   * Conformant to the CommonMark specification
+
+   After a blank line, some more lorem ipsum description text.
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%20*%20Create%20an%20unordered%20list%0A%20%20%20*%20(Also%20known%20as%20bullet%20list)%0A%20%20%20*%20By%20using%20asterisks%0A%20%20%20*%20Conformant%20to%20the%20CommonMark%20specification%0A%0A%20%20%20After%20a%20blank%20line%2C%20some%20more%20lorem%20ipsum%20description%20text.%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="paragraph">
+<p>Go back to the <a href="#markdown-where-needed">Markdown where needed</a> overview.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="notes-markdown"><a class="anchor" href="#notes-markdown"></a>Add notes (Markdown)</h3>
+<div class="paragraph">
+<p>To add one or more notes within the <code>description</code> attribute, use the Markdown blockquote syntax.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use <strong>NOTE:</strong> as a prefix.<br>
+(While not required by Markdown, this practice helps distinguish notes, examples, and sources in Aspect Models.)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>When to use?</strong> A "note" provides further information that requires extra attention.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for adding a note</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   &gt; NOTE: A note detailing further info.
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%20%3E%20NOTE%3A%20A%20note%20detailing%20further%20info.%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for adding a note with several sentences</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   &gt; NOTE: The note starts here.
+   &gt; On TTL source-code level, write every sentence in a new line.
+   &gt; This helps reviewing TTL source code changes (due to line-based diffs by Git).
+   &gt; When parsed, for example, to HTML output, the note will be displayed as concurrent text, without line breaks.
+   &gt;
+   &gt; To force line breaks within a note, add a blank line.
+   &gt;
+   &gt; Do not be lazy:
+   &gt;
+   &gt; Explicitly add the &gt; character for each new line of the note.
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%20%3E%20NOTE%3A%20The%20note%20starts%20here.%0A%20%20%20%3E%20On%20TTL%20source-code%20level%2C%20write%20every%20sentence%20in%20a%20new%20line.%0A%20%20%20%3E%20This%20helps%20reviewing%20TTL%20source%20code%20changes%20(due%20to%20line-based%20diffs%20by%20Git).%0A%20%20%20%3E%20When%20parsed%2C%20for%20example%2C%20to%20HTML%20output%2C%20the%20note%20will%20be%20displayed%20as%20concurrent%20text%2C%20without%20line%20breaks.%0A%20%20%20%3E%0A%20%20%20%3E%20To%20force%20line%20breaks%20within%20a%20note%2C%20add%20a%20blank%20line.%0A%20%20%20%3E%0A%20%20%20%3E%20Do%20not%20be%20lazy%3A%0A%20%20%20%3E%0A%20%20%20%3E%20Explicitly%20add%20the%20%3E%20character%20for%20each%20new%20line%20of%20the%20note.%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for adding several notes</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   &gt; NOTE: A note detailing further info.
+
+   Important: Add a blank line before you add further description text.
+   &gt; NOTE: Another note.
+   Further description text. Ooops! Without a blank line between note and further description text, text will be interpreted as if still being part of the note.
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%20%3E%20NOTE%3A%20A%20note%20detailing%20further%20info.%0A%0A%20%20%20Important%3A%20Add%20a%20blank%20line%20before%20you%20add%20further%20description%20text.%0A%20%20%20%3E%20NOTE%3A%20Another%20note.%0A%20%20%20Further%20description%20text.%20Ooops!%20Without%20a%20blank%20line%20between%20note%20and%20further%20description%20text%2C%20text%20will%20be%20interpreted%20as%20if%20still%20being%20part%20of%20the%20note.%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="paragraph">
+<p>Go back to the <a href="#markdown-where-needed">Markdown where needed</a> overview.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="examples-markdown"><a class="anchor" href="#examples-markdown"></a>Provide examples (Markdown)</h3>
+<div class="paragraph">
+<p>To provide examples within the <code>description</code> attribute, use the Markdown blockquote syntax.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use <strong>EXAMPLE:</strong> as a prefix.<br>
+(While not required by Markdown, this practice helps distinguish notes, examples, and sources in Aspect Models.)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>When to use?</strong> An "example" details one or more specific examples for a definition or explanation that was given before.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for providing an example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   &gt; EXAMPLE: Providing some example.
+
+   After a blank line, some more lorem ipsum description text.
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%20%3E%20EXAMPLE%3A%20Providing%20some%20example.%0A%0A%20%20%20After%20a%20blank%20line%2C%20some%20more%20lorem%20ipsum%20description%20text.%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for providing several examples</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text.
+   &gt; EXAMPLE 1: Providing some example.
+
+   &gt; EXAMPLE 2: After a blank line, providing another example for the given description.
+   &gt; Another sentence of the example.
+   &gt;
+   &gt; After a line break, the last example sentence.
+
+   After a blank line, some more lorem ipsum description text.
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text.%0A%20%20%20%3E%20EXAMPLE%201%3A%20Providing%20some%20example.%0A%0A%20%20%20%3E%20EXAMPLE%202%3A%20After%20a%20blank%20line%2C%20providing%20another%20example%20for%20the%20given%20description.%0A%20%20%20%3E%20Another%20sentence%20of%20the%20example.%0A%20%20%20%3E%0A%20%20%20%3E%20After%20a%20line%20break%2C%20the%20last%20example%20sentence.%0A%0A%20%20%20After%20a%20blank%20line%2C%20some%20more%20lorem%20ipsum%20description%20text.%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="paragraph">
+<p>Go back to the <a href="#markdown-where-needed">Markdown where needed</a> overview.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sources-markdown"><a class="anchor" href="#sources-markdown"></a>Acknowledge sources (Markdown)</h3>
+<div class="paragraph">
+<p>To indicate the cited sources used within the <code>description</code> attribute, use the Markdown blockquote syntax.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use <strong>SOURCE:</strong> as a prefix.<br>
+(While not required by Markdown, this practice helps distinguish notes, examples, and sources in Aspect Models.)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>When to use?</strong> A "source" acknowledges a source that was cited in the Description.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To generally link to related resources for further reference, use <a href="../modeling-guidelines.html#attributes-that-all-model-elements-have" class="xref page">the <code>samm:see</code> attribute</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example: Markdown blockquote syntax for indicating a cited source</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">samm:description """
+   Lorem ipsum description text, citing a source.
+   &gt; SOURCE: Indicate source, optionally add [a link](https://www.example.com)
+   """@en ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%20%20%20Lorem%20ipsum%20description%20text%2C%20citing%20a%20source.%0A%20%20%20%3E%20SOURCE%3A%20Indicate%20source%2C%20optionally%20add%20%5Ba%20link%5D(https%3A%2F%2Fwww.example.com)%0A" target="_blank" rel="noopener">Try it</a></p>
+</div>
+<div class="listingblock">
+<div class="title">Example descriptions acknowledging cited sources</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">&lt;...&gt;
+   samm:preferredName "digital representation"@en ;
+   samm:description """
+      Information and services representing an entity from a given viewpoint.
+      &gt; SOURCE: IEC 63278-1:2023, editorial changes, no examples
+      """@en ;
+   &lt;...&gt;
+
+&lt;...&gt;
+   samm:preferredName "service"@en ;
+   samm:description """
+      Distinct part of the functionality that is provided by an entity through interfaces.
+      &gt; SOURCE: IEC 63278-1:2023; IEC 60050-741:2020, 741-01-28
+      """@en ;
+   &lt;...&gt;
+
+&lt;...&gt;
+   samm:preferredName "system"@en ;
+   samm:description """
+      Interacting, interrelated, or interdependent elements forming a complex whole.
+      &gt; SOURCE: IEC 63278-1:2023; IEC TS 62443-1-1:2009, 3.2.123
+      """@en ;
+   &lt;...&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://spec.commonmark.org/dingus/?text=%23%20Digital%20representation%0A%20%20%20Information%20and%20services%20representing%20an%20entity%20from%20a%20given%20viewpoint.%0A%20%20%20%3E%20SOURCE%3A%20IEC%2063278-1%3A2023%2C%20editorial%20changes%2C%20no%20examples%0A%0A%23%20Service%0A%20%20%20Distinct%20part%20of%20the%20functionality%20that%20is%20provided%20by%20an%20entity%20through%20interfaces.%0A%20%20%20%3E%20SOURCE%3A%20IEC%2063278-1%3A2023%3B%20IEC%2060050-741%3A2020%2C%20741-01-28%0A%0A%23%20System%0A%20%20%20Interacting%2C%20interrelated%2C%20or%20interdependent%20elements%20forming%20a%20complex%20whole.%0A%20%20%20%3E%20SOURCE%3A%20IEC%2063278-1%3A2023%3B%20IEC%20TS%2062443-1-1%3A2009%2C%203.2.123%0A" target="_blank" rel="noopener">Try it</a> – This roughly sketches how the Preferred Name could be parsed and combined with the Description within an output.</p>
+</div>
+<div class="paragraph">
+<p>Go back to the <a href="#markdown-where-needed">Markdown where needed</a> overview.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="markdown-blockquote-summary"><a class="anchor" href="#markdown-blockquote-summary"></a>Markdown blockquote summary</h3>
+<div class="paragraph">
+<p>The following table indicates how to employ the Markdown blockquote syntax to convey notes, examples, and sources within the <code>description</code> attribute.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Markdown syntax</th>
+<th class="tableblock halign-left valign-top">Recommended prefix</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NOTE:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt; NOTE: This provides further information that also needs some extra attention, which is why such a piece of information is highlighted as a "note".</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EXAMPLE:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt; EXAMPLE: This details an example for a given definition.</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SOURCE:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt; SOURCE: This acknowledges a source that was cited in the Description&#8212;&#8203;optionally including a [link](<a href="https://www.example.com" class="bare">https://www.example.com</a>).</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>How to use the Markdown blockquote syntax:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Explicitly start each line with the <code>&gt;</code> character. (Recommended)</p>
+</li>
+<li>
+<p>To add more content after the blockquote element, add a blank line after the blockquote element. (Required)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+All Markdown blockquote elements&#8212;&#8203;notes, examples, and sources&#8212;&#8203;can contain URLs in Markdown notation.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Go back to the <a href="#markdown-where-needed">Markdown where needed</a> overview.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="choosing-a-numeric-type"><a class="anchor" href="#choosing-a-numeric-type"></a>Choosing a Numeric Type</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While JSON only distinguishes between <em>number</em> (floating point) and <em>integer</em>, the
+<a href="../datatypes.html#data-types" class="xref page">type hierarchy</a> for Aspect Models provides many more options. There
+is a distinction between the numeric core types (<code>xsd:integer</code> and the fixed-point type
+<code>xsd:decimal</code>) and the limited range numbers that correspond to the numeric types as defined in most
+programming languages (<code>xsd:float</code> and <code>xsd:double</code> as well as the integer types <code>xsd:int</code>,
+<code>xsd:short</code> etc.).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+As an Aspect Model ideally captures as much of the domain semantics as possible, it
+should not limit itself according to implementation-specific restrictions. In particular, limited
+range numbers should only be used when the semantics of the numeric range are relevant beyond the
+implementation of the Aspect. For example, a Property <code>temperature</code> of a sensor could use a limited
+range type such as <code>xsd:int</code>, when the physical sensor can never provide a value outside of this
+range, while a Property such as <code>numberOfProducedItems</code> is not logically limited, so it should use
+<code>xsd:integer</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="choosing-a-unit"><a class="anchor" href="#choosing-a-unit"></a>Choosing a Unit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When trying to refer to a physical unit, please see the <a href="unitcatalog.html" class="xref page">Unit
+Catalog</a>. When searching for the unit, remember that the unit catalog uses British English, e.g.,
+<em>metre</em> instead of <em>meter</em>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you&#8217;re modeling quantities for which both the metric system and the imperial system provide
+units, such as meter vs. feet, it is always recommended to use the metric system (preferably SI units
+like meter or others like kilometer if more common in the domain) – unless there are specific
+reasons to create the model differently. In any case, it is strongly discouraged to add multiple
+Properties in the same scope representing the same value but only using different units due to the
+inherent complexity.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="choosing-a-characteristic"><a class="anchor" href="#choosing-a-characteristic"></a>Choosing a Characteristic</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following decision tree helps to find the right Characteristic for a Property.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+A common error is using the <code>Text</code> Characteristic for anything resembling a string.
+<code>Text</code> is intended for values that are meant <em>only</em> for humans, for example, a description of a
+device that is entered by a user as free text. Values such as identifiers, hostnames, table names,
+license plate numbers etc. should not use the <code>Text</code> Characteristic.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you create Characteristics that are not limited to your modeled domain but are generally useful,
+please consider contributing them so that they can be included in the Semantic Aspect Meta Model&#8217;s
+Characteristic catalog.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/characteristics-decision-tree.svg" alt="characteristics decision tree" width="100%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="choosing-constraints"><a class="anchor" href="#choosing-constraints"></a>Choosing Constraints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Constraints are used to precisely specify limiting conditions of Characteristics. It is recommended
+to use Constraints thoroughly:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It makes the intent of the respective Property clear for humans reading the model or documentation
+generated from the model.</p>
+</li>
+<li>
+<p>It allows tooling to generate code for the Aspect that can take the Constraints into account. Validation code corresponding to the Constraints can be directly inserted, thus reducing manual implementation effort.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following decision tree helps to find matching Constraints for a Characteristic. Note that
+multiple Constraints can be combined.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+If and only if the value has a <a href="../datatypes.html#data-types" class="xref page">string-like value space</a> and
+does <em>not</em> use UTF-8 as an encoding, use an <a href="../characteristics.html#encoding-constraint" class="xref page">Encoding
+Constraint</a> for the Property. This will ensure that consumers of the Aspect will not end up with
+broken special characters.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/constraints-decision-tree.svg" alt="constraints decision tree" width="100%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reusing-elements"><a class="anchor" href="#reusing-elements"></a>Reusing Elements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is generally advisable to reuse definitions of existing model elements that describe the desired semantics. This not only ensures efficiency
+and maintainability but, more importantly, it explicitly expresses that the model builds upon a set of agreed-upon abstractions.
+The reuse of existing model element definitions makes it clear that your model talks about <em>the same thing</em>. On the other hand,
+introducing another definition of an allegedly already existing concept is equivalent to stating that the deliberately newly created definition
+does indeed mean something different. This is particularly useful when model elements are created for terminology that can have many different
+meanings in various contexts, such as the term "process".</p>
+</div>
+<div class="paragraph">
+<p><code><a href="../entities.html#entities" class="xref page">Entities</a></code>,
+<code><a href="../characteristics.html#characteristics" class="xref page">Characteristics</a></code>,
+<code><a href="../modeling-guidelines.html#declaring-events" class="xref page">Events</a></code>,
+<code><a href="../modeling-guidelines.html#declaring-constraints" class="xref page">Constraints</a></code>, and
+<code><a href="../modeling-guidelines.html#declaring-properties" class="xref page">Properties</a></code> are fundamental components of an Aspect.
+Reusing these elements across different Aspects ensures consistency, reduces redundancy, and simplifies the management and
+integration of shared attributes and interactions.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

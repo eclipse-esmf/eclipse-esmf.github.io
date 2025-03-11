@@ -247,6 +247,9 @@
           <a href="index.html">snapshot</a>
         </li>
         <li class="version">
+          <a href="../2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
           <a href="../2.1.0/index.html">2.1.0</a>
         </li>
         <li class="version">
@@ -274,6 +277,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="modeling-guidelines.html">snapshot</a>
+    <a class="version" href="../2.2.0/modeling-guidelines.html">2.2.0</a>
     <a class="version" href="../2.1.0/modeling-guidelines.html">2.1.0</a>
     <a class="version" href="../2.0.0/modeling-guidelines.html">2.0.0</a>
   </div>
@@ -429,10 +433,10 @@ referred via other namespaces (e.g., "xsd:"). See
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
-@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
-@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#&gt; .
-@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.1.0#&gt; .
-@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.1.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
+@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.2.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code></pre>
 </div>
 </div>
@@ -448,8 +452,8 @@ descriptions to it.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : urn:samm:com.mycompany.myapplication:1.0.0# .
-@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
 
 # The colon denotes the namespace as defined in the first @prefix declaration above.
 : a samm:Namespace ;
@@ -519,10 +523,10 @@ that unused namespaces can be left out:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
-@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
-@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#&gt; .
-@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.1.0#&gt; .
-@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.1.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
+@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.2.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :MyAspect a samm:Aspect ;
@@ -565,19 +569,19 @@ that all model elements have</a>, Properties have the following attributes:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:exampleValue</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An exemplary value the Property can take on that helps to understand the
-intended meaning of the property better. This can only be set for Properties with scalar data types
-(e.g., <code>xsd:string</code> or <code>xsd:float</code>, but not Entities). The data type of the <code>samm:exampleValue</code> must
-be convertible to the effective data type of the Property&#8217;s Characteristic. For example, if the
-Characteristic&#8217;s <code>samm:dataType</code> is <code>xsd:int</code>, <code>xsd:short</code> is also a valid type for the
-<code>samm:exampleValue</code>. Refer to section <a href="datatypes.html#implicit-conversions" class="xref page">Implicit Conversions</a>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An exemplary value that the Property can take, helping to clarify the intended meaning of the Property.
+This attribute supports both scalar literal values (e.g., xsd:string, xsd:float), an anonymous described scalar value,
+and value references that point to example values (i.e., references to instances of <a href="#value-type">samm:Value</a>).
+In either case, the data type of the <code>samm:exampleValue</code> must be convertible to the effective data type defined by the Property&#8217;s Characteristic.
+For example, if the Characteristic&#8217;s <code>samm:dataType</code>
+is <code>xsd:int</code>, a value with the type <code>xsd:short</code> is also acceptable. Refer to section <a href="datatypes.html#implicit-conversions" class="xref page">Implicit Conversions</a>
 for more details.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Example:</p>
+<p>Example with Literal type:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -586,6 +590,25 @@ for more details.</p></td>
    samm:description "A material number"@en ;
    samm:exampleValue "ABC123456-000" ;
    samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example with value reference type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:warningLevelProperty a samm:Property ;
+   samm:exampleValue :GreenLight ;
+   samm:characteristic [
+      a samm:Characteristic ;
+      samm:dataType xsd:string ;
+   ] .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
 </div>
 </div>
 </div>
@@ -803,6 +826,72 @@ syntax can be used:</p>
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MaintenanceDates a samm-c:Enumeration ;
    samm:dataType xsd:date ;
    samm-c:values ( "2010-01-01"^^xsd:date "2012-05-07"^^xsd:date "2018-03-08"^^xsd:date ) .</code></pre>
+</div>
+</div>
+<div id="enumeration-with-value-type-in-value" class="paragraph">
+<p>Example Using Value in an Enumeration:</p>
+</div>
+<div class="paragraph">
+<p>An Enumeration can include complex values to enrich the semantic description of the enumeration items.
+This is especially useful when you want to provide additional metadata—such as a preferred name, description,
+or external reference—for a specific value.</p>
+</div>
+<div class="paragraph">
+<p>There are several ways to define values in an Enumeration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Value Reference example:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>:TrafficLight a samm-c:Enumeration ;
+   samm:name "TrafficLight" ;
+   samm:preferredName "Warning Level"@en ;
+   samm:description "Represents if speed of position change is within specification (green), within tolerance (yellow), or outside specification (red)."@en ;
+   samm:dataType xsd:string ;
+   samm-c:values ( :GreenLight ) .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple (anonymous described scalar value and value reference) Value Definitions:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>:TrafficLight a samm-c:Enumeration ;
+   samm:name "TrafficLight" ;
+   samm:preferredName "Warning Level"@en ;
+   samm:description "Represents if speed of position change is within specification (green), within tolerance (yellow), or outside specification (red)."@en ;
+   samm:dataType xsd:string ;
+   samm-c:values (
+      :GreenLight        # A reference to named described scalar value
+      "yellow"           # A direct literal value
+      [
+         a samm:Value ;  # An anonymous described scalar value with additional metadata
+         samm:value "red" ;
+         samm:preferredName "Critical Warning"@en ;
+         samm:description "Indicates that the position change is outside the specification."@en
+      ]
+   ) .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</pre>
 </div>
 </div>
 <div id="enumeration-with-complex-value" class="paragraph">
@@ -1392,8 +1481,9 @@ and this change would apply to the <code>Person</code> Entity (directly) and bot
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="declaring-abstract-entities"><a class="anchor" href="#declaring-abstract-entities"></a>Declaring Abstract Entities</h4>
+</div>
+<div class="sect2">
+<h3 id="declaring-abstract-entities"><a class="anchor" href="#declaring-abstract-entities"></a>Declaring Abstract Entities</h3>
 <div class="paragraph">
 <p>In contrast to Entities, Abstract Entities cannot directly be instantiated. A Characteristic class may have a type <code>samm:entity</code> or <code>samm:AbstractEntity</code>. But a Characteristic instance cannot have a type <code>samm:AbstractEntity</code>. If there is an instance created from a Characteristic that uses an Abstract Entity as its type, this Characteristic instance&#8217;s dataType must be a sub-Entity of the Abstract Entity.
 The main use case for Abstract Entities is to share Properties across multiple Entities. This can be achieved through inheritance: Abstract Entities can extend other Entities and Abstract Entities and can themselves be extended in a manner not dissimilar to how abstract classes are used in many programming languages.</p>
@@ -1417,8 +1507,8 @@ The main use case for Abstract Entities is to share Properties across multiple E
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="abstract-entities-with-abstract-properties"><a class="anchor" href="#abstract-entities-with-abstract-properties"></a>Abstract Entities with Abstract Properties</h4>
+<div class="sect2">
+<h3 id="abstract-entities-with-abstract-properties"><a class="anchor" href="#abstract-entities-with-abstract-properties"></a>Abstract Entities with Abstract Properties</h3>
 <div class="paragraph">
 <p>When an Abstract Entity needs to be defined with a certain Property, but the modeler using the
 Abstract Entity (i.e., extending it) should be able to decide the Property&#8217;s Characteristic, the
@@ -1468,7 +1558,6 @@ and then used as follows:</p>
 <code>samm:AbstractProperty</code>&#8203;s (both are listed in <code>samm:properties</code>). The properties list of an
 Entity that extends the Abstract Entity must specify the Characteristic to use for each of the
 Abstract Properties (and only those).</p>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -1625,6 +1714,23 @@ Identifiers as specified by ITU and ISO/IEC (OID) and the mapping to URNs in RFC
 </div>
 </div>
 <div class="paragraph">
+<p>Another example for a type of unique identifier that is not a URI is the International Registration
+Data Identifier
+(<a href="https://eclass.eu/support/technical-specification/structure-and-elements/irdi">IRDI</a>) as used for
+example by the <a href="https://eclass.eu/">ECLASS</a> classification system. Referencing IRDIs is also done
+using a synthetic URN structure by prefixing them with <code>urn:irdi:</code>. However, since a valid IRDI
+always contains two <code>#</code> signs, this alone does not make it a valid URI, which is why the second sign
+needs to be URL-encoded (<code>#</code> replaced with <code>%23</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:drillDiameter a samm:Property ;
+    # Reference to IRDI 0173-1#02-AAC895#009
+    samm:see &lt;urn:irdi:0173-1#02-AAC895%23009&gt; ;
+    samm:characteristic :Diameter .</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>If an external element should be referenced that has no unique identifier, <code>samm:see</code> should not be
 used. In this case, refer to the external element in the current model element&#8217;s <code>samm:description</code>,
 for example:</p>
@@ -1634,6 +1740,58 @@ for example:</p>
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:organizationPerson a samm:Property ;
     samm:description "See ISO/IEC 11179-6:2015(E), section 3.35"@en ;
     samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="value-type"><a class="anchor" href="#value-type"></a>Declaring Value</h3>
+<div class="paragraph">
+<p>The <code>samm:Value</code> type is designed to represent a value enriched with semantic metadata.
+It encapsulates the actual data (which can be a literal or a reference) along with additional descriptive information.
+This type is used to enhance clarity in Enumerations and Properties by allowing you to attach a human-readable label,
+a detailed description, and an external reference to the value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A value can also be used as <code>samm:exampleValue</code> for a Property, either by referencing the value or
+by declaration of an anonymous value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:warningLevelProperty a samm:Property ;
+   samm:exampleValue :GreenLight ;
+   samm:characteristic [
+      a samm:Characteristic ;
+      samm:dataType xsd:string ;
+   ] .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:propertyWithExampleValue a samm:Property ;
+   samm:exampleValue [
+      a samm:Value ;
+      samm:description "Some Description"@en ;
+      samm:value 2 ;
+   ] ;
+   samm:characteristic [
+      a samm:Characteristic ;
+      samm:dataType xsd:integer ;
+   ] .</code></pre>
 </div>
 </div>
 </div>
@@ -1650,8 +1808,8 @@ defined, and how the definition for the <code>toggleStatus</code> Property itsel
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
-@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
-@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 :MyAspect a samm:Aspect ;
@@ -1721,8 +1879,8 @@ The value for the <code>samm:payloadName</code> attribute must be of type <code>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
-@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
-@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 

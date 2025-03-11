@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Characteristics and Constraints :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/characteristics.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="2.2.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="units.html">Units</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="payloads.html">Payloads</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes/release-notes.html">Release Notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">2.2.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.7/index.html">2.9.7</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.2/index.html">2.1.2</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.1/index.html">2.1.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version is-current">
+          <a href="index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Semantic Aspect Meta Model</a></li>
+    <li>Specification</li>
+    <li><a href="characteristics.html">Characteristics</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.2.0</button>
+  <div class="version-menu">
+    <a class="version" href="../snapshot/characteristics.html">snapshot</a>
+    <a class="version is-current" href="characteristics.html">2.2.0</a>
+    <a class="version" href="../2.1.0/characteristics.html">2.1.0</a>
+    <a class="version" href="../2.0.0/characteristics.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/v2.2.0/documentation/modules/ROOT/pages/characteristics.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Characteristics and Constraints</h1>
+<div class="sect1">
+<h2 id="characteristics-classes"><a class="anchor" href="#characteristics-classes"></a>Characteristics Classes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Characteristics Classes describe abstract concepts that must be made specific when they are used.
+For example, the Enumeration Characteristic represents the concept "one of multiple predefined
+values". In order to use the Characteristic, an instance of it must be specified in the
+corresponding Aspect Model, that determines which values are valid for the respective Property.</p>
+</div>
+<div class="paragraph">
+<p>The following diagram shows the Characteristics Classes defined in the scope of the
+Semantic Aspect Meta Model.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/characteristics-classes.svg" alt="characteristics classes" width="100%">
+</div>
+</div>
+<div class="sect2">
+<h3 id="characteristic-characteristic"><a class="anchor" href="#characteristic-characteristic"></a>Characteristic</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Characteristic</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Base class of all characteristics. This Characteristics Class can also be instantiated directly
+(i.e., without creating a subclass).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:preferredName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name in a specific language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable description in a specific language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:dataType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a scalar or complex (Entity) data type. See Section "Type System"
+  in the Aspect Meta Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="trait-characteristic"><a class="anchor" href="#trait-characteristic"></a>Trait</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Trait</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The Trait is used to add one or more <a href="#constraints">Constraints</a> to another Characteristic, which is referred to
+as the "base Characteristic".
+A Trait itself has no <code>samm:dataType</code>, because it inherits the type of its <code>samm-c:baseCharacteristic</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-constraints" class="xref page">declaring constraints</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:baseCharacteristic</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Characterstic that is being constrained</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:constraint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Constraint that is applicable to the base Characteristic. This attribute may
+  be used multiple times, to add multiple Constraints to the base Characteristic.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="quantifiable-characteristic"><a class="anchor" href="#quantifiable-characteristic"></a>Quantifiable</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Quantifiable</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A value which can be quantified and may have a unit, e.g., the number of bolts required for a
+processing step or the expected torque with which these bolts should be tightened.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:unit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the  <a href="units.html#units" class="xref page">Unit catalog</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="measurement-characteristic"><a class="anchor" href="#measurement-characteristic"></a>Measurement</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Measurement</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A measurement is a numeric value with an associated unit and quantity kind.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:unit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the <a href="units.html#units" class="xref page">Unit catalog</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="enumeration-characteristic"><a class="anchor" href="#enumeration-characteristic"></a>Enumeration</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Enumeration</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>An enumeration represents a list of possible values.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-enumerations" class="xref page">declaring enumerations</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:values</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of possible values. The <code>dataType</code> of each of the values must match the
+  <code>dataType</code> of the Enumeration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="state-characteristic"><a class="anchor" href="#state-characteristic"></a>State</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#State</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A state is subclass of Enumeration with a default value.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-state" class="xref page">declaring state</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:defaultValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default value for the state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="duration-characteristic"><a class="anchor" href="#duration-characteristic"></a>Duration</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Duration</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A time duration.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:unit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Unit as defined in the <a href="units.html#units" class="xref page">Unit catalog</a>. The
+referenced unit or its referenceUnit must have the quantityKind
+<code><a href="appendix/unitcatalog.html#quantitykind-time" class="xref page">unit:time</a></code>. Currently, the following units can
+therefore be used: <code><a href="appendix/unitcatalog.html#unit-centipoisePerBar" class="xref page">unit:centipoisePerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-commonYear" class="xref page">unit:commonYear</a></code>
+<code><a href="appendix/unitcatalog.html#unit-day" class="xref page">unit:day</a></code>
+<code><a href="appendix/unitcatalog.html#unit-henryPerKiloohm" class="xref page">unit:henryPerKiloohm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-henryPerOhm" class="xref page">unit:henryPerOhm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-hour" class="xref page">unit:hour</a></code>
+<code><a href="appendix/unitcatalog.html#unit-kilosecond" class="xref page">unit:kilosecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-microhenryPerKiloohm" class="xref page">unit:microhenryPerKiloohm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-microhenryPerOhm" class="xref page">unit:microhenryPerOhm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-microsecond" class="xref page">unit:microsecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millihenryPerKiloohm" class="xref page">unit:millihenryPerKiloohm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millihenryPerOhm" class="xref page">unit:millihenryPerOhm</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millipascalSecondPerBar" class="xref page">unit:millipascalSecondPerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-millisecond" class="xref page">unit:millisecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-minuteUnitOfTime" class="xref page">unit:minuteUnitOfTime</a></code>
+<code><a href="appendix/unitcatalog.html#unit-month" class="xref page">unit:month</a></code>
+<code><a href="appendix/unitcatalog.html#unit-nanosecond" class="xref page">unit:nanosecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-pascalSecondPerBar" class="xref page">unit:pascalSecondPerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-picosecond" class="xref page">unit:picosecond</a></code>
+<code><a href="appendix/unitcatalog.html#unit-poisePerBar" class="xref page">unit:poisePerBar</a></code>
+<code><a href="appendix/unitcatalog.html#unit-poisePerPascal" class="xref page">unit:poisePerPascal</a></code>
+<code><a href="appendix/unitcatalog.html#unit-reciprocalMinute" class="xref page">unit:reciprocalMinute</a></code>
+<code><a href="appendix/unitcatalog.html#unit-secondUnitOfTime" class="xref page">unit:secondUnitOfTime</a></code>
+<code><a href="appendix/unitcatalog.html#unit-shake" class="xref page">unit:shake</a></code>
+<code><a href="appendix/unitcatalog.html#unit-siderealYear" class="xref page">unit:siderealYear</a></code>
+<code><a href="appendix/unitcatalog.html#unit-tropicalYear" class="xref page">unit:tropicalYear</a></code>
+<code><a href="appendix/unitcatalog.html#unit-week" class="xref page">unit:week</a></code>
+<code><a href="appendix/unitcatalog.html#unit-year" class="xref page">unit:year</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="collection-characteristic"><a class="anchor" href="#collection-characteristic"></a>Collection</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Collection</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A group of values which may be either of a scalar or Entity type. The values may be duplicated and
+are not ordered (i.e., bag semantics).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-collections" class="xref page">declaring collections</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:dataType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a scalar or complex (Entity) data type. See Section "Type System"
+  in the Aspect Meta Model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:elementCharacteristic</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference to a Characteristic which describes the individual
+  elements contained in the Collection.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="list-characteristic"><a class="anchor" href="#list-characteristic"></a>List</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#List</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A subclass of <a href="#collection-characteristic">Collection</a> which may contain duplicates and is ordered.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-characteristic"><a class="anchor" href="#set-characteristic"></a>Set</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Set</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A subclass of <a href="#collection-characteristic">Collection</a> which may not contain duplicates and is unordered.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorted-set-characteristic"><a class="anchor" href="#sorted-set-characteristic"></a>Sorted Set</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#SortedSet</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A subclass of <a href="#collection-characteristic">Collection</a> which may not contain duplicates and is ordered.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="time-series-characteristic"><a class="anchor" href="#time-series-characteristic"></a>Time Series</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#TimeSeries</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A subclass of <a href="#sorted-set-characteristic">Sorted Set</a> containing values with the exact point in time when the
+values where recorded.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-time-series" class="xref page">declaring time series</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:dataType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set to <code>samm-e:TimeSeriesEntity</code>. This Entity consists of two Properties, namely
+  <code>samm-e:timestamp</code> and <code>samm-e:value</code>.</p>
+<p class="tableblock">As such the structure for time series data is fixed to a collection of key/value pairs with the
+timestamp being the key and the value being the value.</p>
+<p class="tableblock">The <code>samm-e:timestamp</code> property has a fixed Characteristic of <code>samm-c:Timestamp</code>. The Characteristic
+of the <code>samm-e:value</code> Property is set in the specific Aspect Model giving the value domain specific
+semantics.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="code-characteristic"><a class="anchor" href="#code-characteristic"></a>Code</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Code</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property which contains any kind of code. Note that this Characteristic does not define
+a <code>samm:dataType</code>, this must therefore be done when instantiating the Characteristic.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="either-characteristic"><a class="anchor" href="#either-characteristic"></a>Either</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Either</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property whose value can have one of two possible types (a disjoint union).
+This Characteristic does not have one explicit <code>samm:dataType</code>, as it can be the datatype of either the left or the right.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-either" class="xref page">declaring either</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:left</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The left side of the Either. The attribute references another Characteristic which
+  describes the value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:right</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The right side of the Either. The attribute references another Characteristic
+  which describes the value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="single-entity-characteristic"><a class="anchor" href="#single-entity-characteristic"></a>Single Entity</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#SingleEntity</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property whose data type is an Entity. The Entity used as data type could be defined in
+the same Aspect Model or the shared Entity namespace of the Semantic Aspect Meta Model.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-characteristics" class="xref page">declaring characteristics</a> for usage in an Aspect Model.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="structured-value-characteristic"><a class="anchor" href="#structured-value-characteristic"></a>Structured Value</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#StructuredValue</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property which contains a scalar <a href="datatypes.html#data-types" class="xref page">string-like value space</a>
+value with a well-defined structure. The Structured Value Characteristic allows the description of
+the parts of the Property&#8217;s value by linking to a separate Property definition for each part. To
+define the parts, the value must be deconstructed using a regular expression.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-structured-value" class="xref page">declaring structured value</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:deconstructionRule</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The regular expression used to deconstruct the value into parts that
+  are mapped to separate Properties. This regular expression must contain the same number of capture
+  groups as there are Properties given in the <code>elements</code> list. The <em>n</em>&#8203;th capture group maps
+  to the <em>n</em>&#8203;th Property in the <code>elements</code> list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:elements</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of entries each of which can either be a Property reference or a string
+  literal. The list must contain at least one Property reference.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Concatenating the values of the Properties in the <code>elements</code> list with the string literals in the
+given order should yield a value that corresponds to the original value that has this Structured
+Value Characteristic. While the <code>deconstructionRule</code> is used for deconstruction, the string literals
+in the <code>elements</code> list are used for construction. When the Property using the Structured Value
+Characteristic also defines an <code>exampleValue</code>, construction and deconstruction of the value are
+tested when validating the model.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="characteristics-instances"><a class="anchor" href="#characteristics-instances"></a>Characteristics Instances</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A number of concrete Characteristics are defined in conjunction with the Aspect Meta Model. They can
+be used as-is as Characteristics for Properties in Aspect Models. The following diagram shows the
+Characteristics Instances defined in the scope of the Semantic Aspect Meta Model.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/characteristics-instances.svg" alt="characteristics instances" width="100%">
+</div>
+</div>
+<div class="sect2">
+<h3 id="timestamp-characteristic"><a class="anchor" href="#timestamp-characteristic"></a>Timestamp</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Timestamp</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property which contains the date and time with an optional timezone.</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:dateTime</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="text-characteristic"><a class="anchor" href="#text-characteristic"></a>Text</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Text</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property which contains plain text. This is intended exclusively for human readable
+strings, not for identifiers, measurement values, etc.</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multi-language-text-characteristic"><a class="anchor" href="#multi-language-text-characteristic"></a>Multi-Language Text</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#MultiLanguageText</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property which contains plain text in multiple languages. This is intended exclusively
+for human readable strings, not for identifiers, measurement values, etc.</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">rdf:langString</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="language-characteristic"><a class="anchor" href="#language-characteristic"></a>Language</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Language</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property containing a language according to ISO 639-1
+<a href="../snapshot/appendix/bibliography.html#iso639" class="xref page">[iso639]</a>, for example "de".</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locale-characteristic"><a class="anchor" href="#locale-characteristic"></a>Locale</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Locale</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property containing a locale according to IETF BCP 47
+<a href="../snapshot/appendix/bibliography.html#bcp47" class="xref page">[bcp47]</a>, for example "de-DE".</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="boolean-characteristic"><a class="anchor" href="#boolean-characteristic"></a>Boolean</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Boolean</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Represents a boolean value (i.e., a "flag").</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:boolean</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="resource-path-characteristic"><a class="anchor" href="#resource-path-characteristic"></a>Resource Path</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#ResourcePath</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property that contains the path to a relative or absolute resource.</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:anyURI</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mime-type-characteristic"><a class="anchor" href="#mime-type-characteristic"></a>MIME Type</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#MimeType</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property that contains a MIME type as defined by RFC 2046
+<a href="../snapshot/appendix/bibliography.html#rfc2046" class="xref page">[rfc2046]</a>, for example "application/json",
+"application/xls" or "image/png".</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">xsd:string</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unit-reference-characteristic"><a class="anchor" href="#unit-reference-characteristic"></a>Unit Reference</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#UnitReference</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a Property containing a reference to one of the units in the
+<a href="appendix/unitcatalog.html#unit-catalog" class="xref page">Unit catalog</a>.<br>
+See <a href="modeling-guidelines.html#using-unit-reference" class="xref page">Using Unit Reference</a> for usage in an Aspect Model.</p>
+</div>
+<div class="paragraph">
+<p>dataType: <code><a href="datatypes.html#data-types" class="xref page">samm:curie</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reference-characteristic"><a class="anchor" href="#reference-characteristic"></a>Reference</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Reference</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A reference is a value that refers to a concept such as a resource or a model element.
+It can be a <a href="namespaces.html#meta-model-identifiers-definition" class="xref page">SAMM meta model identifier</a>,
+a <a href="namespaces.html#aspect-model-element-identifiers-definition" class="xref page">SAMM model element identifier</a>,
+a resource URI, or a URI referring to a concept in a different formalism or vocabulary.
+The value follows the same rules as a <a href="modeling-guidelines.html#adding-external-references" class="xref page">samm:see reference</a>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-reference" class="xref page">declaring Reference</a> for usage in an Aspect Model.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="constraints"><a class="anchor" href="#constraints"></a>Constraints</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="constraint"><a class="anchor" href="#constraint"></a>Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#Constraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Base class for other constraints that constrain a Characteristic in some way, e.g., the
+<a href="#range-constraint">Range Constraint</a> limits the value range for a Property.</p>
+</div>
+<div class="paragraph">
+<p>The Constraint class has no attributes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="language-constraint"><a class="anchor" href="#language-constraint"></a>Language Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#LanguageConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Restricts a value to a specific language.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:languageCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An ISO 639-1
+  <a href="../snapshot/appendix/bibliography.html#iso639" class="xref page">[iso639]</a> language code for the language of
+  the value of the constrained Property, e.g., "de".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="locale-constraint"><a class="anchor" href="#locale-constraint"></a>Locale Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#LocaleConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Restricts a value to a specific locale, i.e., a language with additional region information.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:localeCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An IETF BCP 47 <a href="../snapshot/appendix/bibliography.html#bcp47" class="xref page">[bcp47]</a>
+  language code for the locale of the value of the constrained Property, e.g., "de-DE".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="range-constraint"><a class="anchor" href="#range-constraint"></a>Range Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#RangeConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Restricts the value range of a Property. At least one of <code>samm-c:maxValue</code> or <code>samm-c:minValue</code> must
+be present in a Range Constraint.</p>
+</div>
+<div class="paragraph">
+<p>Whether the <code>samm-c:maxValue</code> and <code>samm-c:minValue</code> are inclusive or exclusive can be defined using
+the <code>samm-c:upperBoundDefinition</code> and <code>samm-c:lowerBoundDefinition</code> attributes.
+When one or both of them are not specified, the corresponding value defaults to inclusive.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The values for <code>maxValue</code> and <code>minValue</code> must be given in the same effective dataType that the
+constrained Characteristic uses.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:maxValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The upper bound of a range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:minValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lower bound of a range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:upperBoundDefinition</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the upper bound of a range is inclusive or
+  exclusive. Possible values are <code>samm-c:AT_MOST</code> and <code>samm-c:LESS_THAN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:lowerBoundDefinition</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the lower bound of a range is inclusive or
+  exclusive. Possible values are <code>samm-c:AT_LEAST</code> and <code>samm-c:GREATER_THAN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When either the <code>samm-c:minValue</code> or the <code>samm-c:maxValue</code> is not given, the Range is defined
+as having an open lower or upper boundary.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>AT_LEAST</code> and <code>AT_MOST</code> values for <code>lowerBoundDefinition</code> and <code>upperBoundDefinition</code>
+define that the values for <code>minValue</code> and <code>maxValue</code> are inclusive. The <code>LESS_THAN</code> and
+<code>GREATER_THAN</code> values for the <code>lowerBoundDefinition</code> and <code>upperBoundDefinition</code> define that the
+values for <code>minValue</code> and <code>maxValue</code> are exclusive.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This Constraint can be used to restrict Characteristics with one of two kinds of data types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="xref page">numeric data type</a>; in this case the
+Constraint restricts the range of the value. The scalar data types that can be restricted are:
+<code>xsd:double</code>, <code>xsd:float</code>, <code>xsd:decimal</code>, <code>xsd:integer</code>, <code>xsd:byte</code>, <code>xsd:short</code>, <code>xsd:int</code>,
+<code>xsd:long</code>, <code>xsd:unsignedByte</code>, <code>xsd:unsignedShort</code>, <code>xsd:unsignedInt</code>, <code>xsd:unsignedLong</code>,
+<code>xsd:positiveInteger</code> , <code>xsd:nonPositiveInteger</code>, <code>xsd:negativeInteger</code> and
+<code>xsd:nonNegativeInteger</code>.</p>
+</li>
+<li>
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="xref page">time and date data type</a>; in this case
+the Constraint restricts the scalar data types: <code>xsd:date</code>,<code>xsd:time</code>, <code>xsd:dateTime</code>,
+<code>xsd:dateTimeStamp</code>, <code>xsd:gYear</code>, <code>xsd:gMonth</code>, <code>xsd:gMonthDay</code>, <code>xsd:duration</code>,
+<code>xsd:yearMonthDuration</code>, <code>xsd:dayTimeDuration</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="encoding-constraint"><a class="anchor" href="#encoding-constraint"></a>Encoding Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#EncodingConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Restricts the encoding of a Property.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configures the encoding. This must be one of the following: <code>samm:US-ASCII</code>,
+  <code>samm:ISO-8859-1</code>, <code>samm:UTF-8</code>, <code>samm:UTF-16</code>, <code>samm:UTF-16BE</code> or <code>samm:UTF-16LE</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The default encoding for values with a <a href="datatypes.html#data-types" class="xref page">string-like value space</a>
+is UTF-8, therefore using an Encoding Constraint with a <code>samm:value</code> of <code>samm:UTF-8</code> is only
+necessary when a Property&#8217;s encoding is changed during an Aspect Model version increase <em>from</em> some
+other encoding <em>to</em> UTF-8 to indicate that the other encoding is not any longer used.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="length-constraint"><a class="anchor" href="#length-constraint"></a>Length Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#LengthConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>This Constraint can be used to restrict two types of Characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Characteristics that have a <a href="datatypes.html#data-types" class="xref page">string-like value space</a>; in this case
+the Constraint restricts the length of the (string-) value. The scalar data types that can be
+restricted are: <code>xsd:string</code>, <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, <code>xsd:dateTimeStamp</code>,
+<code>xsd:gYear</code>, <code>xsd:gMonth</code>, <code>xsd:gMonthDay</code>, <code>xsd:duration</code>, <code>xsd:yearMonthDuration</code>,
+<code>xsd:dayTimeDuration</code>, <code>xsd:hexBinary</code>, <code>xsd:base64Binary</code>, <code>xsd:anyURI</code>, <code>samm:curie</code> and
+<code>rdf:langString</code>.</p>
+</li>
+<li>
+<p>Collection Characteristics (<a href="#collection-characteristic">Collection</a>, <a href="#set-characteristic">Set</a>,
+<a href="#sorted-set-characteristic">Sorted Set</a>, <a href="#list-characteristic">List</a>). In this case the Constraint restricts the
+number of elements in the collection.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>At least one of <code>samm-c:maxValue</code> or <code>samm-c:minValue</code> must be present in a Length Constraint.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:maxValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum length. Must be given as <code>xsd:nonNegativeInteger</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:minValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum length. Must be given as <code>xsd:nonNegativeInteger</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+When using the <code>samm-c:minValue</code> parameter in Length Constraint, it is crucial to consider the following:
+Creating a Model with a <a href="#set-characteristic">Set</a>/<a href="#sorted-set-characteristic">Sorted Set</a> based on a finite Base Characteristic (<a href="#boolean-characteristic">Boolean</a> or <a href="#enumeration-characteristic">Enumeration</a>)
+and adding Length Constraint, the <code>samm-c:minValue</code> must not exceed the total number of elements in the Base Characteristic.
+Models with such conditions are not recognized as invalid, but no valid payloads can exist for them.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="regular-expression-constraint"><a class="anchor" href="#regular-expression-constraint"></a>Regular Expression Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#RegularExpressionConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Restricts a string value to a regular expression as defined by XQuery 1.0 and XPath 2.0 Functions
+and Operators <a href="../snapshot/appendix/bibliography.html#xpath-functions" class="xref page">[xpath-functions]</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The regular expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="fixed-point-constraint"><a class="anchor" href="#fixed-point-constraint"></a>Fixed Point Constraint</h3>
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#FixedPointConstraint</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Defines the scaling factor as well as the amount of integral numbers for a fixed point number. The
+constraint may only be used in conjunction with Characteristics which use the <code>xsd:decimal</code> data
+type.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:scale</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The scaling factor for a fixed point number. E.g., if a fixedpoint number is 123.04, the scaling factor is 2 (the number of digits after the decimal point). Must be given as
+  <code>xsd:positiveInteger</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-c:integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of integral digits for a fixed point number. E.g., if a fixedpoint number is 123.04, the integer factor is 3 (the number of digits before the decimal point). Must be given as
+  <code>xsd:positiveInteger</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

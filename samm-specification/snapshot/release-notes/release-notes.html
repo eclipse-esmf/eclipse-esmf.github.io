@@ -247,6 +247,9 @@
           <a href="../index.html">snapshot</a>
         </li>
         <li class="version">
+          <a href="../../2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
           <a href="../../2.1.0/index.html">2.1.0</a>
         </li>
         <li class="version">
@@ -273,6 +276,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="release-notes.html">snapshot</a>
+    <a class="version" href="../../2.2.0/release-notes/release-notes.html">2.2.0</a>
     <a class="version is-missing" href="../../2.1.0/index.html">2.1.0</a>
     <a class="version is-missing" href="../../2.0.0/index.html">2.0.0</a>
   </div>
@@ -285,6 +289,188 @@
 </aside>
 <article class="doc">
 <h1 class="page">Release Notes - Semantic Aspect Meta Model</h1>
+<div class="sect1">
+<h2 id="samm-2.2.0"><a class="anchor" href="#samm-2.2.0"></a>Release 2.2.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="samm-2.2.0-modeling-features"><a class="anchor" href="#samm-2.2.0-modeling-features"></a>Modeling features and elements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>It is now possible to add <code>samm:preferredName</code>, <code>samm:description</code> and <code>samm:see</code> descriptive
+attributes to namespaces using the <code>samm:Namespace</code> pseudo-element declaration. A corresponding
+section <a href="../modeling-guidelines.html#declaring-namespaces" class="xref page">Declaring Namespaces</a> was added.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/246">Issue on Github.</a></p>
+</li>
+<li>
+<p>Introduce new <a href="../entities.html#quantity-entity" class="xref page">samm-e:Quantity</a> Abstract Entity to enable
+<a href="../modeling-guidelines.html#declaring-quantities" class="xref page">declaring</a> explicit relationships between
+values and their units in runtime data.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/316">Issue on Github.</a></p>
+</li>
+<li>
+<p>Allow declaration and description of scalar values by introducing
+<a href="../modeling-guidelines.html#value-type" class="xref page">samm:Value</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/52">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.2.0-validation"><a class="anchor" href="#samm-2.2.0-validation"></a>Validation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../characteristics.html#regular-expression-constraint" class="xref page">samm-c:RegularExpressionConstraint</a>s
+are now validated for <code>samm:exampleValue</code>. <a href="https://github.com/eclipse-esmf/esmf-sdk/issues/384">Issue
+on Github.</a></p>
+</li>
+<li>
+<p>Validate that <a href="../characteristics.html#constraint" class="xref page">samm:Constraint</a> base Constraint can not
+directly be used. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/274">Issue
+on Github.</a></p>
+</li>
+<li>
+<p>Validate lexical values for <code>xsd:boolean</code> and language tags for <code>rdfs:langString</code>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/268">Issue on Github.</a></p>
+</li>
+<li>
+<p>Validate <a href="../namespaces.html" class="xref page">structure of URNs</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/285">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.2.0-documentation"><a class="anchor" href="#samm-2.2.0-documentation"></a>Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Clarification of terms and sections</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Consistent use of terms "must" and "should" in the documentation.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/249">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify usage of
+<a href="../modeling-guidelines.html#declaring-abstract-entities" class="xref page">samm:AbstractEntity</a> as a data
+type. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/187">Issue on Github.</a></p>
+</li>
+<li>
+<p>Update documentation on contradicting
+<a href="../characteristics.html#length-constraints" class="xref page">samm-c:LengthConstraint</a>s.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/267">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify validity of models where
+<a href="../characteristics.html#length-constraints" class="xref page">samm-c:LengthConstraint</a>s are combined with
+<a href="../characteristics.html#collection-characteristic" class="xref page">samm-c:Collection</a>s.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/288">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify terms "scale" and "integer" for
+<a href="../characteristics.html#fixed-point-constraint" class="xref page">samm-c:FixedPointConstraint</a>.
+<a href="https://github.com/eclipse-esmf/esmf-sdk/issues/217">Issue on Github.</a></p>
+</li>
+<li>
+<p>Specify in detail how prefixes are interpreted in <code>samm:curie</code>
+<a href="../datatypes.html#samm-curie" class="xref page">values</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/252">Issue on Github.</a></p>
+</li>
+<li>
+<p>Fix <a href="../datatypes.html" class="xref page">example value</a> for <code>xsd:int</code>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/283">Issue on Github.</a></p>
+</li>
+<li>
+<p>Fix <a href="../modeling-guidelines.html#declaring-time-series" class="xref page">samm-c:TimeSeries</a> example.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/313">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify usage of <code>xsd</code> and <code>rdfs</code> RDF <a href="../namespaces.html#prefixes" class="xref page">prefixes</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/275">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify use of <code>samm:see</code> for IRDIs in section
+<a href="../modeling-guidelines.html#adding-external-references" class="xref page">Adding external references</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/320">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Improvements of <a href="../payloads.html" class="xref page">JSON payload mapping</a> section</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide example for <a href="../payloads.html#example" class="xref page">JSON payload mapping</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/121">Issue on Github.</a></p>
+</li>
+<li>
+<p>Document <a href="../payloads.html#characteristics-payload-mappings" class="xref page">mapping</a> of
+<a href="../characteristics.html#either-characteristic" class="xref page">samm-c:Either</a> Characteristic to JSON payloads.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/271">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Improvements of <a href="../appendix/best-practices.html" class="xref page">Best Practices</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Greatly improved best practices section on the topics of naming elements, choosing appropriate
+<code>samm:preferredName</code>&#8203;s and writing good <code>samm:description</code>&#8203;s. The best practices for
+descriptions now also state which <a href="https://commonmark.org/">CommonMark</a> Markdown constructs can be
+used for structuring documentation.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/309">Issue on Github.</a></p>
+</li>
+<li>
+<p>Add a best practices section on SI vs. imperial units.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/273">Issue on Github.</a></p>
+</li>
+<li>
+<p>Explain <a href="../appendix/best-practices.html#reusing-elements" class="xref page">Reusing Elements</a> in
+best practices. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/328">Issue
+on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Architecture decision records</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Define mapping of namespaces and model elements to files:
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md">0007 - Model Resolution</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/181">Issue on Github.</a></p>
+</li>
+<li>
+<p>Specify how copyright and license information is stored in Aspect Models:
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0008-copyright-and-license-information.md">0008 - Storage of copyright and license information in Aspect Models</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/300">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.2.0-others"><a class="anchor" href="#samm-2.2.0-others"></a>Others</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="../meta-model-elements.html" class="xref page">Meta Model Elements</a> diagram is now colored.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/290">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="samm-2.1.0"><a class="anchor" href="#samm-2.1.0"></a>Release 2.1.0</h2>
 <div class="sectionbody">
@@ -326,24 +512,24 @@ improved: The referenced type is checked by the validation now.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0001-formalism-for-aspect-models.md">Formalism for the definition of Aspect Models: RDF with Turtle syntax</a></p>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0001-formalism-for-aspect-models.md">0001 - Formalism for the definition of Aspect Models: RDF with Turtle syntax</a></p>
 </li>
 <li>
-<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0002-aspect-model-file-extension.md">Aspect
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0002-aspect-model-file-extension.md">0002 - Aspect
 Model File Extension: Use .ttl</a></p>
 </li>
 <li>
-<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0003-meta-model-specification.md">Formal and informal Meta Model Specification: Specify via SHACL</a></p>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0003-meta-model-specification.md">0003 - Formal and informal Meta Model Specification: Specify via SHACL</a></p>
 </li>
 <li>
-<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0004-urn-as-identifiers.md">Usage
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0004-urn-as-identifiers.md">0004 - Usage
 of URNs as identifiers for model elements</a></p>
 </li>
 <li>
-<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0005-rdf-vocabulary.md">Aspect Meta Model RDF Vocabulary</a></p>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0005-rdf-vocabulary.md">0005 - Aspect Meta Model RDF Vocabulary</a></p>
 </li>
 <li>
-<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0006-unit-catalog.md">Unit Catalog: Use UNECE Recommendation 20</a></p>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0006-unit-catalog.md">0006 - Unit Catalog: Use UNECE Recommendation 20</a></p>
 </li>
 </ul>
 </div>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Release Notes - Semantic Aspect Meta Model :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/release-notes/release-notes.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="2.2.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../units.html">Units</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../payloads.html">Payloads</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="release-notes.html">Release Notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">2.2.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.7/index.html">2.9.7</a>
+        </li>
+        <li class="version">
+          <a href="../../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.2/index.html">2.1.2</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.1/index.html">2.1.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Semantic Aspect Meta Model</a></li>
+    <li><a href="release-notes.html">Release Notes</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.2.0</button>
+  <div class="version-menu">
+    <a class="version" href="../../snapshot/release-notes/release-notes.html">snapshot</a>
+    <a class="version is-current" href="release-notes.html">2.2.0</a>
+    <a class="version is-missing" href="../../2.1.0/index.html">2.1.0</a>
+    <a class="version is-missing" href="../../2.0.0/index.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/v2.2.0/documentation/modules/release-notes/pages/release-notes.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Release Notes - Semantic Aspect Meta Model</h1>
+<div class="sect1">
+<h2 id="samm-2.2.0"><a class="anchor" href="#samm-2.2.0"></a>Release 2.2.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="samm-2.2.0-modeling-features"><a class="anchor" href="#samm-2.2.0-modeling-features"></a>Modeling features and elements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>It is now possible to add <code>samm:preferredName</code>, <code>samm:description</code> and <code>samm:see</code> descriptive
+attributes to namespaces using the <code>samm:Namespace</code> pseudo-element declaration. A corresponding
+section <a href="../modeling-guidelines.html#declaring-namespaces" class="xref page">Declaring Namespaces</a> was added.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/246">Issue on Github.</a></p>
+</li>
+<li>
+<p>Introduce new <a href="../entities.html#quantity-entity" class="xref page">samm-e:Quantity</a> Abstract Entity to enable
+<a href="../modeling-guidelines.html#declaring-quantities" class="xref page">declaring</a> explicit relationships between
+values and their units in runtime data.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/316">Issue on Github.</a></p>
+</li>
+<li>
+<p>Allow declaration and description of scalar values by introducing
+<a href="../modeling-guidelines.html#value-type" class="xref page">samm:Value</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/52">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.2.0-validation"><a class="anchor" href="#samm-2.2.0-validation"></a>Validation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../characteristics.html#regular-expression-constraint" class="xref page">samm-c:RegularExpressionConstraint</a>s
+are now validated for <code>samm:exampleValue</code>. <a href="https://github.com/eclipse-esmf/esmf-sdk/issues/384">Issue
+on Github.</a></p>
+</li>
+<li>
+<p>Validate that <a href="../characteristics.html#constraint" class="xref page">samm:Constraint</a> base Constraint can not
+directly be used. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/274">Issue
+on Github.</a></p>
+</li>
+<li>
+<p>Validate lexical values for <code>xsd:boolean</code> and language tags for <code>rdfs:langString</code>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/268">Issue on Github.</a></p>
+</li>
+<li>
+<p>Validate <a href="../namespaces.html" class="xref page">structure of URNs</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/285">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.2.0-documentation"><a class="anchor" href="#samm-2.2.0-documentation"></a>Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Clarification of terms and sections</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Consistent use of terms "must" and "should" in the documentation.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/249">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify usage of
+<a href="../modeling-guidelines.html#declaring-abstract-entities" class="xref page">samm:AbstractEntity</a> as a data
+type. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/187">Issue on Github.</a></p>
+</li>
+<li>
+<p>Update documentation on contradicting
+<a href="../characteristics.html#length-constraints" class="xref page">samm-c:LengthConstraint</a>s.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/267">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify validity of models where
+<a href="../characteristics.html#length-constraints" class="xref page">samm-c:LengthConstraint</a>s are combined with
+<a href="../characteristics.html#collection-characteristic" class="xref page">samm-c:Collection</a>s.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/288">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify terms "scale" and "integer" for
+<a href="../characteristics.html#fixed-point-constraint" class="xref page">samm-c:FixedPointConstraint</a>.
+<a href="https://github.com/eclipse-esmf/esmf-sdk/issues/217">Issue on Github.</a></p>
+</li>
+<li>
+<p>Specify in detail how prefixes are interpreted in <code>samm:curie</code>
+<a href="../datatypes.html#samm-curie" class="xref page">values</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/252">Issue on Github.</a></p>
+</li>
+<li>
+<p>Fix <a href="../datatypes.html" class="xref page">example value</a> for <code>xsd:int</code>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/283">Issue on Github.</a></p>
+</li>
+<li>
+<p>Fix <a href="../modeling-guidelines.html#declaring-time-series" class="xref page">samm-c:TimeSeries</a> example.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/313">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify usage of <code>xsd</code> and <code>rdfs</code> RDF <a href="../namespaces.html#prefixes" class="xref page">prefixes</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/275">Issue on Github.</a></p>
+</li>
+<li>
+<p>Clarify use of <code>samm:see</code> for IRDIs in section
+<a href="../modeling-guidelines.html#adding-external-references" class="xref page">Adding external references</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/320">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Improvements of <a href="../payloads.html" class="xref page">JSON payload mapping</a> section</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide example for <a href="../payloads.html#example" class="xref page">JSON payload mapping</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/121">Issue on Github.</a></p>
+</li>
+<li>
+<p>Document <a href="../payloads.html#characteristics-payload-mappings" class="xref page">mapping</a> of
+<a href="../characteristics.html#either-characteristic" class="xref page">samm-c:Either</a> Characteristic to JSON payloads.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/271">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Improvements of <a href="../appendix/best-practices.html" class="xref page">Best Practices</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Greatly improved best practices section on the topics of naming elements, choosing appropriate
+<code>samm:preferredName</code>&#8203;s and writing good <code>samm:description</code>&#8203;s. The best practices for
+descriptions now also state which <a href="https://commonmark.org/">CommonMark</a> Markdown constructs can be
+used for structuring documentation.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/309">Issue on Github.</a></p>
+</li>
+<li>
+<p>Add a best practices section on SI vs. imperial units.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/273">Issue on Github.</a></p>
+</li>
+<li>
+<p>Explain <a href="../appendix/best-practices.html#reusing-elements" class="xref page">Reusing Elements</a> in
+best practices. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/328">Issue
+on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Architecture decision records</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Define mapping of namespaces and model elements to files:
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md">0007 - Model Resolution</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/181">Issue on Github.</a></p>
+</li>
+<li>
+<p>Specify how copyright and license information is stored in Aspect Models:
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0008-copyright-and-license-information.md">0008 - Storage of copyright and license information in Aspect Models</a>.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/300">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.2.0-others"><a class="anchor" href="#samm-2.2.0-others"></a>Others</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="../meta-model-elements.html" class="xref page">Meta Model Elements</a> diagram is now colored.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/290">Issue on Github.</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="samm-2.1.0"><a class="anchor" href="#samm-2.1.0"></a>Release 2.1.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SAMM 2.1.0 is the first feature release on the Eclipse Semantic Modeling Framework with improvements
+on validation and documentation as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="samm-2.1.0-validation"><a class="anchor" href="#samm-2.1.0-validation"></a>Validation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The validation rule "all Properties defined in an Entity as well as in the Entity or
+  AbstractEntity it is extending must have a unique name" has been removed. This means that it is
+  now valid that multiple Entities inheriting from a common parent may share names.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/161">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Validation of
+<a href="../characteristics.html#time-series-characteristic" class="xref page">samm-c:TimeSeries</a> was
+improved: The referenced type is checked by the validation now.
+<a href="https://github.com/eclipse-esmf/esmf-sdk/issues/194">Issue on Github</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.1.0-documentation"><a class="anchor" href="#samm-2.1.0-documentation"></a>Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The SAMM project now uses <a href="https://adr.github.io/madr/">MADR</a> as a template for
+<a href="https://github.com/joelparkerhenderson/architecture-decision-record">Architecture Decision Records
+(ADR)</a>. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/pull/241">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Architecture decision records were added to properly document important past design decisions.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/pull/243">Issue on Github</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0001-formalism-for-aspect-models.md">0001 - Formalism for the definition of Aspect Models: RDF with Turtle syntax</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0002-aspect-model-file-extension.md">0002 - Aspect
+Model File Extension: Use .ttl</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0003-meta-model-specification.md">0003 - Formal and informal Meta Model Specification: Specify via SHACL</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0004-urn-as-identifiers.md">0004 - Usage
+of URNs as identifiers for model elements</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0005-rdf-vocabulary.md">0005 - Aspect Meta Model RDF Vocabulary</a></p>
+</li>
+<li>
+<p><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0006-unit-catalog.md">0006 - Unit Catalog: Use UNECE Recommendation 20</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Section on <a href="../modeling-guidelines.html#declaring-events" class="xref page">Declaring
+Events</a> was added; wrong edges in the <a href="../meta-model-elements.html" class="xref page">Meta
+Model Elements overview diagram</a> were fixed.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/104">Issue on Github</a>.</p>
+</li>
+<li>
+<p><a href="../modeling-guidelines.html#naming-rules" class="xref page">Naming convention</a> for Events
+was clarified: Events should use UpperCamelCase, like Aspects, Entities, Constraints and
+Characteristics. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/147">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Section on <a href="../appendix/model-evolution.html" class="xref page">Model Evolution</a> was added in
+appendix. <a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/82">Issue on
+Github</a>.</p>
+</li>
+<li>
+<p>Reference to outdated terminology "leaf Characteristic" was fixed.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/pull/215">Issue on Github</a>.</p>
+</li>
+<li>
+<p>Japanese sample text in <a href="../datatypes.html" class="xref page">Data Types</a> was fixed.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/172">Issue on Github</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="samm-2.1.0-others"><a class="anchor" href="#samm-2.1.0-others"></a>Others</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The SAMM project was set up to be based on shared
+<a href="https://github.com/eclipse-esmf/esmf-parent">esmf-parent</a> Maven parent project.
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/issues/219">Issue on Github</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="samm-2.0.0"><a class="anchor" href="#samm-2.0.0"></a>Release 2.0.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the first release in the ESMF. Its structure and content is similar to that of the
+<a href="#bamm-2.0.0">Legacy BAMM Aspect Meta Model 2.0.0</a>, which is why the version number 2.0.0 is kept.
+This release changes RDF namespaces and prefix names according to the move from the Open
+Manufacturing Platform (OMP) Semantic Data Structuring (SDS) working group BAMM Aspect Meta Model
+(BAMM) to the Eclipse Semantic Modeling Framework (ESMF) Semantic Aspect Meta Model (SAMM).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Meta model URNs are changed from <code>urn:bamm:io.openmanufacturing:&lt;element-type&gt;:&lt;version&gt;#&lt;element-name&gt;</code> to <code>urn:samm:org.eclipse.esmf.samm:&lt;element-type&gt;:&lt;version&gt;#&lt;element-name&gt;</code>.</p>
+</li>
+<li>
+<p>The namespace rules for model elements changed accordingly from <code>bamm</code> to <code>samm</code> in the URN schema.</p>
+</li>
+<li>
+<p>RDF prefixes are renamed from <code>bamm</code>, <code>bamm-c</code> and <code>bamm-e</code> to <code>samm</code>, <code>samm-c</code> and <code>samm-e</code>, respectively.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Version 1.0.0 of the meta model was released in the scope of the Open Manufacturing Platform (OMP)
+and was called <em>BAMM Aspect Meta Model (BAMM)</em>. Version 2.0.0 was also released as <em>BAMM</em>, then
+re-released as Eclipse Semantic Modeling Framework (ESMF) Semantic Aspect Meta Model (SAMM) 2.0.0.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bamm-2.0.0"><a class="anchor" href="#bamm-2.0.0"></a>Release 2.0.0 (Legacy: BAMM)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Introduce Entity inheritance, the according Meta Model Element <code>bamm:AbstractEntity</code> and
+<code>bamm:AbstractProperty</code> as well as the <code>bamm:extends</code> attribute to define a hierarchy of Entities.
+This replaces the concept of refining an entity and the <code>bamm:refines</code> attribute in order to
+reduce complexity and modeling efforts.</p>
+</li>
+<li>
+<p>Remove the <code>bamm:name</code> attribute to remove redundancy. The "short" name
+of an element is the local name part of its URI, i.e., the part following the <code>#</code> symbol.</p>
+</li>
+<li>
+<p>The meta model elements <code>Unit</code>, <code>QuantityKinds</code> and their corresponding attributes have been moved
+from the <code>unit</code> namespace to the <code>bamm</code> namespace. The unit namespace is now solely reserved for
+the units of the <a href="../appendix/unitcatalog.html#unit-catalog-units" class="xref page">unit
+catalog</a> itself.</p>
+</li>
+<li>
+<p>The
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/src/main/resources/samm/unit/2.0.0/units.ttl">formal
+description (units.ttl)</a> of the units catalog is now automatically generated from its original
+source (see <a href="../units.html" class="xref page">Units</a>) and the
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/esmf-samm-build-plugin/src/main/resources/custom-units.ttl">local adjustments</a>.</p>
+</li>
+<li>
+<p>The <code>localeCode</code> and <code>languageCode</code> attributes have been moved from the <code>bamm</code> namespace to the
+<code>bamm-c</code> namespace.</p>
+</li>
+<li>
+<p>Shared model elements have been adjusted:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="../entities.html#point-3d" class="xref page">Point3d Entity</a> has been changed to use
+Abstract Properties for its components;</p>
+</li>
+<li>
+<p>The <a href="../entities.html#time-series-entity" class="xref page">Time Series Entity</a> has been
+changed to use an Abstract Property for its <code>value</code> component</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The attributes <code>bamm:properties</code>, <code>bamm:operations</code> and <code>bamm:events</code> on <code>bamm:Aspect</code> are now
+optional, i.e., they do not have to be added any more even when they are empty lists.</p>
+</li>
+<li>
+<p>Various issues in the specification (including examples) have been fixed and phrasing has been improved.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bamm-1.0.0"><a class="anchor" href="#bamm-1.0.0"></a>Release 1.0.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the initial release for the Open Manufacturing Platform.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

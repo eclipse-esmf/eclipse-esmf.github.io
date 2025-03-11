@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aspects :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/modeling-guidelines.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="2.2.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="units.html">Units</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="payloads.html">Payloads</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes/release-notes.html">Release Notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">2.2.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.7/index.html">2.9.7</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.2/index.html">2.1.2</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.1/index.html">2.1.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version is-current">
+          <a href="index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Semantic Aspect Meta Model</a></li>
+    <li>Specification</li>
+    <li><a href="modeling-guidelines.html">Aspects</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.2.0</button>
+  <div class="version-menu">
+    <a class="version" href="../snapshot/modeling-guidelines.html">snapshot</a>
+    <a class="version is-current" href="modeling-guidelines.html">2.2.0</a>
+    <a class="version" href="../2.1.0/modeling-guidelines.html">2.1.0</a>
+    <a class="version" href="../2.0.0/modeling-guidelines.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/v2.2.0/documentation/modules/ROOT/pages/modeling-guidelines.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Aspects</h1>
+<div class="sect1">
+<h2 id="general"><a class="anchor" href="#general"></a>General</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="notes"><a class="anchor" href="#notes"></a>Notes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>As mentioned in the <a href="index.html" class="xref page">Introduction</a>, Aspect Models are described in RDF Turtle
+<a href="../snapshot/appendix/bibliography.html#turtle" class="xref page">[turtle]</a>. The aspect specification will
+therefore assume basic familiarity with Turtle.</p>
+</li>
+<li>
+<p>For the definition of the different Model elements please refer to the
+<a href="meta-model-elements.html" class="xref page">Meta Model Elements</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="naming-rules"><a class="anchor" href="#naming-rules"></a>Naming rules</h3>
+<div class="paragraph">
+<p>The naming of Model Elements follows the naming
+<a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)#Java">Java naming conventions</a> for
+classes, properties and methods.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The names of Aspects, Entities, Events, Constraints and Characteristics follow the naming conventions for
+Java classes, i.e. UpperCamelCase.</p>
+</li>
+<li>
+<p>The names of Properties, Operations and Units follow the naming conventions of Java methods, i.e.
+lowerCamelCase.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rdf-turtle-formatting-rules"><a class="anchor" href="#rdf-turtle-formatting-rules"></a>RDF/Turtle formatting rules</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Each Aspect Model is defined in a separate TTL (Turtle) file.</p>
+</li>
+<li>
+<p>The Turtle file containing an Aspect Model must have the same name as the Aspect.</p>
+</li>
+<li>
+<p>Aspect Model files must be UTF-8 encoded and should not contain a
+<a href="https://en.wikipedia.org/wiki/Byte_order_mark">byte order mark</a>.</p>
+</li>
+<li>
+<p>There should be one empty line between model element definitions.</p>
+</li>
+<li>
+<p>Indentation should be done with three spaces.</p>
+</li>
+<li>
+<p>There should be a space before every separating semicolon.</p>
+</li>
+<li>
+<p>There should be padding spaces inside RDF lists and anonymous nodes (i.e. inside brackets and
+square brackets)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attributes-that-all-model-elements-have"><a class="anchor" href="#attributes-that-all-model-elements-have"></a>Attributes that all model elements have</h3>
+<div class="paragraph">
+<p>Every model element (Aspects, Properties, Characteristics, Entities, Operations) has the following
+attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:preferredName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name in a specific language. This attribute may be defined
+  multiple times for different languages but only once for a specific language. There should be at
+  least one preferredName defined with an "en" language tag.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable description in a specific language. This attribute may be
+  defined multiple times for different languages but only once for a specific language. There should
+  be at least one description defined with an "en" language tag.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:see</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a related element in an external taxonomy, ontology or other standards
+  document. The datatype is <code>xsd:anyURI</code>. This attribute may be defined multiple times.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Although both <code>samm:preferredName</code> and <code>samm:description</code> should be set at least once in every
+model element, in the following examples we will mostly leave them out to improve readability.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="declaring-model-elements"><a class="anchor" href="#declaring-model-elements"></a>Declaring model elements</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="using-namespaces"><a class="anchor" href="#using-namespaces"></a>Using Namespaces</h3>
+<div class="paragraph">
+<p>An Aspect Model file should start with the SAMM prefix definitions. The empty namespace
+":" should be used as local namespace, i.e. the versioned namespace in which the Aspect and its
+elements are defined. Other customer or domain specific namespaces can be defined additionally.
+However, the samm-* namespaces are reserved for the meta model. Third party locations can be
+referred via other namespaces (e.g., "xsd:"). See
+<a href="namespaces.html#namespaces-and-versions" class="xref page">Namespaces and Versions</a> for more details on the topic.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
+@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.2.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.2.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-namespaces"><a class="anchor" href="#declaring-namespaces"></a>Declaring Namespaces</h3>
+<div class="paragraph">
+<p>A Namespace defines the scope in which other model elements, including Aspects,
+are declared. Explicit declarations of Namespaces are not required, they
+exist implicitly by declaring model elements in them. However, the explicit
+declaration of a Namespace is useful if you want to assign human-readable names or
+descriptions to it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+
+# The colon denotes the namespace as defined in the first @prefix declaration above.
+: a samm:Namespace ;
+   samm:preferredName "..."@en ;
+   samm:description "..."@en .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-aspects"><a class="anchor" href="#declaring-aspects"></a>Declaring Aspects</h3>
+<div class="paragraph">
+<p>An Aspect is defined by marking its identifier with <code>a samm:Aspect</code> and additional attributes. Note
+that the <code>a</code> is just a <a href="https://www.w3.org/TR/turtle/#sec-iri">syntactic shortcut</a> for <code>rdf:type</code>. In
+addition to the general attributes, every Aspect Model element has the following attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The list of Properties of this Aspect. Leaving out this
+  attribute completely is equivalent to having it present with an empty list as value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:operations</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The list of Operations of this Aspect. Leaving out this
+  attribute completely is equivalent to having it present with an empty list as value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:events</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The list of Events of this Aspect.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Aspects follow the naming conventions for Java classes, i.e. UpperCamelCase.</p>
+</li>
+<li>
+<p>Each Aspect Model must be defined in its own file. The file name must be the same as the Aspect&#8217;s
+name.</p>
+</li>
+<li>
+<p>The hierarchical namespace part in the Aspect&#8217;s URN can be freely chosen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The definition of an Aspect should therefore have the following structure in TTL syntax; note though
+that unused namespaces can be left out:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
+@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.2.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.2.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MyAspect a samm:Aspect ;
+   samm:preferredName "My Aspect"@en ;
+   samm:preferredName "Mein Aspekt"@de ;
+   samm:description "This Aspect is an example."@en ;
+   samm:description "Dieser Aspekt ist ein Beispiel."@de ;
+   samm:properties ( :myProperty :anotherProperty ) ;
+   # In this example, there are no operations or events.
+   samm:operations ( ) ;
+   samm:events ( ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-properties"><a class="anchor" href="#declaring-properties"></a>Declaring Properties</h3>
+<div class="paragraph">
+<p>In addition to the <a href="#declaring-model-elements#attributes-that-all-model-elements-have">attributes
+that all model elements have</a>, Properties have the following attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:characteristic</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="characteristics.html#characteristics" class="xref page">Characteristic</a> describing
+  this Property.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:exampleValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An exemplary value that the Property can take, helping to clarify the intended meaning of the Property.
+This attribute supports both scalar literal values (e.g., xsd:string, xsd:float), an anonymous described scalar value,
+and value references that point to example values (i.e., references to instances of <a href="#value-type">samm:Value</a>).
+In either case, the data type of the <code>samm:exampleValue</code> must be convertible to the effective data type defined by the Property&#8217;s Characteristic.
+For example, if the Characteristic&#8217;s <code>samm:dataType</code>
+is <code>xsd:int</code>, a value with the type <code>xsd:short</code> is also acceptable. Refer to section <a href="datatypes.html#implicit-conversions" class="xref page">Implicit Conversions</a>
+for more details.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example with Literal type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:materialNumber a samm:Property ;
+   samm:preferredName "Material number"@en ;
+   samm:description "A material number"@en ;
+   samm:exampleValue "ABC123456-000" ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example with value reference type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:warningLevelProperty a samm:Property ;
+   samm:exampleValue :GreenLight ;
+   samm:characteristic [
+      a samm:Characteristic ;
+      samm:dataType xsd:string ;
+   ] .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-characteristics"><a class="anchor" href="#declaring-characteristics"></a>Declaring Characteristics</h3>
+<div class="paragraph">
+<p>The attributes for Characteristics are described in detail in section
+<a href="characteristics.html#characteristics" class="xref page">Characteristics</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>dataType</code> attribute may be omitted when creating a subclass of a Characteristic. The <code>dataType</code>
+attribute must be set when creating an instance of a Characteristic, except when the <code>dataType</code>
+attribute has been set in the class or one of the super-classes. When the <code>dataType</code> has been set in
+a superclass, the <code>dataType</code> may be set to a subclass of the <code>dataType</code> from one of the
+Characteristic superclasses. This allows the definition of generic Characteristics such as
+Collections, where all the semantics are fixed, except for the data type. For a Collection for
+example it is possible to define whether the collection is sorted or not and this definition can be
+then reused with different data types to define different collections.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MachineState a samm-c:State ;
+   samm:dataType xsd:string ;
+   samm-c:defaultValue "STANDBY" ;
+   samm-c:values ( "RUNNING" "STANDBY" "OFF" ) .</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-quantifiable-values-and-measurements"><a class="anchor" href="#declaring-quantifiable-values-and-measurements"></a>Declaring Quantifiables and Measurements</h4>
+<div class="paragraph">
+<p>Whenever a Property represents a numeric, scalar value that the result of a measurent of some kind
+(e.g., using a sensor) and has a well-defined physical unit which is known at modeling time, use the
+<em>Measurement</em> Characteristic. If the value is numeric and has a physical unit but is not the result
+of a measurement (e.g., when it is calculated from other values), use the <em>Quantifiable</em>
+Characteristic.</p>
+</div>
+<div class="paragraph">
+<p>See the following example that uses <em>Measurement</em>&#8201;&#8212;&#8201;usage of <em>Quantifiable</em> is analogous.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:ToolTemperature a samm-c:Measurement ;
+   samm:dataType xsd:float ;
+   samm-c:unit unit:degreeCelsius .
+
+:drillHeadTemperature a samm:Property ;
+   samm:characteristic :ToolTemperature .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See section <a href="units.html#units" class="xref page">Units</a> for information about the valid values for the <code>samm-c:unit</code> attribute.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-single-entity"><a class="anchor" href="#declaring-single-entity"></a>Declaring Single Entity</h4>
+<div class="paragraph">
+<p>The following example shows how a Property is defined that uses the
+<a href="characteristics.html#single-entity-characteristic" class="xref page">Single Entity</a> Characteristic to specify an Entity as its dataType.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:AccelerationVector a samm:Entity ;
+   samm:properties ( :x :y :z ) .
+
+# Definition of Properties x, y and z for the Entity here
+# ...
+
+:acceleration a samm:Property ;
+   samm:characteristic [
+      a samm-c:SingleEntity ;
+      samm:dataType :AccelerationVector
+   ] .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-collections"><a class="anchor" href="#declaring-collections"></a>Declaring Collections</h4>
+<div class="paragraph">
+<p>There are four basic predefined types of Collections:
+<a href="characteristics.html#collection-characteristic" class="xref page">Collection</a>,
+<a href="characteristics.html#list-characteristic" class="xref page">List</a>,
+<a href="characteristics.html#set-characteristic" class="xref page">Set</a> and
+<a href="characteristics.html#sortedset-characteristic" class="xref page">Sorted Set</a>. The Collection definitions are
+shared and are available globally. They determine whether a specific collection is ordered or not
+and whether a specific collection may contain duplicates or not. In some cases the data type is also
+set in the shared Collection Characteristic.</p>
+</div>
+<div class="paragraph">
+<p>These shared Collection Characteristics may not be changed in an Aspect Model, hence it is not
+allowed to create a subclass of the Collection Characteristic in an Aspect Model. To create a
+Collection Characteristic for a specific domain, the user should instantiate one of the Collection
+classes and define the data type or the element Characteristic for the Collection. In this example,
+the Characteristic resulting from the combination of Code, Length Constraint and Encoding Constraint
+is not defined inline in the Property, but defined standalone.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Example with a scalar data type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:NumberList a samm-c:List ;
+   samm:dataType xsd:float .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Example with a custom Entity as data type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MyEntity a samm:Entity ;
+   samm:properties ( ) ;
+   # ...
+   .
+
+:MyEntityList a samm-c:List ;
+   samm:dataType :MyEntity .</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The data type for the elements of a Collection can either be defined in the usual manner using
+the <code>samm:dataType</code> attribute (see the examples above) or by defining a Characteristic for the
+Collection elements using the <code>samm-c:elementCharacteristic</code> attribute, see the example below. It is
+recommended to explicitly create a Characteristic for the Collection elements instead of only
+defining the data type, since it allows to completely express the semantics of the elements.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example with the <code>samm-c:elementCharacteristic</code> attribute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:numbers a samm:Property ;
+   samm:characteristic :NumberList .
+
+:NumberList a samm-c:List ;
+   samm-c:elementCharacteristic [
+      a samm-c:Trait ;
+      samm-c:baseCharacteristic :Number ;
+      samm-c:constraint [
+         a samm-c:RangeConstraint ;
+         samm:description "Limits the range of the individual numbers in the list from 5 to 10."@en ;
+         samm-c:minValue "5"^^xsd:nonNegativeInteger ;
+         samm-c:maxValue "10"^^xsd:nonNegativeInteger ;
+      ] ;
+   ] .
+
+:Number a samm:Characteristic ;
+   samm:dataType xsd:nonNegativeInteger .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-enumerations"><a class="anchor" href="#declaring-enumerations"></a>Declaring Enumerations</h4>
+<div class="paragraph">
+<p>Describes a Property which may have a value from a predefined list of values. Also see
+<a href="characteristics.html#enumeration-characteristic" class="xref page">Enumeration</a>.</p>
+</div>
+<div class="paragraph">
+<p>Example with literal <code>xsd:string</code> values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Status a samm-c:Enumeration ;
+   samm:dataType xsd:string ;
+   samm-c:values ( "Complete" "In Progress" "Created" ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example with literal <code>xsd:integer</code> values. Note that for <code>xsd:integer</code>, Turtle&#8217;s numeric literal
+syntax can be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:PrimesBelowTwenty a samm-c:Enumeration ;
+   samm:dataType xsd:integer ;
+   samm-c:values ( 2 3 5 7 11 13 17 19 ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example with literal <code>xsd:int</code> values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:ValidOffsets a samm-c:Enumeration ;
+   samm:dataType xsd:int ;
+   samm-c:values ( "-1"^^xsd:int "1"^^xsd:int ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example with literal <code>xsd:date</code> values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MaintenanceDates a samm-c:Enumeration ;
+   samm:dataType xsd:date ;
+   samm-c:values ( "2010-01-01"^^xsd:date "2012-05-07"^^xsd:date "2018-03-08"^^xsd:date ) .</code></pre>
+</div>
+</div>
+<div id="enumeration-with-value-type-in-value" class="paragraph">
+<p>Example Using Value in an Enumeration:</p>
+</div>
+<div class="paragraph">
+<p>An Enumeration can include complex values to enrich the semantic description of the enumeration items.
+This is especially useful when you want to provide additional metadata—such as a preferred name, description,
+or external reference—for a specific value.</p>
+</div>
+<div class="paragraph">
+<p>There are several ways to define values in an Enumeration:</p>
+</div>
+<div class="paragraph">
+<p>Value references can be used as values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:TrafficLight a samm-c:Enumeration ;
+   samm:preferredName "Warning Level"@en ;
+   samm:description "Represents if speed of position change is within specification (green), within tolerance (yellow), or outside specification (red)."@en ;
+   samm:dataType xsd:string ;
+   samm-c:values (
+      :GreenLight
+   ) .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also possible to combine value references, anoymous described scalar values
+and named described scalar values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:TrafficLight a samm-c:Enumeration ;
+   samm:preferredName "Warning Level"@en ;
+   samm:description "Represents if speed of position change is within specification (green), within tolerance (yellow), or outside specification (red)."@en ;
+   samm:dataType xsd:string ;
+   samm-c:values (
+      :GreenLight        # A reference to named described scalar value
+      "yellow"           # A direct literal value
+      [
+         a samm:Value ;  # An anonymous described scalar value with additional metadata
+         samm:value "red" ;
+         samm:preferredName "Critical Warning"@en ;
+         samm:description "Indicates that the position change is outside the specification."@en
+      ]
+   ) .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+<div id="enumeration-with-complex-value" class="paragraph">
+<p>Example with complex values:</p>
+</div>
+<div class="paragraph">
+<p>Declaring an Enumeration with a complex value is usally done in order to add a description to the
+actual value, e.g., the <code>state</code> in the example below, which provides information regarding the
+meaning of the value. This description only exists in the Aspect Model and is not part of the
+payload provided by an Aspect at runtime. In order to define that a Property of an Entity is <em>not</em>
+part of the runtime data, the <code>samm:notInPayload</code> attribute is used.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>samm:notInPayload</code> cannot be used in Abstract Entities, but the setting for a specific property
+is inherited when Entities are extended.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Results a samm-c:Enumeration ;
+   samm:dataType :Result ;
+   samm-c:values ( :Success :Failed ) .
+
+:Result a samm:Entity ;
+   samm:properties (
+      :status
+      [ samm:property :description; samm:notInPayload "true"^^xsd:boolean ]
+   ) .
+
+:Success a :Result ;
+   :status "SUCCESS" ;
+   :description "The process completed successfully." .
+
+:Failed a :Result ;
+   :status "FAILURE" ;
+   :description "The process did not complete successfully." .</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+If the Property is part of the runtime data (like <code>status</code> in the example), it is directly
+referenced. Writing <code>samm:notInPayload false</code> is <em>not</em> allowed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-state"><a class="anchor" href="#declaring-state"></a>Declaring State</h4>
+<div class="paragraph">
+<p>As described in <a href="characteristics.html#state-characteristic" class="xref page">State Characteristic</a>, State inherits
+from Enumeration and extends it with the default value attribute.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MachineState a samm-c:State ;
+   samm:dataType xsd:string ;
+   samm-c:defaultValue "STANDBY" ;
+   samm-c:values ( "RUNNING" "STANDBY" "OFF" ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-time-series"><a class="anchor" href="#declaring-time-series"></a>Declaring Time Series</h4>
+<div class="paragraph">
+<p>The <code><a href="characteristics.html#time-series-characteristic" class="xref page">TimeSeries</a></code> Characteristic is a special
+kind of Collection. A Time Series is defined as a list of tuples of values with their respective
+specific point in time when they where recorded. This is, the Time Series is represented by a list
+of key/value pairs where the key is the time-stamp denoting when the value was recorded and the
+value is the recorded value. In order to describe these semantics the shared <code>TimeSeries</code>
+Characteristic is used. This is a subclass of the <code>SortedSet</code> Characteristic and defines that the
+<code>dataType</code> must be a subclass of the <code>TimeSeriesEntity</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code><a href="entities.html#time-series-entity" class="xref page">TimeSeriesEntity</a></code> is declared as an Abstract Entity. It
+defines the <code>timestamp</code> Property with the <code>Timestamp</code> Characteristic, which describes values
+containing timestamps conforming to <code><a href="datatypes.html#data-types" class="xref page">xsd:dateTime</a></code>, a date and time
+with or without time zone. It also defines <code>value</code> as an
+<a href="#abstract-entities-with-abstract-properties">Abstract Property</a>, i.e., a
+Property without a Characteristic.</p>
+</div>
+<div class="paragraph">
+<p>To create a Time Series for a specific domain, the user should instantiate the <code>TimeSeries</code>
+Collection Characteristic and set the <code>dataType</code> to an Entity which extends the Abstract
+<code>TimeSeries</code> Entity in order to define the semantics for the <code>value</code> Property in the context of the
+specific domain. Please see the <a href="#declaring-abstract-entities">Declaring
+Abstract Entities</a> section for information on how to extend an Abstract Entity.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MachineStateTimeSeries a samm-c:TimeSeries ;
+   samm:dataType :MachineStateTimeSeriesEntity .
+
+:MachineStateTimeSeriesEntity a samm:Entity ;
+   samm:extends samm-e:TimeSeriesEntity ;
+   samm:properties (
+     [ samm:extends samm-e:value ; samm:characteristic :MachineState ]
+   ) .
+
+:MachineState a samm-c:State ;
+   samm:dataType xsd:string ;
+   samm-c:defaultValue "STANDBY" ;
+   samm-c:values ( "RUNNING" "STANDBY" "OFF" ) .</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An Aspect should only have one Collection at root level. When modeling an Aspect with two or
+more collections at root level which contain related data, consider creating the model so that the
+related data is explicitly linked and contained in a single Collection. When modeling an Aspect with
+two or more collections at root level which contain unrelated data, consider creating separate
+Aspects each containing a single Collection.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-quantities"><a class="anchor" href="#declaring-quantities"></a>Declaring Quantities</h4>
+<div class="paragraph">
+<p>The <code><a href="characteristics.html#unit-reference-characteristic" class="xref page">UnitReference</a></code> Characteristic is used
+to associate numeric values with their respective physical units in a structured and explicit way.
+The <code>Quantity</code> Entity is designed to represent such a pairing, ensuring that values are always
+interpreted correctly with their corresponding units.</p>
+</div>
+<div class="paragraph">
+<p>A <code>Quantity</code> is defined as an entity that contains a numeric <code>value</code> and a corresponding <code>unit</code>,
+both of which are essential for properly interpreting the data.
+The <code><a href="entities.html#quantity-entity" class="xref page">QuantityEntity</a></code> is declared as an Abstract Entity,
+providing a standard way to associate measurements with units.</p>
+</div>
+<div class="paragraph">
+<p>To describe these semantics, the <code>Quantity</code> Entity defines the <code>value</code> Property as
+an <code><a href="#abstract-entities-with-abstract-properties">Abstract Property</a></code>,
+meaning it does not have an inherent Characteristic and must be specialized based on the context.
+The <code>unit</code> Property is assigned the <code><a href="characteristics.html#unit-reference-characteristic" class="xref page">Unit Reference</a></code>
+Characteristic, which ensures that it references a recognized unit of measurement.</p>
+</div>
+<div class="paragraph">
+<p>To define a Quantity for a specific domain, the user should instantiate an Entity that extends
+the Abstract <code>Quantity</code> Entity and provide a specialized Characteristic for the <code>value</code> Property,
+specifying its data type and semantics according to the domain&#8217;s needs. For details on how to extend
+an Abstract Entity, please refer
+to the <code><a href="#declaring-abstract-entities">Declaring Abstract Entities</a></code> section.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Parameter a samm:Entity ;
+   samm:extends samm-e:Quantity ;
+   samm:properties (
+      [ samm:extends samm-e:value ; samm:characteristic :ParameterValueCharacteristic ]
+   ) .
+:ParameterValueCharacteristic a samm:Characteristic ;
+   samm:dataType xsd:integer .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-either"><a class="anchor" href="#declaring-either"></a>Declaring Either</h4>
+<div class="paragraph">
+<p>Describes a Property whose value can have one of two possible types (a disjoint union). This
+Characteristic is special since it does not directly define a data type. The data type is defined in
+the two Characteristics which define the left and right value of the disjoint union. Also see
+<a href="characteristics.html#either-characteristic" class="xref page">Either</a> and <a href="payloads.html#characteristics-payload-mappings" class="xref page">Payload mappings to JSON for Characteristics</a>.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:speedProperty a samm:Property ;
+  samm:characteristic :Result .
+
+:Result a samm-c:Either ;
+  samm-c:left :ErrorMessage ;
+  samm-c:right :SpeedValue .
+
+:ErrorMessage a samm-c:SingleEntity ;
+  samm:dataType :ErrorEntity .
+
+:SpeedValue a samm-c:Quantifiable ;
+  samm:dataType xsd:integer .
+
+:ErrorEntity a samm:Entity ;
+   samm:properties ( :errorCode :errorDescription ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-structured-value"><a class="anchor" href="#declaring-structured-value"></a>Declaring Structured Value</h4>
+<div class="paragraph">
+<p><a href="characteristics.html#structured-value-characteristic" class="xref page">Structured Values</a> are intended to be used
+for Properties when all of the following conditions are met:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The value has a scalar, <a href="datatypes.html#data-types" class="xref page">string-like value space</a></p>
+</li>
+<li>
+<p>The value has a well-known structure consisting of different, separate parts</p>
+</li>
+<li>
+<p>The parts can and should be described in more detail</p>
+</li>
+<li>
+<p>The Property should not be decomposed/deconstructed into an Entity with separate Properties for
+each part</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One of the main use cases is complex identifiers that encode context information such as provenance
+information, version numbers, locations codes and so on. It is unreasonable to split such a value up
+into separate Properties, because it complicates working with corresponding data. For example, such
+values could appear in payloads, databases or documents and would have to be converted back and
+forth, often times manually. On the other hand, properly describing the value and the parts it
+comprises can be difficult, especially in a machine-readable way.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, the Structured Value Characteristic can be used to describe the deconstruction of a value
+into its parts and linking each part to a separate Property definition.</p>
+</div>
+<div class="paragraph">
+<p>The following table gives some simple examples to demonstrate the basic applicability of the
+Characteristic, and after that a complete concrete example is given.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Example Value</th>
+<th class="tableblock halign-left valign-top">Deconstruction Rule</th>
+<th class="tableblock halign-left valign-top">Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO 8601 date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"2019-09-27"^^<code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(\d{4})-(\d{2})-(\d{2})</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">( <code>:year</code> "-" <code>:month</code>
+  "-" <code>:day</code> )</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"user4711@example.com"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(<span class="\w\.-">)@([\w\.-]</span>\.\w{2,4})</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">( <code>:username</code> "@" <code>:host</code> )</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hex-encoded color</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"0xAC03BE"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">( "0x"
+  <code>:red</code> <code>:green</code> <code>:blue</code> )</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following code shows the Aspect Model for the first example from the table. Note that when
+writing the <code>deconstructionRule</code>, backslashes (<code>\</code>) need to be escaped in order to produce valid
+RDF/Turtle syntax, i.e. write <code>\\</code> instead of <code>\</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:StructuredValueTest a samm:Aspect ;
+   samm:properties ( :date ) ;
+   samm:operations () .
+
+:date a samm:Property ;
+   samm:exampleValue "2019-09-27"^^xsd:date ;
+   samm:characteristic :StructuredDate .
+
+:StructuredDate a samm-c:StructuredValue ;
+   samm:dataType xsd:date ;
+   samm-c:deconstructionRule "(\\d{4})-(\\d{2})-(\\d{2})" ;
+   samm-c:elements ( :year "-" :month "-" :day ) .
+
+:year a samm:Property ;
+   samm:characteristic :Year .
+
+:month a samm:Property ;
+   samm:characteristic :Month .
+
+:day a samm:Property ;
+   samm:characteristic :Day .
+
+:Year a samm:Characteristic ;
+   samm:dataType xsd:int .
+
+:Month a samm:Characteristic ;
+   samm:dataType xsd:int .
+
+:Day a samm:Characteristic ;
+   samm:dataType xsd:int .</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Technically, <code>samm-c:elements</code> would not be required just to parse corresponding payload; the
+regular expression given in the <code>samm-c:deconstructionRule</code> would be sufficient. However, the
+<code>elements</code> fields serves two purposes: Firstly, it concisely describes how the meaning of the
+deconstruction rule corresponds with the named fields; secondly, it is used for validation: When a
+<code>samm:exampleValue</code> is given (like in the example), the Aspect Model validator can automatically
+check if it can be deconstructed using the deconstruction rule and reconstructed using the elements,
+i.e., that the deconstruction rule actually does what the model author intended.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-reference"><a class="anchor" href="#declaring-reference"></a>Declaring Reference</h4>
+<div class="paragraph">
+<p>The <a href="characteristics.html#reference-characteristic" class="xref page">Reference</a> Characteristic is intended to be used
+for scenarios where a reference to a concept external to the Aspect Model is required, but the value of the
+reference (i.e., the identifier of the linked concept) is not known at modeling time yet. Other than that,
+it is conceptually similar to a <a href="#adding-external-references">samm:see reference</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:TestProperty a samm:Property ;
+    samm:characteristic samm-c:Reference .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="using-unit-reference"><a class="anchor" href="#using-unit-reference"></a>Using Unit Reference</h4>
+<div class="paragraph">
+<p>As explained in the section <a href="#declaring-quantifiable-values-and-measurements">Declaring Quantifiables and Measurements</a>, some values only make sense when they also have a unit assigned to them.
+This unit definition is in many cases fixed at design time, does not change thereafter and therefore at runtime (in the JSON payload for example), only the actual value is transported.<br>
+ There may be scenarios, however, where this permanent fixation on a specific unit might not be sufficient because the unit can only be determined dynamically
+at runtime, or is a kind of configuration parameter which must be set when the system is being deployed/starting up. In cases like this, a <a href="characteristics.html#unit-reference-characteristic" class="xref page">UnitReference</a> characteristic instance can be used to include a dynamic reference to the desired unit from the <a href="appendix/unitcatalog.html" class="xref page">Unit catalog</a> and this information is then always included in the payload. The runtime payload refers to the unit using its <code>samm:curie</code>, i.e., the unit&#8217;s URN&#8217;s element name prefixed with <code>unit:</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example an Aspect with the following model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:ValueWithDynamicUnit a samm:Aspect ;
+  samm:properties ( :value :unit ) ;
+  samm:operations ( ) .
+
+:value a samm:Property ;
+   samm:exampleValue "2.25"^^xsd:float ;
+   samm:characteristic :FloatValue .
+
+:FloatValue a samm:Characteristic ;
+   samm:dataType xsd:float .
+
+:unit a samm:Property ;
+   samm:characteristic samm-c:UnitReference .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>can produce a JSON payload that could look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "value" : 2.25,
+  "unit" : "unit:hectopascal"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-constraints"><a class="anchor" href="#declaring-constraints"></a>Declaring Constraints and Traits</h3>
+<div class="paragraph">
+<p>Consider the <code>numbers</code> Property that uses an instance of the <code>List</code> Characteristic:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:numbers a samm:Property ;
+   samm:characteristic :NumberList .
+
+:NumberList a samm-c:List ;
+   samm:dataType xsd:integer .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To add a <a href="characteristics.html#length-constraint" class="xref page">Length Constraint</a> to the list, replace the use
+of the Characteristic with a new <a href="characteristics.html#trait-characteristic" class="xref page">Trait</a> instance. Set
+the original Characteristic as the Trait&#8217;s <code>samm-c:baseCharacteristic</code> and add the required
+Constraint as a <code>samm-c:constraint</code> to the Trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:numbers a samm:Property ;
+   samm:characteristic [
+     a samm-c:Trait ;
+     samm-c:baseCharacteristic :NumberList ;
+     samm-c:constraint [
+       a samm-c:LengthConstraint ;
+       samm:description "Limits the number list to 10 elements"@en ;
+       samm-c:maxValue "10"^^xsd:nonNegativeInteger ;
+     ]
+   ]  .
+
+:NumberList a samm-c:List ;
+   samm:dataType xsd:integer .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another more complex example is given below. The Property <code>someIdentifier</code> is defined that uses a
+<a href="characteristics.html#code-characteristic" class="xref page">Code</a> instance using a dataType of <code>xsd:string</code>,
+combined with two Constraints: an <a href="characteristics.html#encoding-constraint" class="xref page">Encoding Constraint</a>
+that restricts the value space to US-ASCII and a <a href="characteristics.html#length-constraint" class="xref page">Length
+Constraint</a> that limits the string to 80 characters.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:someIdentifier a samm:Property ;
+   samm:preferredName "Some identifier"@en ;
+   samm:description "An ASCII-encoded identifier with a maximum length of 80 characters"@en ;
+   samm:characteristic :CodeWithLengthAndAscii .
+
+:CodeWithLengthAndAscii a samm-c:Trait ;
+   samm:description "A string code limited to 80 ASCII characters"@en ;
+   samm-c:baseCharacteristic [
+      a samm-c:Code ;
+      samm:description "Denotes some kind of code with a string datatype"@en ;
+      samm:dataType xsd:string ;
+   ] ;
+   samm-c:constraint [
+      a samm-c:EncodingConstraint ;
+      samm:value samm:US-ASCII ;
+      samm:description "Limits the character encoding to US-ASCII"@en ;
+   ] ;
+   samm-c:constraint [
+      a samm-c:LengthConstraint ;
+      samm:description "Limits the length to 80 characters"@en ;
+      samm-c:maxValue "80"^^xsd:nonNegativeInteger ;
+   ] .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example showing the <a href="characteristics.html#regular-expression-constraint" class="xref page">Regular Expression Constraint</a> is given below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:timeStampsInJanuary a samm:Property ;
+   samm:preferredName "Timestamps in January"@en ;
+   samm:description "Contains only timestamps in January of any year"@en ;
+   samm:characteristic [
+      a samm-c:Trait ;
+      samm-c:baseCharacteristic samm-c:Timestamp ;
+      samm-c:constraint [
+         a samm-c:RegularExpressionConstraint ;
+         samm:value "\\d{4}-01-\\d\\dT.*" ;
+      ] ;
+   ] .</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When writing the <code>samm:value</code>, backslashes (<code>\</code>) need to be escaped in order to produce valid RDF/Turtle syntax, i.e. write <code>\\</code> instead of <code>\</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-entities"><a class="anchor" href="#declaring-entities"></a>Declaring Entities</h3>
+<div class="paragraph">
+<p>Entities have the following attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The list of Properties which make up the Entity. Leaving out this
+  attribute completely is equivalent to having it present with an empty list as value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:extends</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Entity which is extended by this Entity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Error a samm:Entity ;
+   samm:properties ( :errorCode :severity ) .</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extending-entities"><a class="anchor" href="#extending-entities"></a>Extending Entities</h4>
+<div class="paragraph">
+<p>Declaring that an Entity extends another Entity is done using the <code>samm:extends</code> attribute in the Entity declaration.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Student a samm:Entity ;
+   samm:extends :Person ;
+   samm:properties ( :studentNumber ) .
+
+:Teacher a samm:Entity ;
+   samm:extends :Person ;
+   samm:properties ( :employeeNumber ) .
+
+:Person a samm:Entity ;
+   samm:properties ( :name :surname ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The extending Entities <code>:Student</code> and <code>:Teacher</code> contain the Properties declared in the extended Entity <code>:Person</code> as well as
+the Properties in their own declarations.</p>
+</div>
+<div class="paragraph">
+<p>The effective Property names, i.e. the payload name when <code>samm:payloadName</code> is used, or the name of the Property,
+must be unique across the entire Entity inheritance chain. Otherwise the corresponding runtime payload is ambiguous.</p>
+</div>
+<div class="paragraph">
+<p>When one of the attributes <a href="#payload-names">samm:payloadName</a>,
+<a href="#optional-properties">samm:optional</a> or <code>samm:notInPayload</code> is used on a specific property usage,
+its value is also inherited by the extending Entities. Using the example of <code>samm:payloadName</code>,
+we could modify the above example to enforce the alternative naming for the <code>surname</code> property in the generated payloads
+and this change would apply to the <code>Person</code> Entity (directly) and both <code>Student</code> and <code>Teacher</code> Entities (via inheritance):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Person a samm:Entity ;
+    samm:properties ( :name [ samm:property :surname ; samm:payloadName "familyName" ] ) .</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-abstract-entities"><a class="anchor" href="#declaring-abstract-entities"></a>Declaring Abstract Entities</h3>
+<div class="paragraph">
+<p>In contrast to Entities, Abstract Entities cannot directly be instantiated. A Characteristic class may have a type <code>samm:entity</code> or <code>samm:AbstractEntity</code>. But a Characteristic instance cannot have a type <code>samm:AbstractEntity</code>. If there is an instance created from a Characteristic that uses an Abstract Entity as its type, this Characteristic instance&#8217;s dataType must be a sub-Entity of the Abstract Entity.
+The main use case for Abstract Entities is to share Properties across multiple Entities. This can be achieved through inheritance: Abstract Entities can extend other Entities and Abstract Entities and can themselves be extended in a manner not dissimilar to how abstract classes are used in many programming languages.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, both <code>SteeringWheel</code> and <code>Seat</code> <em>extend</em> the Abstract Entity
+<code>VehicleComponent</code>. Both inherit the <code>typeNumber</code> and the <code>manufacturer</code> Properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:VehicleComponent a samm:AbstractEntity ;
+   samm:properties ( :typeNumber :manufacturer ) .
+
+:Steeringwheel a samm:Entity ;
+   samm:extends :VehicleComponent ;
+   samm:properties ( :isMultifunction  ) .
+
+:Seat a samm:Entity ;
+   samm:extends :VehicleComponent ;
+   samm:properties ( :material ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abstract-entities-with-abstract-properties"><a class="anchor" href="#abstract-entities-with-abstract-properties"></a>Abstract Entities with Abstract Properties</h3>
+<div class="paragraph">
+<p>When an Abstract Entity needs to be defined with a certain Property, but the modeler using the
+Abstract Entity (i.e., extending it) should be able to decide the Property&#8217;s Characteristic, the
+Property can be declared a <code>samm:AbstractProperty</code>. An Abstract Property is similar to a Property,
+with two differences: firstly, it has no <code>samm:Characteristic</code> attribute and secondly, it must only
+be used in Abstract Entities. Consider the following example of two-dimensional vector which is
+declared as an Abstract Entity using two Abstract Properties for its <code>x</code> and <code>y</code> values, leaving for
+the user to decide which Characteristic and hence which data type should be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Vec2 a samm:AbstractEntity ;
+   samm:description "A two-dimensional vector"@en ;
+   samm:properties ( :x :y ) .
+
+:x a samm:AbstractProperty ;
+   samm:description "The x part of the vector"@en .
+
+:y a samm:AbstractProperty ;
+   samm:description "The y part of the vector"@en .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The usage of the Abstract Properties allows to specify the contract (a two-dimensional vector must
+have x and y Properties), but allows flexible reuse. Only when it is used, one must decide on the
+Characteristic and with it its effective datatype such as <code>xsd:int</code>, <code>xsd:float</code> or <code>xsd:decimal</code>.</p>
+</div>
+<div class="paragraph">
+<p>To use the <code>Vec2</code> Abstract Entity, the Characteristic to bind to the Abstract Properties is declared
+and then used as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:IntegerNumber a samm:Characteristic ;
+   samm:dataType xsd:integer .
+
+:IntVec2 a samm:Entity ;
+   samm:extends :Vec2 ;
+   samm:properties (
+     [ samm:extends :x ; samm:characteristic :IntegerNumber ]
+     [ samm:extends :y ; samm:characteristic :IntegerNumber ]
+   ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that an Abstract Entity can have both <code>samm:Property</code>&#8203;s and
+<code>samm:AbstractProperty</code>&#8203;s (both are listed in <code>samm:properties</code>). The properties list of an
+Entity that extends the Abstract Entity must specify the Characteristic to use for each of the
+Abstract Properties (and only those).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-operations"><a class="anchor" href="#declaring-operations"></a>Declaring Operations</h3>
+<div class="paragraph">
+<p>Operations have the following attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:input</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of references to Properties that describe the input to the operation. The
+  attribute must be present, but the list may be empty.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:output</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A single reference to a Property that describes the output of the operation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:toggle a samm:Operation ;
+   samm:preferredName "Toggle"@en ;
+   samm:description "Switches the device on or off"@en ;
+   samm:input ( :toggleArgument ) ;
+   samm:output :toggleResult .
+
+:toggleArgument a samm:Property ;
+   samm:preferredName "Toggle argument"@en ;
+   samm:description "The argument for the toggling operation"@en ;
+   samm:characteristic :ToggleValues .
+
+:ToggleValues a samm-c:Enumeration ;
+   samm:preferredName "Toggle values"@en ;
+   samm:description "The possible input values for the toggle operation"@en ;
+   samm:dataType xsd:string ;
+   samm-c:values ( "on" "off" ) .
+
+:toggleResult a samm:Property ;
+   samm:preferredName "Toggle result"@en ;
+   samm:description "The result of the toggle operation"@en ;
+   samm:characteristic :ToggleResult .
+
+:ToggleResult a samm-c:Enumeration ;
+   samm:preferredName "Toggle result"@en ;
+   samm:description "The possible results of the toggle operation"@en ;
+   samm:dataType xsd:string ;
+   samm-c:values ( "ok" "denied" "unknown" ) .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="declaring-events"><a class="anchor" href="#declaring-events"></a>Declaring Events</h3>
+<div class="paragraph">
+<p>Events have the following attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attributes</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:parameters</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The parameters that describe the Event, given as a list of Properties.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:temperatureUpdated a samm:Event ;
+   samm:parameters ( :drillHeadTemperature ) .
+
+:ToolTemperature a samm-c:Measurement ;
+   samm:dataType xsd:float ;
+   samm-c:unit unit:degreeCelsius .
+
+:drillHeadTemperature a samm:Property ;
+   samm:characteristic :ToolTemperature .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-external-references"><a class="anchor" href="#adding-external-references"></a>Adding external references</h3>
+<div class="paragraph">
+<p>The <code>samm:see</code> attribute can be used to add references to related elements in an external taxonomy,
+ontology or standards document to Aspect Model elements. Values for <code>samm:see</code> must be URIs. The
+meaning of the reference is informative and implies no semantics such as equality or subsumption in
+either direction.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, <code>samm:see</code> adds two references to external well-known vocabularies that
+have identifiers which are also valid URLs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:lastName a samm:Property ;
+   samm:see &lt;https://schema.org/familyName&gt; ;
+   samm:see &lt;http://xmlns.com/foaf/0.1/lastName&gt; ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If an external model element should be referenced that has a unique identifier which is not a URI,
+but a well-known resolver exists, you can either use the resolver&#8217;s URL or a synthetic URN. For
+example, for the Digital Object Identifier (DOI,
+<a href="../snapshot/appendix/bibliography.html#doi" class="xref page">[DOI]</a>) <code>10.1109/NetSys.2017.7903949</code>, you can
+use as the value for <code>samm:see</code> either the URL <code>https://doi.org/10.1109/NetSys.2017.7903949</code> or the
+URN <code>urn:doi:10.1109/NetSys.2017.7903949</code>.</p>
+</div>
+<div class="paragraph">
+<p>If an external model element should be referenced that has a unique identifier which is not a URI
+and there is no well-known resolver, use a synthetic URN structure. One example are Object
+Identifiers as specified by ITU and ISO/IEC (OID) and the mapping to URNs in RFC 3061
+<a href="../snapshot/appendix/bibliography.html#rfc3061" class="xref page">[rfc3061]</a>, so for example, for the OID
+<code>1.3.6.1.4.1.1919.1.1.2</code>, the corresponding <code>samm:see</code> value would be
+<code>urn:oid:1.3.6.1.4.1.1919.1.1.2</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:filterName a samm:Property ;
+   samm:see &lt;urn:oid:1.3.6.1.4.1.1919.1.1.2&gt; ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another example for a type of unique identifier that is not a URI is the International Registration
+Data Identifier
+(<a href="https://eclass.eu/support/technical-specification/structure-and-elements/irdi">IRDI</a>) as used for
+example by the <a href="https://eclass.eu/">ECLASS</a> classification system. Referencing IRDIs is also done
+using a synthetic URN structure by prefixing them with <code>urn:irdi:</code>. However, since a valid IRDI
+always contains two <code>#</code> signs, this alone does not make it a valid URI, which is why the second sign
+needs to be URL-encoded (<code>#</code> replaced with <code>%23</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:drillDiameter a samm:Property ;
+   # Reference to IRDI 0173-1#02-AAC895#009
+   samm:see &lt;urn:irdi:0173-1#02-AAC895%23009&gt; ;
+   samm:characteristic :Diameter .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If an external element should be referenced that has no unique identifier, <code>samm:see</code> should not be
+used. In this case, refer to the external element in the current model element&#8217;s <code>samm:description</code>,
+for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:organizationPerson a samm:Property ;
+   samm:description "See ISO/IEC 11179-6:2015(E), section 3.35"@en ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="value-type"><a class="anchor" href="#value-type"></a>Declaring Value</h3>
+<div class="paragraph">
+<p>The <code>samm:Value</code> type is designed to represent a value enriched with semantic metadata.
+It encapsulates the actual data (which can be a literal or a reference) along with additional descriptive information.
+This type is used to enhance clarity in Enumerations and Properties by allowing you to attach a human-readable label,
+a detailed description, and an external reference to the value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A value can also be used as <code>samm:exampleValue</code> for a Property, either by referencing the value or
+by declaration of an anonymous value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:warningLevelProperty a samm:Property ;
+   samm:exampleValue :GreenLight ;
+   samm:characteristic [
+      a samm:Characteristic ;
+      samm:dataType xsd:string ;
+   ] .
+
+:GreenLight a samm:Value ;
+   samm:value "green" ;
+   samm:preferredName "Normal"@en ;
+   samm:description "Indicates that the speed of position change is within specification."@en ;
+   samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:propertyWithExampleValue a samm:Property ;
+   samm:exampleValue [
+      a samm:Value ;
+      samm:description "Some Description"@en ;
+      samm:value 2 ;
+   ] ;
+   samm:characteristic [
+      a samm:Characteristic ;
+      samm:dataType xsd:integer ;
+   ] .</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="optional-properties"><a class="anchor" href="#optional-properties"></a>Optional Properties</h3>
+<div class="paragraph">
+<p>When Properties are used in Aspects and Entities, they can be marked as optional (not possible for properties of Abstract Entities). This means that a
+Property&#8217;s <em>usage</em> is optional, not the Property itself, which would make reusing a Property more
+difficult. In the following example, the Property <code>toggleStatus</code> is mandatory and the Property
+<code>errorMessage</code> is marked as optional in the Aspect. Note how the <code>samm:properties</code> of the Aspect are
+defined, and how the definition for the <code>toggleStatus</code> Property itself does not differ from that of
+<code>errorMessage</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MyAspect a samm:Aspect ;
+   samm:properties (
+     :toggleStatus
+     [ samm:property :errorMessage; samm:optional true ]
+   ) ;
+   samm:operations ( ) .
+
+:toggleStatus a samm:Property ;
+   samm:characteristic samm-c:Boolean .
+
+:errorMessage a samm:Property ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+If the Property&#8217;s use is optional, it is marked with <code>samm:optional true</code> (like
+<code>errorMessage</code> in the example). However, if its use is mandatory (like <code>toggleStatus</code> in the
+example), the Property is directly referenced. Writing <code>samm:optional false</code> is <em>not</em> allowed.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The setting of the <code>samm:optional</code> attribute for a specific property is inherited from parent Entity
+by the Entities extending it using the Entity extension mechanism (<code>samm:extends</code>).
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="payload-names"><a class="anchor" href="#payload-names"></a>Declaring Payload Names for Properties</h3>
+<div class="paragraph">
+<p>When Properties are used in Aspects and Entities, a runtime payload name can be defined for the
+Property. This means that in the context of the Aspect or Entity (payload names cannot be defined for Abstract Entities) where the Property is used, the key
+of that Property in the runtime payload diverges from the Property&#8217;s local name. This allows for
+the separation of the semantic name of the Property and the corresponding key in the runtime
+payload. In the following example we define a Property <code>errorMessage</code>. In the Aspect it is defined
+that the corresponding key in the payload is <code>error</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The value for the <code>samm:payloadName</code> attribute must be of type <code>xsd:string</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:MyAspect a samm:Aspect ;
+   samm:properties (
+     [ samm:property :errorMessage; samm:payloadName "error" ]
+   ) ;
+   samm:operations ( ) .
+
+:errorMessage a samm:Property ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+A Property must not be marked as not being included in the payload using <code>samm:notInPayload
+true</code> and have a payload name declared using <code>samm:payloadName</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It is also useful to know that the payload name definition is inherited from parent Entity
+by its children when using the Entity extension mechanism (<code>samm:extends</code>).
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="syntactic-shortcuts"><a class="anchor" href="#syntactic-shortcuts"></a>Syntactic Shortcuts</h3>
+<div class="paragraph">
+<p>When Properties use Characteristics classes, i.e. Characteristics that need to be instantiated, and
+the Characteristic instance is used in only one Property, the Characteristic may also be defined
+inline. Note that other Aspect Models can not refer to the Characteristic any more, because it no
+longer has an identifier.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Example: Regular definition of a Property</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:numbers a samm:Property ;
+   samm:characteristic :NumberList .
+
+:NumberList a samm-c:List ;
+   samm:dataType xsd:integer .</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Example: Inlining the Characteristic definition</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:numbers a samm:Property ;
+   samm:characteristic [
+      a samm-c:List;
+      samm:dataType xsd:integer
+   ] .</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="localization-of-aspect-models"><a class="anchor" href="#localization-of-aspect-models"></a>Localization of Aspect Models</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To understand the possibilities for localization of the models and their implications it is important to understand the differences
+between the data types <code>xsd:string</code> and <code>rdf:langString</code> and/or their respective characteristic
+counterparts <code>samm-c:Text</code> and <code>samm-c:MultiLanguageText</code>.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate the differences between them and to give a typical example for localizable string
+that also needs to be included in the runtime payload, consider this model with a scalar <code>text</code> property:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Test a samm:Aspect;
+    samm:properties ( :text );
+    samm:operations ( ).
+
+:text a samm:Property ;
+   samm:characteristic samm-c:Text .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The JSON payload for this model would then look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "text" : "My value"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how the text is just a raw string, without any information about the language it is written in.
+When instead the <code>text</code> property is modeled as <code>samm-c:MultiLanguageText</code> (instead of <code>samm-c:Text</code>),
+the payload would change to include the information about the language and would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "text" : {
+    "en" : "Example multi language string"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another common use case is the use of localized texts strictly for documentation purposes. This means that the multilanguage strings
+can only be seen when modeling, they are not contained in the runtime payloads.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate how this is done, consider <a href="#enumeration-with-complex-value">this example</a>
+and imagine we would like the descriptions of the possible enumeration values to have localized version of the texts.
+This goal could be achieved by extending the model to look something like the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:Results a samm-c:Enumeration ;
+   samm:dataType :Result ;
+   samm-c:values ( :Success :Failed ) .
+
+:Result a samm:Entity ;
+   samm:properties ( :status [ samm:property :description ; samm:notInPayload true ] ) .
+
+:status a samm:Property ;
+   samm:characteristic samm-c:Text .
+
+:description a samm:Property ;
+   samm:characteristic samm-c:MultiLanguageText .
+
+:Success a :Result ;
+   :status "SUCCESS" ;
+   :description "Der Prozess war erfolgreich."@de .
+
+:Failed a :Result ;
+   :status "FAILURE" ;
+   :description "Der Prozess ist fehlgeschlagen."@de .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the use of the attribute <code>notInPayload</code> in usage of the property, ensuring that the <code>description</code>
+property will never be included in the runtime payloads.</p>
+</div>
+<div class="paragraph">
+<p>It is even possible to provide the description in multiple languages.
+To achieve this, we need to change the type of the <code>description</code> property to the Set Characteristic:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:description a samm:Property ;
+  samm:characteristic [
+    a samm-c:Set ;
+    samm-c:elementCharacteristic samm-c:MultiLanguageText ;
+  ] .
+
+:Success a :Result ;
+  :status "SUCCESS" ;
+  :description (
+    "Der Prozess war erfolgreich."@de
+    "The process completed successfully."@en
+  ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how it is now possible to use the <code>description</code> property with multiple texts with different language tags (<code>@de</code>) to achieve the proper localization of the texts
+for linguistically diverse audiences.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

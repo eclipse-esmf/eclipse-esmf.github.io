@@ -218,6 +218,9 @@
           <a href="../../samm-specification/snapshot/index.html">snapshot</a>
         </li>
         <li class="version">
+          <a href="../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
           <a href="../../samm-specification/2.1.0/index.html">2.1.0</a>
         </li>
         <li class="version">
@@ -350,26 +353,11 @@ To be able to use the artifacts released in this way in your projects, first the
 <h2 id="jdk-requirements"><a class="anchor" href="#jdk-requirements"></a>JDK requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The esmf-sdk components are built with Java 17 and require a JDK &gt;= 17 such as
+<p>The esmf-sdk components are built with Java 21 and require a JDK &gt;= 21 such as
 <a href="https://adoptium.net/">Adoptium Temurin</a>.</p>
 </div>
 <div class="paragraph">
-<p>The esmf-sdk can also be used with a Java 17-compatible <a href="https://www.graalvm.org/">GraalVM JDK</a>. With
-GraalVM you need to make the Graal JavaScript component available, as parts of the SDK such as the
-Aspect Model validation component require embedded JavaScript execution:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For using the esmf-sdk in the GraalVM itself, install the JS component using the
-<a href="https://www.graalvm.org/22.3/reference-manual/js/">GraalVM Updater</a>: <code>gu install js</code></p>
-</li>
-<li>
-<p>For using the esmf-sdk with GraalVM <code>native-image</code>, be sure to use the <code>--language:js</code> option when
-building the native image; for more information see
-<a href="https://www.graalvm.org/22.3/reference-manual/polyglot-programming/">polyglot programming</a>.</p>
-</li>
-</ul>
+<p>The esmf-sdk can also be used with a Java 21-compatible <a href="https://www.graalvm.org/">GraalVM JDK</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -843,7 +831,7 @@ final String fileString =
 </div>
 </div>
 <div class="paragraph">
-<p>To include the serializer artifact, use the following dependencies:</p>
+<p>To include the serializer, use the following dependency:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -857,7 +845,7 @@ final String fileString =
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-model-serializer&lt;/artifactId&gt;
+    &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
     &lt;version&gt;2.9.10&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
@@ -871,7 +859,7 @@ final String fileString =
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-serializer:2.9.10'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.10'</code></pre>
 </div>
 </div>
 </div>
@@ -883,7 +871,7 @@ final String fileString =
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-serializer:2.9.10")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.9.10")</code></pre>
 </div>
 </div>
 </div>
@@ -2379,7 +2367,7 @@ does not provide Java classes that represent the meta model.</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-semantic-aspect-meta-model&lt;/artifactId&gt;
-    &lt;version&gt;2.1.0&lt;/version&gt;
+    &lt;version&gt;2.2.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2392,7 +2380,7 @@ does not provide Java classes that represent the meta model.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-semantic-aspect-meta-model:2.1.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-semantic-aspect-meta-model:2.2.0'</code></pre>
 </div>
 </div>
 </div>
@@ -2404,7 +2392,7 @@ does not provide Java classes that represent the meta model.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-semantic-aspect-meta-model:2.1.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-semantic-aspect-meta-model:2.2.0")</code></pre>
 </div>
 </div>
 </div>
@@ -2422,24 +2410,24 @@ structure that is present in the artifact:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">.
 ├── characteristic
-│   └── 2.1.0
+│   └── 2.2.0
 │       ├── characteristic-definitions.ttl
 │       ├── characteristic-instances.ttl
 │       ├── characteristic-shapes.ttl
 │       └── characteristic-validations.js
 ├── entity
-│   └── 2.1.0
+│   └── 2.2.0
 │       ├── FileResource.ttl
 │       ├── ThreeDimensionalPosition.ttl
 │       └── TimeSeriesEntity.ttl
 ├── meta-model
-│   └── 2.1.0
+│   └── 2.2.0
 │       ├── aspect-meta-model-definitions.ttl
 │       ├── aspect-meta-model-shapes.ttl
 │       ├── prefix-declarations.ttl
 │       └── type-conversions.ttl
 └── unit
-    └── 2.1.0
+    └── 2.2.0
         └── units.ttl</code></pre>
 </div>
 </div>
@@ -2766,13 +2754,12 @@ Templates to Aspect Models:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.util.List;
 
 import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
 import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.aas.AasToAspectModelGenerator;
 import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
-import org.eclipse.esmf.metamodel.Aspect;
+import org.eclipse.esmf.aspectmodel.generator.AspectArtifact;
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
@@ -2785,8 +2772,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 // Multiple "from" methods are available: fromFile (which checks the file extension),
 // fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
 final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
-final List&lt;Aspect&gt; aspects = generator.generateAspects();
-aspects.forEach( aspect -&gt; {
+generator.generate().map( AspectArtifact::getContent ).forEach( aspect -&gt; {
    // do something with the generated aspect
 } );</code></pre>
 </div>

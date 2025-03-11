@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Entities :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/entities.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="2.2.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="units.html">Units</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="payloads.html">Payloads</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes/release-notes.html">Release Notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">2.2.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.9/index.html">2.9.9</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.8/index.html">2.9.8</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.7/index.html">2.9.7</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.2/index.html">2.1.2</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.1/index.html">2.1.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version is-current">
+          <a href="index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Semantic Aspect Meta Model</a></li>
+    <li>Specification</li>
+    <li><a href="entities.html">Entities</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.2.0</button>
+  <div class="version-menu">
+    <a class="version" href="../snapshot/entities.html">snapshot</a>
+    <a class="version is-current" href="entities.html">2.2.0</a>
+    <a class="version" href="../2.1.0/entities.html">2.1.0</a>
+    <a class="version" href="../2.0.0/entities.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/v2.2.0/documentation/modules/ROOT/pages/entities.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Entities</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>As defined in the <a href="meta-model-elements.html#meta-model-elements" class="xref page">Meta Model Elements</a>, an
+<em>Entity</em> has a number of <em>Properties</em>. This section describes a number of generally applicable
+Entities that are pre-defined in the <code>samm-e</code> namespace.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="time-series-entity"><a class="anchor" href="#time-series-entity"></a>Time Series Entity</h2>
+<div class="sectionbody">
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:entity:2.2.0#TimeSeriesEntity</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The Time Series Entity is used with the <a href="characteristics.html#time-series-characteristic" class="xref page">Time
+Series</a> Characteristic. It wraps the two Properties <code>timestamp</code> and <code>value</code> to represent a value at
+a point in time.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-time-series" class="xref page">declaring time series</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The point in time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="characteristics.html#timestamp-characteristic" class="xref page">Timestamp</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value recorded at the given point in time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an
+  <a href="modeling-guidelines.html#abstract-entities-with-abstract-properties" class="xref page">Abstract Property</a> without a Characteristic</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="point-3d"><a class="anchor" href="#point-3d"></a>Point 3D</h2>
+<div class="sectionbody">
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:entity:2.2.0#Point3d</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a point in <a href="https://en.wikipedia.org/wiki/Three-dimensional_space">ℝ³</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:x</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position along the X axis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an
+  <a href="modeling-guidelines.html#abstract-entities-with-abstract-properties" class="xref page">Abstract Property</a> without a Characteristic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:y</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position along the Y axis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an
+  <a href="modeling-guidelines.html#abstract-entities-with-abstract-properties" class="xref page">Abstract Property</a> without a Characteristic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:z</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position along the Z axis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an
+  <a href="modeling-guidelines.html#abstract-entities-with-abstract-properties" class="xref page">Abstract Property</a> without a Characteristic</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="file-resource-entity"><a class="anchor" href="#file-resource-entity"></a>File Resource</h2>
+<div class="sectionbody">
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:entity:2.2.0#FileResource</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Describes a resource with a relative or absolute location and a MIME type.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The location of the resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="characteristics.html#resource-path-characteristic" class="xref page">Resource Path</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:mimeType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type of the resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="characteristics.html#mime-typecharacteristic" class="xref page">MIME Type</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quantity-entity"><a class="anchor" href="#quantity-entity"></a>Quantity Entity</h2>
+<div class="sectionbody">
+<div class="openblock element-urn">
+<div class="content">
+<div class="paragraph">
+<p>urn:samm:org.eclipse.esmf.samm:entity:2.2.0#Quantity</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The Quantity Entity is used to represent a numeric value along with its corresponding physical unit.
+It ensures that values are always explicitly associated with their units, providing clarity and consistency
+in data representation.</p>
+</div>
+<div class="paragraph">
+<p>This entity is particularly useful when working with dynamic units that are determined at runtime.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="modeling-guidelines.html#declaring-quantities" class="xref page">declaring quantities</a> for usage in an Aspect Model.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 40%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The numeric value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an <a href="modeling-guidelines.html#abstract-entities-with-abstract-properties" class="xref page">Abstract Property</a> without a Characteristic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm-e:unit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The corresponding physical unit of the value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="characteristics.html#unit-reference-characteristic" class="xref page">Unit Reference</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
