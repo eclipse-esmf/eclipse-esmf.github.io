@@ -173,6 +173,9 @@
           <a href="../../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../../esmf-developer-guide/2.10.0/index.html">2.10.0</a>
+        </li>
+        <li class="version">
           <a href="../../../esmf-developer-guide/2.9.10/index.html">2.9.10</a>
         </li>
         <li class="version">
@@ -183,9 +186,6 @@
         </li>
         <li class="version">
           <a href="../../../esmf-developer-guide/2.9.7/index.html">2.9.7</a>
-        </li>
-        <li class="version">
-          <a href="../../../esmf-developer-guide/2.9.6/index.html">2.9.6</a>
         </li>
       </ul>
     </li>
@@ -298,10 +298,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="the-name-attribute"><a class="anchor" href="#the-name-attribute"></a>The <code>name</code> attribute</h2>
+<h2 id="model-element-names"><a class="anchor" href="#model-element-names"></a>Model element names</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>name</code> attribute is mandatory for all model elements.</p>
+<p>This section refers to model element names as described in
+<a href="../namespaces.html#aspect-model-element-identifiers-definition" class="xref page">Aspect Model Element
+Identifiers Definition</a>, i.e., the part of a model element&#8217;s identifier after the <code>\#</code> sign of a
+model element URN or after the <code>:</code> in the CURIE syntax, respectively.</p>
 </div>
 <div class="paragraph">
 <p>Use camel-case capitalization, as detailed in the <a href="../modeling-guidelines.html#naming-rules" class="xref page">naming rules</a>.</p>
@@ -350,7 +353,8 @@
 <div class="sect2">
 <h3 id="camel-case-for-acronyms"><a class="anchor" href="#camel-case-for-acronyms"></a>Camel case for acronyms</h3>
 <div class="paragraph">
-<p>For every part of a <code>name</code>, also for acronyms, strictly apply camel-case capitalization as detailed in the  <a href="../modeling-guidelines.html#naming-rules" class="xref page">naming rules</a>.</p>
+<p>For every part of a model element name, also for acronyms, strictly apply camel-case capitalization
+as detailed in the <a href="../modeling-guidelines.html#naming-rules" class="xref page">naming rules</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>
@@ -382,7 +386,7 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>Create <code>name</code> attributes where each capital letter can be trusted to trigger the start of a new name part.</p>
+<p>Create model element names where each capital letter can be trusted to trigger the start of a new name part.</p>
 </div>
 <div class="paragraph">
 <p>That way, for example, automated case conversion will produce meaningful names (e.g., when generating code based on an Aspect Model):</p>
@@ -394,7 +398,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">SAMM <code>name</code></th>
+<th class="tableblock halign-left valign-top">Model element name</th>
 <th class="tableblock halign-left valign-top">Resulting name in generated code (automated case conversion)</th>
 </tr>
 </thead>
@@ -491,7 +495,7 @@ Complete identifier of such a Property:<br>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The complete identifier of a Property is the versioned namespace combined with the element&#8217;s <code>name</code>, for example, <code>urn:samm:foo.myapplication:1.0.0#count</code>.
+The complete identifier of a Property is the versioned namespace combined with the element&#8217;s name, for example, <code>urn:samm:foo.myapplication:1.0.0#count</code>.
 So, the <code>foo</code> context (namespace) is already part of <code>count</code>&#8203;'s identifier.
 </td>
 </tr>
@@ -590,7 +594,7 @@ Meaningful names improve code readability and maintainability, whereas arbitrary
 <div class="sect2">
 <h3 id="add-payload-names-for-properties"><a class="anchor" href="#add-payload-names-for-properties"></a>Payload names for Properties</h3>
 <div class="paragraph">
-<p>An expressive Property <code>name</code> can be long.</p>
+<p>An expressive Property name can be long.</p>
 </div>
 <div class="paragraph">
 <p>If you consider a Property&#8217;s name too long for the runtime payload, <a href="../modeling-guidelines.html#payload-names" class="xref page">add a payload name</a>.</p>
@@ -696,7 +700,7 @@ This also applies to other Characteristics, i.e., the List, Set, Sorted Set, and
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#the-name-attribute">The <code>name</code> attribute</a></p>
+<p><a href="#model-element-names">Model element names</a></p>
 </li>
 <li>
 <p><a href="#the-description-attribute">The <code>description</code> attribute</a></p>
@@ -739,18 +743,18 @@ This also applies to other Characteristics, i.e., the List, Set, Sorted Set, and
 <div class="sect2">
 <h3 id="separate-words"><a class="anchor" href="#separate-words"></a>Separate words</h3>
 <div class="paragraph">
-<p>Should you copy and paste an element&#8217;s <code>name</code> to use it as the <code>preferredName</code>, adapt it accordingly.</p>
+<p>Should you copy and paste an element&#8217;s name to use it as the <code>preferredName</code>, adapt it accordingly.</p>
 </div>
 <div class="paragraph">
-<p>For example, if the <code>name</code> consists of more than one word, written in camel case, separate it into the respective words.</p>
+<p>For example, if the name consists of more than one word, written in camel case, separate it into the respective words.</p>
 </div>
 <div class="listingblock">
-<div class="title">Examples of Preferred Names derived from the <code>name</code> attributes of the model elements</div>
+<div class="title">Examples of Preferred Names derived from the model element names of the model elements</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:plantId a samm:Property ;
    samm:preferredName "plant ID"@en ;
 
-:machineTmperature a samm:Property ;
+:machineTemperature a samm:Property ;
    samm:preferredName "machine temperature"@en ;
 
 :euTaxonomyDisclosureStatement a samm:Property ;
@@ -1042,7 +1046,7 @@ This is because the applied capitalization obscures proper nouns.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#the-name-attribute">The <code>name</code> attribute</a></p>
+<p><a href="#model-element-names">Model element names</a></p>
 </li>
 <li>
 <p><a href="#the-preferredname-attribute">The <code>preferredName</code> attribute</a></p>
@@ -1156,7 +1160,7 @@ It can consist of only a sentence fragment, or it may be longer—but do not jus
 </tbody>
 </table>
 <div class="paragraph">
-<p>Regarding meaningfulness, see also the details given for the <code>name</code> attribute at <a href="#meaningful-names">Meaningful names (reduce technical debt)</a>.</p>
+<p>Regarding meaningfulness, see also the details given for the model element name at <a href="#meaningful-names">Meaningful names (reduce technical debt)</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1166,7 +1170,7 @@ It can consist of only a sentence fragment, or it may be longer—but do not jus
 </div>
 <div class="paragraph">
 <p>Only use very common standard abbreviations; ensure they are not misleading.
-See also the details provided for the <code>name</code> attribute: <a href="#unmistakable-abbreviations">Unmistakable abbreviations</a>.</p>
+See also the details provided for the model element name: <a href="#unmistakable-abbreviations">Unmistakable abbreviations</a>.</p>
 </div>
 <div class="paragraph">
 <p>It is acceptable to use editorial abbreviations such as <code>e.g.</code> ("for example") or <code>i.e.</code> ("that is") or <code>etc.</code> ("and so forth").</p>
