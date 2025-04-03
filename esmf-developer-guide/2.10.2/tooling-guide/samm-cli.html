@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.8">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.10.2">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.9.8</span>
+    <span class="version">2.10.2</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -143,6 +143,12 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.10.2</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.1/index.html">2.10.1</a>
+        </li>
         <li class="version">
           <a href="../../2.10.0/index.html">2.10.0</a>
         </li>
@@ -151,12 +157,6 @@
         </li>
         <li class="version">
           <a href="../../2.9.9/index.html">2.9.9</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.9.8</a>
-        </li>
-        <li class="version">
-          <a href="../../2.9.7/index.html">2.9.7</a>
         </li>
       </ul>
     </li>
@@ -244,17 +244,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.9.8</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.10.2</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/samm-cli.html">master</a>
+    <a class="version is-current" href="samm-cli.html">2.10.2</a>
+    <a class="version" href="../../2.10.1/tooling-guide/samm-cli.html">2.10.1</a>
     <a class="version" href="../../2.10.0/tooling-guide/samm-cli.html">2.10.0</a>
     <a class="version" href="../../2.9.10/tooling-guide/samm-cli.html">2.9.10</a>
     <a class="version" href="../../2.9.9/tooling-guide/samm-cli.html">2.9.9</a>
-    <a class="version is-current" href="samm-cli.html">2.9.8</a>
-    <a class="version" href="../../2.9.7/tooling-guide/samm-cli.html">2.9.7</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.8/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.10.2/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -276,8 +276,8 @@ latest release [on GitHub](<a href="https://github.com/eclipse-esmf/esmf-sdk/rel
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.10.0.jar</code> followed by one of the
-following subcommands (e.g., <code>java -jar samm-cli-2.10.0.jar help</code>). In the following
+<p>For the executable jar, call <code>java -jar samm-cli-2.10.2.jar</code> followed by one of the
+following subcommands (e.g., <code>java -jar samm-cli-2.10.2.jar help</code>). In the following
 sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -293,7 +293,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.10.0.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.10.2.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -364,6 +364,9 @@ can also be seen in the help text of the individual subcommands.</p>
 </div>
 <div class="sect2">
 <h3 id="list-of-commands"><a class="anchor" href="#list-of-commands"></a>List of commands</h3>
+<div class="paragraph">
+<p><br></p>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -517,7 +520,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to svg --custom-resolver "java -jar resolver.jar"</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock"><a id="aspect-to-java"></a> aspect &lt;model&gt; to java</p></td>
+<td class="tableblock halign-left valign-top" rowspan="12"><p class="tableblock"><a id="aspect-to-java"></a> aspect &lt;model&gt; to java</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate Java classes from an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java</code></p></td>
 </tr>
@@ -532,6 +535,11 @@ of model resolution</a> for more information.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--no-jackson, -nj</em> : disable <a href="https://github.com/FasterXML/jackson">Jackson</a> annotation
+                                       generation in generated Java classes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--no-jackson-jsonformat-shape, -njjs</em> : disable <a href="https://github.com/FasterXML/jackson-annotations/blob/2.19/src/main/java/com/fasterxml/jackson/annotation/JsonFormat.java">JsonFormat.Shape</a> annotation
                                        generation in generated Java classes</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -911,6 +919,41 @@ of model resolution</a> for more information.</p>
                                        Asset Administration Shell (AAS) file.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx list</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="package-import"></a> package &lt;namespace package&gt; import</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Imports a Namespace Package (file or URL) into a given
+                                     <a href="#models-directory-structure">models directory</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm package MyPackage.zip import --models-root c:\models</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--dry-run</em> : Don&#8217;t write changes to the file system, but print a report of changes
+                                     that would be performed.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--details</em> : When used with <code>--dry-run</code>, include details about model content
+                                     changes in the report .</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--force</em> : When a new file is to be created but it already exists in the file system,
+                                     the operation will be cancelled, unless <code>--force</code> is used.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="package-export"></a> package &lt;model or namespace URN&gt; export</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exports an Aspect Model with its dependencies
+                                     or a complete namespace to a Namespace Package (.zip)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm package urn:samm:org.eclipse.example.myns:1.0.0 --output package.zip</code><br>
+                                     <br>
+                                     <code>samm package AspectModel.ttl export --output package.zip</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout); as ZIP is a binary format, it is
+                                       strongly recommended to output the result to a file by using the -o option or the
+                                       console redirection operator '&gt;')</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1079,7 +1122,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.10.0.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.10.2.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1612,7 +1655,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.10.0.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.10.2.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">

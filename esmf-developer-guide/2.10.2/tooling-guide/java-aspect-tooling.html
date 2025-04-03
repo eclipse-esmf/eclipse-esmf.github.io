@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.9.8">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.10.2">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.9.8</span>
+    <span class="version">2.10.2</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -143,6 +143,12 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.10.2</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.1/index.html">2.10.1</a>
+        </li>
         <li class="version">
           <a href="../../2.10.0/index.html">2.10.0</a>
         </li>
@@ -151,12 +157,6 @@
         </li>
         <li class="version">
           <a href="../../2.9.9/index.html">2.9.9</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.9.8</a>
-        </li>
-        <li class="version">
-          <a href="../../2.9.7/index.html">2.9.7</a>
         </li>
       </ul>
     </li>
@@ -244,17 +244,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.9.8</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.10.2</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/java-aspect-tooling.html">master</a>
+    <a class="version is-current" href="java-aspect-tooling.html">2.10.2</a>
+    <a class="version" href="../../2.10.1/tooling-guide/java-aspect-tooling.html">2.10.1</a>
     <a class="version" href="../../2.10.0/tooling-guide/java-aspect-tooling.html">2.10.0</a>
     <a class="version" href="../../2.9.10/tooling-guide/java-aspect-tooling.html">2.9.10</a>
     <a class="version" href="../../2.9.9/tooling-guide/java-aspect-tooling.html">2.9.9</a>
-    <a class="version is-current" href="java-aspect-tooling.html">2.9.8</a>
-    <a class="version" href="../../2.9.7/tooling-guide/java-aspect-tooling.html">2.9.7</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.9.8/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.10.2/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -283,7 +283,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -296,7 +296,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -308,7 +308,7 @@ respective subsection), <em>or</em> you can use the <code>aspect-model-starter</
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -353,26 +353,11 @@ To be able to use the artifacts released in this way in your projects, first the
 <h2 id="jdk-requirements"><a class="anchor" href="#jdk-requirements"></a>JDK requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The esmf-sdk components are built with Java 17 and require a JDK &gt;= 17 such as
+<p>The esmf-sdk components are built with Java 21 and require a JDK &gt;= 21 such as
 <a href="https://adoptium.net/">Adoptium Temurin</a>.</p>
 </div>
 <div class="paragraph">
-<p>The esmf-sdk can also be used with a Java 17-compatible <a href="https://www.graalvm.org/">GraalVM JDK</a>. With
-GraalVM you need to make the Graal JavaScript component available, as parts of the SDK such as the
-Aspect Model validation component require embedded JavaScript execution:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For using the esmf-sdk in the GraalVM itself, install the JS component using the
-<a href="https://www.graalvm.org/22.3/reference-manual/js/">GraalVM Updater</a>: <code>gu install js</code></p>
-</li>
-<li>
-<p>For using the esmf-sdk with GraalVM <code>native-image</code>, be sure to use the <code>--language:js</code> option when
-building the native image; for more information see
-<a href="https://www.graalvm.org/22.3/reference-manual/polyglot-programming/">polyglot programming</a>.</p>
-</li>
-</ul>
+<p>The esmf-sdk can also be used with a Java 21-compatible <a href="https://www.graalvm.org/">GraalVM JDK</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -399,7 +384,7 @@ esmf-sdk resources, reflection and initialization that is required by the compil
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -412,7 +397,7 @@ esmf-sdk resources, reflection and initialization that is required by the compil
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -424,7 +409,7 @@ esmf-sdk resources, reflection and initialization that is required by the compil
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -480,7 +465,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-urn&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -493,7 +478,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -505,7 +490,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -649,7 +634,7 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -662,7 +647,7 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -674,7 +659,7 @@ import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -846,11 +831,204 @@ final String fileString =
 </div>
 </div>
 <div class="paragraph">
-<p>To include the serializer artifact, use the following dependencies:</p>
+<p>To include the serializer, use the following dependency:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.2'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.2")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-aspect-models"><a class="anchor" href="#creating-aspect-models"></a>Programmatically Creating Aspect Models</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In certain situations, particularly for test code, it is desirable to programmatically create an
+Aspect Model. For this, the <code>SammBuilder</code> class can be used. It provides static builder methods for
+all model element types, e.g., <code>aspect()</code>, <code>property()</code> and so on. Using the <code>Elements.*</code> static
+import allows easy access to predefined model elements such as <code>samm_c.Text</code>. The <code>DataTypes.*</code>
+static import allows access to all valid SAMM data types, such as <code>xsd.integer</code>, <code>xsd.dateTime</code> and
+<code>samm.curie</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static org.eclipse.esmf.metamodel.DataTypes.*;
+import static org.eclipse.esmf.metamodel.Elements.*;
+import static org.eclipse.esmf.metamodel.builder.SammBuilder.*;
+
+import java.util.Locale;
+
+import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
+import org.eclipse.esmf.metamodel.Aspect;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModelUrn namespace = AspectModelUrn.fromUrn( "urn:samm:org.example:1.0.0" );
+final Aspect aspect = aspect( namespace.withName( "Aspect" ) )
+      .preferredName( "My Aspect" )
+      .property( property( namespace.withName( "property" ) )
+            .preferredName( "My Property" )
+            .description( "This is a test property" )
+            .characteristic( samm_c.Text )
+            .build() )
+      .property( property( namespace.withName( "mySecondProperty" ) )
+            .preferredName( "My second Property", Locale.ENGLISH )
+            .description( "This is my second test property", Locale.ENGLISH )
+            .characteristic( trait( namespace.withName( "MyTrait" ) )
+                  .preferredName( "My Trait" )
+                  .baseCharacteristic( characteristic()
+                        .preferredName( "Custom characteristic" )
+                        .dataType( xsd.integer )
+                        .build() )
+                  .constraint( regularExpressionConstraint()
+                        .value( "a.*b" )
+                        .build() )
+                  .build() )
+            .build() )
+      .build();</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you use <a href="https://assertj.github.io/doc/">AssertJ</a> for testing, you can add a dependency to the
+tests jar provided by the <code>esmf-aspect-meta-model-java</code> module:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
+    &lt;classifier&gt;tests&lt;/classifier&gt;
+    &lt;type&gt;test-jar&lt;/type&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.2:tests'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.10.2:tests")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Unresolved include directive in modules/tooling-guide/pages/java-aspect-tooling.adoc - include::esmf-developer-guide:ROOT:partial$esmf-aspect-model-serializer-artifact.adoc[]</p>
+<p>Add a static import to <code>org.eclipse.esmf.test.shared.AspectModelAsserts.assertThat</code> to your test
+code, then you can use custom fluent assertions similar to the <code>SammBuilder</code>, for asserting
+properties of an Aspect Model:</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">assertThat( aspect )
+      .hasPreferredName( "My Aspect", Locale.ENGLISH )
+      .hasDescriptionMatching( description -&gt; description.getValue().contains( "is my" ) )
+      .hasSinglePropertyThat()
+      .hasSameNamespaceAs( aspect )
+      .hasName( "property" )
+      .hasPreferredName( "Meine Property", Locale.GERMAN );
+
+final Property property = aspect.getPropertyByName( "property" ).orElseThrow();
+assertThat( property )
+      .characteristic()
+      .hasSameNamespaceAs( aspect )
+      .hasName( "MySingleEntity" )
+      .isSingleEntityThat()
+      .dataType()
+      .isEntityThat()
+      .hasName( "MyEntity" );</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Overloaded <code>assertThat()</code> methods are provided for all Aspect Model Elements, e.g., <code>Aspect</code>,
+<code>Property</code>, <code>Characteristic</code>, <code>Trait</code>, etc., as well as for <code>AspectModel</code> and <code>AspectModel</code>.</p>
 </div>
 </div>
 </div>
@@ -952,7 +1130,7 @@ allows for custom structured handling of problems that occur during model loadin
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-validator&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -965,7 +1143,7 @@ allows for custom structured handling of problems that occur during model loadin
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -977,7 +1155,7 @@ allows for custom structured handling of problems that occur during model loadin
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -1009,7 +1187,7 @@ following dependency:</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-document-generators&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1022,7 +1200,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1034,7 +1212,7 @@ following dependency:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -1069,12 +1247,9 @@ the formats PNG and SVG.</p>
 <summary>Show used imports</summary>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.OutputStream;
-import java.util.Locale;
-import java.util.Set;
-
-import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator;
-import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator.Format;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator;
+import org.eclipse.esmf.aspectmodel.generator.diagram.DiagramGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.diagram.DiagramGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
@@ -1085,32 +1260,25 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
 final AspectModel aspectModel = // ...
 
-final AspectModelDiagramGenerator generator = new AspectModelDiagramGenerator( aspectModel.aspect() ); <i class="conum" data-value="1"></i><b>(1)</b>
-
-// Variant 1: Generate a diagram in SVG format using @en descriptions and preferredNames from the model
-final OutputStream output = outputStreamForName( "diagram.svg" );
-generator.generateDiagram( Format.SVG, Locale.ENGLISH, output ); <i class="conum" data-value="2"></i><b>(2)</b>
-output.close();
-
-// Variant 2: Generate diagrams in multiple formats, for all languages that are present in the model.
-generator.generateDiagrams( Set.of( Format.PNG, Format.SVG ), this::outputStreamForName ); <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+final DiagramGenerationConfig config = DiagramGenerationConfigBuilder.builder()
+      .format( DiagramGenerationConfig.Format.SVG )
+      .language( Locale.ENGLISH )
+      .build();
+new AspectModelDiagramGenerator( aspectModel.aspect(), config ) <i class="conum" data-value="1"></i><b>(1)</b>
+      .generate( this::outputStreamForName ); <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The diagram generator is initialized with the loaded model.</td>
+<td>The diagram generator is initialized with the loaded model and the
+generation configuration.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The simple call for one output format and one language (i.e., descriptions and preferredNames of one locale) takes
-one output stream to write the image to.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>It is also possible to generate multiple diagrams, one for each combination of output format and language. For that,
-the set of target formats is given as well as a mapping function.</td>
+<td>The generation takes the output stream for the output file name as input and
+writes the generated diagram to the output stream.</td>
 </tr>
 </table>
 </div>
@@ -1258,146 +1426,84 @@ import com.fasterxml.jackson.databind.JsonNode;</code></pre>
 <div class="listingblock">
 <div class="title">Generate OpenAPI YAML</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-            // Server URL
-            .baseUrl( "http://www.example.com" )
-            // The resource path which shall be added
-            .resourcePath( "/testPath/{parameter}" )
-            // Determines whether semantic versioning should be used for the API
-            // i.e., true = v1.2.3, false = v1
-            .useSemanticVersion( false )
-            // A String containing all the information for dynamic properties mentioned in the resource path.
-            // The string must be syntactically valid YAML.
-            .properties( readYaml( """
-                  parameter:
-                    name: parameter
-                    in: path
-                    description: "A parameter."
-                    required: true
-                    schema:
-                      type: string
-                  """ ) )
-            // Should the query API be added to the generated specification?
-            .includeQueryApi( true )
-            // The paging Option to be chosen. In case paging is possible:
-            // The default for a time related collection is time-based paging.
-            // Otherwise the default is offset-based paging.
-            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-            .build();
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A String containing all the information for dynamic properties mentioned in the resource path.
+      // The string must be syntactically valid YAML.
+      .properties( readYaml( """
+            parameter:
+              name: parameter
+              in: path
+              description: "A parameter."
+              required: true
+              schema:
+                type: string
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
 
-      // Generate pretty-printed YAML
-      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
-      final String yaml = generator.generateYaml();
-   }
-
-   @Test
-   public void generateJson() throws IOException {
-      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
-
-      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-            // Server URL
-            .baseUrl( "http://www.example.com" )
-            // The resource path which shall be added
-            .resourcePath( "/testPath/{parameter}" )
-            // Determines whether semantic versioning should be used for the API
-            // i.e., true = v1.2.3, false = v1
-            .useSemanticVersion( false )
-            // A JsonNode containing all the information for variable properties mentioned
-            // in the resource path .
-            .properties( readYaml( """
-                     {
-                       "test-Id": {
-                         "name": "test-Id",
-                         "in": "path",
-                         "description": "The ID of the unit.",
-                         "required": true,
-                         "schema": {
-                           "type": "string"
-                         }
-                       }
-                     }
-                  """ ) )
-            // Should the query API be added to the generated specification?
-            .includeQueryApi( true )
-            // The paging Option to be chosen. In case paging is possible:
-            // The default for a time related collection is time-based paging.
-            // Otherwise the default is offset-based paging.
-            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-            .build();
-
-      // Generate the JSON
-      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
-      // Get result as type-safe JSON object
-      final JsonNode jsonNode = generator.getContent();
-      // Or as pretty-printed JSON String:
-      final String json = generator.generateJson();
-   }
-
-   private static ObjectNode readYaml( String content ) throws JsonProcessingException {
-      return (ObjectNode) new YAMLMapper().readTree( content );
-   }
-}</code></pre>
+// Generate pretty-printed YAML
+final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
+final String yaml = generator.generateYaml();</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Generate OpenAPI JSON</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-      final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-            // Server URL
-            .baseUrl( "http://www.example.com" )
-            // The resource path which shall be added
-            .resourcePath( "/testPath/{parameter}" )
-            // Determines whether semantic versioning should be used for the API
-            // i.e., true = v1.2.3, false = v1
-            .useSemanticVersion( false )
-            // A JsonNode containing all the information for variable properties mentioned
-            // in the resource path .
-            .properties( readYaml( """
-                     {
-                       "test-Id": {
-                         "name": "test-Id",
-                         "in": "path",
-                         "description": "The ID of the unit.",
-                         "required": true,
-                         "schema": {
-                           "type": "string"
-                         }
-                       }
-                     }
-                  """ ) )
-            // Should the query API be added to the generated specification?
-            .includeQueryApi( true )
-            // The paging Option to be chosen. In case paging is possible:
-            // The default for a time related collection is time-based paging.
-            // Otherwise the default is offset-based paging.
-            .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-            .build();
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A JsonNode containing all the information for variable properties mentioned
+      // in the resource path .
+      .properties( readYaml( """
+               {
+                 "test-Id": {
+                   "name": "test-Id",
+                   "in": "path",
+                   "description": "The ID of the unit.",
+                   "required": true,
+                   "schema": {
+                     "type": "string"
+                   }
+                 }
+               }
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
 
-      // Generate the JSON
-      final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
-      // Get result as type-safe JSON object
-      final JsonNode jsonNode = generator.getContent();
-      // Or as pretty-printed JSON String:
-      final String json = generator.generateJson();
-   }
-
-   private static ObjectNode readYaml( String content ) throws JsonProcessingException {
-      return (ObjectNode) new YAMLMapper().readTree( content );
-   }
-}</code></pre>
+// Generate the JSON
+final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
+// Get result as type-safe JSON object
+final JsonNode jsonNode = generator.getContent();
+// Or as pretty-printed JSON String:
+final String json = generator.generateJson();</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1442,73 +1548,42 @@ import com.fasterxml.jackson.databind.JsonNode;</code></pre>
 <div class="listingblock">
 <div class="title">Generate AsyncAPI YAML</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-      final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-            // i.e., true = v1.2.3, false = v1
-            .useSemanticVersion( false )
-            // Set Application id
-            .applicationId( "test:serve" )
-            .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-            .build();
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
 
-      // Generate pretty-printed YAML
-      final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
-      final String yaml = generator.generateYaml();
-   }
-
-   @Test
-   public void generateJson() {
-      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
-
-      final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-            // i.e., true = v1.2.3, false = v1
-            .useSemanticVersion( false )
-            // Set Application id
-            .applicationId( "test:serve" )
-            .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-            .build();
-
-      // Generate the JSON
-      final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
-      // Get result as type-safe JSON object
-      final JsonNode jsonNode = generator.getContent();
-      // Or as pretty-printed JSON String:
-      final String json = generator.generateJson();
-   }
-}</code></pre>
+// Generate pretty-printed YAML
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
+final String yaml = generator.generateYaml();</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Generate AsyncAPI JSON</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">      // AspectModel as returned by the AspectModelLoader
-      final AspectModel aspectModel = // ...
-            new AspectModelLoader().load(
-                  new File( "aspect-models/org.eclipse.esmf.examples.movement/1.0.0/Movement.ttl" ) );
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
 
-      final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-            // i.e., true = v1.2.3, false = v1
-            .useSemanticVersion( false )
-            // Set Application id
-            .applicationId( "test:serve" )
-            .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-            .build();
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
 
-      // Generate the JSON
-      final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
-      // Get result as type-safe JSON object
-      final JsonNode jsonNode = generator.getContent();
-      // Or as pretty-printed JSON String:
-      final String json = generator.generateJson();
-   }
-}</code></pre>
+// Generate the JSON
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
+// Get result as type-safe JSON object
+final JsonNode jsonNode = generator.getContent();
+// Or as pretty-printed JSON String:
+final String json = generator.generateJson();</code></pre>
 </div>
 </div>
 </div>
@@ -1811,7 +1886,7 @@ the information itself (<em>meta</em>).</p>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-java-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1824,7 +1899,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -1836,7 +1911,7 @@ the information itself (<em>meta</em>).</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -2089,7 +2164,7 @@ generator.generate( qualifiedName -&gt; {
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-static-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2102,7 +2177,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -2114,7 +2189,7 @@ generator.generate( qualifiedName -&gt; {
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -2631,7 +2706,7 @@ new AspectModelAasGenerator( aspect, config ).generate( this::outputStreamForNam
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-aas-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.10.0&lt;/version&gt;
+    &lt;version&gt;2.10.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2644,7 +2719,7 @@ new AspectModelAasGenerator( aspect, config ).generate( this::outputStreamForNam
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.10.0'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.10.2'</code></pre>
 </div>
 </div>
 </div>
@@ -2656,7 +2731,7 @@ new AspectModelAasGenerator( aspect, config ).generate( this::outputStreamForNam
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.10.0")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.10.2")</code></pre>
 </div>
 </div>
 </div>
@@ -2679,13 +2754,12 @@ Templates to Aspect Models:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.util.List;
 
 import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
 import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.aas.AasToAspectModelGenerator;
 import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
-import org.eclipse.esmf.metamodel.Aspect;
+import org.eclipse.esmf.aspectmodel.generator.AspectArtifact;
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
@@ -2698,8 +2772,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 // Multiple "from" methods are available: fromFile (which checks the file extension),
 // fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
 final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
-final List&lt;Aspect&gt; aspects = generator.generateAspects();
-aspects.forEach( aspect -&gt; {
+generator.generate().map( AspectArtifact::getContent ).forEach( aspect -&gt; {
    // do something with the generated aspect
 } );</code></pre>
 </div>
