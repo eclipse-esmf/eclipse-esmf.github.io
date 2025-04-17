@@ -67,5 +67,6 @@ asciidoc:
     aspect-meta-model-version: '2.2.0'
     esmf-sdk-version: '2.10.2'
     esmf-sdk-js-aspect-model-loader-version: '2.3.3'
+    esmf-sdk-py-aspect-model-loader-version: '2.2.1'
     example-ns: com.mycompany@
 
