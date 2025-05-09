@@ -204,8 +204,8 @@
                            <goal>exec</goal>
                         </goals>
                         <configuration>
-                           <executable>${antora-cli}</executable>
-                           <commandlineArgs>site.yml --stacktrace --fetch</commandlineArgs>
+                           <executable>${node-directory}/node</executable>
+                           <commandlineArgs>${antora-cli} site.yml --stacktrace --fetch</commandlineArgs>
                            <useMavenLogger>true</useMavenLogger>
                         </configuration>
                      </execution>
@@ -231,8 +231,8 @@
                            <goal>exec</goal>
                         </goals>
                         <configuration>
-                           <executable>${antora-cli}</executable>
-                           <commandlineArgs>site-local.yml --stacktrace --fetch</commandlineArgs>
+                           <executable>${node-directory}/node</executable>
+                           <commandlineArgs>${antora-cli} site-local.yml --stacktrace --fetch</commandlineArgs>
                            <useMavenLogger>true</useMavenLogger>
                         </configuration>
                      </execution>
