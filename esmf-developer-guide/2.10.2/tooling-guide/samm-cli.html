@@ -144,6 +144,9 @@
           <a href="../../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../2.11.0/index.html">2.11.0</a>
+        </li>
+        <li class="version">
           <a href="../../2.10.3/index.html">2.10.3</a>
         </li>
         <li class="version is-current">
@@ -154,9 +157,6 @@
         </li>
         <li class="version">
           <a href="../../2.10.0/index.html">2.10.0</a>
-        </li>
-        <li class="version">
-          <a href="../../2.9.10/index.html">2.9.10</a>
         </li>
       </ul>
     </li>
@@ -247,11 +247,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">2.10.2</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/samm-cli.html">master</a>
+    <a class="version" href="../../2.11.0/tooling-guide/samm-cli.html">2.11.0</a>
     <a class="version" href="../../2.10.3/tooling-guide/samm-cli.html">2.10.3</a>
     <a class="version is-current" href="samm-cli.html">2.10.2</a>
     <a class="version" href="../../2.10.1/tooling-guide/samm-cli.html">2.10.1</a>
     <a class="version" href="../../2.10.0/tooling-guide/samm-cli.html">2.10.0</a>
-    <a class="version" href="../../2.9.10/tooling-guide/samm-cli.html">2.9.10</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.10.2/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -276,8 +276,8 @@ latest release [on GitHub](<a href="https://github.com/eclipse-esmf/esmf-sdk/rel
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.10.3.jar</code> followed by one of the
-following subcommands (e.g., <code>java -jar samm-cli-2.10.3.jar help</code>). In the following
+<p>For the executable jar, call <code>java -jar samm-cli-2.11.0.jar</code> followed by one of the
+following subcommands (e.g., <code>java -jar samm-cli-2.11.0.jar help</code>). In the following
 sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -293,7 +293,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.10.3.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.11.0.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -1122,7 +1122,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.10.3.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.11.0.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1655,7 +1655,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.10.3.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.11.0.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">
