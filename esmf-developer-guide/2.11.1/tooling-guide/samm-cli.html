@@ -64,7 +64,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.10.0">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.11.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -109,7 +109,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.10.0</span>
+    <span class="version">2.11.1</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -143,6 +143,9 @@
         <li class="version is-latest">
           <a href="../../index.html">master</a>
         </li>
+        <li class="version is-current">
+          <a href="../index.html">2.11.1</a>
+        </li>
         <li class="version">
           <a href="../../2.11.0/index.html">2.11.0</a>
         </li>
@@ -154,9 +157,6 @@
         </li>
         <li class="version">
           <a href="../../2.10.1/index.html">2.10.1</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.10.0</a>
         </li>
       </ul>
     </li>
@@ -244,17 +244,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.10.0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.11.1</button>
   <div class="version-menu">
     <a class="version" href="../../tooling-guide/samm-cli.html">master</a>
+    <a class="version is-current" href="samm-cli.html">2.11.1</a>
     <a class="version" href="../../2.11.0/tooling-guide/samm-cli.html">2.11.0</a>
     <a class="version" href="../../2.10.3/tooling-guide/samm-cli.html">2.10.3</a>
     <a class="version" href="../../2.10.2/tooling-guide/samm-cli.html">2.10.2</a>
     <a class="version" href="../../2.10.1/tooling-guide/samm-cli.html">2.10.1</a>
-    <a class="version is-current" href="samm-cli.html">2.10.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.10.0/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.11.1/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -276,8 +276,8 @@ latest release [on GitHub](<a href="https://github.com/eclipse-esmf/esmf-sdk/rel
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.11.0.jar</code> followed by one of the
-following subcommands (e.g., <code>java -jar samm-cli-2.11.0.jar help</code>). In the following
+<p>For the executable jar, call <code>java -jar samm-cli-2.11.1.jar</code> followed by one of the
+following subcommands (e.g., <code>java -jar samm-cli-2.11.1.jar help</code>). In the following
 sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -293,7 +293,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.11.0.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.11.1.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -384,7 +384,7 @@ can also be seen in the help text of the individual subcommands.</p>
 MacOS) or <code>.\somewhere\AspectModel.ttl</code> (on Windows),</p>
 </li>
 <li>
-<p>an absolut file name, such as
+<p>an absolut file name (put it in quotes ("") if the path or file name contains blank spaces), such as
 <code>/home/me/aspect-models/org.eclipse.esmf.example/1.0.0/AspectModel.ttl</code> (on Linux and MacOS) or
 <code>C:\Users\me\aspect-models\org.eclipse.esmf.example\1.0.0\AspectModel.ttl</code> (on Windows),</p>
 </li>
@@ -602,7 +602,7 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--parameter-file, -p</em> : the path to a file including the parameter for the Aspect
                                        API endpoints</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section bellow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section below</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--semantic-version, -sv</em> : use the full semantic version from the Aspect Model as the
@@ -611,7 +611,7 @@ of model resolution</a> for more information.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--resource-path, -r</em> : the resource path for the Aspect API endpoints</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section bellow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section below</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--include-query-api, -q</em> : include the path for the Query Aspect API Endpoint in the
@@ -662,7 +662,7 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--template-file, -t</em> : the path to a file including a template for
                                        the resulting specification, can be in JSON or YAML</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section bellow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For detailed description, see the section below</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--separate-files, -sf</em> : Create separate files for each schema</p></td>
@@ -810,11 +810,11 @@ of model resolution</a> for more information.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to aas -o="somewhere\new-file-name.extension"</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--format, -f</em> : output file format (XML, JSON, or AASX, default: XML)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to aas -f="aasx" -o="somewhere\newfile.aasx"</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
@@ -984,9 +984,10 @@ language/script language, including complex logic if necessary.</p>
 <p>Using the <code>--github</code> switch, you can configure a location in a remote GitHub repository as models
 root, e.g., <code>eclipse-esmf/esmf-sdk</code>. Optionally, you can also provide <code>--github-directory</code> to set
 the remote directory and <code>--github-branch</code> or <code>--github-tag</code> to set the branch name or tag,
-respectively. If the repository is private, you can also pass <code>--github-token</code> and set a
-<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">fine-grained
-access token</a>; the token needs at least "Contents" repository read permissions.</p>
+respectively. If the repository is private, you can also pass <code>--token</code> to set the repository-specific GitHub token
+or <code>--github-token</code> for a token for repository/repositories.
+To generate a token, refer to the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">fine-grained
+access token</a> documentation; the token must have at least "Contents" repository read permissions.</p>
 </li>
 </ul>
 </div>
@@ -1122,7 +1123,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.11.0.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.11.1.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1655,7 +1656,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.11.0.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.11.1.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">
