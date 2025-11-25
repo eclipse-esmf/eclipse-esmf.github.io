@@ -167,10 +167,13 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <a class="title" href="../../esmf-developer-guide/index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.11.1/index.html">2.11.1</a>
@@ -183,9 +186,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.10.2/index.html">2.10.2</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.10.1/index.html">2.10.1</a>
         </li>
       </ul>
     </li>
@@ -218,7 +218,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../python-sdk-guide/index.html">master</a>
@@ -382,21 +382,21 @@ attributes:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:preferredName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name in a specific language. This attribute may be defined
-  multiple times for different languages but only once for a specific language. There should be at
-  least one preferredName defined with an "en" language tag.</p></td>
+multiple times for different languages but only once for a specific language. There should be at
+least one preferredName defined with an "en" language tag.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:description</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Human readable description in a specific language. This attribute may be
-  defined multiple times for different languages but only once for a specific language. There should
-  be at least one description defined with an "en" language tag.</p></td>
+defined multiple times for different languages but only once for a specific language. There should
+be at least one description defined with an "en" language tag.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:see</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a related element in an external taxonomy, ontology or other standards
-  document. The datatype is <code>xsd:anyURI</code>. This attribute may be defined multiple times.</p></td>
+document. The datatype is <code>xsd:anyURI</code>. This attribute may be defined multiple times.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
@@ -486,13 +486,13 @@ addition to the general attributes, every Aspect Model element has the following
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:properties</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The list of Properties of this Aspect. Leaving out this
-  attribute completely is equivalent to having it present with an empty list as value.</p></td>
+attribute completely is equivalent to having it present with an empty list as value.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:operations</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The list of Operations of this Aspect. Leaving out this
-  attribute completely is equivalent to having it present with an empty list as value.</p></td>
+attribute completely is equivalent to having it present with an empty list as value.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -564,7 +564,7 @@ that all model elements have</a>, Properties have the following attributes:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:characteristic</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="characteristics.html#characteristics" class="xref page">Characteristic</a> describing
-  this Property.</p></td>
+this Property.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1160,7 +1160,7 @@ Characteristic, and after that a complete concrete example is given.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"2019-09-27"^^<code>xsd:date</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(\d{4})-(\d{2})-(\d{2})</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">( <code>:year</code> "-" <code>:month</code>
-  "-" <code>:day</code> )</p></td>
+"-" <code>:day</code> )</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Email Address</p></td>
@@ -1173,7 +1173,7 @@ Characteristic, and after that a complete concrete example is given.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"0xAC03BE"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">( "0x"
-  <code>:red</code> <code>:green</code> <code>:blue</code> )</p></td>
+<code>:red</code> <code>:green</code> <code>:blue</code> )</p></td>
 </tr>
 </tbody>
 </table>
@@ -1255,7 +1255,7 @@ it is conceptually similar to a <a href="#adding-external-references">samm:see r
 <div class="paragraph">
 <p>As explained in the section <a href="#declaring-quantifiable-values-and-measurements">Declaring Quantifiables and Measurements</a>, some values only make sense when they also have a unit assigned to them.
 This unit definition is in many cases fixed at design time, does not change thereafter and therefore at runtime (in the JSON payload for example), only the actual value is transported.<br>
- There may be scenarios, however, where this permanent fixation on a specific unit might not be sufficient because the unit can only be determined dynamically
+There may be scenarios, however, where this permanent fixation on a specific unit might not be sufficient because the unit can only be determined dynamically
 at runtime, or is a kind of configuration parameter which must be set when the system is being deployed/starting up. In cases like this, a <a href="characteristics.html#unit-reference-characteristic" class="xref page">UnitReference</a> characteristic instance can be used to include a dynamic reference to the desired unit from the <a href="appendix/unitcatalog.html" class="xref page">Unit catalog</a> and this information is then always included in the payload. The runtime payload refers to the unit using its <code>samm:curie</code>, i.e., the unit&#8217;s URN&#8217;s element name prefixed with <code>unit:</code>.</p>
 </div>
 <div class="paragraph">
@@ -1414,7 +1414,7 @@ When writing the <code>samm:value</code>, backslashes (<code>\</code>) need to b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:properties</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The list of Properties which make up the Entity. Leaving out this
-  attribute completely is equivalent to having it present with an empty list as value.</p></td>
+attribute completely is equivalent to having it present with an empty list as value.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -1578,7 +1578,7 @@ Abstract Properties (and only those).</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:input</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of references to Properties that describe the input to the operation. The
-  attribute must be present, but the list may be empty.</p></td>
+attribute must be present, but the list may be empty.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>

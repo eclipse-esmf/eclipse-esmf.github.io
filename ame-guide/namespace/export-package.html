@@ -257,10 +257,13 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../esmf-developer-guide/index.html">ESMF SDK Developer Guide</a>
+      <a class="title" href="../../esmf-developer-guide/index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.11.1/index.html">2.11.1</a>
@@ -273,9 +276,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.10.2/index.html">2.10.2</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.10.1/index.html">2.10.1</a>
         </li>
       </ul>
     </li>
@@ -308,7 +308,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../python-sdk-guide/index.html">master</a>
@@ -391,7 +391,7 @@
 <p>Open the <a href="../getting-started/ui-overview.html#menu-file" class="xref page">File menu</a> and select <strong>Export Package</strong>.</p>
 </li>
 <li>
-<p>Select the available namespace.</p>
+<p>Select one of the available namespaces to export.</p>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/select-namespace-export.png" alt="select namespace export" width="65%">
@@ -399,31 +399,15 @@
 </div>
 </li>
 <li>
-<p>Click <strong>Validate</strong>.</p>
+<p>Click <strong>Export</strong>.</p>
 <div class="paragraph">
-<p>→ After validation is done, a summary dialog similar to the one for <a href="import-package.html#import-package" class="xref page">import package</a> will be displayed. If the validation has files with errors, the namespace cannot be exported.</p>
+<p>→ The selected namespace and all its internal references will be exported.</p>
 </div>
-</li>
-<li>
-<p>Click <strong>Export</strong>.<br>
-→ The chosen namespace will be exported.</p>
 </li>
 <li>
 <p>Save the zip file in local file directory.</p>
 </li>
 </ol>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-To export multiple namespaces at once just check multiple boxes at step 2.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>

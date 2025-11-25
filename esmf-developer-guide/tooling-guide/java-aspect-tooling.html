@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Java Tooling for Working with Aspect Models :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <title>Getting Started with Java APIs for Aspect Models :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-aspect-tooling.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -69,37 +69,48 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">ESMF SDK Developer Guide</a></h3>
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="java-aspect-tooling.html">Java APIs for Aspect Models</a>
-  </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../static-metaclasses/index.html">Using Java Static Meta Classes</a>
+    <span class="nav-text">Java APIs for Aspect Models</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../static-metaclasses/basic-usage.html">Basic Usage</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../static-metaclasses/advanced-usage.html">Advanced Usage</a>
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
   </li>
 </ul>
   </li>
@@ -108,7 +119,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">ESMF SDK Developer Guide</span>
+    <span class="title">Java SDK and SAMM CLI</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -138,10 +149,13 @@
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../index.html">ESMF SDK Developer Guide</a>
+      <a class="title" href="../index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
           <a href="../2.11.1/index.html">2.11.1</a>
@@ -154,9 +168,6 @@
         </li>
         <li class="version">
           <a href="../2.10.2/index.html">2.10.2</a>
-        </li>
-        <li class="version">
-          <a href="../2.10.1/index.html">2.10.1</a>
         </li>
       </ul>
     </li>
@@ -189,7 +200,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../python-sdk-guide/index.html">master</a>
@@ -239,19 +250,20 @@
   <a href="../../esmf-documentation/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">ESMF SDK Developer Guide</a></li>
-    <li><a href="java-aspect-tooling.html">Java APIs for Aspect Models</a></li>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li>Java APIs for Aspect Models</li>
+    <li><a href="java-aspect-tooling.html">Getting Started and Loading</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="java-aspect-tooling.html">master</a>
+    <a class="version" href="../2.12.0/tooling-guide/java-aspect-tooling.html">2.12.0</a>
     <a class="version" href="../2.11.1/tooling-guide/java-aspect-tooling.html">2.11.1</a>
     <a class="version" href="../2.11.0/tooling-guide/java-aspect-tooling.html">2.11.0</a>
     <a class="version" href="../2.10.3/tooling-guide/java-aspect-tooling.html">2.10.3</a>
     <a class="version" href="../2.10.2/tooling-guide/java-aspect-tooling.html">2.10.2</a>
-    <a class="version" href="../2.10.1/tooling-guide/java-aspect-tooling.html">2.10.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
@@ -261,7 +273,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Java Tooling for Working with Aspect Models</h1>
+<h1 class="page">Getting Started with Java APIs for Aspect Models</h1>
 <div class="sect1">
 <h2 id="general-considerations"><a class="anchor" href="#general-considerations"></a>General Considerations</h2>
 <div class="sectionbody">
@@ -283,7 +295,7 @@ respective subsection), <em>or</em> you can use the <code>esmf-aspect-model-star
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -296,7 +308,7 @@ respective subsection), <em>or</em> you can use the <code>esmf-aspect-model-star
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.11.1'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.12.0'</code></pre>
 </div>
 </div>
 </div>
@@ -308,7 +320,7 @@ respective subsection), <em>or</em> you can use the <code>esmf-aspect-model-star
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.11.1")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.12.0")</code></pre>
 </div>
 </div>
 </div>
@@ -331,7 +343,7 @@ version. Add the following section to the Maven pom.xml in your project:</p>
     &lt;dependency&gt;
       &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
       &lt;artifactId&gt;esmf-sdk-parent&lt;/artifactId&gt;
-      &lt;version&gt;2.11.1&lt;/version&gt;
+      &lt;version&gt;2.12.0&lt;/version&gt;
       &lt;type&gt;pom&lt;/type&gt;
       &lt;scope&gt;import&lt;/scope&gt;
     &lt;/dependency&gt;
@@ -405,7 +417,7 @@ esmf-sdk resources, reflection and initialization that is required by the compil
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-native-support&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -418,7 +430,7 @@ esmf-sdk resources, reflection and initialization that is required by the compil
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-native-support:2.11.1'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-native-support:2.12.0'</code></pre>
 </div>
 </div>
 </div>
@@ -430,7 +442,7 @@ esmf-sdk resources, reflection and initialization that is required by the compil
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-native-support:2.11.1")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-native-support:2.12.0")</code></pre>
 </div>
 </div>
 </div>
@@ -486,7 +498,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-urn&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -499,7 +511,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.11.1'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.12.0'</code></pre>
 </div>
 </div>
 </div>
@@ -511,7 +523,7 @@ final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</cod
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.11.1")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.12.0")</code></pre>
 </div>
 </div>
 </div>
@@ -652,7 +664,7 @@ System.out.println( "Aspect URN: " + aspectModel.aspect().urn() );</code></pre>
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -665,7 +677,7 @@ System.out.println( "Aspect URN: " + aspectModel.aspect().urn() );</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.11.1'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.12.0'</code></pre>
 </div>
 </div>
 </div>
@@ -677,7 +689,7 @@ System.out.println( "Aspect URN: " + aspectModel.aspect().urn() );</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.11.1")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.12.0")</code></pre>
 </div>
 </div>
 </div>
@@ -809,1558 +821,6 @@ the <code>sourceModel()</code> of each Aspect Model file given by <code>files()<
 file.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="serializing-an-aspect-model"><a class="anchor" href="#serializing-an-aspect-model"></a>Serializing a Java Aspect Model into a RDF/Turtle Aspect Model</h3>
-<div class="paragraph">
-<p>The serialize an Aspect into its corresponding RDF/Turtle representation, you can use the <code>AspectSerializer</code>,
-as demonstrated in the example below:</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-
-import org.eclipse.esmf.aspectmodel.AspectModelFile;
-import org.eclipse.esmf.aspectmodel.serializer.AspectSerializer;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-// A String that contains the pretty printed Aspect Model
-final String aspectString =
-      AspectSerializer.INSTANCE.aspectToString( aspectModel.aspect() );</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Alternatively, you can also serialize a complete <code>AspectModelFile</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">AspectModelFile aspectModelFile = // ...
-final String fileString = aspectModelFile.sourceRepresentation();</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To include the serializer, use the following dependency:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.11.1'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.11.1")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating-aspect-models"><a class="anchor" href="#creating-aspect-models"></a>Programmatically Creating Aspect Models</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In certain situations, particularly for test code, it is desirable to programmatically create an
-Aspect Model. For this, the <code>SammBuilder</code> class can be used. It provides static builder methods for
-all model element types, e.g., <code>aspect()</code>, <code>property()</code> and so on. Using the <code>Elements.*</code> static
-import allows easy access to predefined model elements such as <code>samm_c.Text</code>. The <code>DataTypes.*</code>
-static import allows access to all valid SAMM data types, such as <code>xsd.integer</code>, <code>xsd.dateTime</code> and
-<code>samm.curie</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static org.eclipse.esmf.metamodel.DataTypes.*;
-import static org.eclipse.esmf.metamodel.Elements.*;
-import static org.eclipse.esmf.metamodel.builder.SammBuilder.*;
-
-import java.util.Locale;
-
-import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
-import org.eclipse.esmf.metamodel.Aspect;</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModelUrn namespace = AspectModelUrn.fromUrn( "urn:samm:org.example:1.0.0" );
-final Aspect aspect = aspect( namespace.withName( "Aspect" ) )
-      .preferredName( "My Aspect" )
-      .property( property( namespace.withName( "property" ) )
-            .preferredName( "My Property" )
-            .description( "This is a test property" )
-            .characteristic( samm_c.Text )
-            .build() )
-      .property( property( namespace.withName( "mySecondProperty" ) )
-            .preferredName( "My second Property", Locale.ENGLISH )
-            .description( "This is my second test property", Locale.ENGLISH )
-            .characteristic( trait( namespace.withName( "MyTrait" ) )
-                  .preferredName( "My Trait" )
-                  .baseCharacteristic( characteristic()
-                        .preferredName( "Custom characteristic" )
-                        .dataType( xsd.integer )
-                        .build() )
-                  .constraint( regularExpressionConstraint()
-                        .value( "a.*b" )
-                        .build() )
-                  .build() )
-            .build() )
-      .build();</code></pre>
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When you use <a href="https://assertj.github.io/doc/">AssertJ</a> for testing, you can add a dependency to the
-tests jar provided by the <code>esmf-aspect-meta-model-java</code> module:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-    &lt;classifier&gt;tests&lt;/classifier&gt;
-    &lt;type&gt;test-jar&lt;/type&gt;
-    &lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.11.1:tests'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.11.1:tests")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Add a static import to <code>org.eclipse.esmf.test.shared.AspectModelAsserts.assertThat</code> to your test
-code, then you can use custom fluent assertions similar to the <code>SammBuilder</code>, for asserting
-properties of an Aspect Model:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">assertThat( aspect )
-      .hasPreferredName( "My Aspect", Locale.ENGLISH )
-      .hasDescriptionMatching( description -&gt; description.getValue().contains( "is my" ) )
-      .hasSinglePropertyThat()
-      .hasSameNamespaceAs( aspect )
-      .hasName( "property" )
-      .hasPreferredName( "Meine Property", Locale.GERMAN );
-
-final Property property = aspect.getPropertyByName( "property" ).orElseThrow();
-assertThat( property )
-      .characteristic()
-      .hasSameNamespaceAs( aspect )
-      .hasName( "MySingleEntity" )
-      .isSingleEntityThat()
-      .dataType()
-      .isEntityThat()
-      .hasName( "MyEntity" );</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Overloaded <code>assertThat()</code> methods are provided for all Aspect Model Elements, e.g., <code>Aspect</code>,
-<code>Property</code>, <code>Characteristic</code>, <code>Trait</code>, etc., as well as for <code>AspectModel</code> and <code>AspectModel</code>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="validating-aspect-models"><a class="anchor" href="#validating-aspect-models"></a>Validating Aspect Models</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Aspect Models are validated using the <code>AspectModelValidator</code>. Validation returns a list of
-<code>Violation</code>&#8203;s. A violation has a human-readable message and a unique error code and provides access
-to the <code>EvaluationContext</code> which contains references to the model element that caused the
-violation and the SHACL shape that triggered the violation.</p>
-</div>
-<div class="paragraph">
-<p>Each possible type of violation is a subtype of the <code>Violation</code> interface and provides additional
-context information specific to this type, for example, the <code>MinLengthViolation</code> provides <code>int min</code>
-(the allowed length) and <code>int actual</code> (the length that was encountered in the model).</p>
-</div>
-<div class="paragraph">
-<p>Consider the following example:</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.util.List;
-
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.aspectmodel.shacl.violation.Violation;
-import org.eclipse.esmf.aspectmodel.validation.services.AspectModelValidator;
-import org.eclipse.esmf.aspectmodel.validation.services.DetailedViolationFormatter;
-import org.eclipse.esmf.aspectmodel.validation.services.ViolationFormatter;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final List&lt;Violation&gt; violations = new AspectModelValidator().validateModel( aspectModel );
-if ( violations.isEmpty() ) {
-   // Aspect Model is valid!
-   return;
-}
-
-final String validationReport = new ViolationFormatter().apply( violations ); <i class="conum" data-value="1"></i><b>(1)</b>
-final String detailedReport = new DetailedViolationFormatter().apply( violations );
-
-class MyViolationVisitor implements Violation.Visitor&lt;String&gt; { <i class="conum" data-value="2"></i><b>(2)</b>
-   // ...
-}
-
-// Turn the list of Violations into a list of custom descriptions
-final Violation.Visitor&lt;String&gt; visitor = new MyViolationVisitor();
-final List&lt;String&gt; result = violations.stream()
-      .map( violation -&gt; violation.accept( visitor ) )
-      .toList();</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>To format the validation result into an human-readable form, use the <code>ViolationFormatter</code> or the
-<code>DetailedViolationFormatter</code>. Note that those are only intended for text-based interfaces such as
-CLIs.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Every application dealing with validation results that needs to transform the results into some
-different structure can implement the <code>Violation.Visitor</code> Interface with a suitable target
-type <code>(String</code> used as an example here) and use the visitor to handle the different types of
-Violations in a type-safe way.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>AspectModelValidator</code> also provides the <code>loadModel(Supplier&lt;AspectModel&gt;)</code> method that can be used in
-conjunction with <code>() &#8594; new AspectModeLoader().load(&#8230;&#8203;)</code> to have exceptions that might be created during the
-Aspect Model loading process, for example due to model resolution failures or syntax errors in the input
-files, be turned into a <code>List&lt;Violation&gt;</code> that can be passed to the aforementioned violation formatters. This
-allows for custom structured handling of problems that occur during model loading.</p>
-</div>
-<div class="paragraph">
-<p>To include the model validator, use the following dependencies:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-model-validator&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.11.1'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.11.1")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="generating-documentation"><a class="anchor" href="#generating-documentation"></a>Generating Documentation for Aspect Models</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Different types of artifacts can be generated from an Aspect model. All corresponding generators are included in the
-following dependency:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-model-document-generators&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.11.1'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.11.1")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>The documentation generation APIs provide methods that take as an argument a <code>Function&lt;String, java.io.OutputStream&gt;</code>.
-This is a mapping function that takes a file name as an input (which is determined by the respective generator) and
-returns a corresponding <code>OutputStream</code>, for example (but not necessarily) a <code>FileOutputStream</code>. By providing this
-function when calling the generator method, you can control where the output is written to, even when the generator
-creates multiple files. For the code examples in the following subsections, we assume that the following method is
-defined for calling the generators:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OutputStream outputStreamForName( final String aspectFileName ) {
-   // Create an OutputStream for the file name, e.g. a FileOutputStream
-}</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-diagrams"><a class="anchor" href="#generating-diagrams"></a>Generating SVG or PNG Diagrams</h3>
-<div class="paragraph">
-<p>Using the <code>AspectModelDiagramGenerator</code>, automatically layouted diagrams can be created for Aspect models in
-the formats PNG and SVG.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator;
-import org.eclipse.esmf.aspectmodel.generator.diagram.DiagramGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.diagram.DiagramGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final DiagramGenerationConfig config = DiagramGenerationConfigBuilder.builder()
-      .format( DiagramGenerationConfig.Format.SVG )
-      .language( Locale.ENGLISH )
-      .build();
-new AspectModelDiagramGenerator( aspectModel.aspect(), config ) <i class="conum" data-value="1"></i><b>(1)</b>
-      .generate( this::outputStreamForName ); <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The diagram generator is initialized with the loaded model and the
-generation configuration.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The generation takes the output stream for the output file name as input and
-writes the generated diagram to the output stream.</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-html-documentation"><a class="anchor" href="#generating-html-documentation"></a>Generating HTML Documentation</h3>
-<div class="paragraph">
-<p>A HTML reference documentation for an Aspect model can be generated as shown in the following code sample. The
-documentation contains an overview diagram and describes the model elements as specified in the Aspect model. Preferred
-names and descriptions in the respective language from the Aspect model are shown in the resulting document as part of
-each model element.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.docu.AspectModelDocumentationGenerator;
-import org.eclipse.esmf.aspectmodel.generator.docu.DocumentationGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.docu.DocumentationGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-final DocumentationGenerationConfig config = DocumentationGenerationConfigBuilder.builder() <i class="conum" data-value="1"></i><b>(1)</b>
-      /* .stylesheet( customCss ) if required */
-      .build();
-final AspectModelDocumentationGenerator generator = <i class="conum" data-value="2"></i><b>(2)</b>
-      new AspectModelDocumentationGenerator( aspectModel.aspect(), config );
-generator.generate( this::outputStreamForName );</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>HTML generation can be controlled via options.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The HTML generator is initialized with the context consisting of the loaded RDF model and the
-selected Aspect.</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-sample-json-payload"><a class="anchor" href="#generating-sample-json-payload"></a>Generating Sample JSON Payload</h3>
-<div class="paragraph">
-<p>The sample JSON payload generator is used to create a valid JSON payload for an Aspect model as it could be returned by
-an Aspect that implements that Aspect model. This follows the
-<a href="../../samm-specification/snapshot/payloads.html#mapping-to-json" class="xref page">mapping rules</a> as defined in the Meta Model specification.
-The generator uses <code>samm:exampleValue</code>&#8203;s of Properties if present, otherwise random values corresponding to the
-respective data types are generated.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final AspectModelJsonPayloadGenerator generator = new AspectModelJsonPayloadGenerator( aspectModel.aspect() );
-
-// Variant 1: Direct generation into a String
-final String jsonString = generator.generateJson();
-
-// Variant 2: Generate using mapping function
-generator.generate( this::outputStreamForName );</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-json-schema"><a class="anchor" href="#generating-json-schema"></a>Generating JSON Schema</h3>
-<div class="paragraph">
-<p>The JSON schema generator creates a <a href="https://json-schema.org/">JSON Schema</a> that describes the payload for an Aspect model
-as it could be returned by an Aspect that implements that Aspect model.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.jsonschema.AspectModelJsonSchemaGenerator;
-import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;
-
-import java.util.Locale;
-import com.fasterxml.jackson.databind.JsonNode;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final JsonSchemaGenerationConfig config = JsonSchemaGenerationConfigBuilder.builder()
-      .locale( Locale.ENGLISH )
-      .build();
-final AspectModelJsonSchemaGenerator generator = new AspectModelJsonSchemaGenerator( aspectModel.aspect(), config );
-// Get result as type-safe JSON object
-final JsonNode jsonNode = generator.getContent();
-// Or as pretty-printed JSON String:
-final String json = generator.generateJson();</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-openapi-specification"><a class="anchor" href="#generating-openapi-specification"></a>Generating OpenAPI Specification</h3>
-<div class="paragraph">
-<p>The OpenAPI specification generator creates either a <a href="https://json-schema.org/">JSON Schema</a> or a <a href="https://yaml.org/">Yaml Spec</a>
-that specifies an Aspect regarding to the <a href="https://github.com/OAI/OpenAPI-Specification/">OpenApi specification</a>.
-The currently used versions corresponds <a href="https://json-schema.org/specification-links.html#draft-4">Draft 4</a> of the JSON Schema specification,
-and <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.0.1.md">3.0.1</a>.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.openapi.AspectModelOpenApiGenerator;
-import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.generator.openapi.PagingOption;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;
-
-import com.fasterxml.jackson.databind.JsonNode;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="title">Generate OpenAPI YAML</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-      // Server URL
-      .baseUrl( "http://www.example.com" )
-      // The resource path which shall be added
-      .resourcePath( "/testPath/{parameter}" )
-      // Determines whether semantic versioning should be used for the API
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // A String containing all the information for dynamic properties mentioned in the resource path.
-      // The string must be syntactically valid YAML.
-      .properties( readYaml( """
-            parameter:
-              name: parameter
-              in: path
-              description: "A parameter."
-              required: true
-              schema:
-                type: string
-            """ ) )
-      // Should the query API be added to the generated specification?
-      .includeQueryApi( true )
-      // The paging Option to be chosen. In case paging is possible:
-      // The default for a time related collection is time-based paging.
-      // Otherwise the default is offset-based paging.
-      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-      .build();
-
-// Generate pretty-printed YAML
-final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
-final String yaml = generator.generateYaml();</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Generate OpenAPI JSON</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
-      // Server URL
-      .baseUrl( "http://www.example.com" )
-      // The resource path which shall be added
-      .resourcePath( "/testPath/{parameter}" )
-      // Determines whether semantic versioning should be used for the API
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // A JsonNode containing all the information for variable properties mentioned
-      // in the resource path .
-      .properties( readYaml( """
-               {
-                 "test-Id": {
-                   "name": "test-Id",
-                   "in": "path",
-                   "description": "The ID of the unit.",
-                   "required": true,
-                   "schema": {
-                     "type": "string"
-                   }
-                 }
-               }
-            """ ) )
-      // Should the query API be added to the generated specification?
-      .includeQueryApi( true )
-      // The paging Option to be chosen. In case paging is possible:
-      // The default for a time related collection is time-based paging.
-      // Otherwise the default is offset-based paging.
-      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
-      .build();
-
-// Generate the JSON
-final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
-// Get result as type-safe JSON object
-final JsonNode jsonNode = generator.getContent();
-// Or as pretty-printed JSON String:
-final String json = generator.generateJson();</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-For Enumerations with complex data types, the values are modelled as instances of the Entity defined as the
-Enumeration&#8217;s data type (see <a href="../../samm-specification/snapshot/modeling-guidelines.html#declaring-enumerations" class="xref page">Declaring
-Enumerations</a> for more information). In case the Entity instances contain Properties with a sorted collection as their
-data type, the order of the values of said collection in the Entity instances is not preserved in the generated OpenAPI
-specification. Preserving this order in OpenAPI is not possible at this point.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-asyncapi-specification"><a class="anchor" href="#generating-asyncapi-specification"></a>Generating AsyncAPI Specification</h3>
-<div class="paragraph">
-<p>The AsyncAPI specification generator creates either a <a href="https://json-schema.org/">JSON Schema</a> or a <a href="https://yaml.org/">Yaml Spec</a>
-that specifies an Aspect regarding to the <a href="https://www.asyncapi.com/en">AsyncApi specification</a>.
-The currently used versions correspond to <a href="https://json-schema.org/specification-links.html#draft-4">Draft 4</a> of the JSON Schema specification,
-and <a href="https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md">3.0.0</a> of the AsyncAPI specification.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.asyncapi.AspectModelAsyncApiGenerator;
-import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;
-
-import com.fasterxml.jackson.databind.JsonNode;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="title">Generate AsyncAPI YAML</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // Set Application id
-      .applicationId( "test:serve" )
-      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-      .build();
-
-// Generate pretty-printed YAML
-final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
-final String yaml = generator.generateYaml();</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Generate AsyncAPI JSON</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
-      // i.e., true = v1.2.3, false = v1
-      .useSemanticVersion( false )
-      // Set Application id
-      .applicationId( "test:serve" )
-      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
-      .build();
-
-// Generate the JSON
-final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
-// Get result as type-safe JSON object
-final JsonNode jsonNode = generator.getContent();
-// Or as pretty-printed JSON String:
-final String json = generator.generateJson();</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-sql"><a class="anchor" href="#generating-sql"></a>Generating SQL for Aspect Models</h3>
-<div class="paragraph">
-<p>Using the Aspect Model SQL generator, an SQL script can be generated that sets up a table for data
-corresponding to the Aspect. The current implementation provides support for the
-<a href="https://docs.databricks.com/en/sql/language-manual/index.html">Databricks SQL</a> dialect and a mapping
-strategy that uses a denormalized table, i.e., the table contains one column for each Property used
-in the Aspect Model (or any of its transitively referenced Entities).</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
-
-import org.eclipse.esmf.aspectmodel.generator.sql.AspectModelSqlGenerator;
-import org.eclipse.esmf.aspectmodel.generator.sql.SqlGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.sql.SqlGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksColumnDefinitionBuilder;
-import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfig;
-import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksType;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final DatabricksSqlGenerationConfig databricksSqlGenerationConfig =
-      DatabricksSqlGenerationConfigBuilder.builder()
-            .commentLanguage( Locale.ENGLISH ) // optional
-            .includeTableComment( true )       // optional
-            .includeColumnComments( true )     // optional
-            .decimalPrecision( 10 )            // optional
-            .customColumns( List.of(           // optional
-                  DatabricksColumnDefinitionBuilder.builder()
-                        .name( "custom_column" )
-                        .type( new DatabricksType.DatabricksArray( DatabricksType.STRING ) )
-                        .nullable( false )
-                        .comment( Optional.of( "Custom column" ) )
-                        .build() ) )
-            .build();
-final SqlGenerationConfig sqlGenerationConfig =
-      SqlGenerationConfigBuilder.builder()
-            .dialect( SqlGenerationConfig.Dialect.DATABRICKS )
-            .mappingStrategy( SqlGenerationConfig.MappingStrategy.DENORMALIZED )
-            .dialectSpecificConfig( databricksSqlGenerationConfig )
-            .build();
-final String result = new AspectModelSqlGenerator( aspectModel.aspect(), sqlGenerationConfig ).getContent();</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="databricks-type-mapping"><a class="anchor" href="#databricks-type-mapping"></a>Databricks Type Mapping</h4>
-<div class="paragraph">
-<p><a href="../../samm-specification/snapshot/datatypes.html#data-types" class="xref page">Data types</a> in the Aspect Model are mapped to Databricks types using the following correspondences:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Aspect model type</th>
-<th class="tableblock halign-left valign-top">Databricks SQL type</th>
-<th class="tableblock halign-left valign-top">Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOLEAN</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:decimal</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">While xsd:decimal is by definition unbounded, DECIMAL&#8217;s default
-  precision is 10 digits and can be up to 38. if we assume values larger than that can appear
-in the data, the Aspect Models using xsd:decimal should also use a <a href="../../samm-specification/snapshot/characteristics.html#fixed-point-constraint" class="xref page">samm-c:FixedPointConstraint</a> accordingly.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">As opposed to xsd:int, xsd:integer has arbitrary precision, i.e. DECIMAL is needed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:double</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:float</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLOAT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATE</code> can not be used, because it does not retain timezone information.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TIMESTAMP</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonth</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gDay</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYearMonth</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonthDay</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:duration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:yearMonthDuration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dayTimeDuration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:byte</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TINYINT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:short</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SMALLINT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:int</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:long</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIGINT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedByte</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SMALLINT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedShort</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedInt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIGINT</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonNegativeInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:negativeInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonPositiveInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:hexBinary</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BINARY</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:base64Binary</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BINARY</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:anyURI</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:curie</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="generating-java-code"><a class="anchor" href="#generating-java-code"></a>Generating Java Code for Aspect Models</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Java code can be generated from an Aspect model in two ways:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The generated code represents the Aspect payload. Aspects and Entities become Java classes; their Properties become
-fields in the classes. Characteristics are not first-class elements, but are implicitly represented by the usage of
-corresponding data types (e.g. using <code>java.util.Set</code> as the type for the <code>Set</code> Characteristic of a Property) or
-<code>javax.validation</code> annotations. The generated classes can be used in a straightforward fashion, but they do not contain
-information about the underlying Aspect model such as its version number. Parts of the Aspect model that have no
-representation in its corresponding JSON payload are not part of those classes either, in particular descriptions and
-preferred names. These classes are called POJOs (Plain Old Java Objects), as they do not contain logic but serve mainly as data containers.</p>
-</li>
-<li>
-<p>The generated code represents the Aspect model itself: It is a type-safe variant of the model and includes every
-information that is also present in the model such as Characteristics, descriptions including language tags and original
-XSD data types. It is however not intended to store payload corresponding to an Aspect. Theses classes are called static
-meta classes, because they are created at compile time (<em>static</em>) and talk about the structure of the information, not
-the information itself (<em>meta</em>).</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Depending on the use case, you would either use one or both of the types simultaneously.</p>
-</div>
-<div class="paragraph">
-<p>To include the Java generator, use the following dependencies:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-model-java-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.11.1'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.11.1")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="type-mapping"><a class="anchor" href="#type-mapping"></a>Type Mapping</h3>
-<div class="paragraph">
-<p>In the Java code generated from an Aspect model, the scalar Aspect model
-<a href="../../samm-specification/snapshot/datatypes.html#data-types" class="xref page">data types</a> are mapped to native Java types. The following table
-lists the correspondences.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Aspect model type</th>
-<th class="tableblock halign-left valign-top">Java native type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.String</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Boolean</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:decimal</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigDecimal</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:integer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigDecimal</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:double</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Double</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:float</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Float</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonth</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gDay</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYearMonth</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonthDay</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:duration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.Duration</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:yearMonthDuration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.Duration</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dayTimeDuration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.Duration</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:byte</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Byte</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:short</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Short</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:int</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Integer</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:long</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Long</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedByte</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Short</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedShort</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Integer</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedInt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Long</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonNegativeInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:negativeInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonPositiveInteger</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:hexBinary</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>byte[]</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:base64Binary</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>byte[]</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:anyURI</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.net.URI</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:curie</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.eclipse.esmf.metamodel.datatypes.Curie</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="generating-pojos"><a class="anchor" href="#generating-pojos"></a>Generating POJOs</h3>
-<div class="paragraph">
-<p>POJO generation is straightforward; there are two minor differences to the generation of documentation artifacts.
-Firstly, when instantiating the generator, you pass a flag indicating whether
-<a href="https://en.wikipedia.org/wiki/Jackson_(API)">Jackson</a> annotations should be generated in the class. Secondly, the name
-mapping function passed to the generation method takes a <code>QualifiedName</code> instead of a String, so that you can decide how
-to handle the package structure of the class.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfig;
-import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.java.pojo.AspectModelJavaGenerator;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final JavaCodeGenerationConfig config = JavaCodeGenerationConfigBuilder.builder()
-      .enableJacksonAnnotations( true )
-      .packageName( "com.example.mycompany" ) // if left out, package is taken from Aspect's namespace
-      .build();
-final AspectModelJavaGenerator generator = new AspectModelJavaGenerator( aspectModel.aspect(), config );
-generator.generate( qualifiedName -&gt; {
-   // Create an output stream for the given qualified Java class name
-} );</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generating-static-meta-classes"><a class="anchor" href="#generating-static-meta-classes"></a>Generating Static Meta Classes</h3>
-<div class="paragraph">
-<p>For the generation of static meta classes, consider the following example:</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfig;
-import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.java.metamodel.StaticMetaModelJavaGenerator;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final JavaCodeGenerationConfig config = JavaCodeGenerationConfigBuilder.builder()
-      .enableJacksonAnnotations( true )
-      .packageName( "com.example.mycompany" ) // if left out, package is taken from Aspect's namespace
-      .build();
-final StaticMetaModelJavaGenerator generator = new StaticMetaModelJavaGenerator( aspectModel.aspect(), config );
-generator.generate( qualifiedName -&gt; {
-   // Create an output stream for the given qualified Java class name
-} );</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To use the generated static meta classes, you need the following additional dependency:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-static-meta-model-java&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.11.1'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.11.1")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="providing-custom-macros-for-code-generation"><a class="anchor" href="#providing-custom-macros-for-code-generation"></a>Providing Custom Macros for Code Generation</h4>
-<div class="paragraph">
-<p>It is possible to change predefined sections of the generated classes by providing custom <a href="https://velocity.apache.org/">Velocity</a> templates; see the <a href="https://velocity.apache.org/engine/2.3/user-guide.html">Velocity User Guide</a> for more information.
-The custom macros must be defined in a single template file.
-The path to the template file as well as its name may be passed as arguments to the code generation, e.g. using the <a href="samm-cli.html#samm-cli" class="xref page">SAMM-CLI</a>.</p>
-</div>
-<div class="paragraph">
-<p>Custom macros may be provided for the following sections:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Section</th>
-<th class="tableblock halign-left valign-top">Macro Name</th>
-<th class="tableblock halign-left valign-top">Default Macro Provided</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copyright Licence Header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fileHeader</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When using custom macros, macros for all sections above must be provided.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">#macro( fileHeader )
-/*
-* Copyright (c) $currentYear.getValue() Test Inc. All rights reserved.
-*/
-#end</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="modifying-and-creating-aspect-models"><a class="anchor" href="#modifying-and-creating-aspect-models"></a>Modifying and creating Aspect Models</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can use the <code>AspectChangeManager</code> to modify an Aspect Model. Each modifying operation performed
-on an Aspect Model is called a <em>change</em>. Instances of classes that implement the <code>Change</code> interface
-can be passed to the <code>AspectChangeManager</code> <code>applyChange()</code> method. Available <code>Change</code>&#8203;s
-include renaming Aspect Model files or Model elements, adding and removing Aspect Model files and
-moving Aspect Model elements to other or new files in the same or another namespace.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.net.URI;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import org.eclipse.esmf.aspectmodel.edit.AspectChangeManager;
-import org.eclipse.esmf.aspectmodel.edit.AspectChangeManagerConfig;
-import org.eclipse.esmf.aspectmodel.edit.AspectChangeManagerConfigBuilder;
-import org.eclipse.esmf.aspectmodel.edit.Change;
-import org.eclipse.esmf.aspectmodel.edit.ChangeGroup;
-import org.eclipse.esmf.aspectmodel.edit.ChangeReport;
-import org.eclipse.esmf.aspectmodel.edit.ChangeReportFormatter;
-import org.eclipse.esmf.aspectmodel.edit.change.MoveElementToNewFile;
-import org.eclipse.esmf.aspectmodel.edit.change.RenameElement;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
-      // a File, InputStream or AspectModelUrn
-);
-
-// All changes to an Aspect Model are done using an AspectChangeManager.
-// Optionally, you can pass a config object as first constructor argument:
-final AspectChangeManagerConfig config = AspectChangeManagerConfigBuilder.builder()
-      .detailedChangeReport( true )
-      .defaultFileHeader( List.of( "Generated on "
-            + new SimpleDateFormat( "dd-MM-yyyy" ).format( new Date() ) ) )
-      .build();
-final AspectChangeManager changeManager = new AspectChangeManager( config, aspectModel );
-
-// You can create a single change, or you can combine multiple changes into a group.
-// For all possible refactoring operations, see classes implementing the Change interface.
-final Change refactorModel = new ChangeGroup( List.of(
-      // Rename an element. This works with with samm:Aspect and all other model elements.
-      new RenameElement( aspectModel.aspect(), "MyAspect" ),
-      // Move an element to a new Aspect Model file in the same namespace.
-      new MoveElementToNewFile(
-            // The element to move.
-            aspectModel.aspect().getProperties().get( 0 ),
-            // If you intend to write the model to the file system, set the location
-            // for the newly created file to some sensible location  here.
-            URI.create( "file:///temp/out.ttl" ) )
-) );
-
-// Apply the changes and get a report that summerizes the changes.
-final ChangeReport changeReport = changeManager.applyChange( refactorModel );
-
-// If you want to display the change report, you can serialize it to a string:
-ChangeReportFormatter.INSTANCE.apply( changeReport, config );
-
-// Alternatively, you can also get views on collections containing modified/
-// added/removed files for the last applied change.
-changeManager.createdFiles().forEach( file -&gt; System.out.println( "Created: " + file ) );
-changeManager.modifiedFiles().forEach( file -&gt; System.out.println( "Modified: " + file ) );
-changeManager.removedFiles().forEach( file -&gt; System.out.println( "Removed: " + file ) );
-
-// At this point, you could use the AspectChangeManager's undo() method to revert
-// the last change (refactorModel in this case); afterwards you can also redo().
-// This functionality is mainly interesting when refactoring the Aspect Model
-// interactively.
-
-// If you want to write the model changes to the file system, use the AspectSerializer.
-// Each AspectModelFile will be written to its respective source location.
-// Alternatively, the AspectSerializer also provides a method to write an AspectModelFile
-// into a String.
-AspectSerializer.INSTANCE.write( aspectModel );</code></pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2489,314 +949,29 @@ final String result = String.format( "Meta Model Version " + metaModelVersion.to
 </div>
 </div>
 <div class="sect1">
-<h2 id="mapping-aas"><a class="anchor" href="#mapping-aas"></a>Mapping Aspect Models to Asset Administration Shell (AAS) Submodel Templates</h2>
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Asset Administration Shell (AAS) and its
-<a href="https://www.plattform-i40.de/IP/Redaktion/EN/Standardartikel/specification-administrationshell.html">information
-model</a> is a widely recognized standard developed by the <a href="https://industrialdigitaltwin.org">Industrial
-Digital Twin Association (IDTA)</a> to express and handle Digital Twins. Central element of the AAS is
-the concept of Submodels, which describe certain aspects of a Digital Twin.</p>
-</div>
-<div class="paragraph">
-<p>The SAMM Aspect Meta Model allows to specify aspects of a digital twin and its semantics. The AAS
-Generator module provides mapping implementations to derive AAS Submodels from SAMM Aspect Models.
-On the one hand, this allows to integrate SAMM models in AAS environments and on the other hand it
-allows AAS submodels to be described with rich semantics, as it is possible with SAMM.</p>
-</div>
-<div class="sect2">
-<h3 id="details-mapping-aas"><a class="anchor" href="#details-mapping-aas"></a>Details of the Mapping Concept</h3>
-<div class="paragraph">
-<p>In the following section, the mapping rules applied by the generator are explained. The rules apply
-to <a href="https://eclipse-esmf.github.io/samm-specification/2.0.0/index.html">SAMM v2.0.0</a> and
-<a href="https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part1_V3.html">AAS
-Specification Part 1 V3.0RC01</a>.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">SAMM</th>
-<th class="tableblock halign-left valign-top">AAS</th>
-<th class="tableblock halign-left valign-top">Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Aspect</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel with kind=Template</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Asset and AssetAdministrationShell entries are added to the output file</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.idShort</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:preferredName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.displayName</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.description</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:property</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see <strong>samm:Property</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:operation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see <strong>samm:Operation</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Aspect.urn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.semanticId</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Property</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property, aas:SubmodelElementCollection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The AAS type is derived from the type of the SAMM Characteristic specifying the SAMM property. Depending on the type it is decided what the resulting AAS element will be. In case of an Entity it will result in a SubmodelElementCollection. It will also be a SubmodelElementCollection if the SAMM Characteristic is of a Collection type (see the <a href="https://eclipse-esmf.github.io/samm-specification/2.0.0/characteristics.html">Characteristics taxonomy</a>). In all other cases an aas:Property will be generated</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.idShort</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.urn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription.identification.id, aas:Property.semanticId</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.preferredName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.displayName</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Note: Also mapped to aas:DataSpecificationIEC61360.definition of the aas:ConceptDescription of this property</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.exampleValue</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.value</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Characteristic.dataType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.valueType</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Operation</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">in/out parameters are not used in SAMM so the mapping only generates input variables and output variables in AAS</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#characteristic-characteristic" class="xref page"><strong>samm-c:Characteristic</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics in SAMM define the semantics of a property, which includes there types as well as links to further definitions (standards, dictionaries, etc), a natural language description and name in different languages. Type and description are separated in AAS, which is why there is not a one-to-one mapping of a Characteristic to one element in AAS but rather Characteristics are used in the mapping of Properties, first, to guide the generation process and, second, to capture semantics in ConceptDescriptions of properties with data specification "DataSpecificationIEC61360" of the AAS.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#collection-characteristic" class="xref page"><strong>samm-c:Collection</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementList, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. However, properties referencing Collections are mapped to SubmodelElementLists. Specific properties of collections are mapped. samm:Set is unique, samm:SortedSet is unique and sorted, samm:List is sorted.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#quantifiable-characteristic" class="xref page"><strong>samm-c:Quantifiable</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Quantifiable type Characteristics. Quantifiables (also Duration and Measurement) reference a unit, which is added to the ConceptDescription corresponding the mapped Characteristic.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#either-characteristic" class="xref page"><strong>samm-c:Either</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Either. However, the Either characteristic has two distinct entries of which one is to be selected. This concept is not present in AAS. Thus, both entries will be written to a Submodel template, where one has to be ignored.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#trait-characteristic" class="xref page"><strong>samm-c:Trait</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Trait. However, the constraint of a trait will be ignored and only the base type will be evaluated, which will act as the characteristic of a property.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#code-characteristic" class="xref page"><strong>samm-c:Code</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Similar to plain Characteristic.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#structured-value-characteristic" class="xref page"><strong>samm-c:StructuredValue</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to StructuredValue. However, AAS has no concpet like deconstruction rule. Thus, the deconstruction rule and the sub properties of the deconstruction entity will be ignored and only the Characteristic is mapped.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#enumeration-characteristic" class="xref page"><strong>samm-c:Enumeration</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Enumerations. Additionally, the values of an Enumeration are mapped to a valueList of a DataSpecificationIEC61360.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#state-characteristic" class="xref page"><strong>samm-c:State</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Same as Enumeration.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#MultiLanguageText" class="xref page">samm-c:MultiLanguageText</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:MultiLanguageProperty</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">if a MultiLanguageText is used in SAMM it is mapped to the MultiLanguageProperty in AAS.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="known-limitations"><a class="anchor" href="#known-limitations"></a>Known Limitations</h3>
-<div class="paragraph">
-<p>The AAS Generator implements a base set of features, which are mapped from SAMM to AAS.
-However, there are still limitations:</p>
+<p>For more advanced topics, see the dedicated pages:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Predefined entity mapping (FileResource would be mapped to aas:File)</p>
+<p><a href="java-model-creation.html" class="xref page">Creating and Modifying Models</a> - Learn how to programmatically create and modify Aspect Models</p>
 </li>
 <li>
-<p>samm-c:Either is mapped to aas:SubmodelElementCollection with two entries for left and right side</p>
+<p><a href="java-validation.html" class="xref page">Validation</a> - Validate your Aspect Models and handle validation results</p>
 </li>
 <li>
-<p>Recursive optional properties of SAMM model are not included in output but dropped straight away</p>
+<p><a href="java-code-generation.html" class="xref page">Code Generation</a> - Generate Java POJOs, static classes, and SQL from your models</p>
+</li>
+<li>
+<p><a href="java-documentation-generation.html" class="xref page">Documentation Generation</a> - Create diagrams, HTML docs, JSON schemas, and API specifications</p>
+</li>
+<li>
+<p><a href="java-aas-mapping.html" class="xref page">AAS Integration</a> - Map between SAMM Aspect Models and Asset Administration Shell submodels</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="translate-aspect-model-to-aas"><a class="anchor" href="#translate-aspect-model-to-aas"></a>Translate Aspect Model to AAS</h3>
-<div class="paragraph">
-<p>The following code demonstrates how the API to translate an Aspect Model into one of the valid AAS
-formats (JSON, XML, AASX) is used:</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfig;
-import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
-import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.Aspect;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final AasGenerationConfig config = AasGenerationConfigBuilder.builder()
-      .format( AasFileFormat.AASX )
-      .aspectData( null ) // Optional: Provide a JsonNode representing Aspect data
-      .propertyMappers( List.of() ) // Optional: Customize SAMM-&gt;AAS property mapping
-      .build();
-new AspectModelAasGenerator( aspect, config ).generate( this::outputStreamForName );</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To include the translator artifact, use the following dependencies:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
-    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
-    &lt;artifactId&gt;esmf-aspect-aas-generator&lt;/artifactId&gt;
-    &lt;version&gt;2.11.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.11.1'</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.11.1")</code></pre>
-</div>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="translate-aas-to-aspect-model"><a class="anchor" href="#translate-aas-to-aspect-model"></a>Translate AAS to Aspect Model</h3>
-<div class="paragraph">
-<p>It is also possible to translate AAS Submodel Templates to Aspect Models using a best-effort. The
-following example shows how the API to translate an AAS environment containing one or more Submodel
-Templates to Aspect Models:</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-
-import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
-import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfigBuilder;
-import org.eclipse.esmf.aspectmodel.aas.AasToAspectModelGenerator;
-import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
-import org.eclipse.esmf.aspectmodel.generator.AspectArtifact;
-import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final File file = // an AAS file that ends in .aasx, .xml or .json
-
-// Multiple "from" methods are available: fromFile (which checks the file extension),
-// fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
-final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
-generator.generate().map( AspectArtifact::getContent ).forEach( aspect -&gt; {
-   // do something with the generated aspect
-} );</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To include the translator artifact, use the same same dependencies as shown above in section <a href="#translate-aas-to-aspect-model">Translate AAS to Aspect Model</a>.</p>
-</div>
 </div>
 </div>
 </div>

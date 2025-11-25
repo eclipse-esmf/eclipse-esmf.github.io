@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>ESMF SDK Developer Guide :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <title>Java SDK :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/index.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -69,7 +69,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">ESMF SDK Developer Guide</a></h3>
+    <h3 class="title"><a href="index.html">Java SDK and SAMM CLI</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -77,29 +77,40 @@
     <a class="nav-link" href="tooling-guide/samm-cli.html">SAMM CLI</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="tooling-guide/java-aspect-tooling.html">Java APIs for Aspect Models</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="tooling-guide/maven-plugin.html">Maven Plugin</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="tooling-guide/bamm-migration.html">Migration from BAMM</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="static-metaclasses/index.html">Using Java Static Meta Classes</a>
+    <span class="nav-text">Java APIs for Aspect Models</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="static-metaclasses/basic-usage.html">Basic Usage</a>
+    <a class="nav-link" href="tooling-guide/java-aspect-tooling.html">Getting Started and Loading</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="static-metaclasses/advanced-usage.html">Advanced Usage</a>
+    <a class="nav-link" href="tooling-guide/java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tooling-guide/java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tooling-guide/java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tooling-guide/java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tooling-guide/java-static-meta-classes.html">Using Java Static Meta Classes</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tooling-guide/java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tooling-guide/error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tooling-guide/bamm-migration.html">Migration from BAMM</a>
   </li>
 </ul>
   </li>
@@ -108,7 +119,7 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">ESMF SDK Developer Guide</span>
+    <span class="title">Java SDK and SAMM CLI</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
@@ -138,10 +149,13 @@
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="index.html">ESMF SDK Developer Guide</a>
+      <a class="title" href="index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
           <a href="2.11.1/index.html">2.11.1</a>
@@ -154,9 +168,6 @@
         </li>
         <li class="version">
           <a href="2.10.2/index.html">2.10.2</a>
-        </li>
-        <li class="version">
-          <a href="2.10.1/index.html">2.10.1</a>
         </li>
       </ul>
     </li>
@@ -189,7 +200,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../python-sdk-guide/index.html">Python SDK Guide</a>
+      <a class="title" href="../python-sdk-guide/index.html">Python SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../python-sdk-guide/index.html">master</a>
@@ -239,18 +250,19 @@
   <a href="../esmf-documentation/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">ESMF SDK Developer Guide</a></li>
+    <li><a href="index.html">Java SDK and SAMM CLI</a></li>
+    <li><a href="index.html">Java SDK</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="index.html">master</a>
+    <a class="version" href="2.12.0/index.html">2.12.0</a>
     <a class="version" href="2.11.1/index.html">2.11.1</a>
     <a class="version" href="2.11.0/index.html">2.11.0</a>
     <a class="version" href="2.10.3/index.html">2.10.3</a>
     <a class="version" href="2.10.2/index.html">2.10.2</a>
-    <a class="version" href="2.10.1/index.html">2.10.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/ROOT/pages/index.adoc">Contribute to this page</a></div>
@@ -260,11 +272,11 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">ESMF SDK Developer Guide</h1>
+<h1 class="page">Java SDK</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The ESMF SDK Developer Guide helps you to get up-and-running with the ESMF SDK developed within the
+<p>The Java SDK Developer Guide helps you to get up-and-running with the ESMF SDK developed within the
 Eclipse Semantic Modeling Framework (ESMF). It covers all possible scenarios, no matter whether you
 are planning to build a solution with the SDK, model your Aspect data, implement your own customized
 Aspect or want to integrate existing assets and systems.</p>

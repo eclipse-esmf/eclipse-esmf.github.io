@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Basic Usage :: Eclipse Semantic Modeling Framework (ESMF)</title>
-    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/static-metaclasses/basic-usage.html">
+    <title>Using Java Static Meta Classes :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-static-meta-classes.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -64,42 +64,53 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="esmf-developer-guide" data-version="2.10.1">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.12.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">ESMF SDK Developer Guide</a></h3>
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../tooling-guide/samm-cli.html">SAMM CLI</a>
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../tooling-guide/java-aspect-tooling.html">Java APIs for Aspect Models</a>
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../tooling-guide/maven-plugin.html">Maven Plugin</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../tooling-guide/bamm-migration.html">Migration from BAMM</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Using Java Static Meta Classes</a>
+    <span class="nav-text">Java APIs for Aspect Models</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="basic-usage.html">Basic Usage</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="advanced-usage.html">Advanced Usage</a>
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
   </li>
 </ul>
   </li>
@@ -108,8 +119,8 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">ESMF SDK Developer Guide</span>
-    <span class="version">2.10.1</span>
+    <span class="title">Java SDK and SAMM CLI</span>
+    <span class="version">2.12.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -138,10 +149,13 @@
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../index.html">ESMF SDK Developer Guide</a>
+      <a class="title" href="../../index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../index.html">master</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.12.0</a>
         </li>
         <li class="version">
           <a href="../../2.11.1/index.html">2.11.1</a>
@@ -154,9 +168,6 @@
         </li>
         <li class="version">
           <a href="../../2.10.2/index.html">2.10.2</a>
-        </li>
-        <li class="version is-current">
-          <a href="../index.html">2.10.1</a>
         </li>
       </ul>
     </li>
@@ -189,7 +200,7 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK Guide</a>
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../python-sdk-guide/index.html">master</a>
@@ -239,34 +250,186 @@
   <a href="../../../esmf-documentation/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">ESMF SDK Developer Guide</a></li>
-    <li><a href="index.html">Using Java Static Meta Classes</a></li>
-    <li><a href="basic-usage.html">Basic Usage</a></li>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li>Java APIs for Aspect Models</li>
+    <li><a href="java-static-meta-classes.html">Using Java Static Meta Classes</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.10.1</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.12.0</button>
   <div class="version-menu">
-    <a class="version" href="../../static-metaclasses/basic-usage.html">master</a>
-    <a class="version" href="../../2.11.1/static-metaclasses/basic-usage.html">2.11.1</a>
-    <a class="version" href="../../2.11.0/static-metaclasses/basic-usage.html">2.11.0</a>
-    <a class="version" href="../../2.10.3/static-metaclasses/basic-usage.html">2.10.3</a>
-    <a class="version" href="../../2.10.2/static-metaclasses/basic-usage.html">2.10.2</a>
-    <a class="version is-current" href="basic-usage.html">2.10.1</a>
+    <a class="version" href="../../tooling-guide/java-static-meta-classes.html">master</a>
+    <a class="version is-current" href="java-static-meta-classes.html">2.12.0</a>
+    <a class="version is-missing" href="../../2.11.1/index.html">2.11.1</a>
+    <a class="version is-missing" href="../../2.11.0/index.html">2.11.0</a>
+    <a class="version is-missing" href="../../2.10.3/index.html">2.10.3</a>
+    <a class="version is-missing" href="../../2.10.2/index.html">2.10.2</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.10.1/documentation/developer-guide/modules/static-metaclasses/pages/basic-usage.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.12.0/documentation/developer-guide/modules/tooling-guide/pages/java-static-meta-classes.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Basic Usage</h1>
-<div id="preamble">
+<h1 class="page">Using Java Static Meta Classes</h1>
+<div class="sect1">
+<h2 id="motivation"><a class="anchor" href="#motivation"></a>Motivation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To get started with using Static Meta Models within your application you need to generate the respective Java artifacts using either the <a href="../tooling-guide/java-aspect-tooling.html" class="xref page">Java Tooling</a> or <a href="../tooling-guide/maven-plugin.html" class="xref page">Maven plugin</a>.</p>
+<p>To fully leverage the power of Aspect Models during application development generating the Java classes
+for Aspect Models is usually the first step. However, while it allows to easily and quickly build an
+application that uses the data of single Aspects, it does not help to build applications that can handle
+the data of Aspects in a generic way, that means: using the Meta Model.</p>
+</div>
+<div class="paragraph">
+<p>What would be an example for such a case? Let&#8217;s assume a very simple application, that still shows
+very well, why using the Meta Model is mandatory despite the problem at hand seeming not very complex at first.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s assume we&#8217;re starting our application with the well-known <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/blob/main/core/apps/ame/src/assets/aspect-models/org.eclipse.examples/1.0.0/Movement.ttl">Movement</a>
+Aspect, but possibly more Aspects are to come in the future.<br>
+To easily get a quick overview of the Aspect data we want to write a console application that pulls the data
+from the Aspect and prints it to console nicely formatted. Using a built-in mechanism like generated
+<code>toString</code> methods might work for a very first version and for simple Aspect Models, but our Aspect already
+contains nested entity structures and future ones could contain even more complex ones, with lists of entities
+within lists. And apart from that, we want to print them <em>really</em> nicely, with indentation and other formatting
+applied, maybe like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[Movement]
+- Is moving: YES
+- Speed: 35 km/h
+- Speed limit warning: yellow
+- Position:
+  - Latitude: 45.2
+  - Longitude: 32.7
+  - Altitude: 17.0
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, one possibility would of course be to write specific code that does exactly that for this Aspect.<br>
+Code like that however has multiple drawbacks: it&#8217;s tedious to write (maybe not for one or two Aspects, but
+most applications will work with way more Aspects), error-prone and - most importantly - it
+requires touching every time your Aspect Model changes.</p>
+</div>
+<div class="paragraph">
+<p>A second option that often comes to mind when working with models of any kind is code generation, just as we
+use it for the Java POJOs through the respective tooling. While code generation is a great tool for situations
+where the input might change quite often, but the <em>targeted use case</em> does not, it isn&#8217;t the best fit for
+use cases, that most likely will evolve over time. Building applications with Aspect Models is most of the time
+exactly that - how you use the Aspect Data is often subject to different changes. Adapting a generator or
+template for that all the time in the end does not buy you much.</p>
+</div>
+<div class="paragraph">
+<p>What we would need is a possibility to work on the Meta Model and Aspect Model at the same time, to be
+able to explicitly work with or iterate over its properties. Taking the Aspect Model from above, we could e.g.
+write code like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Movement movement = retrieveMovement();
+
+for ( Property p : getAllProperties() ) {
+   System.out.println( String.format( "- %s: %s", p.getName(), p.getValue( movement ) ) );
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code may not look very special at first glance or you might ask the question where&#8217;s the big difference
+compared to the other attempts we discussed above? Let&#8217;s take a deeper look.</p>
+</div>
+<div class="paragraph">
+<p>Most obviously we are able to handle all properties of an Aspect with exactly one line - we print the property
+name and the value. This is the first major advantage, because as long as we do not have the need to apply
+very specific formatting to single elements, this single line will be a fit for any property of the Aspect -
+also those, that we might add to (or also remove from) the Aspect Model in the future.</p>
+</div>
+<div class="paragraph">
+<p>This directly brings us to a related advantage, that is hidden in the loop itself: the <code>getAllProperties()</code> method.
+Where does this come from? We&#8217;ll see later on, that we use Static Meta Classes for that, but for now let&#8217;s
+assume, that this part will be <em>generated</em>. Remember that we said, code generation is great for anything where
+the use case does only rarely change? Getting a list of our Model&#8217;s properties is exactly such a use case.
+We want a list and that&#8217;s that.</p>
+</div>
+<div class="paragraph">
+<p>This means, whenever we change our Aspect Model, we run the code generation step once to get the updated
+artifacts, and after that the code above will work still <em>exactly the same</em> - but it also will automatically
+pick up the changes to the list of our properties.</p>
+</div>
+<div class="paragraph">
+<p>Even this over-simplified example already shows the great benefits of this approach, as it allows developers
+to write very stable <em>generic</em> code that can easily also perform much more complex tasks, as long as the input
+that is required is made up of an Aspect Model and its data.</p>
+</div>
+<div class="paragraph">
+<p>Granted, code like above could also be written using a dynamically loaded Aspect Model (note the missing <em>Static</em>).
+So in order to close this motivation let&#8217;s assume another small requirement for our application that is at least
+rather ugly to implement: our Aspects not only carry the data we need for our daily work, but also a lot of
+data which is not strictly required to be printed - or maybe we just want to print it when some kind of verbose
+mode is enabled.<br>
+Something like this requires filtering the list of properties we use. Now how to do this? Of course, we apply
+some filter predicate and skip let&#8217;s say the properties called <code>speed</code> and <code>speedLimitWarning</code>. As we have
+to use string matching on human knowledge about the Aspect Model, we again can quickly identify two issues:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>string matching code is always ugly and subject to typing errors</p>
+</li>
+<li>
+<p>if we ever remove e.g. the property <code>speedLimitWarning</code> this will not break our code, but leave us with something
+that can be surprising to another developer taking over - code, that&#8217;s outdated and nobody noticed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>How would this requirement look like, if we now assume we already have such an accompanying static meta class being
+called <code>MetaMovement</code> for our Aspect?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Movement movement = retrieveMovement();
+List&lt;Property&gt; allProperties = getAllProperties();
+if (mode != "VERBOSE") {
+   allProperties.removeAll( List.of( MetaMovement.SPEED_LIMIT, MetaMovement.SPEED_LIMIT_WARNING ) );
+}
+
+for ( Property p : getAllProperties() ) {
+   System.out.println( String.format( "- %s: %s", p.getName(), p.getValue( movement ) ) );
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This solves both problems described above and adds convenience on top:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the static class is generated from the Aspect Model - no need to repeat the property names by hand</p>
+</li>
+<li>
+<p>the static class contains actual Meta Model elements - even no need for strings at all!</p>
+</li>
+<li>
+<p>the intent of the code is easier to grasp</p>
+</li>
+<li>
+<p>if we ever remove the property <code>speedLimitWarning</code>, the above code will <em>not compile</em> until we remove the
+now invalid property reference - we gained compile-time safety!</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="basic-usage"><a class="anchor" href="#basic-usage"></a>Basic Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get started with using Static Meta Models within your application you need to generate the respective Java artifacts using either the <a href="java-aspect-tooling.html" class="xref page">Java Tooling</a> or <a href="maven-plugin.html" class="xref page">Maven plugin</a>.</p>
 </div>
 <div class="paragraph">
 <p>After the artifacts have been generated you&#8217;ll find for each Aspect and Entity a new source file called <code>Meta<em>ElementName</em>.java</code>
@@ -284,13 +447,10 @@ All the following chapters again assume the <code>Movement</code> Aspect with it
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="meta-class-overview"><a class="anchor" href="#meta-class-overview"></a>Meta Class Overview</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="general-information-within-the-meta-classes"><a class="anchor" href="#general-information-within-the-meta-classes"></a>General Information within the Meta Classes</h3>
+<h3 id="meta-class-overview"><a class="anchor" href="#meta-class-overview"></a>Meta Class Overview</h3>
+<div class="sect3">
+<h4 id="general-information-within-the-meta-classes"><a class="anchor" href="#general-information-within-the-meta-classes"></a>General Information within the Meta Classes</h4>
 <div class="paragraph">
 <p>The Meta Classes contain some general Model information within static fields:</p>
 </div>
@@ -337,8 +497,8 @@ All the following chapters again assume the <code>Movement</code> Aspect with it
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="type-and-property-information-within-the-meta-classes"><a class="anchor" href="#type-and-property-information-within-the-meta-classes"></a>Type and Property Information within the Meta Classes</h3>
+<div class="sect3">
+<h4 id="type-and-property-information-within-the-meta-classes"><a class="anchor" href="#type-and-property-information-within-the-meta-classes"></a>Type and Property Information within the Meta Classes</h4>
 <div class="paragraph">
 <p>The instances of the Meta Classes themselves can be used for application development as well as the contained
 information about Properties, depending on which Model information is required. Most applications will predominantly
@@ -455,9 +615,38 @@ The Java Class of the element contained <em>within</em> the container.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Mutating element instances is also possible if the code generator was run with setter creation enabled.
+Be aware of the fact, that the mutator methods are <em>always present</em>, but will throw an <code>UnsupportedOperationException</code> if no
+setters have been generated!</p>
 </div>
-<div class="sect2">
-<h3 id="types-of-static-properties"><a class="anchor" href="#types-of-static-properties"></a>Types of Static Properties</h3>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Return Type</th>
+<th class="tableblock halign-left valign-top">Sample call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setValue(Movement object, PropertyType value)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates the property value of the given element instance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SPEED.setValue(movementInstance, 12.0f)</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="types-of-static-properties"><a class="anchor" href="#types-of-static-properties"></a>Types of Static Properties</h4>
 <div class="paragraph">
 <p>Different kinds of Static Properties exist to reflect all possible elements within an Aspect Model:</p>
 </div>
@@ -503,12 +692,10 @@ Their API and generics are the same, but they have an additional method to get a
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="writing-code-using-static-meta-classes"><a class="anchor" href="#writing-code-using-static-meta-classes"></a>Writing Code using Static Meta Classes</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="addressing-properties"><a class="anchor" href="#addressing-properties"></a>Addressing Properties</h3>
+<h3 id="writing-code-using-static-meta-classes"><a class="anchor" href="#writing-code-using-static-meta-classes"></a>Writing Code using Static Meta Classes</h3>
+<div class="sect3">
+<h4 id="addressing-properties"><a class="anchor" href="#addressing-properties"></a>Addressing Properties</h4>
 <div class="paragraph">
 <p>Independent from what you&#8217;ll finally use a Property for it is important to understand how you can use them to navigate through your Model.
 Every Model Element that is a Property Container offers access to its properties - most prominently Aspects and Entities.<br>
@@ -572,8 +759,8 @@ ContainerPropertyChain&lt;Aspect, List&lt;String&gt;, String&gt; nestedEntityCol
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="accessing-property-data"><a class="anchor" href="#accessing-property-data"></a>Accessing Property data</h3>
+<div class="sect3">
+<h4 id="accessing-property-data"><a class="anchor" href="#accessing-property-data"></a>Accessing Property data</h4>
 <div class="paragraph">
 <p>Static Properties can act as accessors and thus be used to retrieve the data they represent from instances of their enclosing Model Elements.</p>
 </div>
@@ -608,6 +795,208 @@ have an Aspect with a list of 1000 or more measurements and each measurement aga
 resolving the chain to the data samples might easily give you results into the millions.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advanced-usage"><a class="anchor" href="#advanced-usage"></a>Advanced Usage</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="writing-generic-code"><a class="anchor" href="#writing-generic-code"></a>Writing Generic Code</h3>
+<div class="paragraph">
+<p>So far our examples have been working in an ad-hoc fashion on our Aspect data which already gives you elegant, type safe
+and intent-explaining code. Still, such code partially also could be written directly on the domain model. Let&#8217;s now take
+a look at functionality, that is very complicated to write without the support of a Meta Model at hand.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;re talking about <em>generic code</em>, i.e. code that knows how to work with data and its properties, but doesn&#8217;t care,
+<em>what data</em> it exactly is.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s define a simple, but realistic example of such a generic piece of code.</p>
+</div>
+<div class="paragraph">
+<p>Assume you&#8217;re modeling data structures that handle all sorts of technical components, maybe a device that is broken up
+into its sub-components. Each sub-component is modeled with different properties, but they all share one thing: their
+unique identifier.</p>
+</div>
+<div class="paragraph">
+<p>For the application we&#8217;re developing it now is regularly needed, to retrieve a set of components and index them by their
+unique id, something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Map&lt;Integer, SubComponent&gt; =
+    subComponents.stream()
+                 .collect( Collectors.toMap( SubComponent::getId, Function.identity() ) );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, we don&#8217;t only have this single kind of <code>SubComponent</code>. We have multiple, on different levels of our domain model.
+Additionally, we don&#8217;t have a clean inheritance hierarchy where we can assume that the unique id is always an <code>Integer</code> and
+always within the property <code>getId()</code>. If we still want to be able to write a generic solution to this requirement,
+our Static Meta Model comes to the rescue! All we need to know is <em>any</em> property (or property chain) which we use to perform
+the indexing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public &lt;K, V&gt; Map&lt;K, V&gt; index( List&lt;V&gt; components, StaticProperty&lt;V, K&gt; uniqueId ) {
+    return components.stream()
+                     .collect( Collectors.toMap( uniqueId, Function.identity() ) );
+}
+
+...
+
+Map&lt;Integer, SubComponent&gt; componentsById =
+    index( subComponents, MetaSubComponent.ID );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you have an algorithm that will work on <em>any</em> Aspect or Entity which does have an unique identifier.</p>
+</div>
+<div class="paragraph">
+<p>Maybe you already spotted how easily such generic code can be pushed even further. Assume, that for some parts of the
+application you don&#8217;t want to index the component itself, but one of its properties (maybe the OEM). Again, using
+properties such an extension is elegant and simple:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public &lt;K, T, V&gt; Map&lt;K, T&gt; index( List&lt;V&gt; components, StaticProperty&lt;V, K&gt; uniqueId, Function&lt;V, T&gt; valueMapper ) {
+    return components.stream()
+                     .collect( Collectors.toMap( uniqueId, valueMapper ) );
+}
+
+...
+
+Map&lt;Integer, SubComponent&gt; componentsById =
+    index( subComponents, MetaSubComponent.ID, Function.identity() );
+Map&lt;Integer, String&gt; componentOemsById =
+    index( subComponents, MetaSubComponent.ID, MetaSubComponent.OEM );</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtering-and-sorting-with-properties"><a class="anchor" href="#filtering-and-sorting-with-properties"></a>Filtering and Sorting with Properties</h3>
+<div class="paragraph">
+<p>In the same way that properties can be used to access data, they can also be used to filter and sort data.</p>
+</div>
+<div class="sect3">
+<h4 id="filtering"><a class="anchor" href="#filtering"></a>Filtering</h4>
+<div class="paragraph">
+<p>To filter elements based on their properties (or nested properties, via a Property Chain), the convenient builder
+<code>PropertyPredicates</code> exists. It provides the following entry points:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Entry Point</th>
+<th class="tableblock halign-left valign-top">Types</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>on( PropertyAccessor&lt;C, T&gt; property )</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> any containing type<br>
+<code>T</code> any non-container property type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For simple predicates on single-valued properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>matchOn( PropertyAccessor&lt;C, T&gt; property )</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> any containing type<br>
+<code>T</code> any type that extends a <code>CharSequence</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to build <code>contains</code> and RegEx predicates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>compareOn( PropertyAccessor&lt;C, T&gt; property )</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> any containing type<br>
+<code>T</code> any type that extends a <code>Comparable</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to build (partial) range predicates like <code>greaterThan</code> or <code>withinClosed</code> on comparable properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>onOptional( PropertyAccessor&lt;C, T&gt; property )</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> any containing type<br>
+<code>T</code> any <code>Optional</code> type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For simple predicates on <code>Optional</code> values.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>onCollection( PropertyAccessor&lt;C, T&gt; property )</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> any containing type<br>
+<code>T</code> any type that extends a <code>Collection</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to build predicates on collections, like <code>contains</code> or <code>containsAllOf</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Let&#8217;s take a look and some examples using those builders:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">List&lt;Movement&gt; movements = retrieveMovements();
+
+// find all that are currently moving
+List&lt;Movement&gt; currentlyMoving =
+    movements.stream()
+             .filter( PropertyPredicates.on( MetaMovement.IS_MOVING ).isEqualTo( true ) )
+             .toList();
+
+// find all that have a speed within the range 10km/h &lt;= speed &lt;= 30km/h
+List&lt;Movement&gt; withinSpeedRange =
+    movements.stream()
+             .filter( PropertyPredicates.compareOn( MetaMovement.SPEED ).withinClosed( 10.0f, 30.0f ) )
+             .toList();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again assuming our example with a component and its subcomponents, let&#8217;s filter on collection-valued properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">List&lt;Components&gt; components = retrieveComponents();
+
+var componentOem = PropertyChain.fromCollection( MetaComponent.SUB_COMPONENTS )
+                                .to( MetaSubComponent.OEM );
+List&lt;Components&gt; withOemAcme =
+    components.stream()
+              .filter( PropertyPredicates.onCollection( componentOem ).contains( "ACME" ) )
+              .toList();</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To conveniently build even more complex predicates with <code>AND</code> or <code>OR</code> semantics you can for example use
+the <code>Predicates</code> utility from the <a href="https://docs.vavr.io">Vavr</a> library.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting"><a class="anchor" href="#sorting"></a>Sorting</h4>
+<div class="paragraph">
+<p>Property-based sorting doesn&#8217;t require any special utilities at all, due to the fact that properties already implement
+the <code>Function</code> interface and thus can directly be used as a <code>keyExtractor</code> with <code>Comparator.comparing()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">List&lt;Movement&gt; bySpeedAscending =
+    movements.stream()
+             .sorted( Comparator.comparing( MetaMovement.SPEED ) )
+             .toList();</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

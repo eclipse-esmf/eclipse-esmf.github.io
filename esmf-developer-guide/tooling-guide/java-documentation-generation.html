@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Generating Documentation for Aspect Models :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-documentation-generation.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs for Aspect Models</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java SDK and SAMM CLI</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../2.12.0/index.html">2.12.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.11.1/index.html">2.11.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.11.0/index.html">2.11.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.10.3/index.html">2.10.3</a>
+        </li>
+        <li class="version">
+          <a href="../2.10.2/index.html">2.10.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li>Java APIs for Aspect Models</li>
+    <li><a href="java-documentation-generation.html">Documentation Generation</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version is-current" href="java-documentation-generation.html">master</a>
+    <a class="version" href="../2.12.0/tooling-guide/java-documentation-generation.html">2.12.0</a>
+    <a class="version is-missing" href="../2.11.1/index.html">2.11.1</a>
+    <a class="version is-missing" href="../2.11.0/index.html">2.11.0</a>
+    <a class="version is-missing" href="../2.10.3/index.html">2.10.3</a>
+    <a class="version is-missing" href="../2.10.2/index.html">2.10.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-documentation-generation.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Generating Documentation for Aspect Models</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Different types of artifacts can be generated from an Aspect model. All corresponding generators are included in the
+following dependency:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-model-document-generators&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-document-generators:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-document-generators:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The documentation generation APIs provide methods that take as an argument a <code>Function&lt;String, java.io.OutputStream&gt;</code>.
+This is a mapping function that takes a file name as an input (which is determined by the respective generator) and
+returns a corresponding <code>OutputStream</code>, for example (but not necessarily) a <code>FileOutputStream</code>. By providing this
+function when calling the generator method, you can control where the output is written to, even when the generator
+creates multiple files. For the code examples in the following subsections, we assume that the following method is
+defined for calling the generators:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OutputStream outputStreamForName( final String aspectFileName ) {
+   // Create an OutputStream for the file name, e.g. a FileOutputStream
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-diagrams"><a class="anchor" href="#generating-diagrams"></a>Generating SVG or PNG Diagrams</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the <code>AspectModelDiagramGenerator</code>, automatically layouted diagrams can be created for Aspect models in
+the formats PNG and SVG.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.diagram.AspectModelDiagramGenerator;
+import org.eclipse.esmf.aspectmodel.generator.diagram.DiagramGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.diagram.DiagramGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final DiagramGenerationConfig config = DiagramGenerationConfigBuilder.builder()
+      .format( DiagramGenerationConfig.Format.SVG )
+      .language( Locale.ENGLISH )
+      .build();
+new AspectModelDiagramGenerator( aspectModel.aspect(), config ) <i class="conum" data-value="1"></i><b>(1)</b>
+      .generate( this::outputStreamForName ); <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The diagram generator is initialized with the loaded model and the
+generation configuration.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The generation takes the output stream for the output file name as input and
+writes the generated diagram to the output stream.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-html-documentation"><a class="anchor" href="#generating-html-documentation"></a>Generating HTML Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A HTML reference documentation for an Aspect model can be generated as shown in the following code sample. The
+documentation contains an overview diagram and describes the model elements as specified in the Aspect model. Preferred
+names and descriptions in the respective language from the Aspect model are shown in the resulting document as part of
+each model element.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.docu.AspectModelDocumentationGenerator;
+import org.eclipse.esmf.aspectmodel.generator.docu.DocumentationGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.docu.DocumentationGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+final DocumentationGenerationConfig config = DocumentationGenerationConfigBuilder.builder() <i class="conum" data-value="1"></i><b>(1)</b>
+      /* .stylesheet( customCss ) if required */
+      .build();
+final AspectModelDocumentationGenerator generator = <i class="conum" data-value="2"></i><b>(2)</b>
+      new AspectModelDocumentationGenerator( aspectModel.aspect(), config );
+generator.generate( this::outputStreamForName );</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>HTML generation can be controlled via options.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The HTML generator is initialized with the context consisting of the loaded RDF model and the
+selected Aspect.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-sample-json-payload"><a class="anchor" href="#generating-sample-json-payload"></a>Generating Sample JSON Payload</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The sample JSON payload generator is used to create a valid JSON payload for an Aspect model as it could be returned by
+an Aspect that implements that Aspect model. This follows the
+<a href="../../samm-specification/snapshot/payloads.html#mapping-to-json" class="xref page">mapping rules</a> as defined in the Meta Model specification.
+The generator uses `samm:exampleValue`s of Properties if present, otherwise random values corresponding to the
+respective data types are generated.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.json.AspectModelJsonPayloadGenerator;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final AspectModelJsonPayloadGenerator generator = new AspectModelJsonPayloadGenerator( aspectModel.aspect() );
+
+// Variant 1: Direct generation into a String
+final String jsonString = generator.generateJson();
+
+// Variant 2: Generate using mapping function
+generator.generate( this::outputStreamForName );</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-json-schema"><a class="anchor" href="#generating-json-schema"></a>Generating JSON Schema</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The JSON schema generator creates a <a href="https://json-schema.org/">JSON Schema</a> that describes the payload for an Aspect model
+as it could be returned by an Aspect that implements that Aspect model.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.jsonschema.AspectModelJsonSchemaGenerator;
+import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.jsonschema.JsonSchemaGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+
+import java.util.Locale;
+import com.fasterxml.jackson.databind.JsonNode;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final JsonSchemaGenerationConfig config = JsonSchemaGenerationConfigBuilder.builder()
+      .locale( Locale.ENGLISH )
+      .build();
+final AspectModelJsonSchemaGenerator generator = new AspectModelJsonSchemaGenerator( aspectModel.aspect(), config );
+// Get result as type-safe JSON object
+final JsonNode jsonNode = generator.getContent();
+// Or as pretty-printed JSON String:
+final String json = generator.generateJson();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-openapi-specification"><a class="anchor" href="#generating-openapi-specification"></a>Generating OpenAPI Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The OpenAPI specification generator creates either a <a href="https://json-schema.org/">JSON Schema</a> or a <a href="https://yaml.org/">Yaml Spec</a>
+that specifies an Aspect regarding to the <a href="https://github.com/OAI/OpenAPI-Specification/">OpenApi specification</a>.
+The currently used versions corresponds <a href="https://json-schema.org/specification-links.html#draft-4">Draft 4</a> of the JSON Schema specification,
+and <a href="https://github.com/OAI/OpenAPI-Specification/blob/3.0.1/versions/3.0.1.md">3.0.1</a>.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.openapi.AspectModelOpenApiGenerator;
+import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.openapi.OpenApiSchemaGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.generator.openapi.PagingOption;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+
+import com.fasterxml.jackson.databind.JsonNode;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Generate OpenAPI YAML</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A String containing all the information for dynamic properties mentioned in the resource path.
+      // The string must be syntactically valid YAML.
+      .properties( readYaml( """
+            parameter:
+              name: parameter
+              in: path
+              description: "A parameter."
+              required: true
+              schema:
+                type: string
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
+
+// Generate pretty-printed YAML
+final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
+final String yaml = generator.generateYaml();</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Generate OpenAPI JSON</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final OpenApiSchemaGenerationConfig config = OpenApiSchemaGenerationConfigBuilder.builder()
+      // Server URL
+      .baseUrl( "http://www.example.com" )
+      // The resource path which shall be added
+      .resourcePath( "/testPath/{parameter}" )
+      // Determines whether semantic versioning should be used for the API
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // A JsonNode containing all the information for variable properties mentioned
+      // in the resource path .
+      .properties( readYaml( """
+               {
+                 "test-Id": {
+                   "name": "test-Id",
+                   "in": "path",
+                   "description": "The ID of the unit.",
+                   "required": true,
+                   "schema": {
+                     "type": "string"
+                   }
+                 }
+               }
+            """ ) )
+      // Should the query API be added to the generated specification?
+      .includeQueryApi( true )
+      // The paging Option to be chosen. In case paging is possible:
+      // The default for a time related collection is time-based paging.
+      // Otherwise the default is offset-based paging.
+      .pagingOption( PagingOption.OFFSET_BASED_PAGING )
+      .build();
+
+// Generate the JSON
+final AspectModelOpenApiGenerator generator = new AspectModelOpenApiGenerator( aspectModel.aspect(), config );
+// Get result as type-safe JSON object
+final JsonNode jsonNode = generator.getContent();
+// Or as pretty-printed JSON String:
+final String json = generator.generateJson();</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For Enumerations with complex data types, the values are modelled as instances of the Entity defined as the
+Enumeration&#8217;s data type (see <a href="../../samm-specification/snapshot/modeling-guidelines.html#declaring-enumerations" class="xref page">Declaring
+Enumerations</a> for more information). In case the Entity instances contain Properties with a sorted collection as their
+data type, the order of the values of said collection in the Entity instances is not preserved in the generated OpenAPI
+specification. Preserving this order in OpenAPI is not possible at this point.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-asyncapi-specification"><a class="anchor" href="#generating-asyncapi-specification"></a>Generating AsyncAPI Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The AsyncAPI specification generator creates either a <a href="https://json-schema.org/">JSON Schema</a> or a <a href="https://yaml.org/">Yaml Spec</a>
+that specifies an Aspect regarding to the <a href="https://www.asyncapi.com/en">AsyncApi specification</a>.
+The currently used versions correspond to <a href="https://json-schema.org/specification-links.html#draft-4">Draft 4</a> of the JSON Schema specification,
+and <a href="https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md">3.0.0</a> of the AsyncAPI specification.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.asyncapi.AspectModelAsyncApiGenerator;
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.asyncapi.AsyncApiSchemaGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+
+import com.fasterxml.jackson.databind.JsonNode;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Generate AsyncAPI YAML</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
+
+// Generate pretty-printed YAML
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
+final String yaml = generator.generateYaml();</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Generate AsyncAPI JSON</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final AsyncApiSchemaGenerationConfig config = AsyncApiSchemaGenerationConfigBuilder.builder()
+      // i.e., true = v1.2.3, false = v1
+      .useSemanticVersion( false )
+      // Set Application id
+      .applicationId( "test:serve" )
+      .channelAddress( "/123-456/789-012/movement/0.0.1/Movement" )
+      .build();
+
+// Generate the JSON
+final AspectModelAsyncApiGenerator generator = new AspectModelAsyncApiGenerator( aspectModel.aspect(), config );
+// Get result as type-safe JSON object
+final JsonNode jsonNode = generator.getContent();
+// Or as pretty-printed JSON String:
+final String json = generator.generateJson();</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

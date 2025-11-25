@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started with Java APIs for Aspect Models :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-aspect-tooling.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.12.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs for Aspect Models</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java SDK and SAMM CLI</span>
+    <span class="version">2.12.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.12.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.11.1/index.html">2.11.1</a>
+        </li>
+        <li class="version">
+          <a href="../../2.11.0/index.html">2.11.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.3/index.html">2.10.3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.2/index.html">2.10.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li>Java APIs for Aspect Models</li>
+    <li><a href="java-aspect-tooling.html">Getting Started and Loading</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.12.0</button>
+  <div class="version-menu">
+    <a class="version" href="../../tooling-guide/java-aspect-tooling.html">master</a>
+    <a class="version is-current" href="java-aspect-tooling.html">2.12.0</a>
+    <a class="version" href="../../2.11.1/tooling-guide/java-aspect-tooling.html">2.11.1</a>
+    <a class="version" href="../../2.11.0/tooling-guide/java-aspect-tooling.html">2.11.0</a>
+    <a class="version" href="../../2.10.3/tooling-guide/java-aspect-tooling.html">2.10.3</a>
+    <a class="version" href="../../2.10.2/tooling-guide/java-aspect-tooling.html">2.10.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.12.0/documentation/developer-guide/modules/tooling-guide/pages/java-aspect-tooling.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Getting Started with Java APIs for Aspect Models</h1>
+<div class="sect1">
+<h2 id="general-considerations"><a class="anchor" href="#general-considerations"></a>General Considerations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, the Java APIs for working with Aspect Models are described. All of the components described in the
+following subsections can either be included in your project using a dedicated dependency (as described in the
+respective subsection), <em>or</em> you can use the <code>esmf-aspect-model-starter</code> artifact that aggregates all necessary dependencies:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-model-starter&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-starter:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-starter:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can use the <code>esmf-sdk-parent</code> artifact as a
+<a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Bill_of_Materials_.28BOM.29_POMs">Maven
+BOM</a> (Bill of Materials) to enable declaring dependencies to specific modules without an explicit
+version. Add the following section to the Maven pom.xml in your project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependencyManagement&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+      &lt;artifactId&gt;esmf-sdk-parent&lt;/artifactId&gt;
+      &lt;version&gt;2.12.0&lt;/version&gt;
+      &lt;type&gt;pom&lt;/type&gt;
+      &lt;scope&gt;import&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="versioning"><a class="anchor" href="#versioning"></a>Getting the right version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The tooling can be made available in two different versions: <code>release</code> and <code>milestone</code>. The release version represents a stable version of the product
+and can be referenced in your projects in the usual way from the Maven Central repository. There is also the possibility to have the intermediate builds
+made available, these are called <code>milestone</code> builds. Instead of Maven Central, these are released via
+<a href="https://github.com/orgs/eclipse-esmf/packages?repo_name=esmf-sdk">GitHub Packages</a> mechanism.<br>
+To be able to use the artifacts released in this way in your projects, first the right repository has to be added to your <code>pom.xml</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;repositories&gt;
+  &lt;repository&gt;
+    &lt;id&gt;github&lt;/id&gt;
+    &lt;name&gt;ESMF SDK&lt;/name&gt;
+    &lt;url&gt;https://maven.pkg.github.com/eclipse-esmf/esmf-sdk&lt;/url&gt;
+    &lt;releases&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;
+    &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;
+  &lt;/repository&gt;
+&lt;/repositories&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the desired dependencies can be referenced in the usual way. For an example, please refer to
+<a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#installing-a-package">Github - Installing a package</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-requirements"><a class="anchor" href="#jdk-requirements"></a>JDK requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The esmf-sdk components are built with Java 21 and require a JDK &gt;= 21 such as
+<a href="https://adoptium.net/">Adoptium Temurin</a>.</p>
+</div>
+<div class="paragraph">
+<p>The esmf-sdk can also be used with a Java 21-compatible <a href="https://www.graalvm.org/">GraalVM JDK</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using esmf-sdk with a GraalVM JDK and you target <code>native-image</code> compilation, add a
+dependency to the <code>esmf-native-support</code> module. This will add the necessary configuration for
+esmf-sdk resources, reflection and initialization that is required by the compiler:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-native-support&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-native-support:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-native-support:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="parsing-aspect-model-urns"><a class="anchor" href="#parsing-aspect-model-urns"></a>Parsing Aspect Model URNs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>aspect-model-urn</code> artifact provides a way to parse and validate Aspect model element URNs as described in the
+<a href="../../../samm-specification/snapshot/namespaces.html" class="xref page">specification</a>.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModelUrn urn = AspectModelUrn.fromUrn( "urn:samm:com.example:1.0.0#Example" );
+final String namespace = urn.getNamespaceMainPart(); // com.example
+final String name = urn.getName();           // Example
+final String version = urn.getVersion();     // 1.0.0
+final String urnPrefix = urn.getUrnPrefix(); // urn:samm:com.example:1.0.0#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To include the artifact, use the following dependencies:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-model-urn&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-urn:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-urn:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="loading-and-saving"><a class="anchor" href="#loading-and-saving"></a>Loading and Saving Aspect Models</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aspect models are, like the Semantic Aspect Meta Model, described using the Resource Description Format (RDF,
+<a href="../../../samm-specification/snapshot/appendix/bibliography.html#rdf11" class="xref page">[rdf11]</a>) and the Terse RDF Triple Language syntax
+(TTL, <a href="../../../samm-specification/snapshot/appendix/bibliography.html#turtle" class="xref page">[turtle]</a>). When an Aspect Model is loaded,
+there are two ways of working with it: Either on the abstraction level of the underlying RDF/Turtle
+serialization, or on the native Java Aspect Model level, where the model is represented as a Java object
+graph. Both approaches have different use cases and advantages and both are supported by the Aspect Model Java
+tooling:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Working on the RDF level</th>
+<th class="tableblock halign-left valign-top">Using the Java Aspect model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Low level, focus on power and flexibility</p>
+</li>
+<li>
+<p>Flexibly navigate and filter the model on the RDF statements level</p>
+</li>
+<li>
+<p>Work with models that are valid RDF, but incomplete Aspect Models, e.g. in Aspect model editors</p>
+</li>
+<li>
+<p>Use SPARQL <a href="../../../samm-specification/snapshot/appendix/bibliography.html#sparql" class="xref page">[sparql]</a> to execute complex queries on Aspect Models</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>High level, focus on convenience and type-safety</p>
+</li>
+<li>
+<p>Use Aspect Model-specific interfaces for type-safe code</p>
+</li>
+<li>
+<p>Use Java native data types (e.g. <code>java.math.BigInteger</code> for <code>xsd:integer</code>)</p>
+</li>
+<li>
+<p>Easily traverse the model on the abstraction level of Aspect Model elements</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>As a rule of thumb, if your use case mostly consists of <em>consuming</em> Aspect models, you should prefer the Java
+Aspect model, if you <em>create</em> or <em>edit</em> Aspect models, or build code interfacing with other RDF vocabularies,
+this is better done using the RDF API.</p>
+</div>
+<div class="sect2">
+<h3 id="loading-an-aspect-model-java-model-level"><a class="anchor" href="#loading-an-aspect-model-java-model-level"></a>Loading an Aspect Model to work on the Java Aspect Model Level</h3>
+<div class="paragraph">
+<p>To load an AspectModel, you use the <code>org.eclipse.esmf.aspectmodel.loader.AspectModelLoader</code> class. An instance
+of <code>AspectModelLoader</code> provides <code>load()</code> methods to load an Aspect Model from an InputStream, one or multiple
+Files, or a number of <code>AspectModelUrn</code> (where you can delegate finding out <em>where</em> a model element is defined
+to the AspectModelLoader - details on that are explained in the next section).</p>
+</div>
+<div class="paragraph">
+<p>The <code>AspectModelLoader</code> loads Aspect Models based on the most recent version of the Semantic Aspect Meta Model
+and previous versions: Models based on older meta model versions are automatically translated to models
+corresponding to the latest meta model version.</p>
+</div>
+<div class="paragraph">
+<p>The resulting <code>AspectModel</code> object contains information about the loaded model elements, their
+namespaces and the files they were defined in. Details about the structure of these objects can be
+found in the
+<a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/blob/main/documentation/decisions/0007-model-resolution.md">Decision
+Record 0007</a>. The <code>AspectModel</code> provides the methods <code>elements()</code>, <code>files()</code> and <code>namespaces()</code> as
+well as the convenience methods <code>aspects()</code> (which returns all Aspect elements in the model) and
+<code>aspect()</code>, which returns the single Aspect element if one exists.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;
+import org.eclipse.esmf.metamodel.ModelElement;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
+      // a File, InputStream or AspectModelUrn
+);
+
+// Do something with the elements
+for ( final ModelElement element : aspectModel.elements() ) {
+   System.out.printf( "Model element: %s has URN %s%n", element.getName(), element.urn() );
+}
+
+// Directly work with the Aspect, if the AspectModel happens to contain
+// exactly one Aspect. If there are 0 or &gt;1 Aspects, this will throw an exception.
+System.out.println( "Aspect URN: " + aspectModel.aspect().urn() );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To include the Java Aspect Model artifact, use the following dependency:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-meta-model-java&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-meta-model-java:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-meta-model-java:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="understanding-model-resolution"><a class="anchor" href="#understanding-model-resolution"></a>Understanding Model Resolution</h3>
+<div class="paragraph">
+<p>The example in the last section showed how a self-contained Aspect Model file can be loaded (i.e., a
+file that does not refer to model element definitions in other files or namespaces). Whenever models
+are loaded that could contain such references, or you want to load a model element by URN, the
+AspectModelLoader relies on so-called <em>resolution strategies</em>. A resolution strategy is a function
+that takes a model element identifier (a model element URN) as an input and returns the content of
+the file that contains the corresponding model element definition. Note that this is not necessarily
+a file in the local filesystem, but it could also be a remote file or even exist only virtually as a
+collection of statements in an RDF triple store. Several <code>ResolutionStrategy</code>&#8203;s are provided
+that can be instantiated and passed to the <code>AspectModelLoader</code> constructor to enable it to find
+model element definitions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>FileSystemStrategy</code> resolves elements from files in the file system which are either structured in the
+<a href="samm-cli.html#models-directory-structure" class="xref page">models directory structure</a> or exist as flat
+list of files in one directory (by using <code>FileSystemStrategy</code> with a <code>FlatModelsRoot</code>).</p>
+</li>
+<li>
+<p>The <code>ClassPathStrategy</code> resolves model elements from resources in the Java class path.</p>
+</li>
+<li>
+<p>The <code>FromLoadedFileStrategy</code> resolves model elements from an <code>AspectModelFile</code> that already resides in
+memory.</p>
+</li>
+<li>
+<p>The <code>EitherStrategy</code> can be used to chain two or more different <code>ResolutionStrategy</code>&#8203;s.</p>
+</li>
+<li>
+<p>The <code>ExternalResolverStrategy</code> delegates resolution to an external command such as a script; it is used in
+the implementation of the <code>--custom-resolver</code> option of the <a href="samm-cli.html" class="xref page">samm-cli</a>.</p>
+</li>
+<li>
+<p>The <code>GitHubStrategy</code> resolves model elements from repositories hosted on GitHub.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, custom resolution strategies can be provided by implementing the <code>ResolutionStrategy</code> interface.</p>
+</div>
+<div class="paragraph">
+<p>The following example demonstrates how to pass a custom instance of a <code>ResolutionStrategy</code> and resolve a model
+element by URN:</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
+import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
+import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
+import org.eclipse.esmf.metamodel.AspectModel;
+import org.eclipse.esmf.metamodel.vocabulary.SammNs;
+
+import org.apache.jena.vocabulary.RDF;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// The directory containing the models folder structure,
+// see <span class="underline"><a href="samm-cli.html#models-directory-structure" class="xref page">models directory structure</a></span>
+final Path modelsRoot = Paths.get( "aspect-models" );
+final ResolutionStrategy fileSystemStrategy = new FileSystemStrategy( modelsRoot );
+final AspectModelUrn urn = AspectModelUrn.fromUrn( "urn:samm:org.eclipse.esmf.examples.movement:1.0.0#Movement" );
+final AspectModel result = new AspectModelLoader( fileSystemStrategy ).load( urn );</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loading-an-aspect-model-rdf-level"><a class="anchor" href="#loading-an-aspect-model-rdf-level"></a>Loading an Aspect Model to work on the RDF Level</h3>
+<div class="paragraph">
+<p>The following example shows how to use the <code>AspectModelLoad</code> to load an Aspect Model.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.aspectmodel.resolver.FileSystemStrategy;
+import org.eclipse.esmf.aspectmodel.resolver.ResolutionStrategy;
+import org.eclipse.esmf.aspectmodel.urn.AspectModelUrn;
+import org.eclipse.esmf.metamodel.AspectModel;
+import org.eclipse.esmf.metamodel.vocabulary.SammNs;
+
+import org.apache.jena.vocabulary.RDF;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final AspectModel aspectModel = new AspectModelLoader().load(
+      // a File, InputStream or AspectModelUrn
+);
+
+// Do something with the Aspect Model on the RDF level.
+// Example: List the URNs of all samm:Entitys
+aspectModel.mergedModel().listStatements( null, RDF.type, SammNs.SAMM.Entity() )
+      .forEachRemaining( statement -&gt; System.out.println( statement.getSubject().getURI() ) );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After loading an <code>AspectModel</code> using the <code>AspectModelLoader</code>, you can access the <code>mergedModel()</code> on the
+<code>AspectModel</code>, which represents the merged RDF graph of all source files that were loaded in the model and
+therefore contains all transitively referenced model element definitions. Alternatively, you can also access
+the <code>sourceModel()</code> of each Aspect Model file given by <code>files()</code>, which will return only the RDF graph of this
+file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="accessing-samm-programmatically"><a class="anchor" href="#accessing-samm-programmatically"></a>Accessing the SAMM programmatically</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to access the source RDF files that describe the SAMM vocabulary, shared Characteristics and Entities
+as well as Units, you can add a dependency to the <code>esmf-aspect-meta-model</code> artifact. Note that this artifact
+does not provide Java classes that represent the meta model.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-semantic-aspect-meta-model&lt;/artifactId&gt;
+    &lt;version&gt;2.2.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-semantic-aspect-meta-model:2.2.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-semantic-aspect-meta-model:2.2.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to access the files via <code>java.lang.Class#getResourceAsStream</code>, you can refer to the following directory
+structure that is present in the artifact:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">.
+├── characteristic
+│   └── 2.2.0
+│       ├── characteristic-definitions.ttl
+│       ├── characteristic-instances.ttl
+│       ├── characteristic-shapes.ttl
+│       └── characteristic-validations.js
+├── entity
+│   └── 2.2.0
+│       ├── FileResource.ttl
+│       ├── ThreeDimensionalPosition.ttl
+│       └── TimeSeriesEntity.ttl
+├── meta-model
+│   └── 2.2.0
+│       ├── aspect-meta-model-definitions.ttl
+│       ├── aspect-meta-model-shapes.ttl
+│       ├── prefix-declarations.ttl
+│       └── type-conversions.ttl
+└── unit
+    └── 2.2.0
+        └── units.ttl</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can use the <code>MetaModelFile</code> enumeration provided by the <code>esmf-aspect-meta-model-java</code> module to
+access object representations of the meta model files, for example:
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.apache.jena.rdf.model.Model;
+import org.apache.jena.vocabulary.RDF;
+
+import org.eclipse.esmf.aspectmodel.resolver.modelfile.MetaModelFile;
+import org.eclipse.esmf.metamodel.vocabulary.SammNs;
+import org.eclipse.esmf.samm.KnownVersion;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final KnownVersion metaModelVersion = KnownVersion.getLatest();
+final Model characteristicDefinitions = MetaModelFile.CHARACTERISTIC_DEFINITIONS.sourceModel();
+
+// Do something with the org.apache.jena.org.rdf.model.Model
+final int numberOfCharacteristicInstances =
+      characteristicDefinitions.listStatements( null, RDF.type, SammNs.SAMM.Characteristic() ).toList().size();
+final String result = String.format( "Meta Model Version " + metaModelVersion.toVersionString()
+      + " defines " + numberOfCharacteristicInstances + " Characteristic instances" );</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For more advanced topics, see the dedicated pages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="java-model-creation.html" class="xref page">Creating and Modifying Models</a> - Learn how to programmatically create and modify Aspect Models</p>
+</li>
+<li>
+<p><a href="java-validation.html" class="xref page">Validation</a> - Validate your Aspect Models and handle validation results</p>
+</li>
+<li>
+<p><a href="java-code-generation.html" class="xref page">Code Generation</a> - Generate Java POJOs, static classes, and SQL from your models</p>
+</li>
+<li>
+<p><a href="java-documentation-generation.html" class="xref page">Documentation Generation</a> - Create diagrams, HTML docs, JSON schemas, and API specifications</p>
+</li>
+<li>
+<p><a href="java-aas-mapping.html" class="xref page">AAS Integration</a> - Map between SAMM Aspect Models and Asset Administration Shell submodels</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

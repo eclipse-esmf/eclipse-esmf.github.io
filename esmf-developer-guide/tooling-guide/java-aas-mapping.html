@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mapping Aspect Models to Asset Administration Shell (AAS) Submodel Templates :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-aas-mapping.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs for Aspect Models</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java SDK and SAMM CLI</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../2.12.0/index.html">2.12.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.11.1/index.html">2.11.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.11.0/index.html">2.11.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.10.3/index.html">2.10.3</a>
+        </li>
+        <li class="version">
+          <a href="../2.10.2/index.html">2.10.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li><a href="java-aas-mapping.html">AAS Integration</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version is-current" href="java-aas-mapping.html">master</a>
+    <a class="version" href="../2.12.0/tooling-guide/java-aas-mapping.html">2.12.0</a>
+    <a class="version is-missing" href="../2.11.1/index.html">2.11.1</a>
+    <a class="version is-missing" href="../2.11.0/index.html">2.11.0</a>
+    <a class="version is-missing" href="../2.10.3/index.html">2.10.3</a>
+    <a class="version is-missing" href="../2.10.2/index.html">2.10.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-aas-mapping.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Mapping Aspect Models to Asset Administration Shell (AAS) Submodel Templates</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Asset Administration Shell (AAS) and its
+<a href="https://www.plattform-i40.de/IP/Redaktion/EN/Standardartikel/specification-administrationshell.html">information
+model</a> is a widely recognized standard developed by the <a href="https://industrialdigitaltwin.org">Industrial
+Digital Twin Association (IDTA)</a> to express and handle Digital Twins. Central element of the AAS is
+the concept of Submodels, which describe certain aspects of a Digital Twin.</p>
+</div>
+<div class="paragraph">
+<p>The SAMM Aspect Meta Model allows to specify aspects of a digital twin and its semantics. The AAS
+Generator module provides mapping implementations to derive AAS Submodels from SAMM Aspect Models.
+On the one hand, this allows to integrate SAMM models in AAS environments and on the other hand it
+allows AAS submodels to be described with rich semantics, as it is possible with SAMM.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="details-mapping-aas"><a class="anchor" href="#details-mapping-aas"></a>Details of the Mapping Concept</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the following section, the mapping rules applied by the generator are explained. The rules apply
+to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2.0.0</a> and
+<a href="https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.0/index.html">AAS Specification Part 1 V3.0</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SAMM</th>
+<th class="tableblock halign-left valign-top">AAS</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Aspect</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel with kind=Template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Asset and AssetAdministrationShell entries are added to the output file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.idShort</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:preferredName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.displayName</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.description</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see <strong>samm:Property</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see <strong>samm:Operation</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Aspect.urn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.semanticId</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property, aas:SubmodelElementCollection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The AAS type is derived from the type of the SAMM Characteristic specifying the SAMM property. Depending on the type it is decided what the resulting AAS element will be. In case of an Entity it will result in a SubmodelElementCollection. It will also be a SubmodelElementCollection if the SAMM Characteristic is of a Collection type (see the <a href="https://eclipse-esmf.github.io/samm-specification/2.0.0/characteristics.html">Characteristics taxonomy</a>). In all other cases an aas:Property will be generated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.idShort</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.urn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription.identification.id, aas:Property.semanticId</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.preferredName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.displayName</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Note: Also mapped to aas:DataSpecificationIEC61360.definition of the aas:ConceptDescription of this property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.exampleValue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.value</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:Characteristic.dataType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.valueType</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Operation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in/out parameters are not used in SAMM so the mapping only generates input variables and output variables in AAS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#characteristic-characteristic" class="xref page"><strong>samm-c:Characteristic</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics in SAMM define the semantics of a property, which includes there types as well as links to further definitions (standards, dictionaries, etc), a natural language description and name in different languages. Type and description are separated in AAS, which is why there is not a one-to-one mapping of a Characteristic to one element in AAS but rather Characteristics are used in the mapping of Properties, first, to guide the generation process and, second, to capture semantics in ConceptDescriptions of properties with data specification "DataSpecificationIEC61360" of the AAS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#collection-characteristic" class="xref page"><strong>samm-c:Collection</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementList, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. However, properties referencing Collections are mapped to SubmodelElementLists. Specific properties of collections are mapped. samm:Set is unique, samm:SortedSet is unique and sorted, samm:List is sorted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#quantifiable-characteristic" class="xref page"><strong>samm-c:Quantifiable</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Quantifiable type Characteristics. Quantifiables (also Duration and Measurement) reference a unit, which is added to the ConceptDescription corresponding the mapped Characteristic.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#either-characteristic" class="xref page"><strong>samm-c:Either</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Either. However, the Either characteristic has two distinct entries of which one is to be selected. This concept is not present in AAS. Thus, both entries will be written to a Submodel template, where one has to be ignored.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#trait-characteristic" class="xref page"><strong>samm-c:Trait</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Trait. However, the constraint of a trait will be ignored and only the base type will be evaluated, which will act as the characteristic of a property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#code-characteristic" class="xref page"><strong>samm-c:Code</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Similar to plain Characteristic.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#structured-value-characteristic" class="xref page"><strong>samm-c:StructuredValue</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to StructuredValue. However, AAS has no concpet like deconstruction rule. Thus, the deconstruction rule and the sub properties of the deconstruction entity will be ignored and only the Characteristic is mapped.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#enumeration-characteristic" class="xref page"><strong>samm-c:Enumeration</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Enumerations. Additionally, the values of an Enumeration are mapped to a valueList of a DataSpecificationIEC61360.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#state-characteristic" class="xref page"><strong>samm-c:State</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as Enumeration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#MultiLanguageText" class="xref page">samm-c:MultiLanguageText</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:MultiLanguageProperty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if a MultiLanguageText is used in SAMM it is mapped to the MultiLanguageProperty in AAS.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="known-limitations"><a class="anchor" href="#known-limitations"></a>Known Limitations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The AAS Generator implements a base set of features, which are mapped from SAMM to AAS.
+However, there are still limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Predefined entity mapping (FileResource would be mapped to aas:File)</p>
+</li>
+<li>
+<p>samm-c:Either is mapped to aas:SubmodelElementCollection with two entries for left and right side</p>
+</li>
+<li>
+<p>Recursive optional properties of SAMM model are not included in output but dropped straight away</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="translate-aspect-model-to-aas"><a class="anchor" href="#translate-aspect-model-to-aas"></a>Translate Aspect Model to AAS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following code demonstrates how the API to translate an Aspect Model into one of the valid AAS
+formats (JSON, XML, AASX) is used:</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfig;
+import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
+import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.Aspect;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final AasGenerationConfig config = AasGenerationConfigBuilder.builder()
+      .format( AasFileFormat.AASX )
+      .aspectData( null ) // Optional: Provide a JsonNode representing Aspect data
+      .propertyMappers( List.of() ) // Optional: Customize SAMM-&gt;AAS property mapping
+      .build();
+new AspectModelAasGenerator( aspect, config ).generate( this::outputStreamForName );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To include the translator artifact, use the following dependencies:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-aas-generator&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-aas-generator:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-aas-generator:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="translate-aas-to-aspect-model"><a class="anchor" href="#translate-aas-to-aspect-model"></a>Translate AAS to Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is also possible to translate AAS Submodel Templates to Aspect Models using a best-effort. The
+following example shows how the API to translate an AAS environment containing one or more Submodel
+Templates to Aspect Models:</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+
+import org.eclipse.esmf.aspectmodel.aas.AasFileFormat;
+import org.eclipse.esmf.aspectmodel.aas.AasGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.aas.AasToAspectModelGenerator;
+import org.eclipse.esmf.aspectmodel.aas.AspectModelAasGenerator;
+import org.eclipse.esmf.aspectmodel.generator.AspectArtifact;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final File file = // an AAS file that ends in .aasx, .xml or .json
+
+// Multiple "from" methods are available: fromFile (which checks the file extension),
+// fromAasJson, fromAasXml, fromAasx as well as fromEnvironment (for an AAS4J AAS environment)
+final AasToAspectModelGenerator generator = AasToAspectModelGenerator.fromFile( file );
+generator.generate().map( AspectArtifact::getContent ).forEach( aspect -&gt; {
+   // do something with the generated aspect
+} );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To include the translator artifact, use the same same dependencies as shown above in section <a href="#translate-aas-to-aspect-model">Translate AAS to Aspect Model</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

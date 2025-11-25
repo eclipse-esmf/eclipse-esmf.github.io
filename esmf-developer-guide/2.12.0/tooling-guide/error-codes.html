@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Error Codes and Validation Results :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/error-codes.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.12.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs for Aspect Models</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java SDK and SAMM CLI</span>
+    <span class="version">2.12.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.12.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.11.1/index.html">2.11.1</a>
+        </li>
+        <li class="version">
+          <a href="../../2.11.0/index.html">2.11.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.3/index.html">2.10.3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.2/index.html">2.10.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li><a href="error-codes.html">Error Codes and Validation Results</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.12.0</button>
+  <div class="version-menu">
+    <a class="version" href="../../tooling-guide/error-codes.html">master</a>
+    <a class="version is-current" href="error-codes.html">2.12.0</a>
+    <a class="version is-missing" href="../../2.11.1/index.html">2.11.1</a>
+    <a class="version is-missing" href="../../2.11.0/index.html">2.11.0</a>
+    <a class="version is-missing" href="../../2.10.3/index.html">2.10.3</a>
+    <a class="version is-missing" href="../../2.10.2/index.html">2.10.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.12.0/documentation/developer-guide/modules/tooling-guide/pages/error-codes.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Error Codes and Validation Results</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This reference describes all error codes and validation results that can be produced by the ESMF SDK when loading, parsing, or validating Aspect Models.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-code-format"><a class="anchor" href="#error-code-format"></a>Error Code Format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All error codes follow the format <code>ERR_*</code> where <code>*</code> is a descriptive identifier. Error codes are designed to be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Unique</strong>: Each error condition has a specific code</p>
+</li>
+<li>
+<p><strong>Persistent</strong>: Error codes remain stable across versions</p>
+</li>
+<li>
+<p><strong>Descriptive</strong>: The code name indicates the type of error</p>
+</li>
+<li>
+<p><strong>Actionable</strong>: Each error includes specific guidance for resolution</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-categories"><a class="anchor" href="#error-categories"></a>Error Categories</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Errors are categorized into three main types:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Meta-violations</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High-level errors during model loading, parsing, or resolution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SHACL Violations</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constraint violations detected during validation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Processing Errors</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System-level errors during SDK operations</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="meta-violations"><a class="anchor" href="#meta-violations"></a>Meta-violations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Meta-violations occur during the initial loading and processing of Aspect Models before detailed validation begins.</p>
+</div>
+<div class="sect2">
+<h3 id="ERR-SYNTAX"><a class="anchor" href="#ERR-SYNTAX"></a>ERR_SYNTAX - Syntax Error</h3>
+<div class="paragraph">
+<p>The source file contains invalid RDF/Turtle syntax that prevents parsing.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Check namespace declarations and ensure consistency across files. Verify proper RDF/Turtle syntax including correct use of prefixes, semicolons, and periods.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ERR-PROCESSING"><a class="anchor" href="#ERR-PROCESSING"></a>ERR_PROCESSING - Processing Error</h3>
+<div class="paragraph">
+<p>General processing failure during model loading or resolution.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Check file accessibility, format validity, and dependencies. Ensure all referenced files and namespaces are available and correctly specified.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ERR-CYCLE"><a class="anchor" href="#ERR-CYCLE"></a>ERR_CYCLE - Circular Reference</h3>
+<div class="paragraph">
+<p>The model contains circular references that cannot be resolved.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Break the circular dependency by restructuring the model relationships. Review element dependencies to identify and eliminate circular references.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="shacl-violations"><a class="anchor" href="#shacl-violations"></a>SHACL Constraint Violations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SHACL violations are detected during detailed validation of Aspect Models against the SAMM metamodel constraints.</p>
+</div>
+<div class="sect2">
+<h3 id="datatype-violations"><a class="anchor" href="#datatype-violations"></a>Data Type Violations</h3>
+<div class="sect3">
+<h4 id="ERR-TYPE"><a class="anchor" href="#ERR-TYPE"></a>ERR_TYPE - Data Type Violation</h4>
+<div class="paragraph">
+<p>A property uses an incorrect data type for its context.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#DatatypeConstraintComponent">sh:datatype</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Check the SAMM specification for allowed data types for each property. Ensure the data type matches the expected type for the specific property context.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">ERR_TYPE: Property :speed on :Vehicle uses data type :string, but only :decimal is allowed.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cardinality-violations"><a class="anchor" href="#cardinality-violations"></a>Cardinality Violations</h3>
+<div class="sect3">
+<h4 id="ERR-MAX-COUNT"><a class="anchor" href="#ERR-MAX-COUNT"></a>ERR_MAX_COUNT - Maximum Count Exceeded</h4>
+<div class="paragraph">
+<p>A property is used more times than allowed.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MaxCountConstraintComponent">sh:maxCount</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Remove duplicate property declarations to ensure each property appears only the maximum allowed number of times.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">ERR_MAX_COUNT: Property :description is used 3 times on :Aspect, but may only be used 1 time.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MIN-COUNT"><a class="anchor" href="#ERR-MIN-COUNT"></a>ERR_MIN_COUNT - Minimum Count Missing</h4>
+<div class="paragraph">
+<p>A required property is missing or used fewer times than required.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MinCountConstraintComponent">sh:minCount</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Add the missing required properties to meet the minimum count requirement. Verify that all mandatory properties are present and properly defined.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="constraint-violations"><a class="anchor" href="#constraint-violations"></a>Value Constraint Violations</h3>
+<div class="sect3">
+<h4 id="ERR-PATTERN"><a class="anchor" href="#ERR-PATTERN"></a>ERR_PATTERN - Pattern Violation</h4>
+<div class="paragraph">
+<p>A value does not match the required regular expression pattern.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#PatternConstraintComponent">sh:pattern</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Ensure values match the required format (e.g., version numbers should follow semantic versioning format, URN format for identifiers). Check the pattern requirements in the SAMM specification.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">ERR_PATTERN: Property :version on :Aspect has value "1.0", which does not match the required pattern "^\d+\.\d+\.\d+$".</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MAX-LENGTH"><a class="anchor" href="#ERR-MAX-LENGTH"></a>ERR_MAX_LENGTH - Maximum Length Exceeded</h4>
+<div class="paragraph">
+<p>A string value exceeds the maximum allowed length.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MaxLengthConstraintComponent">sh:maxLength</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Shorten the string value to fit within the maximum allowed length constraint.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MIN-LENGTH"><a class="anchor" href="#ERR-MIN-LENGTH"></a>ERR_MIN_LENGTH - Minimum Length Required</h4>
+<div class="paragraph">
+<p>A string value is shorter than the minimum required length.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MinLengthConstraintComponent">sh:minLength</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Extend the string value to meet the minimum required length constraint.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MAX-INCLUSIVE"><a class="anchor" href="#ERR-MAX-INCLUSIVE"></a>ERR_MAX_INCLUSIVE - Maximum Value Exceeded</h4>
+<div class="paragraph">
+<p>A numeric value exceeds the maximum allowed value (inclusive).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MaxInclusiveConstraintComponent">sh:maxInclusive</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Reduce the numeric value to be less than or equal to the maximum allowed value.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MIN-INCLUSIVE"><a class="anchor" href="#ERR-MIN-INCLUSIVE"></a>ERR_MIN_INCLUSIVE - Minimum Value Required</h4>
+<div class="paragraph">
+<p>A numeric value is below the minimum required value (inclusive).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MinInclusiveConstraintComponent">sh:minInclusive</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Increase the numeric value to be greater than or equal to the minimum required value.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MAX-EXCLUSIVE"><a class="anchor" href="#ERR-MAX-EXCLUSIVE"></a>ERR_MAX_EXCLUSIVE - Maximum Value Exceeded</h4>
+<div class="paragraph">
+<p>A numeric value exceeds the maximum allowed value (exclusive).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MaxExclusiveConstraintComponent">sh:maxExclusive</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Reduce the numeric value to be strictly less than the maximum allowed value.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-MIN-EXCLUSIVE"><a class="anchor" href="#ERR-MIN-EXCLUSIVE"></a>ERR_MIN_EXCLUSIVE - Minimum Value Required</h4>
+<div class="paragraph">
+<p>A numeric value is below the minimum required value (exclusive).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#MinExclusiveConstraintComponent">sh:minExclusive</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Increase the numeric value to be strictly greater than the minimum required value.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="structure-violations"><a class="anchor" href="#structure-violations"></a>Structure and Relationship Violations</h3>
+<div class="sect3">
+<h4 id="ERR-CLASS"><a class="anchor" href="#ERR-CLASS"></a>ERR_CLASS - Class Violation</h4>
+<div class="paragraph">
+<p>An element does not belong to the required class.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#ClassConstraintComponent">sh:class</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Verify that all referenced elements are properly defined and accessible. Check that the element has the correct rdf:type declaration for the expected class.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enumeration-violations"><a class="anchor" href="#enumeration-violations"></a>Enumeration and Choice Violations</h3>
+<div class="sect3">
+<h4 id="ERR-IN"><a class="anchor" href="#ERR-IN"></a>ERR_IN - Value Not In Enumeration</h4>
+<div class="paragraph">
+<p>A value is not in the allowed list of enumeration values.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#InConstraintComponent">sh:in</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Use only values from the allowed enumeration list. Check the SAMM specification or model definition for the complete list of permitted values.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-OR"><a class="anchor" href="#ERR-OR"></a>ERR_OR - OR Constraint Violation</h4>
+<div class="paragraph">
+<p>None of the alternative constraints in an OR condition are satisfied.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#OrConstraintComponent">sh:or</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Modify the element to satisfy at least one of the alternative constraints in the OR condition. Review each alternative constraint to determine which one is most appropriate for your use case.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-NOT"><a class="anchor" href="#ERR-NOT"></a>ERR_NOT - NOT Constraint Violation</h4>
+<div class="paragraph">
+<p>A constraint that should not be satisfied is satisfied.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.w3.org/TR/shacl/#NotConstraintComponent">sh:not</a> for more information on the SHACL constraint component.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Modify the element to violate the negated constraint. The element should not satisfy the condition specified in the NOT constraint.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-contexts"><a class="anchor" href="#error-contexts"></a>Error Contexts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each error includes contextual information to help locate and resolve the issue:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Context Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Element</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The specific model element where the error occurred</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The property path involved in the error</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The actual value that caused the error</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expected</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The expected value or constraint</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Location</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File name, line number, and column position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shape</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SHACL shape that detected the violation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting"><a class="anchor" href="#troubleshooting"></a>Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="common-issues"><a class="anchor" href="#common-issues"></a>Common Issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Error Not Listed</strong>: If you encounter an error code not documented here, check:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ESMF SDK version compatibility;</p>
+</li>
+<li>
+<p>Update to the latest documentation;</p>
+</li>
+<li>
+<p>Report missing documentation via GitHub issues.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Inconsistent Error Messages</strong>: Ensure you&#8217;re using compatible versions of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ESMF SDK;</p>
+</li>
+<li>
+<p>SAMM specification;</p>
+</li>
+<li>
+<p>Validation tools.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Performance Issues</strong>: For large models with many errors:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Process errors in batches;</p>
+</li>
+<li>
+<p>Use streaming validation where available;</p>
+</li>
+<li>
+<p>Consider model restructuring.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="analyzing-modeling-errors"><a class="anchor" href="#analyzing-modeling-errors"></a>Analyzing Modeling Errors</h3>
+<div class="paragraph">
+<p>When working with ESMF SDK validation results, follow these practices to efficiently identify and resolve modeling issues.</p>
+</div>
+<div class="sect3">
+<h4 id="model-development"><a class="anchor" href="#model-development"></a>Model Development</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Validate Early</strong>: Run validation frequently during model development</p>
+</li>
+<li>
+<p><strong>Use Detailed Output</strong>: Enable detailed error reporting for comprehensive feedback</p>
+</li>
+<li>
+<p><strong>Address Errors Systematically</strong>: Start with meta-violations before fixing constraint violations</p>
+</li>
+<li>
+<p><strong>Test Edge Cases</strong>: Verify models with boundary values and optional properties</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="error-handling"><a class="anchor" href="#error-handling"></a>Error Handling</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Programmatic Handling</strong>: Use the visitor pattern for type-safe error handling</p>
+</li>
+<li>
+<p><strong>User-Friendly Messages</strong>: Transform technical errors into user-friendly guidance</p>
+</li>
+<li>
+<p><strong>Logging</strong>: Log error codes and context for troubleshooting</p>
+</li>
+<li>
+<p><strong>Documentation</strong>: Link to error code documentation in error messages where appropriate</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getting-help"><a class="anchor" href="#getting-help"></a>Getting Help</h3>
+<div class="paragraph">
+<p>For additional support:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ESMF SDK GitHub Issues</strong>: <a href="https://github.com/eclipse-esmf/esmf-sdk/issues" class="bare">https://github.com/eclipse-esmf/esmf-sdk/issues</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

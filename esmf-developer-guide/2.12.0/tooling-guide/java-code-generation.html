@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Generating Java Code for Aspect Models :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-code-generation.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../../_/img/favicon.ico">
+<link rel="manifest" href="../../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="esmf-developer-guide" data-version="2.12.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Java SDK and SAMM CLI</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samm-cli.html">SAMM CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maven-plugin.html">Maven Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java APIs for Aspect Models</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-aspect-tooling.html">Getting Started and Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-model-creation.html">Creating and Modifying Models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-validation.html">Validation</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="java-code-generation.html">Code Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-documentation-generation.html">Documentation Generation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="java-static-meta-classes.html">Using Java Static Meta Classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="java-aas-mapping.html">AAS Integration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="error-codes.html">Error Codes and Validation Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bamm-migration.html">Migration from BAMM</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java SDK and SAMM CLI</span>
+    <span class="version">2.12.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../index.html">master</a>
+        </li>
+        <li class="version is-current">
+          <a href="../index.html">2.12.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.11.1/index.html">2.11.1</a>
+        </li>
+        <li class="version">
+          <a href="../../2.11.0/index.html">2.11.0</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.3/index.html">2.10.3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.10.2/index.html">2.10.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Java SDK and SAMM CLI</a></li>
+    <li>Java APIs for Aspect Models</li>
+    <li><a href="java-code-generation.html">Code Generation</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.12.0</button>
+  <div class="version-menu">
+    <a class="version" href="../../tooling-guide/java-code-generation.html">master</a>
+    <a class="version is-current" href="java-code-generation.html">2.12.0</a>
+    <a class="version is-missing" href="../../2.11.1/index.html">2.11.1</a>
+    <a class="version is-missing" href="../../2.11.0/index.html">2.11.0</a>
+    <a class="version is-missing" href="../../2.10.3/index.html">2.10.3</a>
+    <a class="version is-missing" href="../../2.10.2/index.html">2.10.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/blob/v2.12.0/documentation/developer-guide/modules/tooling-guide/pages/java-code-generation.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Generating Java Code for Aspect Models</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java code can be generated from an Aspect model in two ways:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The generated code represents the Aspect payload. Aspects and Entities become Java classes; their Properties become
+fields in the classes. Characteristics are not first-class elements, but are implicitly represented by the usage of
+corresponding data types (e.g. using <code>java.util.Set</code> as the type for the <code>Set</code> Characteristic of a Property) or
+<code>javax.validation</code> annotations. The generated classes can be used in a straightforward fashion, but they do not contain
+information about the underlying Aspect model such as its version number. Parts of the Aspect model that have no
+representation in its corresponding JSON payload are not part of those classes either, in particular descriptions and
+preferred names. These classes are called POJOs (Plain Old Java Objects), as they do not contain logic but serve mainly as data containers.</p>
+</li>
+<li>
+<p>The generated code represents the Aspect model itself: It is a type-safe variant of the model and includes every
+information that is also present in the model such as Characteristics, descriptions including language tags and original
+XSD data types. It is however not intended to store payload corresponding to an Aspect. Theses classes are called static
+meta classes, because they are created at compile time (<em>static</em>) and talk about the structure of the information, not
+the information itself (<em>meta</em>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Depending on the use case, you would either use one or both of the types simultaneously.</p>
+</div>
+<div class="paragraph">
+<p>To include the Java generator, use the following dependencies:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-model-java-generator&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="type-mapping"><a class="anchor" href="#type-mapping"></a>Type Mapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the Java code generated from an Aspect model, the scalar Aspect model
+<a href="../../../samm-specification/snapshot/datatypes.html#data-types" class="xref page">data types</a> are mapped to native Java types. The following table
+lists the correspondences.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect model type</th>
+<th class="tableblock halign-left valign-top">Java native type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.String</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Boolean</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:decimal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigDecimal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigDecimal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:double</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Double</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:float</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Float</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYearMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonthDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.XMLGregorianCalendar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:duration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.Duration</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:yearMonthDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.Duration</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dayTimeDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>javax.xml.datatype.Duration</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:byte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Byte</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:short</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Short</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:int</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Integer</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Long</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedByte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Short</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedShort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Integer</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedInt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.lang.Long</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonNegativeInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:negativeInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonPositiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigInteger</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:hexBinary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>byte[]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:base64Binary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>byte[]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:anyURI</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.net.URI</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:curie</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.eclipse.esmf.metamodel.datatypes.Curie</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-pojos"><a class="anchor" href="#generating-pojos"></a>Generating POJOs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>POJO generation is straightforward; there are two minor differences to the generation of documentation artifacts.
+Firstly, when instantiating the generator, you pass a flag indicating whether
+<a href="https://en.wikipedia.org/wiki/Jackson_(API)">Jackson</a> annotations should be generated in the class. Secondly, the name
+mapping function passed to the generation method takes a <code>QualifiedName</code> instead of a String, so that you can decide how
+to handle the package structure of the class.</p>
+</div>
+<div class="paragraph">
+<p>By default, POJO classes are generated without setters. If setters are desired, use <code>enableSetters( true )</code> on the
+generator config. Three setter styles are supported:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 67%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setter style</th>
+<th class="tableblock halign-left valign-top">Example output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STANDARD</code> (the default, if not explicitly set)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void setTheProperty( final String theProperty )</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLUENT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TheClass setTheProperty( final String theProperty )</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLUENT_COMPACT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TheClass theProperty( final String theProperty )</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <code>FLUENT_*</code> styles allow for method chaining, so that POJO instances can be written in a more compact way.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfig;
+import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.java.pojo.AspectModelJavaGenerator;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final JavaCodeGenerationConfig config = JavaCodeGenerationConfigBuilder.builder()
+      .enableJacksonAnnotations( true )
+      .packageName( "com.example.mycompany" ) // if left out, package is taken from Aspect's namespace
+      .enableSetters( true ) // if left out, setters are not generated
+      .setterStyle( JavaCodeGenerationConfig.SetterStyle.FLUENT ) // if left out, "STANDARD" setter style is used
+      .build();
+final AspectModelJavaGenerator generator = new AspectModelJavaGenerator( aspectModel.aspect(), config );
+generator.generate( qualifiedName -&gt; {
+   // Create an output stream for the given qualified Java class name
+} );</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-static-meta-classes"><a class="anchor" href="#generating-static-meta-classes"></a>Generating Static Meta Classes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For the generation of static meta classes, consider the following example:</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfig;
+import org.eclipse.esmf.aspectmodel.java.JavaCodeGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.java.metamodel.StaticMetaModelJavaGenerator;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final JavaCodeGenerationConfig config = JavaCodeGenerationConfigBuilder.builder()
+      .enableJacksonAnnotations( true )
+      .packageName( "com.example.mycompany" ) // if left out, package is taken from Aspect's namespace
+      .build();
+final StaticMetaModelJavaGenerator generator = new StaticMetaModelJavaGenerator( aspectModel.aspect(), config );
+generator.generate( qualifiedName -&gt; {
+   // Create an output stream for the given qualified Java class name
+} );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To use the generated static meta classes, you need the following additional dependency:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Maven</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
+    &lt;artifactId&gt;esmf-aspect-static-meta-model-java&lt;/artifactId&gt;
+    &lt;version&gt;2.12.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Groovy DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.12.0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Gradle Kotlin DSL</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.12.0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="providing-custom-macros-for-code-generation"><a class="anchor" href="#providing-custom-macros-for-code-generation"></a>Providing Custom Macros for Code Generation</h3>
+<div class="paragraph">
+<p>It is possible to change predefined sections of the generated classes by providing custom <a href="https://velocity.apache.org/">Velocity</a> templates; see the <a href="https://velocity.apache.org/engine/2.3/user-guide.html">Velocity User Guide</a> for more information.
+The custom macros must be defined in a single template file.
+The path to the template file as well as its name may be passed as arguments to the code generation, e.g. using the <a href="samm-cli.html#samm-cli" class="xref page">SAMM-CLI</a>.</p>
+</div>
+<div class="paragraph">
+<p>Custom macros may be provided for the following sections:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Section</th>
+<th class="tableblock halign-left valign-top">Macro Name</th>
+<th class="tableblock halign-left valign-top">Default Macro Provided</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copyright Licence Header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileHeader</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When using custom macros, macros for all sections above must be provided.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">#macro( fileHeader )
+/*
+* Copyright (c) $currentYear.getValue() Test Inc. All rights reserved.
+*/
+#end</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-sql"><a class="anchor" href="#generating-sql"></a>Generating SQL for Aspect Models</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the Aspect Model SQL generator, an SQL script can be generated that sets up a table for data
+corresponding to the Aspect. The current implementation provides support for the
+<a href="https://docs.databricks.com/en/sql/language-manual/index.html">Databricks SQL</a> dialect and a mapping
+strategy that uses a denormalized table, i.e., the table contains one column for each Property used
+in the Aspect Model (or any of its transitively referenced Entities).</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+
+import org.eclipse.esmf.aspectmodel.generator.sql.AspectModelSqlGenerator;
+import org.eclipse.esmf.aspectmodel.generator.sql.SqlGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.sql.SqlGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksColumnDefinitionBuilder;
+import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksSqlGenerationConfigBuilder;
+import org.eclipse.esmf.aspectmodel.generator.sql.databricks.DatabricksType;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+
+final DatabricksSqlGenerationConfig databricksSqlGenerationConfig =
+      DatabricksSqlGenerationConfigBuilder.builder()
+            .commentLanguage( Locale.ENGLISH ) // optional
+            .includeTableComment( true )       // optional
+            .includeColumnComments( true )     // optional
+            .decimalPrecision( 10 )            // optional
+            .decimalScale( 0 )                 // optional
+            .customColumns( List.of(           // optional
+                  DatabricksColumnDefinitionBuilder.builder()
+                        .name( "custom_column" )
+                        .type( new DatabricksType.DatabricksArray( DatabricksType.STRING ) )
+                        .nullable( false )
+                        .comment( Optional.of( "Custom column" ) )
+                        .build() ) )
+            .build();
+final SqlGenerationConfig sqlGenerationConfig =
+      SqlGenerationConfigBuilder.builder()
+            .dialect( SqlGenerationConfig.Dialect.DATABRICKS )
+            .mappingStrategy( SqlGenerationConfig.MappingStrategy.DENORMALIZED )
+            .dialectSpecificConfig( databricksSqlGenerationConfig )
+            .build();
+final String result = new AspectModelSqlGenerator( aspectModel.aspect(), sqlGenerationConfig ).getContent();</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="databricks-type-mapping"><a class="anchor" href="#databricks-type-mapping"></a>Databricks Type Mapping</h3>
+<div class="paragraph">
+<p><a href="../../../samm-specification/snapshot/datatypes.html#data-types" class="xref page">Data types</a> in the Aspect Model are mapped to Databricks types using the following correspondences:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect model type</th>
+<th class="tableblock halign-left valign-top">Databricks SQL type</th>
+<th class="tableblock halign-left valign-top">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOLEAN</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:decimal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">While xsd:decimal is by definition unbounded, DECIMAL&#8217;s default
+  precision is 10 digits and can be up to 38. if we assume values larger than that can appear
+in the data, the Aspect Models using xsd:decimal should also use a <a href="../../../samm-specification/snapshot/characteristics.html#fixed-point-constraint" class="xref page">samm-c:FixedPointConstraint</a> accordingly.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As opposed to xsd:int, xsd:integer has arbitrary precision, i.e. DECIMAL is needed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:double</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:float</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLOAT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATE</code> can not be used, because it does not retain timezone information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TIMESTAMP</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYearMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonthDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:duration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:yearMonthDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dayTimeDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:byte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TINYINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:short</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SMALLINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:int</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIGINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedByte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SMALLINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedShort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedInt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIGINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonNegativeInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:negativeInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonPositiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:hexBinary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BINARY</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:base64Binary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BINARY</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:anyURI</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:curie</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.min.js"></script>
+<script src="../../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../../.." data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
