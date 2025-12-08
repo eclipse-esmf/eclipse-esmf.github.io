@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@antora/cli": "^3.0.0",
+    "@antora/lunr-extension": "^1.0.0-alpha.1",
+    "@antora/site-generator": "^3.0.0",
+    "asciidoctor-plantuml": "^1.5.0"
+  }
+}
