@@ -173,6 +173,9 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.13.0/index.html">2.13.0</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
@@ -183,9 +186,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.10.2/index.html">2.10.2</a>
         </li>
       </ul>
     </li>
@@ -770,6 +770,30 @@ a <code>samm:dataType</code>, this must therefore be done when instantiating the
 <div class="paragraph">
 <p>Describes a Property whose value can have one of two possible types (a disjoint union).
 This Characteristic does not have one explicit <code>samm:dataType</code>, as it can be the datatype of either the left or the right.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+A Property that uses an <code>Either</code> Characteristic must not define an <code>exampleValue</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>An <code><a href="modeling-guidelines.html#declaring-properties" class="xref page">exampleValue</a></code> represents a concrete example payload.
+For an <code>Either</code>, the concrete value shape depends on whether the <strong>left</strong> or the <strong>right</strong>
+Characteristic is used. Since <code>Either</code> itself does not define a single, well-defined
+<code>samm:dataType</code>, an <code>exampleValue</code> defined at the Property level would be ambiguous
+and cannot be interpreted consistently by tooling (e.g. loaders, validators, or
+example generators).</p>
+</div>
+<div class="paragraph">
+<p>For this reason, defining an <code>exampleValue</code> on a Property with an <code>Either</code>
+Characteristic is explicitly disallowed.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="modeling-guidelines.html#declaring-either" class="xref page">declaring either</a> for usage in an Aspect Model.</p>

@@ -155,6 +155,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.13.0/index.html">2.13.0</a>
+        </li>
+        <li class="version">
           <a href="../2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
@@ -165,9 +168,6 @@
         </li>
         <li class="version">
           <a href="../2.10.3/index.html">2.10.3</a>
-        </li>
-        <li class="version">
-          <a href="../2.10.2/index.html">2.10.2</a>
         </li>
       </ul>
     </li>
@@ -258,11 +258,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="error-codes.html">master</a>
+    <a class="version" href="../2.13.0/tooling-guide/error-codes.html">2.13.0</a>
     <a class="version" href="../2.12.0/tooling-guide/error-codes.html">2.12.0</a>
     <a class="version is-missing" href="../2.11.1/index.html">2.11.1</a>
     <a class="version is-missing" href="../2.11.0/index.html">2.11.0</a>
     <a class="version is-missing" href="../2.10.3/index.html">2.10.3</a>
-    <a class="version is-missing" href="../2.10.2/index.html">2.10.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/error-codes.adoc">Contribute to this page</a></div>
@@ -585,6 +585,21 @@
 <p><strong>Resolution:</strong> Modify the element to violate the negated constraint. The element should not satisfy the condition specified in the NOT constraint.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="other-specific-violations"><a class="anchor" href="#other-specific-violations"></a>Other specific violations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ERR_INVALID_REGEX - The model contains a
+<a href="../../samm-specification/snapshot/characteristics.html#regular-expression-constraint" class="xref page">samm-c:RegularExpressionConstraint</a>
+with an invalid regular expression.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Make sure the regular expression adheres to the XQuery 1.0 and XPath 2.0 Functions
+  and Operators
+  <a href="../../samm-specification/snapshot/appendix/bibliography.html#xpath-functions" class="xref page">[xpath-functions]</a>.</p>
 </div>
 </div>
 </div>

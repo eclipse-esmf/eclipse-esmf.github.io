@@ -173,6 +173,9 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.13.0/index.html">2.13.0</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
         </li>
         <li class="version">
@@ -183,9 +186,6 @@
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.10.2/index.html">2.10.2</a>
         </li>
       </ul>
     </li>
@@ -1335,6 +1335,14 @@ combined with two Constraints: an <a href="characteristics.html#encoding-constra
 that restricts the value space to US-ASCII and a <a href="characteristics.html#length-constraint" class="xref page">Length
 Constraint</a> that limits the string to 80 characters.</p>
 </div>
+<div class="paragraph">
+<p>In other words, Constraints within a Trait are combined using logical <code>AND</code>.
+The value of a Property is valid only if it satisfies <strong>every</strong> Constraint declared in the Trait.</p>
+</div>
+<div class="paragraph">
+<p>If alternative constraint sets are required, they must be modeled explicitly, for example
+by using separate <a href="#declaring-properties">Properties</a> or an <a href="characteristics.html#either-characteristic" class="xref page">Either</a> Characteristic.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:someIdentifier a samm:Property ;
@@ -1755,6 +1763,11 @@ a detailed description, and an external reference to the value.</p>
    samm:description "Indicates that the speed of position change is within specification."@en ;
    samm:see &lt;https://en.wikipedia.org/wiki/Traffic_light&gt; .</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>The <code>samm:dataType</code> of a <code>samm:Value</code> is implicitly defined by the type of the literal or reference assigned to <code>samm:value</code>.
+For example, in the case above where <code>samm:value "green"</code> is used, the data type is <code>xsd:string</code>.
+If the value is an integer (e.g., <code>samm:value 42</code>), the data type will be <code>xsd:integer</code>.</p>
 </div>
 <div class="paragraph">
 <p>A value can also be used as <code>samm:exampleValue</code> for a Property, either by referencing the value or
