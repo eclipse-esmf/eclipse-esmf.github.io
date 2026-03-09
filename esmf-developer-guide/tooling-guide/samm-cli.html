@@ -155,6 +155,9 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../${RELEASE_VERSION}/index.html">${RELEASE_VERSION}</a>
+        </li>
+        <li class="version">
           <a href="../2.13.0/index.html">2.13.0</a>
         </li>
         <li class="version">
@@ -165,9 +168,6 @@
         </li>
         <li class="version">
           <a href="../2.11.0/index.html">2.11.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -258,11 +258,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="samm-cli.html">master</a>
+    <a class="version" href="../${RELEASE_VERSION}/tooling-guide/samm-cli.html">${RELEASE_VERSION}</a>
     <a class="version" href="../2.13.0/tooling-guide/samm-cli.html">2.13.0</a>
     <a class="version" href="../2.12.0/tooling-guide/samm-cli.html">2.12.0</a>
     <a class="version" href="../2.11.1/tooling-guide/samm-cli.html">2.11.1</a>
     <a class="version" href="../2.11.0/tooling-guide/samm-cli.html">2.11.0</a>
-    <a class="version" href="../2.10.3/tooling-guide/samm-cli.html">2.10.3</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/samm-cli.adoc">Contribute to this page</a></div>
@@ -287,8 +287,8 @@ latest release [on GitHub](<a href="https://github.com/eclipse-esmf/esmf-sdk/rel
 <h2 id="samm-cli-getting-started"><a class="anchor" href="#samm-cli-getting-started"></a>Running the SAMM CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the executable jar, call <code>java -jar samm-cli-2.13.0.jar</code> followed by one of the
-following subcommands (e.g., <code>java -jar samm-cli-2.13.0.jar help</code>). In the following
+<p>For the executable jar, call <code>java -jar samm-cli-2.14.2.jar</code> followed by one of the
+following subcommands (e.g., <code>java -jar samm-cli-2.14.2.jar help</code>). In the following
 sections, <code>samm</code> will be used as the command name.</p>
 </div>
 <div class="admonitionblock tip">
@@ -304,7 +304,7 @@ For example, for Bash, you could add the following line to <code>.bashrc</code>:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.13.0.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">alias samm='java -jar /location/to/samm-cli-2.14.2.jar'</code></pre>
 </div>
 </div>
 </td>
@@ -594,7 +594,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to java --enable-setters --setter-style "FLUENT"</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="21"><p class="tableblock"><a id="aspect-to-openapi"></a> aspect &lt;model&gt; to openapi</p></td>
+<td class="tableblock halign-left valign-top" rowspan="25"><p class="tableblock"><a id="aspect-to-openapi"></a> aspect &lt;model&gt; to openapi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://spec.openapis.org/oas/v3.0.3">OpenAPI</a> specification
                                      for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to openapi -j</code></p></td>
@@ -626,6 +626,16 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--semantic-version, -sv</em> : use the full semantic version from the Aspect Model as the
                                        version for the Aspect API</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--read-api-path</em>, <em>-rap</em> : Set the path for the default endpoint (default: <code>/api/vX</code>,
+                                       where X is the Aspect Model major version)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--query-api-path</em>, <em>-qap</em> : Set the path for the query endpoint (default:
+                                     <code>/query-api/vX</code>, where X is the Aspect Model major version)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -694,6 +704,8 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="aspect-to-asyncapi"></a> aspect &lt;model&gt; to asyncapi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate <a href="https://www.asyncapi.com/docs/reference/specification/v3.0.0">AsyncAPI</a> specification for an Aspect Model</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to asyncapi</code></p></td>
 </tr>
 <tr>
@@ -726,9 +738,9 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
@@ -743,9 +755,9 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--add-type-attribute</em>, <em>-ta</em> : Add <code>@type</code> attribute for inherited Entities</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-jsonld"></a> aspect &lt;model&gt; to jsonld</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-jsonld"></a> aspect &lt;model&gt; to jsonld</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON-LD representation of an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to jsonld</code></p></td>
 </tr>
@@ -756,9 +768,9 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-schema"></a> aspect &lt;model&gt; to schema</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-schema"></a> aspect &lt;model&gt; to schema</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON schema for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to schema</code></p></td>
 </tr>
@@ -774,9 +786,9 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate SQL script that sets up a table for data for this Aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql</code></p></td>
 </tr>
@@ -828,9 +840,9 @@ of model resolution</a> for more information.</p>
                                      following the pattern <code>column_name DATATYPE [NOT NULL] [COMMENT 'custom']</code>. This
                                      parameter can be repeated for multiple columns.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql --custom-column "column_name STRING NOT NULL COMMENT 'custom'"</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-aas"></a> aspect &lt;model&gt; to aas</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-aas"></a> aspect &lt;model&gt; to aas</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate an Asset Administration Shell (AAS) submodel template from an
                                      Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to aas</code></p></td>
@@ -851,9 +863,9 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--aspect-data, -a</em> : path to a JSON file containing aspect data corresponding to the
                                      Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-edit-move"></a> aspect &lt;model&gt; edit move &lt;element&gt; [&lt;namespace&gt;]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-edit-move"></a> aspect &lt;model&gt; edit move &lt;element&gt; [&lt;namespace&gt;]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Move a model element definition from its
                                      current place to another existing or new file in the same or another namespace.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl edit move
@@ -881,9 +893,9 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--force</em> : When a new file is to be created but it already exists in the file system,
                                      the operation will be cancelled, unless <code>--force</code> is used.</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><a id="aspect-edit-newversion"></a> aspect &lt;model&gt; edit newversion [--major | --minor | --micro]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><a id="aspect-edit-newversion"></a> aspect &lt;model&gt; edit newversion [--major | --minor | --micro]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new version of an existing file or a complete
                                      namespace. <code>model</code> can be an Aspect Model file or a namespace URN. If <code>model</code> is a URN,
                                      at least one <code>--models-root</code> must also be specified.</p></td>
@@ -916,16 +928,16 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--force</em> : When a new file is to be created but it already exists in the file system,
                                      the operation will be cancelled, unless <code>--force</code> is used.</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="aspect-usage"></a> aspect &lt;model&gt; usage</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="aspect-usage"></a> aspect &lt;model&gt; usage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shows where model elements are used in an Aspect. <code>model</code> can be an Aspect Model
                                      file or an element URN. If <code>model</code> is a URN, at least one <code>--models-root</code> must also be
                                      specified.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModelFile.ttl usage</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aas-to-aspect"></a> aas &lt;aas file&gt; to aspect</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aas-to-aspect"></a> aas &lt;aas file&gt; to aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Translate Asset Administration Shell (AAS) Submodel Templates to
                                      Aspect Models</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect</code></p></td>
@@ -939,15 +951,15 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--submodel-template, -s</em> : selected submodel template for generating;
                                        run <code>samm aas &lt;aas file&gt; list</code> to list them.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx to aspect -s 1 -s 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="aas-list"></a> aas &lt;aas file&gt; list</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="aas-list"></a> aas &lt;aas file&gt; list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a list of submodel templates contained within the provided
                                        Asset Administration Shell (AAS) file.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aas AssetAdminShell.aasx list</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="package-import"></a> package &lt;namespace package&gt; import</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="package-import"></a> package &lt;namespace package&gt; import</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Imports a Namespace Package (file or URL) into a given
                                      <a href="#models-directory-structure">models directory</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm package MyPackage.zip import --models-root c:\models</code></p></td>
@@ -966,9 +978,9 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--force</em> : When a new file is to be created but it already exists in the file system,
                                      the operation will be cancelled, unless <code>--force</code> is used.</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="package-export"></a> package &lt;model or namespace URN&gt; export</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a id="package-export"></a> package &lt;model or namespace URN&gt; export</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exports an Aspect Model with its dependencies
                                      or a complete namespace to a Namespace Package (.zip)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm package urn:samm:org.eclipse.example.myns:1.0.0 export --output package.zip</code><br>
@@ -980,9 +992,9 @@ of model resolution</a> for more information.</p>
                                        strongly recommended to output the result to a file by using the -o option or the
                                        console redirection operator '&gt;')</p></td>
 <td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="import"></a> import &lt;file&gt; &lt;URN&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="import"></a> import &lt;file&gt; &lt;URN&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Imports (i.e., translates) a file to an Aspect Model. The only currently supported
                                       format is JSON Schema.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm import MyModel.schema.json urn:org.example:1.0.0#MyModel --output-directory models</code></p></td>
@@ -998,10 +1010,6 @@ of model resolution</a> for more information.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>-e, --entity</em> : Create an Entity instead of an Aspect from the imported schema</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>-t, --todo</em> : Add TODO descriptions to otherwise undescribed model elements</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -1173,7 +1181,7 @@ paths:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.13.0.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.14.2.jar aspect <em>AspectModel.ttl</em> to openapi -b "https://www.example.org" -r "/resources/{resourceId}" -p <em>fileLocation</em></code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -1706,7 +1714,7 @@ is derived from the Aspect&#8217;s URN and is constructed using the pattern <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.13.0.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">java -jar samm-cli-2.14.2.jar aspect <em>AspectModel.ttl</em> to asyncapi -ca "123-456/789-012/test/1.0.0/Aspect"</code></pre>
 </div>
 </div>
 <div class="sect2">
