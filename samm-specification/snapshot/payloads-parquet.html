@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mapping to Apache Parquet :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/samm-specification/snapshot/payloads-parquet.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="samm-specification" data-version="snapshot">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Semantic Aspect Meta Model</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Specification</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="meta-model-elements.html">Meta Model Elements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="namespaces.html">Namespaces and Versions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="datatypes.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="characteristics.html">Characteristics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="entities.html">Entities</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="units.html">Units</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modeling-guidelines.html">Aspects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="payloads.html">Payloads - JSON</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="payloads-parquet.html">Payloads - Parquet</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="limits.html">Limits &amp; Restrictions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/best-practices.html">Best Practices</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/model-evolution.html">Model Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/unitcatalog.html">Unit Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="appendix/bibliography.html">Bibliography</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes/release-notes.html">Release Notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Semantic Aspect Meta Model</span>
+    <span class="version">snapshot</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../ame-guide/introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ame-guide/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.6.0/introduction.html">5.6.0</a>
+        </li>
+        <li class="version">
+          <a href="../../ame-guide/5.5.0/introduction.html">5.5.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.13.0/index.html">2.13.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.11.1/index.html">2.11.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.11.0/index.html">2.11.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Semantic Aspect Meta Model</a></li>
+    <li>Specification</li>
+    <li><a href="payloads-parquet.html">Payloads - Parquet</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
+  <div class="version-menu">
+    <a class="version is-current" href="payloads-parquet.html">snapshot</a>
+    <a class="version is-missing" href="../2.2.0/index.html">2.2.0</a>
+    <a class="version is-missing" href="../2.1.0/index.html">2.1.0</a>
+    <a class="version is-missing" href="../2.0.0/index.html">2.0.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-semantic-aspect-meta-model/edit/main/documentation/modules/ROOT/pages/payloads-parquet.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Mapping to Apache Parquet</h1>
+<div class="sect1">
+<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://parquet.apache.org/">Apache Parquet</a> is an open source, column-oriented data file format designed for efficient data storage and retrieval.
+It provides high performance compression and encoding schemes to handle complex data in bulk and is supported in many programming languages and analytics tools.</p>
+</div>
+<div class="paragraph">
+<p>This document describes how Aspect Models are converted into Apache Parquet files, including the mapping of SAMM data types to Parquet types and the flattening strategy for nested structures.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="parquet-construction-rules"><a class="anchor" href="#parquet-construction-rules"></a>Rules for the construction of Apache Parquet files matching an Aspect Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to create Apache Parquet files that correspond to an Aspect Model, the following rules are applied:</p>
+</div>
+<div class="sect2">
+<h3 id="flattening-strategy"><a class="anchor" href="#flattening-strategy"></a>Flattening Strategy</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>An Aspect Model is serialized into a flattened columnar structure where nested Properties are represented using a double underscore (<code>__</code>) separator.</p>
+</li>
+<li>
+<p>Property names in the Aspect Model should use single underscores (<code>_</code>) to avoid ambiguity with the flattening separator - see also the TractusX discussion: <a href="https://github.com/eclipse-tractusx/sldt-semantic-models/issues/885">Limit Aspect model payloadName&#8217;s with single underscore</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="property-serialization-rules"><a class="anchor" href="#property-serialization-rules"></a>Property Serialization Rules</h3>
+<div class="paragraph">
+<p>For each Property:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Optional Properties</strong>: If a Property is marked as optional and not included, its column value will be <code>null</code>.</p>
+</li>
+<li>
+<p><strong>Scalar Properties</strong>: If the Property&#8217;s effective data type is scalar:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The Property is serialized as a column with the name <code>${propertyName}</code>.</p>
+</li>
+<li>
+<p>The column type is determined by the data type mapping (see <a href="#parquet-data-type-mappings">Data Type Mappings</a>).</p>
+</li>
+<li>
+<p>The value must adhere to the value range defined by the Property&#8217;s effective data type and possible Constraints.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Multi-language Properties</strong> (<code>rdf:langString</code>):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Each language variant is serialized as a separate column.</p>
+</li>
+<li>
+<p>Column naming follows the pattern <code>${propertyName}-${language}</code> (hyphen-separated).</p>
+</li>
+<li>
+<p>Example: <code>description-en</code>, <code>description-de</code>, <code>description-zh</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Entity Properties</strong>: If the Property&#8217;s effective data type is an Entity:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The Entity&#8217;s Properties are flattened using the double underscore separator.</p>
+</li>
+<li>
+<p>Example: Property <code>address</code> with nested Properties <code>street</code> and <code>city</code> becomes <code>address<em>street</code> and <code>address</em>city</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Entity Inheritance</strong>: If an Entity extends another Entity:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All Properties from the Entity and its parent Entities are included.</p>
+</li>
+<li>
+<p>Properties are resolved from <code>?thisEntity samm:extends* []</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Collection Properties</strong>: If the Property&#8217;s Characteristic is a Collection, List, Set, or Sorted Set:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For collections of scalar types and complex types (Entities): Each element is represented with the <code>${collectionName}__${propertyName}</code> (underscore-separated).</p>
+</li>
+<li>
+<p>Example: <code>items<em>name</code>, <code>items</em>price</code>, <code>items<em>name</code>, <code>items</em>price</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong> Characteristic</strong>: If the Property&#8217;s Characteristic is <code>samm-c:Either</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Both left and right alternatives are represented as separate columns.</p>
+</li>
+<li>
+<p>Column naming follows <code>${propertyName}<em>left</code> and <code>${propertyName}</em>right</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>License information</strong>: No license headers available when generating example Apache Parquet files from an Aspect model</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="denormalization-for-collections"><a class="anchor" href="#denormalization-for-collections"></a>Denormalization for Collections</h3>
+<div class="paragraph">
+<p>When an Aspect contains Properties with Collections:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each collection element may result in a separate row in the Parquet file to maintain a denormalized structure.</p>
+</li>
+<li>
+<p>This approach is suitable for analytical workloads where columnar storage and denormalization improve query performance.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="characteristics-not-subject-to-serialization"><a class="anchor" href="#characteristics-not-subject-to-serialization"></a>Characteristics Not Subject to Serialization</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Operations defined in the Aspect Model are not subject to serialization.</p>
+</li>
+<li>
+<p>Events defined in the Aspect Model are not subject to serialization.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="parquet-data-type-mappings"><a class="anchor" href="#parquet-data-type-mappings"></a>Data Type Mappings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following table describes how Aspect Model data types are mapped to Apache Parquet primitive types with their logical type annotations where applicable.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Aspect Model data type</th>
+<th class="tableblock halign-left valign-top">Corresponding <a href="https://parquet.apache.org/docs/file-format/types/">Apache Parquet Type</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Core Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY</code> / <code>FIXED_LEN_BYTE_ARRAY</code> (if LengthConstraint Trait max value is available)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOLEAN</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:decimal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">IEEE Floating-Point Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:double</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:float</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLOAT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Time and Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT64</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT64</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock">Recurring and Partial Dates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYearMonth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gMonthDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:duration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:yearMonthDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dayTimeDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="12"><p class="tableblock">Limited-Range Integer Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:byte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:short</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:int</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT64</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedByte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedShort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedInt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT64</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT64</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonNegativeInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:negativeInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:nonPositiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT32</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Encoded Binary Data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:hexBinary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:base64Binary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Miscellaneous Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:anyURI</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdf:langString</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTE_ARRAY / FIXED_LEN_BYTE_ARRAY (if LengthConstraint Trait max value is available)</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example"><a class="anchor" href="#example"></a>Example</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="aspect-model"><a class="anchor" href="#aspect-model"></a>Aspect Model</h3>
+<div class="listingblock">
+<div class="content">
+<pre># Copyright (c) 2026 Robert Bosch Manufacturing Solutions GmbH
+
+# See the AUTHORS file(s) distributed with this work for additional information regarding authorship.
+
+# This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+# If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/
+# SPDX-License-Identifier: MPL-2.0
+
+@prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.1.0#&gt; .
+@prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#&gt; .
+@prefix samm-e: &lt;urn:samm:org.eclipse.esmf.samm:entity:2.1.0#&gt; .
+@prefix unit: &lt;urn:samm:org.eclipse.esmf.samm:unit:2.1.0#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix : &lt;urn:samm:org.eclipse.esmf:1.0.0#&gt; .
+
+:ExampleAspect a samm:Aspect ;
+   samm:preferredName "ExampleAspect"@en ;
+   samm:description "Example Aspect for Apache Parquet file generation"@en ;
+   samm:properties ( :unsignedLongProperty :unsignedIntProperty :negativeIntegerProperty :nonPositiveIntegerProperty :nonNegativeIntegerProperty :unsignedByteProperty :unsignedShortProperty :longProperty :byteProperty :shortProperty :integerProperty :intProperty :decimalProperty :doubleProperty :floatProperty :booleanProperty :exampleProperty :eitherProperty :lengthConstraintProperty ) ;
+   samm:operations ( ) ;
+   samm:events ( ) .
+
+:unsignedLongProperty a samm:Property ;
+   samm:preferredName "unsignedLongProperty"@en ;
+   samm:description "unsignedLongProperty"@en ;
+   samm:characteristic :UnsignedLongCharacteristic ;
+   samm:exampleValue "1000"^^xsd:unsignedLong .
+
+:unsignedIntProperty a samm:Property ;
+   samm:preferredName "unsignedIntProperty"@en ;
+   samm:description "unsignedIntProperty"@en ;
+   samm:characteristic :UnsignedIntPropertyCharacteristic ;
+   samm:exampleValue "4"^^xsd:unsignedInt .
+
+:negativeIntegerProperty a samm:Property ;
+   samm:preferredName "negativeIntegerProperty"@en ;
+   samm:description "negativeIntegerProperty"@en ;
+   samm:characteristic :NegativeIntegerCharacteristic ;
+   samm:exampleValue "-10"^^xsd:negativeInteger .
+
+:nonPositiveIntegerProperty a samm:Property ;
+   samm:preferredName "nonPositiveIntegerProperty"@en ;
+   samm:description "nonPositiveIntegerProperty"@en ;
+   samm:characteristic :NonPositiveIntegerCharacteristic ;
+   samm:exampleValue "0"^^xsd:nonPositiveInteger .
+
+:nonNegativeIntegerProperty a samm:Property ;
+   samm:preferredName "nonNegativeIntegerProperty"@en ;
+   samm:description "nonNegativeIntegerProperty"@en ;
+   samm:characteristic :NonNegativeIntegerCharacteristic ;
+   samm:exampleValue "0"^^xsd:nonNegativeInteger .
+
+:unsignedByteProperty a samm:Property ;
+   samm:preferredName "unsignedByteProperty"@en ;
+   samm:description "unsignedByteProperty"@en ;
+   samm:characteristic :UnsignedByteCharacteristic ;
+   samm:exampleValue "42"^^xsd:unsignedByte .
+
+:unsignedShortProperty a samm:Property ;
+   samm:preferredName "unsignedShortProperty"@en ;
+   samm:description "unsignedShortProperty"@en ;
+   samm:characteristic :UnsignedShortCharacteristic ;
+   samm:exampleValue "255"^^xsd:unsignedShort .
+
+:longProperty a samm:Property ;
+   samm:preferredName "longProperty"@en ;
+   samm:description "longProperty"@en ;
+   samm:characteristic :LongCharacteristic ;
+   samm:exampleValue "1122334455"^^xsd:long .
+
+:byteProperty a samm:Property ;
+   samm:preferredName "byteProperty"@en ;
+   samm:description "byteProperty"@en ;
+   samm:characteristic :ByteCharacteristic ;
+   samm:exampleValue "-1"^^xsd:byte .
+
+:shortProperty a samm:Property ;
+   samm:preferredName "shortProperty"@en ;
+   samm:description "shortProperty"@en ;
+   samm:characteristic :ShortCharacteristic ;
+   samm:exampleValue "2"^^xsd:short .
+
+:integerProperty a samm:Property ;
+   samm:preferredName "integerProperty"@en ;
+   samm:description "integerProperty"@en ;
+   samm:characteristic :IntegerCharacteristic ;
+   samm:exampleValue 10 .
+
+:intProperty a samm:Property ;
+   samm:preferredName "intProperty"@en ;
+   samm:description "intProperty"@en ;
+   samm:characteristic :IntCharacteristic ;
+   samm:exampleValue "5"^^xsd:int .
+
+:decimalProperty a samm:Property ;
+   samm:preferredName "decimalProperty"@en ;
+   samm:characteristic :DecimalCharacteristic ;
+   samm:exampleValue "0.5"^^xsd:decimal .
+
+:doubleProperty a samm:Property ;
+   samm:preferredName "doubleProperty"@en ;
+   samm:characteristic :DoubleCharacteristic ;
+   samm:exampleValue "22.189"^^xsd:double .
+
+:floatProperty a samm:Property ;
+   samm:preferredName "floatProperty"@en ;
+   samm:characteristic :FloatCharacteristic ;
+   samm:exampleValue "1.9"^^xsd:float .
+
+:booleanProperty a samm:Property ;
+   samm:preferredName "boolean Property"@en ;
+   samm:characteristic :BooleanCharacteristic ;
+   samm:exampleValue true .
+
+:exampleProperty a samm:Property ;
+   samm:characteristic :ExampleCharacteristicList .
+
+:eitherProperty a samm:Property ;
+   samm:characteristic :EitherCharacteristic .
+
+:lengthConstraintProperty a samm:Property ;
+   samm:preferredName "lengthConstraintProperty"@en ;
+   samm:characteristic :LengthTrait1 ;
+   samm:exampleValue "testing" .
+
+:UnsignedLongCharacteristic a samm:Characteristic ;
+   samm:preferredName "UnsignedLongCharacteristic"@en ;
+   samm:description "UnsignedLongCharacteristic"@en ;
+   samm:dataType xsd:unsignedLong .
+
+:UnsignedIntPropertyCharacteristic a samm:Characteristic ;
+   samm:preferredName "UnsignedIntPropertyCharacteristic"@en ;
+   samm:description "UnsignedIntPropertyCharacteristic"@en ;
+   samm:dataType xsd:unsignedInt .
+
+:NegativeIntegerCharacteristic a samm:Characteristic ;
+   samm:preferredName "NegativeIntegerCharacteristic"@en ;
+   samm:description "NegativeIntegerCharacteristic"@en ;
+   samm:dataType xsd:negativeInteger .
+
+:NonPositiveIntegerCharacteristic a samm:Characteristic ;
+   samm:preferredName "NonPositiveIntegerCharacteristic"@en ;
+   samm:description "NonPositiveIntegerCharacteristic"@en ;
+   samm:dataType xsd:nonPositiveInteger .
+
+:NonNegativeIntegerCharacteristic a samm:Characteristic ;
+   samm:preferredName "NonNegativeIntegerCharacteristic"@en ;
+   samm:description "NonNegativeIntegerCharacteristic"@en ;
+   samm:dataType xsd:nonNegativeInteger .
+
+:UnsignedByteCharacteristic a samm:Characteristic ;
+   samm:preferredName "UnsignedByteCharacteristic"@en ;
+   samm:description "UnsignedByteCharacteristic"@en ;
+   samm:dataType xsd:unsignedByte .
+
+:UnsignedShortCharacteristic a samm:Characteristic ;
+   samm:preferredName "UnsignedShortCharacteristic"@en ;
+   samm:description "UnsignedShortCharacteristic"@en ;
+   samm:dataType xsd:unsignedShort .
+
+:LongCharacteristic a samm:Characteristic ;
+   samm:preferredName "LongCharacteristic"@en ;
+   samm:description "LongCharacteristic"@en ;
+   samm:dataType xsd:long .
+
+:ByteCharacteristic a samm:Characteristic ;
+   samm:preferredName "ByteCharacteristic"@en ;
+   samm:description "ByteCharacteristic"@en ;
+   samm:dataType xsd:byte .
+
+:ShortCharacteristic a samm:Characteristic ;
+   samm:preferredName "ShortCharacteristic"@en ;
+   samm:description "ShortCharacteristic"@en ;
+   samm:dataType xsd:short .
+
+:IntegerCharacteristic a samm:Characteristic ;
+   samm:preferredName "integerProperty"@en ;
+   samm:dataType xsd:integer .
+
+:IntCharacteristic a samm:Characteristic ;
+   samm:preferredName "IntCharacteristic"@en ;
+   samm:dataType xsd:int .
+
+:DecimalCharacteristic a samm:Characteristic ;
+   samm:preferredName "Decimal Characteristic"@en ;
+   samm:dataType xsd:decimal .
+
+:DoubleCharacteristic a samm:Characteristic ;
+   samm:preferredName "DoubleCharacteristic"@en ;
+   samm:dataType xsd:double .
+
+:FloatCharacteristic a samm:Characteristic ;
+   samm:preferredName "FloatCharacteristic"@en ;
+   samm:dataType xsd:float .
+
+:BooleanCharacteristic a samm:Characteristic ;
+   samm:dataType xsd:boolean .
+
+:ExampleCharacteristicList a samm-c:List ;
+   samm:dataType :ExampleEntity .
+
+:EitherCharacteristic a samm-c:Either ;
+   samm-c:left :LeftCharacteristicExample ;
+   samm-c:right :RightCharacteristicExample .
+
+:LengthTrait1 a samm-c:Trait ;
+   samm:preferredName "LengthTrait1"@en ;
+   samm-c:baseCharacteristic :ExampleLengthCharacteristic ;
+   samm-c:constraint :LengthConstraintExample .
+
+:ExampleEntity a samm:Entity ;
+   samm:preferredName "ExampleEntity"@en ;
+   samm:properties ( :booleanProperty :anyURIProperty :base64BinaryProperty :hexBinaryProperty :gMonthDayProperty :gYearMonthProperty :gYearProperty :gMonthProperty :gDayProperty :dayTimeDurationProperty :yearMonthDurationProperty :durationProperty :dateTimeStampProperty :dateTimeProperty :timeProperty :dateProperty :stringProperty :dateTimePropertyWithTimeZone :langStringProperty ) .
+
+:LeftCharacteristicExample a samm:Characteristic ;
+   samm:dataType xsd:string .
+
+:RightCharacteristicExample a samm:Characteristic ;
+   samm:dataType xsd:string .
+
+:ExampleLengthCharacteristic a samm:Characteristic ;
+   samm:dataType xsd:string .
+
+:LengthConstraintExample a samm-c:LengthConstraint ;
+   samm:preferredName "LengthConstraintExample"@en ;
+   samm-c:minValue "1"^^xsd:nonNegativeInteger ;
+   samm-c:maxValue "10"^^xsd:nonNegativeInteger .
+
+:anyURIProperty a samm:Property ;
+   samm:preferredName "anyURIProperty"@en ;
+   samm:description "anyURIProperty"@en ;
+   samm:characteristic :AnyURICharacteristic ;
+   samm:exampleValue "http://www.example.com"^^xsd:anyURI .
+
+:base64BinaryProperty a samm:Property ;
+   samm:preferredName "base64BinaryProperty"@en ;
+   samm:description "base64BinaryProperty"@en ;
+   samm:characteristic :Base64BinaryCharacteristic ;
+   samm:exampleValue "VGhpcyBpcyBhIHRlc3Q="^^xsd:base64Binary .
+
+:hexBinaryProperty a samm:Property ;
+   samm:preferredName "hexBinaryProperty"@en ;
+   samm:description "hexBinaryProperty"@en ;
+   samm:characteristic :HexBinaryCharacteristic ;
+   samm:exampleValue "4A3B"^^xsd:hexBinary .
+
+:gMonthDayProperty a samm:Property ;
+   samm:preferredName "gMonthDayProperty"@en ;
+   samm:description "gMonthDayProperty"@en ;
+   samm:characteristic :GMonthDayCharacteristic ;
+   samm:exampleValue "--11-21"^^xsd:gMonthDay .
+
+:gYearMonthProperty a samm:Property ;
+   samm:preferredName "gYearMonthProperty"@en ;
+   samm:description "gYearMonthProperty"@en ;
+   samm:characteristic :GYearMonthCharacteristic ;
+   samm:exampleValue "2025-11"^^xsd:gYearMonth .
+
+:gYearProperty a samm:Property ;
+   samm:preferredName "gYearProperty"@en ;
+   samm:description "gYearProperty"@en ;
+   samm:characteristic :GYearCharacteristic ;
+   samm:exampleValue "2025"^^xsd:gYear .
+
+:gMonthProperty a samm:Property ;
+   samm:preferredName "gMonthProperty"@en ;
+   samm:description "gMonthProperty"@en ;
+   samm:characteristic :GMonthCharacteristic ;
+   samm:exampleValue "--07"^^xsd:gMonth .
+
+:gDayProperty a samm:Property ;
+   samm:preferredName "gDayProperty"@en ;
+   samm:description "gDayProperty"@en ;
+   samm:characteristic :GDayCharacteristic ;
+   samm:exampleValue "---05"^^xsd:gDay .
+
+:dayTimeDurationProperty a samm:Property ;
+   samm:preferredName "dayTimeDurationProperty"@en ;
+   samm:description "dayTimeDurationProperty"@en ;
+   samm:characteristic :DayTimeDurationCharacteristic ;
+   samm:exampleValue "P10D"^^xsd:dayTimeDuration .
+
+:yearMonthDurationProperty a samm:Property ;
+   samm:preferredName "yearMonthDurationProperty"@en ;
+   samm:description "yearMonthDurationProperty"@en ;
+   samm:characteristic :YearMonthDurationCharacteristic ;
+   samm:exampleValue "P2Y"^^xsd:yearMonthDuration .
+
+:durationProperty a samm:Property ;
+   samm:preferredName "durationProperty"@en ;
+   samm:description "durationProperty"@en ;
+   samm:characteristic :DurationCharacteristic ;
+   samm:exampleValue "P10D"^^xsd:duration .
+
+:dateTimeStampProperty a samm:Property ;
+   samm:preferredName "dateTimeStampProperty"@en ;
+   samm:description "dateTimeStampProperty"@en ;
+   samm:characteristic :DateTimeStampCharacteristic ;
+   samm:exampleValue "2025-11-21T14:30:00Z"^^xsd:dateTimeStamp .
+
+:dateTimeProperty a samm:Property ;
+   samm:preferredName "dateTimeProperty"@en ;
+   samm:description "dateTimeProperty"@en ;
+   samm:characteristic :DateTimeCharacteristic ;
+   samm:exampleValue "2025-11-21T14:30:00"^^xsd:dateTime .
+
+:timeProperty a samm:Property ;
+   samm:preferredName "timeProperty"@en ;
+   samm:description "timeProperty"@en ;
+   samm:characteristic :TimeCharacteristic ;
+   samm:exampleValue "14:30:15.123"^^xsd:time .
+
+:dateProperty a samm:Property ;
+   samm:preferredName "dateProperty"@en ;
+   samm:description "dateProperty"@en ;
+   samm:characteristic :DateCharacteristic ;
+   samm:exampleValue "2025-10-14"^^xsd:date .
+
+:stringProperty a samm:Property ;
+   samm:preferredName "stringProperty"@en ;
+   samm:description "stringProperty"@en ;
+   samm:characteristic :StringCharacteristic ;
+   samm:exampleValue "exampleString" .
+
+:dateTimePropertyWithTimeZone a samm:Property ;
+   samm:preferredName "dateTimePropertyWithTimeZone"@en ;
+   samm:description "dateTimePropertyWithTimeZone"@en ;
+   samm:characteristic :DateTimeCharacteristic ;
+   samm:exampleValue "2025-10-14T09:37:33.098+05:30"^^xsd:dateTime .
+
+:langStringProperty a samm:Property ;
+   samm:preferredName "langStringProperty"@en ;
+   samm:description "langStringProperty"@en ;
+   samm:characteristic :LangStringCharacteristic ;
+   samm:exampleValue "sample lang string"@en .
+
+:AnyURICharacteristic a samm:Characteristic ;
+   samm:preferredName "AnyURICharacteristic"@en ;
+   samm:description "AnyURICharacteristic"@en ;
+   samm:dataType xsd:anyURI .
+
+:Base64BinaryCharacteristic a samm:Characteristic ;
+   samm:preferredName "Base64BinaryCharacteristic"@en ;
+   samm:description "Base64BinaryCharacteristic"@en ;
+   samm:dataType xsd:base64Binary .
+
+:HexBinaryCharacteristic a samm:Characteristic ;
+   samm:preferredName "HexBinaryCharacteristic"@en ;
+   samm:description "HexBinaryCharacteristic"@en ;
+   samm:dataType xsd:hexBinary .
+
+:GMonthDayCharacteristic a samm:Characteristic ;
+   samm:preferredName "GMonthDayCharacteristic"@en ;
+   samm:description "GMonthDayCharacteristic"@en ;
+   samm:dataType xsd:gMonthDay .
+
+:GYearMonthCharacteristic a samm:Characteristic ;
+   samm:preferredName "GYearMonthCharacteristic"@en ;
+   samm:description "GYearMonthCharacteristic"@en ;
+   samm:dataType xsd:gYearMonth .
+
+:GYearCharacteristic a samm:Characteristic ;
+   samm:preferredName "GYearCharacteristic"@en ;
+   samm:description "GYearCharacteristic"@en ;
+   samm:dataType xsd:gYear .
+
+:GMonthCharacteristic a samm:Characteristic ;
+   samm:preferredName "GMonthCharacteristic"@en ;
+   samm:description "GMonthCharacteristic"@en ;
+   samm:dataType xsd:gMonth .
+
+:GDayCharacteristic a samm:Characteristic ;
+   samm:preferredName "GDayCharacteristic"@en ;
+   samm:description "GDayCharacteristic"@en ;
+   samm:dataType xsd:gDay .
+
+:DayTimeDurationCharacteristic a samm:Characteristic ;
+   samm:preferredName "DayTimeDurationCharacteristic"@en ;
+   samm:description "DayTimeDurationCharacteristic"@en ;
+   samm:dataType xsd:dayTimeDuration .
+
+:YearMonthDurationCharacteristic a samm:Characteristic ;
+   samm:preferredName "YearMonthDurationCharacteristic"@en ;
+   samm:description "YearMonthDurationCharacteristic"@en ;
+   samm:dataType xsd:yearMonthDuration .
+
+:DurationCharacteristic a samm:Characteristic ;
+   samm:preferredName "DurationCharacteristic"@en ;
+   samm:description "DurationCharacteristic"@en ;
+   samm:dataType xsd:duration .
+
+:DateTimeStampCharacteristic a samm:Characteristic ;
+   samm:preferredName "DateTimeStampCharacteristic"@en ;
+   samm:description "DateTimeStampCharacteristic"@en ;
+   samm:dataType xsd:dateTimeStamp .
+
+:DateTimeCharacteristic a samm:Characteristic ;
+   samm:preferredName "DateTimeCharacteristic"@en ;
+   samm:description "DateTimeCharacteristic"@en ;
+   samm:dataType xsd:dateTime .
+
+:TimeCharacteristic a samm:Characteristic ;
+   samm:preferredName "TimeCharacteristic"@en ;
+   samm:description "TimeCharacteristic"@en ;
+   samm:dataType xsd:time .
+
+:DateCharacteristic a samm:Characteristic ;
+   samm:preferredName "DateCharacteristic"@en ;
+   samm:description "DateCharacteristic"@en ;
+   samm:dataType xsd:date .
+
+:StringCharacteristic a samm:Characteristic ;
+   samm:preferredName "StringCharacteristic"@en ;
+   samm:description "StringCharacteristic"@en ;
+   samm:dataType xsd:string .
+
+:LangStringCharacteristic a samm:Characteristic ;
+   samm:preferredName "LangStringCharacteristic"@en ;
+   samm:description "LangStringCharacteristic"@en ;
+   samm:dataType rdf:langString .</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="parquet-schema"><a class="anchor" href="#parquet-schema"></a>Parquet Schema</h3>
+<div class="paragraph">
+<p>The above Aspect Model would result in the Parquet schema structure <a href="../../attachments/ExampleAspect.parquet">ExampleAspect.parquet</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="limitations-and-considerations"><a class="anchor" href="#limitations-and-considerations"></a>Limitations and Considerations</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Aspect Model data String data type To Apache Parquet FIXED_LEN_BYTE_ARRAY / BYTE_ARRAY </strong>: Aspect Model data String data type will be represented as Apache Parquet FIXED_LEN_BYTE_ARRAY only if there is a LengthConstraint Trait max value defined for the given Property or else it will be represented as Apache Parquet BYTE_ARRAY irrespective of the encoding type.</p>
+</li>
+<li>
+<p><strong>Order of collection data</strong>: Order of collection data is not relevant when creating the Apache Parquet file.
+This is because, once the data is flattened, no order-related information is retained since only one element per collection will be created when generating a sample Apache Parquet file from an Aspect model.</p>
+</li>
+<li>
+<p><strong>Timezone Handling</strong>: For <code>xsd:dateTime</code> and <code>xsd:dateTimeStamp</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>When timezone information is present, timestamps are normalized to UTC.</p>
+</li>
+<li>
+<p>When no timezone information is present, timestamps are stored as-is.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Property Naming</strong>: To avoid ambiguity:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use single underscores (<code>_</code>) in Property names.</p>
+</li>
+<li>
+<p>The double underscore (<code>__</code>) is reserved for representing nested hierarchies.</p>
+</li>
+<li>
+<p>Hyphens (<code>-</code>) are used to separate language codes in <code>rdf:langString</code> columns.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="references"><a class="anchor" href="#references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://parquet.apache.org/">Apache Parquet Official Documentation</a></p>
+</li>
+<li>
+<p><a href="https://parquet.apache.org/docs/file-format/types/">Apache Parquet Type Documentation</a></p>
+</li>
+<li>
+<p><a href="https://github.com/apache/parquet-format/blob/master/LogicalTypes.md">Apache Parquet Logical Types</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

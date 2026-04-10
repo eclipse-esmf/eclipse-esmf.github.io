@@ -155,9 +155,6 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../${RELEASE_VERSION}/index.html">${RELEASE_VERSION}</a>
-        </li>
-        <li class="version">
           <a href="../2.13.0/index.html">2.13.0</a>
         </li>
         <li class="version">
@@ -258,7 +255,6 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="maven-plugin.html">master</a>
-    <a class="version" href="../${RELEASE_VERSION}/tooling-guide/maven-plugin.html">${RELEASE_VERSION}</a>
     <a class="version" href="../2.13.0/tooling-guide/maven-plugin.html">2.13.0</a>
     <a class="version" href="../2.12.0/tooling-guide/maven-plugin.html">2.12.0</a>
     <a class="version" href="../2.11.1/tooling-guide/maven-plugin.html">2.11.1</a>
@@ -1667,9 +1663,17 @@ life cycle phase for the goal is <code>generate-resources</code>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>decimalPrecision</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The precision to use for Databricks decimal columns, between 1 and 38. See also notes in
-  the <a href="java-aspect-tooling.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
+  the <a href="java-code-generation.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>decimalScale</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The scale to use for Databricks decimal columns, between 0 and the precision. See also notes in
+the <a href="java-code-generation.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>

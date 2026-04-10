@@ -155,9 +155,6 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
-          <a href="../${RELEASE_VERSION}/index.html">${RELEASE_VERSION}</a>
-        </li>
-        <li class="version">
           <a href="../2.13.0/index.html">2.13.0</a>
         </li>
         <li class="version">
@@ -259,7 +256,6 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="java-documentation-generation.html">master</a>
-    <a class="version" href="../${RELEASE_VERSION}/tooling-guide/java-documentation-generation.html">${RELEASE_VERSION}</a>
     <a class="version" href="../2.13.0/tooling-guide/java-documentation-generation.html">2.13.0</a>
     <a class="version" href="../2.12.0/tooling-guide/java-documentation-generation.html">2.12.0</a>
     <a class="version is-missing" href="../2.11.1/index.html">2.11.1</a>
@@ -473,6 +469,40 @@ final String jsonString = generator.generateJson();
 
 // Variant 2: Generate using mapping function
 generator.generate( this::outputStreamForName );</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-sample-apache-parquet-payload"><a class="anchor" href="#generating-sample-apache-parquet-payload"></a>Generating Sample Apache Parquet Payload</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The sample Parquet payload generator is used to create a valid Apache Parquet payload for an Aspect model as it could be returned by
+an Aspect that implements that Aspect model. This follows the
+<a href="../../samm-specification/snapshot/payloads.html#mapping-to-parquet" class="xref page">mapping rules</a> as defined in the Meta Model specification.
+The generator uses `samm:exampleValue`s of Properties if present, otherwise random values corresponding to the
+respective data types are generated.</p>
+</div>
+<details>
+<summary>Show used imports</summary>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
+import java.io.IOException;
+
+import org.eclipse.esmf.aspectmodel.generator.parquet.AspectModelParquetPayloadGenerator;
+import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
+import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
+final AspectModel aspectModel = // ...
+final AspectModelParquetPayloadGenerator generator = new AspectModelParquetPayloadGenerator( aspectModel.aspect() );
+// Direct generation of Apache Parquet payload
+generator.generate().findFirst().orElseThrow( () -&gt; new IOException( "Failed to generate parquet artifact" ) );</code></pre>
 </div>
 </div>
 </div>
