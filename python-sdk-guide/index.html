@@ -80,10 +80,10 @@
           <a href="../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../ame-guide/6.0.0/introduction.html">6.0.0</a>
+          <a href="../ame-guide/6.1.2/introduction.html">6.1.2</a>
         </li>
         <li class="version">
-          <a href="../ame-guide/5.6.1/introduction.html">5.6.1</a>
+          <a href="../ame-guide/6.1.1/introduction.html">6.1.1</a>
         </li>
       </ul>
     </li>
@@ -102,19 +102,19 @@
           <a href="../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../esmf-developer-guide/2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../esmf-developer-guide/2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../esmf-developer-guide/2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
           <a href="../esmf-developer-guide/2.14.3/index.html">2.14.3</a>
         </li>
         <li class="version">
           <a href="../esmf-developer-guide/2.14.2/index.html">2.14.2</a>
-        </li>
-        <li class="version">
-          <a href="../esmf-developer-guide/2.13.0/index.html">2.13.0</a>
-        </li>
-        <li class="version">
-          <a href="../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
-        </li>
-        <li class="version">
-          <a href="../esmf-developer-guide/2.11.1/index.html">2.11.1</a>
         </li>
       </ul>
     </li>
@@ -125,13 +125,7 @@
           <a href="../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../js-sdk-guide/2.8.1/index.html">2.8.1</a>
-        </li>
-        <li class="version">
-          <a href="../js-sdk-guide/2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+          <a href="../js-sdk-guide/2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -244,11 +238,11 @@ Check your version with</p>
 </li>
 <li>
 <p>In order to include the packages a Python dependency manager is required; we recommend
-either <a href="https://pypi.org/project/pip/">pip</a> or <a href="https://python-poetry.org/">Python Poetry</a>.
-The remainder of the guide assumes usage of Poetry.
+either <a href="https://pypi.org/project/pip/">pip</a> or <a href="https://docs.astral.sh/uv/">uv</a>.
+The remainder of the guide assumes usage of uv.
 Please refer to the <a href="https://pip.pypa.io/en/stable/installation/">pip installation</a> or
-<a href="https://python-poetry.org/docs/#installation">Poetry installation guide</a>.
-You can check your installed pip/Poetry version with</p>
+<a href="https://docs.astral.sh/uv/getting-started/installation/">uv installation guide</a>.
+You can check your installed pip/uv version with</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip --version</code></pre>
@@ -262,7 +256,7 @@ You can check your installed pip/Poetry version with</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>poetry --version</pre>
+<pre>uv --version</pre>
 </div>
 </div>
 </div>
@@ -276,7 +270,7 @@ You can check your installed pip/Poetry version with</p>
 <div class="paragraph">
 <p>Aspect Models are stored as RDF Graphs in <code>.ttl</code> (RDF Turtle) files.
 The Aspect Model Loader for Python offers a SAMMGraph class that provides two main methods: <code>load_aspect_model</code> and <code>load_model_elements</code>.
-Theese methods allows to read a Turtle file and parses the Aspect Model and return either a root Aspect node or a list of all elements from the Aspect Model.
+These methods allow you to read a Turtle file, parse the Aspect Model and return either a root Aspect node or a list of all elements from the Aspect Model.
 The Aspect has references to all of its children (e.g., Properties and Operations).</p>
 </div>
 </div>
@@ -307,8 +301,12 @@ For example, to install a specific version of the package, you can use the follo
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip install esmf-aspect-model-loader==2.2.1</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip install esmf-aspect-model-loader==&lt;version&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Replace <code>&lt;version&gt;</code> with the desired release; the available versions are listed on
+<a href="https://pypi.org/project/esmf-aspect-model-loader/">PyPI</a>.</p>
 </div>
 <div class="paragraph">
 <p>For more detailed information how to install a library with pip please read
@@ -316,13 +314,13 @@ For example, to install a specific version of the package, you can use the follo
 </div>
 </div>
 <div class="sect2">
-<h3 id="poetry"><a class="anchor" href="#poetry"></a>Poetry</h3>
+<h3 id="uv"><a class="anchor" href="#uv"></a>uv</h3>
 <div class="paragraph">
-<p>To install the esmf-aspect-model-loader from PyPI with poetry dependency manager, you can use the following command:</p>
+<p>To install the esmf-aspect-model-loader with the uv dependency manager, you can use the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry add esmf-aspect-model-loader</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">uv add esmf-aspect-model-loader</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -331,11 +329,15 @@ For example, to install a specific version of the package, you can use the follo
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry add esmf-aspect-model-loader==2.2.1</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">uv add esmf-aspect-model-loader==&lt;version&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For more detailed information how to add a library via poetry please read <a href="https://python-poetry.org/docs/cli/#add">Poetry add guide</a>.</p>
+<p>Replace <code>&lt;version&gt;</code> with the desired release; the available versions are listed on
+<a href="https://pypi.org/project/esmf-aspect-model-loader/">PyPI</a>.</p>
+</div>
+<div class="paragraph">
+<p>For more detailed information how to add a library via uv please read <a href="https://docs.astral.sh/uv/concepts/projects/dependencies/">uv dependencies guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -380,7 +382,7 @@ Both, relative paths and absolute paths are allowed.</p>
 <div class="sect2">
 <h3 id="traversing-the-aspect-model"><a class="anchor" href="#traversing-the-aspect-model"></a>Traversing the Aspect Model</h3>
 <div class="paragraph">
-<p>The attributes of an Aspect can be accessed with like this:</p>
+<p>The attributes of an Aspect can be accessed like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -398,10 +400,10 @@ events = aspect.events</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="implementation-of-the-openapi-specification"><a class="anchor" href="#implementation-of-the-openapi-specification"></a>Implementation of the OpenAPI specification</h3>
+<h3 id="consuming-an-aspect-via-its-json-payload"><a class="anchor" href="#consuming-an-aspect-via-its-json-payload"></a>Consuming an Aspect via its JSON payload</h3>
 <div class="paragraph">
-<p>The Aspect Models Editor provides easy ways to generate an example for an interface via Export JSON functions.
-Based on its structure, you can prepare either a server to send data, or a client to receive via the API.</p>
+<p>The Aspect Model Editor can export an example JSON payload for an Aspect via its <em>Export JSON</em> function.
+For the Movement Aspect the payload looks as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -417,70 +419,26 @@ Based on its structure, you can prepare either a server to send data, or a clien
 }</code></pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="a-simple-example-of-the-server"><a class="anchor" href="#a-simple-example-of-the-server"></a>A simple example of the server</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import random
-
-
-def generate_random_float():
-    """Generate a random float value."""
-    return round(random.random(), random.randint(0, 5))
-
-def send_movement_value():
-    """A simple snippet to generate Movement data."""
-    traffic_lights = ["green", "yellow", "red"]
-    movement = {
-        "isMoving": "true" if random.randint(0, 1) else "false",
-        "position": {
-            "altitude": generate_random_float(),
-            "latitude": generate_random_float(),
-            "longitude": generate_random_float()
-        },
-        "speed": generate_random_float(),
-        "speedLimitWarning": traffic_lights[random.randint(0, len(traffic_lights) - 1)]
-    }
-
-    return movement</code></pre>
+<div class="paragraph">
+<p>The example below shows how to load the Aspect Model with the Aspect Model Loader and expose the
+payload values through a small wrapper class.</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="consumer-example"><a class="anchor" href="#consumer-example"></a>Consumer Example</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import json
 import requests
 
-def get_movement(url, method="get"):
-    """Get a movement."""
-    response = requests.request(method, url)
+from esmf_aspect_meta_model_python import SAMMGraph
 
-    if response.status_code != 200:
-        raise Exception(response.text)
-    else:
-        movement = json.loads(response.text)
-
-        return movement</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example-of-the-class-for-movement-aspect-model"><a class="anchor" href="#example-of-the-class-for-movement-aspect-model"></a>Example of the class for Movement Aspect Model</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import json
-import requests
-
-from esmf_aspect_meta_model_python.loader.aspect_loader import AspectLoader
-
-loader = AspectLoader()
 
 class MovementAspect:
     def __init__(self, path_to_turtle_file):
         self._ttl_file_path = path_to_turtle_file
-        self._aspect = loader.load_aspect_model(self._ttl_file_path)
+
+        # Parse the Turtle file and load the Aspect model.
+        samm_graph = SAMMGraph()
+        samm_graph.parse(self._ttl_file_path)
+        self._aspect = samm_graph.load_aspect_model()
         self._movement = None
 
         self.name = None
@@ -562,7 +520,6 @@ print(movement.events)</code></pre>
 </div>
 <div class="paragraph">
 <p>Note that the attributes on Aspect Model objects are read-only.</p>
-</div>
 </div>
 </div>
 </div>

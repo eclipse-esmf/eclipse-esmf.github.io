@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../6.0.0/introduction.html">6.0.0</a>
+          <a href="../6.1.2/introduction.html">6.1.2</a>
         </li>
         <li class="version">
-          <a href="../5.6.1/introduction.html">5.6.1</a>
+          <a href="../6.1.1/introduction.html">6.1.1</a>
         </li>
       </ul>
     </li>
@@ -260,19 +260,19 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.14.3/index.html">2.14.3</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.14.2/index.html">2.14.2</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.13.0/index.html">2.13.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.11.1/index.html">2.11.1</a>
         </li>
       </ul>
     </li>
@@ -283,13 +283,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -364,8 +358,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="known-issues.html">master</a>
-    <a class="version" href="../6.0.0/support/known-issues.html">6.0.0</a>
-    <a class="version" href="../5.6.1/support/known-issues.html">5.6.1</a>
+    <a class="version" href="../6.1.2/support/known-issues.html">6.1.2</a>
+    <a class="version" href="../6.1.1/support/known-issues.html">6.1.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/support/known-issues.adoc">Contribute to this page</a></div>
@@ -751,7 +745,7 @@ version is not supported by this version of the Aspect Model Editor.</p>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>This happens due autoformat not being enabled or/and the hierarchical layout is disabled</p>
+<p>This happens due to autoformat not being enabled and/or the hierarchical layout being disabled.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -762,20 +756,20 @@ version is not supported by this version of the Aspect Model Editor.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Right click on the imported element, select the option "Select all references" and drag the elements to a free space</p>
+<p>Right click on the imported element, select the option "Select all references" and drag the elements to a free space.</p>
 </li>
 <li>
-<p>Manually select the desired elements and drag them to a free space</p>
+<p>Manually select the desired elements and drag them to a free space.</p>
 </li>
 <li>
 <p>Switch to hierarchical layout from settings and:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>(autoformat disabled) Click format button from toolbar. All elements will be rearranged without overlapping</p>
+<p>(autoformat disabled) Click format button from toolbar. All elements will be rearranged without overlapping.</p>
 </li>
 <li>
-<p>(autoformat enabled) When importing from workspace, the format happens automatically and the elements will not overlap. In case of overlapping click format button.</p>
+<p>(autoformat enabled) When importing from workspace, the format happens automatically and the elements will not overlap. In case of overlapping, click format button.</p>
 </li>
 </ol>
 </div>
@@ -831,7 +825,19 @@ version is not supported by this version of the Aspect Model Editor.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="javascript-mac-ame3.0.0"><a class="anchor" href="#javascript-mac-ame3.0.0"></a>MacOS: JavaScript error occurred in the main process</h3>
+<h3 id="javascript-mac-ame3.0.0"><a class="anchor" href="#javascript-mac-ame3.0.0"></a>macOS: JavaScript error occurred in the main process</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This issue is caused by the Aspect Model Editor not being notarized or signed with an Apple Developer certificate. See <a href="known-limitations.html#current-known-limitations-macos" class="xref page">Current limitations on macOS</a> for background information.
+</td>
+</tr>
+</table>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 15%;">
@@ -841,13 +847,13 @@ version is not supported by this version of the Aspect Model Editor.</p>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Error</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Error message when starting the Aspect Model Editor on MacOS.</p>
+<p>Error message when starting the Aspect Model Editor on macOS.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If your MacOS version is running Apple&#8217;s new security feature, it could happen that the application is started in a kind of sandbox. You can easily detect this by reading the following in the JavaScript error message: <code>Uncaught Exception: Error: spawn /private/var&#8230;&#8203;</code> (see image below).</p>
+<p>If your macOS version is running Apple&#8217;s Gatekeeper security feature, it could happen that the application is started in a kind of sandbox. You can easily detect this by reading the following in the JavaScript error message: <code>Uncaught Exception: Error: spawn /private/var&#8230;&#8203;</code> (see image below).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -858,16 +864,18 @@ version is not supported by this version of the Aspect Model Editor.</p>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Workaround</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The keyword here is <code>/private/var</code>, which means that your application is in a kind of quarantine and can only be unlocked by you. For this you must open your terminal and execute the following command:</p>
+<p>The keyword here is <code>/private/var</code>, which means that your application is quarantined and can only be unlocked by you. For this you must open Terminal and execute the following command:</p>
 </div>
-<div class="paragraph">
-<p><code>xattr -r -d com.apple.quarantine /Applications/AspectModelEditor/Aspect-Model-Editor.app</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">xattr -r -d com.apple.quarantine /Applications/AspectModelEditor/Aspect-Model-Editor.app</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Please note that the path to the application can change and this is only the default path.</p>
 </div>
 <div class="paragraph">
-<p>Please keep in mind that this is not an official Apple version, and it must be confirmed in the security settings first. You may be asked several times before the app opens.</p>
+<p>Please keep in mind that this is not an official Apple-signed version, and it must be confirmed in the security settings first. You may be asked several times before the app opens.</p>
 </div>
 <div class="paragraph">
 <p>If your security settings are enabled to launch unverified applications, the following error messages may pop up. These must be pre-approved in the security settings of your system.</p>
@@ -886,13 +894,10 @@ version is not supported by this version of the Aspect Model Editor.</p>
 <p>Error messages must not be closed.</p>
 </li>
 <li>
-<p>Go to System Preferences and click on Security &amp; Privacy.</p>
+<p>Go to <strong>System Settings</strong> and click on <strong>Privacy &amp; Security</strong>.</p>
 </li>
 <li>
-<p>Open the General tab and click on the small padlock at the left bottom corner to make changes.</p>
-</li>
-<li>
-<p>Enter your admin password.</p>
+<p>Scroll down to the security section and click <strong>Open Anyway</strong>, entering your admin password if prompted.</p>
 </li>
 <li>
 <p>Close messages and restart the Aspect Model Editor.</p>

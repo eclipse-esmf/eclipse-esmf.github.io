@@ -130,10 +130,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.0.0/introduction.html">6.0.0</a>
+          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+          <a href="../../ame-guide/6.1.1/introduction.html">6.1.1</a>
         </li>
       </ul>
     </li>
@@ -152,19 +152,19 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
           <a href="../2.14.3/index.html">2.14.3</a>
         </li>
         <li class="version">
           <a href="../2.14.2/index.html">2.14.2</a>
-        </li>
-        <li class="version">
-          <a href="../2.13.0/index.html">2.13.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.12.0/index.html">2.12.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.11.1/index.html">2.11.1</a>
         </li>
       </ul>
     </li>
@@ -175,13 +175,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -255,11 +249,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="maven-plugin.html">master</a>
+    <a class="version" href="../2.16.0/tooling-guide/maven-plugin.html">2.16.0</a>
+    <a class="version" href="../2.15.1/tooling-guide/maven-plugin.html">2.15.1</a>
+    <a class="version" href="../2.15.0/tooling-guide/maven-plugin.html">2.15.0</a>
     <a class="version" href="../2.14.3/tooling-guide/maven-plugin.html">2.14.3</a>
     <a class="version" href="../2.14.2/tooling-guide/maven-plugin.html">2.14.2</a>
-    <a class="version" href="../2.13.0/tooling-guide/maven-plugin.html">2.13.0</a>
-    <a class="version" href="../2.12.0/tooling-guide/maven-plugin.html">2.12.0</a>
-    <a class="version" href="../2.11.1/tooling-guide/maven-plugin.html">2.11.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/maven-plugin.adoc">Contribute to this page</a></div>
@@ -285,7 +279,7 @@ Models in the build of their maven projects to, for example, generate code from 
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
   &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
-  &lt;version&gt;2.14.3&lt;/version&gt;
+  &lt;version&gt;2.16.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -1000,6 +994,13 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>operationsApiPath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path for the JSON-RPC endpoint, to which Aspect&#8217;s operations are mapped.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/rpc-api/vX</code>, where X is the Aspect major version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>aspectParameterFile</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The path to a file including the schema description for the resource. For JSON the description has to be in json, for YAML it has to be in YAML.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
@@ -1210,9 +1211,12 @@ default life cycle phase for the goal is <code>generate-resources</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>channelAddress</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the channel address (i.e., for MQTT, the topic&#8217;s name)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the channel address (i.e., for MQTT, the topic&#8217;s name). Each of the
+  <code>tenant-id</code>, <code>namespace</code>, <code>version</code> and <code>aspect-name</code> placeholders present in the address is
+  rendered as a channel parameter in the generated specification; if a placeholder is missing from
+  the address, its parameter is omitted.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{tenant-id}/{namespace}/{version}/{aspect-name}</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 <tr>
@@ -2015,7 +2019,116 @@ the goal is <code>generate-resources</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adds a <code>@type</code> attribute for inherited Entities</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="generating-sample-parquet-payload"><a class="anchor" href="#generating-sample-parquet-payload"></a>Generating Sample Parquet Payload</h3>
+<div class="paragraph">
+<p>The <code>generateParquetPayload</code> goal generates a valid sample Apache Parquet payload for a given Aspect Model as it
+could be returned by an Aspect that implements that Aspect Model. The default life cycle phase for
+the goal is <code>generate-resources</code>.</p>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;artifactId&gt;esmf-aspect-model-maven-plugin&lt;/artifactId&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;id&gt;generate-parquet-payload&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;generateParquetPayload&lt;/goal&gt;
+          &lt;/goals&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+      &lt;configuration&gt;
+        &lt;modelsRootDirectory&gt;${path-to-models-root}&lt;/modelsRootDirectory&gt;
+        &lt;includes&gt;
+          &lt;include&gt;${urn-of-aspect-model-to-be-included}&lt;/include&gt;
+        &lt;/includes&gt;
+        &lt;outputDirectory&gt;${directory-for-generated-source-files}&lt;/outputDirectory&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration Properties:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>detailedValidationMessages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailed validation messages if the model can not be loaded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelsRootDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the root directory containing the Aspect Model file(s).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basedir}/src/main/resources/aspects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerIds</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of <code>githubServerId</code> values, each referring to a <code>&lt;server&gt;</code> entry in the Maven <code>settings.xml</code>, defining the GitHub repositories to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;String&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>githubServerId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id of the <code>&lt;server&gt;</code> entry describing the GitHub repository to resolve models from.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A list of Aspect Model URNs identifying the Aspect Models to be included in the plugin execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputDirectory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to the directory where the generated Parquet payload will be written to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon green"><i class="fa fa-check-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addTypeAttribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a <code>@type</code> attribute for inherited Entities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
 </tr>
 </tbody>
 </table>

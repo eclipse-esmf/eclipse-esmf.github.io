@@ -130,10 +130,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.0.0/introduction.html">6.0.0</a>
+          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+          <a href="../../ame-guide/6.1.1/introduction.html">6.1.1</a>
         </li>
       </ul>
     </li>
@@ -152,19 +152,19 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
           <a href="../2.14.3/index.html">2.14.3</a>
         </li>
         <li class="version">
           <a href="../2.14.2/index.html">2.14.2</a>
-        </li>
-        <li class="version">
-          <a href="../2.13.0/index.html">2.13.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.12.0/index.html">2.12.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.11.1/index.html">2.11.1</a>
         </li>
       </ul>
     </li>
@@ -175,13 +175,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -255,11 +249,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="error-codes.html">master</a>
+    <a class="version" href="../2.16.0/tooling-guide/error-codes.html">2.16.0</a>
+    <a class="version" href="../2.15.1/tooling-guide/error-codes.html">2.15.1</a>
+    <a class="version" href="../2.15.0/tooling-guide/error-codes.html">2.15.0</a>
     <a class="version" href="../2.14.3/tooling-guide/error-codes.html">2.14.3</a>
     <a class="version" href="../2.14.2/tooling-guide/error-codes.html">2.14.2</a>
-    <a class="version" href="../2.13.0/tooling-guide/error-codes.html">2.13.0</a>
-    <a class="version" href="../2.12.0/tooling-guide/error-codes.html">2.12.0</a>
-    <a class="version is-missing" href="../2.11.1/index.html">2.11.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/error-codes.adoc">Contribute to this page</a></div>
@@ -351,6 +345,12 @@
 </div>
 </div>
 <div class="sect2">
+<h3 id="ERR-MODEL-RESOLUTION"><a class="anchor" href="#ERR-MODEL-RESOLUTION"></a>ERR_MODEL_RESOLUTION - Problem with resolving dependencies during model loading</h3>
+<div class="paragraph">
+<p>The model refers to elements which can not be resolved. Either the referenced elements do not exist, or the sources to resolve from are not configured correctly.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="ERR-PROCESSING"><a class="anchor" href="#ERR-PROCESSING"></a>ERR_PROCESSING - Processing Error</h3>
 <div class="paragraph">
 <p>General processing failure during model loading or resolution.</p>
@@ -366,6 +366,27 @@
 </div>
 <div class="paragraph">
 <p><strong>Resolution:</strong> Break the circular dependency by restructuring the model relationships. Review element dependencies to identify and eliminate circular references.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ERR-METAMODEL-VERSION"><a class="anchor" href="#ERR-METAMODEL-VERSION"></a>ERR_METAMODEL_VERSION - Meta Model Version Inconsistency</h3>
+<div class="paragraph">
+<p>The file uses a SAMM meta model term that does not exist in the meta model version the file declares, or it mixes SAMM namespaces of different versions. The check runs while the file is loaded, before it is migrated to the latest meta model version, and applies to every kind of load, not only to validation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This check was introduced after earlier SDK versions accepted such files. A model that mixes meta model versions, or that uses a term of a newer version under an older version declaration, was loaded silently before and is now rejected. Because the check runs during loading, this affects every entry point (CLI, Maven plugin and the Java API), not only explicit validation, and it cannot be switched off.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> When a term is not defined in the declared version, either raise the meta model version declared in the file to the version that introduced the term, or replace the term with one the declared version provides. When a file mixes versions, align the <code>samm</code>, <code>samm-c</code> and <code>samm-e</code> prefix declarations on the same meta model version.</p>
 </div>
 </div>
 </div>
@@ -541,6 +562,47 @@
 </div>
 <div class="paragraph">
 <p><strong>Resolution:</strong> Verify that all referenced elements are properly defined and accessible. Check that the element has the correct rdf:type declaration for the expected class.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ERR-INVALID-PROPERTY"><a class="anchor" href="#ERR-INVALID-PROPERTY"></a>ERR_INVALID_PROPERTY - Invalid Property in Properties List</h4>
+<div class="paragraph">
+<p>An element in an Aspect&#8217;s or Entity&#8217;s <code>samm:properties</code> list is not a valid property reference.</p>
+</div>
+<div class="paragraph">
+<p>A valid entry must be either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a direct reference to a <code>samm:Property</code>, or</p>
+</li>
+<li>
+<p>a blank node referencing a property with <code>samm:optional "true"^^xsd:boolean</code> and/or <code>samm:payloadName</code>, or</p>
+</li>
+<li>
+<p>a blank node referencing a property with <code>samm:notInPayload "true"^^xsd:boolean</code> (Entity only, when the Entity is used as the data type of an Enumeration).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Resolution:</strong> Check each entry in the <code>samm:properties</code> list of the Aspect or Entity. Replace invalid entries with proper property references. When using optional or payload-customized properties, ensure the blank node structure is correct:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">:MyEntity a samm:Entity ;
+   samm:properties ( :directProperty [ samm:property :optProp ; samm:optional "true"^^xsd:boolean ] ) .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">ERR_INVALID_PROPERTY: Element ':ToggleResult' in the Entity's ':MyEntity' properties list must be a
+property - either directly or via a reference to a property with an attribute
+samm:optional "true"^^xsd:boolean and/or samm:payloadName or samm:notInPayload "true"^^xsd:boolean.</code></pre>
+</div>
 </div>
 </div>
 </div>

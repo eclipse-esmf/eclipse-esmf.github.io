@@ -130,10 +130,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.0.0/introduction.html">6.0.0</a>
+          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/5.6.1/introduction.html">5.6.1</a>
+          <a href="../../ame-guide/6.1.1/introduction.html">6.1.1</a>
         </li>
       </ul>
     </li>
@@ -152,19 +152,19 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
           <a href="../2.14.3/index.html">2.14.3</a>
         </li>
         <li class="version">
           <a href="../2.14.2/index.html">2.14.2</a>
-        </li>
-        <li class="version">
-          <a href="../2.13.0/index.html">2.13.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.12.0/index.html">2.12.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.11.1/index.html">2.11.1</a>
         </li>
       </ul>
     </li>
@@ -175,13 +175,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -256,11 +250,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="java-validation.html">master</a>
+    <a class="version" href="../2.16.0/tooling-guide/java-validation.html">2.16.0</a>
+    <a class="version" href="../2.15.1/tooling-guide/java-validation.html">2.15.1</a>
+    <a class="version" href="../2.15.0/tooling-guide/java-validation.html">2.15.0</a>
     <a class="version" href="../2.14.3/tooling-guide/java-validation.html">2.14.3</a>
     <a class="version" href="../2.14.2/tooling-guide/java-validation.html">2.14.2</a>
-    <a class="version" href="../2.13.0/tooling-guide/java-validation.html">2.13.0</a>
-    <a class="version" href="../2.12.0/tooling-guide/java-validation.html">2.12.0</a>
-    <a class="version is-missing" href="../2.11.1/index.html">2.11.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-validation.adoc">Contribute to this page</a></div>
@@ -292,12 +286,10 @@ context information specific to this type, for example, the <code>MinLengthViola
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.util.List;
 
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.aspectmodel.shacl.fix.Fix;
-import org.eclipse.esmf.aspectmodel.shacl.violation.EvaluationContext;
-import org.eclipse.esmf.aspectmodel.shacl.violation.Violation;
+import org.eclipse.esmf.aspectmodel.Violation;
+import org.eclipse.esmf.aspectmodel.ViolationReport;
 import org.eclipse.esmf.aspectmodel.validation.services.AspectModelValidator;
 import org.eclipse.esmf.aspectmodel.validation.services.DetailedViolationFormatter;
 import org.eclipse.esmf.aspectmodel.validation.services.ViolationFormatter;
@@ -308,33 +300,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
-final AspectModel aspectModel = // ...
-
-final List&lt;Violation&gt; violations = new AspectModelValidator().validateModel( aspectModel );
-if ( violations.isEmpty() ) {
-   // Aspect Model is valid!
-   return;
-} else {
-   for (Violation violation : violations) {
-      String errorCode = violation.errorCode();
-      String message = violation.message();
-      EvaluationContext context = violation.context();
-      List&lt;Fix&gt; fixes = violation.fixes();
-   }
-}
-
-final String validationReport = new ViolationFormatter().apply( violations ); <i class="conum" data-value="1"></i><b>(1)</b>
-final String detailedReport = new DetailedViolationFormatter().apply( violations );
-
-class MyViolationVisitor implements Violation.Visitor&lt;String&gt; { <i class="conum" data-value="2"></i><b>(2)</b>
-   // ...
-}
-
-// Turn the list of Violations into a list of custom descriptions
-final Violation.Visitor&lt;String&gt; visitor = new MyViolationVisitor();
-final List&lt;String&gt; result = violations.stream()
-      .map( violation -&gt; violation.accept( visitor ) )
-      .toList();</code></pre>
+final AspectModel aspectModel = // ...</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -344,13 +310,6 @@ final List&lt;String&gt; result = violations.stream()
 <td>To format the validation result into an human-readable form, use the <code>ViolationFormatter</code> or the
 <code>DetailedViolationFormatter</code>. Note that those are only intended for text-based interfaces such as
 CLIs.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Every application dealing with validation results that needs to transform the results into some
-different structure can implement the <code>Violation.Visitor</code> Interface with a suitable target
-type <code>(String</code> used as an example here) and use the visitor to handle the different types of
-Violations in a type-safe way.</td>
 </tr>
 </table>
 </div>
@@ -377,7 +336,7 @@ allows for custom structured handling of problems that occur during model loadin
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
     &lt;groupId&gt;org.eclipse.esmf&lt;/groupId&gt;
     &lt;artifactId&gt;esmf-aspect-model-validator&lt;/artifactId&gt;
-    &lt;version&gt;2.14.3&lt;/version&gt;
+    &lt;version&gt;2.16.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -390,7 +349,7 @@ allows for custom structured handling of problems that occur during model loadin
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.14.3'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-validator:2.16.0'</code></pre>
 </div>
 </div>
 </div>
@@ -402,7 +361,7 @@ allows for custom structured handling of problems that occur during model loadin
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.14.3")</code></pre>
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-validator:2.16.0")</code></pre>
 </div>
 </div>
 </div>
@@ -410,40 +369,6 @@ allows for custom structured handling of problems that occur during model loadin
 </dd>
 </dl>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="custom-error-formatting"><a class="anchor" href="#custom-error-formatting"></a>Custom Error Formatting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to access validation violations in a type-safe way, implement the interface
-<code>org.eclipse.esmf.aspectmodel.shacl.violation.Violation.Visitor</code>. This allows you to handle each
-violation type specifically and format error messages according to your application&#8217;s requirements.</p>
-</div>
-<details>
-<summary>Show used imports</summary>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import org.eclipse.esmf.aspectmodel.shacl.violation.DatatypeViolation;
-import org.eclipse.esmf.aspectmodel.shacl.violation.MaxCountViolation;
-import org.eclipse.esmf.aspectmodel.shacl.violation.Violation;</code></pre>
-</div>
-</div>
-</details>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Implement other visitor methods for different violation types
-@Override
-public String visit(Violation violation) {
-   // Generic fallback for unhandled violation types
-   return String.format("Validation error: %s", violation.message());
-}</code></pre>
 </div>
 </div>
 </div>
@@ -459,12 +384,10 @@ public String visit(Violation violation) {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.io.File;
-import java.util.List;
 
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
-import org.eclipse.esmf.aspectmodel.shacl.fix.Fix;
-import org.eclipse.esmf.aspectmodel.shacl.violation.EvaluationContext;
-import org.eclipse.esmf.aspectmodel.shacl.violation.Violation;
+import org.eclipse.esmf.aspectmodel.Violation;
+import org.eclipse.esmf.aspectmodel.ViolationReport;
 import org.eclipse.esmf.aspectmodel.validation.services.AspectModelValidator;
 import org.eclipse.esmf.aspectmodel.validation.services.DetailedViolationFormatter;
 import org.eclipse.esmf.aspectmodel.validation.services.ViolationFormatter;
@@ -474,18 +397,7 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </details>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final List&lt;Violation&gt; violations = new AspectModelValidator().validateModel( aspectModel );
-if ( violations.isEmpty() ) {
-   // Aspect Model is valid!
-   return;
-} else {
-   for (Violation violation : violations) {
-      String errorCode = violation.errorCode();
-      String message = violation.message();
-      EvaluationContext context = violation.context();
-      List&lt;Fix&gt; fixes = violation.fixes();
-   }
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"></code></pre>
 </div>
 </div>
 </div>
@@ -499,26 +411,7 @@ for batch processing:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void aggregateErrors(List&lt;Violation&gt; violations) {
-    // Group violations by error code for batch processing
-    Map&lt;String, List&lt;Violation&gt;&gt; errorsByCode = violations.stream()
-        .collect(Collectors.groupingBy(Violation::errorCode));
-
-    // Handle each error type separately
-    List&lt;Violation&gt; dataTypeErrors = errorsByCode.get("ERR_TYPE");
-    List&lt;Violation&gt; cardinalityErrors = errorsByCode.get("ERR_MAX_COUNT");
-
-    // Process each error type with specific handling logic
-    if (dataTypeErrors != null &amp;&amp; !dataTypeErrors.isEmpty()) {
-        System.out.println("Found " + dataTypeErrors.size() + " data type errors");
-        // Handle data type errors...
-    }
-
-    if (cardinalityErrors != null &amp;&amp; !cardinalityErrors.isEmpty()) {
-        System.out.println("Found " + cardinalityErrors.size() + " cardinality errors");
-        // Handle cardinality errors...
-    }
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Unresolved include directive in modules/tooling-guide/pages/java-validation.adoc - include::example$CustomViolationFormatter.java[]</code></pre>
 </div>
 </div>
 </div>

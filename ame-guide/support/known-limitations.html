@@ -238,10 +238,10 @@
           <a href="../introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../6.0.0/introduction.html">6.0.0</a>
+          <a href="../6.1.2/introduction.html">6.1.2</a>
         </li>
         <li class="version">
-          <a href="../5.6.1/introduction.html">5.6.1</a>
+          <a href="../6.1.1/introduction.html">6.1.1</a>
         </li>
       </ul>
     </li>
@@ -260,19 +260,19 @@
           <a href="../../esmf-developer-guide/index.html">master</a>
         </li>
         <li class="version">
+          <a href="../../esmf-developer-guide/2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
           <a href="../../esmf-developer-guide/2.14.3/index.html">2.14.3</a>
         </li>
         <li class="version">
           <a href="../../esmf-developer-guide/2.14.2/index.html">2.14.2</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.13.0/index.html">2.13.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.12.0/index.html">2.12.0</a>
-        </li>
-        <li class="version">
-          <a href="../../esmf-developer-guide/2.11.1/index.html">2.11.1</a>
         </li>
       </ul>
     </li>
@@ -283,13 +283,7 @@
           <a href="../../js-sdk-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-guide/2.8.1/index.html">2.8.1</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.8.0/index.html">2.8.0</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.7.0/index.html">2.7.0</a>
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
         </li>
       </ul>
     </li>
@@ -364,8 +358,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="known-limitations.html">master</a>
-    <a class="version" href="../6.0.0/support/known-limitations.html">6.0.0</a>
-    <a class="version" href="../5.6.1/support/known-limitations.html">5.6.1</a>
+    <a class="version" href="../6.1.2/support/known-limitations.html">6.1.2</a>
+    <a class="version" href="../6.1.1/support/known-limitations.html">6.1.1</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/support/known-limitations.adoc">Contribute to this page</a></div>
@@ -390,7 +384,7 @@
 <h2 id="current-known-limitations"><a class="anchor" href="#current-known-limitations"></a>Current limitations related to the SAMM Aspect Meta Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This sections lists features that are supported in Aspect Models by the SAMM Aspect Meta Model but not fully or only partially available within the Aspect Model Editor.</p>
+<p>This section lists features that are supported in Aspect Models by the SAMM Aspect Meta Model but not fully or only partially available within the Aspect Model Editor.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -424,7 +418,7 @@
 <h2 id="current-known-limitations-ux"><a class="anchor" href="#current-known-limitations-ux"></a>Current limitations related to usability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This sections lists features that can be achieved within the Aspect Model Editor, but with a substantial limitation in the usability.</p>
+<p>This section lists features that can be achieved within the Aspect Model Editor, but with a substantial limitation in the usability.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -452,9 +446,45 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="current-known-limitations-macos"><a class="anchor" href="#current-known-limitations-macos"></a>Current limitations on macOS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section lists limitations that are specific to running the Aspect Model Editor on macOS.</p>
+</div>
+<div class="sect2">
+<h3 id="macos-notarization"><a class="anchor" href="#macos-notarization"></a>No notarization or code signing</h3>
+<div class="paragraph">
+<p>The Electron application is currently not notarized or signed with an Apple Developer certificate. As a result, macOS Gatekeeper blocks the app from starting and marks it as quarantined after downloading.</p>
+</div>
+<div class="paragraph">
+<p>To run the application, use one of the following workarounds:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Remove the quarantine attribute via Terminal:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">xattr -r -d com.apple.quarantine /path/to/Aspect-Model-Editor.app</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Allow the app manually via <strong>System Settings</strong> &#8594; <strong>Privacy &amp; Security</strong>: after the first blocked launch attempt, scroll down to the security section and click <strong>Open Anyway</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For installation steps on macOS, see <a href="../installation.html#install-mac" class="xref page">Install the Aspect Model Editor on Mac</a>.
+If you encounter a JavaScript error on startup instead, see <a href="known-issues.html#javascript-mac-ame3.0.0" class="xref page">macOS: JavaScript error occurred in the main process</a>.</p>
+</div>
 <style>
   .imageblock {flex-direction: row !important;}
 </style>
+</div>
 </div>
 </div>
 </article>
