@@ -33,7 +33,7 @@ image::ESMF-KeyVisual-book.png[esmf-intro-book]
 ====
 
 
-[.sectionBlue]
+[.sectionGrey]
 ====
 [.sectionTitle]
 Start modeling
@@ -83,20 +83,20 @@ Create your Aspect Models graphically and learn SAMM on the go. Generate downstr
 [.innerTile]
 ======
 
-image::ESMF-SAMM-CLI-vector.svg[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc, window=_blank,opts=nofollow]
+image::ESMF-VSCode-icon-vector.svg[xref=vs-code-plugin:ROOT:index.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
-xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM Command Line Interface, window=_blank,opts=nofollow]
+xref:vs-code-plugin:ROOT:index.adoc[Semantic Models for VS Code, window=_blank,opts=nofollow]
 ======
 
 [.text]
-Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
+Create your Aspect Models in Visual Studio Code. Implementation of well-known IDE features speeds up development.
 
 --
 
 ====
 
-[.sectionPurple]
+[.sectionBlue]
 ====
 [.sectionTitle]
 Start developing
@@ -127,6 +127,24 @@ Load and validate Aspect Models programmatically and generate code to create asp
 [.innerTile]
 ======
 
+image::ESMF-SAMM-CLI-vector.svg[xref=esmf-developer-guide:tooling-guide:samm-cli.adoc, window=_blank,opts=nofollow]
+
+[.title][.link]
+xref:esmf-developer-guide:tooling-guide:samm-cli.adoc[SAMM Command Line Interface, window=_blank,opts=nofollow]
+======
+
+[.text]
+Use common features command-line-based: validate Aspect Models, generate artifacts, such as OpenAPI specs.
+
+--
+
+[.tile]
+[.icon-cli]
+--
+
+[.innerTile]
+======
+
 image::ESMF-Py-icon-vector.svg[xref=python-sdk-guide:ROOT:index.adoc, window=_blank,opts=nofollow]
 
 [.title][.link]
@@ -136,6 +154,13 @@ xref:python-sdk-guide:ROOT:index.adoc[Python SDK, window=_blank,opts=nofollow]
 Load Aspect Models programmatically and generate code for software solutions or analytics use cases.
 
 --
+
+====
+
+[.sectionPurple]
+====
+[.sectionTitle]
+Visualize Aspects in UIs
 
 [.tile]
 [.icon-cli]
