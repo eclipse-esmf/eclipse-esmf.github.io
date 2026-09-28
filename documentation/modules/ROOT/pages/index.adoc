@@ -90,7 +90,7 @@ xref:vs-code-plugin:ROOT:index.adoc[Semantic Models for VS Code, window=_blank,o
 ======
 
 [.text]
-Create your Aspect Models in Visual Studio Code. Implementation of well-known IDE features speeds up development.
+Create your Aspect Models in Visual Studio Code. Integration of familiar IDE features speed up development.
 
 --
 
