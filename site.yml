@@ -33,7 +33,7 @@ content:
        start_path: documentation/python-sdk-guide
      - url: https://github.com/eclipse-esmf/esmf-vs-code-plugin
        branches: HEAD
-       tags: ["1.0.0"]
+       tags: ["v1.0.0", "v1.0.1"]
        start_path: documentation/vs-code-plugin
 ui:
   bundle:
