@@ -17,7 +17,7 @@ content:
        start_path: documentation/developer-guide
      - url: https://github.com/eclipse-esmf/esmf-aspect-model-editor
        branches: HEAD
-       tags: ["v6.1.1", "v6.1.2"]
+       tags: ["v6.1.2", "v6.2.0"]
        start_path: documentation/ame-guide
      - url: https://github.com/eclipse-esmf/esmf-sdk-js-schematics
        branches: HEAD
