@@ -130,10 +130,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
+          <a href="../../ame-guide/6.2.0/introduction.html">6.2.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.1.1/introduction.html">6.1.1</a>
+          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
         </li>
       </ul>
     </li>
@@ -2017,6 +2017,27 @@ the goal is <code>generate-resources</code>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>addTypeAttribute</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adds a <code>@type</code> attribute for inherited Entities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currentTimestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates the current timestamp dynamically instead of using the fixed default timestamp (Unix epoch <code>1970-01-01T00:00:00.000Z</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>randomTimestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates random date/time values between 1970 (inclusive) and 2100 (exclusive). Takes precedence over <code>currentTimestamp</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ignoreExampleValue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignores example values defined in the Aspect Model and generates random values for all Properties.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-times-circle fa-2x"></i></span></p></td>

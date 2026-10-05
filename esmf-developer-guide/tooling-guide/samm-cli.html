@@ -130,10 +130,10 @@
           <a href="../../ame-guide/introduction.html">master</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
+          <a href="../../ame-guide/6.2.0/introduction.html">6.2.0</a>
         </li>
         <li class="version">
-          <a href="../../ame-guide/6.1.1/introduction.html">6.1.1</a>
+          <a href="../../ame-guide/6.1.2/introduction.html">6.1.2</a>
         </li>
       </ul>
     </li>
@@ -735,7 +735,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
@@ -749,6 +749,23 @@ of model resolution</a> for more information.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--add-type-attribute</em>, <em>-ta</em> : Add <code>@type</code> attribute for inherited Entities</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--current-timestamp</em> : Generate current timestamp dynamically instead of using the fixed default timestamp (Unix epoch <code>1970-01-01T00:00:00.000Z</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json --current-timestamp</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--random-timestamp</em> : Generate random date/time values between 1970 (inclusive) and 2100
+                                       (exclusive), in UTC. By default, date/time values use <code>1970-01-01T00:00:00.000Z</code>.
+                                       Applies to <code>date</code>, <code>time</code>, <code>dateTime</code>, <code>dateTimeStamp</code>, <code>gYear</code>, <code>gMonth</code>, <code>gDay</code>,
+                                       <code>gYearMonth</code>, and <code>gMonthDay</code>. Model example values take precedence unless
+                                       <code>--ignore-example-value</code> is also set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json --random-timestamp</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--ignore-example-value</em> : Ignore example values defined in the Aspect Model and generate
+                                       random values for all Properties</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1079,7 +1096,23 @@ access token</a> documentation; the token must have at least "Contents" reposito
 When using an Aspect Model URN as input to a command (such as
 <code>urn:samm:org.eclipse.esmf.example:1.0.0#Aspect</code>), you must also provide at least one of the
 switches mentioned above (<code>--models-root</code>, <code>--custom-resolver</code> or <code>--github</code>), otherwise samm-cli
-will not know where to find the corresonding file(s).
+will not know where to find the corresponding file(s).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>--models-root</code>, <code>--custom-resolver</code> and <code>--github</code> switches (and their related options)
+are options of the respective subcommand, not of the top-level <code>samm</code> command. They must therefore
+be placed after the command and subcommand name, e.g., <code>samm aspect AspectModel.ttl validate
+--custom-resolver myresolver.sh</code>, not before it (<code>samm --custom-resolver myresolver.sh aspect
+AspectModel.ttl validate</code> will not work).
 </td>
 </tr>
 </table>

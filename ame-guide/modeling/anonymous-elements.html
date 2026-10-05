@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Anonymous Elements :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/modeling/anonymous-elements.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ame-guide" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../introduction.html">Aspect Model Editor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../system-requirements.html">System requirements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation.html">Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../getting-started/get-started.html">Getting started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/ui-overview.html">UI overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/settings.html">Settings</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/load-and-save-models.html">Load and save models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/edit-models.html">Edit models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/validation-and-notifications.html">Validation and notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="modeling.html">Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="start-new-models.html">Create a new model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="working-with-multiple-windows.html">Multiple Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="edit-elements.html">Edit elements</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="abstract-prop.html">Abstract Property</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="property.html">Property</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="characteristic.html">Characteristic</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="abstract-entity.html">Abstract Entity</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="entity.html">Entity</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="unit.html">Unit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="constraint.html">Constraint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="trait.html">Trait</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="operation.html">Operation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event.html">Event</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="value.html">Value</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="anonymous-elements.html">Anonymous Elements</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="connect-elements.html">Connect elements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="shared-models.html">Shared models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migration-of-models.html">Migration of models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="model-versions.html">Aspect Model versions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../namespace/namespaces-references.html">Namespaces and references</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/workspace.html">Workspace directory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/import-package.html">Import package</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/export-package.html">Export package</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/use-references.html">Use references</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-openapi-doc.html">Generate OpenAPI specification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-asyncapi-doc.html">Generate AsyncAPI specification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../support/support.html">Support</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/known-issues.html">Known issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/known-limitations.html">Known limitations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes.html">Release notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Aspect Model Editor</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../6.2.0/introduction.html">6.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../6.1.2/introduction.html">6.1.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.14.3/index.html">2.14.3</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.14.2/index.html">2.14.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../introduction.html">Aspect Model Editor</a></li>
+    <li><a href="modeling.html">Modeling</a></li>
+    <li><a href="edit-elements.html">Edit elements</a></li>
+    <li><a href="anonymous-elements.html">Anonymous Elements</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version is-current" href="anonymous-elements.html">master</a>
+    <a class="version" href="../6.2.0/modeling/anonymous-elements.html">6.2.0</a>
+    <a class="version is-missing" href="../6.1.2/introduction.html">6.1.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/modeling/anonymous-elements.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Anonymous Elements</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aspect Models support defining certain model elements as <strong>anonymous elements</strong> (corresponding to <strong>Blank Nodes</strong> in RDF/Turtle).
+Instead of creating a standalone, named element with a unique URN within the namespace, an anonymous element is defined directly inline as an attribute or child of its parent element.</p>
+</div>
+<div class="paragraph">
+<p>For more background on anonymous concepts in the SAMM metamodel, see <a href="https://eclipse-esmf.github.io/samm-specification/2.2.0/meta-model-elements.html" target="_blank" rel="nofollow noopener">Meta Model Elements (SAMM 2.2.0)</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-anonymous-element-types"><a class="anchor" href="#supported-anonymous-element-types"></a>Supported Anonymous Element Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the Aspect Model Editor, the following elements can be configured as anonymous:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Characteristics</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Standard <code>Characteristic</code></p>
+</li>
+<li>
+<p>Collection Characteristics: <code>List</code>, <code>Set</code>, <code>SortedSet</code></p>
+</li>
+<li>
+<p>Quantities and Measurements: <code>Quantifiable</code>, <code>Measurement</code>, <code>Duration</code></p>
+</li>
+<li>
+<p>Categorical / Value types: <code>State</code>, <code>Enumeration</code>, <code>StructuredValue</code></p>
+</li>
+<li>
+<p>Logical &amp; Complex: <code>Either</code>, <code>Trait</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Constraints</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EncodingConstraint</code></p>
+</li>
+<li>
+<p><code>RegularExpressionConstraint</code></p>
+</li>
+<li>
+<p><code>RangeConstraint</code></p>
+</li>
+<li>
+<p><code>LengthConstraint</code></p>
+</li>
+<li>
+<p><code>LocaleConstraint</code></p>
+</li>
+<li>
+<p><code>LanguageConstraint</code></p>
+</li>
+<li>
+<p><code>FixedValueConstraint</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>SAMM Values</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Example values attached to Properties (<code>samm:exampleValue</code>)</p>
+</li>
+<li>
+<p>Values defined in Enumerations (<code>samm:values</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-and-configuring-anonymous-elements"><a class="anchor" href="#creating-and-configuring-anonymous-elements"></a>Creating and Configuring Anonymous Elements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make an element anonymous:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Edit dialog of the respective Characteristic, Constraint, or Value by double-clicking it on the canvas or selecting it and clicking the Edit icon in the toolbar.</p>
+</li>
+<li>
+<p>In the Edit dialog, switch the <strong>Anonymous</strong> toggle to active (enabled).</p>
+</li>
+<li>
+<p>Notice that the <strong>Name</strong> input field is disabled or hidden, as anonymous elements do not require a user-defined name.</p>
+</li>
+<li>
+<p>Configure all other required attributes (e.g. data type, unit, regular expression, min/max values).</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> (or press <strong>Control + Enter</strong>).</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="../_images/anonymous-toggle-edit-dialog.png"><img src="../_images/anonymous-toggle-edit-dialog.png" alt="Edit dialog showing Anonymous toggle enabled" width="50%"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="representation-on-the-graph-canvas"><a class="anchor" href="#representation-on-the-graph-canvas"></a>Representation on the Graph Canvas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On the graph canvas, anonymous elements are visually distinguished from named elements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Instead of a custom element name, the canvas displays the type enclosed in square brackets, e.g. <code>[Characteristic]</code>, <code>[RangeConstraint]</code>, <code>[Measurement]</code>, or <code>[Value]</code>.</p>
+</li>
+<li>
+<p>When connected to parent elements (e.g., a Property connected to an anonymous Characteristic), the relationship line is drawn directly to the anonymous node.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="../_images/anonymous-elements-canvas.png"><img src="../_images/anonymous-elements-canvas.png" alt="Anonymous elements represented on the graph canvas" width="50%"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deleting-anonymous-elements"><a class="anchor" href="#deleting-anonymous-elements"></a>Deleting Anonymous Elements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The editor implements special safety rules when deleting anonymous elements or their parent elements:</p>
+</div>
+<div class="sect2">
+<h3 id="single-parent-relationship"><a class="anchor" href="#single-parent-relationship"></a>Single-Parent Relationship</h3>
+<div class="paragraph">
+<p>If an anonymous element is only referenced by a single parent element (e.g., a single Property referencing an anonymous Characteristic):
+* When the parent element is deleted, the editor prompts the user with a confirmation dialog:
+<strong> </strong>Delete All<strong>: Deletes both the parent and the anonymous child element.
+</strong> <strong>Keep as Named</strong>: Converts the anonymous element into a regular named element and keeps it in the Aspect Model.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="../_images/anonymous-element-delete-dialog.png"><img src="../_images/anonymous-element-delete-dialog.png" alt="Delete confirmation dialog for anonymous elements" width="50%"></a>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multiple-parent-relationship"><a class="anchor" href="#multiple-parent-relationship"></a>Multiple-Parent Relationship</h3>
+<div class="paragraph">
+<p>If an anonymous element is shared and connected to multiple parent elements:
+* Deleting one parent element will remove the connection from that parent, but the anonymous element itself is <strong>preserved</strong> so that remaining references are not broken.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rdf-turtle-serialization"><a class="anchor" href="#rdf-turtle-serialization"></a>RDF / Turtle Serialization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When exporting or saving the Aspect Model as a Turtle (<code>.ttl</code>) file:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Named elements are exported with their full URN subject, e.g.:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>:MyCharacteristic a samm:Characteristic ;
+    samm:dataType xsd:string .</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Anonymous elements are serialized directly as inline Blank Nodes <code>[&#8230;&#8203;]</code>, e.g.:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>:myProperty a samm:Property ;
+    samm:characteristic [
+        a samm:Characteristic ;
+        samm:dataType xsd:string
+    ] .</pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
