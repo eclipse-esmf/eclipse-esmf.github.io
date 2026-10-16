@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aspect Models with missing references :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/namespace/missing-references.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../_/img/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="../../_/img/favicon.ico">
+<link rel="manifest" href="../../_/img/site.webmanifest">
+<link rel="mask-icon" href="../../_/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://eclipse-esmf.github.io">
+        <div class="logo-headline-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <g id="Ebene_2" data-name="Ebene 2">
+              <g>
+                <g>
+                  <path class="cls-1" d="M58,742.5h225a326.08,326.08,0,0,1-94.11-184.77H4A505,505,0,0,0,58,742.5Z"/>
+                  <path class="cls-1" d="M1024,557.73H839.18A326.08,326.08,0,0,1,745.07,742.5H970A505,505,0,0,0,1024,557.73Z"/>
+                  <path class="cls-1" d="M121.73,838a513.64,513.64,0,0,0,784.54,0Z"/>
+                  <path class="cls-1" d="M188.82,462.27C212.1,304.36,349,182.73,514,182.73S815.9,304.36,839.18,462.27H1024C999.83,203,780.74,0,514,0S28.17,203,4,462.27Z"/>
+                </g>
+                <ellipse class="cls-1" cx="514" cy="510" rx="232.84" ry="231.82"/>
+              </g>
+            </g>
+          </svg>
+          <span class="docu-title">
+            Eclipse Semantic Modeling Framework (ESMF)
+          </span>
+        </div>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ame-guide" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../introduction.html">Aspect Model Editor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../system-requirements.html">System requirements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation.html">Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../getting-started/get-started.html">Getting started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/ui-overview.html">UI overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/settings.html">Settings</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/load-and-save-models.html">Load and save models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/edit-models.html">Edit models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/text-view.html">Aspect Model text view</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/validation-and-notifications.html">Validation and notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../modeling/modeling.html">Modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/start-new-models.html">Create a new model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/working-with-multiple-windows.html">Multiple Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../modeling/edit-elements.html">Edit elements</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/abstract-prop.html">Abstract Property</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/property.html">Property</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/characteristic.html">Characteristic</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/abstract-entity.html">Abstract Entity</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/entity.html">Entity</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/unit.html">Unit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/constraint.html">Constraint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/trait.html">Trait</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/operation.html">Operation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/event.html">Event</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/value.html">Value</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../modeling/anonymous-elements.html">Anonymous Elements</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/shared-models.html">Element libraries (models without an Aspect)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../modeling/model-versions.html">Aspect Model versions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="namespaces-references.html">Namespaces and references</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workspace.html">Workspace directory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="import-package.html">Import package</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="export-package.html">Export package</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-references.html">Use references</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="missing-references.html">Missing references</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../generate/generate-other-files.html">Generate other artifacts out of your Aspect Model</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-html.html">Generate HTML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-openapi-doc.html">Generate OpenAPI specification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-asyncapi-doc.html">Generate AsyncAPI specification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-aasx.html">Generate AASX/XML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../generate/generate-json.html">Generate JSON</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../support/support.html">Support</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/known-issues.html">Known issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/known-limitations.html">Known limitations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes.html">Release notes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Aspect Model Editor</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../introduction.html">Aspect Model Editor</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../6.2.0/introduction.html">6.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../6.1.2/introduction.html">6.1.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-documentation/index.html">ESMF Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../esmf-developer-guide/index.html">Java SDK and SAMM CLI</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../esmf-developer-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.16.0/index.html">2.16.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.1/index.html">2.15.1</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.15.0/index.html">2.15.0</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.14.3/index.html">2.14.3</a>
+        </li>
+        <li class="version">
+          <a href="../../esmf-developer-guide/2.14.2/index.html">2.14.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../js-sdk-aml-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../python-sdk-guide/index.html">Python SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../python-sdk-guide/index.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.1/index.html">2.2.1</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.5/index.html">2.1.5</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.4/index.html">2.1.4</a>
+        </li>
+        <li class="version">
+          <a href="../../python-sdk-guide/2.1.3/index.html">2.1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../samm-specification/snapshot/index.html">Semantic Aspect Meta Model</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../samm-specification/snapshot/index.html">snapshot</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.2.0/index.html">2.2.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.1.0/index.html">2.1.0</a>
+        </li>
+        <li class="version">
+          <a href="../../samm-specification/2.0.0/index.html">2.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../esmf-documentation/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../introduction.html">Aspect Model Editor</a></li>
+    <li><a href="namespaces-references.html">Namespaces and references</a></li>
+    <li><a href="missing-references.html">Missing references</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version is-current" href="missing-references.html">master</a>
+    <a class="version is-missing" href="../6.2.0/introduction.html">6.2.0</a>
+    <a class="version is-missing" href="../6.1.2/introduction.html">6.1.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/edit/main/documentation/ame-guide/modules/ROOT/pages/namespace/missing-references.adoc">Contribute to this page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Aspect Models with missing references</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Aspect Model can use elements of other Aspect Models (see <a href="use-references.html" class="xref page">Use references</a>).
+If such a referenced element is not defined in any file of the workspace, the reference is <strong>missing</strong>.
+This happens, for example, if</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the referenced file was deleted, renamed or moved,</p>
+</li>
+<li>
+<p>the referenced namespace was not imported into the workspace yet, or</p>
+</li>
+<li>
+<p>the model was written by hand (e.g. in VS Code) and refers to an element that does not exist.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Aspect Model Editor still opens such Aspect Models, so that you can see and repair them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-what-is-loaded"><a class="anchor" href="#missing-references-what-is-loaded"></a>What the Aspect Model Editor loads</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a model is opened, only the elements it references <strong>directly</strong> are loaded from the workspace, together with the files these elements depend on.
+The complete, recursive check of all references is done by the validation in the backend.</p>
+</div>
+<div class="paragraph">
+<p>The referenced elements are shown as external elements; they are not copied into the opened model.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-open"><a class="anchor" href="#missing-references-open"></a>Open an Aspect Model with missing references</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can open the model from every entry point: from the Workspace sidebar, with <strong>Load File&#8230;&#8203;</strong>, with <strong>Copy Paste</strong> or when the desktop application restores the last session.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A warning <strong>Referenced elements not found</strong> lists the missing elements that the opened model references directly:</p>
+<div class="listingblock">
+<div class="content">
+<pre>The following referenced elements are not defined in the workspace: &lt;URNs&gt;. They are shown as placeholders.
+Add the missing files to the workspace or remove the references to save the model.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Each missing element is shown as a <strong>placeholder</strong> in the graph: a shape with a red, dashed border and a special icon.
+The reference stays as it is; the placeholder is never written into the opened file.</p>
+</li>
+<li>
+<p>A placeholder cannot be edited. A double-click shows <strong>Element not found</strong> instead of opening another window.</p>
+</li>
+<li>
+<p>Missing elements deeper in the reference chain (used by files the opened model references) are not drawn, because referenced elements are shown without their own references. They do not trigger the warning.</p>
+</li>
+<li>
+<p>Other errors, e.g. syntax errors, still prevent the model from being opened.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-text-view"><a class="anchor" href="#missing-references-text-view"></a>Missing references in the text view</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <a href="../getting-started/text-view.html#text-view-problems" class="xref page">text view</a>, every reference to a missing element is underlined in red and counted in the problem counter.
+Missing elements of referenced files are listed in the tooltip of the counter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-workspace"><a class="anchor" href="#missing-references-workspace"></a>Missing references in the Workspace sidebar</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A file that references a namespace which is not in the workspace is marked with an orange <strong>warning</strong> icon instead of the red error marker.
+The tooltip names the missing namespaces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>References elements of missing namespaces: &lt;namespaces&gt;. They are shown as placeholders.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The file can be opened as usual.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The check in the Workspace sidebar is done per namespace. A missing element of a namespace that exists in the workspace (for example in the namespace of the file itself) is not marked in the sidebar. It is still shown as placeholder after opening the model.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-save"><a class="anchor" href="#missing-references-save"></a>Save an Aspect Model with missing references</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Aspect Model with missing references <strong>cannot be saved</strong> to the workspace, because the result would not be a valid Aspect Model.
+When you save, the error <strong>Referenced elements not found</strong> lists the missing elements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>The model could not be saved. The following referenced elements are not defined in the workspace: &lt;URNs&gt;.
+Add the missing files to the workspace or remove the references.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This list comes from the complete check of the backend. It can therefore also contain missing elements of referenced files, which you cannot remove in the opened model; repair them in the referenced file or add the missing file.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If <strong>Auto-save</strong> is enabled in the <a href="../getting-started/settings.html" class="xref page">settings</a>, the error is shown again with every auto save until the references are repaired.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-repair"><a class="anchor" href="#missing-references-repair"></a>Repair missing references</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Choose one of the following options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add the missing file to the workspace, e.g. by <a href="import-package.html" class="xref page">importing a package</a> or by copying the file into the <a href="workspace.html" class="xref page">workspace directory</a>. Then refresh the workspace and open the model again.</p>
+</li>
+<li>
+<p>Remove the reference in the opened model: delete the connection to the placeholder or replace it with an existing element, and save the model.</p>
+</li>
+<li>
+<p>Fix the reference in the TTL file with a text editor, e.g. if a namespace or element was renamed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="missing-references-summary"><a class="anchor" href="#missing-references-summary"></a>Summary</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Situation</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model references a missing element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model opens, warning lists the directly missing elements, placeholders in the graph</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File in the Workspace sidebar references a missing namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orange warning icon with tooltip, file can be opened</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text view</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">References to missing elements are underlined in red, the counter includes missing elements of referenced files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Double-click on a placeholder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message <strong>Element not found</strong>, nothing is opened</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saving a model with missing references</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not possible, error lists all missing elements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syntax or other validation errors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model is not opened, the error is shown</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+      <p>This page was built using the Antora default UI.</p>
+      <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  </div>
+</footer>
+
+
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.min.js"></script>
+<script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

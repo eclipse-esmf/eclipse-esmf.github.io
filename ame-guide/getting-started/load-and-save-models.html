@@ -96,10 +96,22 @@
     <a class="nav-link" href="load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -414,10 +443,11 @@ In case the loaded Aspect Model has a lower SAMM version than the one that the A
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Empty model</strong>: to start from scratch with an empty editor canvas.</p>
+<p><strong>Empty Model</strong>: to start from scratch with an empty editor canvas.
+This option is only available while the current model contains elements.</p>
 </li>
 <li>
-<p><strong>Load File</strong>: to open a file containing TTL code.</p>
+<p><strong>Load File&#8230;&#8203;</strong> (<code>Cmd/Ctrl+O</code>): to open a file containing TTL code.</p>
 </li>
 <li>
 <p><strong>Copy Paste</strong>: to copy and paste TTL code of an existing model into the text area.</p>
@@ -428,12 +458,18 @@ In case the loaded Aspect Model has a lower SAMM version than the one that the A
 </div>
 </li>
 <li>
-<p><strong>SimpleExample.ttl</strong> or <strong>Movement.ttl</strong>: to start from the Simple Aspect or the Movement example.</p>
+<p><strong>Examples</strong> &gt; <strong>SimpleAspect.ttl</strong> or <strong>Movement.ttl</strong>: to start from the Simple Aspect or the Movement example.</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Each model is opened in its own <a href="ui-overview.html#editor-tabs" class="xref page">editor tab</a>, so you can work on several models in parallel.
+If the active tab contains an untouched empty model, it is replaced by the loaded model.
+Opening a model that is already open switches to its tab.
+To open a new tab with an empty model, click the <strong>+</strong> button in the tab bar.</p>
 </div>
 </div>
 </div>
@@ -459,12 +495,31 @@ In case the loaded Aspect Model has a lower SAMM version than the one that the A
 <p><strong>Export Package</strong>: to export one of the existing namespaces.</p>
 </li>
 <li>
-<p><strong>Save to Workspace</strong>: to save the current namespace to the Workspace.</p>
+<p><strong>Save to Workspace</strong> (<code>Cmd/Ctrl+S</code>): to save the current model to the Workspace.</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Unsaved changes are indicated by a dot in the tab of the model.
+When you close a tab with unsaved changes, you are asked whether you want to save the model first.</p>
+</div>
+<div class="paragraph">
+<p>When saving, the header comment of the file and, depending on the settings, the order of the elements are kept. See <a href="preserve-ttl-structure.html" class="xref page">Keep the structure of TTL files</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A model whose referenced elements are missing in the workspace can be opened, but not saved. See <a href="../namespace/missing-references.html" class="xref page">Aspect Models with missing references</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>

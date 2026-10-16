@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Shared models :: Eclipse Semantic Modeling Framework (ESMF)</title>
+    <title>Element libraries (models without an Aspect) :: Eclipse Semantic Modeling Framework (ESMF)</title>
     <link rel="canonical" href="https://eclipse-esmf.github.io/ame-guide/modeling/shared-models.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -96,10 +96,22 @@
     <a class="nav-link" href="../getting-started/load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="shared-models.html">Shared models</a>
+    <a class="nav-link" href="shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -357,7 +386,7 @@
   <ul>
     <li><a href="../introduction.html">Aspect Model Editor</a></li>
     <li><a href="modeling.html">Modeling</a></li>
-    <li><a href="shared-models.html">Shared models</a></li>
+    <li><a href="shared-models.html">Element libraries (models without an Aspect)</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -375,12 +404,25 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Shared models</h1>
+<h1 class="page">Element libraries (models without an Aspect)</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The concept of "shared models" has been introduced in the Aspect Model Editor
-to support you defining model parts, which can be reused in multiple other models.</p>
+<p>An "element library" is an Aspect Model file that does not contain an Aspect element.
+It lets you define model parts (for example Properties, Characteristics, Entities or Units),
+which can be reused in multiple other models.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Element libraries were previously called "shared models" in the Aspect Model Editor.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -389,21 +431,21 @@ to support you defining model parts, which can be reused in multiple other model
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-In case you want to extract a part of an Aspect Model graph into a "shared model" please make sure to delete the Aspect element from the model. Creating "shared models" proves advantageous, particularly when developing broadly defined elements for use in various Aspect Models.
+In case you want to extract a part of an Aspect Model graph into an element library, please make sure to delete the Aspect element from the model. Creating element libraries proves advantageous, particularly when developing broadly defined elements for use in various Aspect Models.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>After deleting the Aspect element, you can choose a new file name to describe the resulting "shared model".
+<p>After deleting the Aspect element, you can choose a new file name to describe the resulting element library.
 This file can then be saved in the workspace like any other ttl file.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../_images/shared-model-file-name.png" alt="Save changes in Edit dialog" width="40%"></span></p>
+<p><span class="image"><img src="../_images/shared-model-file-name.png" alt="Declare the name of the element library" width="40%"></span></p>
 </div>
 <div class="paragraph">
 <p>As a result, you create a valid ttl file, which just does not contain the "Aspect" element.
-From all other points of view the lifecycle of such a model is similar with the one of an Aspect Model.</p>
+From all other points of view the lifecycle of such a model is similar to the one of an Aspect Model.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -411,11 +453,11 @@ From all other points of view the lifecycle of such a model is similar with the 
 </div>
 </div>
 <div class="paragraph">
-<p>Such a model can be referenced from multiple other shared models and Aspect Models.
-As soon as you define such a reference the "shared model" it treated like a dependency from the Aspect Model&#8217;s perspective.</p>
+<p>Such a model can be referenced from multiple other element libraries and Aspect Models.
+As soon as you define such a reference, the element library is treated like a dependency from the Aspect Model&#8217;s perspective.</p>
 </div>
 <div class="paragraph">
-<p>When using the "shared model", the process is the same as with references, see <a href="../namespace/use-references.html" class="xref page">Use references</a>.</p>
+<p>When using an element library, the process is the same as with references, see <a href="../namespace/use-references.html" class="xref page">Use references</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -429,7 +471,7 @@ As soon as you define such a reference the "shared model" it treated like a depe
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-In case you need to convert a "shared model" into an Aspect Model, simply add an Aspect element as the first element in the graph.
+In case you need to convert an element library into an Aspect Model, simply add an Aspect element as the first element in the graph.
 </td>
 </tr>
 </table>

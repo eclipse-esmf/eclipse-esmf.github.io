@@ -96,10 +96,22 @@
     <a class="nav-link" href="../getting-started/load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -437,7 +466,10 @@ Namespaces that do not follow this file structure might not work and might break
 <p><strong>Open in new window</strong>: to open the Aspect Model in a new window</p>
 </li>
 <li>
-<p><strong>Open in current</strong>: to open the Aspect Model in the current window</p>
+<p><strong>Open in current tab</strong>: to replace the Aspect Model of the active tab. If the active model has unsaved changes, you are asked first; <strong>Cancel</strong> or kbd:[Esc] keeps it. If the Aspect Model is already open in another tab, that tab is activated instead.</p>
+</li>
+<li>
+<p><strong>Open in new tab</strong>: to open the Aspect Model in an additional tab of the current window</p>
 </li>
 <li>
 <p><strong>Find elements</strong>: to opens the Find elements section</p>
@@ -446,7 +478,7 @@ Namespaces that do not follow this file structure might not work and might break
 <p><strong>Copy file path</strong>: to copy the file path to the clipboard</p>
 </li>
 <li>
-<p><strong>Delete</strong>: to delete the Aspect Model from the workspace</p>
+<p><strong>Delete</strong>: to delete the Aspect Model from the workspace (see <a href="#delete-aspect-model">Delete an Aspect Model</a>)</p>
 </li>
 </ul>
 </div>
@@ -491,10 +523,95 @@ that the change is not instantly visible on the Workspace. In such a case click 
 </div>
 </div>
 <div class="sect1">
-<h2 id="delete-a-namespace"><a class="anchor" href="#delete-a-namespace"></a>Delete a namespace</h2>
+<h2 id="delete-aspect-model"><a class="anchor" href="#delete-aspect-model"></a>Delete an Aspect Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Before an Aspect Model file is deleted, the Aspect Model Editor checks whether any other file of the workspace still uses one of its elements.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If another file references the Aspect Model, the deletion is blocked. A dialog lists the referencing files and the referenced elements. Remove these references first.</p>
+</li>
+<li>
+<p>It does not matter whether the Aspect Model itself uses other files. Only <strong>incoming</strong> references block the deletion.</p>
+</li>
+<li>
+<p>An Aspect Model that is open in a tab or in another Aspect Model Editor window cannot be deleted. Hover over the disabled <strong>Delete</strong> entry to see the reason.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>By deleting the last Aspect Model of a namespace, the folder will be deleted as well.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-namespace"><a class="anchor" href="#delete-namespace"></a>Delete a namespace</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the three-dot menu next to a namespace and select <strong>Delete namespace</strong> to delete all Aspect Models of this namespace version at once.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Aspect Model Editor checks whether Aspect Models of <strong>other</strong> namespaces (or other versions of the same namespace) reference elements of this namespace version. If so, the deletion is blocked and the referencing files are listed.</p>
+</li>
+<li>
+<p>References between the files of the namespace itself do not block the deletion.</p>
+</li>
+<li>
+<p>Files that cannot be read are listed as well and also block the deletion, because their references cannot be checked.</p>
+</li>
+<li>
+<p>If no references are found, a warning shows the number of Aspect Models that will be deleted. The deletion must be confirmed.</p>
+</li>
+<li>
+<p>A namespace cannot be deleted while one of its Aspect Models is open in a tab or in another Aspect Model Editor window. The tooltip of the disabled entry tells you why.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Only <code>.ttl</code> files are deleted. Empty namespace and version folders are removed afterwards.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="clear-workspace"><a class="anchor" href="#clear-workspace"></a>Clear the workspace</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Clear workspace</strong> icon in the header of the Workspace sidebar deletes all Aspect Models of the workspace.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type <code>CLEAR</code> into the confirmation field to enable the <strong>Clear workspace</strong> button.</p>
+</li>
+<li>
+<p>By default a backup (ZIP file) of the workspace is created in the workspace folder first. You can disable this option in the dialog.</p>
+</li>
+<li>
+<p>No reference check is needed, because all Aspect Models are deleted.</p>
+</li>
+<li>
+<p>The action is disabled while an Aspect Model of the workspace is open in any Aspect Model Editor window, or when the workspace is empty. The tooltip of the icon tells you why.</p>
+</li>
+<li>
+<p>Folders of namespaces and versions that are left empty are removed as well.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The check of other windows is only available in the desktop application. In the browser, only the tabs of the current window are checked.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -518,6 +635,14 @@ as it will not be able to load this Aspect Model.</p>
 <div class="content">
 <a class="image" href="../_images/workspace-warning.png"><img src="../_images/workspace-warning.png" alt="Workspace warning" width="85%"></a>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aspect-model-is-marked-with-an-orange-warning-icon"><a class="anchor" href="#aspect-model-is-marked-with-an-orange-warning-icon"></a>Aspect Model is marked with an orange warning icon</h3>
+<div class="paragraph">
+<p>The Aspect Model references elements of a namespace that is not in the workspace.
+Unlike the red error marker, the model can be opened: the missing elements are shown as placeholders.
+See <a href="missing-references.html" class="xref page">Aspect Models with missing references</a>.</p>
 </div>
 </div>
 </div>

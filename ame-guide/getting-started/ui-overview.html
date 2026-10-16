@@ -96,10 +96,22 @@
     <a class="nav-link" href="load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -393,6 +422,12 @@
 <p><a href="#toolbar">2. Toolbar</a></p>
 </div>
 <div class="paragraph">
+<p><a href="#element-search">Element search</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#resize-panels">Resize panels</a></p>
+</div>
+<div class="paragraph">
 <p><a href="#workspace-sidebar">3. Workspace sidebar</a></p>
 </div>
 <div class="paragraph">
@@ -400,6 +435,12 @@
 </div>
 <div class="paragraph">
 <p><a href="#edit-dialog">5. Edit dialog</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#editor-tabs">6. Editor tabs</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#keyboard-shortcuts">7. Keyboard shortcuts</a></p>
 </div>
 </div>
 </div>
@@ -431,7 +472,12 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/add.png" alt="add" width="15%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New&#8230;&#8203;</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create, import, duplicate Aspect Models, or use a template.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens a submenu to start a new model:</p>
+<p class="tableblock">* <strong>Empty Model</strong> (header only),
+* <strong>Load File&#8230;&#8203;</strong> &ndash; open a <code>.ttl</code> file from your file system,
+* <strong>Copy Paste</strong> &ndash; paste the Turtle (RDF) content of a model,
+* <strong>Examples</strong> &ndash; load one of the built-in examples (<code>SimpleAspect.ttl</code>, <code>Movement.ttl</code>).</p>
+<p class="tableblock">Each loaded model is opened in its own <a href="#editor-tabs">editor tab</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/note_add.png" alt="note add" width="15%" height="20%"></span></p></td>
@@ -451,7 +497,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/conntent.png" alt="conntent" width="15%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Copy to Clipboard</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy the current Model&#8217;s information for use elsewhere.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy the Turtle (RDF) serialization of the current Model to the system clipboard.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/save.png" alt="save" width="15%" height="20%"></span></p></td>
@@ -587,6 +633,11 @@
 </tbody>
 </table>
 <div class="paragraph">
+<p>In addition, the Edit menu contains the standard text editing commands (<strong>Undo</strong>, <strong>Redo</strong>, <strong>Cut</strong>, <strong>Copy</strong>, <strong>Paste</strong>, <strong>Select All</strong>).
+These only apply to text input fields (e.g., in the Edit dialog).
+To undo and redo changes of the graph, use the <strong>Undo</strong> and <strong>Redo</strong> buttons of the toolbar or the keyboard shortcuts, see <a href="undo-redo.html" class="xref page">Undo and redo</a>.</p>
+</div>
+<div class="paragraph">
 <p>&#160;</p>
 </div>
 </div>
@@ -656,6 +707,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate OpenAPI specification.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/api.png" alt="api" width="20%" height="20%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AsyncAPI Specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate AsyncAPI specification.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/data_array.png" alt="data array" width="20%" height="20%"></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AASX/XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate AASX/XML.</p></td>
@@ -710,6 +766,15 @@
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="menu-window"><a class="anchor" href="#menu-window"></a>Window Menu</h3>
+<div class="paragraph">
+<p>Contains the standard window commands <strong>Minimize</strong>, <strong>Close Window</strong> and <strong>Toggle Full Screen</strong>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -732,7 +797,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/toolbar-icons/jump.png" alt="jump" width="20%" height="20%"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Edit highligted cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit highlighted cell</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the Edit dialog of the selected element (alternative: double-click an element inside the model).</p></td>
 </tr>
 <tr>
@@ -770,8 +835,80 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zoom out</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zoom out the Aspect Model.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefixes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open the prefix management of the current model, see <a href="#prefixes">Prefixes</a>.</p></td>
+</tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="prefixes"><a class="anchor" href="#prefixes"></a>Prefixes</h3>
+<div class="paragraph">
+<p>A prefix is only a short notation for a namespace (e.g. <code>samm:</code> or <code>:</code>).
+Renaming a prefix changes how IRIs are written in the file, the IRIs themselves stay the same.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Prefixes</strong> dialog lists all prefixes of the current model with their namespace and whether they are <strong>Used</strong> or <strong>Not used</strong>. You can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add prefix</strong>: declares a prefix for a namespace. Declared prefixes are written to the file even if no element uses them yet.</p>
+</li>
+<li>
+<p><strong>Rename prefix</strong>: changes the short notation everywhere in the model.</p>
+</li>
+<li>
+<p><strong>Remove prefix</strong>: only possible for prefixes which are not used by elements of the model.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Prefixes of the model itself and of the SAMM/RDF vocabularies are protected and cannot be changed.</p>
+</div>
+<div class="paragraph">
+<p>When you add an element of another namespace (e.g. by drag and drop from the Workspace sidebar) and the model has no prefix for that namespace yet, the dialog <strong>Prefix for referenced namespace</strong> asks which prefix to use.
+It suggests the prefix of the referenced file; with <strong>Use automatic prefix</strong> the editor chooses one.</p>
+</div>
+<div class="paragraph">
+<p>The dialog is also available in the <a href="text-view.html" class="xref page">text view</a> (<strong>Manage prefixes</strong>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="element-search"><a class="anchor" href="#element-search"></a>Element search</h3>
+<div class="paragraph">
+<p>Use <strong>Search &gt; Elements</strong> (<code>Cmd/Ctrl+F</code>) in the graph view to open the element search field <strong>Search elements&#8230;&#8203;</strong>.
+The search finds elements by their name, <code>preferredName</code> and <code>description</code>, including all languages in the model.
+It also finds words inside camelCase names, ignores accents and umlauts, and shows approximate matches when there is no exact match.</p>
+</div>
+<div class="paragraph">
+<p>Selecting a result opens that element in the <a href="#edit-dialog">Edit dialog</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In the <a href="text-view.html" class="xref page">text view</a>, <code>Cmd/Ctrl+F</code> opens the text search inside the Turtle text instead.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="resize-panels"><a class="anchor" href="#resize-panels"></a>Resize panels</h3>
+<div class="paragraph">
+<p>Several side panels have a vertical resize handle with a <strong>more_vert</strong> icon.
+Drag the handle to change the width, use the left and right arrow keys while the handle is focused, or double-click the handle to reset the width.</p>
+</div>
+<div class="paragraph">
+<p>The widths are remembered on this device for the Workspace sidebar, the Workspace element list, the SAMM elements sidebar and the Edit dialog.
+Panels still keep their minimum and maximum widths and are clamped to the available screen size.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -885,8 +1022,229 @@ Shows the validation results for your Aspect Model. Further, you can find there 
 </ul>
 </div>
 <div class="paragraph">
+<p>At the bottom of the Edit dialog, the lists <strong>Incoming edges</strong> and <strong>Outgoing edges</strong> show all elements that are connected to the edited element.
+Use the buttons of an entry to locate the element in the graph area canvas, open it in the Edit dialog, or &ndash; for elements from another file &ndash; open it in a new tab.
+These lists, as well as the connection-related fields (e.g., the data type of a Characteristic), are updated immediately when you add or remove connections in the graph area canvas while the Edit dialog is open.</p>
+</div>
+<div class="paragraph">
 <p>For more information, see <a href="../modeling/edit-elements.html" class="xref page">Edit elements</a>.</p>
 </div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editor-tabs"><a class="anchor" href="#editor-tabs"></a>6. Editor tabs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Aspect Model Editor can keep several models open at the same time.
+Each opened model is shown as a tab in the tab bar above the graph area canvas.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The tab shows the file name of the model. Hover over a tab to see its namespace and file name.</p>
+</li>
+<li>
+<p>A dot next to the file name indicates that the model has unsaved changes.</p>
+</li>
+<li>
+<p>Click a tab to switch to that model. The open Edit dialog of a tab is restored as well.</p>
+</li>
+<li>
+<p>Click the <strong>+</strong> button to open a new tab with an empty model (<code>new-model.ttl</code>, <code>new-model-2.ttl</code>, &#8230;&#8203;).</p>
+</li>
+<li>
+<p>Click the <strong>x</strong> button of a tab to close it. If the model has unsaved changes, you are asked whether you want to save them first.
+When you close the last tab, a new empty model is opened.</p>
+</li>
+<li>
+<p>Opening a model that is already open (e.g., from the Workspace sidebar) switches to its existing tab instead of opening it twice.</p>
+</li>
+<li>
+<p>Loading a model while an untouched empty model tab is active replaces that empty tab.</p>
+</li>
+<li>
+<p>If there are more tabs than fit into the tab bar, use the arrow buttons or the mouse wheel to scroll through them.</p>
+</li>
+<li>
+<p>Use the switch <strong>Edit</strong> / <strong>Aspect Model</strong> at the right end of the tab bar to change between the graphical editor and the read-only Turtle text of the model, see <a href="text-view.html" class="xref page">Aspect Model text view</a>. The view is remembered per tab.</p>
+</li>
+<li>
+<p>In the desktop app the open tabs and windows can be restored on the next start, see <a href="session-restore.html" class="xref page">Restore the last session</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keyboard-shortcuts"><a class="anchor" href="#keyboard-shortcuts"></a>7. Keyboard shortcuts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On macOS use <strong>Cmd</strong>, on Windows and Linux use <strong>Ctrl</strong>. Shortcuts of menu entries that are currently disabled (e.g. without a loaded model) have no effect.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Shortcut</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+N</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; New&#8230;&#8203; &gt; Empty Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+O</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; New&#8230;&#8203; &gt; Load File&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+T</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; New&#8230;&#8203; &gt; Copy Paste</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; New&#8230;&#8203; &gt; SimpleAspect.ttl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; New&#8230;&#8203; &gt; Movement.ttl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+N</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; New Window</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+O</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; Import Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+P</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; Import Package</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+C</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; Copy to Clipboard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+S</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; Save to Workspace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+E</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; Export Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+X</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File &gt; Export Package</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+,</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Settings (macOS: application menu, Windows/Linux: File menu)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+B</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Toggle Toolbar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+M</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Toggle Minimap</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+A</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Filter Model by &gt; None</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+R</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Filter Model by &gt; Properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+` or `Cmd/Ctrl=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Zoom in</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+-</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Zoom out</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+9</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Zoom to Fit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View &gt; Zoom to 100%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+E</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit &gt; Open selected element</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+Backspace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit &gt; Remove selected element</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit &gt; Collapse/Expand Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit &gt; Format Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+K</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit &gt; Connect selected elements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+V</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate &gt; Current Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate &gt; HTML Documentation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate &gt; OpenAPI Specification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+5</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate &gt; AsyncAPI Specification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate &gt; AASX / XML</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate &gt; Sample JSON Payload</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+8</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate &gt; JSON Schema</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+F</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search &gt; Elements (in the text view: search in the text)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Cmd/Ctrl+Shift+F</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search &gt; Files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Delete</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete the selected element(s) in the graph area canvas</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

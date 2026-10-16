@@ -145,6 +145,20 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
@@ -286,8 +300,12 @@ allows AAS submodels to be described with rich semantics, as it is possible with
 <div class="sectionbody">
 <div class="paragraph">
 <p>In the following section, the mapping rules applied by the generator are explained. The rules apply
-to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2.0.0</a> and
+to <a href="../../samm-specification/snapshot/index.html" class="xref page">SAMM v2.0.0 / v2.1.0 / v2.2.0</a> and
 <a href="https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.0/index.html">AAS Specification Part 1 V3.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>In the table below, bold entries denote SAMM model elements, while the plain entries following them
+are the attributes of the preceding model element.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -305,23 +323,23 @@ to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Aspect</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel with kind=Template</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Asset and AssetAdministrationShell entries are added to the output file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates an aas:Submodel with kind=Template (or kind=Instance if aspect data is supplied). An AssetAdministrationShell referencing the submodel is also created, containing AssetInformation with assetKind=Type (or assetKind=Instance if aspect data is supplied) and the Aspect URN as globalAssetId.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.idShort</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All generated idShorts are sanitized to match the AAS idShort pattern <code>[a-zA-Z][a-zA-Z0-9_-]*[a-zA-Z0-9_]+</code>: leading non-letters and invalid characters are removed, trailing hyphens are stripped, single-character results are suffixed with an underscore and empty results fall back to <code>idShort</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:preferredName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.displayName</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription.displayName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped to displayName and IEC61360 preferredName on the ConceptDescription of the Aspect. (Not mapped to aas:Submodel.displayName).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:description</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.description</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Also mapped to description and IEC61360 definition on the ConceptDescription of the Aspect.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:property</p></td>
@@ -336,57 +354,62 @@ to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Aspect.urn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.semanticId</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Also used as the identifier for the ConceptDescription, the AssetAdministrationShell, and the AssetInformation globalAssetId. The aas:Submodel.id is the Aspect URN with the suffix <code>/submodel</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:see</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Submodel.supplementalSemanticIds, aas:SubmodelElement.supplementalSemanticIds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">samm:see references of Aspects, Properties, Operations, Entities and Characteristics are added as external global references to the supplementalSemanticIds of the corresponding aas:Submodel or aas:SubmodelElement. URNs and HTTP(S) URLs are used as they are, bare IRDIs are converted to <code>urn:irdi:</code> references with <code>#</code> encoded as <code>%23</code>, and local file paths are ignored unless their last segment is an IRDI.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Property</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property, aas:SubmodelElementCollection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The AAS type is derived from the type of the SAMM Characteristic specifying the SAMM property. Depending on the type it is decided what the resulting AAS element will be. In case of an Entity it will result in a SubmodelElementCollection. It will also be a SubmodelElementCollection if the SAMM Characteristic is of a Collection type (see the <a href="https://eclipse-esmf.github.io/samm-specification/2.0.0/characteristics.html">Characteristics taxonomy</a>). In all other cases an aas:Property will be generated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property, aas:SubmodelElementCollection, aas:SubmodelElementList, aas:MultiLanguageProperty, aas:ReferenceElement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The AAS element depends on the SAMM property type: an Entity becomes a SubmodelElementCollection; a Collection type (see <a href="../../samm-specification/snapshot/characteristics.html#collection-characteristic" class="xref page">Characteristics taxonomy</a>) becomes a SubmodelElementList; a MultiLanguageText becomes a MultiLanguageProperty; a Reference becomes a ReferenceElement. In all other cases, an aas:Property is generated. In template mode, SMT/Cardinality qualifiers (ZeroToOne, One, ZeroToMany, OneToMany) are also attached. Abstract Properties and Properties without a Characteristic are excluded from the mapping.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.idShort</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement.idShort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The idShort is derived from the Property&#8217;s payloadName, which falls back to the Property name if no payloadName is defined, and is sanitized as described above. SubmodelElements that are direct children of an aas:SubmodelElementList carry no idShort.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.urn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription.identification.id, aas:Property.semanticId</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription.id, aas:SubmodelElement.semanticId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Always used as the id of the generated ConceptDescription. It is used as semanticId for aas:Property, aas:MultiLanguageProperty and aas:ReferenceElement, and for aas:SubmodelElementList only if the Collection Characteristic is named. For Entity-typed Properties, the semanticId of the aas:SubmodelElementCollection is the Entity URN, and the aas:SubmodelElementList generated for samm-c:Either carries no semanticId.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.preferredName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.displayName</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement.displayName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped to displayName on the SubmodelElement. Also mapped to displayName and IEC61360 preferredName on the ConceptDescription.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Note: Also mapped to aas:DataSpecificationIEC61360.definition of the aas:ConceptDescription of this property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription (IEC61360 definition), aas:SubmodelElement.description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped to aas:DataSpecificationIEC61360.definition of the ConceptDescription. Also mapped to description on complex SubmodelElements (Collection, List, MultiLanguageProperty, ReferenceElement), but omitted on scalar aas:Property.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.exampleValue</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.value</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In templates, exampleValue is used as aas:Property.value and added as an SMT/ExampleValue qualifier of kind TemplateQualifier. When data is provided, the real value is used and no qualifiers are generated.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Characteristic.dataType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.valueType</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped to aas:Property.valueType using a fixed XSD type mapping, where types without explicit mapping default to xsd:string. The dataType of the DataSpecificationIEC61360 in the ConceptDescription is set accordingly, defaulting to STRING. For aas:SubmodelElementList, the typeValueListElement is SubmodelElementCollection in template mode and SubmodelElement when aspect data is supplied; if the element type is an Entity, its URN is used as semanticIdListElement.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Operation</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">in/out parameters are not used in SAMM so the mapping only generates input variables and output variables in AAS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in/out parameters are not used in SAMM so the mapping only generates input variables and output variables in AAS. A ConceptDescription is also created.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#characteristic-characteristic" class="xref page"><strong>samm-c:Characteristic</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics in SAMM define the semantics of a property, which includes there types as well as links to further definitions (standards, dictionaries, etc), a natural language description and name in different languages. Type and description are separated in AAS, which is why there is not a one-to-one mapping of a Characteristic to one element in AAS but rather Characteristics are used in the mapping of Properties, first, to guide the generation process and, second, to capture semantics in ConceptDescriptions of properties with data specification "DataSpecificationIEC61360" of the AAS.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics in SAMM define the meaning and type of a property. In AAS, type and description are separated. Characteristics help create the SubmodelElements and fill the ConceptDescriptions (with DataSpecificationIEC61360).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#collection-characteristic" class="xref page"><strong>samm-c:Collection</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementList, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. However, properties referencing Collections are mapped to SubmodelElementLists. Specific properties of collections are mapped. samm:Set is unique, samm:SortedSet is unique and sorted, samm:List is sorted.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. Properties referencing Collections (including samm-c:List, samm-c:Set, samm-c:SortedSet, and samm-c:TimeSeries) are mapped to SubmodelElementLists with orderRelevant set to false. Uniqueness and sorting constraints are not represented in AAS. When aspect data is supplied and the element type is a scalar, all values are serialized into a single aas:Blob with content type text/plain and comma-separated values.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#quantifiable-characteristic" class="xref page"><strong>samm-c:Quantifiable</strong></a></p></td>
@@ -395,8 +418,8 @@ to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#either-characteristic" class="xref page"><strong>samm-c:Either</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Either. However, the Either characteristic has two distinct entries of which one is to be selected. This concept is not present in AAS. Thus, both entries will be written to a Submodel template, where one has to be ignored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementList, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Either characteristic has two distinct entries of which one is to be selected. When generating templates, both entries are written to a SubmodelElementList. When generating with instance data, only the present side is generated.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#trait-characteristic" class="xref page"><strong>samm-c:Trait</strong></a></p></td>
@@ -409,9 +432,14 @@ to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2
 <td class="tableblock halign-left valign-top"><p class="tableblock">Similar to plain Characteristic.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#reference-characteristic" class="xref page"><strong>samm-c:Reference</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:ReferenceElement, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Properties referencing a Reference characteristic are mapped to an aas:ReferenceElement. Its value is an external global reference built from the property value, or from the exampleValue when a template is generated; if neither is available, no value is set.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#structured-value-characteristic" class="xref page"><strong>samm-c:StructuredValue</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to StructuredValue. However, AAS has no concpet like deconstruction rule. Thus, the deconstruction rule and the sub properties of the deconstruction entity will be ignored and only the Characteristic is mapped.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to StructuredValue. AAS has no concept like deconstruction rule. Thus, the deconstruction rule is ignored and only the Characteristic is mapped.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#enumeration-characteristic" class="xref page"><strong>samm-c:Enumeration</strong></a></p></td>
@@ -424,9 +452,9 @@ to <a href="../../samm-specification/2.0.0/index.html" class="xref page">SAMM v2
 <td class="tableblock halign-left valign-top"><p class="tableblock">Same as Enumeration.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#MultiLanguageText" class="xref page">samm-c:MultiLanguageText</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:MultiLanguageProperty</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">if a MultiLanguageText is used in SAMM it is mapped to the MultiLanguageProperty in AAS.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#multi-language-text-characteristic" class="xref page"><strong>samm-c:MultiLanguageText</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:MultiLanguageProperty, aas:ConceptDescription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Every Property with the data type rdf:langString, as used by MultiLanguageText, is mapped to a MultiLanguageProperty in AAS. Its localized values are taken from the aspect data when it is supplied.</p></td>
 </tr>
 </tbody>
 </table>
@@ -445,10 +473,19 @@ However, there are still limitations:</p>
 <p>Predefined entity mapping (FileResource would be mapped to aas:File)</p>
 </li>
 <li>
-<p>samm-c:Either is mapped to aas:SubmodelElementCollection with two entries for left and right side</p>
+<p>samm-c:Either is mapped to aas:SubmodelElementList with two entries for left and right side</p>
 </li>
 <li>
 <p>Recursive optional properties of SAMM model are not included in output but dropped straight away</p>
+</li>
+<li>
+<p>Abstract Properties and Properties without a Characteristic are skipped during mapping</p>
+</li>
+<li>
+<p>Constraints of samm-c:Trait as well as uniqueness and ordering of collections are not represented in AAS</p>
+</li>
+<li>
+<p>Collections of scalar values are represented as a single aas:Blob when aspect data is supplied</p>
 </li>
 </ul>
 </div>
@@ -578,7 +615,7 @@ generator.generate().map( AspectArtifact::getContent ).forEach( aspect -&gt; {
 </div>
 </div>
 <div class="paragraph">
-<p>To include the translator artifact, use the same same dependencies as shown above in section
+<p>To include the translator artifact, use the same dependencies as shown above in section
 <a href="#translate-aspect-model-to-aas">Translate Aspect Model to AAS</a>.</p>
 </div>
 </div>

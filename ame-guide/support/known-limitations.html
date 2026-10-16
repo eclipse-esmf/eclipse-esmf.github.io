@@ -96,10 +96,22 @@
     <a class="nav-link" href="../getting-started/load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -442,13 +471,33 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Usability</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy &amp; paste, undo &amp; redo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Popular editing features such as copy &amp; paste and undo &amp; redo are not supported. Users want to use familiar keyboard shortcuts for editing their Aspect Models.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy &amp; paste</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy &amp; paste of graph elements is not supported. The <strong>Cut</strong>, <strong>Copy</strong> and <strong>Paste</strong> commands of the Edit menu only apply to text input fields.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usability</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo &amp; redo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo &amp; redo of the graph is limited to the last 25 changes per tab; moving shapes is not undone. See <a href="../getting-started/undo-redo.html#undo-redo-limits" class="xref page">Undo and redo</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Usability</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Aspect Repository and Entity Repository</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This version of the Aspect Model Editor supports only file-based operations. Users also want to share Aspects and Entities for reuse.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">References</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saving models with missing references</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An Aspect Model whose referenced elements are missing in the workspace can be opened, but not saved. See <a href="../namespace/missing-references.html" class="xref page">Aspect Models with missing references</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">References</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Missing elements of existing namespaces in the Workspace sidebar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Workspace sidebar only marks files that reference a missing <strong>namespace</strong>. A missing element of a namespace that exists in the workspace is only detected when the model is opened.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Workspace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open models in other windows (browser)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only the desktop application knows which models are open in other windows. In the browser, deleting files and namespaces and clearing the workspace only consider the tabs of the current window.</p></td>
 </tr>
 </tbody>
 </table>
@@ -463,7 +512,7 @@
 <div class="sect2">
 <h3 id="macos-notarization"><a class="anchor" href="#macos-notarization"></a>No notarization or code signing</h3>
 <div class="paragraph">
-<p>The Electron application is currently not notarized or signed with an Apple Developer certificate. As a result, macOS Gatekeeper blocks the app from starting and marks it as quarantined after downloading.</p>
+<p>The Tauri application is currently not notarized or signed with an Apple Developer certificate. As a result, macOS Gatekeeper blocks the app from starting and marks it as quarantined after downloading.</p>
 </div>
 <div class="paragraph">
 <p>To run the application, use one of the following workarounds:</p>
@@ -474,7 +523,7 @@
 <p>Remove the quarantine attribute via Terminal:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">xattr -r -d com.apple.quarantine /path/to/Aspect-Model-Editor.app</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">xattr -r -d com.apple.quarantine "/Applications/Aspect Model Editor.app"</code></pre>
 </div>
 </div>
 </li>
@@ -485,7 +534,7 @@
 </div>
 <div class="paragraph">
 <p>For installation steps on macOS, see <a href="../installation.html#install-mac" class="xref page">Install the Aspect Model Editor on Mac</a>.
-If you encounter a JavaScript error on startup instead, see <a href="known-issues.html#javascript-mac-ame3.0.0" class="xref page">macOS: JavaScript error occurred in the main process</a>.</p>
+If the application starts but the backend service does not work, see <a href="known-issues.html#macos-app-cannot-be-opened" class="xref page">macOS: Application cannot be opened or backend does not start</a>.</p>
 </div>
 <style>
   .imageblock {flex-direction: row !important;}

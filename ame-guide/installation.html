@@ -96,10 +96,22 @@
     <a class="nav-link" href="getting-started/load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="getting-started/preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="getting-started/session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="getting-started/edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="getting-started/undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="getting-started/navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="getting-started/text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="getting-started/validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="modeling/shared-models.html">Shared models</a>
+    <a class="nav-link" href="modeling/shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="modeling/migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="namespace/use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="namespace/missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -424,21 +453,17 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the executable installation file from the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor</a> releases.</p>
+<p>Download the installer <code>aspect-model-editor-v&lt;VERSION&gt;-win.exe</code> from the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor</a> releases.</p>
 </li>
 <li>
-<p>Double-click the <code>.exe</code> file to run the installer.</p>
+<p>Double-click the <code>.exe</code> file to run the installer.
+No administrator permissions are required, the Aspect Model Editor is installed for the current user only.</p>
 </li>
 <li>
 <p>Click <strong>Next</strong> on the Welcome screen.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/installation-01.png" alt="installation 01" width="100% !important">
-</div>
-</div>
 </li>
 <li>
-<p>Select the preferred installation location, then click <strong>Install</strong>.</p>
+<p>Select the preferred installation location (default: <em>%LOCALAPPDATA%\Aspect Model Editor</em>), then click <strong>Next</strong>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -447,40 +472,41 @@
 </td>
 <td class="content">
 Long paths and paths containing whitespaces may lead to incorrect installation or incorrect behavior of the application.
-Choose a short destination path without whitespaces &ndash; preferably those suggested by the installer by default.
+Choose a short destination path &ndash; preferably the one suggested by the installer by default.
 For further information, see <a href="support/known-issues.html" class="xref page">Known issues</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/installation-02.png" alt="installation 02" width="100% !important">
-</div>
-</div>
+</li>
+<li>
+<p>Confirm the Start Menu folder (default: <em>ESMF</em>) and click <strong>Install</strong>.</p>
 <div class="paragraph">
 <p>→ The installation is executed.
-The progress bar indicates the status of the process.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/installation-03.png" alt="installation 03" width="100% !important">
-</div>
+If the Microsoft Edge WebView2 Runtime is not yet available on your system, the installer downloads and installs it.</p>
 </div>
 </li>
 <li>
-<p>Click <strong>Finish</strong> to close Setup.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/installation-04.png" alt="installation 04" width="100% !important">
-</div>
-</div>
+<p>Click <strong>Finish</strong> to close Setup. Keep <strong>Create desktop shortcut</strong> checked if you want a shortcut on your desktop.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>→ After the installation you will find the Aspect Model Editor in the folder you chose previously.
-In addition to that, you will find a link on your desktop.</p>
+<p>→ After the installation you will find the Aspect Model Editor in the folder you chose previously and in the Start Menu.
+Your workspace for Aspect Models is created at <em>%USERPROFILE%\aspect-model-editor</em>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An installation of an earlier version that was installed with the former installer is removed automatically.
+You may be asked to confirm this with administrator permissions.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="startup-windows"><a class="anchor" href="#startup-windows"></a>Start the Aspect Model Editor on Windows</h3>
@@ -494,6 +520,9 @@ In addition to that, you will find a link on your desktop.</p>
 <ul>
 <li>
 <p>Navigate to the previously chosen installation location of the Aspect Model Editor and double-click the <code>Aspect-Model-Editor.exe</code> file.</p>
+</li>
+<li>
+<p>Open the Start Menu folder <strong>ESMF</strong> and click <strong>Aspect Model Editor</strong>.</p>
 </li>
 <li>
 <p>On Windows, press the <strong>Windows key</strong>, type <code>Aspect</code> to filter for the Aspect Model Editor, and click <strong>Open</strong>.</p>
@@ -517,13 +546,32 @@ In addition to that, you will find a link on your desktop.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Navigate to the released assets section and download the <code>.app</code> file.</p>
+<p>Download the disk image for your Mac from the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor</a> releases:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>aspect-model-editor-v&lt;VERSION&gt;-mac-arm64.dmg</code> for Macs with Apple silicon (M1 or later),</p>
 </li>
 <li>
-<p>Find the downloaded <code>.app</code> file on your computer.</p>
+<p><code>aspect-model-editor-v&lt;VERSION&gt;-mac-x64.dmg</code> for Macs with Intel processor.</p>
+<div class="paragraph">
+<p>To find out which processor your Mac has, open the Apple menu → <strong>About This Mac</strong> and check the entry <strong>Chip</strong> (Apple silicon) or <strong>Processor</strong> (Intel).</p>
+</div>
+<div class="paragraph">
+<p>The releases also contain the app without disk image (<code>aspect-model-editor-v&lt;VERSION&gt;-mac-&lt;arm64|x64&gt;.app.zip</code>). Unpack it and move <strong>Aspect Model Editor</strong> into the <strong>Applications</strong> folder; the following two steps are then not needed.</p>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Drag and drop it into your Applications folder.</p>
+<p>Double-click the downloaded <code>.dmg</code> file to open it.</p>
+</li>
+<li>
+<p>Drag and drop <strong>Aspect Model Editor</strong> into the <strong>Applications</strong> folder shown in the window.</p>
+</li>
+<li>
+<p>Eject the disk image.</p>
 <div class="paragraph">
 <p>In case you are prompted, agree that the sources come from a trustful source.</p>
 </div>
@@ -569,10 +617,21 @@ The Aspect Model Editor is currently not notarized or signed with an Apple Devel
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the Linux asset from the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor</a> releases.</p>
+<p>Download one of the Linux assets from the <a href="https://github.com/eclipse-esmf/esmf-aspect-model-editor/releases" target="_blank" rel="nofollow noopener">Aspect Model Editor</a> releases:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>aspect-model-editor-v&lt;VERSION&gt;-linux-amd64.deb</code> for Debian-based distributions (e.g. Ubuntu),</p>
 </li>
 <li>
-<p>Install the downloaded package locally, or make the <code>AppImage</code> executable, depending on the asset type you downloaded.</p>
+<p><code>aspect-model-editor-v&lt;VERSION&gt;-linux-glibc-v&lt;GLIBC-VERSION&gt;.AppImage</code> as portable application for other distributions.
+The AppImage requires at least the glibc version stated in the file name.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Install the package, e.g. with <code>sudo apt install ./aspect-model-editor-v&lt;VERSION&gt;-linux-amd64.deb</code>, or make the AppImage executable with <code>chmod +x aspect-model-editor-v&lt;VERSION&gt;-linux-glibc-v&lt;GLIBC-VERSION&gt;.AppImage</code>.</p>
 <div class="paragraph">
 <p>In case you are prompted, agree that the sources come from a trustful source.</p>
 </div>
@@ -580,14 +639,14 @@ The Aspect Model Editor is currently not notarized or signed with an Apple Devel
 </ol>
 </div>
 <div class="paragraph">
-<p>→ By default, the workspace is created at <em>/Users/&lt;YOUR-USER-NAME&gt;/aspect-model-editor</em> .</p>
+<p>→ By default, the workspace is created at <em>/home/&lt;YOUR-USER-NAME&gt;/aspect-model-editor</em> .</p>
 </div>
 <div class="sect2">
 <h3 id="startup-linux"><a class="anchor" href="#startup-linux"></a>Start the Aspect Model Editor on Linux</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Start the Aspect Model Editor from your application menu, or run the installed binary/AppImage from a terminal.</p>
+<p>Start the Aspect Model Editor from your application menu, or run the AppImage.</p>
 </li>
 </ul>
 </div>
@@ -633,54 +692,25 @@ In that case, the background validation service is working properly, and you can
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Close any running instance of the Aspect Model Editor.</p>
+<p>Open <strong>Settings</strong> → <strong>Apps</strong> → <strong>Installed apps</strong> (on older Windows versions: <strong>Apps &amp; features</strong>).</p>
 </li>
 <li>
-<p>Navigate to the installation folder of the Aspect Model Editor.</p>
-</li>
-<li>
-<p>Double-click the <code>Uninstall.exe</code> executable.</p>
-</li>
-<li>
-<p>In the Uninstall dialog, click <strong>Next</strong> to continue.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/uninstall-01.png" alt="uninstall 01" width="50% !important">
-</div>
+<p>Search for <strong>Aspect Model Editor</strong>, click <strong>&#8230;&#8203;</strong> (or select the entry) and click <strong>Uninstall</strong>.</p>
+<div class="paragraph">
+<p>Alternatively, run <code>uninstall.exe</code> in the installation folder of the Aspect Model Editor.</p>
 </div>
 </li>
 <li>
-<p>Click <strong>Uninstall</strong> to start the process.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/uninstall-02.png" alt="uninstall 02" width="50% !important">
-</div>
-</div>
-</li>
-<li>
-<p>Click <strong>Finish</strong> to close the uninstaller.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/uninstall-03.png" alt="uninstall 03" width="50% !important">
-</div>
+<p>Confirm the uninstallation. A running instance of the Aspect Model Editor is closed automatically.</p>
+<div class="paragraph">
+<p>Optionally, check <strong>Delete the application data</strong> to also remove the application settings.</p>
 </div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>→ The Aspect Model Editor with all dependencies was deleted from your system.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Alternatively, on Windows, you can also uninstall as follows: Open Windows menu → type Aspect Model Editor → click <strong>Uninstall</strong> → right-click on the Aspect Model Editor → click <strong>Uninstall</strong>.
-</td>
-</tr>
-</table>
+<p>→ The Aspect Model Editor was deleted from your system.
+Your workspace folder at <em>%USERPROFILE%\aspect-model-editor</em> is not removed automatically. Delete it manually if you no longer need your saved Aspect Models.</p>
 </div>
 </div>
 <div class="sect2">
@@ -720,13 +750,13 @@ Your workspace folder at <em>/Users/&lt;YOUR-USER-NAME&gt;/aspect-model-editor</
 <p>Close any running instance of the Aspect Model Editor.</p>
 </li>
 <li>
-<p>Remove the installed package via your distribution&#8217;s package manager, or delete the <code>AppImage</code> file, depending on how you installed it.</p>
+<p>Remove the installed package via your distribution&#8217;s package manager (e.g. <code>sudo apt remove aspect-model-editor</code>), or delete the <code>AppImage</code> file, depending on how you installed it.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>→ The Aspect Model Editor was deleted from your system.
-Your workspace folder at <em>/Users/&lt;YOUR-USER-NAME&gt;/aspect-model-editor</em> is not removed automatically. Delete it manually if you no longer need your saved Aspect Models.</p>
+Your workspace folder at <em>/home/&lt;YOUR-USER-NAME&gt;/aspect-model-editor</em> is not removed automatically. Delete it manually if you no longer need your saved Aspect Models.</p>
 </div>
 </div>
 </div>

@@ -96,10 +96,22 @@
     <a class="nav-link" href="load-and-save-models.html">Load and save models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preserve-ttl-structure.html">Keep the structure of TTL files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="session-restore.html">Restore the last session</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="edit-models.html">Edit models</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="undo-redo.html">Undo and redo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="navigate-models.html">Navigate models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="text-view.html">Aspect Model text view</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="validation-and-notifications.html">Validation and notifications</a>
@@ -162,7 +174,7 @@
     <a class="nav-link" href="../modeling/connect-elements.html">Connect elements</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../modeling/shared-models.html">Shared models</a>
+    <a class="nav-link" href="../modeling/shared-models.html">Element libraries (models without an Aspect)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../modeling/migration-of-models.html">Migration of models</a>
@@ -187,6 +199,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../namespace/use-references.html">Use references</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namespace/missing-references.html">Missing references</a>
   </li>
 </ul>
   </li>
@@ -256,6 +271,20 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../esmf-documentation/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
         </li>
       </ul>
     </li>
@@ -379,7 +408,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>To access the Settings dialog, click the Settings icon <span class="image"><img src="../_images/toolbar-icons/settings.png" alt="Settings icon"></span>.</p>
+<p>To access the Settings dialog, click the Settings icon <span class="image"><img src="../_images/toolbar-icons/settings.png" alt="Settings icon"></span> in the left sidebar.</p>
 </div>
 </div>
 </div>
@@ -431,13 +460,33 @@ The validation information is displayed in the <a href="validation-and-notificat
 <p><strong>Use "hierarchical" layout</strong>: aligns all elements below the root Aspect.</p>
 </li>
 <li>
-<p><strong>Display 'Entity value &ndash; entity' relationship</strong>: displays all relationship connections from Entity instances to their related Entities.</p>
+<p><strong>Display disambiguation labels</strong>: displays labels on relationship connections whose meaning would otherwise be ambiguous:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>input</strong> / <strong>output</strong> on the connections from an Operation to its Properties,</p>
 </li>
 <li>
-<p><strong>Display 'Property - Abstract Property' relationship</strong>: displays all relationship connections from Property instances to their related Abstract Properties.</p>
+<p><strong>left</strong> / <strong>right</strong> on the connections from an Either Characteristic to its Characteristics,</p>
 </li>
 <li>
-<p><strong>Display disambiguation labels</strong>: displays labels on the relationship connections between the elements for easier identification of the relationship (e.g., for Operations: Properties are labeled with input or output).</p>
+<p><strong>not in payload</strong> on the connection from an Entity to a Property that has <code>notInPayload</code> set (only possible for Entities used by an Enumeration).</p>
+<div class="paragraph">
+<p>Changing this setting immediately redraws the connections of the open model.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Dark mode</strong>: switches the editor and the graph canvas to a dark color theme.
+You can also toggle the theme directly with the sun/moon icon in the left sidebar.</p>
+</li>
+<li>
+<p><strong>Element order when saving</strong>: defines the order of the elements in the saved Turtle file (<strong>Order of the ESMF SDK formatter</strong>, <strong>Keep order, insert new elements after their parent</strong> or <strong>Keep order, append new elements at the end</strong>). See <a href="preserve-ttl-structure.html" class="xref page">Keep the structure of TTL files</a>.</p>
+</li>
+<li>
+<p><strong>Restore open models on start</strong> (desktop app only): reopens the workspace models of the last session with their window size and position. See <a href="session-restore.html" class="xref page">Restore the last session</a>.</p>
 </li>
 </ul>
 </div>
@@ -458,7 +507,10 @@ The validation information is displayed in the <a href="validation-and-notificat
 </div>
 </div>
 <div class="paragraph">
-<p>Define for which languages the <code>description</code> and the <code>preferredName</code> attributes for elements should be displayed.</p>
+<p>Under <strong>User Interface</strong>, choose the display language of the Aspect Model Editor itself (currently <strong>English</strong> or <strong>Chinese</strong>).</p>
+</div>
+<div class="paragraph">
+<p>Under <strong>Aspect Model</strong>, define for which languages the <code>description</code> and the <code>preferredName</code> attributes for elements should be displayed.</p>
 </div>
 <div class="paragraph">
 <p>Element attributes can only be added for the languages defined in your settings.</p>
@@ -524,7 +576,9 @@ For more information, see <a href="https://eclipse-esmf.github.io/samm-specifica
 <p>In the Settings dialog, select the menu <strong>Header/Copyright</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Edit or add a header to be used with the Aspect Model.</p>
+<p>Edit or add a header to be used with the Aspect Model.
+Every line must start with <code>#</code>.
+The header is written at the top of new models; models loaded from a file keep the header of that file, see <a href="preserve-ttl-structure.html" class="xref page">Keep the structure of TTL files</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">

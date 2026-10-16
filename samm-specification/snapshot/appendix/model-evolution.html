@@ -167,6 +167,20 @@
       </ul>
     </li>
     <li class="component">
+      <a class="title" href="../../../vs-code-plugin/introduction.html">ESMF VS Code Plugin</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../vs-code-plugin/introduction.html">master</a>
+        </li>
+        <li class="version">
+          <a href="../../../vs-code-plugin/1.0.1/index.html">1.0.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../vs-code-plugin/1.0.0/index.html">1.0.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <a class="title" href="../../../esmf-developer-guide/index.html">Java SDK and SAMM CLI</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -505,6 +519,20 @@ indicate structural and semantic incompatibility between versions.
 which represents the information about whether a machine is online, offline, starting up or
 undefined (if the current status can not be retrieved).</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can find the full Aspect Models that are explained below in the
+<a href="https://github.com/eclipse-esmf/esmf-examples/tree/main/aspect-models/org.eclipse.esmf.examples.machine_online_status">esmf-examples</a>
+repository on GitHub.
+</td>
+</tr>
+</table>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -514,7 +542,7 @@ undefined (if the current status can not be retrieved).</p>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.0#&gt; .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:org.eclipse.esmf.examples.machine_online_status:1.0.0#&gt; .
 @prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
@@ -540,7 +568,7 @@ valid states given in the target machine&#8217;s data sheet.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.1#&gt; .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:org.eclipse.esmf.examples.machine_online_status:1.0.1#&gt; .
 @prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
 @prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -570,7 +598,7 @@ this makes the change a safe change. Therefore, the Aspect Model&#8217;s version
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.2#&gt; .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:org.eclipse.esmf.examples.machine_online_status:1.0.2#&gt; .
 @prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
 @prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -623,7 +651,7 @@ increased to 1.0.2.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.1.0#&gt; .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:org.eclipse.esmf.examples.machine_online_status:1.1.0#&gt; .
 @prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
 @prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -659,7 +687,7 @@ but it is not a piece of information that consumers of the Aspect Model programm
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:com.mycompany.myapplication:1.0.3#&gt; .
+<pre class="highlightjs highlight"><code class="language-turtle hljs" data-lang="turtle">@prefix : &lt;urn:samm:org.eclipse.esmf.examples.machine_online_status:1.0.3#&gt; .
 @prefix samm: &lt;urn:samm:org.eclipse.esmf.samm:meta-model:2.2.0#&gt; .
 @prefix samm-c: &lt;urn:samm:org.eclipse.esmf.samm:characteristic:2.2.0#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
