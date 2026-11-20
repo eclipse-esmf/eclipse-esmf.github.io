@@ -183,24 +183,13 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../js-sdk-guide/index.html">master</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+          <a href="../../js-sdk-aml-guide/3.0.0/index.html">3.0.0</a>
         </li>
       </ul>
     </li>
@@ -749,8 +738,8 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generate example JSON payload data for an Aspect Model</p></td>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><a id="aspect-to-json"></a> aspect &lt;model&gt; to json</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate pretty-printed example JSON payload data for an Aspect Model. When <code>--count</code> is specified, generate <a href="https://jsonlines.org/">JSON Lines</a> instead.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json</code></p></td>
 </tr>
 <tr>
@@ -764,6 +753,10 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--add-type-attribute</em>, <em>-ta</em> : Add <code>@type</code> attribute for inherited Entities</p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--count</em> : Positive number of JSON records to generate in JSON Lines format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to json --count 10</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--current-timestamp</em> : Generate current timestamp dynamically instead of using the fixed default timestamp (Unix epoch <code>1970-01-01T00:00:00.000Z</code>).</p></td>
@@ -783,7 +776,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a id="aspect-to-parquet"></a> aspect &lt;model&gt; to parquet</p></td>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a id="aspect-to-parquet"></a> aspect &lt;model&gt; to parquet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate example Apache Parquet payload data for an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to parquet</code></p></td>
 </tr>
@@ -800,6 +793,35 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--count</em> : Positive number of Parquet records to generate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to parquet --count 10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--current-timestamp</em> : Generate current timestamp dynamically instead of using the fixed default timestamp (Unix epoch <code>1970-01-01T00:00:00.000Z</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to parquet --current-timestamp</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--random-timestamp</em> : Generate random date/time values between 1970 (inclusive) and 2100
+                                       (exclusive), in UTC. By default, date/time values use <code>1970-01-01T00:00:00.000Z</code>.
+                                       Applies to <code>date</code>, <code>time</code>, <code>dateTime</code>, <code>dateTimeStamp</code>, <code>gYear</code>, <code>gMonth</code>, <code>gDay</code>,
+                                       <code>gYearMonth</code>, and <code>gMonthDay</code>. Model example values take precedence unless
+                                       <code>--ignore-example-value</code> is also set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to parquet --random-timestamp</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--ignore-example-value</em> : Ignore example values defined in the Aspect Model and generate
+                                       random values for all Properties</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--compression-codec</em> : Compression codec for the Parquet file. Valid values are
+                                       <code>uncompressed</code>, <code>snappy</code>, <code>gzip</code>, <code>lzo</code>, <code>brotli</code>, <code>lz4</code>, <code>zstd</code>, and <code>lz4_raw</code>
+                                       (default: <code>snappy</code>). See the
+                                       <a href="https://parquet.apache.org/docs/file-format/data-pages/compression/#codecs">Apache Parquet codec reference</a>
+                                       for details.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to parquet --compression-codec gzip</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-jsonld"></a> aspect &lt;model&gt; to jsonld</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate JSON-LD representation of an Aspect Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to jsonld</code></p></td>
@@ -807,6 +829,19 @@ of model resolution</a> for more information.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout)</p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a id="aspect-to-protobuf"></a> aspect &lt;model&gt; to protobuf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generate a self-contained proto3 message schema for an Aspect Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to protobuf</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--output, -o</em> : output file path (default: stdout; <code>-</code> also selects stdout)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to protobuf -o AspectModel.proto</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-resolver</em> : use an external resolver for the resolution of the model elements</p></td>
@@ -831,7 +866,7 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="11"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
+<td class="tableblock halign-left valign-top" rowspan="12"><p class="tableblock"><a id="aspect-to-sql"></a> aspect &lt;model&gt; to sql</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generate SQL script that sets up a table for data for this Aspect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql</code></p></td>
 </tr>
@@ -844,7 +879,8 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--dialect, -d</em> : The SQL dialect to generate for (default: <code>databricks</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--dialect, -d</em> : The SQL dialect to generate for: <code>databricks</code> or <code>postgresql</code>
+                                     (default: <code>databricks</code>)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -862,27 +898,28 @@ of model resolution</a> for more information.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--table-command-prefix, -tcp</em> : The prefix to use for Databricks table creation
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--table-command-prefix, -tcp</em> : The prefix to use for table creation
                                      commands (default: <code>CREATE TABLE IF NOT EXISTS</code>)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--decimal-precision, -dp</em> : The precision to use for Databricks decimal columns
-                                     (default: 10). See also notes in
-                                     the <a href="java-aspect-tooling.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--decimal-precision, -dp</em> : The precision to use for decimal columns (default: 10).</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--decimal-scale, -ds</em> : The scale to use for Databricks decimal columns
-                                     (default: 0). See also notes in
-                                     the <a href="java-aspect-tooling.html#databricks-type-mapping" class="xref page">Databricks type mapping</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--decimal-scale, -ds</em> : The scale to use for decimal columns (default: 0).</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-column, -col</em> : Additional custom column definition, e.g. for databricks
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--custom-column, -col</em> : Additional custom column definition
                                      following the pattern <code>column_name DATATYPE [NOT NULL] [COMMENT 'custom']</code>. This
                                      parameter can be repeated for multiple columns.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql --custom-column "column_name STRING NOT NULL COMMENT 'custom'"</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>--table-constraint</em> : SQL table constraint inserted verbatim into the CREATE TABLE definition.
+                                     Repeat for multiple constraints. Syntax and referenced columns are not validated; use syntax supported by the selected dialect.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm aspect AspectModel.ttl to sql --dialect postgresql --table-constraint "PRIMARY KEY (id)" --table-constraint "CHECK (amount &gt; 0)"</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a id="aspect-to-aas"></a> aspect &lt;model&gt; to aas</p></td>
@@ -1340,7 +1377,9 @@ paths:
 <div class="sect2">
 <h3 id="configuration-of-security-schemas"><a class="anchor" href="#configuration-of-security-schemas"></a>Configuration of security schemas</h3>
 <div class="paragraph">
-<p>For example, to configure OAuth2 authentication the template could look like this:</p>
+<p>Security schemes are not generated, but can be added with <code>--template-file</code>.
+<code>components.securitySchemes</code> defines the schemes (<code>apiKey</code>, <code>http</code>, <code>oauth2</code>, <code>openIdConnect</code> or <code>mutualTLS</code>) and <code>security</code> applies them to all endpoints.
+For example, to configure OAuth2 authentication the template could look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1368,6 +1407,11 @@ paths:
             - read:aspects
             - write:aspects</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><code>security</code> under <code><em>DEFAULT_QUERIES_TEMPLATE</em></code> applies to the read, query and operations endpoints only.
+For the POST/PUT/PATCH endpoints, define it under their explicit path instead, e.g. <code>paths./resources.put.security</code>.
+<code>mutualTLS</code> requires OpenAPI 3.1 (<code>--comment</code>).</p>
 </div>
 </div>
 <div class="sect2">
@@ -2329,6 +2373,95 @@ The resulting directory structure then looks like the following:</p>
 <p>The name of the directory shown as <em>models root</em> above can be chosen freely.
 The SAMM CLI will resolve the file path relative to the input file by following the folder structure described above.
 Each of the files in the <code>1.0.0</code> directory should therefore have an empty prefix declaration such as <code>@prefix : &lt;urn:samm:com.mycompany.myproduct:1.0.0#&gt;</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="protocol-buffers-message-schemas"><a class="anchor" href="#protocol-buffers-message-schemas"></a>Protocol Buffers message schemas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>aspect &lt;model&gt; to protobuf</code> generates a proto3 schema containing the Aspect payload and its
+referenced Entities. The Aspect&#8217;s namespace and full model version determine the <code>package</code>
+declaration. The version is appended as the final package segment with a <code>v</code> prefix and dots
+replaced by underscores. For example, <code>urn:samm:org.example.sensors:1.2.3#Sensor</code> produces
+<code>package org.example.sensors.v1_2_3;</code>. The <code>urn:samm:</code> prefix and element name are omitted.
+Each dot-separated namespace segment is normalized using the identifier rules below.
+All generated messages, including Entities referenced from other namespaces, belong to this package
+and use fully qualified message references.</p>
+</div>
+<div class="paragraph">
+<p>Entity inheritance is flattened. Properties marked <code>notInPayload</code> and abstract
+Properties are omitted. Payload names are used for fields; characters outside ASCII letters,
+digits and underscores become underscores. Names starting with digits or underscores and reserved
+words receive a <code>samm_</code> prefix. Conflicting message names receive numeric suffixes; conflicting
+field names cause an error.</p>
+</div>
+<div class="paragraph">
+<p>Collections become <code>repeated</code> fields and optional singular Properties use <code>optional</code>.
+Either Characteristics become wrapper messages with a <code>oneof</code> containing <code>left</code> and <code>right</code>.
+Nested collections also use wrapper messages. Enumeration Characteristics use their underlying
+data type; enumeration restrictions, Constraints, collection uniqueness and mandatory-field
+validation are not enforced by the generated schema. Operations and Events are not generated.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SAMM data type</th>
+<th class="tableblock halign-left valign-top">Protobuf type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byte, short, int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsignedByte, unsignedShort, unsignedInt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsignedLong</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float, double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float, double</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">base64Binary, hexBinary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal and arbitrary-precision integer types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string (preserves precision and range)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other scalar types, including date/time, duration, URI and langString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Field numbers start at 1 in model property order and skip the Protobuf reserved range
+19000 through 19999. Generation is deterministic for an unchanged model. Changes to property
+order or removal of properties can change field numbers; review and maintain field numbers before
+using a regenerated schema with existing serialized data.</p>
 </div>
 </div>
 </div>

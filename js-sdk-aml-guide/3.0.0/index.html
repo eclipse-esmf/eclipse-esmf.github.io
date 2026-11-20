@@ -64,13 +64,13 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="js-sdk-aml-guide" data-version="2.3.3">
+<div class="nav-container" data-component="js-sdk-aml-guide" data-version="3.0.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-explore is-active" data-panel="explore">
   <div class="context">
-    <span class="title">JavaScript SDK Aspect Model loader</span>
-    <span class="version">2.3.3</span>
+    <span class="title">JavaScript SDK</span>
+    <span class="version">3.0.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -132,25 +132,14 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../js-sdk-guide/index.html">master</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
-      <a class="title" href="../index.html">JavaScript SDK Aspect Model loader</a>
+      <a class="title" href="../index.html">JavaScript SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../index.html">master</a>
         </li>
         <li class="version is-current">
-          <a href="index.html">2.3.3</a>
+          <a href="index.html">3.0.0</a>
         </li>
       </ul>
     </li>
@@ -206,13 +195,13 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.3.3</button>
+  <button class="version-menu-toggle" title="Show other versions of page">3.0.0</button>
   <div class="version-menu">
     <a class="version" href="../index.html">master</a>
-    <a class="version is-current" href="index.html">2.3.3</a>
+    <a class="version is-current" href="index.html">3.0.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/blob/v2.3.3/documentation/js-sdk-aml-guide/modules/ROOT/pages/index.adoc">Contribute to this page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/blob/v3.0.0/documentation/js-sdk-aml-guide/modules/ROOT/pages/index.adoc">Contribute to this page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -223,8 +212,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Aspect Model loader can be used to load an Aspect Model to traverse and access the different information a model provides (units, descriptions, constraints, etc.) to implement generic frontends capable to automatically adapt to the underling Aspect Model.
-For example a newly added property and the related value could be shown in the UI including all information (name, description and unit) without changing any line of code.</p>
+<p>The JavaScript SDK lets you load Aspect Models in JavaScript and TypeScript applications.
+It reads Aspect Models written in RDF/Turtle (SAMM 2.0.0, 2.1.0 and 2.2.0) and returns them as typed TypeScript objects.
+You can traverse these objects, or process them with a visitor, to access the model&#8217;s information, such as properties, characteristics, entities, units, descriptions and constraints.</p>
+</div>
+<div class="paragraph">
+<p>This lets you build generic frontends that adapt to the underlying Aspect Model automatically.
+For example, when a new property is added to the model, the UI can show the corresponding value together with the property&#8217;s name, description and unit without any code changes.</p>
 </div>
 </div>
 </div>
@@ -235,8 +229,23 @@ For example a newly added property and the related value could be shown in the U
 <h3 id="install-from-github-release-repository"><a class="anchor" href="#install-from-github-release-repository"></a>Install from GitHub release repository</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">npm install https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/releases/download/v2.3.3/esmf-aspect-model-loader-2.3.3.tgz</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">npm install https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/releases/download/v2.3.3/esmf-sdk-js-2.3.3.tgz</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>The package is named <code>@esmf/sdk-js</code> (formerly <code>@esmf/aspect-model-loader</code>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The package is published as an ES module only and requires Node.js 24 or newer. CommonJS consumers can load it via <code>require()</code> on Node.js 22.12 or newer.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -244,15 +253,24 @@ For example a newly added property and the related value could be shown in the U
 <div class="sect1">
 <h2 id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
 <div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {AspectModelLoader, Aspect} from '@esmf/sdk-js';</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>This package contains two methods for loading Turtle (.ttl) files (string value of the .ttl files).</p>
+<p>This package contains two methods for loading Turtle (.ttl) files (string value of the .ttl files).
+Each method is available as a Promise-based variant and as an RxJS Observable variant.</p>
 </div>
 <div class="paragraph">
 <p>Load an aspect model which is self-contained (includes no imports to other ttl file):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">new AspectModelLoader().loadSelfContainedModel(ttl).subscribe((aspect: Aspect) =&gt; {
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const aspect: Aspect = await new AspectModelLoader().loadSelfContainedAspect(ttl);
+
+// or as Observable
+new AspectModelLoader().loadSelfContainedModel(ttl).subscribe((aspect: Aspect) =&gt; {
 ...
 });</code></pre>
 </div>
@@ -262,13 +280,93 @@ For example a newly added property and the related value could be shown in the U
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">new AspectModelLoader().load('&lt;aspect-model-urn&gt;', ttl-1, ttl-2, ttl-3).subscribe((aspect: Aspect) =&gt; {
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const aspect: Aspect = await new AspectModelLoader().loadAspect('&lt;aspect-model-urn&gt;', ttl1, ttl2, ttl3);
+
+// or as Observable
+new AspectModelLoader().load('&lt;aspect-model-urn&gt;', ttl1, ttl2, ttl3).subscribe((aspect: Aspect) =&gt; {
 ...
 });</code></pre>
 </div>
 </div>
 <div class="paragraph">
+<p>Errors are reported as typed error classes (for example <code>UnsupportedVersionError</code>, <code>AspectNotFoundError</code> or <code>MultipleAspectsFoundError</code>), all derived from <code>AspectModelError</code>.</p>
+</div>
+<div class="paragraph">
 <p>If you are using external .ttl files you may need to parse the contents of these files to strings, to be passed to the methods params.</p>
+</div>
+<div class="sect2">
+<h3 id="load-namespaces"><a class="anchor" href="#load-namespaces"></a>Load namespaces</h3>
+<div class="paragraph">
+<p>To load all model elements of one or more namespaces without selecting a specific aspect, use the <code>NamespaceLoader</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {NamespaceLoader} from '@esmf/sdk-js';
+
+const namespaces = await new NamespaceLoader().loadNamespaces(ttl1, ttl2);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-handling"><a class="anchor" href="#error-handling"></a>Error handling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All errors thrown or emitted by the loaders derive from <code>AspectModelError</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error</th>
+<th class="tableblock halign-left valign-top">Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UnsupportedVersionError</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The model uses a SAMM version that is not supported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AspectNotFoundError</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No aspect with the requested URN was found.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MultipleAspectsFoundError</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A self-contained model contains more than one aspect.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EntityInstanceResolutionError</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An entity instance could not be resolved.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NotAbstractEntityError</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An entity that must be abstract is not abstract.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RdfParseError</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Turtle input could not be parsed.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {AspectModelError, AspectNotFoundError} from '@esmf/sdk-js';
+
+try {
+  await loader.loadAspect(urn, ttl);
+} catch (error) {
+  if (error instanceof AspectNotFoundError) {
+    // handle missing aspect
+  } else if (error instanceof AspectModelError) {
+    // handle any other loader error
+  }
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -276,22 +374,57 @@ For example a newly added property and the related value could be shown in the U
 <h2 id="helpful-functions"><a class="anchor" href="#helpful-functions"></a>Helpful functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This module exposes some helper functions that can be used to find items inside the loaded ttl object.</p>
+<p>After loading, the loader exposes helper functions to find model elements.</p>
 </div>
 <div class="paragraph">
-<p>Find a specific model element, and returns it or undefined.</p>
+<p>Find a model element by its URN (returns the element or <code>undefined</code>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">let specificElement = loader.findByUrn(options.urnSelectedModelElement)</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const element = loader.findByUrn('urn:samm:org.example:1.0.0#myProperty');</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Find a specific model element by name, and returns the found elements.</p>
+<p>Find model elements by name (returns all matching elements):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">let specificElement = loader.findByName(options.selectedModelName)</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const elements = loader.findByName('myProperty');</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Filter all loaded model elements with a predicate:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {DefaultProperty} from '@esmf/sdk-js';
+
+const properties = loader.filterElements(element =&gt; element instanceof DefaultProperty);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="visitor"><a class="anchor" href="#visitor"></a>Visitor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To process a loaded model, extend <code>DefaultAspectModelVisitor</code> and override the methods for the element types you need:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {DefaultAspectModelVisitor, DefaultProperty} from '@esmf/sdk-js';
+
+class PropertyCounter extends DefaultAspectModelVisitor&lt;void, unknown&gt; {
+  count = 0;
+
+  visitProperty(property: DefaultProperty, context: unknown): void {
+    this.count++;
+    return super.visitProperty(property, context);
+  }
+}
+
+const counter = new PropertyCounter();
+counter.visit(aspect, {});</code></pre>
 </div>
 </div>
 </div>
@@ -299,28 +432,19 @@ For example a newly added property and the related value could be shown in the U
 <div class="sect1">
 <h2 id="development"><a class="anchor" href="#development"></a>Development</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="create-bundle"><a class="anchor" href="#create-bundle"></a>Create bundle</h3>
+<div class="paragraph">
+<p>Requirements: Node.js 24 or newer and pnpm.</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run build</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pnpm install
+pnpm run build   # build the library into dist/
+pnpm test        # run the tests
+pnpm run all     # build, format, lint, type check, tests with coverage and package checks</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>to build and to create the library</p>
-</div>
-<div class="sect3">
-<h4 id="update-indexes"><a class="anchor" href="#update-indexes"></a>Update indexes</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ctix create ./src</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>to update all index files under <code>src</code>.
-For more information see the project <a href="https://github.com/imjuni/create-ts-index" class="bare">https://github.com/imjuni/create-ts-index</a>.</p>
-</div>
-</div>
+<p>See the <a href="https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/blob/main/CONTRIBUTING.md">contribution guideline</a> and the <a href="https://github.com/eclipse-esmf/esmf-sdk-js-aspect-model-loader/blob/main/CHANGELOG.md">changelog</a> for details.</p>
 </div>
 </div>
 </div>

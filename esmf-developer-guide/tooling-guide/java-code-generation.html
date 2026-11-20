@@ -183,24 +183,13 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../js-sdk-guide/index.html">master</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+          <a href="../../js-sdk-aml-guide/3.0.0/index.html">3.0.0</a>
         </li>
       </ul>
     </li>
@@ -742,7 +731,8 @@ When using custom macros, macros for all sections above must be provided.
 <div class="paragraph">
 <p>Using the Aspect Model SQL generator, an SQL script can be generated that sets up a table for data
 corresponding to the Aspect. The current implementation provides support for the
-<a href="https://docs.databricks.com/en/sql/language-manual/index.html">Databricks SQL</a> dialect and a mapping
+<a href="https://docs.databricks.com/en/sql/language-manual/index.html">Databricks SQL</a> and
+<a href="https://www.postgresql.org/docs/current/sql.html">PostgreSQL</a> dialects and a mapping
 strategy that uses a denormalized table, i.e., the table contains one column for each Property used
 in the Aspect Model (or any of its transitively referenced Entities).</p>
 </div>
@@ -794,6 +784,12 @@ final SqlGenerationConfig sqlGenerationConfig =
             .build();
 final String result = new AspectModelSqlGenerator( aspectModel.aspect(), sqlGenerationConfig ).getContent();</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>The dialect-specific generation configuration accepts <code>tableConstraints</code>, a list of SQL table
+constraint definitions. Each definition is inserted verbatim after the column definitions. The
+caller is responsible for using valid syntax and column names for the selected dialect; the
+generator does not validate them.</p>
 </div>
 <div class="sect2">
 <h3 id="databricks-type-mapping"><a class="anchor" href="#databricks-type-mapping"></a>Databricks Type Mapping</h3>
@@ -854,7 +850,7 @@ in the data, the Aspect Models using xsd:decimal should also use a <a href="../.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TIME</code> can not be used, because it does not retain timezone information.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
@@ -943,8 +939,8 @@ in the data, the Aspect Models using xsd:decimal should also use a <a href="../.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DECIMAL(20)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The fixed precision of 20 accommodates the maximum value 18446744073709551615, independently of the configured decimal precision.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code></p></td>
@@ -984,6 +980,140 @@ in the data, the Aspect Models using xsd:decimal should also use a <a href="../.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>samm:curie</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="postgresql-type-mapping"><a class="anchor" href="#postgresql-type-mapping"></a>PostgreSQL Type Mapping</h3>
+<div class="paragraph">
+<p>To generate PostgreSQL, use <code>SqlGenerationConfig.Dialect.POSTGRESQL</code> and a
+<code>PostgreSqlGenerationConfig</code>. Collections of scalar values are represented as PostgreSQL arrays.
+Table and column descriptions are emitted using <code>COMMENT ON TABLE</code> and <code>COMMENT ON COLUMN</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect model type</th>
+<th class="tableblock halign-left valign-top">PostgreSQL type</th>
+<th class="tableblock halign-left valign-top">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOLEAN</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:decimal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NUMERIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The configured precision and scale are used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:integer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NUMERIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The configured precision is used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:double</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE PRECISION</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:float</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REAL</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATE</code> can not be used, because it does not retain timezone information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TIME</code> can not be used, because it does not retain timezone information. Although <code>TIME WITH TIME ZONE</code> can preserve this information, <code>TEXT</code> is used here for consistency and simplicity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TIMESTAMP</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:dateTimeStamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TIMESTAMP WITH TIME ZONE</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:gYear</code>, <code>xsd:gMonth</code>, <code>xsd:gDay</code>, <code>xsd:gYearMonth</code>, <code>xsd:gMonthDay</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:duration</code>, <code>xsd:yearMonthDuration</code>, <code>xsd:dayTimeDuration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:byte</code>, <code>xsd:short</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SMALLINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:int</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INTEGER</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:long</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIGINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedByte</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SMALLINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedShort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INTEGER</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedInt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIGINT</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:unsignedLong</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NUMERIC(20)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The fixed precision of 20 accommodates the maximum value 18446744073709551615, independently of the configured decimal precision.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:positiveInteger</code>, <code>xsd:nonNegativeInteger</code>, <code>xsd:negativeInteger</code>, <code>xsd:nonPositiveInteger</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NUMERIC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The configured precision is used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:hexBinary</code>, <code>xsd:base64Binary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTEA</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:anyURI</code>, <code>samm:curie</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>

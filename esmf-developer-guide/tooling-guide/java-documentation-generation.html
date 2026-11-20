@@ -183,24 +183,13 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../js-sdk-guide/index.html">master</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+          <a href="../../js-sdk-aml-guide/3.0.0/index.html">3.0.0</a>
         </li>
       </ul>
     </li>
@@ -453,8 +442,9 @@ selected Aspect.</td>
 <p>The sample JSON payload generator is used to create a valid JSON payload for an Aspect model as it could be returned by
 an Aspect that implements that Aspect model. This follows the
 <a href="../../samm-specification/snapshot/payloads.html#mapping-to-json" class="xref page">mapping rules</a> as defined in the Meta Model specification.
-The generator uses `samm:exampleValue`s of Properties if present, otherwise random values corresponding to the
-respective data types are generated.</p>
+The generator uses <code>samm:exampleValue`s of Properties if present, otherwise random values corresponding to the
+respective data types are generated. Use `ParquetGenerationConfigBuilder.count()</code> to generate multiple records in
+one Parquet file. Values without an example value are generated separately for each record.</p>
 </div>
 <details>
 <summary>Show used imports</summary>
@@ -500,6 +490,8 @@ respective data types are generated.</p>
 import java.io.IOException;
 
 import org.eclipse.esmf.aspectmodel.generator.parquet.AspectModelParquetPayloadGenerator;
+import org.eclipse.esmf.aspectmodel.generator.parquet.ParquetGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.parquet.ParquetGenerationConfigBuilder;
 import org.eclipse.esmf.aspectmodel.loader.AspectModelLoader;
 import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 </div>
@@ -509,7 +501,10 @@ import org.eclipse.esmf.metamodel.AspectModel;</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// AspectModel as returned by the AspectModelLoader
 final AspectModel aspectModel = // ...
-final AspectModelParquetPayloadGenerator generator = new AspectModelParquetPayloadGenerator( aspectModel.aspect() );
+final ParquetGenerationConfig config = ParquetGenerationConfigBuilder.builder()
+      .count( 10 )
+      .build();
+final AspectModelParquetPayloadGenerator generator = new AspectModelParquetPayloadGenerator( aspectModel.aspect(), config );
 // Direct generation of Apache Parquet payload
 generator.generate().findFirst().orElseThrow( () -&gt; new IOException( "Failed to generate parquet artifact" ) );</code></pre>
 </div>
@@ -552,6 +547,45 @@ final JsonNode jsonNode = generator.getContent();
 // Or as pretty-printed JSON String:
 final String json = generator.generateJson();</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-protocol-buffers-message-schemas"><a class="anchor" href="#generating-protocol-buffers-message-schemas"></a>Generating Protocol Buffers Message Schemas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>AspectModelProtobufGenerator</code> generates a self-contained proto3 message schema for an Aspect&#8217;s
+payload. The schema declares a package derived from the Aspect&#8217;s namespace and full model version.
+The version is appended as a final segment, e.g. <code>1.2.3</code> becomes <code>v1_2_3</code>.
+All generated messages and their fully qualified references use that package.
+It extends <code>AspectGenerator</code> and produces one <code>ProtobufArtifact</code>, whose identifier is
+<code>&lt;AspectName&gt;.proto</code> and whose content is the schema source. The artifact implements <code>Artifact</code>
+through <code>StringArtifact</code> and serializes as UTF-8.</p>
+</div>
+<div class="paragraph">
+<p><code>ProtobufGenerationConfig</code> implements <code>GenerationConfig</code>. It currently has no configurable options;
+use the constructor accepting only an Aspect, or supply a configuration explicitly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.esmf.aspectmodel.generator.protobuf.AspectModelProtobufGenerator;
+import org.eclipse.esmf.aspectmodel.generator.protobuf.ProtobufArtifact;
+import org.eclipse.esmf.aspectmodel.generator.protobuf.ProtobufGenerationConfig;
+import org.eclipse.esmf.aspectmodel.generator.protobuf.ProtobufGenerationConfigBuilder;
+
+// The Aspect has already been loaded into 'aspect'.
+final ProtobufGenerationConfig config = ProtobufGenerationConfigBuilder.builder().build();
+final AspectModelProtobufGenerator generator = new AspectModelProtobufGenerator(aspect, config);
+final ProtobufArtifact schema = generator.singleResult();
+final String fileName = schema.getId();
+final String source = schema.getContent();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use <code>generator.getContent()</code> to retrieve the source directly, or <code>generator.generate(nameMapper)</code>
+to write artifacts to output streams selected by their identifiers. The CLI and Maven plugin use
+the same generator. See <a href="samm-cli.html#_protocol_buffers_message_schemas" class="xref page">Protocol Buffers message schemas</a>
+for mapping rules and field numbering considerations.</p>
 </div>
 </div>
 </div>

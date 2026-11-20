@@ -183,24 +183,13 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../js-sdk-guide/index.html">JavaScript SDK</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../js-sdk-guide/index.html">master</a>
-        </li>
-        <li class="version">
-          <a href="../../js-sdk-guide/2.10.3/index.html">2.10.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK Aspect Model loader</a>
+      <a class="title" href="../../js-sdk-aml-guide/index.html">JavaScript SDK</a>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../js-sdk-aml-guide/index.html">master</a>
         </li>
         <li class="version">
-          <a href="../../js-sdk-aml-guide/2.3.3/index.html">2.3.3</a>
+          <a href="../../js-sdk-aml-guide/3.0.0/index.html">3.0.0</a>
         </li>
       </ul>
     </li>
@@ -374,7 +363,7 @@ are the attributes of the preceding model element.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.urn</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:ConceptDescription.id, aas:SubmodelElement.semanticId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Always used as the id of the generated ConceptDescription. It is used as semanticId for aas:Property, aas:MultiLanguageProperty and aas:ReferenceElement, and for aas:SubmodelElementList only if the Collection Characteristic is named. For Entity-typed Properties, the semanticId of the aas:SubmodelElementCollection is the Entity URN, and the aas:SubmodelElementList generated for samm-c:Either carries no semanticId.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Always used as the id of the generated ConceptDescription. It is used as semanticId for aas:Property, aas:MultiLanguageProperty and aas:ReferenceElement, and for aas:SubmodelElementList only if the Collection Characteristic is named. For Entity-typed Properties, the semanticId of the aas:SubmodelElementCollection is the Entity URN, and the aas:SubmodelElementList generated for samm-c:Either carries no semanticId. Direct children of an aas:SubmodelElementList with a scalar (XSD or RDF) element type carry no semanticId either.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Property.preferredName</p></td>
@@ -393,8 +382,8 @@ are the attributes of the preceding model element.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">samm:Characteristic.dataType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.valueType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped to aas:Property.valueType using a fixed XSD type mapping, where types without explicit mapping default to xsd:string. The dataType of the DataSpecificationIEC61360 in the ConceptDescription is set accordingly, defaulting to STRING. For aas:SubmodelElementList, the typeValueListElement is SubmodelElementCollection in template mode and SubmodelElement when aspect data is supplied; if the element type is an Entity, its URN is used as semanticIdListElement.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aas:Property.valueType, aas:SubmodelElementList.valueTypeListElement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped to aas:Property.valueType using a fixed XSD type mapping, where types without explicit mapping default to xsd:string. The dataType of the DataSpecificationIEC61360 in the ConceptDescription is set accordingly, defaulting to STRING. Measure types (REAL_MEASURE, INTEGER_MEASURE) are only used for Quantifiables with a unit, since AAS requires a unit for them (AASc-3a-009); otherwise the corresponding count type (REAL_COUNT, INTEGER_COUNT) is used, including for Enumerations. For collection mappings, typeValueListElement reflects the actual generated child type: the template child&#8217;s type in template mode, or the first generated child&#8217;s type when aspect data is supplied (for example, Property, SubmodelElementCollection, or Blob). Scalar collection data types are mapped to valueTypeListElement using the same XSD type mapping in both template and instance mode; valueTypeListElement is omitted for non-scalar or absent data types. If the element type is an Entity, its URN is used as semanticIdListElement.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>samm:Operation</strong></p></td>
@@ -409,12 +398,12 @@ are the attributes of the preceding model element.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#collection-characteristic" class="xref page"><strong>samm-c:Collection</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElementList, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. Properties referencing Collections (including samm-c:List, samm-c:Set, samm-c:SortedSet, and samm-c:TimeSeries) are mapped to SubmodelElementLists with orderRelevant set to false. Uniqueness and sorting constraints are not represented in AAS. When aspect data is supplied and the element type is a scalar, all values are serialized into a single aas:Blob with content type text/plain and comma-separated values.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Collection type Characteristics. Properties referencing Collections (including samm-c:List, samm-c:Set, samm-c:SortedSet, and samm-c:TimeSeries) are mapped to SubmodelElementLists. In both template and instance mode, orderRelevant is set to true for samm-c:List, samm-c:SortedSet, and samm-c:TimeSeries, and to false for samm-c:Collection and samm-c:Set. Uniqueness and specific sorting constraints are not represented in AAS beyond this ordered/unordered distinction. When aspect data is supplied and the element type is a scalar, all values are serialized into a single aas:Blob with content type text/plain and comma-separated values.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#quantifiable-characteristic" class="xref page"><strong>samm-c:Quantifiable</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:SubmodelElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Quantifiable type Characteristics. Quantifiables (also Duration and Measurement) reference a unit, which is added to the ConceptDescription corresponding the mapped Characteristic.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The general remarks to Characteristics apply also to Quantifiable type Characteristics. Quantifiables (also Duration and Measurement) reference a unit, which is added to the ConceptDescription corresponding the mapped Characteristic. The dataType of that ConceptDescription is a measure type only when a unit is set; without a unit, the corresponding count type is used.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#either-characteristic" class="xref page"><strong>samm-c:Either</strong></a></p></td>
@@ -434,7 +423,7 @@ are the attributes of the preceding model element.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#reference-characteristic" class="xref page"><strong>samm-c:Reference</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aas:ReferenceElement, aas:ConceptDescription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Properties referencing a Reference characteristic are mapped to an aas:ReferenceElement. Its value is an external global reference built from the property value, or from the exampleValue when a template is generated; if neither is available, no value is set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Properties referencing a Reference characteristic are mapped to an aas:ReferenceElement. Its value is an external global reference built from the property value, or from the exampleValue when a template is generated; if neither is available, no value is set. In the reverse direction, an aas:ReferenceElement is mapped to samm-c:Reference; a single GlobalReference key value becomes the exampleValue.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../samm-specification/snapshot/characteristics.html#structured-value-characteristic" class="xref page"><strong>samm-c:StructuredValue</strong></a></p></td>
@@ -482,7 +471,7 @@ However, there are still limitations:</p>
 <p>Abstract Properties and Properties without a Characteristic are skipped during mapping</p>
 </li>
 <li>
-<p>Constraints of samm-c:Trait as well as uniqueness and ordering of collections are not represented in AAS</p>
+<p>Constraints of samm-c:Trait as well as uniqueness and specific sorting constraints of collections are not represented in AAS; collection ordering is represented by orderRelevant</p>
 </li>
 <li>
 <p>Collections of scalar values are represented as a single aas:Blob when aspect data is supplied</p>
