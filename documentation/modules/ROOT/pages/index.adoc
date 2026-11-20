@@ -175,7 +175,7 @@ image::ESMF-JS-icon-vector.svg[xref=js-sdk-aml-guide:ROOT:index.adoc, window=_bl
 xref:js-sdk-aml-guide:ROOT:index.adoc[JavaScript SDK, window=_blank,opts=nofollow] 
 ======
 [.text]
-Build UIs better and faster. Load and interpret SAMM Aspect Models in JavaScript and TypeScript applications, making semantic information easily accessible for building semantics-powered applications.
+Build UIs faster with SAMM. Load and interpret SAMM Aspect Models in JavaScript and TypeScript to power semantic applications.
 
 --
 ====
