@@ -7,6 +7,7 @@
     <link rel="canonical" href="https://eclipse-esmf.github.io/esmf-developer-guide/tooling-guide/java-code-generation.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../_/css/tabs.css">
     <script>var uiRootPath = '../../_'</script>
 <link rel="apple-touch-icon" sizes="180x180" href="../../_/img/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../_/img/favicon-32x32.png">
@@ -166,6 +167,12 @@
           <a href="../index.html">master</a>
         </li>
         <li class="version">
+          <a href="../2.16.2/index.html">2.16.2</a>
+        </li>
+        <li class="version">
+          <a href="../2.16.1/index.html">2.16.1</a>
+        </li>
+        <li class="version">
           <a href="../2.16.0/index.html">2.16.0</a>
         </li>
         <li class="version">
@@ -173,12 +180,6 @@
         </li>
         <li class="version">
           <a href="../2.15.0/index.html">2.15.0</a>
-        </li>
-        <li class="version">
-          <a href="../2.14.3/index.html">2.14.3</a>
-        </li>
-        <li class="version">
-          <a href="../2.14.2/index.html">2.14.2</a>
         </li>
       </ul>
     </li>
@@ -253,11 +254,11 @@
   <button class="version-menu-toggle" title="Show other versions of page">master</button>
   <div class="version-menu">
     <a class="version is-current" href="java-code-generation.html">master</a>
+    <a class="version" href="../2.16.2/tooling-guide/java-code-generation.html">2.16.2</a>
+    <a class="version" href="../2.16.1/tooling-guide/java-code-generation.html">2.16.1</a>
     <a class="version" href="../2.16.0/tooling-guide/java-code-generation.html">2.16.0</a>
     <a class="version" href="../2.15.1/tooling-guide/java-code-generation.html">2.15.1</a>
     <a class="version" href="../2.15.0/tooling-guide/java-code-generation.html">2.15.0</a>
-    <a class="version" href="../2.14.3/tooling-guide/java-code-generation.html">2.14.3</a>
-    <a class="version" href="../2.14.2/tooling-guide/java-code-generation.html">2.14.2</a>
   </div>
 </div>
   <div class="edit-this-page"><a href="https://github.com/eclipse-esmf/esmf-sdk/edit/main/documentation/developer-guide/modules/tooling-guide/pages/java-code-generation.adoc">Contribute to this page</a></div>
@@ -299,14 +300,22 @@ the information itself (<em>meta</em>).</p>
 <div class="paragraph">
 <p>To include the Java generator, use the following dependencies:</p>
 </div>
-<div class="exampleblock">
+<div id="tabs-1" class="openblock tabs is-loading">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-1-maven" class="tab">
+<p>Maven</p>
+</li>
+<li id="tabs-1-gradle-groovy-dsl" class="tab">
+<p>Gradle Groovy DSL</p>
+</li>
+<li id="tabs-1-gradle-kotlin-dsl" class="tab">
+<p>Gradle Kotlin DSL</p>
+</li>
+</ul>
+</div>
+<div id="tabs-1-maven--panel" class="tabpanel" aria-labelledby="tabs-1-maven">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
@@ -317,33 +326,19 @@ the information itself (<em>meta</em>).</p>
 </div>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div id="tabs-1-gradle-groovy-dsl--panel" class="tabpanel" aria-labelledby="tabs-1-gradle-groovy-dsl">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-model-java-generator:2.16.0'</code></pre>
 </div>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div id="tabs-1-gradle-kotlin-dsl--panel" class="tabpanel" aria-labelledby="tabs-1-gradle-kotlin-dsl">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-model-java-generator:2.16.0")</code></pre>
 </div>
 </div>
-</div>
-</div>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -619,14 +614,22 @@ generator.generate( qualifiedName -&gt; {
 <div class="paragraph">
 <p>To use the generated static meta classes, you need the following additional dependency:</p>
 </div>
-<div class="exampleblock">
+<div id="tabs-2" class="openblock tabs is-loading">
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Maven</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-2-maven" class="tab">
+<p>Maven</p>
+</li>
+<li id="tabs-2-gradle-groovy-dsl" class="tab">
+<p>Gradle Groovy DSL</p>
+</li>
+<li id="tabs-2-gradle-kotlin-dsl" class="tab">
+<p>Gradle Kotlin DSL</p>
+</li>
+</ul>
+</div>
+<div id="tabs-2-maven--panel" class="tabpanel" aria-labelledby="tabs-2-maven">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-maven hljs" data-lang="maven">&lt;dependency&gt;
@@ -637,33 +640,19 @@ generator.generate( qualifiedName -&gt; {
 </div>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Groovy DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div id="tabs-2-gradle-groovy-dsl--panel" class="tabpanel" aria-labelledby="tabs-2-gradle-groovy-dsl">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation 'org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.16.0'</code></pre>
 </div>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">Gradle Kotlin DSL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div id="tabs-2-gradle-kotlin-dsl--panel" class="tabpanel" aria-labelledby="tabs-2-gradle-kotlin-dsl">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("org.eclipse.esmf:esmf-aspect-static-meta-model-java:2.16.0")</code></pre>
 </div>
 </div>
-</div>
-</div>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -1134,6 +1123,7 @@ Table and column descriptions are emitted using <code>COMMENT ON TABLE</code> an
 
 
 <script src="../../_/js/site.js"></script>
+<script src="../../_/js/tabs.js"></script>
 <script src="../../_/js/vendor/lunr.min.js"></script>
 <script src="../../_/js/vendor/search-ui.js" id="search-script" data-site-root-path="../.." data-stylesheet="../../_/css/search.css"></script>
 <script async src="../../search-index.js"></script>
