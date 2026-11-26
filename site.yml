@@ -33,7 +33,7 @@ content:
        start_path: documentation/vs-code-plugin
 ui:
   bundle:
-    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.6.2/esmf-antora-ui-bundle-1.6.2.zip
+    url: https://github.com/eclipse-esmf/esmf-antora-ui/releases/download/v1.6.3/esmf-antora-ui-bundle-1.6.3.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
@@ -47,6 +47,8 @@ antora:
     - require: '@antora/lunr-extension'
       index_latest_only: true
 asciidoc:
+  extensions:
+    - '@asciidoctor/tabs'
   attributes:
     doctype: book
     sectanchors: true
